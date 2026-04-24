@@ -1,7 +1,8 @@
 // MonoKromatik Article Utilities
 // Functions to load and manage articles
 
-import articlesData from '../data/articles.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export interface Article {
   title: string;
@@ -18,10 +19,30 @@ export interface Article {
 }
 
 /**
+ * Load articles from JSON file
+ */
+function loadArticles(): Article[] {
+  try {
+    if (typeof window === 'undefined') {
+      // Server-side: read from file system
+      const articlesPath = join(process.cwd(), 'data/articles.json');
+      const articlesData = readFileSync(articlesPath, 'utf-8');
+      return JSON.parse(articlesData) as Article[];
+    } else {
+      // Client-side: return empty (will be loaded via props)
+      return [];
+    }
+  } catch (error) {
+    console.error('Error loading articles:', error);
+    return [];
+  }
+}
+
+/**
  * Get all articles
  */
 export function getAllArticles(): Article[] {
-  return articlesData as Article[];
+  return loadArticles();
 }
 
 /**
