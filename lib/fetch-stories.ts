@@ -15,6 +15,7 @@ interface CustomItem {
   'media:thumbnail'?: any;
   'content:encoded'?: string;
   'content'?: string;
+  contentSnippet?: string;
   enclosure?: { url: string; type?: string };
 }
 
