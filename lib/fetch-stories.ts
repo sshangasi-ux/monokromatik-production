@@ -16,6 +16,8 @@ interface CustomItem {
   'content:encoded'?: string;
   'content'?: string;
   contentSnippet?: string;
+  author?: string;
+  creator?: string;
   enclosure?: { url: string; type?: string };
 }
 
