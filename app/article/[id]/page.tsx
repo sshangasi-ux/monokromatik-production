@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Clock, Eye, Share2, Copy, Check, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, Copy, Check, ExternalLink } from 'lucide-react';
 import Navigation from '../../components/Navigation';
-import { getArticleBySlug, getReadingTime, formatDate, type Article } from '../../../lib/articles';
+import { getArticleBySlug, getReadingTime, formatDate } from '../../../lib/articles';
 import ReactMarkdown from 'react-markdown';
 
 export default function ArticlePage() {
@@ -15,12 +15,8 @@ export default function ArticlePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [reaction, setReaction] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-  const [article, setArticle] = useState<Article | null>(null);
-
-  useEffect(() => {
-    const loadedArticle = getArticleBySlug(slug);
-    setArticle(loadedArticle || null);
-  }, [slug]);
+  
+  const article = useMemo(() => getArticleBySlug(slug), [slug]);
 
   useEffect(() => {
     const handleScroll = () => {
