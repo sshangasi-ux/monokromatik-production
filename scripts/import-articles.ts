@@ -8,6 +8,20 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
+interface Article {
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  imageUrl?: string;
+  videoUrl?: string;
+  sourceLink: string;
+  sourceName: string;
+  publishedAt: string;
+}
+
 async function importArticles() {
   console.log('📥 MonoKromatik Article Import\n');
   console.log('=' .repeat(60));
@@ -22,7 +36,7 @@ async function importArticles() {
       process.exit(1);
     }
 
-    const articles = JSON.parse(readFileSync(generatedPath, 'utf-8'));
+    const articles: Article[] = JSON.parse(readFileSync(generatedPath, 'utf-8'));
 
     if (articles.length === 0) {
       console.error('\n❌ No articles to import');
