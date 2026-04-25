@@ -3,9 +3,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Clock, Share2, Copy, Check, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Clock, ExternalLink } from 'lucide-react';
 import Navigation from '../../components/Navigation';
-import { getArticleBySlug, getReadingTime, formatDate } from '../../../lib/articles';
+import SocialShare from '../../components/SocialShare';
+import RelatedArticles from '../../components/RelatedArticles';
+import NewsletterSignup from '../../components/NewsletterSignup';
+import { getArticleBySlug, getAllArticles, getReadingTime, formatDate } from '../../../lib/articles';
 import ReactMarkdown from 'react-markdown';
 
 export default function ArticlePage() {
@@ -14,9 +17,9 @@ export default function ArticlePage() {
   
   const [scrollProgress, setScrollProgress] = useState(0);
   const [reaction, setReaction] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
   
   const article = useMemo(() => getArticleBySlug(slug), [slug]);
+  const allArticles = useMemo(() => getAllArticles(), []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,15 +33,6 @@ export default function ArticlePage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleShare = (platform: string) => {
-    const url = window.location.href;
-    if (platform === 'copy') {
-      navigator.clipboard.writeText(url);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
 
   if (!article) {
     return (
@@ -128,6 +122,22 @@ export default function ArticlePage() {
           ))}
         </div>
 
+        {/* Social Share - Top */}
+        <div className="mt-12 mb-8">
+          <SocialShare 
+            title={article.title}
+            url={typeof window !== 'undefined' ? window.location.href : `https://monokromatik.com/article/${article.slug}`}
+            variant="horizontal"
+          />
+        </div>
+
+        {/* Floating Social Share (Desktop) */}
+        <SocialShare 
+          title={article.title}
+          url={typeof window !== 'undefined' ? window.location.href : `https://monokromatik.com/article/${article.slug}`}
+          variant="floating"
+        />
+
         <div className="mt-16 pt-12 border-t-2 border-mono-charcoal">
           <div className="mb-8">
             <h3 className="text-2xl font-display font-bold text-mono-black mb-4">WHAT DID YOU THINK?</h3>
@@ -149,15 +159,26 @@ export default function ArticlePage() {
             </div>
           </div>
 
+          {/* Social Share - Bottom */}
           <div className="mb-12">
-            <h3 className="text-xl font-display font-bold text-mono-black mb-4">SHARE WITH YOUR DIASPORA FAM</h3>
-            <div className="flex gap-3">
-              <button onClick={() => handleShare('copy')}
-                className="flex-1 px-6 py-3 bg-mono-charcoal text-white font-display font-bold hover:bg-mono-black transition-colors flex items-center justify-center gap-2">
-                {copied ? <Check size={20} /> : <Copy size={20} />} {copied ? 'COPIED!' : 'COPY LINK'}
-              </button>
-            </div>
+            <SocialShare 
+              title={article.title}
+              url={typeof window !== 'undefined' ? window.location.href : `https://monokromatik.com/article/${article.slug}`}
+              variant="horizontal"
+            />
           </div>
+        </div>
+
+        {/* Related Articles */}
+        <RelatedArticles
+          currentSlug={article.slug}
+          category={article.category}
+          articles={allArticles}
+        />
+
+        {/* Newsletter Signup */}
+        <div className="mt-16">
+          <NewsletterSignup variant="footer" />
         </div>
       </article>
 

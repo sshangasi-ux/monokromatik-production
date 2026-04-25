@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import SearchBar from './SearchBar';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,15 +87,8 @@ export default function Navigation() {
                 </span>
               </div>
 
-              {/* Search Icon */}
-              <button
-                className={`p-2 rounded-full hover:bg-mono-amber/10 transition-colors ${
-                  isScrolled ? 'text-mono-white' : 'text-mono-black'
-                }`}
-                aria-label="Search"
-              >
-                <Search size={20} />
-              </button>
+              {/* Search */}
+              <SearchBar />
             </div>
 
             {/* Mobile Menu Toggle */}

@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Play, TrendingUp, Mic, ShoppingBag, ArrowRight, Users, Globe } from 'lucide-react';
 import Navigation from './components/Navigation';
+import NewsletterSignup from './components/NewsletterSignup';
+import TrendingArticles from './components/TrendingArticles';
 import { getAllArticles, getReadingTime, formatDate } from '../lib/articles';
 
 interface StoryCardProps {
@@ -54,8 +56,6 @@ function StoryCard({ article, featured = false }: StoryCardProps) {
 }
 
 export default function Home() {
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterStatus, setNewsletterStatus] = useState('');
   const [stats, setStats] = useState({
     readers: 466,
     countries: 23,
@@ -92,12 +92,6 @@ export default function Home() {
     }, 5000);
     return () => clearInterval(interval);
   }, [articles]);
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setNewsletterStatus('Thanks! Check your inbox for confirmation.');
-    setNewsletterEmail('');
-  };
 
   // Get featured and latest articles
   const featuredArticle = articlesByCategory.all[0];
@@ -250,54 +244,22 @@ export default function Home() {
       )}
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-mono-amber">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-white mb-4">
-              GET THE PULSE
-            </h2>
-            <p className="text-mono-white/90 font-body text-lg mb-2">
-              Every Sunday, 8AM GMT
-            </p>
-            <p className="text-mono-white font-body text-xl mb-6">
-              The African stories BBC won't tell you. 5-minute read. No spam.
-            </p>
+      <section className="py-20 bg-mono-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Newsletter (2/3 width) */}
+            <div className="lg:col-span-2">
+              <NewsletterSignup variant="default" />
+            </div>
+
+            {/* Trending Sidebar (1/3 width) */}
+            <div>
+              <TrendingArticles articles={articles} limit={5} />
+            </div>
           </div>
-
-          <form onSubmit={handleNewsletterSubmit} className="max-w-xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="flex-1 px-6 py-4 text-mono-black font-body text-lg focus:outline-none focus:ring-2 focus:ring-mono-white"
-                required
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-mono-black text-mono-white font-display font-bold text-lg hover:bg-mono-charcoal transition-colors whitespace-nowrap"
-              >
-                JOIN THE MOVEMENT
-              </button>
-            </div>
-            {newsletterStatus && (
-              <p className="mt-4 text-center text-mono-white font-body">{newsletterStatus}</p>
-            )}
-          </form>
-
-          {latestArticles.length > 0 && (
-            <div className="mt-8 p-6 bg-mono-white/10 backdrop-blur-sm border border-mono-white/20 rounded-lg">
-              <p className="text-mono-white/70 font-body text-sm mb-3">⚡ Latest stories:</p>
-              <ul className="text-mono-white font-body space-y-2">
-                {latestArticles.slice(0, 3).map((article) => (
-                  <li key={article.slug}>• {article.title}</li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="py-12 bg-mono-black text-mono-white">
