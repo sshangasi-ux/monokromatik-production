@@ -8,23 +8,13 @@ import SearchBar from './SearchBar';
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [onlineReaders, setOnlineReaders] = useState(456);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    
-    // Simulate live reader count updates
-    const interval = setInterval(() => {
-      setOnlineReaders(prev => prev + Math.floor(Math.random() * 5) - 2);
-    }, 5000);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearInterval(interval);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
@@ -77,13 +67,13 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Live Stats & Search */}
+            {/* Honest "1 human + AI agents" badge + Search */}
             <div className="hidden lg:flex items-center space-x-4">
-              {/* Live Reader Count */}
+              {/* Honest badge — replaces fake live counter */}
               <div className="flex items-center space-x-2 px-3 py-1.5 bg-mono-amber/10 rounded-full border border-mono-amber/20">
                 <div className="w-2 h-2 bg-mono-amber rounded-full animate-pulse-slow" />
                 <span className={`text-xs font-body ${isScrolled ? 'text-mono-white' : 'text-mono-charcoal'}`}>
-                  <span className="font-bold">{onlineReaders}</span> online
+                  <span className="font-bold">1 human + AI</span>
                 </span>
               </div>
 
@@ -121,13 +111,13 @@ export default function Navigation() {
                   </span>
                 </Link>
               ))}
-              
-              {/* Mobile Stats */}
+
+              {/* Mobile honest badge */}
               <div className="pt-4 mt-4 border-t border-mono-gray/20">
                 <div className="flex items-center space-x-2 px-4 py-2">
                   <div className="w-2 h-2 bg-mono-amber rounded-full animate-pulse-slow" />
                   <span className="text-sm font-body text-mono-white">
-                    <span className="font-bold">{onlineReaders}</span> readers online
+                    Built by <span className="font-bold">1 human + AI agents</span>
                   </span>
                 </div>
               </div>
@@ -135,7 +125,7 @@ export default function Navigation() {
           </div>
         )}
       </nav>
-      
+
       {/* Spacer for fixed nav */}
       <div className="h-20" />
     </>

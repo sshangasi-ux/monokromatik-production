@@ -1,6 +1,6 @@
 {
   "name": "monokromatik-production",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "test:pipeline": "tsx scripts/test-pipeline.ts",
-    "generate:articles": "tsx scripts/generate-articles.ts"
+    "generate:articles": "tsx scripts/generate-articles.ts",
+    "agents": "tsx scripts/run-agents.ts",
+    "agents:dry": "tsx scripts/run-agents.ts -- --dry",
+    "agents:local": "tsx scripts/run-agents.ts -- --no-push"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

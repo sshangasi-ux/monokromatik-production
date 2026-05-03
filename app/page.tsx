@@ -24,7 +24,7 @@ interface StoryCardProps {
 function StoryCard({ article, featured = false }: StoryCardProps) {
   const readingTime = getReadingTime(article.content);
   const defaultImage = 'https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop';
-  
+
   return (
     <Link
       href={`/article/${article.slug}`}
@@ -56,15 +56,9 @@ function StoryCard({ article, featured = false }: StoryCardProps) {
 }
 
 export default function Home() {
-  const [stats, setStats] = useState({
-    readers: 466,
-    countries: 23,
-    articles: 5,
-  });
-
   // Load articles using useMemo to prevent recalculation on every render
   const articles = useMemo(() => getAllArticles(), []);
-  
+
   // Group articles by category
   const articlesByCategory = useMemo(() => {
     return {
@@ -76,22 +70,16 @@ export default function Home() {
     };
   }, [articles]);
 
-  useEffect(() => {
-    // Update stats with actual article count
-    setStats(prev => ({
-      ...prev,
+  // Honest stats — no Math.random, no fake numbers
+  const stats = useMemo(
+    () => ({
       articles: articles.length,
-    }));
-    
-    // Simulate live reader stats updates
-    const interval = setInterval(() => {
-      setStats(prev => ({
-        ...prev,
-        readers: Math.max(400, prev.readers + Math.floor(Math.random() * 10) - 5),
-      }));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [articles]);
+      // These two are static placeholders. Update when GA4 confirms real data.
+      countries: Math.max(1, articles.length), // grows with article count as a soft signal
+      sources: 20, // 20 RSS feeds in lib/rss-feeds.ts
+    }),
+    [articles]
+  );
 
   // Get featured and latest articles
   const featuredArticle = articlesByCategory.all[0];
@@ -111,7 +99,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/70 to-transparent" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-mono-white mb-6 leading-tight animate-slide-up">
@@ -136,25 +124,25 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Live Stats Bar */}
+          {/* Honest Stats Bar — no fake live counters */}
           <div className="absolute bottom-8 left-4 right-4 sm:left-8 sm:right-8">
             <div className="flex flex-wrap items-center gap-6 px-6 py-4 bg-mono-black/60 backdrop-blur-md border border-mono-gray/20 text-mono-white">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-mono-amber rounded-full animate-pulse-slow" />
+                <TrendingUp size={16} className="text-mono-amber" />
                 <span className="text-sm font-body">
-                  <span className="font-bold">{stats.readers}</span> readers online
+                  <span className="font-bold">{stats.articles}</span> stories published
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe size={16} className="text-mono-amber" />
                 <span className="text-sm font-body">
-                  <span className="font-bold">{stats.countries}</span> countries
+                  <span className="font-bold">{stats.sources}</span> African sources monitored
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp size={16} className="text-mono-amber" />
+                <Users size={16} className="text-mono-amber" />
                 <span className="text-sm font-body">
-                  <span className="font-bold">{stats.articles}</span> stories published
+                  Built by <span className="font-bold">1 human + AI agents</span>
                 </span>
               </div>
             </div>
@@ -194,6 +182,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">ROOTS</span> — Culture & Heritage
               </h2>
+              <Link href="/roots" className="font-display text-sm text-mono-amber hover:underline">
+                See all →
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -213,6 +204,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">ARENA</span> — Sports & Competition
               </h2>
+              <Link href="/arena" className="font-display text-sm text-mono-amber hover:underline">
+                See all →
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -232,6 +226,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">WAVES</span> — Music & Entertainment
               </h2>
+              <Link href="/waves" className="font-display text-sm text-mono-amber hover:underline">
+                See all →
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -286,6 +283,7 @@ export default function Home() {
                 <li><Link href="/watch" className="text-mono-gray hover:text-mono-amber transition-colors">Watch</Link></li>
                 <li><Link href="/listen" className="text-mono-gray hover:text-mono-amber transition-colors">Listen</Link></li>
                 <li><Link href="/shop" className="text-mono-gray hover:text-mono-amber transition-colors">Shop</Link></li>
+                <li><a href="/feed.xml" className="text-mono-gray hover:text-mono-amber transition-colors">RSS Feed</a></li>
               </ul>
             </div>
             <div>
@@ -293,6 +291,7 @@ export default function Home() {
               <ul className="space-y-2 font-body text-sm">
                 <li><Link href="/about" className="text-mono-gray hover:text-mono-amber transition-colors">Our Story</Link></li>
                 <li><Link href="/about#how-it-works" className="text-mono-gray hover:text-mono-amber transition-colors">How It Works</Link></li>
+                <li><Link href="/about#code" className="text-mono-gray hover:text-mono-amber transition-colors">Our Code</Link></li>
               </ul>
             </div>
           </div>

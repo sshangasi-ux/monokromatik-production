@@ -1,0 +1,72 @@
+name: MonoKromatik Agent Pipeline
+
+on:
+  # Run twice daily at 06:00 and 14:00 UTC (08:00 and 16:00 SAST)
+  schedule:
+    - cron: '0 6,14 * * *'
+  # Manual trigger button in the GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Number of articles to publish'
+        required: false
+        default: '3'
+      dry_run:
+        description: 'Dry run (no commit/push)'
+        required: false
+        default: 'false'
+  # Triggered remotely by the Vercel Cron endpoint
+  repository_dispatch:
+    types: [agent-publish]
+
+permissions:
+  contents: write   # so the action can commit + push articles.json
+
+jobs:
+  run-pipeline:
+    name: Generate + publish articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "MonoKromatik Bot"
+          git config --global user.email "bot@monokromatik.com"
+
+      - name: Run agent pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          LIMIT="${{ github.event.inputs.limit || '3' }}"
+          DRY="${{ github.event.inputs.dry_run || 'false' }}"
+          if [ "$DRY" = "true" ]; then
+            npx tsx scripts/run-pipeline.ts --limit $LIMIT --dry-run
+          else
+            npx tsx scripts/run-pipeline.ts --limit $LIMIT
+          fi
+
+      - name: Upload pipeline artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-output-${{ github.run_id }}
+          path: output/
+          retention-days: 7

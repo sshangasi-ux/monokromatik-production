@@ -1,0 +1,54 @@
+name: MonoKromatik Daily Agent Run
+
+on:
+  schedule:
+    # 06:00 SAST = 04:00 UTC (every day)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of articles to generate'
+        required: false
+        default: '3'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run agent pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NODE_ENV: production
+        run: |
+          npm run agents -- --count=${{ github.event.inputs.count || '3' }}
+
+      - name: Pipeline summary
+        if: always()
+        run: |
+          echo "### MonoKromatik agent run finished" >> $GITHUB_STEP_SUMMARY
+          echo "Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ Articles published — Vercel will auto-deploy in ~2 minutes." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Pipeline failed — check logs above." >> $GITHUB_STEP_SUMMARY
+          fi
