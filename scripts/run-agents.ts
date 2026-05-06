@@ -17,6 +17,7 @@ import { fetchMonoKromatikStories, getMediaStats } from '../lib/fetch-stories';
 import { preFilterStories, curateStories } from '../lib/curate-stories';
 import { generateArticles } from '../lib/generate-article';
 import type { GeneratedArticle } from '../lib/generate-article';
+import { stylizeBatch } from '../lib/stylist';
 
 // Load .env.local (so this script works locally)
 // In CI, the env is provided by GitHub Actions secrets
@@ -114,28 +115,89 @@ async function main() {
   }
   log(`   Generated ${generated.length} articles`);
 
+  // 6b. Stylist — rewrite drafts in MonoKromatik voice profile
+  log('\n🎤 [STYLIST] Rewriting drafts through voice profile...');
+  const stylized = await stylizeBatch(
+    generated.map((g) => ({
+      title: g.title,
+      excerpt: g.excerpt,
+      content: g.content,
+      category: g.category,
+      tags: g.tags,
+      sourceLink: g.sourceLink,
+      sourceName: g.sourceName,
+    })),
+    {
+      concurrency: 3,
+      onProgress: (done, total, latest) => {
+        const status = latest.stylistNote?.startsWith('STYLIST FAILED') ? '❌' : '✅';
+        log(`   [${done}/${total}] ${status} ${latest.title.slice(0, 70)}`);
+      },
+    }
+  );
+
+  // Merge Stylist output back onto Writer output. If Stylist failed for an
+  // article, we ship the Writer's original (the Stylist preserves draft on
+  // failure via _original). The article's slug, imageUrl, sourceLink etc.
+  // come from the Writer; the title/excerpt/content come from the Stylist.
+  const stylistFailures = stylized.filter((s) =>
+    s.stylistNote?.startsWith('STYLIST FAILED')
+  ).length;
+  if (stylistFailures > 0) {
+    log(`   ⚠️  ${stylistFailures} article(s) failed Stylist; will publish Writer drafts.`);
+  }
+
+  const written: GeneratedArticle[] = generated.map((draft, i) => {
+    const s = stylized[i];
+    if (s.stylistNote?.startsWith('STYLIST FAILED')) {
+      return draft;
+    }
+    return {
+      ...draft,
+      title: s.title,
+      excerpt: s.excerpt,
+      content: s.content,
+    };
+  });
+
   // 7. Publisher — slug uniqueness
   const newArticles: ExistingArticle[] = [];
-  for (const article of generated) {
+  for (const article of written) {
     let slug = article.slug;
     let attempt = 1;
     while (existingSlugs.has(slug)) {
       slug = `${article.slug}-${attempt++}`;
     }
     existingSlugs.add(slug);
-    newArticles.push({ ...article, slug });
+    // Annotate that this article was voice-refreshed at publish time —
+    // matches the field used by scripts/refresh-voice.ts so retroactive
+    // and live runs share the same schema.
+    const stylized_i = stylized[written.indexOf(article)];
+    const enriched: ExistingArticle = {
+      ...article,
+      slug,
+      ...(stylized_i?.stylistNote && !stylized_i.stylistNote.startsWith('STYLIST FAILED')
+        ? {
+            voiceRefreshedAt: new Date().toISOString(),
+            stylistNote: stylized_i.stylistNote,
+          }
+        : {}),
+    } as ExistingArticle;
+    newArticles.push(enriched);
   }
 
   // 8. Merge — newest first
   const merged = [...newArticles, ...existing];
+
+  if (DRY_RUN) {
+    log(`\n🟡 DRY RUN — articles staged in memory only. Skipping data/articles.json write.`);
+    return summarize(newArticles);
+  }
+
   writeFileSync(ARTICLES_PATH, JSON.stringify(merged, null, 2));
   log(`\n💾 [PUBLISHER] Wrote ${merged.length} total articles to data/articles.json`);
 
   // 9. Git commit + push (this triggers Vercel auto-deploy)
-  if (DRY_RUN) {
-    log('   🟡 DRY RUN — articles staged in data/articles.json. Skipping git.');
-    return summarize(newArticles);
-  }
 
   log('\n🚀 [PUBLISHER] Committing to git...');
   try {
