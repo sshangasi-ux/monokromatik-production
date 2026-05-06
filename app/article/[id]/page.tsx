@@ -32,15 +32,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: desc,
       type: 'article',
       url,
-      images: article.imageUrl ? [{ url: article.imageUrl, alt: article.title }] : [],
+      // images intentionally omitted — Next.js auto-injects from
+      // app/article/[id]/opengraph-image.tsx (dynamic OG card with
+      // MonoKromatik branding). Letting the route convention win.
       publishedTime: article.publishedAt,
       tags: article.tags,
     },
     twitter: {
-      card: article.imageUrl ? 'summary_large_image' : 'summary',
+      // Always 'summary_large_image' now: every article has a
+      // dynamically-generated 1200x630 OG card via the
+      // app/article/[id]/twitter-image.tsx route convention.
+      card: 'summary_large_image',
       title: article.title,
       description: desc,
-      images: article.imageUrl ? [article.imageUrl] : [],
+      // images intentionally omitted — see openGraph note above.
     },
     alternates: { canonical: url },
   };
