@@ -15,6 +15,7 @@ import { join } from 'path';
 import { execSync } from 'child_process';
 import { fetchMonoKromatikStories, getMediaStats } from '../lib/fetch-stories';
 import { preFilterStories, curateStories } from '../lib/curate-stories';
+import { dedupeAgainstPublished } from '../lib/dedupe-stories';
 import { generateArticles } from '../lib/generate-article';
 import type { GeneratedArticle } from '../lib/generate-article';
 import { stylizeBatch } from '../lib/stylist';
@@ -83,7 +84,7 @@ async function main() {
   const filtered = preFilterStories(allStories);
   log(`   ${allStories.length - filtered.length} stories filtered out (negative keywords)`);
 
-  // 4. Dedupe — drop stories we already covered
+  // 4. Dedupe — drop stories we already covered (lexical: title/source-link match)
   const fresh = filtered.filter(
     (s) =>
       !existingTitles.has(normalizeTitle(s.title)) &&
@@ -96,10 +97,31 @@ async function main() {
     return;
   }
 
+  // 4b. Subject-level dedupe — Claude compares each fresh candidate against
+  // the last 14 days of published articles and rejects same-subject coverage.
+  // This catches the case where the agents would otherwise write a third
+  // headline about the same album release / same match / same news cycle.
+  log('\n🔁 [DEDUPER] Subject-level dedupe (last 14 days)...');
+  const dedupe = await dedupeAgainstPublished(
+    fresh,
+    existing.map((a) => ({
+      title: a.title,
+      excerpt: a.excerpt,
+      publishedAt: a.publishedAt,
+      slug: a.slug,
+    }))
+  );
+  const novel = dedupe.novel;
+
+  if (novel.length === 0) {
+    log('   ⚠️  All candidates were subject-level duplicates of recent articles. Exiting.');
+    return;
+  }
+
   // 5. Curator — Claude scores by diaspora relevance
   log('\n🤖 [CURATOR] Scoring stories with Claude...');
   // Get 2x the count to give Writer fallback options if some fail
-  const curated = await curateStories(fresh, COUNT * 2);
+  const curated = await curateStories(novel, COUNT * 2);
   log(`   Curator returned ${curated.length} ranked stories`);
 
   if (curated.length === 0) {
