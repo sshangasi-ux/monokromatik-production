@@ -20,6 +20,8 @@ import { generateArticles } from '../lib/generate-article';
 import type { GeneratedArticle } from '../lib/generate-article';
 import { stylizeBatch } from '../lib/stylist';
 import { sourceImage } from '../lib/source-image';
+import { reviewBatch } from '../lib/editor-in-chief';
+import { sendDigest } from '../lib/eic-digest';
 
 // Load .env.local (so this script works locally)
 // In CI, the env is provided by GitHub Actions secrets
@@ -202,9 +204,87 @@ async function main() {
     log(`   [${i + 1}/${written.length}] ${result.source.padEnd(15)} → ${article.title.slice(0, 55)}`);
   }
 
+  // 6d. Editor-in-Chief — the last gate. Reviews each article on six
+  // dimensions (editorial value, voice integrity, factual coherence, tone
+  // fit, lede strength, length appropriateness) and either approves or
+  // kills it. Killed articles never see the publisher; their reasons
+  // get bundled into a daily digest emailed to the operator.
+  //
+  // Fail-open: if EIC errors out for an article, that article is auto-
+  // approved (the agent records the failure in notes for spot-checking).
+  log('\n📝 [EDITOR-IN-CHIEF] Reviewing articles against editorial standards...');
+  const reviewed = await reviewBatch(written, {
+    concurrency: 3,
+    onProgress: (done, total, latest) => {
+      const v = latest.review.verdict;
+      const icon = v === 'approved' ? '✅' : '🚫';
+      log(
+        `   [${done}/${total}] ${icon} ${v.padEnd(8)} score=${latest.review.score}/10 — ${latest.title.slice(
+          0,
+          50
+        )}`
+      );
+      if (v === 'killed') {
+        log(`         why: ${latest.review.killReason ?? latest.review.notes}`);
+      }
+    },
+  });
+
+  const approved = reviewed.filter((r) => r.review.verdict === 'approved');
+  const killed = reviewed.filter((r) => r.review.verdict === 'killed');
+
+  log(
+    `   ${approved.length} approved, ${killed.length} killed by EIC. ${
+      killed.length > 0 ? 'Digest will be emailed.' : ''
+    }`
+  );
+
+  // Fire-and-forget the digest email (non-blocking). EIC fail-opens, so the
+  // pipeline still ships even if email delivery fails.
+  if (!DRY_RUN && reviewed.length > 0) {
+    void sendDigest({
+      killed,
+      approved,
+      runAt: new Date().toISOString(),
+    }).catch((err) => log(`   ⚠️  Digest email error (non-fatal): ${err}`));
+  } else if (DRY_RUN && reviewed.length > 0) {
+    log(`   🟡 DRY RUN — skipping digest email.`);
+  }
+
+  if (approved.length === 0) {
+    log('   ⚠️  EIC killed every article today. Nothing to publish.');
+    return;
+  }
+
+  // From here on, only EIC-approved articles continue down the pipeline.
+  // Replace `written` with the approved subset to keep the rest of the
+  // orchestrator unchanged.
+  const writtenApproved: GeneratedArticle[] = approved.map((r) => ({
+    title: r.title,
+    slug: '', // filled in by Publisher's slug-uniqueness loop
+    excerpt: r.excerpt,
+    content: r.content,
+    category: r.category,
+    tags: r.tags ?? [],
+    sourceLink: r.sourceLink ?? '',
+    sourceName: r.sourceName ?? '',
+    publishedAt: new Date().toISOString(),
+    imageUrl: '',
+  }));
+  // Re-attach the image URLs and original slugs from the pre-EIC `written`
+  // array (we lost them when mapping to ReviewedArticle).
+  for (let i = 0; i < approved.length; i++) {
+    const original = written.find((w) => w.title === approved[i].title);
+    if (original) {
+      writtenApproved[i].slug = original.slug;
+      writtenApproved[i].imageUrl = original.imageUrl;
+      writtenApproved[i].publishedAt = original.publishedAt;
+    }
+  }
+
   // 7. Publisher — slug uniqueness
   const newArticles: ExistingArticle[] = [];
-  for (const article of written) {
+  for (const article of writtenApproved) {
     let slug = article.slug;
     let attempt = 1;
     while (existingSlugs.has(slug)) {
@@ -214,7 +294,8 @@ async function main() {
     // Annotate that this article was voice-refreshed at publish time —
     // matches the field used by scripts/refresh-voice.ts so retroactive
     // and live runs share the same schema.
-    const stylized_i = stylized[written.indexOf(article)];
+    const stylized_i = stylized[written.findIndex((w) => w.title === article.title)];
+    const reviewed_i = reviewed.find((r) => r.title === article.title);
     const enriched: ExistingArticle = {
       ...article,
       slug,
@@ -222,6 +303,13 @@ async function main() {
         ? {
             voiceRefreshedAt: new Date().toISOString(),
             stylistNote: stylized_i.stylistNote,
+          }
+        : {}),
+      ...(reviewed_i
+        ? {
+            eicScore: reviewed_i.review.score,
+            eicNotes: reviewed_i.review.notes,
+            eicReviewedAt: new Date().toISOString(),
           }
         : {}),
     } as ExistingArticle;

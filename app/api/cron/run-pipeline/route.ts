@@ -4,6 +4,8 @@ import { preFilterStories, curateStories } from '@/lib/curate-stories';
 import { generateArticles } from '@/lib/generate-article';
 import { sourceImage } from '@/lib/source-image';
 import { optimizeSEO } from '@/lib/optimize-seo';
+import { reviewBatch } from '@/lib/editor-in-chief';
+import { sendDigest } from '@/lib/eic-digest';
 
 // CRON ENDPOINT — Hit by Vercel Cron every few hours.
 // This LIGHT pipeline runs Scout → Curator → Writer → Image → SEO,
@@ -59,8 +61,62 @@ export async function GET(request: Request) {
       a.imageUrl = result.url;
     }
 
+    // 5b. Editor-in-Chief — last gate before SEO/publish.
+    // Reviews each article on six dimensions and kills the weak ones.
+    // Killed pitches are bundled into a digest email to the operator.
+    console.log('📝 EIC: reviewing articles...');
+    const reviewed = await reviewBatch(articles, { concurrency: 3 });
+    const approved = reviewed.filter((r) => r.review.verdict === 'approved');
+    const killed = reviewed.filter((r) => r.review.verdict === 'killed');
+    console.log(`📝 EIC: ${approved.length} approved, ${killed.length} killed`);
+
+    // Fire-and-forget the digest email (non-blocking).
+    if (reviewed.length > 0) {
+      sendDigest({
+        killed,
+        approved,
+        runAt: new Date().toISOString(),
+      }).catch((err) => console.error('EIC digest send failed:', err));
+    }
+
+    if (approved.length === 0) {
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+      console.log('⚠️  EIC killed every article. Nothing to publish.');
+      return NextResponse.json({
+        ok: true,
+        elapsed,
+        stats: {
+          scouted: stories.length,
+          filtered: filtered.length,
+          curated: curated.length,
+          written: articles.length,
+          eicKilled: killed.length,
+          eicApproved: 0,
+        },
+        articles: [],
+      });
+    }
+
+    // From here on, only EIC-approved articles continue. Replace the
+    // articles array so SEO + dispatch only see what we're shipping.
+    // Re-attach the imageUrl from the original (the ReviewedArticle type
+    // doesn't carry the original GeneratedArticle's full shape).
+    const approvedTitles = new Set(approved.map((r) => r.title));
+    const articlesApproved = articles.filter((a) => approvedTitles.has(a.title));
+    // Splice in EIC-rewritten title/excerpt/content where the EIC adjusted them
+    // (EIC currently doesn't rewrite; it only judges — but if it ever does,
+    // this loop carries the changes through).
+    for (let i = 0; i < articlesApproved.length; i++) {
+      const r = approved.find((x) => x.title === articlesApproved[i].title);
+      if (r) {
+        articlesApproved[i].title = r.title;
+        articlesApproved[i].excerpt = r.excerpt;
+        articlesApproved[i].content = r.content;
+      }
+    }
+
     // 6. SEO pass
-    for (const a of articles) {
+    for (const a of articlesApproved) {
       const seo = await optimizeSEO({
         title: a.title,
         excerpt: a.excerpt,
@@ -75,7 +131,7 @@ export async function GET(request: Request) {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
     // Trigger GitHub Actions to do the publish step (commits articles.json + pushes)
-    if (process.env.GITHUB_DISPATCH_TOKEN && articles.length > 0) {
+    if (process.env.GITHUB_DISPATCH_TOKEN && articlesApproved.length > 0) {
       try {
         await fetch(
           'https://api.github.com/repos/sshangasi-ux/monokromatik-production/dispatches',
@@ -88,7 +144,10 @@ export async function GET(request: Request) {
             },
             body: JSON.stringify({
               event_type: 'agent-publish',
-              client_payload: { articles, generatedAt: new Date().toISOString() },
+              client_payload: {
+                articles: articlesApproved,
+                generatedAt: new Date().toISOString(),
+              },
             }),
           }
         );
@@ -106,8 +165,10 @@ export async function GET(request: Request) {
         filtered: filtered.length,
         curated: curated.length,
         written: articles.length,
+        eicKilled: killed.length,
+        eicApproved: approved.length,
       },
-      articles: articles.map((a) => ({
+      articles: articlesApproved.map((a) => ({
         slug: a.slug,
         title: a.title,
         category: a.category,
