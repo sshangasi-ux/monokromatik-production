@@ -19,6 +19,7 @@ import { dedupeAgainstPublished } from '../lib/dedupe-stories';
 import { generateArticles } from '../lib/generate-article';
 import type { GeneratedArticle } from '../lib/generate-article';
 import { stylizeBatch } from '../lib/stylist';
+import { sourceImage } from '../lib/source-image';
 
 // Load .env.local (so this script works locally)
 // In CI, the env is provided by GitHub Actions secrets
@@ -181,6 +182,25 @@ async function main() {
       content: s.content,
     };
   });
+
+  // 6c. Image Sourcer — validate the existing image, then scrape the
+  // sourceLink's og:image (real editorial photo from the source publication),
+  // falling back to Pexels/Unsplash only if those fail. This keeps every
+  // article visually rich with real subject photography rather than generic
+  // stock that breaks the publication's editorial tone.
+  log('\n🖼️  [IMAGE SOURCER] Validating + sourcing hero images...');
+  for (let i = 0; i < written.length; i++) {
+    const article = written[i];
+    const result = await sourceImage({
+      existingUrl: article.imageUrl,
+      sourceLink: article.sourceLink,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+    });
+    written[i] = { ...article, imageUrl: result.url };
+    log(`   [${i + 1}/${written.length}] ${result.source.padEnd(15)} → ${article.title.slice(0, 55)}`);
+  }
 
   // 7. Publisher — slug uniqueness
   const newArticles: ExistingArticle[] = [];
