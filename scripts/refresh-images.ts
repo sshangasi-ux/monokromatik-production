@@ -58,6 +58,7 @@ function looksBroken(url: string | undefined): boolean {
     /\/icon[-_./]/i,
     /\bemoji\b/i,
     /images\.unsplash\.com\/photo-1499781350541/i, // dead Unsplash fallback
+    /BellaNaija\.com_avatar/i, // BellaNaija site identity banner, not an article hero
   ];
   return REJECT.some((re) => re.test(url));
 }
@@ -210,7 +211,8 @@ async function scrapePageImages(pageUrl: string): Promise<ScrapedPage | null> {
         /\/favicon\b|\/logo[-_.]|\/icon[-_./]/i.test(src) ||
         /s\.w\.org\/images\/core\/emoji/i.test(src) ||
         /gravatar\.com\/avatar/i.test(src) ||
-        /\bsprite\b/i.test(src)
+        /\bsprite\b/i.test(src) ||
+        /BellaNaija\.com_avatar/i.test(src)
       ) {
         position++;
         continue;
@@ -355,9 +357,11 @@ async function pickBestImage(
   candidates.sort((a, b) => b.score - a.score);
 
   // Try candidates in score order, skipping already-used URLs and
-  // validating HEAD on the chosen one.
+  // validating HEAD on the chosen one. Also reject any URL that matches
+  // looksBroken (covers patterns added after this scraper was first written).
   for (const c of candidates) {
     if (usedUrls.has(c.url)) continue;
+    if (looksBroken(c.url)) continue;
     if (!(await isProbablyValidImage(c.url))) continue;
     return { url: c.url, source: c.source, score: c.score };
   }

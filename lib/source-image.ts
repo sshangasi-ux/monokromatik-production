@@ -46,6 +46,7 @@ const REJECT_PATH_PATTERNS = [
   /\bavatar\b/i,
   /[-_]small[-_.]/i,
   /\b(1|16|32|72|96|150)x\1\b/i,
+  /BellaNaija\.com_avatar/i, // BellaNaija site identity banner
 ];
 
 // Names some publishers seem to reuse as a default "African celebrity"
