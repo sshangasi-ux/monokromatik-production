@@ -36,9 +36,8 @@ const candidates: Story[] = [
     excerpt:
       "Asake's fourth album M$NEY topped the charts this week, his first solo number one. The fusion of Fuji and Amapiano is paying off.",
     source: 'Test Source',
-    sourceUrl: 'https://example.com',
     category: 'culture',
-    publishedAt: new Date().toISOString(),
+    pubDate: new Date().toISOString(),
   },
   // 2. Clear novel — totally different subject
   {
@@ -47,9 +46,8 @@ const candidates: Story[] = [
     excerpt:
       "Wizkid's Made in Lagos tour returns to the US with 12 stops including Madison Square Garden. Tickets go on sale Friday.",
     source: 'Test Source',
-    sourceUrl: 'https://example.com',
     category: 'music',
-    publishedAt: new Date().toISOString(),
+    pubDate: new Date().toISOString(),
   },
   // 3. Borderline — same artist (Awoniyi) we just covered, but a *different match*
   {
@@ -58,9 +56,8 @@ const candidates: Story[] = [
     excerpt:
       "Forest will be without their Nigerian striker for the trip to Manchester City after he picked up a knock in training.",
     source: 'Test Source',
-    sourceUrl: 'https://example.com',
     category: 'sports',
-    publishedAt: new Date().toISOString(),
+    pubDate: new Date().toISOString(),
   },
 ];
 

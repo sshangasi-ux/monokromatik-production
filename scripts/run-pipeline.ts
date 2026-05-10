@@ -111,12 +111,16 @@ async function main() {
   // ─── 5. Source images ──────────────────────────────────────────────
   log.step(5, TOTAL_STEPS, 'IMAGE SOURCER — fill missing hero images');
   for (const article of articles) {
-    article.imageUrl = await sourceImage({
+    // sourceImage returns { url, source } — extract just the URL.
+    // Pass sourceLink so the smart scraper can pull og:image / body images.
+    const result = await sourceImage({
       existingUrl: article.imageUrl,
+      sourceLink: article.sourceLink,
       title: article.title,
       excerpt: article.excerpt,
       category: article.category,
     });
+    article.imageUrl = result.url;
   }
   log.done(`${articles.length} articles have images`);
 
