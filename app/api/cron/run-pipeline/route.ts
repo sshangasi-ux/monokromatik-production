@@ -46,12 +46,17 @@ export async function GET(request: Request) {
 
     // 5. Images
     for (const a of articles) {
-      a.imageUrl = await sourceImage({
+      // sourceImage now returns { url, source } — we just want the URL.
+      // Pass sourceLink so the smart scraper can pull og:image / body images
+      // from the original article instead of falling back to stock photos.
+      const result = await sourceImage({
         existingUrl: a.imageUrl,
+        sourceLink: a.sourceLink,
         title: a.title,
         excerpt: a.excerpt,
         category: a.category,
       });
+      a.imageUrl = result.url;
     }
 
     // 6. SEO pass
