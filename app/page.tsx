@@ -82,7 +82,10 @@ export default function Home() {
 
   // Get featured and latest articles
   const featuredArticle = articlesByCategory.all[0];
-  const latestArticles = articlesByCategory.all.slice(0, 5);
+  // Cap at 7 — enough to fill 1 featured + 6 cards in the Latest grid.
+  // The catalog is currently 7 articles strong after the EIC audit; scales
+  // naturally as the agent fleet ships more.
+  const latestArticles = articlesByCategory.all.slice(0, 7);
 
   return (
     <div className="min-h-screen bg-mono-white">
@@ -165,7 +168,7 @@ export default function Home() {
                   <StoryCard article={featuredArticle} featured />
                 </div>
               )}
-              {latestArticles.slice(1, 5).map((article) => (
+              {latestArticles.slice(1, 7).map((article) => (
                 <StoryCard key={article.slug} article={article} />
               ))}
             </div>
