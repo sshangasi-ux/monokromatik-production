@@ -165,7 +165,7 @@ export default async function CategoryPage({
               {articles.map((article) => {
                 const readingTime = getReadingTime(article.content);
                 const fallback =
-                  'https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop';
+                  '/fallback-hero.svg';
                 return (
                   <Link
                     key={article.slug}

@@ -1,12 +1,15 @@
-'use client';
-
-import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Play, TrendingUp, Mic, ShoppingBag, ArrowRight, Users, Globe } from 'lucide-react';
 import Navigation from './components/Navigation';
 import NewsletterSignup from './components/NewsletterSignup';
 import TrendingArticles from './components/TrendingArticles';
 import { getAllArticles, getReadingTime, formatDate } from '../lib/articles';
+
+// Force the homepage to revalidate every 60s. Without this, Next.js was
+// serving a stale prerender for days after data/articles.json updated
+// during agent runs. Article-detail pages already have revalidate = 300
+// at app/article/[id]/page.tsx; this brings the homepage in line.
+export const revalidate = 60;
 
 interface StoryCardProps {
   article: {
@@ -23,7 +26,7 @@ interface StoryCardProps {
 
 function StoryCard({ article, featured = false }: StoryCardProps) {
   const readingTime = getReadingTime(article.content);
-  const defaultImage = 'https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop';
+  const defaultImage = '/fallback-hero.svg';
 
   return (
     <Link
@@ -56,30 +59,26 @@ function StoryCard({ article, featured = false }: StoryCardProps) {
 }
 
 export default function Home() {
-  // Load articles using useMemo to prevent recalculation on every render
-  const articles = useMemo(() => getAllArticles(), []);
+  // Server-component data load — reads data/articles.json on each
+  // revalidation window (60s). No useMemo/useState needed since we
+  // never re-render on the client; the server re-fetches on revalidate.
+  const articles = getAllArticles();
 
   // Group articles by category
-  const articlesByCategory = useMemo(() => {
-    return {
-      culture: articles.filter(a => a.category.toLowerCase() === 'culture'),
-      music: articles.filter(a => a.category.toLowerCase() === 'music'),
-      sports: articles.filter(a => a.category.toLowerCase() === 'sports'),
-      entertainment: articles.filter(a => a.category.toLowerCase() === 'entertainment'),
-      all: articles,
-    };
-  }, [articles]);
+  const articlesByCategory = {
+    culture: articles.filter(a => a.category.toLowerCase() === 'culture'),
+    music: articles.filter(a => a.category.toLowerCase() === 'music'),
+    sports: articles.filter(a => a.category.toLowerCase() === 'sports'),
+    entertainment: articles.filter(a => a.category.toLowerCase() === 'entertainment'),
+    all: articles,
+  };
 
   // Honest stats — no Math.random, no fake numbers
-  const stats = useMemo(
-    () => ({
-      articles: articles.length,
-      // These two are static placeholders. Update when GA4 confirms real data.
-      countries: Math.max(1, articles.length), // grows with article count as a soft signal
-      sources: 20, // 20 RSS feeds in lib/rss-feeds.ts
-    }),
-    [articles]
-  );
+  const stats = {
+    articles: articles.length,
+    countries: Math.max(1, articles.length),
+    sources: 20,
+  };
 
   // Get featured and latest articles
   const featuredArticle = articlesByCategory.all[0];
@@ -93,7 +92,7 @@ export default function Home() {
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden bg-mono-black">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=1920&h=1080&fit=crop"
+            src="/fallback-hero.svg"
             alt="African Culture"
             className="w-full h-full object-cover opacity-40"
           />

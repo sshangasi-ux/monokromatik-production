@@ -1,13 +1,15 @@
 // MonoKromatik Image Sourcer Agent
-// Strategy: validate any existing image -> hotlink og:image from sourceLink
-// -> Pexels search (last resort) -> hardcoded fallback.
+// Strategy: validate any existing image -> hotlink best image from sourceLink
+// page using a scored multi-candidate scrape (og:image, twitter:image,
+// body images all scored against article title, best match wins) ->
+// Pexels search (last resort) -> hardcoded fallback.
 //
-// Why hotlink og:image first:
-//   Every modern news site embeds og:image meta tags pointing at the
-//   editorial hero photo they used. That's already the *real* photo of
-//   the artist/athlete/event the article covers — clean editorial
-//   photography that beats generic Pexels stock every time. We use the
-//   exact same approach as WhatsApp / iMessage / Slack link previews.
+// Why scored multi-candidate scraping:
+//   Some publishers (e.g. BellaNaija) have buggy og:image meta tags that
+//   point at the wrong photo for an article. We can't trust og:image
+//   blindly. Instead we collect multiple candidates from the same page,
+//   score them against the article's actual title, and pick the highest
+//   match. Same approach LinkedIn / WhatsApp use to disambiguate.
 
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -18,13 +20,16 @@ function getUnsplashKey(): string | undefined {
   return process.env.UNSPLASH_ACCESS_KEY;
 }
 
-const FALLBACK =
-  'https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=1600&h=900&fit=crop';
+// Last-resort hardcoded fallback. A self-hosted branded SVG that renders
+// MonoKromatik wordmark + amber accent on a black field. Always reachable
+// (lives in public/), no third-party CDN dependency. The agent pipeline
+// emits the absolute production URL so it works in newsletters / OG cards
+// / RSS where the consumer can't resolve relative paths.
+const FALLBACK = 'https://www.monokromatik.com/fallback-hero.svg';
 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
-// Hosts/path patterns that we never accept as hero images.
 const REJECT_HOST_PATTERNS = [
   /s\.w\.org\/images\/core\/emoji/i,
   /\/wp-includes\/images\/(smilies|emoji)/i,
@@ -43,17 +48,18 @@ const REJECT_PATH_PATTERNS = [
   /\b(1|16|32|72|96|150)x\1\b/i,
 ];
 
+// Names some publishers seem to reuse as a default "African celebrity"
+// hero across unrelated articles (BellaNaija reuses Bonang Matheba photo
+// across multiple unrelated articles). When these names appear in an
+// image URL but NOT in the article title, the image is wrong.
+const COMMONLY_REUSED_NAMES = ['bonang', 'matheba'];
+
 function isPatternRejected(url: string): boolean {
   if (REJECT_HOST_PATTERNS.some((re) => re.test(url))) return true;
   if (REJECT_PATH_PATTERNS.some((re) => re.test(url))) return true;
   return false;
 }
 
-/**
- * HEAD probe to confirm the URL points at a real image of reasonable size.
- * Tolerant: if HEAD is rejected by the CDN (some block it), we accept the
- * URL — better to ship a possibly-broken image than fall back to stock.
- */
 async function isProbablyValidImage(url: string): Promise<boolean> {
   if (isPatternRejected(url)) return false;
   try {
@@ -75,16 +81,53 @@ async function isProbablyValidImage(url: string): Promise<boolean> {
     }
     return true;
   } catch {
-    return true; // HEAD rejected — accept anyway
+    return true;
   }
 }
 
-/**
- * Scrape og:image / twitter:image from the article's source page.
- * This is the same trick WhatsApp/iMessage use to make link previews.
- * Returns null if the page has none or fetch fails.
- */
-async function scrapeOgImage(pageUrl: string): Promise<string | null> {
+function tokenize(text: string): Set<string> {
+  const stop = new Set([
+    'the','a','an','and','or','but','is','isnt','arent','just','in','on',
+    'at','to','for','of','with','this','that','it','its','has','have','had',
+    'will','was','are','be','as','by','from','we','us','our','my','your',
+    'who','what','when','where','why','how','into','about','over','under',
+    'after','before','between','every','some','all','no','not','one','two',
+    'three','first','last','next','new','good','said','says','can','cant',
+    'cannot','do','does','did','go','goes','went','get','got','made','make',
+    'now','then','than','because','so','while','until','up','down','out',
+    'off','most','many','much','more','less','few','each','any','only',
+    'own','same','such','too','very',
+  ]);
+  return new Set(
+    text.toLowerCase()
+      .replace(/['']/g, '')
+      .replace(/[^a-z0-9\s-]/g, ' ')
+      .split(/[\s-]+/)
+      .filter((t) => t.length > 2 && !stop.has(t))
+  );
+}
+
+function nameTokens(text: string): Set<string> {
+  return new Set(
+    text.toLowerCase()
+      .replace(/['']/g, '')
+      .replace(/[^a-z0-9\s-_/]/g, ' ')
+      .split(/[\s_\-/.]+/)
+      .filter((t) => t.length > 3)
+  );
+}
+
+interface ScrapedImage {
+  url: string;
+  source: 'og:image' | 'twitter:image' | 'body';
+  alt: string;
+  position: number;
+}
+
+async function scrapeAllImages(pageUrl: string): Promise<{
+  candidates: ScrapedImage[];
+  ogImageAlt: string;
+}> {
   try {
     const ctrl = new AbortController();
     const timeout = setTimeout(() => ctrl.abort(), 12_000);
@@ -93,34 +136,121 @@ async function scrapeOgImage(pageUrl: string): Promise<string | null> {
       signal: ctrl.signal,
     }).finally(() => clearTimeout(timeout));
 
-    if (!res.ok) return null;
-    const html = (await res.text()).slice(0, 200_000);
+    if (!res.ok) return { candidates: [], ogImageAlt: '' };
+    const html = (await res.text()).slice(0, 400_000);
 
-    const patterns: RegExp[] = [
+    const resolveUrl = (u: string): string => {
+      let imgUrl = u.trim();
+      if (imgUrl.startsWith('//')) imgUrl = 'https:' + imgUrl;
+      else if (imgUrl.startsWith('/')) {
+        const base = new URL(pageUrl);
+        imgUrl = `${base.protocol}//${base.host}${imgUrl}`;
+      }
+      return imgUrl;
+    };
+
+    const candidates: ScrapedImage[] = [];
+
+    // og:image:alt
+    let ogImageAlt = '';
+    const altRe = /<meta[^>]+property=["']og:image:alt["'][^>]+content=["']([^"']+)["']/i;
+    const altMatch = altRe.exec(html);
+    if (altMatch) ogImageAlt = altMatch[1];
+
+    // og:image
+    const ogPatterns = [
       /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
       /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
       /<meta[^>]+property=["']og:image:secure_url["'][^>]+content=["']([^"']+)["']/i,
+    ];
+    for (const re of ogPatterns) {
+      const m = re.exec(html);
+      if (m && m[1]) {
+        candidates.push({
+          url: resolveUrl(m[1]),
+          source: 'og:image',
+          alt: ogImageAlt,
+          position: 0,
+        });
+        break;
+      }
+    }
+
+    // twitter:image
+    const twPatterns = [
       /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
       /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i,
     ];
-
-    for (const pattern of patterns) {
-      const match = pattern.exec(html);
-      if (match && match[1]) {
-        let imgUrl = match[1].trim();
-        if (imgUrl.startsWith('//')) imgUrl = 'https:' + imgUrl;
-        else if (imgUrl.startsWith('/')) {
-          const base = new URL(pageUrl);
-          imgUrl = `${base.protocol}//${base.host}${imgUrl}`;
+    for (const re of twPatterns) {
+      const m = re.exec(html);
+      if (m && m[1]) {
+        const tu = resolveUrl(m[1]);
+        if (!candidates.some((c) => c.url === tu)) {
+          candidates.push({
+            url: tu,
+            source: 'twitter:image',
+            alt: ogImageAlt,
+            position: 0,
+          });
         }
-        if (isPatternRejected(imgUrl)) continue;
-        return imgUrl;
+        break;
       }
     }
-    return null;
+
+    // Body <img> tags
+    const imgTagRe = /<img[^>]+>/gi;
+    let imgMatch: RegExpExecArray | null;
+    let position = 0;
+    while ((imgMatch = imgTagRe.exec(html)) !== null && candidates.length < 20) {
+      const tag = imgMatch[0];
+      const srcMatch = /\bsrc=["']([^"']+)["']/i.exec(tag);
+      if (!srcMatch) continue;
+      const src = resolveUrl(srcMatch[1]);
+      if (
+        src.startsWith('data:') ||
+        isPatternRejected(src)
+      ) {
+        position++;
+        continue;
+      }
+      const altMatchTag = /\balt=["']([^"']*)["']/i.exec(tag);
+      candidates.push({
+        url: src,
+        source: 'body',
+        alt: altMatchTag?.[1] ?? '',
+        position: position++,
+      });
+    }
+
+    return { candidates, ogImageAlt };
   } catch {
-    return null;
+    return { candidates: [], ogImageAlt: '' };
   }
+}
+
+function scoreCandidate(c: ScrapedImage, title: string): number {
+  const titleTokens = tokenize(title);
+  const urlTokens = nameTokens(c.url);
+  const altTokens = tokenize(c.alt);
+
+  let score = 0;
+  for (const token of titleTokens) {
+    if (token.length < 4) continue;
+    if (urlTokens.has(token)) score += 30;
+    if (altTokens.has(token)) score += 20;
+  }
+  for (const reusedName of COMMONLY_REUSED_NAMES) {
+    if (urlTokens.has(reusedName) && !titleTokens.has(reusedName)) {
+      score -= 80;
+    }
+  }
+  if (/1440x720|1200x630|1080x|hero|featured/i.test(c.url)) score += 10;
+  if (/\b(150|200|300|400)x\d+/i.test(c.url)) score -= 5;
+  if (c.source === 'og:image') score += 15;
+  else if (c.source === 'twitter:image') score += 12;
+  else score += Math.max(0, 10 - c.position);
+
+  return score;
 }
 
 function getClient() {
@@ -144,7 +274,7 @@ async function buildImageQuery(
 Excerpt: "${excerpt}"
 Category: ${category}
 
-Generate a 2-5 word image search query that would find a strong, editorial-style photo for this article on a stock photo site. Focus on the visual subject (people, place, object, mood). Avoid named individuals (rights issues — search for the *concept* instead, e.g. "young Nigerian musician" not "Burna Boy"). Reply with the query only, no quotes.`,
+Generate a 2-5 word image search query. Focus on the visual subject. Avoid named individuals. Reply with the query only, no quotes.`,
         },
       ],
     });
@@ -196,10 +326,10 @@ async function tryUnsplash(query: string): Promise<string | null> {
  *
  * Strategy:
  *   1. If existingUrl is a real image → use it.
- *   2. Scrape og:image from the article's sourceLink page (this is the move
- *      that gives us real editorial photos instead of generic stock).
- *   3. Last-resort fallback: Pexels/Unsplash search by Claude-generated query.
- *   4. If everything fails: hardcoded fallback URL.
+ *   2. Scrape sourceLink page, score all candidate images (og:image,
+ *      twitter:image, body images) against article title, pick best.
+ *   3. Stock photo fallback: Pexels/Unsplash.
+ *   4. Hardcoded fallback URL.
  */
 export async function sourceImage(args: {
   existingUrl?: string;
@@ -209,7 +339,7 @@ export async function sourceImage(args: {
   category: string;
 }): Promise<{
   url: string;
-  source: 'existing' | 'sourceLink-og' | 'pexels' | 'unsplash' | 'fallback';
+  source: 'existing' | 'sourceLink-og' | 'sourceLink-twitter' | 'sourceLink-body' | 'pexels' | 'unsplash' | 'fallback';
 }> {
   // Step 1: validate existing
   if (args.existingUrl && args.existingUrl.startsWith('http')) {
@@ -221,18 +351,30 @@ export async function sourceImage(args: {
     );
   }
 
-  // Step 2: scrape og:image from sourceLink (preferred path)
+  // Step 2: scrape and score images from sourceLink
   if (args.sourceLink && args.sourceLink.startsWith('http')) {
-    const scraped = await scrapeOgImage(args.sourceLink);
-    if (scraped && (await isProbablyValidImage(scraped))) {
-      console.log(`   ✅ scraped og:image from source: ${scraped.slice(0, 80)}`);
-      return { url: scraped, source: 'sourceLink-og' };
+    const { candidates } = await scrapeAllImages(args.sourceLink);
+    if (candidates.length > 0) {
+      // Score and sort
+      const scored = candidates
+        .map((c) => ({ ...c, score: scoreCandidate(c, args.title) }))
+        .sort((a, b) => b.score - a.score);
+
+      // Try in score order, validating each
+      for (const c of scored) {
+        if (await isProbablyValidImage(c.url)) {
+          const sourceTag =
+            c.source === 'og:image'
+              ? 'sourceLink-og'
+              : c.source === 'twitter:image'
+              ? 'sourceLink-twitter'
+              : 'sourceLink-body';
+          console.log(`   ✅ ${sourceTag} (score=${c.score}): ${c.url.slice(0, 70)}`);
+          return { url: c.url, source: sourceTag as any };
+        }
+      }
     }
-    if (scraped) {
-      console.log(`   🛑 Source og:image failed validation: ${scraped.slice(0, 80)}`);
-    } else {
-      console.log(`   🛑 Source page had no og:image`);
-    }
+    console.log(`   🛑 No valid image candidates on source page`);
   }
 
   // Step 3: stock photo fallback
