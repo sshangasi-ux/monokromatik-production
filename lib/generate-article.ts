@@ -150,13 +150,10 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
     });
 
     const responseText = message.content[0].type === 'text' ? message.content[0].text : '';
-    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-
-    if (!jsonMatch) {
-      throw new Error('Failed to extract JSON from Claude response');
+    const result = parseWriterResponseSafely(responseText);
+    if (!result) {
+      throw new Error('Writer response had no parseable article structure');
     }
-
-    const result = JSON.parse(jsonMatch[0]);
 
     // Create slug from title
     const slug = result.title
@@ -213,4 +210,100 @@ export async function generateArticles(stories: Story[]): Promise<GeneratedArtic
   console.log(`\n✅ Generated ${articles.length} articles successfully!\n`);
 
   return articles;
+}
+
+interface WriterResult {
+  title: string;
+  content: string;
+  excerpt: string;
+  tags: string[];
+}
+
+/**
+ * Parse the Writer's JSON response with fallback to lenient extraction.
+ *
+ * The Writer's response is uniquely fragile to JSON.parse() because the
+ * `content` field is a 1000-1200 word markdown body that very often
+ * contains:
+ *   - Quoted dialogue ("They told us...")
+ *   - Apostrophes in contractions (we're, it's, that's)
+ *   - Asterisks and underscores from markdown emphasis
+ *   - Curly quotes from copy-pasted quotes
+ *
+ * Claude tries to escape these but sometimes misses one, and strict
+ * JSON.parse blows up. We saw this on the BNXN/Sarz article in today's
+ * local run.
+ *
+ * Strategy:
+ *   1. Try strict JSON.parse on the matched {...} block. Works ~75% of
+ *      the time. Cheapest path.
+ *   2. If that fails, extract each field with anchored regex. We use
+ *      field-name anchors ("title":, "content":, etc) and read until
+ *      the next field-name OR closing brace. This is tolerant of any
+ *      number of unescaped quotes inside the value.
+ *
+ * Returns null only if no usable article structure exists.
+ */
+function parseWriterResponseSafely(responseText: string): WriterResult | null {
+  // Find the outermost JSON-like block first
+  const start = responseText.indexOf('{');
+  const end = responseText.lastIndexOf('}');
+  if (start === -1 || end === -1) return null;
+
+  const jsonBlock = responseText.slice(start, end + 1);
+
+  // Fast path: strict parse
+  try {
+    const strict = JSON.parse(jsonBlock);
+    if (strict && typeof strict.title === 'string' && typeof strict.content === 'string') {
+      return {
+        title: strict.title,
+        content: strict.content,
+        excerpt: strict.excerpt ?? '',
+        tags: Array.isArray(strict.tags) ? strict.tags : [],
+      };
+    }
+  } catch {
+    console.warn('   ⚠️  Writer JSON had quote-escaping issues. Falling back to lenient parser.');
+  }
+
+  // Lenient path: field-anchored extraction. Each field is read from its
+  // key opening quote up until the start of the next known field key OR
+  // the final closing brace. We treat unescaped quotes inside the value
+  // as legitimate content.
+  const extractStringField = (key: string): string => {
+    // Anchor: "key": "<content>" then either ,\s*"next-key" or }\s*$
+    const pattern = new RegExp(
+      `"${key}"\\s*:\\s*"([\\s\\S]*?)"\\s*(?:,\\s*"(?:title|content|excerpt|tags)"|}\\s*$)`,
+      'm'
+    );
+    const m = pattern.exec(jsonBlock);
+    if (!m) return '';
+    // Decode JSON-style escape sequences within the captured value
+    return m[1]
+      .replace(/\\n/g, '\n')
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, '\\')
+      .replace(/\\t/g, '\t')
+      .trim();
+  };
+
+  const extractTagsArray = (): string[] => {
+    // Tags is an array; pull the contents between [ and ] after "tags":
+    const m = /"tags"\s*:\s*\[([\s\S]*?)\]/m.exec(jsonBlock);
+    if (!m) return [];
+    return [...m[1].matchAll(/"([^"\\]*(?:\\.[^"\\]*)*)"/g)]
+      .map((tagMatch) => tagMatch[1].replace(/\\"/g, '"').trim())
+      .filter(Boolean);
+  };
+
+  const title = extractStringField('title');
+  const content = extractStringField('content');
+  const excerpt = extractStringField('excerpt');
+  const tags = extractTagsArray();
+
+  // Need title + content at minimum to publish
+  if (!title || !content) return null;
+
+  return { title, content, excerpt, tags };
 }
