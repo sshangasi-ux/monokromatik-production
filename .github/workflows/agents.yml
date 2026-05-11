@@ -42,6 +42,14 @@ jobs:
       - name: Run agent pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # EIC digest emailer — sends a daily killed-pitches report to the
+          # operator. Free tier on Resend (3,000 emails/month).
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
+          # Pexels fallback for the smart image scraper. Used only when
+          # the source page has no usable photo (e.g., body images are all
+          # publisher avatars or the og:image is broken).
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           NODE_ENV: production
         run: |
           npm run agents -- --count=${{ github.event.inputs.count || '3' }}
