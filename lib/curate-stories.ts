@@ -4,10 +4,24 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { Story } from './rss-feeds';
 
-// Initialize Anthropic client
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+// IMPORTANT: lazy-initialize the Anthropic client.
+//
+// Why: when run-agents.ts imports this module, ES module hoisting means
+// this file's top-level code (including any `new Anthropic({...})`) runs
+// BEFORE run-agents.ts gets to parse .env.local. If we eagerly create the
+// client at module load, apiKey resolves to undefined and every call
+// fails with: "Could not resolve authentication method."
+//
+// All other agents (writer, stylist, EIC) lazy-init for this same reason.
+// Curator was the lone holdout — caused every CI run to fall back to
+// 'recent stories' silently. Fixed 2026-05-11.
+let _anthropic: Anthropic | null = null;
+function getClient(): Anthropic {
+  if (!_anthropic) {
+    _anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  }
+  return _anthropic;
+}
 
 /**
  * Curate stories using Claude API
@@ -81,7 +95,7 @@ OUTPUT FORMAT (JSON only, no explanation):
 Return the top ${limit} stories ranked by score (highest first).`;
 
   try {
-    const message = await anthropic.messages.create({
+    const message = await getClient().messages.create({
       model: 'claude-sonnet-4-5',
       max_tokens: 2000,
       messages: [

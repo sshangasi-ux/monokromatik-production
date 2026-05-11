@@ -156,14 +156,13 @@ Return one decision object per candidate, in the same order. Do not skip candida
       return { novel: candidates, rejected: [] };
     }
 
-    const parsed = JSON.parse(text.slice(start, end + 1)) as {
-      decisions: Array<{
-        candidate_index: number;
-        verdict: 'novel' | 'duplicate';
-        duplicate_of_slug: string | null;
-        reason: string;
-      }>;
-    };
+    const parsed = parseDedupeResponseSafely(text.slice(start, end + 1));
+    if (!parsed) {
+      console.warn(
+        '⚠️  Dedupe: response was unparseable JSON. Falling open (all novel).'
+      );
+      return { novel: candidates, rejected: [] };
+    }
 
     const novel: Story[] = [];
     const rejected: DedupeResult['rejected'] = [];
@@ -198,4 +197,78 @@ Return one decision object per candidate, in the same order. Do not skip candida
     );
     return { novel: candidates, rejected: [] };
   }
+}
+
+interface DedupeDecision {
+  candidate_index: number;
+  verdict: 'novel' | 'duplicate';
+  duplicate_of_slug: string | null;
+  reason: string;
+}
+
+/**
+ * Try strict JSON.parse first. On failure, fall back to a lenient parser
+ * that extracts each decision via regex. Same pattern used by Stylist and
+ * EIC for the same reason — long Claude responses occasionally contain an
+ * unescaped quote inside a free-text "reason" field, breaking strict JSON.
+ *
+ * The lenient path tolerates:
+ *   - Unescaped quotes in `reason` fields
+ *   - Trailing commas
+ *   - Newlines inside strings
+ *   - JS-style comments (rare but seen)
+ *
+ * Returns null only if no decisions can be salvaged at all.
+ */
+function parseDedupeResponseSafely(
+  jsonLike: string
+): { decisions: DedupeDecision[] } | null {
+  // Fast path — strict parse works ~95% of the time.
+  try {
+    const strict = JSON.parse(jsonLike) as { decisions: DedupeDecision[] };
+    if (strict && Array.isArray(strict.decisions)) {
+      return strict;
+    }
+  } catch {
+    // fall through to lenient
+  }
+
+  // Lenient path — walk each decision object via regex. Match the
+  // candidate_index + verdict pair first (both are well-formed and easy to
+  // anchor on), then extract the optional string fields with a relaxed
+  // matcher that tolerates unescaped quotes.
+  const decisions: DedupeDecision[] = [];
+  const decisionRegex =
+    /"candidate_index"\s*:\s*(\d+)\s*,\s*"verdict"\s*:\s*"(novel|duplicate)"/g;
+
+  let match: RegExpExecArray | null;
+  while ((match = decisionRegex.exec(jsonLike)) !== null) {
+    const candidate_index = Number(match[1]);
+    const verdict = match[2] as 'novel' | 'duplicate';
+
+    // Look ahead from the verdict match for the slug + reason fields
+    // within a reasonable window (~500 chars covers any well-behaved
+    // decision object).
+    const window = jsonLike.slice(match.index, match.index + 500);
+
+    let duplicate_of_slug: string | null = null;
+    const slugMatch = /"duplicate_of_slug"\s*:\s*(?:"([^"]*)"|null)/.exec(window);
+    if (slugMatch && slugMatch[1] !== undefined) {
+      duplicate_of_slug = slugMatch[1] || null;
+    }
+
+    let reason = '';
+    // Match "reason": "..." where the value runs until either a closing quote
+    // followed by , or }, OR the next decision starts. Lenient — tolerates
+    // unescaped quotes inside the reason string.
+    const reasonMatch = /"reason"\s*:\s*"((?:[^"\\]|\\.)*)/.exec(window);
+    if (reasonMatch) {
+      reason = reasonMatch[1].replace(/\\"/g, '"').replace(/\\n/g, ' ').trim();
+    }
+
+    decisions.push({ candidate_index, verdict, duplicate_of_slug, reason });
+  }
+
+  if (decisions.length === 0) return null;
+  return { decisions };
 }
