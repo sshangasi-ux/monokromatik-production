@@ -141,11 +141,42 @@ function determineMediaType(story: Story): 'image' | 'video' | 'text' {
 }
 
 /**
+ * Per-feed timeout for parseURL.
+ *
+ * Without this, a single hanging RSS endpoint can stall the entire Scout
+ * step indefinitely (rss-parser has no built-in timeout for the underlying
+ * fetch). When the pipeline runs in GitHub Actions, that hang eats the full
+ * 15-minute job timeout and the run gets cancelled with zero output.
+ *
+ * Diagnosed 2026-05-15: runs #14 (May 14) and #15 (May 15) both cancelled
+ * at exactly 15:20-15:27. Healthy runs finish in 5 minutes. The 3x slowdown
+ * was a single hung feed.
+ *
+ * 10 seconds is generous — BellaNaija and CompleteSports respond in <1s on
+ * a good day. Anything slower than 10s is unhealthy and we'd rather skip it
+ * than wait.
+ */
+const FEED_TIMEOUT_MS = 10_000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
+    ),
+  ]);
+}
+
+/**
  * Fetch stories from a single RSS feed
  */
 async function fetchFromFeed(feed: RSSFeed): Promise<Story[]> {
   try {
-    const parsed = await parser.parseURL(feed.url);
+    const parsed = await withTimeout(
+      parser.parseURL(feed.url),
+      FEED_TIMEOUT_MS,
+      `${feed.name} parseURL`
+    );
     
     const stories: Story[] = parsed.items.map(item => {
       const content = extractContent(item);
