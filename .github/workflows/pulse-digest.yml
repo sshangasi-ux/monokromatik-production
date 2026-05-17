@@ -46,7 +46,17 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        # Use `npm install` instead of `npm ci`. CI on linux x64 can disagree
+        # with our local macOS arm64 lockfile on optional native deps
+        # (sharp, @next/swc-*, lightningcss native modules etc), and `npm ci`
+        # treats any such drift as a hard failure. `npm install` lets it
+        # reconcile, which is fine since this job is operator-only and the
+        # critical correctness lives in the rendered email content, not in
+        # build-time native modules.
+        #
+        # Same pattern used by .github/workflows/agents.yml — keep these in
+        # sync.
+        run: npm install --no-audit --no-fund
 
       - name: Send Pulse
         env:
