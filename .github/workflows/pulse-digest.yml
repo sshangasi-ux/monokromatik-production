@@ -1,0 +1,73 @@
+name: MonoKromatik Sunday Pulse
+
+# Sends the weekly Sunday digest to all Kit subscribers.
+#
+# Schedule: every Sunday at 06:00 UTC = 08:00 SAST.
+# This matches the homepage promise: "Every Sunday, 8AM SAST."
+#
+# Trigger sources:
+#   - schedule  : the weekly cron (production path)
+#   - dispatch  : manual via Actions UI ("Run workflow" button), useful
+#                 for the first real send when we want operator control.
+#
+# Safety:
+#   - The orchestrator script skips automatically if 0 articles were
+#     published in the last 7 days. We don't ship empty emails.
+#   - Manual dispatch supports a dry-run flag to render-and-skip.
+
+on:
+  schedule:
+    - cron: '0 6 * * 0'  # Sunday 06:00 UTC = 08:00 SAST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Render but do not send (writes preview to artifacts)'
+        type: boolean
+        default: false
+      since_days:
+        description: 'Lookback window (default 7 days)'
+        required: false
+        default: '7'
+
+jobs:
+  send-pulse:
+    name: Render and send Sunday Pulse
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Send Pulse
+        env:
+          # Kit broadcast — same key used by the on-site signup form.
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_FORM_ID: ${{ secrets.KIT_FORM_ID }}
+          NODE_ENV: production
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            npm run pulse -- --dry-run --since=${{ github.event.inputs.since_days || '7' }}
+          else
+            npm run pulse -- --since=${{ github.event.inputs.since_days || '7' }}
+          fi
+
+      - name: Upload preview as artifact
+        # Always run, even if the send was a no-op (0 articles). The
+        # preview file is the audit trail for whatever happened.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pulse-preview-${{ github.run_number }}
+          path: .pulse-previews/
+          if-no-files-found: ignore
+          retention-days: 30

@@ -11,7 +11,9 @@
     "generate:articles": "tsx scripts/generate-articles.ts",
     "agents": "tsx scripts/run-agents.ts",
     "agents:dry": "tsx scripts/run-agents.ts -- --dry",
-    "agents:local": "tsx scripts/run-agents.ts -- --no-push"
+    "agents:local": "tsx scripts/run-agents.ts -- --no-push",
+    "pulse": "tsx scripts/send-pulse-digest.ts",
+    "pulse:dry": "tsx scripts/send-pulse-digest.ts -- --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

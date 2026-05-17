@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# pulse digest local previews (we save these on every `npm run pulse` run
+# so we can inspect what was rendered; they're operator-only and don't
+# belong in the repo)
+/.pulse-previews
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
