@@ -3,6 +3,7 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import { Story } from './rss-feeds';
+import { fetchArticleBody } from './fetch-article-body';
 
 export interface GeneratedArticle {
   title: string;
@@ -33,6 +34,27 @@ function getAnthropicClient() {
 export async function generateArticle(story: Story): Promise<GeneratedArticle> {
   console.log(`\n✍️  Generating article: "${story.title}"\n`);
 
+  // Fetch the full source article body for context. Critical for sources
+  // (Complete Sports, NotJustOk, etc.) whose RSS only ships a short snippet.
+  // BellaNaija's RSS already includes near-full content but the explicit
+  // fetch normalizes the input across all sources.
+  //
+  // If fetch fails (404, timeout, no <article> tag, etc.) we fall through
+  // with sourceBody = '' and the prompt uses the RSS excerpt alone, which
+  // is the pre-2026-05-17 behavior.
+  let sourceBody = '';
+  try {
+    const body = await fetchArticleBody(story.link);
+    if (body) {
+      sourceBody = body;
+      console.log(`   📖 Fetched source body: ${body.length} chars / ${body.split(/\s+/).length} words`);
+    } else {
+      console.log(`   ⚠️  Source body not available — falling back to RSS excerpt only`);
+    }
+  } catch (err) {
+    console.log(`   ⚠️  Source fetch threw — falling back to RSS excerpt: ${err instanceof Error ? err.message : 'unknown'}`);
+  }
+
   const prompt = `You are the lead writer for MonoKromatik Network - an AI-powered African culture/sports/entertainment platform serving 1.4 billion Africans + diaspora worldwide.
 
 YOUR MISSION: Transform this story into a publication-quality article that makes diaspora readers feel connected to home.
@@ -45,6 +67,20 @@ EXCERPT: ${story.excerpt}
 LINK: ${story.link}
 HAS IMAGE: ${story.imageUrl ? 'YES' : 'NO'}
 HAS VIDEO: ${story.videoUrl ? 'YES' : 'NO'}
+${
+    sourceBody
+      ? `
+FULL SOURCE ARTICLE (extracted from the original publisher's page):
+"""
+${sourceBody}
+"""
+
+IMPORTANT: Use the FULL SOURCE ARTICLE above as your factual ground truth. The names, dates, scores, quotes, and specific details in the source are real and must be preserved accurately. Do NOT invent details, opponents, venues, scores, or quotes that aren't in the source. Your job is to RE-ANGLE this factual material for the diaspora audience in MonoKromatik's voice — not to fabricate context that isn't there.
+`
+      : `
+NOTE: The full source article could not be fetched. Work from the title + excerpt above. Be VERY conservative about specific factual claims (scores, dates, names) since we can't verify them. If you're unsure of a detail, write around it rather than guessing.
+`
+}
 
 MONOKROMATIK BRAND VOICE (from Strategic Framework):
 - **Energetic, not academic**: Short punchy sentences. No jargon. No "furthermore" or "moreover"
