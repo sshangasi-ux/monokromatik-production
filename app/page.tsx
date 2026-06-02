@@ -1,191 +1,256 @@
 import Link from 'next/link';
-import { ArrowRight, Database, Globe, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Database, Mic, Sparkles } from 'lucide-react';
 import Navigation from './components/Navigation';
+import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
-import { getAllArticles, getReadingTime } from '../lib/articles';
-
-interface Article {
-  title: string;
-  slug: string;
-  excerpt: string;
-  category: string;
-  imageUrl?: string;
-  publishedAt: string;
-  content: string;
-}
+import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
 
 export const revalidate = 60;
 
-function StoryCard({ article, large = false }: { article: Article; large?: boolean }) {
+function DispatchCard({ article, feature = false }: { article: Article; feature?: boolean }) {
   return (
-    <Link href={`/article/${article.slug}`} className={`group block ${large ? '' : 'h-full'}`}>
-      <div className={`relative overflow-hidden bg-mono-charcoal ${large ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}>
+    <Link href={`/article/${article.slug}`} className="group block">
+      <div className={`relative overflow-hidden bg-mono-charcoal ${feature ? 'aspect-[5/4]' : 'aspect-[4/3]'}`}>
         <img
           src={article.imageUrl || '/fallback-hero.svg'}
           alt={article.title}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+          className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/35 to-transparent" />
-        <div className="absolute bottom-0 p-6">
-          <div className="mb-3 inline-block bg-mono-amber px-2 py-1 text-xs font-display font-bold tracking-wider text-mono-white uppercase">
-            {article.category}
-          </div>
-          <h3 className={`${large ? 'text-2xl md:text-4xl' : 'text-lg md:text-xl'} text-mono-white font-display font-bold leading-tight`}>
-            {article.title}
-          </h3>
-          <p className="mt-3 text-xs text-mono-gray font-body">{getReadingTime(article.content)} min read</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-transparent" />
+        <div className="absolute bottom-0 p-5 md:p-6">
+          <span className="text-[10px] tracking-[0.25em] font-display font-bold text-mono-amber uppercase">{article.category} / Dispatch</span>
+          <h3 className={`${feature ? 'text-2xl md:text-3xl' : 'text-xl'} mt-3 font-display font-bold text-mono-white leading-tight`}>{article.title}</h3>
+          <p className="mt-3 text-xs font-body text-mono-gray">{getReadingTime(article.content)} min read</p>
         </div>
       </div>
     </Link>
   );
 }
 
-const signalFormats = [
-  ['CAMPAIGN DECODED', 'Evidence-led analysis of the work moving African and diaspora audiences.'],
-  ['WOULD IT TRAVEL?', 'Testing global campaigns against African market realities.'],
-  ['DIASPORA DEMAND', 'How identity, influence and commerce move across borders.'],
-  ['CULTURE TO COMMERCE', 'Where creative influence becomes economic value.'],
+const signalFranchises = [
+  {
+    title: 'THE WORK',
+    copy: 'Creative work involving Africa and its diaspora, decoded through idea, authorship, execution and consequence.',
+    label: 'Campaign Intelligence',
+  },
+  {
+    title: 'WILL IT LAND?',
+    copy: 'Global brand moves put through an African relevance test. Brilliant elsewhere does not automatically mean meaningful here.',
+    label: 'Market Provocation',
+  },
+  {
+    title: 'THE AFRICAN ADVANTAGE',
+    copy: 'Essays and voices on why African markets, creativity and cultural systems matter to global growth.',
+    label: 'Thought Leadership',
+  },
+  {
+    title: 'CULTURE IS BUSINESS',
+    copy: 'Where music, sport, fashion, travel and creators translate influence into value, ownership and scale.',
+    label: 'Commerce',
+  },
+];
+
+const intelligencePrompts = [
+  'Show campaigns where African creators shaped the brand idea, not only the casting.',
+  'Compare sport-culture collaborations across Lagos, Johannesburg and London.',
+  'Which global brands are meaningfully investing in African relevance?',
 ];
 
 export default function Home() {
-  const articles = getAllArticles() as Article[];
+  const articles = getAllArticles();
   const featured = articles[0];
-  const latest = articles.slice(1, 5);
+  const dispatches = articles.slice(0, 4);
+
+  const coverSlides: CoverSlide[] = [
+    {
+      kicker: 'FOUNDING EDITORIAL POSITION',
+      title: 'The Intelligence Behind African Influence.',
+      description: 'Monokromatik decodes the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
+      href: '/signal',
+      cta: 'ENTER SIGNAL',
+      mode: 'signal',
+    },
+    {
+      kicker: 'COVER STORY / CULTURAL SIGNAL',
+      title: featured?.title || 'Culture is not decoration. It is direction.',
+      description: featured?.excerpt || 'A living record of the movements brands should understand before they attempt to participate.',
+      href: featured ? `/article/${featured.slug}` : '/culture',
+      cta: 'READ THE STORY',
+      imageUrl: featured?.imageUrl,
+      videoUrl: featured?.videoUrl,
+      mode: 'story',
+    },
+    {
+      kicker: 'INTELLIGENCE DESK',
+      title: 'Research the work shaping Africa’s brand future.',
+      description: 'Case studies, reports, source-led insight and a future research assistant grounded in reviewed intelligence.',
+      href: '/intelligence',
+      cta: 'OPEN INTELLIGENCE',
+      mode: 'intelligence',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
+      <LivingCover slides={coverSlides} />
 
-      <section className="relative min-h-[78vh] bg-mono-black overflow-hidden">
-        <img
-          src={featured?.imageUrl || '/fallback-hero.svg'}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-35"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/85 to-mono-black/35" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <p className="text-mono-amber font-display font-bold tracking-[0.25em] text-xs mb-8">MONOKROMATIK NETWORK</p>
-          <h1 className="max-w-5xl text-5xl md:text-7xl lg:text-8xl font-display font-bold text-mono-white leading-[0.95]">
-            African Culture.<br />
-            Global Influence.<br />
-            <span className="text-mono-amber">Brand Intelligence.</span>
-          </h1>
-          <p className="max-w-2xl mt-8 text-lg md:text-xl text-mono-soft-white font-body leading-relaxed">
-            Decoding the campaigns, creators, athletes, brands and cultural movements shaping Africa and its diaspora.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-10">
-            <Link href="/signal" className="px-8 py-4 bg-mono-amber text-mono-white font-display font-bold inline-flex items-center gap-2">
-              ENTER SIGNAL <ArrowRight size={18} />
+      <section className="bg-mono-white py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-5">
+            <Link href="/signal" className="group bg-mono-black text-mono-white p-9 md:p-12 min-h-[390px] flex flex-col justify-between hover:bg-mono-charcoal transition-colors">
+              <div className="flex justify-between items-start">
+                <span className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber">01 / SIGNAL</span>
+                <Sparkles className="text-mono-amber" size={22} />
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">The ideas.<br />The work.<br />The consequence.</h2>
+                <p className="mt-6 max-w-md text-mono-soft-white font-body text-lg">Our authored view on brands and influence: campaigns, commercial culture, provocation and leading African voices.</p>
+                <span className="mt-8 inline-flex items-center gap-2 text-mono-amber font-display font-bold">READ SIGNAL <ArrowRight size={18} /></span>
+              </div>
             </Link>
-            <Link href="/pulse" className="px-8 py-4 border border-mono-white text-mono-white font-display font-bold">
-              EXPLORE THE LATEST
+            <Link href="/intelligence" className="group bg-mono-soft-white border border-mono-gray/25 text-mono-black p-9 md:p-12 min-h-[390px] flex flex-col justify-between hover:border-mono-amber transition-colors">
+              <div className="flex justify-between items-start">
+                <span className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber">02 / INTELLIGENCE</span>
+                <Database className="text-mono-amber" size={22} />
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">Evidence with a<br />point of view.</h2>
+                <p className="mt-6 max-w-md text-mono-charcoal font-body text-lg">Case studies, reporting, curated source intelligence and market insight built for decision makers.</p>
+                <span className="mt-8 inline-flex items-center gap-2 text-mono-amber font-display font-bold">OPEN THE DESK <ArrowRight size={18} /></span>
+              </div>
             </Link>
-          </div>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-          <div className="grid md:grid-cols-3 border border-mono-gray/30 bg-mono-black/55 backdrop-blur">
-            <div className="p-5 flex gap-3 items-start"><ShieldCheck className="text-mono-amber shrink-0" size={19} /><p className="text-sm text-mono-soft-white">AI-assisted discovery.<br />Human-directed intelligence.</p></div>
-            <div className="p-5 flex gap-3 items-start border-y md:border-y-0 md:border-x border-mono-gray/30"><Globe className="text-mono-amber shrink-0" size={19} /><p className="text-sm text-mono-soft-white">Africa and its diaspora,<br />read with global context.</p></div>
-            <div className="p-5 flex gap-3 items-start"><Database className="text-mono-amber shrink-0" size={19} /><p className="text-sm text-mono-soft-white">Verified campaign library<br />and intelligence in development.</p></div>
           </div>
         </div>
       </section>
 
-      {featured && (
-        <section className="py-16 md:py-20 bg-mono-soft-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-end mb-8">
-              <div>
-                <p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber mb-3">LEAD STORY</p>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">The latest signal</h2>
-              </div>
-              <Link href="/pulse" className="hidden md:inline-flex text-mono-amber font-display text-sm font-bold">ALL STORIES →</Link>
+      <section className="bg-mono-black text-mono-white py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-7 mb-12">
+            <div className="max-w-3xl">
+              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">SIGNAL / SIGNATURE FRANCHISES</p>
+              <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">Our voice is the product.</h2>
             </div>
-            <div className="grid lg:grid-cols-2 gap-7">
-              <StoryCard article={featured} large />
-              <div className="grid sm:grid-cols-2 gap-6">
-                {latest.map((article) => <StoryCard article={article} key={article.slug} />)}
+            <Link href="/signal" className="font-display font-bold text-mono-amber inline-flex gap-2 items-center">EXPLORE ALL SIGNAL <ArrowRight size={18} /></Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-px bg-mono-white/15 border border-mono-white/15">
+            {signalFranchises.map((format, index) => (
+              <div key={format.title} className="bg-mono-black p-8 md:p-10 min-h-[270px] flex flex-col justify-between">
+                <div className="flex justify-between text-[10px] tracking-[0.25em] font-display font-bold">
+                  <span className="text-mono-amber">{format.label}</span>
+                  <span className="text-mono-gray">0{index + 1}</span>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-display font-bold">{format.title}</h3>
+                  <p className="mt-4 font-body text-mono-soft-white leading-relaxed">{format.copy}</p>
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-mono-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">INTELLIGENCE DESK</p>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black leading-tight">Research Africa’s brand future through the work already shaping it.</h2>
+              <p className="mt-7 text-lg text-mono-charcoal font-body leading-relaxed">Built from reputable marketing, advertising, creative, business and official campaign sources — sharpened through Monokromatik interpretation.</p>
+              <Link href="/intelligence" className="mt-9 inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
+            </div>
+            <div className="border border-mono-gray/25 bg-mono-soft-white p-6 md:p-9">
+              <p className="text-[10px] tracking-[0.3em] text-mono-gray font-display font-bold mb-6">ASK MONOKROMATIK / PRODUCT PREVIEW</p>
+              {intelligencePrompts.map((prompt) => (
+                <div key={prompt} className="bg-mono-white border-l-4 border-mono-amber p-5 mb-4 font-body text-mono-charcoal text-lg">{prompt}</div>
+              ))}
+              <div className="mt-8 grid sm:grid-cols-3 gap-3 text-center text-xs tracking-[0.16em] font-display font-bold">
+                <div className="border border-mono-gray/25 px-3 py-5">CASE STUDIES</div>
+                <div className="border border-mono-gray/25 px-3 py-5">REPORTS</div>
+                <div className="border border-mono-gray/25 px-3 py-5">SOURCE DESK</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {dispatches.length > 0 && (
+        <section className="bg-mono-soft-white py-20 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+              <div>
+                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">CULTURAL DISPATCHES</p>
+                <h2 className="text-4xl font-display font-bold text-mono-black">The evidence base.</h2>
+              </div>
+              <Link href="/culture" className="inline-flex gap-2 items-center font-display font-bold text-mono-amber">EXPLORE CULTURE <ArrowRight size={18} /></Link>
+            </div>
+            <div className="grid lg:grid-cols-[1.25fr_0.75fr_0.75fr] gap-5">
+              {dispatches[0] && <DispatchCard article={dispatches[0]} feature />}
+              {dispatches.slice(1, 3).map((article) => <DispatchCard article={article} key={article.slug} />)}
             </div>
           </div>
         </section>
       )}
 
-      <section className="py-20 bg-mono-black text-mono-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber mb-4">SIGNAL</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold">Brand & Campaign Intelligence</h2>
-            <p className="mt-5 text-mono-soft-white text-lg font-body">
-              The commercial read on African cultural relevance: the brands, campaigns and partnerships worth understanding.
-            </p>
+      <section className="bg-mono-black text-mono-white py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_0.85fr] gap-12 items-center">
+          <div>
+            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">SPECIAL ISSUES / COLLECTIBLE EDITIONS</p>
+            <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">Designed to be saved.<br />Built to be printed.</h2>
+            <p className="mt-7 max-w-xl text-lg text-mono-soft-white font-body">Digital issues and future physical editions devoted to the work, voices and ideas moving African brand influence forward.</p>
+            <Link href="/issues" className="mt-9 inline-flex items-center gap-2 text-mono-amber font-display font-bold">VIEW THE ISSUE CONCEPT <ArrowRight size={18} /></Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-mono-gray/25 border border-mono-gray/25">
-            {signalFormats.map(([title, body]) => (
-              <div key={title} className="bg-mono-black p-7 min-h-[210px]">
-                <p className="font-display text-mono-amber text-xs font-bold tracking-wider">{title}</p>
-                <p className="mt-7 font-body text-mono-soft-white leading-relaxed">{body}</p>
-              </div>
-            ))}
+          <div className="relative max-w-sm mx-auto w-full aspect-[3/4] bg-mono-soft-white text-mono-black p-7 shadow-2xl">
+            <div className="flex justify-between text-[10px] tracking-[0.25em] font-display font-bold text-mono-gray">
+              <span>MONOKROMATIK</span><span>001</span>
+            </div>
+            <div className="mt-14 h-px bg-mono-black" />
+            <p className="mt-8 text-xs tracking-[0.28em] font-display font-bold text-mono-amber">FOUNDING ISSUE</p>
+            <h3 className="mt-6 text-4xl font-display font-bold leading-[0.98]">The Intelligence<br />Behind African<br />Influence.</h3>
+            <div className="absolute bottom-7 left-7 right-7 border-t border-mono-black pt-4 text-xs font-body text-mono-charcoal">Campaigns · Voices · Commerce · Diaspora · Creative Futures</div>
           </div>
-          <Link href="/signal" className="mt-10 inline-flex items-center gap-2 font-display font-bold text-mono-amber">
-            EXPLORE SIGNAL <ArrowRight size={18} />
+        </div>
+      </section>
+
+      <section className="py-20 bg-mono-soft-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
+          <Link href="/conversations" className="border border-mono-gray/25 bg-mono-white p-8 md:p-10 flex gap-6 hover:border-mono-amber transition-colors">
+            <Mic className="shrink-0 text-mono-amber" />
+            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber">CONVERSATIONS</p><h2 className="mt-4 text-3xl font-display font-bold">The Boardroom / The Backroom</h2><p className="mt-4 text-mono-charcoal font-body">Candid thinking from marketers, creators and cultural operators behind the decisions.</p></div>
+          </Link>
+          <Link href="/issues" className="border border-mono-gray/25 bg-mono-white p-8 md:p-10 flex gap-6 hover:border-mono-amber transition-colors">
+            <BookOpen className="shrink-0 text-mono-amber" />
+            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber">ISSUES</p><h2 className="mt-4 text-3xl font-display font-bold">Designed editorial collections</h2><p className="mt-4 text-mono-charcoal font-body">Curated editions intended to become the collectible expression of the platform.</p></div>
           </Link>
         </div>
       </section>
 
-      <section className="py-20 bg-mono-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber mb-4">INTELLIGENCE</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Search African brand intelligence.</h2>
-            <p className="mt-6 text-lg font-body text-mono-charcoal">
-              A structured library of campaigns, markets, creators and diaspora signals is being built for professional users.
-            </p>
-            <Link href="/intelligence" className="mt-8 inline-flex px-7 py-4 bg-mono-black text-mono-white font-display font-bold gap-2">
-              VIEW THE PRODUCT ROADMAP <ArrowRight size={18} />
-            </Link>
-          </div>
-          <div className="bg-mono-soft-white border border-mono-gray/25 p-7">
-            <p className="font-display text-xs tracking-wider font-bold text-mono-gray">EXAMPLE RESEARCH QUERIES</p>
-            {[
-              'Sportswear campaigns rooted in African identity',
-              'Music partnerships in Nigeria and South Africa',
-              'Diaspora-focused premium brand collaborations',
-              'Sports sponsorship case studies across Africa',
-            ].map((item) => (
-              <div key={item} className="mt-4 px-5 py-4 bg-mono-white border-l-4 border-mono-amber font-body text-mono-charcoal">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-mono-black">
+      <section className="py-20 md:py-24 bg-mono-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
-            <p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber mb-4">THE WEEKLY SIGNAL</p>
-            <h2 className="text-3xl md:text-5xl text-mono-white font-display font-bold">Brand, culture and commercial intelligence.</h2>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">THE WEEKLY SIGNAL</p>
+            <h2 className="text-3xl md:text-5xl text-mono-white font-display font-bold">The intelligence worth carrying into the room.</h2>
           </div>
           <NewsletterSignup variant="default" source="weekly-signal-homepage" />
         </div>
       </section>
 
-      <footer className="py-14 bg-mono-black border-t border-mono-gray/20 text-mono-white">
+      <footer className="py-14 bg-mono-black border-t border-mono-white/15 text-mono-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
           <div>
             <h3 className="font-display font-bold text-xl">MONO<span className="text-mono-amber">KROMATIK</span></h3>
-            <p className="mt-4 text-mono-gray font-body text-sm">African Culture. Global Influence. Brand Intelligence.</p>
+            <p className="mt-4 text-mono-gray font-body text-sm">The Intelligence Behind African Influence.</p>
           </div>
-          <div className="font-body text-sm text-mono-gray space-y-3">
-            <Link className="block hover:text-mono-amber" href="/signal">Signal</Link>
-            <Link className="block hover:text-mono-amber" href="/intelligence">Intelligence</Link>
-            <Link className="block hover:text-mono-amber" href="/editorial-standards">Editorial Standards</Link>
-            <Link className="block hover:text-mono-amber" href="/ai-methodology">AI Methodology</Link>
+          <div className="font-body text-sm text-mono-gray grid grid-cols-2 gap-y-3">
+            <Link className="hover:text-mono-amber" href="/signal">Signal</Link>
+            <Link className="hover:text-mono-amber" href="/intelligence">Intelligence</Link>
+            <Link className="hover:text-mono-amber" href="/issues">Issues</Link>
+            <Link className="hover:text-mono-amber" href="/conversations">Conversations</Link>
+            <Link className="hover:text-mono-amber" href="/editorial-standards">Standards</Link>
+            <Link className="hover:text-mono-amber" href="/ai-methodology">AI Methodology</Link>
           </div>
           <div>
-            <p className="text-sm text-mono-gray font-body">AI-assisted discovery. Human-directed intelligence. Verified sourcing.</p>
+            <p className="text-sm text-mono-gray font-body">AI-assisted discovery. Human-directed intelligence. Attributable sources. Distinct African judgment.</p>
           </div>
         </div>
       </footer>
