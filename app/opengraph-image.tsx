@@ -6,13 +6,13 @@ import { renderOgCard } from '../lib/og-card';
 
 export const runtime = 'nodejs';
 
-export const alt = 'MonoKromatik Network — African Stories BBC Won\'t Tell You';
+export const alt = 'Monokromatik — African Culture. Global Influence. Brand Intelligence.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
   return renderOgCard({
-    title: 'African Stories BBC Won\'t Tell You',
-    category: 'MonoKromatik Network',
+    title: 'African Culture. Global Influence. Brand Intelligence.',
+    category: 'Monokromatik Network',
   });
 }
