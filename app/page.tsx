@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Database, Mic, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sparkles } from 'lucide-react';
 import Navigation from './components/Navigation';
 import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
@@ -54,6 +54,33 @@ const intelligencePrompts = [
   'Show campaigns where African creators shaped the brand idea, not only the casting.',
   'Compare sport-culture collaborations across Lagos, Johannesburg and London.',
   'Which global brands are meaningfully investing in African relevance?',
+];
+
+const deskLayers = [
+  {
+    title: 'SOURCE DESK',
+    copy: 'The evidence system: primary sources, creative intelligence, African context and audience signals.',
+    href: '/intelligence/source-desk',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'CASE STUDIES',
+    copy: 'Structured reads of the context, strategic bet, creative move, evidence and African lesson.',
+    href: '/intelligence/case-studies',
+    icon: Database,
+  },
+  {
+    title: 'REPORTS',
+    copy: 'Designed intelligence briefings and special editions built to be revisited and eventually collected.',
+    href: '/reports',
+    icon: FileText,
+  },
+  {
+    title: 'CONTRIBUTE',
+    copy: 'A gateway for marketers, creators and thinkers bringing an argument, decision or signal worth pursuing.',
+    href: '/contribute',
+    icon: PenLine,
+  },
 ];
 
 export default function Home() {
@@ -165,17 +192,39 @@ export default function Home() {
                 <div key={prompt} className="bg-mono-white border-l-4 border-mono-amber p-5 mb-4 font-body text-mono-charcoal text-lg">{prompt}</div>
               ))}
               <div className="mt-8 grid sm:grid-cols-3 gap-3 text-center text-xs tracking-[0.16em] font-display font-bold">
-                <div className="border border-mono-gray/25 px-3 py-5">CASE STUDIES</div>
-                <div className="border border-mono-gray/25 px-3 py-5">REPORTS</div>
-                <div className="border border-mono-gray/25 px-3 py-5">SOURCE DESK</div>
+                <Link href="/intelligence/case-studies" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">CASE STUDIES</Link>
+                <Link href="/reports" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">REPORTS</Link>
+                <Link href="/intelligence/source-desk" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">SOURCE DESK</Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <section className="bg-mono-soft-white py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">FROM THE DESK</p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Four ways into the intelligence network.</h2>
+            <p className="mt-6 text-lg font-body text-mono-charcoal">Evidence, structured cases, designed reports and external voices are now the practical layers through which Monokromatik grows.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-mono-gray/25 border border-mono-gray/25">
+            {deskLayers.map(({ title, copy, href, icon: Icon }) => (
+              <Link key={title} href={href} className="group bg-mono-white p-7 md:p-8 min-h-[280px] flex flex-col justify-between hover:bg-mono-black transition-colors">
+                <Icon className="text-mono-amber" size={24} />
+                <div>
+                  <h3 className="text-xl font-display font-bold text-mono-black group-hover:text-mono-white transition-colors">{title}</h3>
+                  <p className="mt-4 font-body text-mono-charcoal group-hover:text-mono-soft-white leading-relaxed transition-colors">{copy}</p>
+                  <span className="mt-6 inline-flex gap-2 items-center text-mono-amber font-display font-bold text-sm">ENTER <ArrowRight size={16} /></span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {dispatches.length > 0 && (
-        <section className="bg-mono-soft-white py-20 md:py-24">
+        <section className="bg-mono-white py-20 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
               <div>
@@ -244,10 +293,12 @@ export default function Home() {
           <div className="font-body text-sm text-mono-gray grid grid-cols-2 gap-y-3">
             <Link className="hover:text-mono-amber" href="/signal">Signal</Link>
             <Link className="hover:text-mono-amber" href="/intelligence">Intelligence</Link>
+            <Link className="hover:text-mono-amber" href="/intelligence/source-desk">Source Desk</Link>
+            <Link className="hover:text-mono-amber" href="/intelligence/case-studies">Case Studies</Link>
+            <Link className="hover:text-mono-amber" href="/reports">Reports</Link>
             <Link className="hover:text-mono-amber" href="/issues">Issues</Link>
-            <Link className="hover:text-mono-amber" href="/conversations">Conversations</Link>
+            <Link className="hover:text-mono-amber" href="/contribute">Contribute</Link>
             <Link className="hover:text-mono-amber" href="/editorial-standards">Standards</Link>
-            <Link className="hover:text-mono-amber" href="/ai-methodology">AI Methodology</Link>
           </div>
           <div>
             <p className="text-sm text-mono-gray font-body">AI-assisted discovery. Human-directed intelligence. Attributable sources. Distinct African judgment.</p>
