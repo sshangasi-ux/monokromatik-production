@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Mic, Video } from 'lucide-react';
+import { ArrowRight, Mic, PenLine, Video } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 const conversationFormats = [
@@ -52,8 +52,13 @@ export default function ConversationsPage() {
 
       <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">SERIES FORMATS</p>
-          <h2 className="max-w-4xl text-4xl md:text-5xl font-display font-bold text-mono-black mb-12">Invitations to contribute, challenge and lead.</h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+            <div>
+              <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">SERIES FORMATS</p>
+              <h2 className="max-w-4xl text-4xl md:text-5xl font-display font-bold text-mono-black">Invitations to contribute, challenge and lead.</h2>
+            </div>
+            <Link href="/contribute" className="inline-flex items-center gap-2 text-mono-amber font-display font-bold shrink-0">PITCH A VOICE OR SIGNAL <ArrowRight size={18} /></Link>
+          </div>
           <div className="grid lg:grid-cols-2 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {conversationFormats.map((format) => (
               <article key={format.name} className="bg-mono-white p-8 md:p-10 min-h-[300px]">
@@ -84,8 +89,11 @@ export default function ConversationsPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Video className="mx-auto text-mono-amber mb-7" size={30} />
           <h2 className="text-4xl md:text-5xl font-display font-bold">Built for film, audio, essays and live rooms.</h2>
-          <p className="mt-6 text-lg text-mono-soft-white font-body">The strongest conversations can move across Watch, Listen, Signal, The Weekly Signal and future collectible issues.</p>
-          <Link href="/signal" className="mt-10 inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">RETURN TO SIGNAL <ArrowRight size={18} /></Link>
+          <p className="mt-6 text-lg text-mono-soft-white font-body">The strongest conversations can move across Signal, The Weekly Signal and future collectible issues.</p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link href="/contribute" className="inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold"><PenLine size={18} /> CONTRIBUTE</Link>
+            <Link href="/signal" className="inline-flex items-center gap-2 border border-mono-white text-mono-white px-7 py-4 font-display font-bold">RETURN TO SIGNAL <ArrowRight size={18} /></Link>
+          </div>
         </div>
       </section>
     </div>
