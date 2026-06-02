@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: result.alreadySubscribed
         ? "You're already on the list — welcome back."
-        : "Welcome to The Pulse. Check your email to confirm.",
+        : "Welcome to The Weekly Signal. Check your email to confirm.",
     });
   } catch (err) {
     console.error('[newsletter] Unexpected error:', err);
