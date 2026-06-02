@@ -45,8 +45,8 @@ export default function Navigation() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-4 ml-4">
-              <Link href="/intelligence" className="px-3 py-2 border border-mono-amber/50 text-mono-amber text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber hover:text-mono-white transition-colors">
-                RESEARCH DESK
+              <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber/50 text-mono-amber text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber hover:text-mono-white transition-colors">
+                SOURCE DESK
               </Link>
               <SearchBar />
             </div>
@@ -76,6 +76,14 @@ export default function Navigation() {
                   <span className="block text-xs text-mono-gray font-body font-normal mt-1">{link.description}</span>
                 </Link>
               ))}
+              <Link
+                href="/intelligence/source-desk"
+                className="block mt-4 py-3 px-4 border border-mono-amber/50 text-mono-amber font-display font-bold"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                SOURCE DESK
+                <span className="block text-xs text-mono-gray font-body font-normal mt-1">Sources, verification and research method</span>
+              </Link>
               <div className="pt-4 mt-4 border-t border-mono-white/10 px-4 text-sm font-body text-mono-white">
                 AI-assisted discovery. Human-directed intelligence. Verified sourcing.
               </div>
