@@ -7,38 +7,47 @@ const researchProducts = [
     title: 'CASE STUDY LIBRARY',
     copy: 'Structured, source-led reads of African and Africa-relevant global campaigns — from objective and creative bet to execution, reception and strategic lesson.',
     icon: BookMarked,
+    href: '/intelligence/case-studies',
+    action: 'Explore the method',
   },
   {
     title: 'CAMPAIGN INDEX',
     copy: 'Filter the work by brand, market, category, cultural territory, objective, partnership type and diaspora relevance.',
     icon: Database,
+    status: 'Structured data build next',
   },
   {
     title: 'MARKET BRIEFINGS',
     copy: 'Country and diaspora-hub intelligence linking consumer context, creative ecosystems, media reality and brand opportunity.',
     icon: Radar,
+    status: 'Commissioning slate next',
   },
   {
     title: 'SOURCE DESK',
     copy: 'Curated signal from authoritative global and African marketing, advertising, business, awards and official campaign sources.',
     icon: ShieldCheck,
+    href: '/intelligence/source-desk',
+    action: 'View source system',
   },
   {
     title: 'REPORTS & SPECIAL ISSUES',
     copy: 'Designed intelligence editions spanning African brand building, sport commerce, creator equity and diaspora demand.',
     icon: FileText,
+    href: '/reports',
+    action: 'View report slate',
   },
   {
     title: 'ASK MONOKROMATIK',
     copy: 'A future research assistant answering from reviewed Monokromatik records and cited evidence — not unsupported inference.',
     icon: Search,
+    status: 'Grounded AI product phase',
   },
 ];
 
 const sourceGroups = [
   {
     title: 'GLOBAL BRAND & CREATIVE INTELLIGENCE',
-    names: 'WARC · Cannes Lions · Effie · Campaign · The Drum · Adweek · Ad Age · Contagious · Creative Review',
+    names: 'WARC · LIONS / The Work · Effie · Campaign · The Drum · Adweek · Ad Age · Contagious · Creative Review',
   },
   {
     title: 'AFRICAN CREATIVE & BUSINESS CONTEXT',
@@ -82,15 +91,32 @@ export default function IntelligencePage() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Not an article archive. A working intelligence system.</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-mono-gray/25 border border-mono-gray/25">
-            {researchProducts.map(({ title, copy, icon: Icon }) => (
-              <article key={title} className="bg-mono-white p-7 md:p-8 min-h-[275px] flex flex-col justify-between">
-                <Icon className="text-mono-amber" size={24} />
-                <div>
-                  <h3 className="font-display text-xl font-bold text-mono-black tracking-tight">{title}</h3>
-                  <p className="mt-4 text-mono-charcoal font-body leading-relaxed">{copy}</p>
-                </div>
-              </article>
-            ))}
+            {researchProducts.map(({ title, copy, icon: Icon, href, action, status }) => {
+              const body = (
+                <>
+                  <Icon className="text-mono-amber" size={24} />
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-mono-black tracking-tight group-hover:text-mono-amber transition-colors">{title}</h3>
+                    <p className="mt-4 text-mono-charcoal font-body leading-relaxed">{copy}</p>
+                    {href ? (
+                      <p className="mt-7 inline-flex gap-2 items-center text-mono-amber font-display font-bold text-sm">{action?.toUpperCase()} <ArrowRight size={16} /></p>
+                    ) : (
+                      <p className="mt-7 text-[10px] tracking-[0.2em] font-display font-bold text-mono-gray">{status?.toUpperCase()}</p>
+                    )}
+                  </div>
+                </>
+              );
+
+              return href ? (
+                <Link key={title} href={href} className="group bg-mono-white p-7 md:p-8 min-h-[305px] flex flex-col justify-between hover:bg-mono-soft-white transition-colors">
+                  {body}
+                </Link>
+              ) : (
+                <article key={title} className="group bg-mono-white p-7 md:p-8 min-h-[305px] flex flex-col justify-between">
+                  {body}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -101,6 +127,7 @@ export default function IntelligencePage() {
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">SOURCE DESK</p>
             <h2 className="text-4xl font-display font-bold text-mono-black leading-tight">Built from the best available evidence — global and African.</h2>
             <p className="mt-6 text-mono-charcoal text-lg font-body leading-relaxed">The engine will monitor authoritative reporting, official creative materials and market-specific signals, then develop bespoke Monokromatik records and analysis.</p>
+            <Link href="/intelligence/source-desk" className="mt-8 inline-flex gap-2 items-center text-mono-amber font-display font-bold">EXPLORE THE SOURCE DESK <ArrowRight size={18} /></Link>
           </div>
           <div className="space-y-4">
             {sourceGroups.map((group) => (
@@ -135,8 +162,9 @@ export default function IntelligencePage() {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The strongest insight should deserve a place on your desk.</h2>
           <p className="mt-6 text-lg text-mono-charcoal font-body">Reports and case studies will be designed with the ambition of becoming collectible digital and physical editions.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/issues" className="inline-flex gap-2 items-center bg-mono-black px-7 py-4 text-mono-white font-display font-bold">VIEW ISSUES <ArrowRight size={18} /></Link>
-            <Link href="/signal" className="inline-flex gap-2 items-center border border-mono-black px-7 py-4 text-mono-black font-display font-bold">READ SIGNAL <ArrowRight size={18} /></Link>
+            <Link href="/reports" className="inline-flex gap-2 items-center bg-mono-black px-7 py-4 text-mono-white font-display font-bold">VIEW REPORTS <ArrowRight size={18} /></Link>
+            <Link href="/intelligence/case-studies" className="inline-flex gap-2 items-center border border-mono-black px-7 py-4 text-mono-black font-display font-bold">CASE STUDIES <ArrowRight size={18} /></Link>
+            <Link href="/issues" className="inline-flex gap-2 items-center border border-mono-black px-7 py-4 text-mono-black font-display font-bold">ISSUES <ArrowRight size={18} /></Link>
           </div>
         </div>
       </section>
