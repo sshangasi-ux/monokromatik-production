@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
+import Issue001KineticArtwork from './Issue001KineticArtwork';
 
 export interface CoverSlide {
   kicker: string;
@@ -38,6 +39,10 @@ function Background({ slide }: { slide: CoverSlide }) {
         className="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-[1400ms] scale-105"
       />
     );
+  }
+
+  if (slide.mode === 'signal') {
+    return <Issue001KineticArtwork />;
   }
 
   return (
@@ -111,6 +116,11 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
             {active.videoUrl && (
               <div className="mt-5 flex items-center gap-2 text-xs tracking-widest font-display text-mono-amber">
                 <PlayCircle size={17} /> MOTION COVER
+              </div>
+            )}
+            {active.mode === 'signal' && !active.videoUrl && (
+              <div className="mt-5 flex items-center gap-2 text-xs tracking-widest font-display text-mono-amber">
+                <PlayCircle size={17} /> KINETIC COVER
               </div>
             )}
           </div>
