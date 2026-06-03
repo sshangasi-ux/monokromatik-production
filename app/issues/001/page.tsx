@@ -15,17 +15,17 @@ const features = [
   {
     franchise: 'THE WORK',
     title: 'Nike × Air Afrique: When the Launch Point Becomes the Point',
-    description: 'A source-led case study of the Air Max RK61 / Première Classe collaboration and what an Abidjan-first release communicates.',
+    description: 'A source-led case study of the Air Max RK61 / Première Classe collaboration, enriched with official attributed campaign media.',
     href: '/issues/001/the-work-nike-air-afrique',
-    status: 'CASE STUDY DRAFT',
+    status: 'MEDIA-RICH DRAFT',
     icon: BookOpen,
   },
   {
-    franchise: 'WILL IT LAND?',
-    title: 'Orange WoMen’s Football: Would the Reveal Be Enough Here?',
-    description: 'A globally admired creative idea tested against African women’s football visibility, investment and sponsor credibility.',
-    href: '/issues/001/will-it-land-orange-womens-football',
-    status: 'ANALYSIS DRAFT',
+    franchise: 'WILL IT LAND? / SOUTH AFRICA',
+    title: 'Orange WoMen’s Football: Would the Reveal Be Enough in South Africa?',
+    description: 'An official-film-led relevance test asking how a global idea would need to connect to South African women’s football visibility and support.',
+    href: '/issues/001/will-it-land-south-africa',
+    status: 'SA TEST DRAFT',
     icon: Radar,
   },
   {
@@ -68,7 +68,7 @@ export default function FoundingIssuePage() {
             </div>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-mono-white/20 pt-5 text-[11px] tracking-[0.2em] font-display font-bold text-mono-gray">
-            <span className="text-mono-amber">COVER ESSAY</span><span>THE WORK</span><span>WILL IT LAND?</span><span>BRAND WEATHER</span><span>CONVERSATIONS</span>
+            <span className="text-mono-amber">COVER ESSAY</span><span>THE WORK</span><span>WILL IT LAND? / SA</span><span>BRAND WEATHER</span><span>CONVERSATIONS</span>
           </div>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function FoundingIssuePage() {
           <div className="max-w-4xl mb-12">
             <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">THE RELEASE PACKAGE</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The first body of work behind the promise.</h2>
-            <p className="mt-6 text-lg font-body text-mono-charcoal">These are controlled editorial drafts in preview, ready for final research checks, selected official visual assets and publication approval.</p>
+            <p className="mt-6 text-lg font-body text-mono-charcoal">These are controlled editorial drafts in preview, now moving through final source, media-credit and contributor review before publication approval.</p>
           </div>
           <div className="space-y-px border border-mono-gray/25 bg-mono-gray/25">
             {features.map(({ franchise, title, description, href, status, icon: Icon }, index) => (
