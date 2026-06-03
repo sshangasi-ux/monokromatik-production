@@ -2,16 +2,28 @@ import IssueFeature, { FeatureSection, PullQuote } from '../../../components/Iss
 
 const sources = [
   {
+    publisher: 'NIKE, Inc. Newsroom',
+    label: 'Nike x Air Afrique Launch the Air Max RK61, a Tribute to Diasporic Heritage',
+    href: 'https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images',
+    use: 'Official campaign and media basis for the Air Afrique collaboration referenced in this essay.',
+  },
+  {
     publisher: 'Vogue Business',
     label: 'Nike bets big on Africa with Air Afrique collab',
     href: 'https://www.vogue.com/article/nike-bets-big-on-africa-with-air-afrique-collab',
-    use: 'Referenced example of an Africa-first product launch and diaspora-linked creative collaboration.',
+    use: 'Independent reporting on Abidjan-first launch geography and local access context.',
+  },
+  {
+    publisher: 'Publicis France / Marcel',
+    label: 'WoMen’s Football — Orange',
+    href: 'https://www.publicisgroupe.com/en/news-france/wo-mens-football-orange-marcel',
+    use: 'Official campaign reference for the women’s-football creative idea tested through the South African lens.',
   },
   {
     publisher: 'TIME',
     label: 'A Viral French Ad Shows How Women’s Soccer Can Be Just as Exciting as Men’s',
     href: 'https://time.com/6295047/viral-france-advertisement-soccer-gender-orange/',
-    use: 'Referenced example of brand creativity confronting audience bias in sport.',
+    use: 'Independent account of the Orange and Marcel film and its public response.',
   },
 ];
 
@@ -42,9 +54,9 @@ export default function FoundingEssayPage() {
       </FeatureSection>
 
       <FeatureSection title="A different kind of evidence">
-        <p>The collaborations worth reading closely are not simply the loudest. They are the ones that reveal a shift in where brands believe stories should begin. Nike’s collaboration with Air Afrique offers one useful signal: according to reporting by <em>Vogue Business</em>, the Air Max RK61 first launched in Abidjan before wider global rollout, with the history and memory of the former Pan-African airline embedded into the product and campaign narrative.</p>
+        <p>The collaborations worth reading closely are not simply the loudest. They are the ones that reveal a shift in where brands believe stories should begin. Nike’s official campaign material positions its Air Afrique collaboration around diasporic heritage and mobility; independent reporting adds an especially important detail: the Air Max RK61 was first launched in Abidjan before wider global rollout.</p>
         <p>The important point is not that a global company used African heritage as inspiration. The important point is that the starting point of the global story moved: product, place, creative collective and consumer access were brought closer together on the continent itself.</p>
-        <p>Orange and Marcel’s women’s football film offers a different kind of signal. Its reveal forced viewers to confront the assumptions they carried into watching elite football. The creative device mattered because it exposed the bias inside the audience response. But for African markets, an idea like this also creates a harder question: can brands challenge perception without investing in the systems that allow women’s sport to be seen, attended, supported and commercially valued?</p>
+        <p>Orange and Marcel’s women’s-football film offers a different kind of signal. Its reveal challenged the assumptions audiences carry into elite football. Monokromatik’s South Africa test asks the harder next question: where a team has already proved excellence, can a brand move beyond recognition into the sustained visibility and support that allow women’s sport to keep growing?</p>
       </FeatureSection>
 
       <PullQuote>The next generation of African brand intelligence will not ask only whether a campaign travelled. It will ask what moved because the campaign existed.</PullQuote>
