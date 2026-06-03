@@ -69,6 +69,10 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
 
   if (!active) return null;
 
+  const isFoundingCover = active.mode === 'signal' && !active.imageUrl && !active.videoUrl;
+  const coverHref = isFoundingCover ? '/issues/001' : active.href;
+  const coverCta = isFoundingCover ? 'OPEN ISSUE 001' : active.cta;
+
   return (
     <section className="relative min-h-[calc(100vh-5rem)] bg-mono-black overflow-hidden text-mono-white">
       <Background slide={active} />
@@ -91,8 +95,8 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
               {active.description}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href={active.href} className="inline-flex items-center gap-2 bg-mono-amber px-7 py-4 font-display font-bold text-mono-white">
-                {active.cta} <ArrowRight size={18} />
+              <Link href={coverHref} className="inline-flex items-center gap-2 bg-mono-amber px-7 py-4 font-display font-bold text-mono-white">
+                {coverCta} <ArrowRight size={18} />
               </Link>
               <Link href="/intelligence" className="inline-flex items-center gap-2 border border-mono-white/65 px-7 py-4 font-display font-bold text-mono-white hover:border-mono-amber transition-colors">
                 ENTER INTELLIGENCE
@@ -118,7 +122,7 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
                 <PlayCircle size={17} /> MOTION COVER
               </div>
             )}
-            {active.mode === 'signal' && !active.videoUrl && (
+            {isFoundingCover && (
               <div className="mt-5 flex items-center gap-2 text-xs tracking-widest font-display text-mono-amber">
                 <PlayCircle size={17} /> KINETIC COVER
               </div>
