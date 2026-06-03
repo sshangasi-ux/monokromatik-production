@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, FileText, Mic, Radar, Sparkles } from 'lucide-react';
 import Navigation from '../../components/Navigation';
+import Issue001KineticArtwork from '../../components/Issue001KineticArtwork';
 
 const features = [
   {
@@ -22,7 +23,7 @@ const features = [
   {
     franchise: 'WILL IT LAND?',
     title: 'Orange WoMen’s Football: Would the Reveal Be Enough Here?',
-    description: 'A globally admired creative device tested against African women’s football investment, infrastructure and sponsor credibility.',
+    description: 'A globally admired creative idea tested against African women’s football visibility, investment and sponsor credibility.',
     href: '/issues/001/will-it-land-orange-womens-football',
     status: 'ANALYSIS DRAFT',
     icon: Radar,
@@ -50,9 +51,8 @@ export default function FoundingIssuePage() {
     <div className="min-h-screen bg-mono-white">
       <Navigation />
       <section className="relative overflow-hidden bg-mono-black text-mono-white py-16 md:py-24">
-        <div className="absolute right-[-12vw] top-[12%] w-[54vw] h-[54vw] rounded-full border border-mono-amber/25 animate-pulse-slow" />
-        <div className="absolute right-[4vw] top-[25%] w-[34vw] h-[34vw] rounded-full border border-mono-white/10" />
-        <div className="absolute right-10 bottom-[-2rem] text-[24vw] font-display font-bold text-mono-white/[0.035] leading-none">001</div>
+        <Issue001KineticArtwork />
+        <div className="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/78 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[620px] flex flex-col justify-between">
           <div className="flex justify-between border-b border-mono-white/20 pb-5 text-[10px] md:text-xs tracking-[0.3em] font-display font-bold">
             <span className="text-mono-amber">MONOKROMATIK / ISSUE 001</span>
@@ -62,6 +62,10 @@ export default function FoundingIssuePage() {
             <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber mb-7">THE LIVING MAGAZINE</p>
             <h1 className="text-5xl md:text-8xl font-display font-bold leading-[0.92]">The Intelligence<br />Behind African<br /><span className="text-mono-amber">Influence.</span></h1>
             <p className="mt-8 max-w-2xl text-xl text-mono-soft-white font-body">A founding collection on authorship, relevance, creative commerce and the brands learning how Africa moves the world.</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/issues/001/the-intelligence-behind-african-influence" className="inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">READ COVER ESSAY <ArrowRight size={18} /></Link>
+              <Link href="/issues/001/cover" className="inline-flex items-center gap-2 border border-mono-white/70 text-mono-white px-7 py-4 font-display font-bold">VIEW COVER STUDY <ArrowRight size={18} /></Link>
+            </div>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-mono-white/20 pt-5 text-[11px] tracking-[0.2em] font-display font-bold text-mono-gray">
             <span className="text-mono-amber">COVER ESSAY</span><span>THE WORK</span><span>WILL IT LAND?</span><span>BRAND WEATHER</span><span>CONVERSATIONS</span>
