@@ -47,11 +47,41 @@ Discovery, drafting, and review can run autonomously. Publication cannot.
 |---|---|---|---|---|
 | 1 | Daily agent pipeline (06:00 UTC) | `.github/workflows/agents.yml` | Disabled via GitHub UI (Repo Settings → Actions → Workflows → Disable) | Yes — re-enable in same UI |
 | 2 | Sunday Pulse newsletter (Sun 06:00 UTC) | `.github/workflows/pulse-digest.yml` | Disabled via GitHub UI | Yes — re-enable in same UI |
-| 3 | Vercel cron route (06:00 UTC) | `vercel.json` | `crons` key renamed to `_paused_crons` so Vercel no longer registers it | Yes — rename back to `crons` |
+| 3 | Vercel cron route (06:00 UTC) | `vercel.json` | `vercel.json` reduced to `{}` (no `crons` entry). Original schedule documented below. | Yes — reinstate the `crons` block (snapshot in section *"Vercel cron — paused config snapshot"*) |
 
 After this pause is fully applied, NO scheduled job in this repo will
 publish content, send broadcasts, or modify `data/articles.json` on any
 schedule.
+
+### Vercel cron — paused config snapshot
+
+This is the cron configuration that was in `vercel.json` prior to the
+pause. It is recorded here verbatim so it can be restored exactly when
+autonomous publishing resumes under the new approval-gated workflow.
+
+DO NOT copy this back into `vercel.json` until the new Claude + OpenAI
+editorial workflow with mandatory operator approval is approved and
+shipping. Restoring this configuration re-activates daily autonomous
+publishing via the Vercel serverless cron path.
+
+```json
+{
+  "crons": [
+    {
+      "path": "/api/cron/run-pipeline",
+      "schedule": "0 6 * * *"
+    }
+  ]
+}
+```
+
+| Field | Value |
+|---|---|
+| Path | `/api/cron/run-pipeline` |
+| Schedule | `0 6 * * *` (daily 06:00 UTC = 08:00 SAST) |
+| Auth | `CRON_SECRET` Bearer header (unchanged — secret not rotated) |
+| Handler | `app/api/cron/run-pipeline/route.ts` (code intact, just unscheduled) |
+| Status | **Paused during MonoKromatik 2.0 migration** |
 
 ## What is NOT paused (intentionally)
 
@@ -127,9 +157,10 @@ After applying all three pause actions:
 When the new MonoKromatik 2.0 workflow is approved and ready to ship,
 restore the three pause points in reverse:
 
-1. **`vercel.json`** — rename `_paused_crons` back to `crons`. Remove
-   the `_comment_pause_2026_05_20` key. Commit and push. Vercel will
-   re-register the cron on the next deploy.
+1. **`vercel.json`** — reinstate the cron config block from the
+   *"Vercel cron — paused config snapshot"* section above. Replace the
+   `{}` contents of `vercel.json` with the documented JSON. Commit and
+   push. Vercel will re-register the cron on the next deploy.
 
 2. **`.github/workflows/agents.yml`** — go to GitHub UI:
    Actions → MonoKromatik Daily Agent Run → "⋯" (top right) → Enable workflow.
@@ -164,11 +195,12 @@ or redesign them so the publish step is contingent on an explicit
 human-approved signal (e.g. a labelled PR merge, a Notion approval,
 or a webhook from the operator's approval UI).
 
-Renaming `crons` to `_paused_crons` and disabling workflows is sufficient
+Reducing `vercel.json` to `{}` and disabling workflows is sufficient
 for an operational pause. It is NOT sufficient for a permanent architectural
-shift — the code paths still exist and would re-activate if the workflows
-are re-enabled. That's deliberate: the pause should be cheap to reverse
-while the new architecture is being designed.
+shift — the code paths still exist and would re-activate if the cron
+config were reinstated and the workflows re-enabled. That's deliberate:
+the pause should be cheap to reverse while the new architecture is being
+designed.
 
 ---
 

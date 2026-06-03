@@ -1,9 +1,2 @@
-{
-  "_comment_pause_2026_05_20": "MIGRATION PAUSE: Vercel cron disabled while MonoKromatik transitions to the new Claude+OpenAI editorial workflow with mandatory human approval gate. To re-enable autonomous publishing, rename '_paused_crons' back to 'crons' below. See docs/MIGRATION-PAUSE.md for full context. Paused by: Sibu Shangase via Claude. Date: 2026-05-20.",
-  "_paused_crons": [
-    {
-      "path": "/api/cron/run-pipeline",
-      "schedule": "0 6 * * *"
-    }
-  ]
-}
+{}
+
