@@ -1,12 +1,14 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
-import { MediaStatus } from '../../../components/AttributedMedia';
+import { MediaStatus, OfficialVideoEmbed } from '../../../components/AttributedMedia';
+
+const officialCampaignPage = 'https://www.publicisgroupe.com/en/news-france/wo-mens-football-orange-marcel';
 
 const sources = [
   {
     publisher: 'Publicis France / Marcel',
     label: 'WoMen’s Football — Orange',
-    href: 'https://www.publicisgroupe.com/en/news-france/wo-mens-football-orange-marcel',
-    use: 'Official campaign rationale and production-credit source.',
+    href: officialCampaignPage,
+    use: 'Official campaign rationale, film and production-credit source.',
   },
   {
     publisher: 'TIME',
@@ -34,19 +36,28 @@ export default function WillItLandSouthAfricaPage() {
       sources={sources}
       next={{ label: 'Brand Weather: Four Signals Shaping African Influence Now', href: '/issues/001/brand-weather' }}
     >
-      <MediaStatus>The original Orange and Marcel work is treated as an official global reference. The South African application is Monokromatik analysis, not a claim that the campaign ran locally.</MediaStatus>
+      <MediaStatus>The original Orange and Marcel work is shown as an attributed campaign film and treated as a global reference. The South African application is Monokromatik analysis, not a claim that the campaign ran locally.</MediaStatus>
 
       <FeatureSection title="The global work">
         <p>Orange and agency Marcel released a film ahead of the 2023 FIFA Women’s World Cup that initially appeared to celebrate highlights from the French men’s national team. The reveal showed that the sporting performances belonged to the French women’s team, using the audience’s own reaction to expose an assumption about value and excitement in football.</p>
         <p>The closing message linked the idea to Orange’s support for both national teams. Contemporary reporting identified the film as a widely discussed example of creative work using surprise to confront bias rather than merely announcing an inclusive position.</p>
       </FeatureSection>
 
+      <OfficialVideoEmbed
+        youtubeId="QVNZRHIZVL8"
+        title="Orange and Marcel — WoMen’s Football campaign film"
+        caption="The campaign film uses a reveal to challenge assumptions about sporting quality and recognition."
+        credit="Orange / Marcel / Publicis France"
+        sourceHref={officialCampaignPage}
+        sourceLabel="Campaign Credits and Source"
+      />
+
       <PullQuote>The creative idea is powerful because the audience supplies the assumption before the brand supplies the correction.</PullQuote>
 
       <FeatureSection title="Why South Africa is the right first test">
         <p>South African women’s football combines sporting proof with clear need for sustained attention. Banyana Banyana won the continental title in 2022 and qualified for the 2026 competition. That achievement means a South African version should never begin from the idea that women’s football needs to be rescued by a brand narrative.</p>
         <p>Recent reporting has also pointed to pressures surrounding preparation and the wider support environment. This creates the right strategic tension: excellence is already present, while the conditions that keep it visible and growing remain an important part of the story.</p>
-        <p>A South African relevance test must therefore ask more than whether the reveal would attract views. It must ask what a brand does after the audience has recognised its own bias.</p>
+        <p>A South African relevance test must therefore ask more than whether the reveal would attract views. It must ask what a brand does after the audience has recognised its own assumption.</p>
       </FeatureSection>
 
       <PullQuote>In South Africa, the players have already proved that the game deserves attention. The brand role is to help that attention last.</PullQuote>
@@ -66,7 +77,7 @@ export default function WillItLandSouthAfricaPage() {
       </FeatureSection>
 
       <FeatureSection title="Publication verification status">
-        <p><strong>Global campaign basis established:</strong> official and independent sources support the original creative premise and response.</p>
+        <p><strong>Global campaign basis established:</strong> the campaign film and credits are presented through an attributable source, with independent reporting supporting the creative premise and public response.</p>
         <p><strong>South African lens established:</strong> the analysis is grounded in Banyana Banyana’s achievement and current reported support pressures.</p>
         <p><strong>Required before public release:</strong> confirm one informed South African contributor able to challenge or strengthen this analysis in their own words.</p>
       </FeatureSection>
