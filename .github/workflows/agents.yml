@@ -12,19 +12,27 @@ on:
         default: '3'
         type: string
 
-# Pre-launch governance: agents may discover, draft and review, but must not
-# commit editorial output directly into production content.
+# Review-gated: agents discover, generate, media-enrich and self-review (EIC),
+# then STAGE the approved candidates as a Pull Request. Nothing reaches the live
+# site without a human merging that PR — so we need write + PR permissions, but
+# the human merge is the publish gate.
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agent-daily-run
+  cancel-in-progress: false
 
 jobs:
   run-agents:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Checkout repository
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
+          ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
@@ -37,26 +45,54 @@ jobs:
       - name: Install dependencies
         run: npm install --no-fund --no-audit
 
-      - name: Run agent pipeline in review-only mode
+      - name: Run agent pipeline (review-gated staging)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          MONOKROMATIK_PUBLICATION_MODE: review_only
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          MONOKROMATIK_PUBLICATION_MODE: review_gated
           NODE_ENV: production
         run: |
-          # --no-push permits internal review output and digest generation while
-          # ensuring no generated article is pushed to the public branch.
-          npm run agents -- --count=${{ github.event.inputs.count || '3' }} --no-push
+          # --stage writes EIC-approved candidates to data/articles.json (with
+          # credited media) but performs NO git operations; the next step opens
+          # a PR for human review and one-click merge-to-publish.
+          npm run agents -- --count=${{ github.event.inputs.count || '3' }} --stage
 
-      - name: Pipeline summary
+      - name: Stage candidates as a Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/articles.json)" ]; then
+            echo "No EIC-approved candidates this run — nothing to stage." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="agents/candidates-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/articles.json
+          git commit -m "feat(agents): staged candidate article(s) for review" -m "Generated, media-credited and EIC-reviewed by the MonoKromatik pipeline. Merge this PR to publish; close it to discard."
+          git push origin "$BRANCH"
+
+          BODY="Review-gated daily run: EIC-approved candidate article(s) with credited media, staged for your decision. Merge to publish to monokromatik.com (Vercel deploys from main); close to discard. Each new entry in data/articles.json carries its EIC score/notes and media credit, and the Editor-in-Chief digest email covers what was generated and why anything was killed."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Agent candidates for review — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Candidates pushed to $BRANCH; open a PR from that branch if one was not created automatically." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Run summary
         if: always()
         run: |
-          echo "### MonoKromatik discovery and review run finished" >> $GITHUB_STEP_SUMMARY
-          echo "Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "### MonoKromatik review-gated run finished" >> "$GITHUB_STEP_SUMMARY"
+          echo "Time: $(date -u)" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ job.status }}" = "success" ]; then
-            echo "✅ Candidate articles reviewed. No automated publication or production deployment performed." >> $GITHUB_STEP_SUMMARY
+            echo "Candidates generated, media-credited and EIC-reviewed. Any approved are staged as a PR for human merge — nothing auto-published." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "❌ Discovery/review run failed — check logs above." >> $GITHUB_STEP_SUMMARY
+            echo "Run failed — check logs above." >> "$GITHUB_STEP_SUMMARY"
           fi

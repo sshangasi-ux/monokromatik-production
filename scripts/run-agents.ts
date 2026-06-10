@@ -43,6 +43,9 @@ const COUNT = parseInt(
 );
 const DRY_RUN = args.includes('--dry');
 const NO_PUSH = args.includes('--no-push');
+// Review-gated: write the approved candidates to data/articles.json but do NO
+// git operations — the workflow stages them as a PR for human one-click merge.
+const STAGE = args.includes('--stage');
 
 const REPO_ROOT = join(__dirname, '..');
 const ARTICLES_PATH = join(REPO_ROOT, 'data/articles.json');
@@ -57,7 +60,7 @@ interface ExistingArticle extends GeneratedArticle {}
 
 async function main() {
   log('🚀 MonoKromatik Agent Pipeline Starting');
-  log(`   Target: ${COUNT} new articles | Dry run: ${DRY_RUN} | No push: ${NO_PUSH}`);
+  log(`   Target: ${COUNT} new articles | Dry run: ${DRY_RUN} | No push: ${NO_PUSH} | Stage: ${STAGE}`);
 
   // Sanity: API key
   if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY.startsWith('your_')) {
@@ -342,6 +345,13 @@ async function main() {
 
   writeFileSync(ARTICLES_PATH, JSON.stringify(merged, null, 2));
   log(`\n💾 [PUBLISHER] Wrote ${merged.length} total articles to data/articles.json`);
+
+  // Review-gated staging: leave the working tree changed and hand off to the
+  // workflow, which opens a Pull Request for human one-click merge-to-publish.
+  if (STAGE) {
+    log(`\n🟢 STAGE — ${newArticles.length} EIC-approved candidate(s) written for review. No git here; the workflow will open a PR.`);
+    return summarize(newArticles);
+  }
 
   // 9. Git commit + push (this triggers Vercel auto-deploy)
 
