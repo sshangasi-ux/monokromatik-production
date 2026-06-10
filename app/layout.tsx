@@ -1,19 +1,32 @@
-import type { Metadata } from "next";
-import { GoogleAnalytics } from '@next/third-parties/google'
-import "./globals.css";
+import type { Metadata } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "MonoKromatik Network — African Stories BBC Won't Tell You",
-  description: "Experience the pulse of African content. Culture, sports, and entertainment from an insider's lens. Zero budget, AI-powered, built for the diaspora.",
-  keywords: ["African media", "African culture", "African sports", "Afrobeats", "PSL", "diaspora", "MonoKromatik"],
-  authors: [{ name: "Sibu Shangase" }],
+  title: 'Monokromatik — The Intelligence Behind African Influence.',
+  description: 'A living editorial and intelligence network decoding the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
+  keywords: [
+    'African brand intelligence',
+    'African creative industry',
+    'brand marketing Africa',
+    'African campaigns',
+    'African diaspora influence',
+    'creative commerce Africa',
+    'Monokromatik',
+  ],
+  authors: [{ name: 'Sibu Shangase' }],
   verification: {
     google: 'V25p3DOYTN6kChFRtlU0cL0V4vGdcUcfkKHfJuGJ1qY',
   },
   openGraph: {
-    title: "MonoKromatik Network",
-    description: "African Stories BBC Won't Tell You",
-    type: "website",
+    title: 'Monokromatik — The Intelligence Behind African Influence.',
+    description: 'Decoding the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Monokromatik — The Intelligence Behind African Influence.',
+    description: 'Decoding the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
   },
 };
 
