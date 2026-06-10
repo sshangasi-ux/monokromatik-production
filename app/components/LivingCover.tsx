@@ -36,7 +36,7 @@ function Background({ slide }: { slide: CoverSlide }) {
       <img
         src={slide.imageUrl}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-[1400ms] scale-105"
+        className="img-duotone absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-[1400ms] scale-105"
       />
     );
   }

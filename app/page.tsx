@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sp
 import Navigation from './components/Navigation';
 import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
+import MediaImage from './components/MediaImage';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
 
 export const revalidate = 60;
@@ -11,11 +12,7 @@ function DispatchCard({ article, feature = false }: { article: Article; feature?
   return (
     <Link href={`/article/${article.slug}`} className="group block">
       <div className={`relative overflow-hidden bg-mono-charcoal ${feature ? 'aspect-[5/4]' : 'aspect-[4/3]'}`}>
-        <img
-          src={article.imageUrl || '/fallback-hero.svg'}
-          alt={article.title}
-          className="h-full w-full object-cover opacity-85 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
-        />
+        <MediaImage fill src={article.imageUrl} alt={article.title} />
         <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-transparent" />
         <div className="absolute bottom-0 p-5 md:p-6">
           <span className="text-[10px] tracking-[0.25em] font-display font-bold text-mono-amber uppercase">{article.category} / Dispatch</span>

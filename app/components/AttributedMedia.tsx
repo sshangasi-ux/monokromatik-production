@@ -1,4 +1,5 @@
 import { ExternalLink, Film, ImageIcon } from 'lucide-react';
+import MediaImage from './MediaImage';
 
 export interface AttributedImageAsset {
   src: string;
@@ -12,8 +13,8 @@ export interface AttributedImageAsset {
 export function AttributedImage({ asset, feature = false }: { asset: AttributedImageAsset; feature?: boolean }) {
   return (
     <figure className="my-10 bg-mono-soft-white border border-mono-gray/20 overflow-hidden">
-      <div className={`bg-mono-charcoal overflow-hidden ${feature ? 'aspect-[16/10]' : 'aspect-[4/5]'}`}>
-        <img src={asset.src} alt={asset.alt} className="h-full w-full object-cover" loading="lazy" />
+      <div className={`relative bg-mono-charcoal overflow-hidden ${feature ? 'aspect-[16/10]' : 'aspect-[4/5]'}`}>
+        <MediaImage fill duotone={false} zoomOnHover={false} src={asset.src} alt={asset.alt} />
       </div>
       <figcaption className="p-5 md:p-6">
         <div className="flex items-start gap-3">
@@ -22,7 +23,7 @@ export function AttributedImage({ asset, feature = false }: { asset: AttributedI
             <p className="text-sm font-body text-mono-charcoal leading-relaxed">{asset.caption}</p>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-[10px] tracking-[0.16em] font-display font-bold text-mono-gray">
               <span>CREDIT: {asset.credit}</span>
-              <a href={asset.sourceHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-mono-amber hover:underline">SOURCE: {asset.sourceLabel} <ExternalLink size={11} /></a>
+              <a href={asset.sourceHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-mono-amber-strong hover:text-mono-amber-hover hover:underline">SOURCE: {asset.sourceLabel} <ExternalLink size={11} /></a>
             </div>
           </div>
         </div>

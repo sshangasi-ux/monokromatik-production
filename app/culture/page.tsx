@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import MediaImage from '../components/MediaImage';
 import { getAllArticles, getReadingTime, type Article } from '../../lib/articles';
 
 const contextPillars = [
@@ -25,7 +26,7 @@ function StoryCard({ article }: { article: Article }) {
   return (
     <Link href={`/article/${article.slug}`} className="group block">
       <div className="relative aspect-[4/3] overflow-hidden bg-mono-black">
-        <img src={article.imageUrl || '/fallback-hero.svg'} alt={article.title} className="h-full w-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition duration-700" />
+        <MediaImage fill src={article.imageUrl} alt={article.title} />
         <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-transparent" />
         <div className="absolute bottom-0 p-5">
           <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber uppercase">{article.category}</p>
