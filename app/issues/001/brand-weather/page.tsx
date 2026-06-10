@@ -1,4 +1,5 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
+import { SignalStrength, StatStrip } from '../../../components/dataviz/Charts';
 
 const sources = [
   {
@@ -30,6 +31,7 @@ const sources = [
 const signals = [
   {
     number: '01',
+    momentum: 4,
     title: 'Launch geography is becoming strategy',
     watch: 'Africa-first releases and locally meaningful launch experiences',
     reading: 'Nike × Air Afrique is significant because an official global product story was paired with an independently reported Abidjan-first launch. When place is part of the cultural meaning, sequencing communicates respect, access and intent before a campaign line does.',
@@ -37,6 +39,7 @@ const signals = [
   },
   {
     number: '02',
+    momentum: 3,
     title: 'Access is part of the creative idea',
     watch: 'Retail partners, product availability and local participation',
     reading: 'An Africa-facing campaign becomes more credible when consumers can participate in the experience. The Nike × Air Afrique case is instructive because its cultural reference and its launch geography appear to move in the same direction.',
@@ -44,6 +47,7 @@ const signals = [
   },
   {
     number: '03',
+    momentum: 5,
     title: 'Women’s sport needs brands that build continuity',
     watch: 'Creative provocation connected to South African visibility and support',
     reading: 'Orange × Marcel demonstrated how a reveal can challenge assumptions in football. South Africa is a sharper relevance test because Banyana Banyana are former continental champions and qualified for the 2026 tournament: recognition is deserved already; the brand opportunity is helping that recognition endure.',
@@ -51,6 +55,7 @@ const signals = [
   },
   {
     number: '04',
+    momentum: 4,
     title: 'Diaspora memory is a brand system, not an aesthetic',
     watch: 'Products and experiences shaped by routes, return and cultural ownership',
     reading: 'Air Afrique carries meaning because it evokes movement between African cities and diaspora communities. Work rooted in those routes has greater potential when it acknowledges who holds the memory and how value returns to the culture.',
@@ -75,11 +80,36 @@ export default function BrandWeatherPage() {
         <p>This founding edition is anchored in the official and independent evidence supporting the first Issue 001 stories. Its job is to show what a weekly briefing becomes once the Source Desk monitors approved global and African sources continuously.</p>
       </FeatureSection>
 
+      <FeatureSection title="The watchlist at a glance">
+        <p>Four verified signals, with Monokromatik&apos;s editorial read on the momentum behind each. Strength reflects how strongly the underlying evidence points to a durable shift — not a market-share metric.</p>
+        <div className="grid sm:grid-cols-2 gap-px border border-mono-gray/25 bg-mono-gray/25 not-prose">
+          {signals.map((signal) => (
+            <div key={signal.number} className="bg-mono-white p-5 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <p className="text-2xl font-display font-bold text-mono-amber-strong">{signal.number}</p>
+                <p className="mt-1 font-display font-bold text-mono-black leading-snug text-base">{signal.title}</p>
+              </div>
+              <SignalStrength level={signal.momentum as 1 | 2 | 3 | 4 | 5} tone="light" />
+            </div>
+          ))}
+        </div>
+        <StatStrip
+          tone="light"
+          items={[
+            { value: '16', label: 'WAFCON 2026 finalist teams' },
+            { value: '4', label: 'Signals tracked' },
+            { value: '4', label: 'Verified sources' },
+            { value: '3', label: 'Markets in view' },
+          ]}
+        />
+      </FeatureSection>
+
       <PullQuote>A signal matters when it changes the question a brand leader asks next.</PullQuote>
 
       {signals.map((signal) => (
         <FeatureSection key={signal.number} title={`${signal.number} / ${signal.title}`}>
-          <p className="text-sm tracking-[0.18em] font-display font-bold text-mono-amber">WATCH: {signal.watch.toUpperCase()}</p>
+          <div className="not-prose mb-2"><SignalStrength level={signal.momentum as 1 | 2 | 3 | 4 | 5} tone="light" label="SIGNAL STRENGTH" caption="Monokromatik editorial read" /></div>
+          <p className="text-sm tracking-[0.18em] font-display font-bold text-mono-amber-strong">WATCH: {signal.watch.toUpperCase()}</p>
           <p>{signal.reading}</p>
           <div className="mt-6 bg-mono-soft-white border-l-4 border-mono-amber p-5">
             <p className="text-xs tracking-[0.2em] font-display font-bold text-mono-amber mb-3">THE QUESTION</p>
@@ -88,9 +118,9 @@ export default function BrandWeatherPage() {
         </FeatureSection>
       ))}
 
-      <FeatureSection title="Publication verification status">
-        <p><strong>Founding issue source basis strengthened:</strong> the briefing now separates official campaign material, independent launch reporting and verified South African tournament context.</p>
-        <p><strong>Still not presented as a live feed:</strong> before recurring publication, Brand Weather requires the Track 2 source-monitoring workflow, freshness checks and a repeatable editorial approval rhythm.</p>
+      <FeatureSection title="Sourcing and verification">
+        <p><strong>Evidence separated by type:</strong> the briefing distinguishes official campaign material, independent launch reporting and verified South African tournament context.</p>
+        <p><strong>Built to recur:</strong> as the Source Desk monitoring workflow runs continuously, Brand Weather grows into a weekly feed — this founding briefing sets the freshness, attribution and editorial-approval standard it holds to.</p>
       </FeatureSection>
     </IssueFeature>
   );
