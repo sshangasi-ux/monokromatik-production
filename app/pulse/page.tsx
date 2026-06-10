@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { TrendingUp, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import MediaImage from '../components/MediaImage';
 import { getAllArticles, getReadingTime, formatDate } from '../../lib/articles';
 import type { Metadata } from 'next';
 
@@ -63,10 +64,10 @@ export default function PulsePage() {
                     className="group"
                   >
                     <div className="aspect-[4/3] overflow-hidden bg-mono-charcoal mb-3 relative">
-                      <img
+                      <MediaImage
+                        fill
                         src={article.imageUrl || fallbackImage}
                         alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/50 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-4">

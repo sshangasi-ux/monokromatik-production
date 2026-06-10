@@ -3,6 +3,8 @@ import { Play, TrendingUp, Mic, ShoppingBag, ArrowRight, Users, Globe } from 'lu
 import Navigation from './components/Navigation';
 import NewsletterSignup from './components/NewsletterSignup';
 import TrendingArticles from './components/TrendingArticles';
+import MediaImage from './components/MediaImage';
+import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, formatDate } from '../lib/articles';
 
 // Force the homepage to revalidate every 60s. Without this, Next.js was
@@ -35,11 +37,7 @@ function StoryCard({ article, featured = false }: StoryCardProps) {
         featured ? 'aspect-[16/9]' : 'aspect-[4/3]'
       } hover:scale-[1.02] transition-transform duration-300`}
     >
-      <img
-        src={article.imageUrl || defaultImage}
-        alt={article.title}
-        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-      />
+      <MediaImage fill src={article.imageUrl || defaultImage} alt={article.title} />
       <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/50 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6">
         <div className="flex items-center gap-3 mb-3">
@@ -157,21 +155,25 @@ export default function Home() {
         <section className="py-16 bg-mono-soft-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
-                <span className="text-mono-amber">LATEST</span> — Hot Off The Press
-              </h2>
+              <Reveal>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+                  <span className="text-mono-amber">LATEST</span> — Hot Off The Press
+                </h2>
+              </Reveal>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {featuredArticle && (
-                <div className="md:row-span-2">
+                <StaggerItem className="md:row-span-2">
                   <StoryCard article={featuredArticle} featured />
-                </div>
+                </StaggerItem>
               )}
               {latestArticles.slice(1, 7).map((article) => (
-                <StoryCard key={article.slug} article={article} />
+                <StaggerItem key={article.slug}>
+                  <StoryCard article={article} />
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}
@@ -181,19 +183,23 @@ export default function Home() {
         <section className="py-16 bg-mono-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
-                <span className="text-mono-amber">ROOTS</span> — Culture & Heritage
-              </h2>
+              <Reveal>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+                  <span className="text-mono-amber">ROOTS</span> — Culture & Heritage
+                </h2>
+              </Reveal>
               <Link href="/roots" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {articlesByCategory.culture.slice(0, 3).map((article) => (
-                <StoryCard key={article.slug} article={article} />
+                <StaggerItem key={article.slug}>
+                  <StoryCard article={article} />
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}
@@ -203,19 +209,23 @@ export default function Home() {
         <section className="py-16 bg-mono-soft-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
-                <span className="text-mono-amber">ARENA</span> — Sports & Competition
-              </h2>
+              <Reveal>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+                  <span className="text-mono-amber">ARENA</span> — Sports & Competition
+                </h2>
+              </Reveal>
               <Link href="/arena" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {articlesByCategory.sports.slice(0, 2).map((article) => (
-                <StoryCard key={article.slug} article={article} />
+                <StaggerItem key={article.slug}>
+                  <StoryCard article={article} />
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}
@@ -225,19 +235,23 @@ export default function Home() {
         <section className="py-16 bg-mono-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
-                <span className="text-mono-amber">WAVES</span> — Music & Entertainment
-              </h2>
+              <Reveal>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+                  <span className="text-mono-amber">WAVES</span> — Music & Entertainment
+                </h2>
+              </Reveal>
               <Link href="/waves" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {articlesByCategory.music.slice(0, 2).map((article) => (
-                <StoryCard key={article.slug} article={article} />
+                <StaggerItem key={article.slug}>
+                  <StoryCard article={article} />
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}

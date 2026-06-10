@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Play, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import MediaImage from '../components/MediaImage';
 import NewsletterSignup from '../components/NewsletterSignup';
 import { getAllArticles, getReadingTime, formatDate } from '../../lib/articles';
 import type { Metadata } from 'next';
@@ -92,11 +93,10 @@ export default function WatchPage() {
                     className="group"
                   >
                     <div className="aspect-[16/9] overflow-hidden bg-mono-charcoal mb-3 relative">
-                      <img
+                      <MediaImage
+                        fill
                         src={article.imageUrl || fallbackImage}
                         alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/50 to-transparent" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">

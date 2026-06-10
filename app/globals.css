@@ -144,6 +144,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Monochrome → amber brand treatment. Animatable filter chain so it can
+   smoothly transition to full colour on hover. See design-system/MASTER.md. */
+.img-duotone {
+  filter: grayscale(1) sepia(0.55) saturate(1.7) hue-rotate(-12deg) contrast(1.03);
+}
+/* Reveal true colour when the enclosing card (.group) is hovered/focused.
+   Identity values (not `none`) keep the function list matched for a smooth tween. */
+.group:hover .img-duotone,
+.group:focus-within .img-duotone {
+  filter: grayscale(0) sepia(0) saturate(1) hue-rotate(0deg) contrast(1);
+}
+
+/* Loading skeleton: charcoal base with an amber shimmer sweep. */
+.img-shimmer {
+  background-color: var(--mono-charcoal);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(204, 85, 0, 0.18) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* Accessibility: visible keyboard focus on all interactive elements */
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--ring);
