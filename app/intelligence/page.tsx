@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookMarked, Database, FileText, Radar, Search, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import { StatStrip } from '../components/dataviz/Charts';
 
 const researchProducts = [
   {
@@ -128,6 +129,15 @@ export default function IntelligencePage() {
             <h2 className="text-4xl font-display font-bold text-mono-black leading-tight">Built from the best available evidence — global and African.</h2>
             <p className="mt-6 text-mono-charcoal text-lg font-body leading-relaxed">The engine will monitor authoritative reporting, official creative materials and market-specific signals, then develop bespoke Monokromatik records and analysis.</p>
             <Link href="/intelligence/source-desk" className="mt-8 inline-flex gap-2 items-center text-mono-amber font-display font-bold">EXPLORE THE SOURCE DESK <ArrowRight size={18} /></Link>
+            <div className="mt-10">
+              <StatStrip
+                tone="light"
+                items={[
+                  { value: String(sourceGroups.length), label: 'Source categories' },
+                  { value: String(researchProducts.length), label: 'Research products' },
+                ]}
+              />
+            </div>
           </div>
           <div className="space-y-4">
             {sourceGroups.map((group) => (

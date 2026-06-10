@@ -14,7 +14,11 @@ export interface GeneratedArticle {
   category: string;
   tags: string[];
   imageUrl?: string;
+  imageCredit?: string;
+  imageSourceUrl?: string;
   videoUrl?: string;
+  videoCredit?: string;
+  videoSourceUrl?: string;
   sourceLink: string;
   sourceName: string;
   publishedAt: string;

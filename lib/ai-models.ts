@@ -14,8 +14,10 @@
 // Every tier is overridable via env so the model mix can be tuned without a deploy.
 
 export const MODELS = {
-  /** Flagship long-form generation + editorial judgement (article writing, EIC review). */
-  flagship: process.env.MONO_MODEL_FLAGSHIP || 'claude-fable-5',
+  /** Flagship long-form generation + editorial judgement (article writing, EIC review).
+   *  Default stays on the Claude Sonnet line we've been using; Fable 5 remains
+   *  available by setting MONO_MODEL_FLAGSHIP=claude-fable-5. */
+  flagship: process.env.MONO_MODEL_FLAGSHIP || 'claude-sonnet-4-6',
   /** Brand-voice styling and medium-weight editorial tasks. */
   editorial: process.env.MONO_MODEL_EDITORIAL || 'claude-sonnet-4-6',
   /** High-volume mechanical tasks (curation, dedupe, classification, social snippets). */

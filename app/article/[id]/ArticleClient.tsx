@@ -88,27 +88,53 @@ export default function ArticleClient({ article }: { article: Article }) {
         </p>
 
         {article.imageUrl && (
-          <div className="relative aspect-video overflow-hidden bg-mono-charcoal mb-12 rounded-lg">
-            <MediaImage
-              fill
-              priority
-              duotone={false}
-              zoomOnHover={false}
-              src={article.imageUrl}
-              alt={article.title}
-            />
-          </div>
+          <figure className="mb-12">
+            <div className="relative aspect-video overflow-hidden bg-mono-charcoal rounded-lg">
+              <MediaImage
+                fill
+                priority
+                duotone={false}
+                zoomOnHover={false}
+                src={article.imageUrl}
+                alt={article.title}
+              />
+            </div>
+            {article.imageCredit && (
+              <figcaption className="mt-2 text-[11px] tracking-[0.08em] font-body text-mono-gray">
+                {article.imageSourceUrl ? (
+                  <a href={article.imageSourceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-mono-amber-strong hover:underline">
+                    {article.imageCredit}
+                  </a>
+                ) : (
+                  article.imageCredit
+                )}
+              </figcaption>
+            )}
+          </figure>
         )}
 
         {article.videoUrl && (
-          <div className="aspect-video mb-12 rounded-lg overflow-hidden">
-            <iframe
-              src={article.videoUrl.replace('watch?v=', 'embed/')}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          <figure className="mb-12">
+            <div className="aspect-video rounded-lg overflow-hidden">
+              <iframe
+                src={article.videoUrl.replace('watch?v=', 'embed/')}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            {article.videoCredit && (
+              <figcaption className="mt-2 text-[11px] tracking-[0.08em] font-body text-mono-gray">
+                {article.videoSourceUrl ? (
+                  <a href={article.videoSourceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-mono-amber-strong hover:underline">
+                    {article.videoCredit}
+                  </a>
+                ) : (
+                  article.videoCredit
+                )}
+              </figcaption>
+            )}
+          </figure>
         )}
 
         <div className="prose prose-lg max-w-none font-body text-mono-charcoal mb-12 article-content">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Bookmark, Download, FileText, LockKeyhole } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import { StatStrip } from '../components/dataviz/Charts';
 
 const reportSeries = [
   {
@@ -77,6 +78,16 @@ export default function ReportsPage() {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The commissioning slate.</h2>
             </div>
             <p className="max-w-sm text-sm text-mono-gray font-body">These editions are in development; the library becomes populated as verified research and original editorial work are completed.</p>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(reportSeries.length), label: 'Editions commissioned' },
+                { value: '001', label: 'Founding edition live' },
+                { value: '100%', label: 'Source-verified standard' },
+              ]}
+            />
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {reportSeries.map((report) => (
