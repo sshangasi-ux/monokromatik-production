@@ -1,5 +1,6 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
 import { MediaStatus, OfficialVideoEmbed } from '../../../components/AttributedMedia';
+import { RelevanceGauge } from '../../../components/dataviz/Charts';
 
 const officialCampaignPage = 'https://www.publicisgroupe.com/en/news-france/wo-mens-football-orange-marcel';
 
@@ -68,6 +69,14 @@ export default function WillItLandSouthAfricaPage() {
         <p><strong>Treat visibility as a system.</strong> Match discovery, viewing opportunities, attendance, athlete profiles and creator storytelling must sit alongside the hero film.</p>
         <p><strong>Measure what changes.</strong> A serious programme should look beyond impressions to changes in discovery, attendance, participation and profile, wherever those outcomes can be responsibly verified.</p>
       </FeatureSection>
+
+      <div className="not-prose my-12 max-w-sm">
+        <RelevanceGauge
+          band="Strong"
+          title="The insight lands — the execution must be re-authored for South Africa."
+          note="High relevance on the underlying idea; conditional on local authorship, real participation and sustained visibility rather than a single film."
+        />
+      </div>
 
       <FeatureSection title="The Monokromatik verdict">
         <p><strong>Would the insight land?</strong> Yes. The idea that audience assumptions shape how sporting excellence is recognised is relevant in South Africa.</p>
