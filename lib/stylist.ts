@@ -22,6 +22,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import { MODELS } from './ai-models';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -93,7 +94,7 @@ export async function stylizeArticle(
   const userMessage = formatDraftForStylist(draft);
 
   const response = await ai.messages.create({
-    model: 'claude-sonnet-4-5',
+    model: MODELS.editorial,
     max_tokens: 4096,
     system: systemBlocks,
     messages: [

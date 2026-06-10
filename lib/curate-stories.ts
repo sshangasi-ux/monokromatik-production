@@ -2,6 +2,7 @@
 // Uses Claude API to rank stories by diaspora relevance and filter negative narratives
 
 import Anthropic from '@anthropic-ai/sdk';
+import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
 
 // IMPORTANT: lazy-initialize the Anthropic client.
@@ -96,7 +97,7 @@ Return the top ${limit} stories ranked by score (highest first).`;
 
   try {
     const message = await getClient().messages.create({
-      model: 'claude-sonnet-4-5',
+      model: MODELS.utility,
       max_tokens: 2000,
       messages: [
         {

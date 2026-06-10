@@ -1,5 +1,13 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
 import { AttributedImage, AttributedImagePair, MediaStatus } from '../../../components/AttributedMedia';
+import { SignalStrength } from '../../../components/dataviz/Charts';
+
+const decode: { label: string; level: 1 | 2 | 3 | 4 | 5; note: string }[] = [
+  { label: 'IDEA', level: 5, note: 'Heritage carried as design language, not decoration.' },
+  { label: 'AUTHORSHIP', level: 4, note: 'African creative collective central to the work.' },
+  { label: 'EXECUTION', level: 5, note: 'Craft, narrative and product detail in lockstep.' },
+  { label: 'CONSEQUENCE', level: 4, note: 'Africa-first launch signals intent beyond a drop.' },
+];
 
 const officialSource = 'https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images';
 const heroImage = 'https://media.about.nike.com/img/b6930e3c-bcb3-4dca-ac92-ac3b9ea884e1/air-max-rk61-hero.jpg';
@@ -51,6 +59,21 @@ export default function TheWorkNikeAirAfriquePage() {
       next={{ label: 'Will It Land? Orange WoMen’s Football', href: '/issues/001/will-it-land-orange-womens-football' }}
     >
       <MediaStatus>Displayed campaign imagery is sourced from Nike’s official newsroom asset set and credited directly. Independent publishing is used for reporting context, not as visual inventory.</MediaStatus>
+
+      <FeatureSection title="The Monokromatik decode">
+        <p className="not-prose text-sm text-mono-gray font-body">Our editorial read across the four dimensions we use to assess creative work — idea, authorship, execution and consequence. Strength reflects judgement, not a measured score.</p>
+        <div className="not-prose mt-6 grid sm:grid-cols-2 gap-px border border-mono-gray/25 bg-mono-gray/25">
+          {decode.map((d) => (
+            <div key={d.label} className="bg-mono-white p-5">
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-[11px] tracking-[0.22em] font-display font-bold text-mono-amber-strong">{d.label}</span>
+                <SignalStrength level={d.level} tone="light" />
+              </div>
+              <p className="mt-3 text-sm font-body text-mono-charcoal leading-relaxed">{d.note}</p>
+            </div>
+          ))}
+        </div>
+      </FeatureSection>
 
       <FeatureSection title="The move">
         <p>Nike and the Paris-based creative collective Air Afrique introduced the Air Max RK61 as a dress-shoe silhouette connecting heritage, craft and Air Max innovation. Nike identifies aviation-linked details including a jet-engine-inspired Air unit, Morse code spelling “Air Afrique” on the outsole, an original-airline-logo zipper pull and an aircraft-seat-inspired sock liner.</p>

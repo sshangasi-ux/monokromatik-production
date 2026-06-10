@@ -2,6 +2,7 @@
 // Uses Claude API to generate full articles from curated stories
 
 import Anthropic from '@anthropic-ai/sdk';
+import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
 import { fetchArticleBody } from './fetch-article-body';
 
@@ -175,7 +176,7 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
   try {
     const anthropic = getAnthropicClient();
     const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-5',
+      model: MODELS.flagship,
       max_tokens: 4000,
       messages: [
         {
@@ -185,7 +186,9 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
       ],
     });
 
-    const responseText = message.content[0].type === 'text' ? message.content[0].text : '';
+    // Robust against non-text leading blocks (e.g. if adaptive thinking is enabled).
+    const textBlock = message.content.find((b) => b.type === 'text');
+    const responseText = textBlock && textBlock.type === 'text' ? textBlock.text : '';
     const result = parseWriterResponseSafely(responseText);
     if (!result) {
       throw new Error('Writer response had no parseable article structure');
