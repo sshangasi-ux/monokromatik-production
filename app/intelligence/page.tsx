@@ -144,7 +144,7 @@ export default function IntelligencePage() {
       <section className="py-20 md:py-24 bg-mono-black text-mono-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
           <div>
-            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">ASK MONOKROMATIK / PREVIEW</p>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">ASK MONOKROMATIK / EARLY ACCESS</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">The question becomes the interface.</h2>
             <p className="mt-6 text-lg font-body text-mono-soft-white">In time, professionals will interrogate verified cases, reports, market briefs and source-led records directly.</p>
           </div>

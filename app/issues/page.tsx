@@ -6,7 +6,7 @@ const proposedIssues = [
   {
     number: '001',
     title: 'The Intelligence Behind African Influence',
-    focus: 'Founding Issue / Preview Built',
+    focus: 'Founding Issue',
     contents: 'Cover essay · The Work · Will It Land? · Brand Weather · Conversations',
     href: '/issues/001',
     status: 'OPEN ISSUE',
@@ -77,7 +77,7 @@ export default function IssuesPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.3em] text-mono-amber font-display font-bold">THE AMBITION</p>
           <h2 className="mt-6 text-4xl md:text-5xl font-display font-bold">A digital intelligence product people ask to hold in their hands.</h2>
-          <p className="mt-7 text-lg font-body text-mono-soft-white">Issue 001 is now built as a controlled preview package. Future downloadable reports, limited print editions and partner-quality research books will grow from the same system.</p>
+          <p className="mt-7 text-lg font-body text-mono-soft-white">Issue 001 is the founding published edition. Future downloadable reports, limited print editions and partner-quality research books grow from the same system.</p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
             <Link href="/issues/001" className="inline-flex items-center gap-2 bg-mono-amber px-7 py-4 font-display font-bold text-mono-white">OPEN ISSUE 001 <ArrowRight size={18} /></Link>
             <Link href="/intelligence" className="inline-flex items-center gap-2 border border-mono-white px-7 py-4 font-display font-bold text-mono-white">EXPLORE INTELLIGENCE <ArrowRight size={18} /></Link>
