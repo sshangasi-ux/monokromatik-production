@@ -1,4 +1,4 @@
-name: MonoKromatik Daily Agent Run
+name: MonoKromatik Daily Discovery and Review Run
 
 on:
   schedule:
@@ -7,13 +7,15 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: 'Number of articles to generate'
+        description: 'Number of candidate articles to generate for review'
         required: false
         default: '3'
         type: string
 
+# Pre-launch governance: agents may discover, draft and review, but must not
+# commit editorial output directly into production content.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   run-agents:
@@ -33,34 +35,28 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Use `npm install` instead of `npm ci` so minor lockfile drift
-        # between local dev (macOS arm64) and CI (linux x64) doesn't block
-        # the agent pipeline. The agent run is content-only — we don't need
-        # bit-exact dependency reproducibility.
         run: npm install --no-fund --no-audit
 
-      - name: Run agent pipeline
+      - name: Run agent pipeline in review-only mode
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # EIC digest emailer — sends a daily killed-pitches report to the
-          # operator. Free tier on Resend (3,000 emails/month).
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
-          # Pexels fallback for the smart image scraper. Used only when
-          # the source page has no usable photo (e.g., body images are all
-          # publisher avatars or the og:image is broken).
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          MONOKROMATIK_PUBLICATION_MODE: review_only
           NODE_ENV: production
         run: |
-          npm run agents -- --count=${{ github.event.inputs.count || '3' }}
+          # --no-push permits internal review output and digest generation while
+          # ensuring no generated article is pushed to the public branch.
+          npm run agents -- --count=${{ github.event.inputs.count || '3' }} --no-push
 
       - name: Pipeline summary
         if: always()
         run: |
-          echo "### MonoKromatik agent run finished" >> $GITHUB_STEP_SUMMARY
+          echo "### MonoKromatik discovery and review run finished" >> $GITHUB_STEP_SUMMARY
           echo "Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
           if [ "${{ job.status }}" = "success" ]; then
-            echo "✅ Articles published — Vercel will auto-deploy in ~2 minutes." >> $GITHUB_STEP_SUMMARY
+            echo "✅ Candidate articles reviewed. No automated publication or production deployment performed." >> $GITHUB_STEP_SUMMARY
           else
-            echo "❌ Pipeline failed — check logs above." >> $GITHUB_STEP_SUMMARY
+            echo "❌ Discovery/review run failed — check logs above." >> $GITHUB_STEP_SUMMARY
           fi

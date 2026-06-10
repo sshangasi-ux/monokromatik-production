@@ -58,19 +58,19 @@ export default function ShopPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 text-left">
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">TEES</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">TEES</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Heavyweight cotton, MonoKromatik graphic prints, designed in Jozi.
               </p>
             </div>
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">PRINTS</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">PRINTS</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Limited-edition art prints celebrating African creators and moments.
               </p>
             </div>
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">PIECES</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">PIECES</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Caps, totes, hoodies. Wearable culture, built to last.
               </p>

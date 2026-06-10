@@ -6,7 +6,6 @@ type Variant = 'default' | 'footer' | 'sidebar';
 
 interface Props {
   variant?: Variant;
-  /** Identifier for analytics: where on the site this form lives */
   source?: string;
 }
 
@@ -14,8 +13,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
-
-  const sourceTag = source ?? variant; // sensible default
+  const sourceTag = source ?? variant;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,12 +27,10 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim().toLowerCase(), source: sourceTag }),
       });
-
       const data = await response.json().catch(() => ({}));
-
       if (response.ok) {
         setStatus('success');
-        setMessage(data.message || "Welcome to The Pulse. Check your email to confirm.");
+        setMessage(data.message || 'Welcome to The Weekly Signal. Check your email to confirm.');
         setEmail('');
       } else {
         setStatus('error');
@@ -46,18 +42,16 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
     }
   };
 
-  // Honest CTA — no fake counts. Bartlett Law 25.
-  const ctaIdle = 'JOIN THE PULSE';
+  const ctaIdle = 'JOIN THE WEEKLY SIGNAL';
   const ctaLoading = 'SUBSCRIBING…';
 
   if (variant === 'footer') {
     return (
       <div className="bg-mono-black text-mono-white p-8 rounded-lg">
-        <h3 className="text-2xl font-display font-bold mb-4">GET THE PULSE</h3>
+        <h3 className="text-2xl font-display font-bold mb-4">THE WEEKLY SIGNAL</h3>
         <p className="text-mono-soft-white font-body mb-6">
-          Every Sunday, 8AM SAST. The African stories BBC won&rsquo;t tell you. 5-minute read. No spam.
+          Brand, culture and commercial intelligence for Africa and its diaspora. Delivered weekly.
         </p>
-
         <form onSubmit={handleSubmit} className="space-y-4" aria-label="Newsletter signup">
           <div className="flex flex-col sm:flex-row gap-3">
             <input
@@ -79,18 +73,9 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
               {status === 'loading' ? ctaLoading : ctaIdle}
             </button>
           </div>
-
-          {status === 'success' && (
-            <p className="text-green-400 font-body text-sm" role="status">✓ {message}</p>
-          )}
-          {status === 'error' && (
-            <p className="text-red-400 font-body text-sm" role="alert">✗ {message}</p>
-          )}
+          {status === 'success' && <p className="text-green-400 font-body text-sm" role="status">✓ {message}</p>}
+          {status === 'error' && <p className="text-red-400 font-body text-sm" role="alert">✗ {message}</p>}
         </form>
-
-        <p className="text-mono-gray font-body text-sm mt-4">
-          ⚡ This week: agent-curated drops from across the continent — culture, sports, music, diaspora.
-        </p>
       </div>
     );
   }
@@ -98,13 +83,10 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
   if (variant === 'sidebar') {
     return (
       <div className="bg-mono-soft-white p-6 border-l-4 border-mono-amber">
-        <h4 className="text-xl font-display font-bold text-mono-black mb-3">
-          Never Miss a Story
-        </h4>
+        <h4 className="text-xl font-display font-bold text-mono-black mb-3">Get The Weekly Signal</h4>
         <p className="text-mono-charcoal font-body text-sm mb-4">
-          Get The Pulse every Sunday — the African stories that matter, in your inbox.
+          The campaigns, culture and commercial intelligence shaping Africa and its diaspora.
         </p>
-
         <form onSubmit={handleSubmit} className="space-y-3" aria-label="Newsletter signup">
           <input
             type="email"
@@ -124,34 +106,23 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
           >
             {status === 'loading' ? ctaLoading : 'SUBSCRIBE'}
           </button>
-
-          {status === 'success' && (
-            <p className="text-green-600 font-body text-xs" role="status">✓ {message}</p>
-          )}
-          {status === 'error' && (
-            <p className="text-red-600 font-body text-xs" role="alert">✗ {message}</p>
-          )}
+          {status === 'success' && <p className="text-green-600 font-body text-xs" role="status">✓ {message}</p>}
+          {status === 'error' && <p className="text-red-600 font-body text-xs" role="alert">✗ {message}</p>}
         </form>
       </div>
     );
   }
 
-  // Default variant — for homepage hero / mid-article placement
   return (
     <div className="bg-mono-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
       <div className="text-center mb-6">
-        <h3 className="text-3xl font-display font-bold text-mono-black mb-2">
-          GET THE PULSE
-        </h3>
+        <h3 className="text-3xl font-display font-bold text-mono-black mb-2">THE WEEKLY SIGNAL</h3>
         <div className="h-1 w-20 bg-mono-amber mx-auto mb-4" />
         <p className="text-mono-charcoal font-body text-lg">
-          Every Sunday, 8AM SAST. The African stories BBC won&rsquo;t tell you.
+          Brand, culture and commercial intelligence for Africa and its diaspora.
         </p>
-        <p className="text-mono-gray font-body">
-          5-minute read. No spam. Unsubscribe anytime.
-        </p>
+        <p className="text-mono-gray font-body">Useful insight. Verified sourcing. No noise.</p>
       </div>
-
       <form onSubmit={handleSubmit} className="space-y-4" aria-label="Newsletter signup">
         <div className="flex flex-col sm:flex-row gap-3">
           <input
@@ -173,18 +144,12 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
             {status === 'loading' ? ctaLoading : ctaIdle}
           </button>
         </div>
-
-        {status === 'success' && (
-          <p className="text-green-600 font-body text-center" role="status">✓ {message}</p>
-        )}
-        {status === 'error' && (
-          <p className="text-red-600 font-body text-center" role="alert">✗ {message}</p>
-        )}
+        {status === 'success' && <p className="text-green-600 font-body text-center" role="status">✓ {message}</p>}
+        {status === 'error' && <p className="text-red-600 font-body text-center" role="alert">✗ {message}</p>}
       </form>
-
       <div className="mt-6 text-center">
         <p className="text-mono-gray font-body text-sm">
-          <span className="text-mono-amber">⚡</span> Built by 1 human + AI editorial agents.
+          <span className="text-mono-amber-strong">●</span> AI-assisted discovery. Human-directed intelligence. Verified sourcing.
         </p>
       </div>
     </div>
