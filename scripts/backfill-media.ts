@@ -40,6 +40,7 @@ async function main() {
         existingUrl: a.imageUrl,
         sourceLink: a.sourceLink,
         sourceName: a.sourceName,
+        slug: a.slug,
         title: a.title,
         excerpt: a.excerpt,
         category: a.category,

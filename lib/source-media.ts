@@ -11,12 +11,52 @@
 // PEXELS_API_KEY / UNSPLASH_ACCESS_KEY secrets live in the pipeline runtime
 // (GitHub Actions / Vercel cron), not in build.
 
+import { writeFileSync, mkdirSync, existsSync } from 'fs';
+import { join } from 'path';
+import { createHash } from 'crypto';
+import sharp from 'sharp';
 import { sourceImage } from './source-image';
 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const SITE = 'https://www.monokromatik.com';
+
+const MEDIA_DIR = join(process.cwd(), 'public', 'article-media');
+
+/**
+ * Self-host a sourced image: download it server-side (no browser Referer, so
+ * publisher hotlink protection doesn't apply), normalise to a resized webp and
+ * write it under public/article-media so it's served same-origin from our own
+ * domain — no third-party proxy. Returns the public path, or null on failure
+ * (caller keeps the remote URL as a last resort).
+ */
+async function localizeImage(remoteUrl: string, slug?: string): Promise<string | null> {
+  if (remoteUrl.startsWith('/')) return remoteUrl; // already local
+  if (!/^https?:\/\//i.test(remoteUrl)) return null;
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 12000);
+    const res = await fetch(remoteUrl, { headers: { 'User-Agent': UA, Accept: 'image/*' }, signal: ctrl.signal });
+    clearTimeout(t);
+    if (!res.ok) return null;
+    const input = Buffer.from(await res.arrayBuffer());
+    if (input.length < 1024) return null;
+    const output = await sharp(input)
+      .rotate()
+      .resize({ width: 1600, height: 1600, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+    const hash = createHash('sha1').update(remoteUrl).digest('hex').slice(0, 8);
+    const base = (slug || 'media').replace(/[^a-z0-9-]+/gi, '-').slice(0, 60).toLowerCase() || 'media';
+    const filename = `${base}-${hash}.webp`;
+    if (!existsSync(MEDIA_DIR)) mkdirSync(MEDIA_DIR, { recursive: true });
+    writeFileSync(join(MEDIA_DIR, filename), output);
+    return `/article-media/${filename}`;
+  } catch {
+    return null;
+  }
+}
 
 export interface MediaAsset {
   url: string;
@@ -186,6 +226,7 @@ export async function sourceMedia(args: {
   existingUrl?: string;
   sourceLink?: string;
   sourceName?: string;
+  slug?: string;
   title: string;
   excerpt: string;
   category: string;
@@ -198,7 +239,10 @@ export async function sourceMedia(args: {
     category: args.category,
   });
   const credit = creditForImage(img.source as ImageSource, args.sourceName, args.sourceLink);
-  const image: MediaAsset = { url: img.url, ...credit };
+  // Self-host the chosen image (same-origin webp). On failure keep the remote
+  // URL; the branded fallback in MediaImage still catches anything that breaks.
+  const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
+  const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
 
   // Official publisher video first (most reputable); otherwise a relevant stock clip.
   const official = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);

@@ -4,22 +4,9 @@ import { useState } from 'react';
 
 const FALLBACK = '/fallback-hero.svg';
 
-// Route REMOTE images through a caching image proxy. Publisher images are often
-// hotlink-protected (403 with a cross-site Referer) or lack CORS, which blanks
-// them on our domain; the proxy fetches server-side and re-serves them with
-// permissive headers (resized to webp). Local and already-proxied URLs pass
-// through untouched, and any failure still falls back to the branded SVG.
-export function proxify(src: string): string {
-  if (!/^https?:\/\//i.test(src)) return src; // local (e.g. /fallback-hero.svg)
-  try {
-    const { hostname } = new URL(src);
-    if (hostname.endsWith('monokromatik.com') || hostname.endsWith('images.weserv.nl')) return src;
-    const bare = src.replace(/^https?:\/\//i, '');
-    return `https://images.weserv.nl/?url=${encodeURIComponent(bare)}&w=1600&output=webp&we`;
-  } catch {
-    return src;
-  }
-}
+// Images are self-hosted under /article-media (webp, same-origin) by the media
+// sourcer, so no proxy is needed. Any URL that still fails (e.g. a not-yet-
+// localised remote URL) falls back to the branded SVG below.
 
 const ASPECT: Record<string, string> = {
   video: 'aspect-video',
@@ -66,7 +53,7 @@ export default function MediaImage({
 }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
-  const url = errored || !src ? FALLBACK : proxify(src);
+  const url = errored || !src ? FALLBACK : src;
   const showDuotone = duotone && !errored;
 
   const img = (
