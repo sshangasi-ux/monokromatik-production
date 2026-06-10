@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck } from 'lucide-react';
 import Navigation from '../../components/Navigation';
+import { StatStrip } from '../../components/dataviz/Charts';
 
 const caseStructure = [
   ['THE CONTEXT', 'Market, audience, cultural territory and the tension the work needed to address.'],
@@ -63,6 +64,16 @@ export default function CaseStudiesPage() {
           <div className="max-w-3xl mb-12">
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">THE CASE METHOD</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Analysis designed for usefulness, not merely inspiration.</h2>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(caseStructure.length), label: 'Read dimensions' },
+                { value: String(firstCollections.length), label: 'Opening collections' },
+                { value: String(futureFilters.length), label: 'Planned filters' },
+              ]}
+            />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {caseStructure.map(([title, copy], index) => (

@@ -17,6 +17,7 @@ export interface GeneratedArticle {
   imageCredit?: string;
   imageSourceUrl?: string;
   videoUrl?: string;
+  videoType?: 'embed' | 'file';
   videoCredit?: string;
   videoSourceUrl?: string;
   sourceLink: string;

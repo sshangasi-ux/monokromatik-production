@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Mic, PenLine, Video } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import { StatStrip } from '../components/dataviz/Charts';
 
 const conversationFormats = [
   {
@@ -58,6 +59,15 @@ export default function ConversationsPage() {
               <h2 className="max-w-4xl text-4xl md:text-5xl font-display font-bold text-mono-black">Invitations to contribute, challenge and lead.</h2>
             </div>
             <Link href="/contribute" className="inline-flex items-center gap-2 text-mono-amber font-display font-bold shrink-0">PITCH A VOICE OR SIGNAL <ArrowRight size={18} /></Link>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(conversationFormats.length), label: 'Conversation formats' },
+                { value: String(questions.length), label: 'Founding prompts' },
+              ]}
+            />
           </div>
           <div className="grid lg:grid-cols-2 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {conversationFormats.map((format) => (
