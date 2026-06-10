@@ -290,13 +290,19 @@ async function main() {
     publishedAt: new Date().toISOString(),
     imageUrl: '',
   }));
-  // Re-attach the image URLs and original slugs from the pre-EIC `written`
-  // array (we lost them when mapping to ReviewedArticle).
+  // Re-attach the media (URL + credit + video) and original slug from the
+  // pre-EIC `written` array (we lost them when mapping to ReviewedArticle).
   for (let i = 0; i < approved.length; i++) {
     const original = written.find((w) => w.title === approved[i].title);
     if (original) {
       writtenApproved[i].slug = original.slug;
       writtenApproved[i].imageUrl = original.imageUrl;
+      writtenApproved[i].imageCredit = original.imageCredit;
+      writtenApproved[i].imageSourceUrl = original.imageSourceUrl;
+      writtenApproved[i].videoUrl = original.videoUrl;
+      writtenApproved[i].videoType = original.videoType;
+      writtenApproved[i].videoCredit = original.videoCredit;
+      writtenApproved[i].videoSourceUrl = original.videoSourceUrl;
       writtenApproved[i].publishedAt = original.publishedAt;
     }
   }
