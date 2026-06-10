@@ -63,7 +63,7 @@ export default function ArticleClient({ article }: { article: Article }) {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-mono-gray hover:text-mono-amber transition-colors font-body mb-6"
+          className="inline-flex items-center gap-2 text-mono-gray hover:text-mono-amber-strong transition-colors font-body mb-6"
         >
           <ArrowLeft size={20} /> Back to home
         </Link>
@@ -118,7 +118,7 @@ export default function ArticleClient({ article }: { article: Article }) {
               href={article.sourceLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-mono-amber hover:underline inline-flex items-center gap-1"
+              className="text-mono-amber-strong hover:text-mono-amber-hover hover:underline inline-flex items-center gap-1"
             >
               {article.sourceName} <ExternalLink size={14} />
             </a>

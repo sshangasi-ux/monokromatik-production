@@ -184,7 +184,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">ROOTS</span> — Culture & Heritage
               </h2>
-              <Link href="/roots" className="font-display text-sm text-mono-amber hover:underline">
+              <Link href="/roots" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>
@@ -206,7 +206,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">ARENA</span> — Sports & Competition
               </h2>
-              <Link href="/arena" className="font-display text-sm text-mono-amber hover:underline">
+              <Link href="/arena" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>
@@ -228,7 +228,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
                 <span className="text-mono-amber">WAVES</span> — Music & Entertainment
               </h2>
-              <Link href="/waves" className="font-display text-sm text-mono-amber hover:underline">
+              <Link href="/waves" className="font-display text-sm text-mono-amber-strong hover:text-mono-amber-hover hover:underline">
                 See all →
               </Link>
             </div>

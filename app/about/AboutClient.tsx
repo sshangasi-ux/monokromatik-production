@@ -42,7 +42,7 @@ export default function AboutClient() {
 
             <p>
               This isn&apos;t another &quot;African poverty&quot; narrative. This is vibrancy, innovation, excellence — in black and white
-              with burnt amber accents. <span className="font-display font-bold text-mono-amber">Monochrome meets chromatic. MonoKromatik.</span>
+              with burnt amber accents. <span className="font-display font-bold text-mono-amber-strong">Monochrome meets chromatic. MonoKromatik.</span>
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default function AboutClient() {
                 { label: 'Cost', value: '~$15/month' },
               ].map((item) => (
                 <div key={item.label}>
-                  <div className="text-mono-amber font-bold mb-1">{item.label}</div>
+                  <div className="text-mono-amber-strong font-bold mb-1">{item.label}</div>
                   <div className="text-mono-gray text-sm">{item.value}</div>
                 </div>
               ))}

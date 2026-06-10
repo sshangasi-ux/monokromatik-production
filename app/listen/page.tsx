@@ -58,19 +58,19 @@ export default function ListenPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 text-left">
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">WEEKLY</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">WEEKLY</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Sunday Pulse audio digest of the week&apos;s biggest African music drops.
               </p>
             </div>
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">PODCASTS</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">PODCASTS</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Long-form interviews with African artists, athletes, and creators.
               </p>
             </div>
             <div className="p-6 bg-mono-white border-2 border-mono-charcoal">
-              <div className="text-mono-amber font-display font-bold mb-2">DROPS</div>
+              <div className="text-mono-amber-strong font-display font-bold mb-2">DROPS</div>
               <p className="text-mono-charcoal font-body text-sm">
                 Same-day coverage when major Afrobeats and Amapiano releases drop.
               </p>
