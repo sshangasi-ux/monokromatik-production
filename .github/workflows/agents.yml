@@ -52,6 +52,7 @@ jobs:
           EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           MONOKROMATIK_PUBLICATION_MODE: review_gated
           NODE_ENV: production
         run: |
