@@ -255,6 +255,60 @@ async function sourcePexelsVideo(query: string): Promise<MediaAsset | undefined>
   }
 }
 
+interface YouTubeSearchResponse {
+  error?: { errors?: { reason?: string }[]; message?: string };
+  items?: { id?: { videoId?: string }; snippet?: { channelTitle?: string; title?: string } }[];
+}
+
+/**
+ * Relevant real video via the YouTube Data API v3 (preferred over generic stock):
+ * searches embeddable videos for the article, returns the top match as a credited
+ * embed. Requires YOUTUBE_API_KEY; ~100 search units each (10k/day free quota).
+ */
+async function sourceYouTube(query: string): Promise<MediaAsset | undefined> {
+  const key = process.env.YOUTUBE_API_KEY;
+  if (!key) {
+    vlog('youtube skipped — YOUTUBE_API_KEY not set');
+    return undefined;
+  }
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 10000);
+  try {
+    const url =
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoEmbeddable=true` +
+      `&maxResults=5&safeSearch=moderate&order=relevance&relevanceLanguage=en` +
+      `&q=${encodeURIComponent(query)}&key=${key}`;
+    const res = await fetch(url, { signal: ctrl.signal });
+    if (!res.ok) {
+      const body = (await res.json().catch(() => ({}))) as YouTubeSearchResponse;
+      const reason = body.error?.errors?.[0]?.reason || '';
+      vlog(`youtube HTTP ${res.status}${reason ? ` (${reason})` : ''} for "${query.slice(0, 40)}"`);
+      return undefined;
+    }
+    const data = (await res.json()) as YouTubeSearchResponse;
+    const items = data.items || [];
+    vlog(`youtube "${query.slice(0, 40)}" → ${items.length} results`);
+    for (const it of items) {
+      const videoId = it.id?.videoId;
+      if (!videoId) continue;
+      const channel = (it.snippet?.channelTitle || '').trim();
+      return {
+        url: `https://www.youtube.com/watch?v=${videoId}`,
+        credit: channel ? `Video: ${channel} / YouTube` : 'Video: YouTube',
+        sourceUrl: `https://www.youtube.com/watch?v=${videoId}`,
+        provider: 'YouTube',
+        kind: 'embed',
+      };
+    }
+    return undefined;
+  } catch (err) {
+    vlog(`youtube error: ${(err as Error).message}`);
+    return undefined;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 /**
  * Source a credited hero image (mandatory) and an optional official video for an
  * article. The image is guaranteed present via the branded fallback.
@@ -281,9 +335,12 @@ export async function sourceMedia(args: {
   const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
   const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
 
-  // Official publisher video first (most reputable); otherwise a relevant stock clip.
-  const official = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
-  const video = official ?? (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined));
+  // Video priority: the publisher's own embed (most reputable) → a relevant real
+  // YouTube clip (richest context) → a generic stock motion clip (ambient fallback).
+  const video =
+    (await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined)) ??
+    (await sourceYouTube(args.title).catch(() => undefined)) ??
+    (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined));
 
   return { image, video };
 }
