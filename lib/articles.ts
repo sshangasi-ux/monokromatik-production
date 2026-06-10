@@ -31,7 +31,9 @@ export interface Article {
  * Get all articles
  */
 export function getAllArticles(): Article[] {
-  return articlesData;
+  // The JSON import widens string-literal unions (e.g. videoType) to `string`,
+  // so cast to the canonical Article shape.
+  return articlesData as Article[];
 }
 
 /**
