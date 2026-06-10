@@ -33,7 +33,7 @@ function StoryCard({ article, featured = false }: StoryCardProps) {
   return (
     <Link
       href={`/article/${article.slug}`}
-      className={`group relative overflow-hidden bg-mono-charcoal ${
+      className={`group block relative overflow-hidden bg-mono-charcoal ${
         featured ? 'aspect-[16/9]' : 'aspect-[4/3]'
       } hover:scale-[1.02] transition-transform duration-300`}
     >
