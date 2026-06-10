@@ -29,6 +29,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import { MODELS } from './ai-models';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -124,7 +125,7 @@ export async function reviewArticle(
 
   try {
     const response = await ai.messages.create({
-      model: 'claude-sonnet-4-5',
+      model: MODELS.flagship,
       max_tokens: 1500,
       system: systemBlocks,
       messages: [{ role: 'user', content: userMessage }],
