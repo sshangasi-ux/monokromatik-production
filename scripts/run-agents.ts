@@ -200,6 +200,7 @@ async function main() {
       existingUrl: article.imageUrl,
       sourceLink: article.sourceLink,
       sourceName: article.sourceName,
+      slug: article.slug,
       title: article.title,
       excerpt: article.excerpt,
       category: article.category,

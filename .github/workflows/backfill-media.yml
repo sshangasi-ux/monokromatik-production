@@ -73,15 +73,15 @@ jobs:
       - name: Commit & push updated media
         if: ${{ inputs.dry_run != true }}
         run: |
-          if [ -n "$(git status --porcelain data/articles.json)" ]; then
+          if [ -n "$(git status --porcelain data/articles.json public/article-media)" ]; then
             git config user.name "MonoKromatik Agent"
             git config user.email "agents@monokromatik.com"
-            git add data/articles.json
-            git commit -m "chore(media): backfill credited media for existing articles"
+            git add data/articles.json public/article-media
+            git commit -m "chore(media): backfill self-hosted credited media for existing articles"
             git push origin main
-            echo "✅ Pushed updated data/articles.json to main — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
+            echo "✅ Pushed self-hosted media + data/articles.json to main — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "ℹ️ No changes to data/articles.json." >> "$GITHUB_STEP_SUMMARY"
+            echo "ℹ️ No media changes." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Summary

@@ -64,7 +64,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain data/articles.json)" ]; then
+          if [ -z "$(git status --porcelain data/articles.json public/article-media)" ]; then
             echo "No EIC-approved candidates this run — nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
@@ -73,7 +73,7 @@ jobs:
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
           git checkout -b "$BRANCH"
-          git add data/articles.json
+          git add data/articles.json public/article-media
           git commit -m "feat(agents): staged candidate article(s) for review" -m "Generated, media-credited and EIC-reviewed by the MonoKromatik pipeline. Merge this PR to publish; close it to discard."
           git push origin "$BRANCH"
 
