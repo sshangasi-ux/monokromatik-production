@@ -185,7 +185,7 @@ export default function Home() {
               <Link href="/intelligence" className="mt-9 inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
             </div>
             <div className="border border-mono-gray/25 bg-mono-soft-white p-6 md:p-9">
-              <p className="text-[10px] tracking-[0.3em] text-mono-gray font-display font-bold mb-6">ASK MONOKROMATIK / PRODUCT PREVIEW</p>
+              <p className="text-[10px] tracking-[0.3em] text-mono-gray font-display font-bold mb-6">ASK MONOKROMATIK / EARLY ACCESS</p>
               {intelligencePrompts.map((prompt) => (
                 <div key={prompt} className="bg-mono-white border-l-4 border-mono-amber p-5 mb-4 font-body text-mono-charcoal text-lg">{prompt}</div>
               ))}

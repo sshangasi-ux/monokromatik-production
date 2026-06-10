@@ -65,7 +65,7 @@ export default function IssueFeature({ franchise, title, standfirst, readingTime
           <div className="bg-mono-soft-white border-l-4 border-mono-amber p-6">
             <ShieldCheck className="text-mono-amber mb-5" size={22} />
             <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">EVIDENCE STANDARD</p>
-            <p className="font-body text-sm text-mono-charcoal leading-relaxed">Facts are distinguished from Monokromatik interpretation. Sources listed below informed this draft and remain subject to final editorial verification before publication.</p>
+            <p className="font-body text-sm text-mono-charcoal leading-relaxed">Facts are distinguished from Monokromatik interpretation. The sources listed below informed this feature and are cited for verification.</p>
           </div>
           <div className="border border-mono-gray/20 p-6">
             <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-5">SOURCES</p>

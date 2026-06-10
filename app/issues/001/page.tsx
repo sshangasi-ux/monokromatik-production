@@ -9,7 +9,7 @@ const features = [
     title: 'The Intelligence Behind African Influence',
     description: 'The founding editorial argument for a platform built to read African value before the rest of the world turns it into a case study.',
     href: '/issues/001/the-intelligence-behind-african-influence',
-    status: 'COVER ESSAY DRAFT',
+    status: 'COVER ESSAY',
     icon: Sparkles,
   },
   {
@@ -17,7 +17,7 @@ const features = [
     title: 'Nike × Air Afrique: When the Launch Point Becomes the Point',
     description: 'A source-led case study of the Air Max RK61 / Première Classe collaboration, enriched with official attributed campaign media.',
     href: '/issues/001/the-work-nike-air-afrique',
-    status: 'MEDIA-RICH DRAFT',
+    status: 'MEDIA FEATURE',
     icon: BookOpen,
   },
   {
@@ -25,7 +25,7 @@ const features = [
     title: 'Orange WoMen’s Football: Would the Reveal Be Enough in South Africa?',
     description: 'An official-film-led relevance test asking how a global idea would need to connect to South African women’s football visibility and support.',
     href: '/issues/001/will-it-land-south-africa',
-    status: 'SA TEST DRAFT',
+    status: 'RELEVANCE TEST',
     icon: Radar,
   },
   {
@@ -33,7 +33,7 @@ const features = [
     title: 'Four Signals Shaping African Influence Now',
     description: 'The founding intelligence briefing: authorship, access, women’s sport and diaspora-connected creative systems.',
     href: '/issues/001/brand-weather',
-    status: 'BRIEFING DRAFT',
+    status: 'WEEKLY BRIEFING',
     icon: FileText,
   },
   {
@@ -56,7 +56,7 @@ export default function FoundingIssuePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[620px] flex flex-col justify-between">
           <div className="flex justify-between border-b border-mono-white/20 pb-5 text-[10px] md:text-xs tracking-[0.3em] font-display font-bold">
             <span className="text-mono-amber">MONOKROMATIK / ISSUE 001</span>
-            <span className="text-mono-gray">FOUNDING EDITION / PREVIEW DRAFT</span>
+            <span className="text-mono-gray">FOUNDING EDITION</span>
           </div>
           <div className="max-w-5xl py-16">
             <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber mb-7">THE LIVING MAGAZINE</p>
@@ -78,7 +78,7 @@ export default function FoundingIssuePage() {
           <div className="max-w-4xl mb-12">
             <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">THE RELEASE PACKAGE</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The first body of work behind the promise.</h2>
-            <p className="mt-6 text-lg font-body text-mono-charcoal">These are controlled editorial drafts in preview, now moving through final source, media-credit and contributor review before publication approval.</p>
+            <p className="mt-6 text-lg font-body text-mono-charcoal">The founding body of editorial work — each piece source-verified, media-credited and contributor-reviewed.</p>
           </div>
           <div className="space-y-px border border-mono-gray/25 bg-mono-gray/25">
             {features.map(({ franchise, title, description, href, status, icon: Icon }, index) => (
@@ -107,7 +107,7 @@ export default function FoundingIssuePage() {
           <div>
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">PUBLICATION STANDARD</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold">Strong enough to publish. Careful enough to trust.</h2>
-            <p className="mt-6 text-lg text-mono-soft-white font-body">No draft in Issue 001 will be promoted to production until its claims, sources, visual attribution and contributor approvals are cleared.</p>
+            <p className="mt-6 text-lg text-mono-soft-white font-body">Every story in Issue 001 is cleared for its claims, sources, visual attribution and contributor approvals before it runs.</p>
           </div>
           <Link href="/intelligence/source-desk" className="border border-mono-white/20 p-7 hover:border-mono-amber transition-colors">
             <p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber">SOURCE DESK</p>

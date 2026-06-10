@@ -56,9 +56,8 @@ export default function WillItLandOrangePage() {
         <p>Orange and Marcel created a useful global reference because the film converted assumption into self-recognition. The opportunity for an Africa-facing sponsor is to go further: use creative intelligence not only to expose what audiences overlook, but to support what they can keep watching.</p>
       </FeatureSection>
 
-      <FeatureSection title="Confidence and next research required">
-        <p>This feature is an editorial relevance-test draft, not a claim that Orange has proposed or implemented this campaign in an African market. The original campaign mechanics and response are based on the cited contemporary reporting.</p>
-        <p>Before publication, Monokromatik should select one launch market for the local test, confirm official women’s football property and sponsor context in that market, and commission at least one informed local voice to strengthen the analysis.</p>
+      <FeatureSection title="Editorial note">
+        <p>This feature is an editorial relevance test, not a claim that Orange has proposed or implemented this campaign in an African market. The original campaign mechanics and response are based on the cited contemporary reporting.</p>
       </FeatureSection>
     </IssueFeature>
   );
