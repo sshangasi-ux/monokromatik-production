@@ -1,0 +1,93 @@
+name: Backfill Article Media
+
+# One-shot, manually triggered from the Actions tab. Re-sources credited media
+# (reputable-first image + official/stock video) for the existing articles in
+# data/articles.json and commits the result to main (Vercel then deploys).
+#
+# Needs repo secrets: PEXELS_API_KEY, ANTHROPIC_API_KEY (optional UNSPLASH_ACCESS_KEY).
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — report only, do not write or commit'
+        type: boolean
+        default: false
+      only_missing:
+        description: 'Only process articles that have no media credit yet'
+        type: boolean
+        default: true
+      stock_video:
+        description: 'Pull a relevant stock motion clip when no official video exists'
+        type: boolean
+        default: true
+      limit:
+        description: 'Max articles to process (blank = all)'
+        required: false
+        type: string
+
+# This job intentionally writes content — distinct from the review-only pipeline.
+permissions:
+  contents: write
+
+concurrency:
+  group: backfill-media
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Backfill credited media
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          MONO_STOCK_VIDEO: ${{ inputs.stock_video && 'on' || 'off' }}
+          NODE_ENV: production
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.only_missing }}" = "true" ]; then ARGS="$ARGS --only-missing"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          echo "Running: npm run backfill:media -- $ARGS"
+          npm run backfill:media -- $ARGS
+
+      - name: Commit & push updated media
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if [ -n "$(git status --porcelain data/articles.json)" ]; then
+            git config user.name "MonoKromatik Agent"
+            git config user.email "agents@monokromatik.com"
+            git add data/articles.json
+            git commit -m "chore(media): backfill credited media for existing articles"
+            git push origin main
+            echo "✅ Pushed updated data/articles.json to main — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ℹ️ No changes to data/articles.json." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          MODE="$([ "${{ inputs.dry_run }}" = "true" ] && echo 'dry run' || echo 'write')"
+          echo "### Media backfill ($MODE)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Stock video: ${{ inputs.stock_video }} · only-missing: ${{ inputs.only_missing }} · limit: ${{ inputs.limit || 'all' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Time: $(date -u)" >> "$GITHUB_STEP_SUMMARY"
