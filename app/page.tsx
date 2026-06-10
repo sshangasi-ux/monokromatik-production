@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
 import MediaImage from './components/MediaImage';
+import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
 
 export const revalidate = 60;
@@ -141,7 +142,7 @@ export default function Home() {
               <div>
                 <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">Evidence with a<br />point of view.</h2>
                 <p className="mt-6 max-w-md text-mono-charcoal font-body text-lg">Case studies, reporting, curated source intelligence and market insight built for decision makers.</p>
-                <span className="mt-8 inline-flex items-center gap-2 text-mono-amber font-display font-bold">OPEN THE DESK <ArrowRight size={18} /></span>
+                <span className="mt-8 inline-flex items-center gap-2 text-mono-amber-strong font-display font-bold">OPEN THE DESK <ArrowRight size={18} /></span>
               </div>
             </Link>
           </div>
@@ -178,7 +179,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-start">
             <div className="lg:sticky lg:top-28">
-              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">INTELLIGENCE DESK</p>
+              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">INTELLIGENCE DESK</p>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black leading-tight">Research Africa’s brand future through the work already shaping it.</h2>
               <p className="mt-7 text-lg text-mono-charcoal font-body leading-relaxed">Built from reputable marketing, advertising, creative, business and official campaign sources — sharpened through Monokromatik interpretation.</p>
               <Link href="/intelligence" className="mt-9 inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
@@ -201,7 +202,7 @@ export default function Home() {
       <section className="bg-mono-soft-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">FROM THE DESK</p>
+            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">FROM THE DESK</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Four ways into the intelligence network.</h2>
             <p className="mt-6 text-lg font-body text-mono-charcoal">Evidence, structured cases, designed reports and external voices are now the practical layers through which Monokromatik grows.</p>
           </div>
@@ -224,16 +225,16 @@ export default function Home() {
         <section className="bg-mono-white py-20 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
-              <div>
-                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber mb-4">CULTURAL DISPATCHES</p>
+              <Reveal>
+                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">CULTURAL DISPATCHES</p>
                 <h2 className="text-4xl font-display font-bold text-mono-black">The evidence base.</h2>
-              </div>
-              <Link href="/culture" className="inline-flex gap-2 items-center font-display font-bold text-mono-amber">EXPLORE CULTURE <ArrowRight size={18} /></Link>
+              </Reveal>
+              <Link href="/culture" className="inline-flex gap-2 items-center font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">EXPLORE CULTURE <ArrowRight size={18} /></Link>
             </div>
-            <div className="grid lg:grid-cols-[1.25fr_0.75fr_0.75fr] gap-5">
-              {dispatches[0] && <DispatchCard article={dispatches[0]} feature />}
-              {dispatches.slice(1, 3).map((article) => <DispatchCard article={article} key={article.slug} />)}
-            </div>
+            <Stagger className="grid lg:grid-cols-[1.25fr_0.75fr_0.75fr] gap-5">
+              {dispatches[0] && <StaggerItem><DispatchCard article={dispatches[0]} feature /></StaggerItem>}
+              {dispatches.slice(1, 3).map((article) => <StaggerItem key={article.slug}><DispatchCard article={article} /></StaggerItem>)}
+            </Stagger>
           </div>
         </section>
       )}
@@ -251,7 +252,7 @@ export default function Home() {
               <span>MONOKROMATIK</span><span>001</span>
             </div>
             <div className="mt-14 h-px bg-mono-black" />
-            <p className="mt-8 text-xs tracking-[0.28em] font-display font-bold text-mono-amber">FOUNDING ISSUE</p>
+            <p className="mt-8 text-xs tracking-[0.28em] font-display font-bold text-mono-amber-strong">FOUNDING ISSUE</p>
             <h3 className="mt-6 text-4xl font-display font-bold leading-[0.98]">The Intelligence<br />Behind African<br />Influence.</h3>
             <div className="absolute bottom-7 left-7 right-7 border-t border-mono-black pt-4 text-xs font-body text-mono-charcoal">Campaigns · Voices · Commerce · Diaspora · Creative Futures</div>
           </div>
@@ -262,11 +263,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
           <Link href="/conversations" className="border border-mono-gray/25 bg-mono-white p-8 md:p-10 flex gap-6 hover:border-mono-amber transition-colors">
             <Mic className="shrink-0 text-mono-amber" />
-            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber">CONVERSATIONS</p><h2 className="mt-4 text-3xl font-display font-bold">The Boardroom / The Backroom</h2><p className="mt-4 text-mono-charcoal font-body">Candid thinking from marketers, creators and cultural operators behind the decisions.</p></div>
+            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber-strong">CONVERSATIONS</p><h2 className="mt-4 text-3xl font-display font-bold">The Boardroom / The Backroom</h2><p className="mt-4 text-mono-charcoal font-body">Candid thinking from marketers, creators and cultural operators behind the decisions.</p></div>
           </Link>
           <Link href="/issues" className="border border-mono-gray/25 bg-mono-white p-8 md:p-10 flex gap-6 hover:border-mono-amber transition-colors">
             <BookOpen className="shrink-0 text-mono-amber" />
-            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber">ISSUES</p><h2 className="mt-4 text-3xl font-display font-bold">Designed editorial collections</h2><p className="mt-4 text-mono-charcoal font-body">Curated editions intended to become the collectible expression of the platform.</p></div>
+            <div><p className="text-xs tracking-[0.25em] font-display font-bold text-mono-amber-strong">ISSUES</p><h2 className="mt-4 text-3xl font-display font-bold">Designed editorial collections</h2><p className="mt-4 text-mono-charcoal font-body">Curated editions intended to become the collectible expression of the platform.</p></div>
           </Link>
         </div>
       </section>

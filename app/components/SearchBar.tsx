@@ -128,7 +128,7 @@ export default function SearchBar() {
                             <div className="flex items-center gap-2 mb-1">
                               <span className="px-2 py-0.5 bg-mono-amber text-mono-white text-xs font-display font-bold rounded uppercase">{result.category}</span>
                             </div>
-                            <h4 className="font-display font-bold text-mono-black group-hover:text-mono-amber transition-colors mb-1">{result.title}</h4>
+                            <h4 className="font-display font-bold text-mono-black group-hover:text-mono-amber-strong transition-colors mb-1">{result.title}</h4>
                             <p className="text-mono-charcoal font-body text-sm line-clamp-2">{result.excerpt}</p>
                           </div>
                         </div>

@@ -149,7 +149,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
       </form>
       <div className="mt-6 text-center">
         <p className="text-mono-gray font-body text-sm">
-          <span className="text-mono-amber">●</span> AI-assisted discovery. Human-directed intelligence. Verified sourcing.
+          <span className="text-mono-amber-strong">●</span> AI-assisted discovery. Human-directed intelligence. Verified sourcing.
         </p>
       </div>
     </div>

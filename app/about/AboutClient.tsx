@@ -79,7 +79,7 @@ export default function AboutClient() {
       <section className="py-20 md:py-24 bg-mono-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-12">
           <div>
-            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">WHY WE EXIST</p>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">WHY WE EXIST</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black leading-tight">African influence is everywhere. The intelligence around it is not.</h2>
           </div>
           <div className="space-y-6 text-lg text-mono-charcoal font-body leading-relaxed">
@@ -93,7 +93,7 @@ export default function AboutClient() {
       <section className="bg-mono-soft-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">THE NETWORK</p>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">THE NETWORK</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">A living magazine with an intelligence engine.</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-mono-gray/25 border border-mono-gray/25">
@@ -134,7 +134,7 @@ export default function AboutClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-12 items-start">
           <div>
             <Layers className="text-mono-amber mb-7" size={29} />
-            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">AUTONOMY WITH ACCOUNTABILITY</p>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">AUTONOMY WITH ACCOUNTABILITY</p>
             <h2 className="text-4xl font-display font-bold text-mono-black">A self-learning platform that knows where humans still matter.</h2>
           </div>
           <div className="space-y-3">
