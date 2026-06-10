@@ -1,4 +1,5 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
+import { StatStrip } from '../../../components/dataviz/Charts';
 
 const sources = [
   {
@@ -69,6 +70,16 @@ export default function FoundingEssayPage() {
 
       <FeatureSection title="What we will measure">
         <p>Monokromatik will treat great creative work seriously, but not sentimentally. We will ask whether the idea is grounded in a human or cultural truth; whether African and diaspora voices shaped the work; whether the brand created real access or merely visual recognition; whether claimed outcomes can be verified; and whether another brand builder can learn something useful from the move.</p>
+        <div className="not-prose my-8">
+          <StatStrip
+            tone="light"
+            items={[
+              { value: '5', label: 'Evaluation criteria' },
+              { value: String(sources.length), label: 'Verified sources' },
+              { value: '001', label: 'Founding edition' },
+            ]}
+          />
+        </div>
         <p>Signal is where we make the argument. Intelligence is where we store the evidence, compare the cases and build the tools professionals can use. Issues are where the strongest thinking is shaped into an object people want to return to, share and eventually hold.</p>
       </FeatureSection>
 

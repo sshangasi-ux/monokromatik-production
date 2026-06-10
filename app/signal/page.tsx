@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Quote, Users } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import { StatStrip } from '../components/dataviz/Charts';
 
 const franchises = [
   {
@@ -80,6 +81,15 @@ export default function SignalPage() {
               <h2 className="text-4xl md:text-5xl font-display font-bold">Formats built to be quoted, shared and contributed to.</h2>
             </div>
             <Link href="/conversations" className="inline-flex gap-2 items-center text-mono-amber font-display font-bold shrink-0">BECOME A VOICE <ArrowRight size={18} /></Link>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(franchises.length), label: 'Signature formats' },
+                { value: String(principles.length), label: 'Editorial principles' },
+              ]}
+            />
           </div>
           <div className="grid lg:grid-cols-2 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {franchises.map((format, index) => (

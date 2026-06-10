@@ -11,7 +11,15 @@ export interface Article {
   category: string;
   tags: string[];
   imageUrl?: string;
+  /** Credit for the hero image, e.g. "Via BellaNaija" / "Photo: Pexels". */
+  imageCredit?: string;
+  /** Link the image credit points to. */
+  imageSourceUrl?: string;
   videoUrl?: string;
+  /** Credit for the embedded video, e.g. "Video via Nike". */
+  videoCredit?: string;
+  /** Link the video credit points to. */
+  videoSourceUrl?: string;
   sourceLink: string;
   sourceName: string;
   publishedAt: string;

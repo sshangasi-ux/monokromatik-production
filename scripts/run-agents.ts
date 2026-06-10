@@ -19,7 +19,7 @@ import { dedupeAgainstPublished } from '../lib/dedupe-stories';
 import { generateArticles } from '../lib/generate-article';
 import type { GeneratedArticle } from '../lib/generate-article';
 import { stylizeBatch } from '../lib/stylist';
-import { sourceImage } from '../lib/source-image';
+import { sourceMedia } from '../lib/source-media';
 import { reviewBatch } from '../lib/editor-in-chief';
 import { sendDigest } from '../lib/eic-digest';
 
@@ -190,18 +190,29 @@ async function main() {
   // falling back to Pexels/Unsplash only if those fail. This keeps every
   // article visually rich with real subject photography rather than generic
   // stock that breaks the publication's editorial tone.
-  log('\n🖼️  [IMAGE SOURCER] Validating + sourcing hero images...');
+  log('\n🖼️  [MEDIA SOURCER] Sourcing credited hero image (+ official video) per article...');
   for (let i = 0; i < written.length; i++) {
     const article = written[i];
-    const result = await sourceImage({
+    const media = await sourceMedia({
       existingUrl: article.imageUrl,
       sourceLink: article.sourceLink,
+      sourceName: article.sourceName,
       title: article.title,
       excerpt: article.excerpt,
       category: article.category,
     });
-    written[i] = { ...article, imageUrl: result.url };
-    log(`   [${i + 1}/${written.length}] ${result.source.padEnd(15)} → ${article.title.slice(0, 55)}`);
+    // Rich media is mandatory: media.image is always present (branded fallback).
+    written[i] = {
+      ...article,
+      imageUrl: media.image.url,
+      imageCredit: media.image.credit,
+      imageSourceUrl: media.image.sourceUrl,
+      ...(media.video
+        ? { videoUrl: media.video.url, videoCredit: media.video.credit, videoSourceUrl: media.video.sourceUrl }
+        : {}),
+    };
+    const vid = media.video ? ' +video' : '';
+    log(`   [${i + 1}/${written.length}] ${media.image.credit.padEnd(20)}${vid} → ${article.title.slice(0, 50)}`);
   }
 
   // 6d. Editor-in-Chief — the last gate. Reviews each article on six
