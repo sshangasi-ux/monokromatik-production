@@ -15,7 +15,8 @@
     "pulse": "tsx scripts/send-pulse-digest.ts",
     "pulse:dry": "tsx scripts/send-pulse-digest.ts -- --dry-run",
     "backfill:media": "tsx scripts/backfill-media.ts",
-    "backfill:media:dry": "tsx scripts/backfill-media.ts --dry-run"
+    "backfill:media:dry": "tsx scripts/backfill-media.ts --dry-run",
+    "test:pexels-video": "tsx scripts/test-pexels-video.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

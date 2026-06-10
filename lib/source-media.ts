@@ -180,40 +180,77 @@ async function sourceOfficialVideo(
   return undefined;
 }
 
-/**
- * Relevant stock motion clip (Pexels Video API) used when the source has no
- * official video. Returns an mp4 ~1280px wide, credited to the creator + Pexels.
- * Requires PEXELS_API_KEY; gated by MONO_STOCK_VIDEO.
- */
-async function sourcePexelsVideo(query: string): Promise<MediaAsset | undefined> {
-  const key = process.env.PEXELS_API_KEY;
-  if (!key || !STOCK_VIDEO_ENABLED) return undefined;
+/** Diagnostic logging for stock-video sourcing — surfaces in the pipeline / backfill CI logs. */
+function vlog(msg: string) {
+  console.log(`[stock-video] ${msg}`);
+}
+
+interface PexelsVideoResponse {
+  total_results?: number;
+  videos?: {
+    url?: string;
+    user?: { name?: string };
+    video_files?: { link?: string; file_type?: string; width?: number }[];
+  }[];
+}
+
+/** One Pexels video query → first usable mp4 as a credited MediaAsset, or undefined. */
+async function pexelsVideoQuery(query: string, key: string): Promise<MediaAsset | undefined> {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 10000);
+  let res: Response;
   try {
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 9000);
-    const res = await fetch(
-      `https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&per_page=1&orientation=landscape&size=medium`,
+    res = await fetch(
+      `https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&per_page=5&orientation=landscape`,
       { headers: { Authorization: key }, signal: ctrl.signal },
     );
+  } finally {
     clearTimeout(t);
-    if (!res.ok) return undefined;
-    const data = (await res.json()) as {
-      videos?: { url?: string; user?: { name?: string }; video_files?: { link?: string; file_type?: string; width?: number }[] }[];
-    };
-    const v = data.videos?.[0];
-    if (!v) return undefined;
+  }
+  if (!res.ok) {
+    vlog(`Pexels HTTP ${res.status} for "${query}"${res.status === 401 ? ' — bad/empty PEXELS_API_KEY' : ''}`);
+    return undefined;
+  }
+  const data = (await res.json()) as PexelsVideoResponse;
+  const videos = data.videos || [];
+  vlog(`"${query}" → ${videos.length} videos (total ${data.total_results ?? '?'})`);
+  for (const v of videos) {
     const mp4 = (v.video_files || [])
       .filter((f) => (f.file_type || '').includes('mp4') && typeof f.link === 'string')
       .sort((a, b) => Math.abs((a.width || 0) - 1280) - Math.abs((b.width || 0) - 1280))[0];
-    if (!mp4?.link) return undefined;
-    return {
-      url: mp4.link,
-      credit: v.user?.name ? `Video: ${v.user.name} / Pexels` : 'Video: Pexels',
-      sourceUrl: v.url || 'https://www.pexels.com',
-      provider: 'Pexels',
-      kind: 'file',
-    };
-  } catch {
+    if (mp4?.link) {
+      return {
+        url: mp4.link,
+        credit: v.user?.name ? `Video: ${v.user.name} / Pexels` : 'Video: Pexels',
+        sourceUrl: v.url || 'https://www.pexels.com',
+        provider: 'Pexels',
+        kind: 'file',
+      };
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Relevant stock motion clip (Pexels Video API) used when the source has no
+ * official video. Tries the category query, then a single-keyword fallback.
+ * Requires PEXELS_API_KEY; gated by MONO_STOCK_VIDEO.
+ */
+async function sourcePexelsVideo(query: string): Promise<MediaAsset | undefined> {
+  if (!STOCK_VIDEO_ENABLED) {
+    vlog('disabled (MONO_STOCK_VIDEO=off)');
+    return undefined;
+  }
+  const key = process.env.PEXELS_API_KEY;
+  if (!key) {
+    vlog('skipped — PEXELS_API_KEY not set');
+    return undefined;
+  }
+  try {
+    const fallbackTerm = query.split(' ')[0] || 'africa';
+    return (await pexelsVideoQuery(query, key)) ?? (await pexelsVideoQuery(fallbackTerm, key));
+  } catch (err) {
+    vlog(`error: ${(err as Error).message}`);
     return undefined;
   }
 }
