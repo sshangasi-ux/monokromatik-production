@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, CheckCircle2, Eye, Globe2, Layers3, Newspaper } from 'lucide-react';
 import Navigation from '../../components/Navigation';
+import { StatStrip } from '../../components/dataviz/Charts';
 
 const sourceLayers = [
   {
@@ -70,6 +71,16 @@ export default function SourceDeskPage() {
           <div className="max-w-3xl mb-12">
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">SOURCE ARCHITECTURE</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Four layers. Different evidence jobs.</h2>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(sourceLayers.length), label: 'Source layers' },
+                { value: String(workflow.length), label: 'Workflow steps' },
+                { value: String(deskOutputs.length), label: 'Desk outputs' },
+              ]}
+            />
           </div>
           <div className="grid lg:grid-cols-2 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {sourceLayers.map(({ title, role, copy, icon: Icon, examples }) => (

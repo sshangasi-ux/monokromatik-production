@@ -208,7 +208,12 @@ async function main() {
       imageCredit: media.image.credit,
       imageSourceUrl: media.image.sourceUrl,
       ...(media.video
-        ? { videoUrl: media.video.url, videoCredit: media.video.credit, videoSourceUrl: media.video.sourceUrl }
+        ? {
+            videoUrl: media.video.url,
+            videoType: media.video.kind,
+            videoCredit: media.video.credit,
+            videoSourceUrl: media.video.sourceUrl,
+          }
         : {}),
     };
     const vid = media.video ? ' +video' : '';

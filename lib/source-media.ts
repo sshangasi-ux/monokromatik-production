@@ -26,13 +26,30 @@ export interface MediaAsset {
   sourceUrl: string;
   /** Machine label of where it came from. */
   provider: string;
+  /** For video only: 'embed' = iframe (YouTube/Vimeo), 'file' = <video> (mp4). */
+  kind?: 'embed' | 'file';
 }
 
 export interface SourcedMedia {
   /** Always present — the branded fallback guarantees an image. */
   image: MediaAsset;
-  /** Optional official video embed (publisher's own YouTube/Vimeo). */
+  /** Optional video: official publisher embed first, else a relevant stock clip. */
   video?: MediaAsset;
+}
+
+/** Stock motion is on by default; set MONO_STOCK_VIDEO=off to disable the fallback. */
+const STOCK_VIDEO_ENABLED = (process.env.MONO_STOCK_VIDEO ?? 'on').toLowerCase() !== 'off';
+
+const STOCK_QUERY: Record<string, string> = {
+  culture: 'african culture city',
+  roots: 'african culture heritage',
+  music: 'concert stage lights crowd',
+  waves: 'concert stage lights crowd',
+  sports: 'football stadium crowd',
+  arena: 'football stadium crowd',
+};
+function stockQuery(category: string): string {
+  return STOCK_QUERY[(category || '').toLowerCase()] || 'africa city aerial';
 }
 
 type ImageSource =
@@ -114,13 +131,51 @@ async function sourceOfficialVideo(
   const credit = publisher ? `Video via ${publisher}` : 'Video via original source';
 
   const yt = normalizeYouTube(candidate);
-  if (yt) return { url: yt, credit, sourceUrl: sourceLink, provider: publisher || 'source' };
+  if (yt) return { url: yt, credit, sourceUrl: sourceLink, provider: publisher || 'source', kind: 'embed' };
 
   const vimeo = candidate.match(/vimeo\.com\/(?:video\/)?(\d+)/)?.[1];
   if (vimeo) {
-    return { url: `https://vimeo.com/${vimeo}`, credit, sourceUrl: sourceLink, provider: publisher || 'source' };
+    return { url: `https://vimeo.com/${vimeo}`, credit, sourceUrl: sourceLink, provider: publisher || 'source', kind: 'embed' };
   }
   return undefined;
+}
+
+/**
+ * Relevant stock motion clip (Pexels Video API) used when the source has no
+ * official video. Returns an mp4 ~1280px wide, credited to the creator + Pexels.
+ * Requires PEXELS_API_KEY; gated by MONO_STOCK_VIDEO.
+ */
+async function sourcePexelsVideo(query: string): Promise<MediaAsset | undefined> {
+  const key = process.env.PEXELS_API_KEY;
+  if (!key || !STOCK_VIDEO_ENABLED) return undefined;
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 9000);
+    const res = await fetch(
+      `https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&per_page=1&orientation=landscape&size=medium`,
+      { headers: { Authorization: key }, signal: ctrl.signal },
+    );
+    clearTimeout(t);
+    if (!res.ok) return undefined;
+    const data = (await res.json()) as {
+      videos?: { url?: string; user?: { name?: string }; video_files?: { link?: string; file_type?: string; width?: number }[] }[];
+    };
+    const v = data.videos?.[0];
+    if (!v) return undefined;
+    const mp4 = (v.video_files || [])
+      .filter((f) => (f.file_type || '').includes('mp4') && typeof f.link === 'string')
+      .sort((a, b) => Math.abs((a.width || 0) - 1280) - Math.abs((b.width || 0) - 1280))[0];
+    if (!mp4?.link) return undefined;
+    return {
+      url: mp4.link,
+      credit: v.user?.name ? `Video: ${v.user.name} / Pexels` : 'Video: Pexels',
+      sourceUrl: v.url || 'https://www.pexels.com',
+      provider: 'Pexels',
+      kind: 'file',
+    };
+  } catch {
+    return undefined;
+  }
 }
 
 /**
@@ -145,7 +200,9 @@ export async function sourceMedia(args: {
   const credit = creditForImage(img.source as ImageSource, args.sourceName, args.sourceLink);
   const image: MediaAsset = { url: img.url, ...credit };
 
-  const video = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
+  // Official publisher video first (most reputable); otherwise a relevant stock clip.
+  const official = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
+  const video = official ?? (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined));
 
   return { image, video };
 }

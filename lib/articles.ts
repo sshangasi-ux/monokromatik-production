@@ -16,6 +16,8 @@ export interface Article {
   /** Link the image credit points to. */
   imageSourceUrl?: string;
   videoUrl?: string;
+  /** 'embed' = YouTube/Vimeo iframe; 'file' = mp4 played inline. */
+  videoType?: 'embed' | 'file';
   /** Credit for the embedded video, e.g. "Video via Nike". */
   videoCredit?: string;
   /** Link the video credit points to. */

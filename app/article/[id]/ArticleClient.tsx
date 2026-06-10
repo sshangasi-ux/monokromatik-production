@@ -115,13 +115,28 @@ export default function ArticleClient({ article }: { article: Article }) {
 
         {article.videoUrl && (
           <figure className="mb-12">
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <iframe
-                src={article.videoUrl.replace('watch?v=', 'embed/')}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="aspect-video rounded-lg overflow-hidden bg-mono-charcoal">
+              {article.videoType === 'file' ? (
+                <video
+                  src={article.videoUrl}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <iframe
+                  src={
+                    article.videoUrl.includes('vimeo.com')
+                      ? article.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')
+                      : article.videoUrl.replace('watch?v=', 'embed/')
+                  }
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
             {article.videoCredit && (
               <figcaption className="mt-2 text-[11px] tracking-[0.08em] font-body text-mono-gray">

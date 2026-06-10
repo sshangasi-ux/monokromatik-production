@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MediaImage from '../components/MediaImage';
+import { StatStrip } from '../components/dataviz/Charts';
 import { getAllArticles, getReadingTime, type Article } from '../../lib/articles';
 
 const contextPillars = [
@@ -72,6 +73,15 @@ export default function CulturePage() {
               <h2 className="text-4xl font-display font-bold text-mono-black">Signals from the living culture.</h2>
             </div>
             <Link href="/signal" className="inline-flex gap-2 items-center text-mono-amber font-display font-bold">SEE THE BRAND READ <ArrowRight size={18} /></Link>
+          </div>
+          <div className="mb-10">
+            <StatStrip
+              tone="light"
+              items={[
+                { value: String(contextPillars.length), label: 'Culture territories' },
+                { value: String(getAllArticles().length), label: 'Stories in the evidence base' },
+              ]}
+            />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {articles.map((article) => <StoryCard article={article} key={article.slug} />)}
