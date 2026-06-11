@@ -99,6 +99,7 @@ type ImageSource =
   | 'sourceLink-body'
   | 'pexels'
   | 'unsplash'
+  | 'generated'
   | 'fallback';
 
 /** Map the image sourcer's provenance tag to a credit the reader can trust. */
@@ -122,6 +123,8 @@ function creditForImage(
       return { provider: 'Pexels', credit: 'Photo: Pexels', sourceUrl: 'https://www.pexels.com' };
     case 'unsplash':
       return { provider: 'Unsplash', credit: 'Photo: Unsplash', sourceUrl: 'https://unsplash.com' };
+    case 'generated':
+      return { provider: 'MonoKromatik', credit: 'Original artwork: MonoKromatik AI', sourceUrl: SITE };
     case 'fallback':
     default:
       return { provider: 'MonoKromatik', credit: 'MonoKromatik', sourceUrl: SITE };

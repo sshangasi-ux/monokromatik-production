@@ -1,0 +1,76 @@
+name: Narrate Articles
+
+# Generate audio narrations for recently published articles → the Listen page.
+# Fires when data/articles.json lands on main (new batch merged), and is also
+# manually runnable. No-ops cleanly when TTS_API_KEY is unset, so it's safe to
+# enable now. Idempotent via data/audio-manifest.json. [skip ci] on commit-back.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/articles.json'
+  workflow_dispatch:
+    inputs:
+      since:
+        description: 'Narrate articles published within this many days'
+        required: false
+        default: '14'
+        type: string
+      force:
+        description: 'Re-narrate even articles already in the manifest'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: narrate-articles
+  cancel-in-progress: false
+
+jobs:
+  narrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Narrate
+        env:
+          TTS_API_KEY: ${{ secrets.TTS_API_KEY }}
+          TTS_API_URL: ${{ secrets.TTS_API_URL }}
+          TTS_MODEL: ${{ secrets.TTS_MODEL }}
+          TTS_VOICE: ${{ secrets.TTS_VOICE }}
+        run: |
+          ARGS="--since ${{ inputs.since || '14' }}"
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          echo "Running: npm run narrate -- $ARGS"
+          npm run narrate -- $ARGS
+
+      - name: Commit & push narrations
+        run: |
+          if [ -n "$(git status --porcelain data/audio-manifest.json public/article-audio)" ]; then
+            git config user.name "MonoKromatik Agent"
+            git config user.email "agents@monokromatik.com"
+            git add data/audio-manifest.json public/article-audio
+            git commit -m "chore(audio): narrate new articles for the Listen page [skip ci]"
+            git push origin main
+            echo "✅ Pushed narrations — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ℹ️ No narrations (TTS unset or nothing new)." >> "$GITHUB_STEP_SUMMARY"
+          fi

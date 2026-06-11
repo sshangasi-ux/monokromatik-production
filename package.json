@@ -19,7 +19,8 @@
     "test:pexels-video": "tsx scripts/test-pexels-video.ts",
     "generate:case-study": "tsx scripts/generate-case-study.ts",
     "localize:issue-media": "tsx scripts/localize-issue-media.ts",
-    "distribute": "tsx scripts/distribute.ts"
+    "distribute": "tsx scripts/distribute.ts",
+    "narrate": "tsx scripts/narrate-articles.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

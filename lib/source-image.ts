@@ -12,6 +12,7 @@
 //   match. Same approach LinkedIn / WhatsApp use to disambiguate.
 
 import Anthropic from '@anthropic-ai/sdk';
+import { generateHeroImage } from './generate-image';
 
 function getPexelsKey(): string | undefined {
   return process.env.PEXELS_API_KEY;
@@ -340,7 +341,7 @@ export async function sourceImage(args: {
   category: string;
 }): Promise<{
   url: string;
-  source: 'existing' | 'sourceLink-og' | 'sourceLink-twitter' | 'sourceLink-body' | 'pexels' | 'unsplash' | 'fallback';
+  source: 'existing' | 'sourceLink-og' | 'sourceLink-twitter' | 'sourceLink-body' | 'pexels' | 'unsplash' | 'generated' | 'fallback';
 }> {
   // Step 1: validate existing
   if (args.existingUrl && args.existingUrl.startsWith('http')) {
@@ -393,6 +394,11 @@ export async function sourceImage(args: {
 
   const unsplashCat = await tryUnsplash(args.category);
   if (unsplashCat) return { url: unsplashCat, source: 'unsplash' };
+
+  // Step 4: create original brand-aligned hero art (self-hosted) rather than
+  // dropping to the static SVG. No-ops to null unless IMAGE_GEN_API_KEY is set.
+  const generated = await generateHeroImage({ title: args.title, category: args.category, slug: undefined });
+  if (generated) return { url: generated, source: 'generated' };
 
   return { url: FALLBACK, source: 'fallback' };
 }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Headphones } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
+import { getNarrations } from '../../lib/audio';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function ListenPage() {
+  const narrations = getNarrations();
+
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -40,20 +43,53 @@ export default function ListenPage() {
           </p>
           <p className="text-lg text-mono-gray font-body max-w-2xl">
             African podcasts, weekly music drops, and storytelling for your commute. Curated by AI,
-            crafted for the diaspora, dropping soon.
+            crafted for the diaspora.
           </p>
         </div>
       </section>
 
+      {narrations.length > 0 && (
+        <section className="py-16 bg-mono-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="text-3xl font-display font-bold text-mono-black">
+                Article <span className="text-mono-amber-strong">Narrations</span>
+              </h2>
+              <span className="text-sm text-mono-gray font-body">{narrations.length} audio edition{narrations.length === 1 ? '' : 's'}</span>
+            </div>
+            <ul className="space-y-6">
+              {narrations.map((n) => (
+                <li key={n.slug} className="p-6 bg-mono-soft-white border-2 border-mono-charcoal">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2 py-0.5 bg-mono-amber text-mono-white text-xs font-display font-bold uppercase">
+                      {n.category}
+                    </span>
+                  </div>
+                  <Link href={`/article/${n.slug}`} className="group">
+                    <h3 className="text-xl font-display font-bold text-mono-black group-hover:text-mono-amber-strong transition-colors mb-2">
+                      {n.title}
+                    </h3>
+                  </Link>
+                  <p className="text-sm text-mono-gray font-body mb-4 line-clamp-2">{n.excerpt}</p>
+                  <audio controls preload="none" className="w-full" src={n.audioUrl}>
+                    Your browser does not support audio playback.
+                  </audio>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section className="py-20 bg-mono-soft-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-mono-charcoal font-display text-2xl mb-4">
-            Press play. Patience required.
+            {narrations.length > 0 ? 'More on the way.' : 'Press play. Patience required.'}
           </p>
           <p className="text-mono-gray font-body text-lg mb-8">
-            Audio storytelling launches in V2. Until then, subscribe below — every Sunday Pulse
-            edition includes our top picks of the week&apos;s African music drops, podcast episodes,
-            and audio moments worth your headphones.
+            {narrations.length > 0
+              ? 'New narrated editions land as stories publish. Subscribe below and every Sunday Pulse brings our top picks of the week’s African music drops, podcast episodes, and audio moments worth your headphones.'
+              : 'Narrated audio editions are rolling out now. Subscribe below — every Sunday Pulse edition includes our top picks of the week’s African music drops, podcast episodes, and audio moments worth your headphones.'}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 text-left">
