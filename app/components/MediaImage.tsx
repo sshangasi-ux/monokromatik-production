@@ -4,9 +4,24 @@ import { useState } from 'react';
 
 const FALLBACK = '/fallback-hero.svg';
 
-// Images are self-hosted under /article-media (webp, same-origin) by the media
-// sourcer, so no proxy is needed. Any URL that still fails (e.g. a not-yet-
-// localised remote URL) falls back to the branded SVG below.
+// Pipeline article images are self-hosted under /article-media (same-origin) and
+// pass through untouched. But some images are hardcoded *remote* URLs that never
+// go through the self-host backfill (e.g. official campaign assets on the Issue
+// pages, like media.about.nike.com), and those hosts often hotlink-protect /
+// omit CORS, blanking the image on our domain. For those — and only those —
+// route through a caching proxy as a safety net so nothing is ever broken.
+// Local and own-domain URLs are never proxied.
+export function proxify(src: string): string {
+  if (!/^https?:\/\//i.test(src)) return src; // local (/article-media, /fallback-hero.svg)
+  try {
+    const { hostname } = new URL(src);
+    if (hostname.endsWith('monokromatik.com') || hostname.endsWith('images.weserv.nl')) return src;
+    const bare = src.replace(/^https?:\/\//i, '');
+    return `https://images.weserv.nl/?url=${encodeURIComponent(bare)}&w=1600&output=webp&we`;
+  } catch {
+    return src;
+  }
+}
 
 const ASPECT: Record<string, string> = {
   video: 'aspect-video',
@@ -53,7 +68,7 @@ export default function MediaImage({
 }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
-  const url = errored || !src ? FALLBACK : src;
+  const url = errored || !src ? FALLBACK : proxify(src);
   const showDuotone = duotone && !errored;
 
   const img = (
