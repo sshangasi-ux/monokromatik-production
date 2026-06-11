@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import Issue001KineticArtwork from './Issue001KineticArtwork';
+import { proxify } from './MediaImage';
 
 export interface CoverSlide {
   kicker: string;
@@ -34,7 +35,7 @@ function Background({ slide }: { slide: CoverSlide }) {
   if (slide.imageUrl) {
     return (
       <img
-        src={slide.imageUrl}
+        src={slide.imageUrl ? proxify(slide.imageUrl) : slide.imageUrl}
         alt=""
         className="img-duotone absolute inset-0 h-full w-full object-cover opacity-40 transition-transform duration-[1400ms] scale-105"
       />
