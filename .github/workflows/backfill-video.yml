@@ -1,0 +1,84 @@
+name: Backfill Video
+
+# Attach official/relevant video to the existing article back-catalogue using the
+# same chain the live pipeline uses (publisher embed → YouTube → Pexels). New
+# articles already get video at generation time, so this is manual-only. Defaults
+# to dry-run: review the relevance in the run log, then re-run with dry_run=false
+# to write + commit. No-ops if neither media key is set.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would be attached without writing'
+        type: boolean
+        default: true
+      since:
+        description: 'Only articles published within this many days (blank = all)'
+        required: false
+        default: ''
+        type: string
+      limit:
+        description: 'Max articles to process (blank = all)'
+        required: false
+        default: ''
+        type: string
+      force:
+        description: 'Re-source even articles that already have a video'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backfill-video
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Backfill
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          MONO_STOCK_VIDEO: ${{ secrets.MONO_STOCK_VIDEO }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          echo "Running: npm run backfill-video -- $ARGS"
+          npm run backfill-video -- $ARGS
+
+      - name: Commit & push articles
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          if [ -n "$(git status --porcelain data/articles.json)" ]; then
+            git config user.name "MonoKromatik Agent"
+            git config user.email "agents@monokromatik.com"
+            git add data/articles.json
+            git commit -m "chore(media): backfill video onto existing articles [skip ci]"
+            git push origin main
+            echo "✅ Backfilled video — Vercel will redeploy." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ℹ️ No video changes." >> "$GITHUB_STEP_SUMMARY"
+          fi

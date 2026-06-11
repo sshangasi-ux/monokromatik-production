@@ -313,6 +313,25 @@ async function sourceYouTube(query: string): Promise<MediaAsset | undefined> {
 }
 
 /**
+ * Resolve the best available video for an article, in reputability order:
+ * the publisher's own embed → a relevant real YouTube clip → a generic stock
+ * motion clip. Returns undefined when nothing suitable is found. Shared by the
+ * live pipeline (sourceMedia) and the backfill script.
+ */
+export async function sourceArticleVideo(args: {
+  sourceLink?: string;
+  sourceName?: string;
+  title: string;
+  category: string;
+}): Promise<MediaAsset | undefined> {
+  return (
+    (await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined)) ??
+    (await sourceYouTube(args.title).catch(() => undefined)) ??
+    (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined))
+  );
+}
+
+/**
  * Source a credited hero image (mandatory) and an optional official video for an
  * article. The image is guaranteed present via the branded fallback.
  */
@@ -338,12 +357,12 @@ export async function sourceMedia(args: {
   const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
   const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
 
-  // Video priority: the publisher's own embed (most reputable) → a relevant real
-  // YouTube clip (richest context) → a generic stock motion clip (ambient fallback).
-  const video =
-    (await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined)) ??
-    (await sourceYouTube(args.title).catch(() => undefined)) ??
-    (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined));
+  const video = await sourceArticleVideo({
+    sourceLink: args.sourceLink,
+    sourceName: args.sourceName,
+    title: args.title,
+    category: args.category,
+  });
 
   return { image, video };
 }
