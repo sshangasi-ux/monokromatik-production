@@ -1,0 +1,80 @@
+name: Distribute Social
+
+# Auto-distribute newly published articles to social channels. Fires when
+# data/articles.json lands on main (i.e. an EIC-approved batch was merged), and
+# is also schedulable / manually runnable. No-ops cleanly when no channel secret
+# is set (SOCIAL_WEBHOOK_URL / X_ACCESS_TOKEN), so it's safe to enable now.
+#
+# Idempotent: data/social-log.json records what's been posted, so the bot's own
+# commit-back never re-posts.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/articles.json'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Generate + report posts but do not send'
+        type: boolean
+        default: true
+      since:
+        description: 'Look back this many days for undistributed articles'
+        required: false
+        default: '2'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: distribute-social
+  cancel-in-progress: false
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Distribute
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SOCIAL_WEBHOOK_URL: ${{ secrets.SOCIAL_WEBHOOK_URL }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+        run: |
+          ARGS="--since ${{ inputs.since || '2' }}"
+          # push events have no inputs.dry_run → default to live send on merge
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          echo "Running: npm run distribute -- $ARGS"
+          npm run distribute -- $ARGS
+
+      - name: Commit & push social log
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          if [ -n "$(git status --porcelain data/social-log.json)" ]; then
+            git config user.name "MonoKromatik Agent"
+            git config user.email "agents@monokromatik.com"
+            git add data/social-log.json
+            git commit -m "chore(social): record distributed articles [skip ci]"
+            git push origin main
+            echo "✅ Recorded social distribution." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ℹ️ No new distributions." >> "$GITHUB_STEP_SUMMARY"
+          fi
