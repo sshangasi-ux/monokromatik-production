@@ -47,3 +47,29 @@ The Intelligence + Reports surfaces are built for this.
 - GA4 ecommerce events (`checkout_start`, `purchase`) for revenue reporting.
 
 > Decision needed before Phase 2 build: **subscription vs à-la-carte reports first**, and the **payment stack** (Stripe is the default). Everything else is sequenceable without external dependencies.
+
+---
+
+## Decision record — Phase 2: paid reports first (recommended)
+
+**Recommendation: yes, lead with paid reports, then graduate to a membership/“Intelligence Pass.”** Reasoned argument:
+
+1. **Validation economics favour the single ‘yes’.** A subscription asks for a *recurring* commitment before recurring value is proven; at pre-scale, paywall conversion is brutal (low single-digit % of engaged audience) and depends on retention you can’t yet demonstrate. A one-off report is one decision, and it tests willingness-to-pay for the *actual* product (intelligence) — not for a content treadmill.
+2. **Production reality.** Subscriptions punish missed cadence with churn. MonoKromatik is review-gated, quality-first, low-volume — cadence pressure is in tension with the “distinct African judgement” promise. Reports are discrete, art-directable, and don’t expire like a feed; one excellent quarterly dossier is still a sellable asset. You cannot run a subscription on one drop a quarter.
+3. **Price/value legibility for a B2B buyer.** Agencies and brand teams entering African markets already buy research à la carte (WARC/GWI/Nielsen single reports, consultancy briefings). “$X for *this* dossier on *this* market” is instantly evaluable; forecasting a year of value from a brand they just met is not. Sell to the muscle memory the buyer already has.
+4. **Reports de-risk and *build* the subscription.** Each sale produces a **proven payer** (money, not just an email) — the warm cohort you later convert to membership. And a library is only subscribable once it has depth: reports first create the back-catalogue that makes an all-access Pass worth buying.
+5. **Cash + signal now, optionality later.** Early non-dilutive revenue, plus hard willingness-to-pay data to quote to sponsors/partners (Phase 1) and to price the eventual Pass.
+
+**Honest counter-weights (and mitigations):**
+- Subscriptions give predictable MRR / higher LTV — *but only at scale with cadence + retention infra you don’t have yet.*
+- Reports are a “sell it every time” treadmill with lumpy revenue → mitigate with a predictable publishing rhythm and an early **founding / season pass pre-sell** (a subscription-like commitment without needing a full library).
+- One-off CAC can be high vs price → sell to the **warm newsletter list + B2B outbound**, not cold paid acquisition.
+
+**Sharpened plan (where I’d refine the “reports first” instinct):**
+- **Price as research, not an ebook.** $99–249 individual; multi-seat **agency/brand licence** $399–599 for the same report. B2B is where the money is.
+- **Keep the funnel free.** Signal essays + Brand Weather stay open (trust, SEO, list growth). Paywall only the *structured intelligence* — reports, deepest case studies, the research library.
+- **Ladder, not a leap:** free Signal → one flagship **paid report** → 2–4 reports build a catalogue → launch the **annual Intelligence Pass** (all reports + library + “Ask MonoKromatik”) once the catalogue justifies it.
+- **Lighter engineering, too.** Reports need only **Stripe Checkout (one-off `payment` mode)** + an entitlement check + gated/PDF delivery. Defer Stripe **Billing** (subscriptions, dunning, proration) until the Pass. So “reports first” is also the cheaper, faster build.
+- **Set an explicit gate before building membership:** e.g. *one report clears N sales / $X*, or an all-access waitlist crosses a threshold → then commit to subscription infra.
+
+**Net:** ship the case-study generator’s output (the dossiers/reports we now produce) behind Stripe Checkout as the first paid product; treat every buyer as the seed list for the Pass; introduce the subscription only once the back-catalogue and cadence are real.
