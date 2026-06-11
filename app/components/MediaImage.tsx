@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-const FALLBACK = '/fallback-hero.svg';
+import CoverArt from './CoverArt';
 
 // Pipeline article images are self-hosted under /article-media (same-origin) and
 // pass through untouched. But some images are hardcoded *remote* URLs that never
@@ -68,17 +67,23 @@ export default function MediaImage({
 }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
-  const url = errored || !src ? FALLBACK : proxify(src);
-  const showDuotone = duotone && !errored;
+  // When there's no source, or the remote source fails to load (e.g. publisher
+  // hotlink protection that no proxy can defeat), fall back to the brand's own
+  // generative CoverArt rather than a flat placeholder — the surface still reads
+  // as authored MonoKromatik imagery, never a broken box.
+  const failed = errored || !src;
+  const showDuotone = duotone && !failed;
 
-  const img = (
+  const img = failed ? (
+    <CoverArt seed={alt || 'monokromatik'} lapels={!fill} />
+  ) : (
     <>
       {!loaded && (
         <span className="img-shimmer absolute inset-0" aria-hidden="true" />
       )}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={url}
+        src={proxify(src!)}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"

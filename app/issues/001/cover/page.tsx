@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Layers3, MonitorPlay, ScanText } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
-import Issue001KineticArtwork from '../../../components/Issue001KineticArtwork';
+import IssueCover from '../../../components/IssueCover';
 
 const coverPrinciples = [
   {
@@ -36,20 +36,17 @@ export default function Issue001CoverPage() {
           </div>
 
           <div className="grid lg:grid-cols-[420px_1fr] gap-10 items-start">
-            <div className="relative aspect-[3/4] bg-mono-black text-mono-white overflow-hidden shadow-2xl">
-              <Issue001KineticArtwork compact />
-              <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/30" />
-              <div className="relative h-full p-7 flex flex-col justify-between">
-                <div className="flex justify-between text-[10px] tracking-[0.3em] font-display font-bold">
-                  <span className="text-mono-amber">MONOKROMATIK</span><span className="text-mono-gray">001</span>
-                </div>
-                <div>
-                  <p className="text-[10px] tracking-[0.32em] font-display font-bold text-mono-amber mb-6">FOUNDING ISSUE</p>
-                  <h2 className="text-4xl font-display font-bold leading-[0.96]">The Intelligence<br />Behind African<br />Influence.</h2>
-                </div>
-                <p className="pt-4 border-t border-mono-white/20 text-[10px] tracking-[0.16em] font-display text-mono-gray">CAMPAIGNS · VOICES · COMMERCE · DIASPORA</p>
-              </div>
-            </div>
+            <IssueCover
+              issueNumber="001"
+              kicker="FOUNDING ISSUE"
+              title="The Intelligence Behind African Influence."
+              coverlines={[
+                'The Work — Nike × Air Afrique decoded',
+                'Will It Land? — global work tested in African markets',
+                'Brand Weather — the forces moving culture now',
+              ]}
+              footer="CAMPAIGNS · VOICES · COMMERCE · DIASPORA"
+            />
 
             <div>
               <p className="max-w-2xl text-xl text-mono-charcoal font-body leading-relaxed">The founding cover is deliberately not built from borrowed campaign imagery. It establishes Monokromatik's own visual asset first: a kinetic editorial surface that can sit above official film embeds, credited campaign stills and designed intelligence spreads.</p>

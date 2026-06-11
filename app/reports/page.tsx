@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Bookmark, Download, FileText, LockKeyhole } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import IssueCover from '../components/IssueCover';
 import { StatStrip } from '../components/dataviz/Charts';
 
 const reportSeries = [
@@ -57,16 +58,27 @@ export default function ReportsPage() {
     <div className="min-h-screen bg-mono-white">
       <Navigation />
       <section className="bg-mono-black text-mono-white py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_350px] gap-12 items-end">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_360px] gap-12 items-center">
           <div>
             <p className="text-xs tracking-[0.35em] font-display font-bold text-mono-amber mb-7">INTELLIGENCE / REPORTS</p>
             <h1 className="text-5xl md:text-7xl font-display font-bold leading-[0.95]">Insight worth<br /><span className="text-mono-amber">keeping.</span></h1>
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-mono-soft-white font-body">A future library of designed briefings, dossiers and collectible editions turning African creative intelligence into decision-grade reading.</p>
+            <div className="mt-8 inline-flex items-center gap-3 border border-mono-white/20 px-5 py-3">
+              <Download className="text-mono-amber" size={20} />
+              <p className="font-display text-sm font-bold tracking-wide">Read digitally. Save deliberately. Print eventually.</p>
+            </div>
           </div>
-          <div className="border border-mono-white/20 p-7">
-            <Download className="text-mono-amber mb-6" size={27} />
-            <p className="font-display text-2xl font-bold leading-tight">Read digitally. Save deliberately. Print eventually.</p>
-          </div>
+          <IssueCover
+            issueNumber="001"
+            kicker="FIRST EDITION / IN DEVELOPMENT"
+            title="The Intelligence Behind African Influence."
+            coverlines={[
+              'Brand, culture & commercial intelligence',
+              'Source-verified, decision-grade reading',
+            ]}
+            footer="MONOKROMATIK REPORTS"
+            aspect="portrait"
+          />
         </div>
       </section>
 
