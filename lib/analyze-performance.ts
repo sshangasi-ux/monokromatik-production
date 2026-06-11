@@ -26,19 +26,44 @@ const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID;
 const GA4_API_KEY = process.env.GA4_SERVICE_ACCOUNT_JSON; // base64-encoded service account
 
 /**
+ * Decode + validate the base64 service account JSON. GA4_SERVICE_ACCOUNT_JSON is
+ * stored base64 (single-line secret), so it must be decoded *before* JSON.parse —
+ * the credential path is wired correctly here so enabling GA4 is drop-in.
+ * Returns the parsed credentials, or null if absent/malformed.
+ */
+function decodeGA4Credentials(): { client_email?: string; private_key?: string } | null {
+  if (!GA4_API_KEY) return null;
+  try {
+    const raw = GA4_API_KEY.trim().startsWith('{')
+      ? GA4_API_KEY // already raw JSON
+      : Buffer.from(GA4_API_KEY, 'base64').toString('utf-8');
+    const creds = JSON.parse(raw);
+    if (!creds.client_email || !creds.private_key) {
+      console.log('   ⚠️  GA4 credentials missing client_email/private_key — ignoring');
+      return null;
+    }
+    return creds;
+  } catch {
+    console.log('   ⚠️  GA4_SERVICE_ACCOUNT_JSON is not valid base64 JSON — ignoring');
+    return null;
+  }
+}
+
+/**
  * Fetch GA4 data via the Reporting API.
  * Returns null if not configured — caller handles fallback.
  */
 async function fetchGA4(days: number): Promise<any | null> {
-  if (!GA4_PROPERTY_ID || !GA4_API_KEY) return null;
+  const credentials = decodeGA4Credentials();
+  if (!GA4_PROPERTY_ID || !credentials) return null;
 
-  // The full GA4 Data API integration goes here.
-  // For now we surface the contract so the agent runs, even pre-credentials.
-  // When GA4 service account JSON is added, replace this stub with:
+  // Credentials are decoded + validated above. The remaining step is the Data
+  // API client, which needs an extra dependency:
   //   const { BetaAnalyticsDataClient } = require('@google-analytics/data');
-  //   const client = new BetaAnalyticsDataClient({ credentials: JSON.parse(...) });
-  //   const [response] = await client.runReport({ ... });
-  console.log('   ℹ️  GA4 stub — install @google-analytics/data and wire credentials');
+  //   const client = new BetaAnalyticsDataClient({ credentials });
+  //   const [response] = await client.runReport({ property: `properties/${GA4_PROPERTY_ID}`, ... });
+  void days;
+  console.log('   ℹ️  GA4 credentials valid — install @google-analytics/data to enable reporting');
   return null;
 }
 
