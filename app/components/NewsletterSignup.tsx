@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { track } from '../../lib/analytics';
 
 type Variant = 'default' | 'footer' | 'sidebar';
 
@@ -30,6 +31,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
       const data = await response.json().catch(() => ({}));
       if (response.ok) {
         setStatus('success');
+        track('newsletter_signup', { source: sourceTag });
         setMessage(data.message || 'Welcome to The Weekly Signal. Check your email to confirm.');
         setEmail('');
       } else {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import { track } from '../../../lib/analytics';
 import Link from 'next/link';
 import { ArrowLeft, Clock, ExternalLink } from 'lucide-react';
 import Navigation from '../../components/Navigation';
@@ -35,6 +36,10 @@ export default function ArticleClient({ article }: { article: Article }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    track('article_view', { slug: article.slug, category: article.category });
+  }, [article.slug, article.category]);
 
   const shareUrl =
     typeof window !== 'undefined'
@@ -163,6 +168,7 @@ export default function ArticleClient({ article }: { article: Article }) {
               href={article.sourceLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track('source_click', { slug: article.slug, source: article.sourceName })}
               className="text-mono-amber-strong hover:text-mono-amber-hover hover:underline inline-flex items-center gap-1"
             >
               {article.sourceName} <ExternalLink size={14} />
