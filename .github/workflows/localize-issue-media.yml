@@ -7,6 +7,13 @@ name: Localize Issue Media
 # render reliably — no browser hotlinking, no third-party proxy.
 
 on:
+  # Auto: when the issue-media manifest lands on main (e.g. a new dossier adds
+  # campaign stills), self-host them immediately. Idempotent — entries already
+  # localized are skipped, so the bot's own commit-back converges without looping.
+  push:
+    branches: [main]
+    paths:
+      - 'data/issue-media.json'
   workflow_dispatch:
     inputs:
       force:
