@@ -1,6 +1,7 @@
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
 import { AttributedImage, AttributedImagePair, MediaStatus } from '../../../components/AttributedMedia';
 import { SignalStrength } from '../../../components/dataviz/Charts';
+import { issueMedia, issueMediaSrc } from '../../../../lib/issue-media';
 
 const decode: { label: string; level: 1 | 2 | 3 | 4 | 5; note: string }[] = [
   { label: 'IDEA', level: 5, note: 'Heritage carried as design language, not decoration.' },
@@ -10,8 +11,13 @@ const decode: { label: string; level: 1 | 2 | 3 | 4 | 5; note: string }[] = [
 ];
 
 const officialSource = 'https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images';
-const heroImage = 'https://media.about.nike.com/img/b6930e3c-bcb3-4dca-ac92-ac3b9ea884e1/air-max-rk61-hero.jpg';
-const quoteImage = 'https://media.about.nike.com/img/396d7232-73e2-4655-9c11-68a3b47c0069/air-max-rk61-ahmadou-bamba-thiam-quote-1.jpg';
+// Official campaign assets — self-hosted via CI (scripts/localize-issue-media.ts)
+// because Nike's CDN blocks browser hotlinking. Falls back to CoverArt if a
+// source ever fails to load (MediaImage). Credit/source come from the manifest.
+const heroMedia = issueMedia('nike-air-afrique-hero')!;
+const quoteMedia = issueMedia('nike-air-afrique-quote')!;
+const heroImage = issueMediaSrc('nike-air-afrique-hero');
+const quoteImage = issueMediaSrc('nike-air-afrique-quote');
 
 const sources = [
   {
@@ -32,18 +38,18 @@ const campaignHero = {
   src: heroImage,
   alt: 'Figures on aircraft stairs in the Nike and Air Afrique campaign for the Air Max RK61.',
   caption: 'The Première Classe campaign turns travel and airline memory into the visual world of the RK61 collaboration.',
-  credit: 'Courtesy of NIKE, Inc. / Air Afrique',
-  sourceLabel: 'Official Nike Newsroom',
-  sourceHref: officialSource,
+  credit: heroMedia.credit,
+  sourceLabel: heroMedia.sourceLabel,
+  sourceHref: heroMedia.sourceHref,
 };
 
 const campaignQuote = {
   src: quoteImage,
   alt: 'Nike and Air Afrique campaign artwork connecting flight, elevation and cultural movement.',
   caption: 'Official campaign material positions Air as a metaphor for travel, exchange and elevation beyond the footwear object.',
-  credit: 'Courtesy of NIKE, Inc. / Air Afrique',
-  sourceLabel: 'Official Nike Newsroom',
-  sourceHref: officialSource,
+  credit: quoteMedia.credit,
+  sourceLabel: quoteMedia.sourceLabel,
+  sourceHref: quoteMedia.sourceHref,
 };
 
 export default function TheWorkNikeAirAfriquePage() {

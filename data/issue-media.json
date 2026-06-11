@@ -1,0 +1,16 @@
+{
+  "nike-air-afrique-hero": {
+    "remote": "https://media.about.nike.com/img/b6930e3c-bcb3-4dca-ac92-ac3b9ea884e1/air-max-rk61-hero.jpg",
+    "local": null,
+    "credit": "Courtesy of NIKE, Inc. / Air Afrique",
+    "sourceLabel": "Official Nike Newsroom",
+    "sourceHref": "https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images"
+  },
+  "nike-air-afrique-quote": {
+    "remote": "https://media.about.nike.com/img/396d7232-73e2-4655-9c11-68a3b47c0069/air-max-rk61-ahmadou-bamba-thiam-quote-1.jpg",
+    "local": null,
+    "credit": "Courtesy of NIKE, Inc. / Air Afrique",
+    "sourceLabel": "Official Nike Newsroom",
+    "sourceHref": "https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images"
+  }
+}

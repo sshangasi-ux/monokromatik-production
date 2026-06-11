@@ -17,7 +17,8 @@
     "backfill:media": "tsx scripts/backfill-media.ts",
     "backfill:media:dry": "tsx scripts/backfill-media.ts --dry-run",
     "test:pexels-video": "tsx scripts/test-pexels-video.ts",
-    "generate:case-study": "tsx scripts/generate-case-study.ts"
+    "generate:case-study": "tsx scripts/generate-case-study.ts",
+    "localize:issue-media": "tsx scripts/localize-issue-media.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

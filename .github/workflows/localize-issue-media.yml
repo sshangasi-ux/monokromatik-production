@@ -1,0 +1,63 @@
+name: Localize Issue Media
+
+# One-shot, manually triggered from the Actions tab. Downloads the hardcoded
+# issue/dossier campaign images listed in data/issue-media.json (e.g. official
+# Nike Air Afrique stills on hotlink-protected CDNs), self-hosts them as
+# same-origin webps under public/article-media, and commits to main so they
+# render reliably — no browser hotlinking, no third-party proxy.
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-download even entries already localized'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: localize-issue-media
+  cancel-in-progress: false
+
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Localize issue media
+        run: |
+          ARGS=""
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="--force"; fi
+          echo "Running: npm run localize:issue-media -- $ARGS"
+          npm run localize:issue-media -- $ARGS
+
+      - name: Commit & push self-hosted issue media
+        run: |
+          if [ -n "$(git status --porcelain data/issue-media.json public/article-media)" ]; then
+            git config user.name "MonoKromatik Agent"
+            git config user.email "agents@monokromatik.com"
+            git add data/issue-media.json public/article-media
+            git commit -m "chore(media): self-host issue/dossier campaign images"
+            git push origin main
+            echo "✅ Pushed self-hosted issue media to main — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ℹ️ No issue media changes (already localized or origins unreachable)." >> "$GITHUB_STEP_SUMMARY"
+          fi
