@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sp
 import Navigation from './components/Navigation';
 import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
+import TrendingArticles from './components/TrendingArticles';
 import MediaImage from './components/MediaImage';
 import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
@@ -235,6 +236,26 @@ export default function Home() {
               {dispatches[0] && <StaggerItem><DispatchCard article={dispatches[0]} feature /></StaggerItem>}
               {dispatches.slice(1, 3).map((article) => <StaggerItem key={article.slug}><DispatchCard article={article} /></StaggerItem>)}
             </Stagger>
+          </div>
+        </section>
+      )}
+
+      {articles.length > 0 && (
+        <section className="bg-mono-soft-white py-20 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+            <div className="max-w-md w-full">
+              <TrendingArticles articles={articles} limit={5} />
+            </div>
+            <div>
+              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">ON THE PULSE</p>
+              <h2 className="text-4xl font-display font-bold text-mono-black leading-tight">What the network is reading right now.</h2>
+              <p className="mt-6 max-w-lg text-lg text-mono-charcoal font-body">
+                The freshest signals across culture, sport and sound — updated continuously as our agents publish.
+              </p>
+              <Link href="/pulse" className="mt-8 inline-flex items-center gap-2 font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                SEE THE FULL PULSE <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </section>
       )}
