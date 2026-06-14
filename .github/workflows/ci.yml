@@ -44,11 +44,11 @@ jobs:
 
   lighthouse:
     # Non-blocking quality signal — builds, serves, and audits the homepage +
-    # an article page. continue-on-error so a dip never blocks a merge; results
-    # are uploaded to temporary public storage and linked in the job log.
+    # /pulse. The audit step is continue-on-error at the STEP level so the job
+    # (and thus the PR check) stays green even if Lighthouse hiccups; results are
+    # uploaded to temporary public storage and linked in the job log.
     runs-on: ubuntu-latest
     needs: build
-    continue-on-error: true
     timeout-minutes: 15
     steps:
       - name: Checkout
@@ -68,10 +68,15 @@ jobs:
 
       - name: Run Lighthouse
         uses: treosh/lighthouse-ci-action@v12
+        continue-on-error: true
         with:
           urls: |
             http://localhost:3000/
             http://localhost:3000/pulse
           startServerCommand: npm run start
+          # Wait for Next.js to actually be listening before auditing, otherwise
+          # Chrome hits connection-refused and reports CHROME_INTERSTITIAL_ERROR.
+          startServerReadyPattern: 'Ready in'
+          startServerReadyTimeout: 60000
           uploadArtifacts: true
           temporaryPublicStorage: true
