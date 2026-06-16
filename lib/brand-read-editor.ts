@@ -83,8 +83,11 @@ export interface ArticleContextForEdit {
 }
 
 export interface BrandReadDimensions {
-  /** Is it grounded in the article / uncontroversial fact, or confident air?
-   *  This is the dimension that catches hallucination. Weighted hardest. */
+  /** Is it grounded in the article, or confident air / imported outside facts?
+   *  Article-anchored claims and openly-flagged interpretation count as
+   *  grounded; an external specific (stat, market size, campaign) stated as
+   *  fact does NOT, even if true. This is the dimension that catches
+   *  hallucination AND unsourced certainty. Weighted hardest; <8 drops. */
   grounding: number;
   /** Does it say something non-obvious — a real reframe a CMO couldn't get free? */
   strategic_value: number;
@@ -292,14 +295,18 @@ function applyBrandReadGate(v: BrandReadVerdict): BrandReadVerdict {
 
   // HARD DROP — grounding. This is the hallucination guard. A confident,
   // ungrounded read is the single most dangerous output the pipeline can
-  // produce, so it fails closed at a high threshold.
-  if (d.grounding < 7) {
+  // produce, so it fails closed at a high threshold. The rubric caps grounding
+  // at 6 for any imported external specific stated as fact (even if true) and
+  // for a confidence flag that doesn't match the prose; an 8 floor here means
+  // those both reliably drop. Only article-anchored / openly-interpretive
+  // reads clear.
+  if (d.grounding < 8) {
     return {
       ...v,
       verdict: 'drop',
       dropReason:
         v.dropReason ??
-        `Grounding ${d.grounding}/10 — claims not anchored in the article. Possible invention.`,
+        `Grounding ${d.grounding}/10 — claims not anchored in the article, or confidence flag overstated. Possible imported/invented specific.`,
     };
   }
 
@@ -375,16 +382,46 @@ standard. The article that the read accompanies is provided. Score the Brand
 Read on five dimensions, each 1-10.
 
 1. grounding  — THE MOST IMPORTANT DIMENSION.
-   Are the read's concrete claims anchored in the article you were given, or
-   in widely-established, uncontroversial fact? Or has the Strategist invented
-   a statistic, a campaign, a deal, a quote, or a confident claim with no
-   basis?
-   - 10: Every concrete claim traces to the article or to obvious public fact.
-   - 7:  Solidly grounded; interpretation clearly labelled as such.
-   - 4:  Contains a claim that sounds specific but isn't supported anywhere.
+   Are the read's concrete claims anchored IN THE ARTICLE you were given? That
+   is the only thing that counts as grounded. A claim that is true in the wider
+   world but is NOT established by the article is NOT grounded — it is the
+   Strategist importing outside facts, and it must be treated as a risk, not a
+   pass. Distinguish three kinds of statement:
+
+   (a) Article-anchored claim — traces directly to the article's text. Grounded.
+   (b) Interpretation/reframe — clearly the read's own judgement, framed as
+       such ("our take is", "the sharper read is"). Legitimate; this is the job.
+   (c) Imported external specific — a statistic, market size, dollar figure,
+       ranking ("one of the largest in the world"), named campaign, deal, or
+       quote that the article did NOT establish, stated as fact. This is the
+       dangerous category. It does not matter whether it happens to be true:
+       if the read asserts a specific external fact the article didn't give it,
+       and states it with certainty rather than hedging it, that is a grounding
+       failure.
+
+   Scoring:
+   - 10: Every concrete claim is article-anchored or is openly-labelled
+         interpretation. No imported specifics stated as fact.
+   - 8:  Solidly grounded; any external context is hedged ("likely", "by most
+         estimates") or is genuinely common knowledge no reader would dispute.
+   - 6:  Contains at least one imported external specific stated as fact — a
+         number, ranking, market size, campaign, or deal the article didn't
+         establish. Even if plausibly true. THIS IS A DROP.
+   - 4:  Contains a claim that sounds specific but is supported nowhere.
    - 1:  Invents facts — fabricated numbers, made-up campaigns, fake quotes.
-   If you suspect ANY invented specific, score this <= 4. We would rather drop
-   a real read than ship one fabricated number.
+   RULE: any single imported external specific stated as fact caps grounding at
+   6. We would rather drop a real read than ship one unsourced number dressed
+   as fact — being right by luck is not being grounded.
+
+   CONFIDENCE CALIBRATION (part of grounding): check the read's stated
+   confidence flag against how it actually argues.
+   - 'interpretive' promises judgement, not asserted fact. If a read flagged
+     'interpretive' makes hard factual assertions (especially imported
+     specifics), it is MISCALIBRATED — the flag says opinion, the prose claims
+     fact. Cap grounding at 6 and say so in notes.
+   - 'verified' / 'partial' claim some checking happened. If nothing in the
+     read or article supports that, treat it the same way.
+   The flag and the prose must agree. A mismatch is a grounding failure.
 
 2. strategic_value
    Does it say something non-obvious — a genuine reframe a decision maker
@@ -432,8 +469,10 @@ Output strict JSON. No preamble, no markdown fences. Schema:
   "dropReason": "Optional: 1 sentence, headline style. Only if you'd drop it."
 }
 
-Be hard on grounding. A missing Brand Read costs the publication nothing; a
-fabricated one costs it credibility. When unsure, score down.
+Be hard on grounding. A missing Brand Read costs the publication nothing; an
+unsourced or fabricated one costs it credibility. "True in the world" is not
+the test — "established by this article, or openly flagged as our judgement" is.
+When unsure, score grounding down.
 `.trim();
 
 function formatForEdit(br: BrandRead, a: ArticleContextForEdit): string {
