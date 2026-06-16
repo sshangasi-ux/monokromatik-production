@@ -18,10 +18,13 @@
     "backfill:media:dry": "tsx scripts/backfill-media.ts --dry-run",
     "backfill:brand-reads": "tsx scripts/backfill-brand-reads.ts",
     "backfill:brand-reads:dry": "tsx scripts/backfill-brand-reads.ts --dry-run",
+    "audit:video": "tsx scripts/audit-video.ts",
+    "audit:video:dry": "tsx scripts/audit-video.ts --dry-run",
     "test:pexels-video": "tsx scripts/test-pexels-video.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
+    "@composio/core": "^0.10.0",
     "@next/third-parties": "^16.2.4",
     "@radix-ui/react-dialog": "^1.1.15",
     "axios": "^1.15.2",

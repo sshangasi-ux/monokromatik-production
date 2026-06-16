@@ -16,6 +16,7 @@ import { join } from 'path';
 import { createHash } from 'crypto';
 import sharp from 'sharp';
 import { sourceImage } from './source-image';
+import { verifyVideoMatch } from './verify-video';
 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -77,8 +78,9 @@ export interface SourcedMedia {
   video?: MediaAsset;
 }
 
-/** Stock motion is on by default; set MONO_STOCK_VIDEO=off to disable the fallback. */
-const STOCK_VIDEO_ENABLED = (process.env.MONO_STOCK_VIDEO ?? 'on').toLowerCase() !== 'off';
+/** Stock motion is RETIRED by default (a category clip is a mismatch on an
+ *  accuracy-led publication). Set MONO_STOCK_VIDEO=on to explicitly opt back in. */
+const STOCK_VIDEO_ENABLED = (process.env.MONO_STOCK_VIDEO ?? 'off').toLowerCase() === 'on';
 
 const STOCK_QUERY: Record<string, string> = {
   culture: 'african culture city',
@@ -321,6 +323,8 @@ export async function sourceMedia(args: {
   title: string;
   excerpt: string;
   category: string;
+  /** Article tags, used to verify a candidate video genuinely matches. */
+  tags?: string[];
 }): Promise<SourcedMedia> {
   const img = await sourceImage({
     existingUrl: args.existingUrl,
@@ -335,12 +339,38 @@ export async function sourceMedia(args: {
   const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
   const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
 
-  // Video priority: the publisher's own embed (most reputable) → a relevant real
-  // YouTube clip (richest context) → a generic stock motion clip (ambient fallback).
-  const video =
-    (await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined)) ??
-    (await sourceYouTube(args.title).catch(() => undefined)) ??
-    (await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined));
+  // Video priority, accuracy-first:
+  //   1) the publisher's OWN embed off the source page — inherently aligned, trusted.
+  //   2) a YouTube search match — but ONLY if it passes verification against THIS
+  //      article (real metadata + judge). A wrong video is worse than none, so an
+  //      unverified candidate is dropped, not attached.
+  // The generic Pexels stock tier is retired from the default chain: a category
+  // clip is wallpaper at best and an active mismatch at worst (see verify-video.ts).
+  // It remains available behind MONO_STOCK_VIDEO for explicit, opt-in use.
+  let video = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
+  if (!video) {
+    const candidate = await sourceYouTube(args.title).catch(() => undefined);
+    if (candidate) {
+      const verdict = await verifyVideoMatch({
+        article: {
+          title: args.title,
+          excerpt: args.excerpt,
+          tags: args.tags ?? [],
+          category: args.category,
+        },
+        candidate: { url: candidate.url, provider: candidate.provider },
+      }).catch((err) => ({ match: false, reason: `verify threw: ${(err as Error).message}` }));
+      if (verdict.match) {
+        video = candidate;
+      } else {
+        vlog(`youtube candidate rejected by verifier — ${verdict.reason}`);
+      }
+    }
+  }
+  // Optional, explicitly opt-in ambient stock (off by default; see retirement note).
+  if (!video && STOCK_VIDEO_ENABLED) {
+    video = await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined);
+  }
 
   return { image, video };
 }
