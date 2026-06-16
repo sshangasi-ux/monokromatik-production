@@ -16,6 +16,8 @@
     "pulse:dry": "tsx scripts/send-pulse-digest.ts -- --dry-run",
     "backfill:media": "tsx scripts/backfill-media.ts",
     "backfill:media:dry": "tsx scripts/backfill-media.ts --dry-run",
+    "backfill:brand-reads": "tsx scripts/backfill-brand-reads.ts",
+    "backfill:brand-reads:dry": "tsx scripts/backfill-brand-reads.ts --dry-run",
     "test:pexels-video": "tsx scripts/test-pexels-video.ts"
   },
   "dependencies": {
