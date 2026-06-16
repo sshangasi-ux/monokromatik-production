@@ -41,6 +41,7 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
+import { withRetry } from './ai-retry';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import type { BrandRead, BrandReadTakeaway } from './articles';
@@ -168,12 +169,14 @@ export async function editBrandRead(
 
   let raw: string;
   try {
-    const response = await ai.messages.create({
-      model: MODELS.editorial,
-      max_tokens: 1200,
-      system: systemBlocks,
-      messages: [{ role: 'user', content: userMessage }],
-    });
+    const response = await withRetry(() =>
+      ai.messages.create({
+        model: MODELS.editorial,
+        max_tokens: 1200,
+        system: systemBlocks,
+        messages: [{ role: 'user', content: userMessage }],
+      })
+    );
     const textBlock = response.content.find((b: { type: string; text?: string }) => b.type === 'text');
     if (!textBlock || textBlock.type !== 'text' || typeof textBlock.text !== 'string') {
       return dropResult('Editor returned no text content');
