@@ -9,6 +9,7 @@ import MediaImage from '../../components/MediaImage';
 import SocialShare from '../../components/SocialShare';
 import RelatedArticles from '../../components/RelatedArticles';
 import NewsletterSignup from '../../components/NewsletterSignup';
+import BrandRead from '../../components/BrandRead';
 import {
   getAllArticles,
   getReadingTime,
@@ -160,6 +161,8 @@ export default function ArticleClient({ article }: { article: Article }) {
         <div className="prose prose-lg max-w-none font-body text-mono-charcoal mb-12 article-content">
           <ReactMarkdown>{article.content}</ReactMarkdown>
         </div>
+
+        <BrandRead data={article.brandRead} />
 
         <div className="my-8 p-4 border-2 border-mono-charcoal bg-mono-soft-white rounded-lg">
           <p className="font-body text-sm text-mono-gray">

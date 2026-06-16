@@ -5,6 +5,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
 import { fetchArticleBody } from './fetch-article-body';
+import type { BrandRead } from './articles';
 
 export interface GeneratedArticle {
   title: string;
@@ -23,6 +24,13 @@ export interface GeneratedArticle {
   sourceLink: string;
   sourceName: string;
   publishedAt: string;
+  /**
+   * The Brand Read: the dual-read strategic layer, attached post-EIC by the
+   * Strategist + Brand Read Editor stage. Optional and additive — articles
+   * without it publish exactly as before. See lib/strategist.ts and
+   * lib/brand-read-editor.ts.
+   */
+  brandRead?: BrandRead;
 }
 
 /**

@@ -81,6 +81,21 @@ Candid and useful. Avoid promotional interview fluff; pursue the decision, doubt
 ### Brand Weather
 Sharp and economical. A weekly executive read: what moved, why it matters and what to watch next.
 
+## The dual read: one story, two audiences
+
+Monokromatik is a hybrid publication (see `MONOKROMATIK_2_PRODUCT_BLUEPRINT.md` — Audience architecture). A substantial piece serves two readers from a single page:
+
+1. **The cultural story** — the narrative, written for the everyday reader who came for the artist, the campaign or the moment. This is the body of the piece and follows the writing cadence above.
+2. **The Brand Read** — a distinct, clearly separated module carrying the strategic consequence for the decision maker: who authored or benefited from the move, what brand builders should learn, and what global brands must understand before participating. It is the cadence's step 5 ("the consequence") made structural and visible.
+
+The Brand Read must:
+- be **led by a named point of view** — Sibu's take, or another leading marketer's or thought-leader's processed perspective, attributed clearly;
+- separate evidence from interpretation, consistent with governance confidence status;
+- never invent quotes, results or attributions (a processed perspective synthesises a real person's known, sourced positions — it does not fabricate a quotation);
+- be optional per piece — a short cultural dispatch may carry no Brand Read; a flagship piece should.
+
+The Brand Read is interpretive Signal-tier material. Under `EDITORIAL_GOVERNANCE.md` it requires human approval before publication today. The long-term intent is for the pipeline to draft it autonomously — leading with the operator's and invited thinkers' processed perspectives — within the same governance gate, not outside it.
+
 ## Contributor standard
 
 External voices should be invited to contribute an argument, experience or decision insight—not generic biography or corporate promotion.

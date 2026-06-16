@@ -53,6 +53,7 @@ No AI fallback bypasses copyright, safety, rights, editorial or human-approval r
 | Source verification pack | Automated draft | Required for Signal publication |
 | Cultural editorial draft | Automated | Risk-tier dependent |
 | Signal case-study draft | Automated | Human approval mandatory |
+| Brand Read (strategic layer) | Automated draft, double-gated | Human approval mandatory (PR sign-off) |
 | Newsletter draft | Automated | Review initially |
 | Social derivatives of approved content | Automated | Template governance |
 | Reader Q&A from verified intelligence | Automated and cited | Audit |
@@ -88,3 +89,49 @@ The platform may never autonomously alter:
 - production code;
 - disclosure policy;
 - paid pricing or commercial claims.
+
+## The Brand Read pipeline stage (Strategist + Brand Read Editor)
+
+The Brand Read is the dual-read strategic layer that turns a culture story
+into intelligence for decision makers (see `docs/MONOKROMATIK_EDITORIAL_VOICE.md`
+— "The dual read"). It is produced by a two-agent stage that runs **only on
+EIC-approved articles**, positioned between the Editor-in-Chief gate and the
+Publisher:
+
+```text
+… → Editor-in-Chief (approve/kill) → [Strategist → Brand Read Editor] → Publisher
+```
+
+- **Strategist** (`lib/strategist.ts`) writes the Brand Read in the house
+  voice, leading with a stance ("Our take is that…"), attributed to the
+  masthead ("The MonoKromatik Team / Brand Intelligence"), with dual-layer
+  takeaways pairing an insight ("where this lands") to a concrete move ("what
+  to do with it"). It reads `lib/voice-profile.md` (how it writes) and
+  `lib/perspectives-our-take.md` (the standing strategic positions) as cached
+  context.
+- **Brand Read Editor** (`lib/brand-read-editor.ts`) then scores the produced
+  read on five dimensions — grounding, strategic value, voice fit, takeaway
+  actionability, conviction — and decides keep/drop against version-controlled
+  thresholds (`applyBrandReadGate`). Grounding is the hard gate: a suspected
+  invented statistic, campaign, or quote drops the read.
+
+Both agents are **FAIL-CLOSED** and purely **additive**. If either declines,
+errors, or scores below the bar, no `brandRead` is attached and the article
+publishes exactly as it would have without the layer. The asymmetry is
+deliberate: a missing Brand Read is a non-event, while a weak or ungrounded
+one is a reputational and monetisation failure — and the dual-layer takeaway
+is precisely the output intended for paid intelligence. The guard is at least
+as conservative as the thing it guards.
+
+This is a deliberate contrast with the Editor-in-Chief, which is FAIL-OPEN
+(an article still ships if the EIC errors, because editorial review should
+never take the pipeline down). The Brand Read inverts that default because
+the cost of a bad strategic claim is borne by the brand, not just the piece.
+
+Under today's governance the attached Brand Read lands in the Publisher's PR
+diff for operator sign-off (the `--stage` path); it does not auto-publish.
+The route to fuller autonomy is to raise trust incrementally, always inside
+the review gate. A future source/fact-verification tool (e.g. a search or
+news connector) can slot into the Editor as an optional evidence step,
+letting confidence rise above `interpretive` on a checkable basis rather than
+by assertion.

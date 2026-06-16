@@ -23,6 +23,19 @@ Build the authoritative African creative-intelligence network that:
 - supports brand leaders, founders, agencies, partners and investors;
 - evolves into a searchable intelligence product and collectible digital/physical publishing title.
 
+## Audience architecture: the hybrid (B2C + B2B)
+
+Monokromatik serves two audiences through one body of work. This is a deliberate hybrid, not a compromise.
+
+- **The cultural reader (B2C, the front door).** The everyday person interested in African culture and where it meets brands, marketing and advertising. They arrive for the story — the artist, the campaign, the moment — and stay because the platform reads that culture with intelligence rather than hype. This audience is the reach engine and the top of the funnel.
+- **The decision maker (B2B, the depth rail).** Marketers, founders, agency and creative leaders, partners and investors. They arrive for the consequence — what a cultural move means for brand strategy, and what to do about it. This audience is the monetisation engine: premium reports, partner editions and intelligence products.
+
+**The hybrid principle: culture is the hook that earns the audience; intelligence is the depth that monetises it.** Lead with the living stories; let the strategic read run alongside.
+
+**One story, two doors.** A substantial Monokromatik piece should serve both readers from a single page: the cultural narrative for the everyday reader, and a distinct **Brand Read** — the strategic consequence, led by Sibu's take and other leading marketers' and thought-leaders' processed perspectives — for the decision maker. The cultural reader can ignore the Brand Read; the executive can jump straight to it. Neither audience is made to feel they are reading content built for the other.
+
+This resolves the platform's earlier ambiguity: culture is **not** a back-of-house evidence base. It is a co-equal front door, and on the public homepage it leads.
+
 ## Experience principle: The Living Magazine
 
 Monokromatik should feel like a premium visual magazine with an intelligence engine behind it. The public platform must be:
@@ -38,7 +51,7 @@ Monokromatik should feel like a premium visual magazine with an intelligence eng
 2. **Intelligence** — case studies, reports and research
 3. **Issues** — curated digital magazine editions and future print logic
 4. **Conversations** — leaders, creators and operators
-5. **Culture** — Roots, Arena and Waves as the live evidence base
+5. **Culture** — Roots, Arena and Waves: the living front door for the cultural reader and the evidence base Signal and Intelligence read from
 6. **About** — mission, method and standards
 
 `Shop` is not a primary navigation item until it becomes a meaningful and strategically relevant commercial product.
@@ -76,7 +89,7 @@ A curated publishing layer that packages major thinking, cases, voices and desig
 The home for external marketers, creators, founders and strategic leaders to contribute arguments and candid decision insight—not generic promotional interviews.
 
 ### Culture
-Roots, Arena and Waves remain important, but their strategic role is now explicit: culture provides the living evidence base from which Signal reads meaning and Intelligence organises value.
+Roots, Arena and Waves serve two roles at once. For the cultural reader they are the **front door** — the living, visual, shareable stories that bring the everyday audience in and lead the public homepage. For the platform they remain the **evidence base** from which Signal reads meaning and Intelligence organises value. Both roles are first-class; culture is no longer subordinate to the intelligence layer in the public experience.
 
 ## Newsletter
 

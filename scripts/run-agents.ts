@@ -22,6 +22,9 @@ import { stylizeBatch } from '../lib/stylist';
 import { sourceMedia } from '../lib/source-media';
 import { reviewBatch } from '../lib/editor-in-chief';
 import { sendDigest } from '../lib/eic-digest';
+import { strategizeBatch } from '../lib/strategist';
+import { editBatch } from '../lib/brand-read-editor';
+import type { BrandRead } from '../lib/articles';
 
 // Load .env.local (so this script works locally)
 // In CI, the env is provided by GitHub Actions secrets
@@ -307,6 +310,94 @@ async function main() {
       writtenApproved[i].publishedAt = original.publishedAt;
     }
   }
+
+  // 6e. Strategist + Brand Read Editor — the dual-read strategic layer.
+  // Runs ONLY on EIC-approved articles. The Strategist writes "The Brand
+  // Read" (a CMO-facing strategic take with dual-layer takeaways); the Brand
+  // Read Editor then scores it and decides whether it's good enough to keep.
+  //
+  // Both stages are FAIL-CLOSED and purely ADDITIVE: if either declines,
+  // errors, or scores the read below the bar, the article still publishes —
+  // just without a brandRead. A missing Brand Read is a non-event; a weak or
+  // ungrounded one is a reputational + monetisation failure, so the default
+  // is to attach nothing unless the read clearly earns its place.
+  //
+  // Today the attached brandRead lands in the PR diff for operator sign-off
+  // (the --stage path); it does not auto-publish.
+  log('\n🧠 [STRATEGIST] Writing Brand Reads for approved articles...');
+  const strategy = await strategizeBatch(
+    writtenApproved.map((a) => ({
+      slug: a.slug,
+      title: a.title,
+      excerpt: a.excerpt,
+      content: a.content,
+      category: a.category,
+      tags: a.tags,
+      sourceName: a.sourceName,
+    })),
+    {
+      concurrency: 3,
+      onProgress: (done, total, latest) => {
+        const status = latest.brandRead ? '✅ read' : '— none';
+        log(
+          `   [${done}/${total}] ${status}${
+            latest.declineReason ? ` (${latest.declineReason})` : ''
+          }`
+        );
+      },
+    }
+  );
+
+  // Pair each produced Brand Read with its article for the Editor's grounding
+  // check. Articles whose Strategist declined are skipped here entirely.
+  const editInputs: Array<{ index: number; brandRead: BrandRead; article: { slug: string; title: string; excerpt: string; content: string; category: string } }> = [];
+  for (let i = 0; i < writtenApproved.length; i++) {
+    const br = strategy[i]?.brandRead;
+    if (!br) continue;
+    editInputs.push({
+      index: i,
+      brandRead: br,
+      article: {
+        slug: writtenApproved[i].slug,
+        title: writtenApproved[i].title,
+        excerpt: writtenApproved[i].excerpt,
+        content: writtenApproved[i].content,
+        category: writtenApproved[i].category,
+      },
+    });
+  }
+
+  let brandReadsKept = 0;
+  if (editInputs.length > 0) {
+    log(`\n🔍 [BRAND READ EDITOR] Scoring ${editInputs.length} Brand Read(s) against the bar...`);
+    const edited = await editBatch(
+      editInputs.map((e) => ({ brandRead: e.brandRead, article: e.article })),
+      {
+        concurrency: 3,
+        onProgress: (done, total, latest) => {
+          const v = latest.verdict.verdict;
+          const icon = v === 'keep' ? '✅' : '🚫';
+          log(
+            `   [${done}/${total}] ${icon} ${v.padEnd(4)} score=${latest.verdict.score}/10`
+          );
+          if (v === 'drop') {
+            log(`         why: ${latest.verdict.dropReason ?? latest.verdict.notes}`);
+          }
+        },
+      }
+    );
+    // Attach only the Brand Reads that cleared the Editor's bar.
+    for (let j = 0; j < editInputs.length; j++) {
+      const kept = edited[j]?.brandRead;
+      if (kept) {
+        writtenApproved[editInputs[j].index].brandRead = kept;
+        brandReadsKept++;
+      }
+    }
+  }
+  log(
+    `   ${brandReadsKept}/${writtenApproved.length} article(s) carry a Brand Read after the gate.`
+  );
 
   // 7. Publisher — slug uniqueness
   const newArticles: ExistingArticle[] = [];
