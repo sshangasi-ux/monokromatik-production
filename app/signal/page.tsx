@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Quote, Users } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
+import { getAllArticles, type Article, type BrandRead } from '../../lib/articles';
 
 const franchises = [
   {
@@ -55,7 +56,34 @@ const principles = [
   'African leadership, authorship and confidence at the centre.',
 ];
 
+// A Signal article is any catalogue piece carrying a Brand Read — the
+// dual-read strategic layer that defines Signal-tier material (see
+// lib/articles.ts → BrandRead). This keeps Signal honest: it shows the
+// authored work that actually exists, and grows automatically as the
+// catalogue does.
+type SignalArticle = Article & { brandRead: BrandRead };
+
+function hasBrandRead(article: Article): article is SignalArticle {
+  return Boolean(article.brandRead && article.brandRead.take);
+}
+
+function firstSentence(text: string): string {
+  const clean = text.replace(/[#*_>`]/g, '').trim();
+  const match = clean.match(/^.*?[.!?](\s|$)/);
+  return (match ? match[0] : clean).trim();
+}
+
 export default function SignalPage() {
+  const signalArticles = getAllArticles()
+    .filter(hasBrandRead)
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+
+  const featured = signalArticles[0];
+  const recent = signalArticles.slice(1, 7);
+
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -73,6 +101,63 @@ export default function SignalPage() {
         </div>
       </section>
 
+      {/* LIVE SIGNAL WORK — real Brand-Read articles, newest first */}
+      {featured && (
+        <section className="py-20 md:py-24 border-b border-mono-gray/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+              <div>
+                <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-4">THE LATEST SIGNAL</p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold">Authored reads, live now.</h2>
+              </div>
+              <Link href="/culture" className="inline-flex gap-2 items-center text-mono-amber font-display font-bold shrink-0">SEE ALL WORK <ArrowRight size={18} /></Link>
+            </div>
+
+            <Link
+              href={`/article/${featured.slug}`}
+              className="group block border border-mono-gray/25 bg-mono-white hover:border-mono-amber transition-colors p-8 md:p-12 mb-px"
+            >
+              <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
+                <div>
+                  <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{featured.category.toUpperCase()} · BRAND READ</p>
+                  <h3 className="mt-5 text-3xl md:text-4xl font-display font-bold text-mono-black leading-tight">{featured.title}</h3>
+                  <p className="mt-5 font-body text-mono-charcoal leading-relaxed">{featured.excerpt}</p>
+                  <p className="mt-7 inline-flex gap-2 items-center text-mono-amber font-display font-bold">READ THE BRAND READ <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" /></p>
+                </div>
+                <div className="border-l-2 border-mono-amber pl-7">
+                  <Quote className="text-mono-amber mb-5" size={26} />
+                  <p className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight">
+                    {featured.brandRead.pullQuote || firstSentence(featured.brandRead.take)}
+                  </p>
+                  <p className="mt-6 text-xs tracking-[0.18em] font-display font-bold text-mono-charcoal">
+                    {featured.brandRead.attribution.toUpperCase()}
+                    {featured.brandRead.attributionRole ? ` · ${featured.brandRead.attributionRole}` : ''}
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            {recent.length > 0 && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-mono-gray/25 border border-mono-gray/25 mt-px">
+                {recent.map((article) => (
+                  <Link
+                    key={article.slug}
+                    href={`/article/${article.slug}`}
+                    className="group bg-mono-white p-7 flex flex-col justify-between min-h-[230px] hover:bg-mono-soft-white transition-colors"
+                  >
+                    <div>
+                      <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber">{article.category.toUpperCase()}</p>
+                      <h4 className="mt-4 text-xl font-display font-bold text-mono-black leading-snug">{article.title}</h4>
+                    </div>
+                    <p className="mt-5 inline-flex gap-2 items-center text-xs tracking-[0.16em] font-display font-bold text-mono-charcoal group-hover:text-mono-amber transition-colors">BRAND READ <ArrowRight size={14} /></p>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
@@ -86,6 +171,7 @@ export default function SignalPage() {
             <StatStrip
               tone="light"
               items={[
+                { value: String(signalArticles.length), label: 'Signal reads live' },
                 { value: String(franchises.length), label: 'Signature formats' },
                 { value: String(principles.length), label: 'Editorial principles' },
               ]}
