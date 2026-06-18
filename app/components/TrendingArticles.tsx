@@ -7,7 +7,7 @@ interface Article {
   title: string;
   slug: string;
   category: string;
-  views?: number;
+  publishedAt: string;
 }
 
 interface TrendingArticlesProps {
@@ -15,15 +15,20 @@ interface TrendingArticlesProps {
   limit?: number;
 }
 
+function relativeDate(iso: string): string {
+  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000);
+  if (days <= 0) return 'Today';
+  if (days === 1) return 'Yesterday';
+  if (days < 7) return `${days} days ago`;
+  if (days < 14) return 'Last week';
+  return `${Math.floor(days / 7)} weeks ago`;
+}
+
 export default function TrendingArticles({ articles, limit = 5 }: TrendingArticlesProps) {
-  // Sort by views (simulated for now) and limit
-  // In production, you'd track actual views with analytics
-  const trendingArticles = articles
-    .map(article => ({
-      ...article,
-      views: article.views || Math.floor(Math.random() * 5000) + 1000, // Simulated views
-    }))
-    .sort((a, b) => b.views - a.views)
+  // Ranked by recency — the honest signal available until the GA4 Data API
+  // feedback loop supplies real read counts. No fabricated metrics.
+  const trendingArticles = [...articles]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, limit);
 
   return (
@@ -48,18 +53,18 @@ export default function TrendingArticles({ articles, limit = 5 }: TrendingArticl
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
-              
+
               <div className="flex-1 min-w-0">
                 <h4 className="font-display font-bold text-mono-black group-hover:text-mono-amber transition-colors line-clamp-2 mb-1">
                   {article.title}
                 </h4>
-                
+
                 <div className="flex items-center gap-3 text-sm">
                   <span className="px-2 py-0.5 bg-mono-black text-mono-white text-xs font-display font-bold rounded uppercase">
                     {article.category}
                   </span>
                   <span className="text-mono-gray font-body">
-                    {article.views.toLocaleString()} views
+                    {relativeDate(article.publishedAt)}
                   </span>
                 </div>
               </div>
@@ -70,7 +75,7 @@ export default function TrendingArticles({ articles, limit = 5 }: TrendingArticl
 
       <div className="mt-6 pt-4 border-t border-mono-gray">
         <p className="text-mono-gray font-body text-xs text-center">
-          Updated hourly • Based on last 7 days
+          Latest across the network
         </p>
       </div>
     </div>
