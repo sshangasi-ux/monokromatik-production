@@ -89,14 +89,6 @@ export default function Home() {
 
   const coverSlides: CoverSlide[] = [
     {
-      kicker: 'FOUNDING EDITORIAL POSITION',
-      title: 'The Intelligence Behind African Influence.',
-      description: 'Monokromatik decodes the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
-      href: '/signal',
-      cta: 'ENTER SIGNAL',
-      mode: 'signal',
-    },
-    {
       kicker: 'COVER STORY / CULTURAL SIGNAL',
       title: featured?.title || 'Culture is not decoration. It is direction.',
       description: featured?.excerpt || 'A living record of the movements brands should understand before they attempt to participate.',
@@ -105,6 +97,14 @@ export default function Home() {
       imageUrl: featured?.imageUrl,
       videoUrl: featured?.videoUrl,
       mode: 'story',
+    },
+    {
+      kicker: 'FOUNDING EDITORIAL POSITION',
+      title: 'The Intelligence Behind African Influence.',
+      description: 'Monokromatik decodes the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
+      href: '/signal',
+      cta: 'ENTER SIGNAL',
+      mode: 'signal',
     },
     {
       kicker: 'INTELLIGENCE DESK',
