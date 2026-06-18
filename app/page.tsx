@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sp
 import Navigation from './components/Navigation';
 import LivingCover, { CoverSlide } from './components/LivingCover';
 import NewsletterSignup from './components/NewsletterSignup';
+import TrendingArticles from './components/TrendingArticles';
 import MediaImage from './components/MediaImage';
 import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
@@ -84,11 +85,11 @@ const deskLayers = [
 export default function Home() {
   const articles = getAllArticles();
   const featured = articles[0];
-  const dispatches = articles.slice(0, 7);
+  const dispatches = articles.slice(0, 4);
 
   const coverSlides: CoverSlide[] = [
     {
-      kicker: featured ? 'COVER STORY / CULTURAL SIGNAL' : 'THE LIVING CULTURE',
+      kicker: 'COVER STORY / CULTURAL SIGNAL',
       title: featured?.title || 'Culture is not decoration. It is direction.',
       description: featured?.excerpt || 'A living record of the movements brands should understand before they attempt to participate.',
       href: featured ? `/article/${featured.slug}` : '/culture',
@@ -120,37 +121,8 @@ export default function Home() {
       <Navigation />
       <LivingCover slides={coverSlides} />
 
-      {dispatches.length > 0 && (
-        <section className="bg-mono-white py-20 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
-              <Reveal>
-                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">THE LIVING CULTURE</p>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black leading-tight">The stories moving Africa<br className="hidden md:block" /> and its diaspora right now.</h2>
-                <p className="mt-5 max-w-xl text-lg font-body text-mono-charcoal">Music, sport, fashion, film and the creators carrying African influence across borders — read with intelligence, not hype.</p>
-              </Reveal>
-              <Link href="/culture" className="inline-flex gap-2 items-center font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover whitespace-nowrap">EXPLORE ALL CULTURE <ArrowRight size={18} /></Link>
-            </div>
-            <Stagger className="grid lg:grid-cols-[1.4fr_1fr_1fr] gap-5">
-              {dispatches[0] && <StaggerItem><DispatchCard article={dispatches[0]} feature /></StaggerItem>}
-              {dispatches.slice(1, 3).map((article) => <StaggerItem key={article.slug}><DispatchCard article={article} /></StaggerItem>)}
-            </Stagger>
-            {dispatches.length > 3 && (
-              <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
-                {dispatches.slice(3, 7).map((article) => <StaggerItem key={article.slug}><DispatchCard article={article} /></StaggerItem>)}
-              </Stagger>
-            )}
-          </div>
-        </section>
-      )}
-
-      <section className="bg-mono-white pb-20 md:pb-24">
+      <section className="bg-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 max-w-2xl">
-            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-3">CULTURE CREATES THE SIGNAL</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black leading-tight">Read the moment. Then read what it means for brands.</h2>
-            <p className="mt-4 text-lg font-body text-mono-charcoal">Every story sits on two layers: the culture, and the intelligence beneath it.</p>
-          </div>
           <div className="grid lg:grid-cols-2 gap-5">
             <Link href="/signal" className="group bg-mono-black text-mono-white p-9 md:p-12 min-h-[390px] flex flex-col justify-between hover:bg-mono-charcoal transition-colors">
               <div className="flex justify-between items-start">
@@ -249,6 +221,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {dispatches.length > 0 && (
+        <section className="bg-mono-white py-20 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+              <Reveal>
+                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">CULTURAL DISPATCHES</p>
+                <h2 className="text-4xl font-display font-bold text-mono-black">The evidence base.</h2>
+              </Reveal>
+              <Link href="/culture" className="inline-flex gap-2 items-center font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">EXPLORE CULTURE <ArrowRight size={18} /></Link>
+            </div>
+            <Stagger className="grid lg:grid-cols-[1.25fr_0.75fr_0.75fr] gap-5">
+              {dispatches[0] && <StaggerItem><DispatchCard article={dispatches[0]} feature /></StaggerItem>}
+              {dispatches.slice(1, 3).map((article) => <StaggerItem key={article.slug}><DispatchCard article={article} /></StaggerItem>)}
+            </Stagger>
+          </div>
+        </section>
+      )}
+
+      {articles.length > 0 && (
+        <section className="bg-mono-soft-white py-20 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+            <div className="max-w-md w-full">
+              <TrendingArticles articles={articles} limit={5} />
+            </div>
+            <div>
+              <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">ON THE PULSE</p>
+              <h2 className="text-4xl font-display font-bold text-mono-black leading-tight">What the network is reading right now.</h2>
+              <p className="mt-6 max-w-lg text-lg text-mono-charcoal font-body">
+                The freshest signals across culture, sport and sound — updated continuously as our agents publish.
+              </p>
+              <Link href="/pulse" className="mt-8 inline-flex items-center gap-2 font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                SEE THE FULL PULSE <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-mono-black text-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_0.85fr] gap-12 items-center">
