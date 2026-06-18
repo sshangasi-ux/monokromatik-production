@@ -39,6 +39,15 @@ export default function SearchBar() {
   }, [isOpen]);
 
   useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, [isOpen]);
+
+  useEffect(() => {
     const searchArticles = async () => {
       if (query.length < 2) {
         setResults([]);
@@ -85,7 +94,12 @@ export default function SearchBar() {
       {isOpen && (
         <>
           <div className="fixed inset-0 bg-mono-black/50 z-40" onClick={() => setIsOpen(false)} />
-          <div className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-mono-white rounded-lg shadow-2xl z-50 p-6">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site search"
+            className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-mono-white rounded-lg shadow-2xl z-50 p-6"
+          >
             <form onSubmit={handleSubmit} className="relative mb-4">
               <input
                 ref={inputRef}
