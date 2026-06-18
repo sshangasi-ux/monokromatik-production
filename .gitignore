@@ -48,3 +48,6 @@ next-env.d.ts
 # Python
 __pycache__/
 *.py[cod]
+
+# Local-only warm-start handoff doc (never publish to the public repo)
+CLAUDE-HANDOFF.md
