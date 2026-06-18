@@ -36,6 +36,12 @@ export async function curateStories(stories: Story[], limit: number = 10): Promi
 
   console.log(`\n🤖 Curating ${stories.length} stories with Claude AI...\n`);
 
+  // Cap any single outlet at ~30% of a run (min 2) and ask the model to rank a
+  // pool LARGER than `limit`, so the diversity pass has lower-ranked stories from
+  // other outlets to promote when one source is over-represented.
+  const maxPerSource = Math.max(2, Math.ceil(limit * 0.3));
+  const poolSize = Math.min(stories.length, Math.max(limit * 2, limit + 6));
+
   // Prepare story data for Claude (title, source, category, excerpt)
   const storyData = stories.map((story, index) => ({
     index,
@@ -93,12 +99,12 @@ OUTPUT FORMAT (JSON only, no explanation):
   ]
 }
 
-Return the top ${limit} stories ranked by score (highest first).`;
+Return the top ${poolSize} stories ranked by score (highest first).`;
 
   try {
     const message = await getClient().messages.create({
       model: MODELS.utility,
-      max_tokens: 2000,
+      max_tokens: 3000,
       messages: [
         {
           role: 'user',
@@ -113,31 +119,64 @@ Return the top ${limit} stories ranked by score (highest first).`;
     
     if (!jsonMatch) {
       console.error('❌ Failed to extract JSON from Claude response');
-      return stories.slice(0, limit);
+      return enforceSourceDiversity(stories, limit, maxPerSource);
     }
 
     const result = JSON.parse(jsonMatch[0]);
     const curatedIndexes = result.curated.map((item: any) => item.index);
 
-    // Return curated stories in ranked order
-    const curatedStories = curatedIndexes
+    // Ranked pool (best first), then cap per-source concentration down to `limit`.
+    const rankedPool = curatedIndexes
       .map((index: number) => stories[index])
       .filter(Boolean);
+    const curatedStories = enforceSourceDiversity(rankedPool, limit, maxPerSource);
 
-    console.log(`✅ Curated ${curatedStories.length} stories\n`);
-    
-    // Log curation reasoning
-    result.curated.forEach((item: any, i: number) => {
-      console.log(`   ${i + 1}. [Score: ${item.score}] ${stories[item.index].title}`);
-      console.log(`      → ${item.reasoning}\n`);
+    console.log(`✅ Curated ${curatedStories.length} stories (≤${maxPerSource}/source)\n`);
+
+    // Log final selection (post-diversity)
+    curatedStories.forEach((story, i) => {
+      console.log(`   ${i + 1}. [${story.source}] ${story.title}`);
     });
 
     return curatedStories;
   } catch (error) {
     console.error('❌ Error during curation:', error instanceof Error ? error.message : 'Unknown error');
-    console.log('⚠️  Falling back to recent stories...');
-    return stories.slice(0, limit);
+    console.log('⚠️  Falling back to recent stories (still source-capped)...');
+    return enforceSourceDiversity(stories, limit, maxPerSource);
   }
+}
+
+/**
+ * Per-source concentration cap. Takes stories best-first and returns up to
+ * `limit`, allowing at most `maxPerSource` from any single outlet so one
+ * prolific feed (historically BellaNaija) can't dominate a run. Ranking order is
+ * preserved. If the cap would leave fewer than `limit`, the highest-ranked
+ * overflow backfills the remainder — so we never ship short on a slow day, we
+ * just prefer diversity when the choice exists.
+ */
+export function enforceSourceDiversity(ranked: Story[], limit: number, maxPerSource: number): Story[] {
+  const perSource = new Map<string, number>();
+  const picked: Story[] = [];
+  const overflow: Story[] = [];
+
+  for (const story of ranked) {
+    const key = (story.source || 'unknown').toLowerCase();
+    const count = perSource.get(key) ?? 0;
+    if (count < maxPerSource) {
+      perSource.set(key, count + 1);
+      picked.push(story);
+    } else {
+      overflow.push(story);
+    }
+    if (picked.length >= limit) break;
+  }
+
+  for (const story of overflow) {
+    if (picked.length >= limit) break;
+    picked.push(story);
+  }
+
+  return picked.slice(0, limit);
 }
 
 /**
