@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import SearchBar from './SearchBar';
@@ -16,6 +17,9 @@ const primaryLinks = [
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <>
@@ -29,19 +33,27 @@ export default function Navigation() {
             </Link>
 
             <div className="hidden xl:flex items-center space-x-1 ml-8">
-              {primaryLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 py-3 font-display text-xs font-bold tracking-[0.13em] transition-all ${
-                    link.priority
-                      ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white'
-                      : 'text-mono-white hover:bg-mono-white/10'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {primaryLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? 'page' : undefined}
+                    className={`relative px-3 py-3 font-display text-xs font-bold tracking-[0.13em] transition-all ${
+                      link.priority
+                        ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white'
+                        : 'text-mono-white hover:bg-mono-white/10'
+                    } ${
+                      active
+                        ? 'after:absolute after:left-3 after:right-3 after:bottom-1.5 after:h-0.5 after:bg-mono-amber'
+                        : ''
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden xl:flex items-center space-x-4 ml-4">
@@ -65,17 +77,21 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="xl:hidden bg-mono-black border-t border-mono-white/10">
             <div className="px-4 py-5 space-y-2">
-              {primaryLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`block py-3 px-4 font-display font-bold text-lg transition-colors ${link.priority ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white' : 'text-mono-white hover:bg-mono-white/10'}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                  <span className="block text-xs text-mono-gray font-body font-normal mt-1">{link.description}</span>
-                </Link>
-              ))}
+              {primaryLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? 'page' : undefined}
+                    className={`block py-3 px-4 font-display font-bold text-lg transition-colors ${active ? 'border-l-4 border-mono-amber pl-3' : ''} ${link.priority ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white' : 'text-mono-white hover:bg-mono-white/10'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                    <span className="block text-xs text-mono-gray font-body font-normal mt-1">{link.description}</span>
+                  </Link>
+                );
+              })}
               <Link
                 href="/intelligence/source-desk"
                 className="block mt-4 py-3 px-4 border border-mono-amber/50 text-mono-amber font-display font-bold"
