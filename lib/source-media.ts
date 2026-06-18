@@ -315,6 +315,51 @@ async function sourceYouTube(query: string): Promise<MediaAsset | undefined> {
  * Source a credited hero image (mandatory) and an optional official video for an
  * article. The image is guaranteed present via the branded fallback.
  */
+/**
+ * Resolve the best available video for an article, accuracy-first:
+ *   1) the publisher's OWN embed off the source page — inherently aligned, trusted.
+ *   2) a YouTube search match — but ONLY if it passes verification against THIS
+ *      article (real metadata + judge). A wrong video is worse than none, so an
+ *      unverified candidate is dropped, not attached.
+ *   3) optional ambient Pexels stock, behind STOCK_VIDEO_ENABLED (off by default;
+ *      a category clip is wallpaper at best and an active mismatch at worst).
+ * Returns undefined when nothing suitable is found. Shared by the live pipeline
+ * (sourceMedia) and the backfill script so both apply the same verified logic.
+ */
+export async function sourceArticleVideo(args: {
+  sourceLink?: string;
+  sourceName?: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  tags?: string[];
+}): Promise<MediaAsset | undefined> {
+  let video = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
+  if (!video) {
+    const candidate = await sourceYouTube(args.title).catch(() => undefined);
+    if (candidate) {
+      const verdict = await verifyVideoMatch({
+        article: {
+          title: args.title,
+          excerpt: args.excerpt,
+          tags: args.tags ?? [],
+          category: args.category,
+        },
+        candidate: { url: candidate.url, provider: candidate.provider },
+      }).catch((err) => ({ match: false, reason: `verify threw: ${(err as Error).message}` }));
+      if (verdict.match) {
+        video = candidate;
+      } else {
+        vlog(`youtube candidate rejected by verifier — ${verdict.reason}`);
+      }
+    }
+  }
+  if (!video && STOCK_VIDEO_ENABLED) {
+    video = await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined);
+  }
+  return video;
+}
+
 export async function sourceMedia(args: {
   existingUrl?: string;
   sourceLink?: string;
@@ -339,38 +384,14 @@ export async function sourceMedia(args: {
   const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
   const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
 
-  // Video priority, accuracy-first:
-  //   1) the publisher's OWN embed off the source page — inherently aligned, trusted.
-  //   2) a YouTube search match — but ONLY if it passes verification against THIS
-  //      article (real metadata + judge). A wrong video is worse than none, so an
-  //      unverified candidate is dropped, not attached.
-  // The generic Pexels stock tier is retired from the default chain: a category
-  // clip is wallpaper at best and an active mismatch at worst (see verify-video.ts).
-  // It remains available behind MONO_STOCK_VIDEO for explicit, opt-in use.
-  let video = await sourceOfficialVideo(args.sourceLink, args.sourceName).catch(() => undefined);
-  if (!video) {
-    const candidate = await sourceYouTube(args.title).catch(() => undefined);
-    if (candidate) {
-      const verdict = await verifyVideoMatch({
-        article: {
-          title: args.title,
-          excerpt: args.excerpt,
-          tags: args.tags ?? [],
-          category: args.category,
-        },
-        candidate: { url: candidate.url, provider: candidate.provider },
-      }).catch((err) => ({ match: false, reason: `verify threw: ${(err as Error).message}` }));
-      if (verdict.match) {
-        video = candidate;
-      } else {
-        vlog(`youtube candidate rejected by verifier — ${verdict.reason}`);
-      }
-    }
-  }
-  // Optional, explicitly opt-in ambient stock (off by default; see retirement note).
-  if (!video && STOCK_VIDEO_ENABLED) {
-    video = await sourcePexelsVideo(stockQuery(args.category)).catch(() => undefined);
-  }
+  const video = await sourceArticleVideo({
+    sourceLink: args.sourceLink,
+    sourceName: args.sourceName,
+    title: args.title,
+    excerpt: args.excerpt,
+    category: args.category,
+    tags: args.tags,
+  });
 
   return { image, video };
 }

@@ -20,7 +20,8 @@
     "backfill:brand-reads:dry": "tsx scripts/backfill-brand-reads.ts --dry-run",
     "audit:video": "tsx scripts/audit-video.ts",
     "audit:video:dry": "tsx scripts/audit-video.ts --dry-run",
-    "test:pexels-video": "tsx scripts/test-pexels-video.ts"
+    "test:pexels-video": "tsx scripts/test-pexels-video.ts",
+    "backfill-video": "tsx scripts/backfill-video.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
