@@ -1,52 +1,14 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, FileText, Mic, Radar, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, Mic, Radar, Sparkles, type LucideIcon } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import Issue001KineticArtwork from '../../components/Issue001KineticArtwork';
+import { getIssueByNumber } from '../../../lib/issues';
 
-const features = [
-  {
-    franchise: 'THE AFRICAN ADVANTAGE',
-    title: 'The Intelligence Behind African Influence',
-    description: 'The founding editorial argument for a platform built to read African value before the rest of the world turns it into a case study.',
-    href: '/issues/001/the-intelligence-behind-african-influence',
-    status: 'COVER ESSAY',
-    icon: Sparkles,
-  },
-  {
-    franchise: 'THE WORK',
-    title: 'Nike × Air Afrique: When the Launch Point Becomes the Point',
-    description: 'A source-led case study of the Air Max RK61 / Première Classe collaboration, enriched with official attributed campaign media.',
-    href: '/issues/001/the-work-nike-air-afrique',
-    status: 'MEDIA FEATURE',
-    icon: BookOpen,
-  },
-  {
-    franchise: 'WILL IT LAND? / SOUTH AFRICA',
-    title: 'Orange WoMen’s Football: Would the Reveal Be Enough in South Africa?',
-    description: 'An official-film-led relevance test asking how a global idea would need to connect to South African women’s football visibility and support.',
-    href: '/issues/001/will-it-land-south-africa',
-    status: 'RELEVANCE TEST',
-    icon: Radar,
-  },
-  {
-    franchise: 'BRAND WEATHER',
-    title: 'Four Signals Shaping African Influence Now',
-    description: 'The founding intelligence briefing: authorship, access, women’s sport and diaspora-connected creative systems.',
-    href: '/issues/001/brand-weather',
-    status: 'WEEKLY BRIEFING',
-    icon: FileText,
-  },
-  {
-    franchise: 'THE BOARDROOM / THE BACKROOM',
-    title: 'What Global Brands Still Get Wrong About African Relevance',
-    description: 'The first contributor conversation commission: a rigorous brief waiting for the right confirmed voices.',
-    href: '/issues/001/boardroom-backroom',
-    status: 'COMMISSION OPEN',
-    icon: Mic,
-  },
-];
+// Map the manifest's icon names (strings in JSON) back to components.
+const ICONS: Record<string, LucideIcon> = { Sparkles, BookOpen, Radar, FileText, Mic };
 
 export default function FoundingIssuePage() {
+  const features = getIssueByNumber('001')?.features ?? [];
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -81,7 +43,9 @@ export default function FoundingIssuePage() {
             <p className="mt-6 text-lg font-body text-mono-charcoal">The founding body of editorial work — each piece source-verified, media-credited and contributor-reviewed.</p>
           </div>
           <div className="space-y-px border border-mono-gray/25 bg-mono-gray/25">
-            {features.map(({ franchise, title, description, href, status, icon: Icon }, index) => (
+            {features.map(({ franchise, title, description, href, status, icon }, index) => {
+              const Icon = ICONS[icon ?? ''] ?? FileText;
+              return (
               <Link key={href} href={href} className="group grid md:grid-cols-[78px_1fr_190px] gap-6 bg-mono-white p-7 md:p-9 hover:bg-mono-black transition-colors">
                 <div className="flex md:block items-center gap-4">
                   <p className="text-2xl font-display font-bold text-mono-amber">0{index + 1}</p>
@@ -97,7 +61,8 @@ export default function FoundingIssuePage() {
                   <span className="inline-flex items-center gap-2 mt-0 md:mt-8 text-mono-amber font-display font-bold text-sm">OPEN <ArrowRight size={16} /></span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
