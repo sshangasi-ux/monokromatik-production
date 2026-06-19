@@ -1,33 +1,10 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
-
-const proposedIssues = [
-  {
-    number: '001',
-    title: 'The Intelligence Behind African Influence',
-    focus: 'Founding Issue',
-    contents: 'Cover essay · The Work · Will It Land? · Brand Weather · Conversations',
-    href: '/issues/001',
-    status: 'OPEN ISSUE',
-  },
-  {
-    number: '002',
-    title: 'Culture Is Business',
-    focus: 'Special Edition / Planned',
-    contents: 'Sport · music · hospitality · creators · experience economy',
-    status: 'IN DEVELOPMENT',
-  },
-  {
-    number: '003',
-    title: 'Will It Land?',
-    focus: 'Market Edition / Planned',
-    contents: 'Global work tested across African markets and diaspora hubs',
-    status: 'IN DEVELOPMENT',
-  },
-];
+import { getAllIssues, issueHref } from '../../lib/issues';
 
 export default function IssuesPage() {
+  const issues = getAllIssues();
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -41,7 +18,9 @@ export default function IssuesPage() {
 
       <section className="py-20 md:py-24 bg-mono-soft-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-7">
-          {proposedIssues.map((issue) => {
+          {issues.map((issue) => {
+            const href = issueHref(issue);
+            const statusLabel = issue.status === 'live' ? 'OPEN ISSUE' : 'IN DEVELOPMENT';
             const card = (
               <>
                 <div>
@@ -55,13 +34,13 @@ export default function IssuesPage() {
                 <div>
                   <div className="h-px bg-mono-black mb-5" />
                   <p className="text-sm font-body text-mono-charcoal leading-relaxed">{issue.contents}</p>
-                  <p className="mt-7 inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-amber">{issue.status}{issue.href && <ArrowRight size={15} />}</p>
+                  <p className="mt-7 inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-amber">{statusLabel}{href && <ArrowRight size={15} />}</p>
                 </div>
               </>
             );
 
-            return issue.href ? (
-              <Link key={issue.number} href={issue.href} className="group min-h-[570px] bg-mono-white border border-mono-amber p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+            return href ? (
+              <Link key={issue.number} href={href} className="group min-h-[570px] bg-mono-white border border-mono-amber p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
                 {card}
               </Link>
             ) : (
