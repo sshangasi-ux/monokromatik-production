@@ -3,6 +3,7 @@ import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck } from 'lu
 import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
+import CaseStudyLibrary from './CaseStudyLibrary';
 
 const caseStructure = [
   ['THE CONTEXT', 'Market, audience, cultural territory and the tension the work needed to address.'],
@@ -71,26 +72,7 @@ export default function CaseStudiesPage() {
               </div>
               <p className="font-body text-mono-charcoal max-w-sm">Each one decoded across the six dimensions, evidence-led and credited at the source.</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              {studies.map((study) => (
-                <Link
-                  key={study.slug}
-                  href={`/intelligence/case-studies/${study.slug}`}
-                  className="group flex flex-col bg-mono-white border border-mono-gray/25 p-7 md:p-8 hover:border-mono-amber transition-colors"
-                >
-                  <div className="flex flex-wrap items-center gap-3 mb-5">
-                    <span className="text-[10px] tracking-[0.2em] px-3 py-1.5 bg-mono-black text-mono-white font-display font-bold">{study.collection.toUpperCase()}</span>
-                    <span className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">{study.verification.toUpperCase()}</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">{study.title}</h3>
-                  <p className="mt-4 font-body text-mono-charcoal leading-relaxed line-clamp-3">{study.standfirst}</p>
-                  <div className="mt-auto pt-6 flex items-center justify-between text-[11px] tracking-[0.16em] font-display font-bold text-mono-gray">
-                    <span>{study.market}</span>
-                    <span className="inline-flex items-center gap-2 text-mono-amber-strong group-hover:text-mono-amber-hover">READ THE DECODE <ArrowRight size={15} /></span>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <CaseStudyLibrary studies={studies} />
           </div>
         </section>
       )}
@@ -154,9 +136,9 @@ export default function CaseStudiesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-12 items-center">
           <div>
             <Filter className="text-mono-amber mb-7" size={27} />
-            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">FUTURE INDEX</p>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">THE INDEX</p>
             <h2 className="text-4xl font-display font-bold">A library built to be searched.</h2>
-            <p className="mt-6 text-mono-soft-white font-body text-lg">Once structured records are stored, the interface should let users interrogate cases rather than browse blindly.</p>
+            <p className="mt-6 text-mono-soft-white font-body text-lg">The library above is already interrogable — filter by collection and confidence, or search by brand, market and tag. These are the axes the index will deepen as the catalogue grows.</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
             {futureFilters.map((filter) => <div key={filter} className="border border-mono-white/20 p-5 font-display font-bold tracking-[0.14em] text-sm flex items-center gap-3"><BarChart3 size={16} className="text-mono-amber" />{filter.toUpperCase()}</div>)}
