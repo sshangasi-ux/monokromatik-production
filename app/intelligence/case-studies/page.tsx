@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
+import { getPublicCaseStudies } from '../../../lib/case-studies';
 
 const caseStructure = [
   ['THE CONTEXT', 'Market, audience, cultural territory and the tension the work needed to address.'],
@@ -42,6 +43,7 @@ const firstCollections = [
 const futureFilters = ['Brand', 'Market', 'Category', 'Objective', 'Cultural Territory', 'Creator', 'Channel', 'Evidence Level'];
 
 export default function CaseStudiesPage() {
+  const studies = getPublicCaseStudies();
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -59,6 +61,40 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {studies.length > 0 && (
+        <section className="py-20 md:py-24 bg-mono-white border-b border-mono-gray/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+              <div className="max-w-2xl">
+                <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">IN THE LIBRARY</p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Published case studies.</h2>
+              </div>
+              <p className="font-body text-mono-charcoal max-w-sm">Each one decoded across the six dimensions, evidence-led and credited at the source.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5">
+              {studies.map((study) => (
+                <Link
+                  key={study.slug}
+                  href={`/intelligence/case-studies/${study.slug}`}
+                  className="group flex flex-col bg-mono-white border border-mono-gray/25 p-7 md:p-8 hover:border-mono-amber transition-colors"
+                >
+                  <div className="flex flex-wrap items-center gap-3 mb-5">
+                    <span className="text-[10px] tracking-[0.2em] px-3 py-1.5 bg-mono-black text-mono-white font-display font-bold">{study.collection.toUpperCase()}</span>
+                    <span className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">{study.verification.toUpperCase()}</span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">{study.title}</h3>
+                  <p className="mt-4 font-body text-mono-charcoal leading-relaxed line-clamp-3">{study.standfirst}</p>
+                  <div className="mt-auto pt-6 flex items-center justify-between text-[11px] tracking-[0.16em] font-display font-bold text-mono-gray">
+                    <span>{study.market}</span>
+                    <span className="inline-flex items-center gap-2 text-mono-amber-strong group-hover:text-mono-amber-hover">READ THE DECODE <ArrowRight size={15} /></span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="py-20 md:py-24 bg-mono-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
@@ -69,9 +105,9 @@ export default function CaseStudiesPage() {
             <StatStrip
               tone="light"
               items={[
+                { value: String(studies.length), label: studies.length === 1 ? 'Published case' : 'Published cases' },
                 { value: String(caseStructure.length), label: 'Read dimensions' },
-                { value: String(firstCollections.length), label: 'Opening collections' },
-                { value: String(futureFilters.length), label: 'Planned filters' },
+                { value: String(firstCollections.length), label: 'Collections' },
               ]}
             />
           </div>
