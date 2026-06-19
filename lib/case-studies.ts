@@ -79,6 +79,8 @@ export interface CaseStudy {
   pullQuotes?: string[];
   sources: CaseStudySource[];
   media: CaseStudyMedia[];
+  /** Optional cross-link to a related surface (e.g. the issue it also runs in). */
+  related?: { label: string; href: string };
 }
 
 const caseStudies = caseStudiesData as CaseStudy[];
