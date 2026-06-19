@@ -79,7 +79,7 @@ export default function ListenPage() {
 
           <Link
             href="/pulse"
-            className="inline-block px-6 py-3 bg-mono-amber text-mono-white font-display font-bold hover:bg-mono-amber/90 transition-colors"
+            className="inline-block px-6 py-3 bg-mono-amber text-mono-black font-display font-bold hover:bg-mono-amber/90 transition-colors"
           >
             EXPLORE PULSE WHILE YOU WAIT
           </Link>

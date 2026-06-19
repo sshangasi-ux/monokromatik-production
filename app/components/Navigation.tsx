@@ -51,7 +51,7 @@ export default function Navigation() {
                     aria-current={active ? 'page' : undefined}
                     className={`relative px-3 py-3 font-display text-xs font-bold tracking-[0.13em] transition-all ${
                       link.priority
-                        ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white'
+                        ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-black'
                         : 'text-mono-white hover:bg-mono-white/10'
                     } ${
                       active
@@ -66,7 +66,7 @@ export default function Navigation() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-4 ml-4">
-              <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber/50 text-mono-amber text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber hover:text-mono-white transition-colors">
+              <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber/50 text-mono-amber text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber hover:text-mono-black transition-colors">
                 SOURCE DESK
               </Link>
               <SearchBar />
@@ -93,7 +93,7 @@ export default function Navigation() {
                     key={link.href}
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
-                    className={`block py-3 px-4 font-display font-bold text-lg transition-colors ${active ? 'border-l-4 border-mono-amber pl-3' : ''} ${link.priority ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-white' : 'text-mono-white hover:bg-mono-white/10'}`}
+                    className={`block py-3 px-4 font-display font-bold text-lg transition-colors ${active ? 'border-l-4 border-mono-amber pl-3' : ''} ${link.priority ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-black' : 'text-mono-white hover:bg-mono-white/10'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}

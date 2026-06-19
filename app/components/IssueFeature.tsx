@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, BookOpen, ShieldCheck } from 'lucide-react';
 import Navigation from './Navigation';
+import ReadingProgress from './ReadingProgress';
 
 export interface EditorialSource {
   label: string;
@@ -40,16 +41,17 @@ export function PullQuote({ children }: { children: React.ReactNode }) {
 
 export default function IssueFeature({ franchise, title, standfirst, readingTime, market, evidence, children, sources, next }: IssueFeatureProps) {
   return (
-    <div className="min-h-screen bg-mono-white">
+    <div className="min-h-screen bg-mono-paper">
+      <ReadingProgress />
       <Navigation />
       <header className="bg-mono-black text-mono-white py-16 md:py-24 border-b border-mono-white/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/issues/001" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber transition-colors mb-12">
+          <Link href="/issues/001" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber-bright transition-colors mb-12">
             <ArrowLeft size={14} /> ISSUE 001
           </Link>
-          <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber mb-7">{franchise}</p>
-          <h1 className="max-w-5xl text-5xl md:text-7xl font-display font-bold leading-[0.94]">{title}</h1>
-          <p className="max-w-3xl mt-8 text-xl md:text-2xl text-mono-soft-white font-body leading-relaxed">{standfirst}</p>
+          <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber-bright mb-7">{franchise}</p>
+          <h1 className="max-w-5xl text-5xl md:text-7xl font-feature font-bold leading-[0.97]">{title}</h1>
+          <p className="max-w-3xl mt-8 text-2xl md:text-3xl text-mono-soft-white font-feature italic leading-snug">{standfirst}</p>
           <div className="mt-12 pt-6 border-t border-mono-white/20 flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-[0.19em] font-display font-bold text-mono-gray">
             <span className="text-mono-amber">{evidence}</span>
             <span>{market}</span>
@@ -91,7 +93,7 @@ export default function IssueFeature({ franchise, title, standfirst, readingTime
         <section className="bg-mono-black text-mono-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div><p className="text-xs tracking-[0.28em] text-mono-amber font-display font-bold mb-4">CONTINUE ISSUE 001</p><h2 className="text-3xl font-display font-bold">{next.label}</h2></div>
-            <Link href={next.href} className="inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">READ NEXT <ArrowRight size={18} /></Link>
+            <Link href={next.href} className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">READ NEXT <ArrowRight size={18} /></Link>
           </div>
         </section>
       )}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Inter, Merriweather } from 'next/font/google';
+import { Space_Grotesk, Inter, Merriweather, Fraunces } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
@@ -23,6 +23,15 @@ const fontQuote = Merriweather({
   weight: ['300', '400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-quote-src',
+  display: 'swap',
+});
+// Fraunces — a high-contrast display serif (variable optical size) for feature
+// titles and standfirsts. This is the single biggest "editorial-luxury" lever:
+// it pairs against the Space Grotesk sans the way BoF/Monocle pair serif+sans.
+const fontFeature = Fraunces({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-feature-src',
   display: 'swap',
 });
 
@@ -62,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${fontDisplay.variable} ${fontBody.variable} ${fontQuote.variable}`}
+      className={`h-full antialiased ${fontDisplay.variable} ${fontBody.variable} ${fontQuote.variable} ${fontFeature.variable}`}
     >
       <body className="min-h-full flex flex-col">
         {children}

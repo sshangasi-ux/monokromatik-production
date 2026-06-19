@@ -72,7 +72,7 @@ export default function PulsePage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/50 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-4">
                         <div className="flex items-center gap-3 mb-2 flex-wrap">
-                          <span className="px-2 py-1 bg-mono-amber text-mono-white text-xs font-display font-bold uppercase">
+                          <span className="px-2 py-1 bg-mono-amber text-mono-black text-xs font-display font-bold uppercase">
                             {article.category}
                           </span>
                           <span className="text-xs text-mono-gray font-body">

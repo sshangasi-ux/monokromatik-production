@@ -154,7 +154,7 @@ export default function AboutClient() {
           <Database className="mx-auto text-mono-amber mb-7" size={30} />
           <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The ambition is an African creative-intelligence institution.</h2>
           <p className="mt-7 text-lg font-body text-mono-charcoal">A publication people read. A research desk brands trust. A set of issues people collect. A platform that turns African influence into usable intelligence without diminishing its cultural truth.</p>
-          <Link href="/intelligence" className="mt-10 inline-flex gap-2 items-center bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
+          <Link href="/intelligence" className="mt-10 inline-flex gap-2 items-center bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
         </div>
       </section>
     </div>

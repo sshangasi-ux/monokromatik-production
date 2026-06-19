@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const FALLBACK = '/fallback-hero.svg';
 
@@ -68,8 +68,17 @@ export default function MediaImage({
 }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const url = errored || !src ? FALLBACK : proxify(src);
   const showDuotone = duotone && !errored;
+
+  // Cached/SSR images can already be complete before React attaches onLoad, so
+  // the fade-in event never fires and the image stays at opacity-0. Catch that
+  // on mount (and when the src changes) so a cached image still reveals.
+  useEffect(() => {
+    const el = imgRef.current;
+    if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
+  }, [url]);
 
   const img = (
     <>
@@ -78,6 +87,7 @@ export default function MediaImage({
       )}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
+        ref={imgRef}
         src={url}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}

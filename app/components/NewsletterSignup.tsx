@@ -70,7 +70,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="px-8 py-3 bg-mono-amber text-mono-white font-display font-bold rounded hover:bg-mono-amber/90 transition-colors disabled:opacity-50"
+              className="px-8 py-3 bg-mono-amber text-mono-black font-display font-bold rounded hover:bg-mono-amber/90 transition-colors disabled:opacity-50"
             >
               {status === 'loading' ? ctaLoading : ctaIdle}
             </button>
@@ -104,7 +104,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full px-4 py-2 bg-mono-amber text-mono-white font-display font-bold rounded hover:bg-mono-amber/90 transition-colors disabled:opacity-50"
+            className="w-full px-4 py-2 bg-mono-amber text-mono-black font-display font-bold rounded hover:bg-mono-amber/90 transition-colors disabled:opacity-50"
           >
             {status === 'loading' ? ctaLoading : 'SUBSCRIBE'}
           </button>
@@ -141,7 +141,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-8 py-4 bg-mono-amber text-mono-white font-display font-bold text-lg rounded-lg hover:bg-mono-amber/90 transition-colors disabled:opacity-50 whitespace-nowrap"
+            className="px-8 py-4 bg-mono-amber text-mono-black font-display font-bold text-lg rounded-lg hover:bg-mono-amber/90 transition-colors disabled:opacity-50 whitespace-nowrap"
           >
             {status === 'loading' ? ctaLoading : ctaIdle}
           </button>

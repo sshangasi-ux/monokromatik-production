@@ -159,7 +159,7 @@ export default function SocialShare({ title, url, variant = 'horizontal' }: Soci
       <span className="text-mono-gray font-body text-sm font-bold">SHARE:</span>
       <button
         onClick={() => handleShare('twitter')}
-        className="flex items-center gap-2 px-4 py-2 bg-mono-black hover:bg-mono-amber text-mono-white rounded-lg transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-mono-black hover:bg-mono-amber text-mono-black rounded-lg transition-colors"
       >
         <TwitterIcon className="w-4 h-4" />
         <span className="font-body text-sm">X / Twitter</span>

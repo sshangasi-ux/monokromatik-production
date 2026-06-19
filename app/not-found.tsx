@@ -22,7 +22,7 @@ export default function NotFound() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="px-8 py-4 bg-mono-amber text-mono-white font-display font-bold text-lg hover:bg-mono-amber/90 transition-colors">
+          <Link href="/" className="px-8 py-4 bg-mono-amber text-mono-black font-display font-bold text-lg hover:bg-mono-amber/90 transition-colors">
             TAKE ME HOME
           </Link>
           <Link href="/pulse" className="px-8 py-4 border-2 border-mono-charcoal text-mono-black font-display font-bold text-lg hover:border-mono-amber hover:text-mono-amber transition-colors">
