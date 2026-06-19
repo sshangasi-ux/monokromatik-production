@@ -31,6 +31,8 @@ export interface Report {
   statusNote?: string;
   /** Set once status === 'live'. */
   publishedAt?: string;
+  /** Long-form body — present only once a report is written (status 'live'). */
+  sections?: { heading: string; paragraphs: string[] }[];
 }
 
 const reports = reportsData as Report[];
