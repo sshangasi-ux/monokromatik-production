@@ -2220,5 +2220,311 @@
       }
     ],
     "media": []
+  },
+  {
+    "slug": "burna-boy-dai-dai-world-cup-anthem",
+    "title": "Dai Dai: Afrobeats Becomes the Official Sound of the World Cup",
+    "standfirst": "FIFA put Burna Boy on the official 2026 World Cup song alongside Shakira, and on the opening-ceremony stage. The genre didn’t crash the party — it was handed the aux.",
+    "brand": "Burna Boy × FIFA ('Dai Dai', with Shakira)",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "NIGERIA / GLOBAL BROADCAST",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (Burna Boy featuring on 'Dai Dai', the official song of the 2026 FIFA World Cup, alongside Shakira, with a performance at the opening ceremony in Mexico City on 11 June 2026) are reported by Punch and entertainment press. The strategic read is MonoKromatik interpretation.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Burna Boy",
+      "FIFA World Cup 2026",
+      "Afrobeats",
+      "official song",
+      "Shakira",
+      "soft power"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 5,
+        "note": "Afrobeats installed as the official sound of the world’s biggest event."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "An African superstar co-authoring the anthem — FIFA and a global pop icon convene."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "Official song plus an opening-ceremony performance to a global audience."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 5,
+        "note": "Institutional recognition at the apex of global sport."
+      }
+    ],
+    "context": [
+      "Burna Boy was selected by FIFA to feature on 'Dai Dai', the official song of the 2026 FIFA World Cup, alongside Colombian icon Shakira, with both performing at the tournament’s opening ceremony in Mexico City on 11 June 2026 — reported by Punch.",
+      "It is the institutional version of the story this library has tracked all tournament: not an Afrobeats act invited to perform, but an African artist co-authoring the event’s official sound."
+    ],
+    "strategicBet": [
+      "FIFA’s bet is that Afrobeats is now load-bearing global pop — that pairing Burna Boy with Shakira is not a diversity gesture but the most commercially resonant way to score the opening of the biggest tournament ever.",
+      "For Afrobeats, the official-song slot is the difference between visibility and institutionalisation: the genre is written into the event’s canon, not just its undercard."
+    ],
+    "creativeMove": [
+      "The move is co-authorship of the anthem itself — an African artist shaping the official sound rather than performing someone else’s. Pairing with Shakira routes global reach through, not around, the African voice.",
+      "It caps a tournament-long arc (DR Congo’s kit, Rema closing the stage, the African team in the opener) with the most institutional signal of all: the official song."
+    ],
+    "africanRead": [
+      "This is recognition arriving at the level of the institution — FIFA, not a promoter, choosing an Afrobeats voice for its canonical moment. The authorship is shared, but the African artist is on the song, not in the audience.",
+      "The read for brands is blunt: if the most commercially cautious institution in sport is writing Afrobeats into its official record, treating the genre as a niche reach play is now a strategic error, not a safe choice."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Burna Boy featuring on 'Dai Dai', the official 2026 FIFA World Cup song with Shakira, and the opening-ceremony performance (Mexico City, 11 June 2026) — reported by Punch."
+      ],
+      "reported": [
+        "The global-broadcast scale of a World Cup opening ceremony is widely documented."
+      ],
+      "notClaimed": [
+        "Streaming or commercial outcomes of the song."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Official beats featured.",
+        "body": "Co-authoring the anthem is institutionalisation; performing on the undercard is visibility."
+      },
+      {
+        "title": "Route global reach through the African voice.",
+        "body": "Pairing with a global icon amplifies, rather than dilutes, the African authorship."
+      },
+      {
+        "title": "Niche-reach framing is now the error.",
+        "body": "If FIFA writes Afrobeats into its canon, treating it as a niche play is a strategic mistake."
+      }
+    ],
+    "pullQuotes": [
+      "The genre didn’t crash the party — it was handed the aux."
+    ],
+    "sources": [
+      {
+        "publisher": "Punch",
+        "label": "Burna Boy, other Nigerian stars who took Afrobeats to the World Cup stage",
+        "href": "https://punchng.com/burna-boy-davido-other-nigerian-stars-who-took-afrobeats-to-world-cup-stage/",
+        "use": "Reporting on Burna Boy's 'Dai Dai' official-song role and the opening ceremony."
+      },
+      {
+        "publisher": "Legit.ng",
+        "label": "Davido at Coachella 2026: Nigerian acts who have graced iconic global stages",
+        "href": "https://www.legit.ng/entertainment/celebrities/1675751-davido-coachella-2026-wizkid-burna-boy-eazi-nigerian-acts-graced-iconic-stage/",
+        "use": "Context on Afrobeats acts on major global stages."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "wizkid-asake-real-vol-1-collaboration-strategy",
+    "title": "REAL, Vol. 1: Afrobeats Treats Collaboration as a Growth Strategy",
+    "standfirst": "Wizkid and Asake’s joint EP cleared 7 million Spotify streams on day one and 100 million within weeks. The numbers are the story — but the model is the lesson.",
+    "brand": "Wizkid × Asake — REAL, Vol. 1",
+    "collection": "Diaspora Demand",
+    "market": "NIGERIA / GLOBAL / STREAMING",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (Wizkid and Asake’s joint EP \"REAL, Vol. 1,\" released 23 January 2026, reportedly 7m+ Spotify streams in its first day and 100m+ globally within weeks) are reported by African entertainment press (HipTV, Revolt). The strategic read is MonoKromatik interpretation; chart and revenue specifics are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Wizkid",
+      "Asake",
+      "Afrobeats",
+      "streaming",
+      "collaboration",
+      "music business"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Cross-generational collaboration engineered as a release event."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "Two Nigerian artists — wholly African-authored, no external co-sign needed."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "7m+ Spotify streams day one; 100m+ within weeks."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "Collaboration as a repeatable scaling mechanism for the genre."
+      }
+    ],
+    "context": [
+      "Wizkid and Asake released their joint EP \"REAL, Vol. 1\" on 23 January 2026, reportedly recording over 7 million Spotify streams within its first day and surpassing 100 million globally within weeks — per African entertainment press. It sits in a 2026 wave of high-profile Afrobeats joint projects.",
+      "A genre elder and a current hitmaker combined audiences in a single, engineered release — and the streaming numbers followed."
+    ],
+    "strategicBet": [
+      "The bet is that collaboration is a growth strategy, not just a creative one: pairing a veteran’s catalogue audience with a younger star’s momentum compounds reach in a way either could not alone.",
+      "It also signals self-sufficiency — Afrobeats scaling through intra-African collaboration rather than the Western feature that an earlier era treated as the validation ladder."
+    ],
+    "creativeMove": [
+      "The move is the engineered pairing: two artists at different career stages combine fanbases into one launch, turning a release into an audience-merger event.",
+      "The authorship is entirely Nigerian — the scale was achieved without an external co-sign, which is itself the point."
+    ],
+    "africanRead": [
+      "This is Afrobeats demonstrating it no longer needs a Western feature to validate or scale. The growth engine is internal: African artists combining African audiences to reach the world directly.",
+      "For brands and platforms, the read is that the genre’s business model is maturing — collaboration as a repeatable, ownable scaling mechanism — and the partners worth backing are the ones building that machinery, not chasing a single viral moment."
+    ],
+    "evidence": {
+      "confirmed": [
+        "\"REAL, Vol. 1\" by Wizkid and Asake, released 23 January 2026, with reported 7m+ day-one Spotify streams and 100m+ within weeks — reported by HipTV/Revolt."
+      ],
+      "reported": [
+        "The broader 2026 wave of Afrobeats joint projects is documented across entertainment press."
+      ],
+      "notClaimed": [
+        "Precise lifetime streams, chart positions or revenue."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Collaboration is a growth strategy.",
+        "body": "Pairing a veteran’s catalogue audience with a younger star’s momentum compounds reach."
+      },
+      {
+        "title": "Scale without the external co-sign.",
+        "body": "African artists combining African audiences to reach the world is the maturing model."
+      },
+      {
+        "title": "Back the machinery, not the moment.",
+        "body": "The partners worth backing build a repeatable scaling mechanism, not a single viral hit."
+      }
+    ],
+    "pullQuotes": [
+      "Afrobeats scaled to 100 million streams with no Western co-sign — the growth engine is internal now."
+    ],
+    "sources": [
+      {
+        "publisher": "HipTV",
+        "label": "The Rise of Afrobeats Joint Projects in 2026: Wizkid, Asake, BNXN & More",
+        "href": "https://hiptv.tv/afrobeats-joint-projects-2026/",
+        "use": "Reporting on the 2026 Afrobeats collaboration wave including Wizkid × Asake."
+      },
+      {
+        "publisher": "Revolt",
+        "label": "Afro+ Fest 2026 lineup: Wizkid, Davido and the Afrobeats–Hip-Hop convergence",
+        "href": "https://www.revolt.tv/article/afroplus-fest-2026-lineup-wizkid-davido-lil-baby-latto",
+        "use": "Context on Wizkid’s 2026 momentum and the genre’s diaspora reach."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "afroplus-fest-2026-diaspora-live-economy",
+    "title": "AfroPlus Fest: Afrobeats and Hip-Hop Build a Stadium of Their Own",
+    "standfirst": "Wizkid and Davido headlining a US stadium festival alongside hip-hop’s biggest names is not a crossover. It’s a diaspora live economy big enough to fill the building itself.",
+    "brand": "AfroPlus Fest 2026",
+    "collection": "Diaspora Demand",
+    "market": "DIASPORA / USA / GLOBAL",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (AfroPlus Fest 2026 at Northwest Stadium, Washington D.C., 4–6 September, with Wizkid and Davido among the headliners alongside hip-hop acts) are reported by Revolt and entertainment press. The strategic read is MonoKromatik interpretation; attendance and box-office figures are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "AfroPlus Fest",
+      "Wizkid",
+      "Davido",
+      "diaspora",
+      "live music",
+      "hip-hop"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "A stadium festival positioning Afrobeats and Hip-Hop as one bill."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "African headliners anchoring a diaspora-built live event."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Stadium-scale, multi-day, US diaspora market."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "A self-sustaining diaspora live economy, not a borrowed slot."
+      }
+    ],
+    "context": [
+      "Wizkid and Davido are among the headliners of AfroPlus Fest 2026 at Northwest Stadium in Washington, D.C. (4–6 September), sharing the bill with major hip-hop acts — reported by Revolt, which frames it as proof Afrobeats and Hip-Hop “are closer than ever.”",
+      "African artists are not guesting on someone else’s festival; they are anchoring a stadium event aimed squarely at the diaspora market."
+    ],
+    "strategicBet": [
+      "The bet is that the African diaspora is a live-music market large and loyal enough to fill stadiums on its own terms — and that Afrobeats and Hip-Hop together are a single, bankable cultural bloc.",
+      "It is the live-economy expression of the diaspora-demand thesis: build the venue and the bill around African headliners, in the markets where the diaspora already is."
+    ],
+    "creativeMove": [
+      "The move is to co-headline African and African-American music at stadium scale, treating the two as one audience rather than separate niches — the genre convergence made physical.",
+      "It puts African acts in the anchor slots of a US stadium, not the early-afternoon side stage."
+    ],
+    "africanRead": [
+      "This is diaspora demand becoming infrastructure: a live event sized to the diaspora’s actual scale, with African artists as the draw. The value of African music’s pull is captured in ticketed, ownable form, not just in streaming counts.",
+      "For promoters and brands, the read is that the diaspora is a primary market to build venues and tours around — not a secondary stop to add once a Western run is booked."
+    ],
+    "evidence": {
+      "confirmed": [
+        "AfroPlus Fest 2026 at Northwest Stadium, Washington D.C. (4–6 September), with Wizkid and Davido among the headliners — reported by Revolt."
+      ],
+      "reported": [
+        "The Afrobeats–Hip-Hop convergence and the festival’s diaspora positioning are documented in entertainment press."
+      ],
+      "notClaimed": [
+        "Attendance, ticket revenue or box-office outcomes."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "The diaspora is a primary market.",
+        "body": "Build venues and tours around it, rather than adding a stop after a Western run."
+      },
+      {
+        "title": "Convergence is bankable.",
+        "body": "Afrobeats and Hip-Hop as one bill treats the audience as a single cultural bloc."
+      },
+      {
+        "title": "Capture the pull in ticketed form.",
+        "body": "A stadium event turns streaming-scale demand into ownable live value."
+      }
+    ],
+    "pullQuotes": [
+      "African artists are not guesting on someone else’s festival — they are anchoring a stadium of their own."
+    ],
+    "sources": [
+      {
+        "publisher": "Revolt",
+        "label": "Afro+ Fest's 2026 lineup proves Afrobeats and Hip-Hop are closer than ever",
+        "href": "https://www.revolt.tv/article/afroplus-fest-2026-lineup-wizkid-davido-lil-baby-latto",
+        "use": "Reporting on the AfroPlus Fest 2026 lineup and positioning."
+      },
+      {
+        "publisher": "Legit.ng",
+        "label": "Nigerian acts who have graced iconic global stages",
+        "href": "https://www.legit.ng/entertainment/celebrities/1675751-davido-coachella-2026-wizkid-burna-boy-eazi-nigerian-acts-graced-iconic-stage/",
+        "use": "Context on Afrobeats headliners in the diaspora live circuit."
+      }
+    ],
+    "media": []
   }
 ]
