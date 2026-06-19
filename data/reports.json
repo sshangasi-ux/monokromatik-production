@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "founding-report-intelligence-behind-african-influence",
+    "title": "The Intelligence Behind African Influence",
+    "series": "FOUNDING REPORT",
+    "status": "in-development",
+    "access": "open",
+    "summary": "The opening thesis for Monokromatik: how African creative authorship, diaspora energy and cultural commerce are reshaping the brand opportunity.",
+    "tags": ["Brand Strategy", "Creative Influence", "Diaspora"],
+    "statusNote": "Issue 001 development"
+  },
+  {
+    "slug": "south-african-brand-culture-brief",
+    "title": "The South African Brand Culture Brief",
+    "series": "MARKET BRIEFING",
+    "status": "planned",
+    "access": "premium",
+    "summary": "A practical read on entertainment, sport, premium experience, youth culture and the brand behaviours worth tracking in South Africa.",
+    "tags": ["South Africa", "Market Lens", "Brand Moves"],
+    "statusNote": "Commissioning slate"
+  },
+  {
+    "slug": "culture-is-business",
+    "title": "Culture Is Business",
+    "series": "SPECIAL ISSUE",
+    "status": "planned",
+    "access": "open",
+    "summary": "An intelligence edition exploring music, sport, hospitality, creators, tourism and cultural access as commercial systems.",
+    "tags": ["Commerce", "Sport", "Experience"],
+    "statusNote": "Issue 002 concept"
+  },
+  {
+    "slug": "will-it-land-first-dossier",
+    "title": "Will It Land? The First Dossier",
+    "series": "GLOBAL-TO-AFRICA SERIES",
+    "status": "planned",
+    "access": "premium",
+    "summary": "Selected global creative work tested against relevance, access, media and cultural reality across African markets and diaspora hubs.",
+    "tags": ["Campaigns", "Relevance", "Markets"],
+    "statusNote": "Issue 003 concept"
+  }
+]
