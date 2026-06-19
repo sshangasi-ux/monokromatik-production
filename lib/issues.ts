@@ -36,6 +36,21 @@ export interface Issue {
   status: IssueStatus;
   publishedAt?: string;
   features: IssueFeatureRef[];
+  /**
+   * The art-directed cover. `image` is the drop-in slot for commissioned or
+   * AI-base art (replaceable per issue). When absent, IssueCover renders its
+   * designed type-only fallback. `accent` is the per-issue secondary colour.
+   */
+  cover?: {
+    image?: string;
+    imageCredit?: string;
+    /** Per-issue accent (CSS colour). Defaults to brand amber when unset. */
+    accent?: string;
+    /** Cover blurbs, set like a magazine's coverlines. */
+    coverlines?: string[];
+    /** The cover dek / sell line under the title. */
+    dek?: string;
+  };
 }
 
 const issues = issuesData as Issue[];

@@ -46,7 +46,19 @@
         "status": "COMMISSION OPEN",
         "icon": "Mic"
       }
-    ]
+    ],
+    "cover": {
+      "image": "/article-media/dr-congo-showed-up-to-the-world-cup-dripped-in-history-8178792e.webp",
+      "imageCredit": "Placeholder — Via BellaNaija. Replace with commissioned/AI-base cover art.",
+      "accent": "#CC5500",
+      "dek": "A founding collection on authorship, relevance, creative commerce and the brands learning how Africa moves the world.",
+      "coverlines": [
+        "THE WORK · NIKE × AIR AFRIQUE",
+        "WILL IT LAND? · WOMEN’S FOOTBALL",
+        "BRAND WEATHER · FOUR SIGNALS",
+        "THE BOARDROOM / THE BACKROOM"
+      ]
+    }
   },
   {
     "number": "002",

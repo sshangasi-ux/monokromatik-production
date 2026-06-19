@@ -1,39 +1,24 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, FileText, Mic, Radar, Sparkles, type LucideIcon } from 'lucide-react';
 import Navigation from '../../components/Navigation';
-import Issue001KineticArtwork from '../../components/Issue001KineticArtwork';
+import IssueCover from '../../components/IssueCover';
 import { getIssueByNumber } from '../../../lib/issues';
 
 // Map the manifest's icon names (strings in JSON) back to components.
 const ICONS: Record<string, LucideIcon> = { Sparkles, BookOpen, Radar, FileText, Mic };
 
 export default function FoundingIssuePage() {
-  const features = getIssueByNumber('001')?.features ?? [];
+  const issue = getIssueByNumber('001');
+  const features = issue?.features ?? [];
   return (
-    <div className="min-h-screen bg-mono-white">
+    <div className="min-h-screen bg-mono-paper">
       <Navigation />
-      <section className="relative overflow-hidden bg-mono-black text-mono-white py-16 md:py-24">
-        <Issue001KineticArtwork />
-        <div className="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/78 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[620px] flex flex-col justify-between">
-          <div className="flex justify-between border-b border-mono-white/20 pb-5 text-[10px] md:text-xs tracking-[0.3em] font-display font-bold">
-            <span className="text-mono-amber">MONOKROMATIK / ISSUE 001</span>
-            <span className="text-mono-gray">FOUNDING EDITION</span>
-          </div>
-          <div className="max-w-5xl py-16">
-            <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber mb-7">THE LIVING MAGAZINE</p>
-            <h1 className="text-5xl md:text-8xl font-display font-bold leading-[0.92]">The Intelligence<br />Behind African<br /><span className="text-mono-amber">Influence.</span></h1>
-            <p className="mt-8 max-w-2xl text-xl text-mono-soft-white font-body">A founding collection on authorship, relevance, creative commerce and the brands learning how Africa moves the world.</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/issues/001/the-intelligence-behind-african-influence" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">READ COVER ESSAY <ArrowRight size={18} /></Link>
-              <Link href="/issues/001/cover" className="inline-flex items-center gap-2 border border-mono-white/70 text-mono-white px-7 py-4 font-display font-bold">VIEW COVER STUDY <ArrowRight size={18} /></Link>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-mono-white/20 pt-5 text-[11px] tracking-[0.2em] font-display font-bold text-mono-gray">
-            <span className="text-mono-amber">COVER ESSAY</span><span>THE WORK</span><span>WILL IT LAND? / SA</span><span>BRAND WEATHER</span><span>CONVERSATIONS</span>
-          </div>
-        </div>
-      </section>
+      {issue && (
+        <IssueCover
+          issue={issue}
+          primaryCta={{ label: 'READ COVER ESSAY', href: '/issues/001/the-intelligence-behind-african-influence' }}
+        />
+      )}
 
       <section className="py-20 md:py-24 bg-mono-soft-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
