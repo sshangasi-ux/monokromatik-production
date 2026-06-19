@@ -2,37 +2,13 @@ import Link from 'next/link';
 import { ArrowRight, Bookmark, Download, FileText, LockKeyhole } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
+import { getAllReports } from '../../lib/reports';
 
-const reportSeries = [
-  {
-    type: 'FOUNDING REPORT / PLANNED',
-    title: 'The Intelligence Behind African Influence',
-    description: 'The opening thesis for Monokromatik: how African creative authorship, diaspora energy and cultural commerce are reshaping the brand opportunity.',
-    tags: ['Brand Strategy', 'Creative Influence', 'Diaspora'],
-    access: 'Issue 001 development',
-  },
-  {
-    type: 'MARKET BRIEFING / PLANNED',
-    title: 'The South African Brand Culture Brief',
-    description: 'A practical read on entertainment, sport, premium experience, youth culture and the brand behaviours worth tracking in South Africa.',
-    tags: ['South Africa', 'Market Lens', 'Brand Moves'],
-    access: 'Commissioning slate',
-  },
-  {
-    type: 'SPECIAL ISSUE / PLANNED',
-    title: 'Culture Is Business',
-    description: 'An intelligence edition exploring music, sport, hospitality, creators, tourism and cultural access as commercial systems.',
-    tags: ['Commerce', 'Sport', 'Experience'],
-    access: 'Issue 002 concept',
-  },
-  {
-    type: 'GLOBAL-TO-AFRICA SERIES / PLANNED',
-    title: 'Will It Land? The First Dossier',
-    description: 'Selected global creative work tested against relevance, access, media and cultural reality across African markets and diaspora hubs.',
-    tags: ['Campaigns', 'Relevance', 'Markets'],
-    access: 'Issue 003 concept',
-  },
-];
+const STATUS_LABEL: Record<string, string> = {
+  live: 'LIVE',
+  'in-development': 'IN DEVELOPMENT',
+  planned: 'PLANNED',
+};
 
 const productTiers = [
   {
@@ -53,6 +29,8 @@ const productTiers = [
 ];
 
 export default function ReportsPage() {
+  const reports = getAllReports();
+  const liveCount = reports.filter((r) => r.status === 'live').length;
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -83,25 +61,28 @@ export default function ReportsPage() {
             <StatStrip
               tone="light"
               items={[
-                { value: String(reportSeries.length), label: 'Editions commissioned' },
-                { value: '001', label: 'Founding edition live' },
+                { value: String(reports.length), label: reports.length === 1 ? 'Edition commissioned' : 'Editions commissioned' },
+                { value: String(liveCount), label: liveCount === 1 ? 'Edition live' : 'Editions live' },
                 { value: '100%', label: 'Source-verified standard' },
               ]}
             />
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {reportSeries.map((report) => (
-              <article key={report.title} className="bg-mono-white border border-mono-gray/25 p-8 md:p-9 min-h-[330px] flex flex-col justify-between hover:border-mono-amber transition-colors">
+            {reports.map((report) => (
+              <article key={report.slug} className="bg-mono-white border border-mono-gray/25 p-8 md:p-9 min-h-[330px] flex flex-col justify-between hover:border-mono-amber transition-colors">
                 <div>
-                  <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{report.type}</p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{report.series}</p>
+                    <span className="text-[9px] tracking-[0.2em] px-2.5 py-1 bg-mono-black text-mono-white font-display font-bold">{STATUS_LABEL[report.status] ?? report.status.toUpperCase()}</span>
+                  </div>
                   <h3 className="mt-8 text-3xl font-display font-bold text-mono-black leading-tight">{report.title}</h3>
-                  <p className="mt-5 text-mono-charcoal font-body leading-relaxed">{report.description}</p>
+                  <p className="mt-5 text-mono-charcoal font-body leading-relaxed">{report.summary}</p>
                 </div>
                 <div className="mt-8">
                   <div className="flex flex-wrap gap-2 mb-5">
                     {report.tags.map((tag) => <span key={tag} className="border border-mono-gray/30 px-3 py-2 text-[10px] font-display font-bold tracking-[0.16em]">{tag.toUpperCase()}</span>)}
                   </div>
-                  <p className="text-xs text-mono-gray font-body">Status: {report.access}</p>
+                  <p className="text-xs text-mono-gray font-body">{report.access === 'open' ? 'Open Signal Briefing' : report.access === 'premium' ? 'Premium Report' : 'Partner Edition'}{report.statusNote ? ` · ${report.statusNote}` : ''}</p>
                 </div>
               </article>
             ))}
