@@ -588,5 +588,413 @@
         "sourceHref": "https://notjustok.com/songs/sarkodie-shatta-wale-everlasting/"
       }
     ]
+  },
+  {
+    "slug": "adidas-2026-world-cup-backyard-legends",
+    "title": "Adidas at the 2026 World Cup: Home of Soccer, Far From Home of the Game",
+    "standfirst": "Adidas built the most physical activation of the tournament — match ball, city hubs, a grassroots campaign. The question its scale raises is whose backyard the game is being staged in.",
+    "brand": "Adidas",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "NORTH AMERICA (HOST) / GLOBAL / AFRICA & DIASPORA READ",
+    "readingTime": "6 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Campaign facts (the Backyard Legends platform, the Home of Soccer city activations, the official match ball, the opening-match watch party) are reported by Adidas and trade press. The strategic and African read is MonoKromatik interpretation; commercial outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Adidas",
+      "FIFA World Cup 2026",
+      "sponsorship",
+      "grassroots",
+      "authorship",
+      "African markets"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Backyard Legends — football nostalgia routed through grassroots memory."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 2,
+        "note": "North-America-centric; little African creative authorship despite South Africa in the opener."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "The match ball, multi-city hubs and watch parties — unmatched physical scale."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "Reach is vast, but the African market is an audience, not a starting point."
+      }
+    ],
+    "context": [
+      "As the official match-ball maker and an Official FIFA Partner, Adidas built the tournament's most physical presence: the Backyard Legends campaign, and Home of Soccer activation hubs open for over a month across key North American cities including Toronto and New York. Trade reporting (WWD) and venue announcements documented the build-out.",
+      "Adidas opened the tournament with a watch party for the first match — Mexico vs South Africa — and a free concert, anchoring the moment in the host region's culture. The match ball alone gives Adidas a creative surface no other sponsor commands."
+    ],
+    "strategicBet": [
+      "The bet is on physical, grassroots-coded presence: own the product (the ball), own the city (the hubs), own the ritual (the watch party). It treats the World Cup as a place-based experience economy, not just a broadcast.",
+      "Backyard Legends reaches for authenticity through memory — the pickup game, the backyard — positioning a global apparel giant as the keeper of the game's folk roots."
+    ],
+    "creativeMove": [
+      "The creative move is to convert a North-America-hosted tournament into a network of branded physical destinations, with the match ball as the connective product story across all of it.",
+      "It is execution-led rather than authorship-led: the idea is staged at enormous scale, but the cultural specificity is the host region's, not the competing nations'."
+    ],
+    "africanRead": [
+      "South Africa walked out in the opening match — the African presence was on the pitch from minute one. Adidas's activation, by contrast, lived in North American cities. That gap is the read: African participation in the spectacle is high; African authorship of, and access to, the brand experience is low.",
+      "For a brand with deep African football heritage, the opportunity missed is treating African markets and creators as a starting point — local hubs, African-authored creative, access for African fans — rather than a broadcast audience watching North America host the party."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The Backyard Legends platform, Home of Soccer city activations, official match ball and opening-match watch party — reported by Adidas and trade press."
+      ],
+      "reported": [
+        "The multi-week Toronto and New York hub windows and the opening-match (Mexico vs South Africa) framing are documented in trade coverage."
+      ],
+      "notClaimed": [
+        "Sales, brand-equity or African-market outcomes; any African-specific activation beyond the North American host focus."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Scale is not authorship.",
+        "body": "Owning the ball, the city and the ritual is reach; it is not the same as letting the competing cultures author the work."
+      },
+      {
+        "title": "Watch where the activation lives vs where the teams come from.",
+        "body": "African nations were on the pitch; the brand experience was not in African markets."
+      },
+      {
+        "title": "Heritage brands can start where their heritage is.",
+        "body": "Adidas’s African football history is a starting point it chose not to build from here."
+      }
+    ],
+    "pullQuotes": [
+      "African participation in the spectacle is high; African authorship of the brand experience is low."
+    ],
+    "sources": [
+      {
+        "publisher": "WWD (Footwear News)",
+        "label": "Previewing Nike, Adidas & More Brands' 2026 World Cup Plans",
+        "href": "https://wwd.com/footwear-news/shoe-features/sports-brand-2026-world-cup-product-marketing-activations-1238988658/",
+        "use": "Trade reporting on the Backyard Legends campaign and city activations."
+      },
+      {
+        "publisher": "BMO Stadium",
+        "label": "Adidas Unveils the \"Home of Soccer\" Across Key North American Cities for FIFA World Cup 2026",
+        "href": "https://bmostadium.com/news/adidas-home-of-soccer/",
+        "use": "Venue announcement of the Home of Soccer activation hubs."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "coca-cola-2026-world-cup-uncanned-emotions",
+    "title": "Coca-Cola’s Uncanned Emotions: Universal Feeling, Whose Specifics?",
+    "standfirst": "Five decades into its FIFA partnership, Coca-Cola bet the 2026 World Cup on a feeling every fan shares. The strength of universal emotion is its reach; the risk is that it belongs to no one in particular.",
+    "brand": "Coca-Cola",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "GLOBAL / 16 HOST CITIES / AFRICA & DIASPORA READ",
+    "readingTime": "6 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Campaign facts (the Uncanned Emotions platform, Panini peel-back labels, fan-festival activations, the near-five-decade FIFA partnership) are reported by The Coca-Cola Company and trade press. The strategic and African read is MonoKromatik interpretation; outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Coca-Cola",
+      "FIFA World Cup 2026",
+      "sponsorship",
+      "emotion",
+      "Panini",
+      "African markets"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Uncanned Emotions — the shared emotional rollercoaster of tournament football."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 2,
+        "note": "A global emotional template; not African-authored or market-specific."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "Panini peel-back labels, fan festivals, trophy tour — a five-decade machine."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "Universalism guarantees reach but risks reading as generic in any single market."
+      }
+    ],
+    "context": [
+      "Continuing nearly five decades as the official soft drink of the FIFA World Cup, Coca-Cola launched Uncanned Emotions — a campaign built on the highs, lows, nerves and rituals of tournament football, per The Coca-Cola Company. The activation spans fan festivals (including Toronto and Vancouver), the Trophy Tour, and a Panini sticker partnership in which each bottle's peel-back label reveals an exclusive sticker.",
+      "It is a textbook global-sponsor system: an emotionally universal hero film, a collectible mechanic, and physical fan zones across the 16 host cities."
+    ],
+    "strategicBet": [
+      "The bet is on emotional universality — that the feeling of a tournament is the same in every market, so one emotional platform can scale everywhere. The Panini mechanic adds a collectible, participatory layer that converts a drink into a ritual object.",
+      "After fifty years, Coca-Cola is buying continuity and ubiquity: the safest, most-proven posture a heritage sponsor can take."
+    ],
+    "creativeMove": [
+      "The creative move is to make emotion the product — to sell the shared nervous system of football fandom and attach the brand to it, then localise through retail (the bottle, the sticker) rather than through culturally-specific creative.",
+      "It is a high-execution, low-specificity play: enormous in reach, deliberately neutral in cultural authorship."
+    ],
+    "africanRead": [
+      "Universal emotion travels — but it is also where global brands most often flatten Africa, because 'everyone feels the same' becomes a reason not to author anything specific to African fans, leagues or rituals. The Panini-and-fan-festival system is built around the North American host cities, not African viewing culture.",
+      "Coca-Cola's depth in African markets is real; the read is whether the 2026 platform lets African fandom author its own version of the emotion, or simply broadcasts a host-region party to it."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The Uncanned Emotions platform, Panini peel-back-label mechanic, fan-festival sites and Trophy Tour — reported by The Coca-Cola Company."
+      ],
+      "reported": [
+        "The near-five-decade FIFA partnership and the 16-host-city activation footprint are widely documented."
+      ],
+      "notClaimed": [
+        "Commercial outcomes, or any African-market-specific creative beyond the global platform."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Universal can mean unauthored.",
+        "body": "\"Everyone feels the same\" is reach — and an excuse not to author anything specific to a market."
+      },
+      {
+        "title": "A collectible mechanic builds participation.",
+        "body": "The Panini peel-back label is the strongest move: it turns consumption into ritual."
+      },
+      {
+        "title": "Localise in creative, not only in retail.",
+        "body": "Localising through the bottle is easy; letting a market author the emotion is the harder, stronger move."
+      }
+    ],
+    "pullQuotes": [
+      "Universal emotion is where global brands most often flatten Africa — “everyone feels the same” becomes a reason to author nothing specific."
+    ],
+    "sources": [
+      {
+        "publisher": "The Coca-Cola Company",
+        "label": "Coca-Cola Puts Fan Emotions First in FIFA World Cup 2026™ Campaign",
+        "href": "https://www.coca-colacompany.com/media-center/coca-cola-puts-fan-emotions-first-in-fifa-world-cup-2026-campaign",
+        "use": "Official campaign basis for the Uncanned Emotions platform."
+      },
+      {
+        "publisher": "LBBOnline",
+        "label": "Coca-Cola Kicks Off FIFA World Cup 2026 Summer with Panini Fan Activations",
+        "href": "https://lbbonline.com/news/Coca-Cola-FIFA-World-Cup-2026-Summer-Panini-Fan-Activations",
+        "use": "Reporting on the Panini peel-back-label mechanic and fan activations."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "visa-2026-world-cup-tap-in-access",
+    "title": "Visa’s Tap In: The Right Word — “Access” — Aimed at the Wrong Continent",
+    "standfirst": "Visa built its biggest-ever FIFA activation around access, not finance. It is the sharpest strategic frame of the tournament — and the one with the most unrealised value in the markets it isn’t aimed at.",
+    "brand": "Visa",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "GLOBAL / NORTH AMERICA / AFRICA & DIASPORA READ",
+    "readingTime": "6 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Campaign facts (the Tap In platform, the access strategy, the 19-year FIFA partnership, exclusive ticket-payment provider status, the Marriott Bonvoy co-campaign) are reported by Visa and trade press. The strategic and African read is MonoKromatik interpretation; outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Visa",
+      "FIFA World Cup 2026",
+      "access",
+      "financial inclusion",
+      "payments",
+      "African markets"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 5,
+        "note": "Payments reframed as access — football’s tap-in goal as the metaphor."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 2,
+        "note": "NA/EU star-led (Sudeikis, Yamal, Haaland); not African-authored."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Tap In film, ticketing-payment exclusivity, Marriott Bonvoy co-campaign."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "Access is genuinely ownable — and most under-leveraged in African markets."
+      }
+    ],
+    "context": [
+      "Visa, the Worldwide Payment Technology Partner and a 19-year FIFA partner, launched Tap In — described as its biggest-ever World Cup activation — using football's tap-in goal as a metaphor for seamless payment. Crucially, the strategy is not built around financial services but around access: to matches, experiences and fan culture. Reporting (media-marketing.com) and the Marriott Bonvoy 'For Fans, Everywhere' co-campaign document the build.",
+      "Visa was the exclusive payment provider for the first 2025 ticket-sale window, with cardholders receiving presale access — access operationalised, not just advertised."
+    ],
+    "strategicBet": [
+      "The bet is to own a word — access — rather than a product. By making payment invisible and access the story, Visa attaches itself to the single most valuable promise in global sport: getting in.",
+      "It is the most strategically precise frame of the tournament, because access is both Visa's product truth and football's emotional one."
+    ],
+    "creativeMove": [
+      "The creative move is to dramatise frictionless entry (the tap-in) and bundle real benefits (presale, ticketing exclusivity, hotel access) so the campaign idea and the commercial mechanic are the same thing.",
+      "It is celebrity-led through North American and European faces — strong execution, but the authorship is not African."
+    ],
+    "africanRead": [
+      "'Access' is precisely the word that matters most in African markets, where Visa's deepest growth story is financial inclusion — bringing the unbanked and underbanked into the formal economy. A World Cup platform literally about access is a near-perfect bridge to that narrative.",
+      "Yet the activation points at North American fan experiences and Euro/American stars. The unrealised value is enormous: an access campaign that authored an African chapter — inclusion, mobile-money interoperability, fan access in African markets — would turn a clever metaphor into a development story only Visa could tell."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The Tap In platform, the access-led strategy, the 19-year FIFA partnership, exclusive first-window ticket-payment provider status and the Marriott Bonvoy co-campaign — reported by Visa and trade press."
+      ],
+      "reported": [
+        "The celebrity cast (Sudeikis, Yamal, Haaland, Pulisic, Campos, Cantor) and the \"biggest-ever activation\" framing are documented."
+      ],
+      "notClaimed": [
+        "Commercial or financial-inclusion outcomes; any African-market-specific access activation."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Own a word, not a product.",
+        "body": "Visa attached itself to \"access\" — the most valuable promise in sport — instead of selling payments."
+      },
+      {
+        "title": "Make the idea and the mechanic the same.",
+        "body": "Presale access and ticketing exclusivity ARE the campaign, not an add-on."
+      },
+      {
+        "title": "The strongest frame can be aimed better.",
+        "body": "An \"access\" platform has its highest unrealised value exactly where the activation isn’t pointed: African financial inclusion."
+      }
+    ],
+    "pullQuotes": [
+      "“Access” is the sharpest frame of the tournament — and the word that matters most in the markets it isn’t aimed at."
+    ],
+    "sources": [
+      {
+        "publisher": "Media Marketing",
+        "label": "Visa uses \"Tap In\" campaign to turn the 2026 World Cup into an experience of access",
+        "href": "https://www.media-marketing.com/en/news/visa-uses-tap-in-campaign-to-turn-the-2026-world-cup-into-an-experience-of-access-connection-and-everyday-fan-rituals/",
+        "use": "Reporting on the Tap In platform and the access-led strategy."
+      },
+      {
+        "publisher": "ALM Corp",
+        "label": "Marriott Bonvoy and Visa FIFA World Cup 2026 Campaign",
+        "href": "https://almcorp.com/blog/marriott-bonvoy-visa-fifa-world-cup-2026-haaland-vinicius-tickets-sleepover-suite/",
+        "use": "Documentation of the access benefits and co-campaign mechanics."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "budweiser-2026-world-cup-budstalgia-collectibles",
+    "title": "Budweiser’s Budstalgia: Forty Years of Memory, Sold as an Object",
+    "standfirst": "Budweiser turned four decades of World Cup sponsorship into a collectible — an 11-can anniversary pack and a nostalgia platform. The collectible instinct is exactly right; the question is whose memory is being canned.",
+    "brand": "Budweiser (AB InBev)",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "GLOBAL / 40+ COUNTRIES / AFRICA & DIASPORA READ",
+    "readingTime": "6 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Campaign facts (the Let It Pour platform, the Budstalgia 40th-anniversary campaign, the 11-piece collectible Anniversary Pack, Bud FC fan events across 40+ countries) are reported by AB InBev. The strategic and African read is MonoKromatik interpretation; outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Budweiser",
+      "AB InBev",
+      "FIFA World Cup 2026",
+      "nostalgia",
+      "collectibles",
+      "African markets"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Budstalgia — forty years of World Cup memory as the platform."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 2,
+        "note": "Global icons (Haaland, Klopp); the remembered history is largely non-African."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "An 11-can collectible Anniversary Pack, Bud FC events across 40+ countries."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "A strong collectible model; the nostalgia canon under-represents African football."
+      }
+    ],
+    "context": [
+      "Budweiser, the Official Beer Sponsor, launched Let It Pour across more than forty countries (Bud FC fan events, The Bud Fan Store, a global film with Erling Haaland and Jürgen Klopp), and a separate Budstalgia platform marking 40 years with FIFA. The centrepiece is the Anniversary Pack — 11 aluminium bottles and cans honouring the past 10 World Cups and 2026, from Mexico 1986 to now. All reported by AB InBev's newsroom.",
+      "It is a nostalgia-and-collectible system: convert four decades of sponsorship into a curated object fans want to keep."
+    ],
+    "strategicBet": [
+      "The bet is that memory is the most durable brand asset in football, and that a collectible turns memory into something owned, displayed and traded — not just watched.",
+      "Budstalgia monetises longevity itself: only a 40-year sponsor can sell forty years of nostalgia."
+    ],
+    "creativeMove": [
+      "The creative move is the physical collectible — the 11-piece pack as a designed artefact — paired with a global icon film. It treats the can as a canvas for history.",
+      "The instinct is right and ahead of most sponsors: an object people keep beats an ad people skip. The limit is whose history the canon contains."
+    ],
+    "africanRead": [
+      "A nostalgia canon from Mexico 1986 onward largely encodes a non-African memory of the game — even as African nations have shaped four decades of World Cups (from Cameroon 1990 to the African teams in the 2026 opener). The collectible is powerful precisely because memory is identity; that is also why an incomplete canon is a quiet exclusion.",
+      "There is a sharper opportunity for any brand — including a publication building its own collectibles: author a collectible whose remembered history includes African football's milestones, and whose objects are designed with African creators, not only distributed into African markets through AB InBev's breweries."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The Let It Pour platform, the Budstalgia 40th-anniversary campaign, the 11-piece collectible Anniversary Pack and Bud FC events across 40+ countries — reported by AB InBev."
+      ],
+      "reported": [
+        "The Haaland/Klopp creative and the Mexico-1986-to-2026 pack composition are documented in AB InBev releases and trade coverage."
+      ],
+      "notClaimed": [
+        "Commercial outcomes; any African-authored edition or African-market-specific collectible."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "A collectible beats an ad.",
+        "body": "An object fans keep, display and trade is more durable brand equity than a film they skip."
+      },
+      {
+        "title": "Memory is identity — so the canon matters.",
+        "body": "A nostalgia pack encodes whose history counts; an incomplete canon is a quiet exclusion."
+      },
+      {
+        "title": "Design with a market, not only distribute into it.",
+        "body": "The stronger move is a collectible co-authored with the culture, not shipped to it."
+      }
+    ],
+    "pullQuotes": [
+      "A collectible is powerful because memory is identity — which is exactly why an incomplete canon is a quiet exclusion."
+    ],
+    "sources": [
+      {
+        "publisher": "AB InBev",
+        "label": "Budweiser Partners with Haaland and Klopp to Unleash \"Let It Pour\" for FIFA World Cup 2026",
+        "href": "https://www.ab-inbev.com/news-media/news-stories/budweiser-partners-with-football-icons-erling-haaland-and-jurgen-klopp-to-unleash-new-let-it-pour-platform-for-fifa-world-cup-2026",
+        "use": "Official basis for the Let It Pour platform."
+      },
+      {
+        "publisher": "AB InBev",
+        "label": "Budweiser Honors 40 Years of FIFA World Cup Legacy with Limited-Edition Collectible Pack",
+        "href": "https://www.ab-inbev.com/news-media/news-stories/budweiser-honors-40-years-of-fifa-world-cup-legacy-with-limited-edition-collectible-pack-and-nostalgia-themed-platform",
+        "use": "Official basis for the Budstalgia campaign and the 11-piece Anniversary Pack."
+      }
+    ],
+    "media": []
   }
 ]
