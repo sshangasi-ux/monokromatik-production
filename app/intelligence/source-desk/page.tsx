@@ -2,6 +2,10 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, CheckCircle2, Eye, Globe2, Layers3, Newspaper } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
+import { getMonoKromatikFeeds } from '../../../lib/rss-feeds';
+
+// Render the monitoring feeds in a stable, reader-friendly geography.
+const REGION_ORDER = ['Pan-African', 'West Africa', 'Southern Africa', 'East Africa'];
 
 const sourceLayers = [
   {
@@ -49,6 +53,11 @@ const deskOutputs = [
 ];
 
 export default function SourceDeskPage() {
+  const feeds = getMonoKromatikFeeds();
+  const feedsByRegion = REGION_ORDER.map((region) => ({
+    region,
+    outlets: feeds.filter((f) => f.region === region),
+  })).filter((g) => g.outlets.length > 0);
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -97,6 +106,35 @@ export default function SourceDeskPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-mono-white py-20 md:py-24 border-t border-mono-gray/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">ON THE DESK NOW</p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">The outlets we actually monitor.</h2>
+            <p className="mt-6 text-lg font-body text-mono-charcoal">{feeds.length} reputable African and diaspora outlets across {feedsByRegion.length} regions feed the discovery layer — and a per-source cap keeps any single publisher from dominating the mix.</p>
+          </div>
+          <div className="space-y-10">
+            {feedsByRegion.map(({ region, outlets }) => (
+              <div key={region}>
+                <div className="flex items-baseline gap-3 mb-5 border-b border-mono-gray/20 pb-3">
+                  <h3 className="text-xs tracking-[0.28em] font-display font-bold text-mono-black">{region.toUpperCase()}</h3>
+                  <span className="text-[10px] text-mono-gray font-display font-bold">{outlets.length}</span>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {outlets.map((feed) => (
+                    <div key={feed.url} className="flex items-center justify-between gap-3 border border-mono-gray/20 px-4 py-3">
+                      <span className="font-body text-sm text-mono-black">{feed.name}</span>
+                      <span className="text-[9px] tracking-[0.16em] font-display font-bold text-mono-amber-strong">{feed.category.toUpperCase()}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-xs text-mono-gray font-body">Monitoring feeds for discovery only. Every story is independently verified against primary evidence before it becomes intelligence.</p>
         </div>
       </section>
 
