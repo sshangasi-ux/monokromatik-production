@@ -150,7 +150,7 @@ function FilterRow({
             aria-pressed={on}
             className={`text-[10px] tracking-[0.16em] px-3 py-2 font-display font-bold border transition-colors ${
               on
-                ? 'bg-mono-amber text-mono-white border-mono-amber'
+                ? 'bg-mono-amber text-mono-black border-mono-amber'
                 : 'bg-mono-white text-mono-charcoal border-mono-gray/30 hover:border-mono-amber'
             }`}
           >

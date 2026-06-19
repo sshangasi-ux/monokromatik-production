@@ -93,7 +93,7 @@ export default function CulturePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">THE LINK</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold">Culture creates the signal. Intelligence makes it useful.</h2>
-          <Link href="/intelligence" className="mt-10 inline-flex gap-2 items-center bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
+          <Link href="/intelligence" className="mt-10 inline-flex gap-2 items-center bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
         </div>
       </section>
     </div>

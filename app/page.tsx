@@ -240,6 +240,27 @@ export default function Home() {
         </section>
       )}
 
+      {featured && (
+        <section className="relative">
+          <Link
+            href={`/article/${featured.slug}`}
+            className="group block relative h-[72vh] min-h-[460px] overflow-hidden bg-mono-ink"
+          >
+            <MediaImage fill src={featured.imageUrl} alt={featured.title} duotone={false} zoomOnHover />
+            <div className="absolute inset-0 bg-gradient-to-t from-mono-black/85 via-mono-black/20 to-mono-black/10" />
+            <div className="absolute inset-x-0 bottom-0">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+                <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-bright mb-5">THE COVER STORY</p>
+                <h2 className="max-w-4xl text-4xl md:text-6xl font-feature font-bold text-mono-white leading-[0.98]">{featured.title}</h2>
+                <p className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.18em] font-display font-bold text-mono-white group-hover:text-mono-amber-bright transition-colors">
+                  READ THE STORY <ArrowRight size={16} />
+                </p>
+              </div>
+            </div>
+          </Link>
+        </section>
+      )}
+
       {articles.length > 0 && (
         <section className="bg-mono-soft-white py-20 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">

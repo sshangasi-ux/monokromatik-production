@@ -25,7 +25,7 @@ export default function FoundingIssuePage() {
             <h1 className="text-5xl md:text-8xl font-display font-bold leading-[0.92]">The Intelligence<br />Behind African<br /><span className="text-mono-amber">Influence.</span></h1>
             <p className="mt-8 max-w-2xl text-xl text-mono-soft-white font-body">A founding collection on authorship, relevance, creative commerce and the brands learning how Africa moves the world.</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/issues/001/the-intelligence-behind-african-influence" className="inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold">READ COVER ESSAY <ArrowRight size={18} /></Link>
+              <Link href="/issues/001/the-intelligence-behind-african-influence" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">READ COVER ESSAY <ArrowRight size={18} /></Link>
               <Link href="/issues/001/cover" className="inline-flex items-center gap-2 border border-mono-white/70 text-mono-white px-7 py-4 font-display font-bold">VIEW COVER STUDY <ArrowRight size={18} /></Link>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, FileText, Lock } from 'lucide-react';
 import Navigation from './Navigation';
+import ReadingProgress from './ReadingProgress';
 import { isLocked, type Report } from '../../lib/reports';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
@@ -21,24 +22,25 @@ export default function ReportFeature({ report }: { report: Report }) {
   const locked = isLocked(r);
 
   return (
-    <div className="min-h-screen bg-mono-white">
+    <div className="min-h-screen bg-mono-paper">
+      <ReadingProgress />
       <Navigation />
       <header className="bg-mono-black text-mono-white py-16 md:py-24 border-b border-mono-white/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/reports"
-            className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber transition-colors mb-12"
+            className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber-bright transition-colors mb-12"
           >
             <ArrowLeft size={14} /> REPORTS
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-7">
-            <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber">{r.series}</p>
-            <span className="text-[10px] tracking-[0.2em] px-2.5 py-1 bg-mono-amber text-mono-white font-display font-bold">
+            <p className="text-xs tracking-[0.36em] font-display font-bold text-mono-amber-bright">{r.series}</p>
+            <span className="text-[10px] tracking-[0.2em] px-2.5 py-1 bg-mono-amber text-mono-black font-display font-bold">
               {STATUS_LABEL[r.status]}
             </span>
           </div>
-          <h1 className="max-w-5xl text-5xl md:text-7xl font-display font-bold leading-[0.96]">{r.title}</h1>
-          <p className="max-w-3xl mt-8 text-xl md:text-2xl text-mono-soft-white font-body leading-relaxed">{r.summary}</p>
+          <h1 className="max-w-5xl text-5xl md:text-7xl font-feature font-bold leading-[0.97]">{r.title}</h1>
+          <p className="max-w-3xl mt-8 text-2xl md:text-3xl text-mono-soft-white font-feature italic leading-snug">{r.summary}</p>
           <div className="mt-12 pt-6 border-t border-mono-white/20 flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-[0.19em] font-display font-bold text-mono-gray">
             <span className="text-mono-amber">{ACCESS_LABEL[r.access].toUpperCase()}</span>
             {r.statusNote && <span>{r.statusNote.toUpperCase()}</span>}

@@ -57,7 +57,7 @@ export default function RelatedArticles({ currentSlug, category, articles }: Rel
               
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-mono-amber text-mono-white text-xs font-display font-bold rounded uppercase">
+                  <span className="px-3 py-1 bg-mono-amber text-mono-black text-xs font-display font-bold rounded uppercase">
                     {article.category}
                   </span>
                   {article.readingTime && (

@@ -101,7 +101,7 @@ export default function ConversationsPage() {
           <h2 className="text-4xl md:text-5xl font-display font-bold">Built for film, audio, essays and live rooms.</h2>
           <p className="mt-6 text-lg text-mono-soft-white font-body">The strongest conversations can move across Signal, The Weekly Signal and future collectible issues.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/contribute" className="inline-flex items-center gap-2 bg-mono-amber text-mono-white px-7 py-4 font-display font-bold"><PenLine size={18} /> CONTRIBUTE</Link>
+            <Link href="/contribute" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold"><PenLine size={18} /> CONTRIBUTE</Link>
             <Link href="/signal" className="inline-flex items-center gap-2 border border-mono-white text-mono-white px-7 py-4 font-display font-bold">RETURN TO SIGNAL <ArrowRight size={18} /></Link>
           </div>
         </div>

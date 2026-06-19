@@ -76,7 +76,7 @@ export default function ArticleClient({ article }: { article: Article }) {
         </Link>
 
         <div className="flex flex-wrap items-center gap-4 mb-6 font-body text-sm">
-          <span className="px-3 py-1 bg-mono-amber text-mono-white font-display font-bold uppercase">
+          <span className="px-3 py-1 bg-mono-amber text-mono-black font-display font-bold uppercase">
             {article.category}
           </span>
           <span className="flex items-center gap-1 text-mono-gray">
@@ -221,7 +221,7 @@ export default function ArticleClient({ article }: { article: Article }) {
                   onClick={() => setReaction(item.emoji)}
                   className={`flex-1 px-6 py-4 border-2 transition-all ${
                     reaction === item.emoji
-                      ? 'border-mono-amber bg-mono-amber text-mono-white'
+                      ? 'border-mono-amber bg-mono-amber text-mono-black'
                       : 'border-mono-charcoal hover:border-mono-amber'
                   }`}
                 >

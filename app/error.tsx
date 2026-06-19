@@ -26,7 +26,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         <div className="mt-9 flex flex-wrap gap-4 justify-center">
           <button
             onClick={reset}
-            className="px-6 py-3 bg-mono-amber text-mono-white font-display font-bold hover:bg-mono-amber/90 transition-colors"
+            className="px-6 py-3 bg-mono-amber text-mono-black font-display font-bold hover:bg-mono-amber/90 transition-colors"
           >
             TRY AGAIN
           </button>
