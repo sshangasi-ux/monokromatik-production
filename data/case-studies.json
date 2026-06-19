@@ -1914,5 +1914,311 @@
       }
     ],
     "media": []
+  },
+  {
+    "slug": "tyla-pandora-styled-authorship",
+    "title": "Pandora Styled by Tyla: The Endorsement That Became Authorship",
+    "standfirst": "Nike, Chanel, H&M — Tyla collects global brands. The one that matters most is Pandora, because she didn’t just front it. She designed it, in her own South African register.",
+    "brand": "Tyla × Pandora (and Nike, Chanel, H&M)",
+    "collection": "Diaspora Demand",
+    "market": "SOUTH AFRICA / GLOBAL / DIASPORA",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (Tyla as Pandora brand ambassador from April 2025 with a personally-curated \"Pandora Styled by Tyla\" collection including South-African-heritage charms; her Nike endorsement; her Chanel runway and red-carpet presence) are reported by WWD and L’Officiel. The strategic read is MonoKromatik interpretation; deal values are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Tyla",
+      "Pandora",
+      "Nike",
+      "amapiano",
+      "authorship",
+      "South Africa"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "A pop star’s portfolio of global brands, anchored by a co-designed line."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "She curated the Pandora collection in a South African register — authorship, not just a face."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "Pandora, Nike, Chanel, H&M — simultaneous global relationships."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "The co-design model out-values the endorsement model."
+      }
+    ],
+    "context": [
+      "In April 2025, Pandora named Tyla — South Africa’s Grammy-winning amapiano-pop star — a brand ambassador, and crucially launched “Pandora Styled by Tyla,” a collection she personally curated, including pieces celebrating her South African roots, per WWD and L’Officiel. She is also a Nike endorser (from February 2025) and wore Chanel on the runway and red carpet through 2025.",
+      "It is a portfolio of global brand relationships — but the Pandora deal is different in kind: she is a co-author of the product, not only its face."
+    ],
+    "strategicBet": [
+      "For the brands, the bet is the same as with Ayra Starr — African pop’s velocity converts to global youth relevance. Pandora’s sharper bet is to let the artist design, turning an endorsement into a collaboration consumers can buy.",
+      "For Tyla, the bet is to convert fame into authorship: a curated line in her own cultural register is a more durable, more ownable asset than a campaign appearance."
+    ],
+    "creativeMove": [
+      "The move that distinguishes this from a standard endorsement is co-design: “Styled by Tyla” puts a South African sensibility into the product itself, not just the advertising around it.",
+      "It is the difference between renting a star and commissioning one — and the heritage charms make the authorship explicit."
+    ],
+    "africanRead": [
+      "Where most celebrity deals borrow an artist’s image, Pandora let Tyla author the object — and she chose to encode South African heritage into it. That is the diaspora-demand thesis maturing: not just African presence in global brands, but African authorship of their products.",
+      "The lesson for brands is that the co-design model captures more cultural value than the endorsement model — and the artist who insists on authorship, in her own register, is the one whose partnership compounds."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Tyla as Pandora ambassador (April 2025) with the curated \"Pandora Styled by Tyla\" collection; her Nike endorsement; her Chanel runway/red-carpet presence — reported by WWD and L’Officiel."
+      ],
+      "reported": [
+        "The breadth of her brand relationships (Pandora, Nike, Chanel, H&M) is documented across fashion press."
+      ],
+      "notClaimed": [
+        "Deal values, sales figures or net-worth estimates."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Co-design beats endorsement.",
+        "body": "Letting the artist author the product captures more cultural value than renting a face."
+      },
+      {
+        "title": "Encode the heritage in the object.",
+        "body": "Tyla put South African references into the product, not just the ad — authorship made explicit."
+      },
+      {
+        "title": "Commission the star, don’t rent her.",
+        "body": "The partnership that compounds is the one where the artist insists on authorship in her own register."
+      }
+    ],
+    "pullQuotes": [
+      "Pandora let Tyla author the object — and she chose to encode South African heritage into it."
+    ],
+    "sources": [
+      {
+        "publisher": "WWD",
+        "label": "Tyla Launches Tyger Charms in Collaboration With Pandora",
+        "href": "https://wwd.com/pop-culture/new-fashion-releases/pandora-tyla-tyger-charms-1238304067/",
+        "use": "Reporting on the curated \"Pandora Styled by Tyla\" collection."
+      },
+      {
+        "publisher": "L'Officiel USA",
+        "label": "Tyla Stuns in Pandora's Campaign as Brand Ambassador",
+        "href": "https://www.lofficielusa.com/fashion/pandora-tyla-brand-ambassador-campaign",
+        "use": "Documentation of the ambassadorship and campaign."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "the-black-book-nollywood-netflix-breakthrough",
+    "title": "The Black Book: A Nigerian Thriller Tops the World, On Someone Else’s Platform",
+    "standfirst": "Editi Effiong’s debut became the first Nigerian film to hit No. 3 on Netflix’s global chart, watched in 69+ countries. The breakthrough is real — and so is the question of who owns the rails it ran on.",
+    "brand": "The Black Book (Editi Effiong) / Nollywood on Netflix",
+    "collection": "African Authorship in Global Work",
+    "market": "NIGERIA / GLOBAL",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (The Black Book as the first Nigerian film to reach No. 3 on Netflix’s worldwide film chart; ~5.6m views in 48 hours, 20m+ in opening weeks; Top 10 in 69+ countries; director Editi Effiong) are reported by IMDb news and AOL. The strategic read is MonoKromatik interpretation.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "The Black Book",
+      "Editi Effiong",
+      "Nollywood",
+      "Netflix",
+      "distribution",
+      "authorship"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 5,
+        "note": "A Nigerian revenge thriller competing at the top of a global chart."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "First-time Nigerian director, Nigerian story — wholly African-authored."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "5.6m views in 48h, 20m+ in opening weeks, Top 10 in 69+ countries."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 5,
+        "note": "Proof African film leads globally — on a platform it does not own."
+      }
+    ],
+    "context": [
+      "Editi Effiong’s debut feature The Black Book became the first-ever Nigerian film to reach No. 3 on Netflix’s worldwide film chart, drawing a reported 5.6 million views within 48 hours and more than 20 million in its opening weeks, and breaking the Top 10 in over 69 countries — per IMDb news and AOL reporting.",
+      "It is among the clearest signals that Nollywood is not an emerging niche but a global-chart competitor — with the content authored entirely in Nigeria."
+    ],
+    "strategicBet": [
+      "For Netflix, the bet is that African storytelling is global-chart content, not regional filler — and that owning the catalogue early secures the audience and the talent.",
+      "For Nollywood, the breakthrough validates the content; the unresolved strategic question is the distribution: the work is African-authored, but the rails, the data and the lion’s share of the economics belong to the platform."
+    ],
+    "creativeMove": [
+      "The creative move is wholly Nigerian — a first-time director, a local story told without translation — and it competed at the very top globally on its own terms.",
+      "The lesson for the industry is that the authorship was never the gap; it travels. The gap is downstream: ownership of distribution and value."
+    ],
+    "africanRead": [
+      "African authorship is proven at the highest level — a debut Nigerian film outperformed most of the world on the biggest platform. That settles the talent question for good.",
+      "What it does not settle is ownership: the value of a global hit accrues largely to the distributor. The read points directly at the next move — African-owned distribution (see Kava) — so the upside of African-authored hits is captured, not just licensed."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The Black Book as the first Nigerian film to reach No. 3 on Netflix’s worldwide chart; the reported view counts and 69+-country Top-10 reach; director Editi Effiong — reported by IMDb news and AOL."
+      ],
+      "reported": [
+        "Netflix’s rising investment in African storytelling is widely documented."
+      ],
+      "notClaimed": [
+        "Revenue retained by the filmmakers, or precise lifetime viewership."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Authorship was never the gap.",
+        "body": "A debut Nigerian film topped most of the world — the talent travels."
+      },
+      {
+        "title": "The gap is downstream.",
+        "body": "Ownership of distribution and value, not creative quality, is the unresolved question."
+      },
+      {
+        "title": "A global hit points at the next move.",
+        "body": "The economics of platform-owned distribution make the case for African-owned rails."
+      }
+    ],
+    "pullQuotes": [
+      "Authorship was never the gap — it travels. The gap is downstream: ownership of distribution and value."
+    ],
+    "sources": [
+      {
+        "publisher": "IMDb (News)",
+        "label": "The Nigerian Hit Movie That Broke Netflix",
+        "href": "https://www.imdb.com/news/ni64370655/",
+        "use": "Reporting on The Black Book’s global Netflix chart performance."
+      },
+      {
+        "publisher": "AOL",
+        "label": "New Netflix thriller tackling justice in Nigeria is a global hit and a boon for Nollywood",
+        "href": "https://www.aol.com/netflix-thriller-tackling-theme-justice-150644029.html",
+        "use": "Independent account of the film’s reach and significance."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "kava-african-owned-nollywood-streaming",
+    "title": "Kava: Nollywood Builds the Rails, Not Just the Films",
+    "standfirst": "After years of African-authored hits running on foreign platforms, Inkblot and Filmhouse launched Kava — an African-owned streaming home for Nollywood. The move from content to infrastructure is the whole game.",
+    "brand": "Kava (Inkblot Studios + Filmhouse Group)",
+    "collection": "African Authorship in Global Work",
+    "market": "NIGERIA / PAN-AFRICAN / DIASPORA",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (Kava as a streaming platform dedicated to Nollywood and African content, created by Inkblot Studios and Filmhouse Group, launching in late August 2025 with 30+ premium titles) are reported by Deadline and African entertainment press. The strategic read is MonoKromatik interpretation; performance is not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Kava",
+      "Inkblot Studios",
+      "Filmhouse",
+      "streaming",
+      "ownership",
+      "distribution"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 5,
+        "note": "An African-owned streaming platform for African content."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "Built by Nollywood heavyweights — owned, not licensed."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 3,
+        "note": "Launched late August 2025 with 30+ premium titles; early-stage."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 5,
+        "note": "Moving from content to infrastructure is where value is retained."
+      }
+    ],
+    "context": [
+      "Kava, a streaming platform dedicated solely to Nollywood and African content, was created by the Nollywood heavyweights Inkblot Studios and Filmhouse Group and launched in late August 2025 with more than 30 premium titles — reported by Deadline.",
+      "It arrives precisely as African-authored films (The Black Book and others) prove they can top global charts — on platforms the filmmakers don’t own."
+    ],
+    "strategicBet": [
+      "The bet is the most important one in the whole influence story: own the distribution. Content has proven it travels; the value of that travel is captured by whoever owns the rails, the data and the relationship with the audience.",
+      "By building a platform rather than only making films, Inkblot and Filmhouse bet that African ownership of distribution is how the economics of African storytelling finally come home."
+    ],
+    "creativeMove": [
+      "The move is from content to infrastructure — the hardest, highest-leverage step. It is the difference between licensing your hits to a global platform and owning the platform your hits run on.",
+      "Thirty titles is a start, not a victory; the significance is the model, not yet the scale."
+    ],
+    "africanRead": [
+      "This is the answer to the question every other case in this library raises: African authorship is proven, but value leaks to whoever owns the rails. Kava is an attempt to own them — the value-retention move the thesis keeps pointing to.",
+      "The risks are real (capital, catalogue, the gravity of incumbent platforms), but the direction is exactly right: the continent’s upside is in owning distribution and infrastructure, not only in producing the content that fills someone else’s."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Kava as an African-owned Nollywood/African-content streaming platform by Inkblot Studios and Filmhouse Group, launched late August 2025 with 30+ titles — reported by Deadline."
+      ],
+      "reported": [
+        "The broader context of Nollywood’s global breakthrough on foreign platforms is widely documented."
+      ],
+      "notClaimed": [
+        "Subscriber numbers, revenue or competitive outcomes versus incumbent platforms."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Own the rails, not just the content.",
+        "body": "Value accrues to whoever owns distribution, data and the audience relationship."
+      },
+      {
+        "title": "Move from content to infrastructure.",
+        "body": "The hardest, highest-leverage step is owning the platform your hits run on."
+      },
+      {
+        "title": "Direction over scale, for now.",
+        "body": "Thirty titles is a start; the significance is the ownership model, not yet the size."
+      }
+    ],
+    "pullQuotes": [
+      "African authorship is proven; value leaks to whoever owns the rails. Kava is an attempt to own them."
+    ],
+    "sources": [
+      {
+        "publisher": "Deadline",
+        "label": "Nollywood: Inkblot Studios & Filmhouse Launch Streaming Platform Kava",
+        "href": "https://deadline.com/2025/07/nollywood-inkblot-studios-filmhouse-kava-1236467171/",
+        "use": "Reporting on Kava’s creation, ownership and launch."
+      },
+      {
+        "publisher": "ShowBiz.Africa",
+        "label": "Top Nollywood Movies on Netflix (2026)",
+        "href": "https://showbiz.africa/top-10-nollywood-movies-on-netflix-right-now-january-2026-edition/",
+        "use": "Context on Nollywood’s catalogue and global presence."
+      }
+    ],
+    "media": []
   }
 ]
