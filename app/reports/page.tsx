@@ -69,22 +69,25 @@ export default function ReportsPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {reports.map((report) => (
-              <article key={report.slug} className="bg-mono-white border border-mono-gray/25 p-8 md:p-9 min-h-[330px] flex flex-col justify-between hover:border-mono-amber transition-colors">
+              <Link key={report.slug} href={`/reports/${report.slug}`} className="group bg-mono-white border border-mono-gray/25 p-8 md:p-9 min-h-[330px] flex flex-col justify-between hover:border-mono-amber transition-colors">
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
                     <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{report.series}</p>
                     <span className="text-[9px] tracking-[0.2em] px-2.5 py-1 bg-mono-black text-mono-white font-display font-bold">{STATUS_LABEL[report.status] ?? report.status.toUpperCase()}</span>
                   </div>
-                  <h3 className="mt-8 text-3xl font-display font-bold text-mono-black leading-tight">{report.title}</h3>
+                  <h3 className="mt-8 text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">{report.title}</h3>
                   <p className="mt-5 text-mono-charcoal font-body leading-relaxed">{report.summary}</p>
                 </div>
                 <div className="mt-8">
                   <div className="flex flex-wrap gap-2 mb-5">
                     {report.tags.map((tag) => <span key={tag} className="border border-mono-gray/30 px-3 py-2 text-[10px] font-display font-bold tracking-[0.16em]">{tag.toUpperCase()}</span>)}
                   </div>
-                  <p className="text-xs text-mono-gray font-body">{report.access === 'open' ? 'Open Signal Briefing' : report.access === 'premium' ? 'Premium Report' : 'Partner Edition'}{report.statusNote ? ` · ${report.statusNote}` : ''}</p>
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs text-mono-gray font-body">{report.access === 'open' ? 'Open Signal Briefing' : report.access === 'premium' ? 'Premium Report' : 'Partner Edition'}{report.statusNote ? ` · ${report.statusNote}` : ''}</p>
+                    <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] font-display font-bold text-mono-amber-strong group-hover:text-mono-amber-hover whitespace-nowrap">{report.status === 'live' ? 'READ' : 'PREVIEW'} <ArrowRight size={14} /></span>
+                  </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
