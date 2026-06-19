@@ -1,5 +1,11 @@
 // MonoKromatik RSS Feed Sources
-// Comprehensive African media sources with media support
+// A curated set of reputable African + diaspora outlets, spread across region
+// and topic so no single publisher dominates the catalogue. Every feed below
+// was validated live (HTTP 200 + parseable RSS) on 2026-06-18; dead feeds
+// (OkayAfrica, Pulse NG, Goal, KickOff, AllAfrica, GhanaWeb) were removed in the
+// same pass. Concentration is additionally capped at curation time
+// (enforceSourceDiversity in curate-stories.ts), so a prolific feed like
+// BellaNaija contributes as one reputable voice, not the default.
 
 export interface RSSFeed {
   url: string;
@@ -18,12 +24,12 @@ export interface Story {
   content?: string;
   excerpt?: string;
   author?: string;
-  
+
   // Media elements
   imageUrl?: string;
   videoUrl?: string;
   mediaType?: 'image' | 'video' | 'text';
-  
+
   // Additional metadata
   tags?: string[];
   guid?: string;
@@ -31,190 +37,73 @@ export interface Story {
 
 export const RSS_FEEDS: RSSFeed[] = [
   // ========================================
-  // AFRICAN NEWS (General)
+  // PAN-AFRICAN NEWS & ANALYSIS
   // ========================================
-  {
-    url: 'https://www.africanews.com/feed/',
-    name: 'Africanews',
-    category: 'news',
-    language: 'en',
-    region: 'Pan-African'
-  },
-  {
-    url: 'https://allafrica.com/tools/headlines/rdf/latest/',
-    name: 'AllAfrica',
-    category: 'news',
-    language: 'en',
-    region: 'Pan-African'
-  },
-  {
-    url: 'https://feeds.bbci.co.uk/news/world/africa/rss.xml',
-    name: 'BBC Africa',
-    category: 'news',
-    language: 'en',
-    region: 'Pan-African'
-  },
-  
+  { url: 'https://www.africanews.com/feed/', name: 'Africanews', category: 'news', language: 'en', region: 'Pan-African' },
+  { url: 'https://feeds.bbci.co.uk/news/world/africa/rss.xml', name: 'BBC Africa', category: 'news', language: 'en', region: 'Pan-African' },
+  { url: 'https://www.theafricareport.com/feed/', name: 'The Africa Report', category: 'news', language: 'en', region: 'Pan-African' },
+
   // ========================================
   // CULTURE & LIFESTYLE
   // ========================================
-  {
-    url: 'https://www.okayafrica.com/feed/',
-    name: 'OkayAfrica',
-    category: 'culture',
-    language: 'en',
-    region: 'Pan-African'
-  },
-  {
-    url: 'https://face2faceafrica.com/feed',
-    name: 'Face2Face Africa',
-    category: 'culture',
-    language: 'en',
-    region: 'Pan-African'
-  },
-  {
-    url: 'https://www.bellanaija.com/feed/',
-    name: 'BellaNaija',
-    category: 'culture',
-    language: 'en',
-    region: 'West Africa'
-  },
-  
+  { url: 'https://www.bellanaija.com/feed/', name: 'BellaNaija', category: 'culture', language: 'en', region: 'West Africa' },
+  { url: 'https://face2faceafrica.com/feed', name: 'Face2Face Africa', category: 'culture', language: 'en', region: 'Pan-African' },
+
   // ========================================
   // MUSIC & ENTERTAINMENT
   // ========================================
-  {
-    url: 'https://www.notjustok.com/feed/',
-    name: 'NotJustOk',
-    category: 'music',
-    language: 'en',
-    region: 'West Africa'
-  },
-  {
-    url: 'https://tooxclusive.com/feed/',
-    name: 'TooXclusive',
-    category: 'entertainment',
-    language: 'en',
-    region: 'West Africa'
-  },
-  {
-    url: 'https://www.pulse.ng/rss',
-    name: 'Pulse Nigeria',
-    category: 'entertainment',
-    language: 'en',
-    region: 'West Africa'
-  },
-  {
-    url: 'https://www.sahiphopmag.co.za/feed/',
-    name: 'SA Hip Hop Mag',
-    category: 'music',
-    language: 'en',
-    region: 'Southern Africa'
-  },
-  
+  { url: 'https://www.notjustok.com/feed/', name: 'NotJustOk', category: 'music', language: 'en', region: 'West Africa' },
+  { url: 'https://tooxclusive.com/feed/', name: 'TooXclusive', category: 'entertainment', language: 'en', region: 'West Africa' },
+  { url: 'https://www.myjoyonline.com/feed/', name: 'MyJoyOnline', category: 'entertainment', language: 'en', region: 'West Africa' },
+  { url: 'https://www.sahiphopmag.co.za/feed/', name: 'SA Hip Hop Mag', category: 'music', language: 'en', region: 'Southern Africa' },
+
   // ========================================
   // SPORTS
   // ========================================
-  {
-    url: 'https://www.goal.com/en-za/feeds/news',
-    name: 'Goal Africa',
-    category: 'sports',
-    language: 'en',
-    region: 'Southern Africa'
-  },
-  {
-    url: 'https://www.kickoff.com/feed',
-    name: 'KickOff',
-    category: 'sports',
-    language: 'en',
-    region: 'Southern Africa'
-  },
-  {
-    url: 'https://www.completesports.com/feed/',
-    name: 'Complete Sports',
-    category: 'sports',
-    language: 'en',
-    region: 'West Africa'
-  },
-  
+  { url: 'https://feeds.bbci.co.uk/sport/africa/rss.xml', name: 'BBC Sport Africa', category: 'sports', language: 'en', region: 'Pan-African' },
+  { url: 'https://www.completesports.com/feed/', name: 'Complete Sports', category: 'sports', language: 'en', region: 'West Africa' },
+
   // ========================================
-  // REGIONAL SOURCES
+  // REGIONAL — NIGERIA / WEST AFRICA
   // ========================================
-  
-  // South Africa
-  {
-    url: 'https://www.iol.co.za/rss',
-    name: 'IOL South Africa',
-    category: 'news',
-    language: 'en',
-    region: 'Southern Africa'
-  },
-  {
-    url: 'https://www.news24.com/news24/southafrica/rss',
-    name: 'News24 SA',
-    category: 'news',
-    language: 'en',
-    region: 'Southern Africa'
-  },
-  
-  // Nigeria
-  {
-    url: 'https://punchng.com/feed/',
-    name: 'Punch Nigeria',
-    category: 'news',
-    language: 'en',
-    region: 'West Africa'
-  },
-  {
-    url: 'https://www.vanguardngr.com/feed/',
-    name: 'Vanguard Nigeria',
-    category: 'news',
-    language: 'en',
-    region: 'West Africa'
-  },
-  
-  // Kenya
-  {
-    url: 'https://www.nation.africa/kenya/rss',
-    name: 'Daily Nation Kenya',
-    category: 'news',
-    language: 'en',
-    region: 'East Africa'
-  },
-  {
-    url: 'https://www.standardmedia.co.ke/rss/headlines.php',
-    name: 'The Standard Kenya',
-    category: 'news',
-    language: 'en',
-    region: 'East Africa'
-  },
-  
-  // Ghana
-  {
-    url: 'https://www.ghanaweb.com/GhanaHomePage/rss/news.xml',
-    name: 'GhanaWeb',
-    category: 'news',
-    language: 'en',
-    region: 'West Africa'
-  },
+  { url: 'https://www.premiumtimesng.com/feed', name: 'Premium Times', category: 'news', language: 'en', region: 'West Africa' },
+  { url: 'https://punchng.com/feed/', name: 'Punch Nigeria', category: 'news', language: 'en', region: 'West Africa' },
+  { url: 'https://www.vanguardngr.com/feed/', name: 'Vanguard Nigeria', category: 'news', language: 'en', region: 'West Africa' },
+
+  // ========================================
+  // REGIONAL — SOUTH AFRICA / SOUTHERN AFRICA
+  // ========================================
+  { url: 'https://www.iol.co.za/rss', name: 'IOL South Africa', category: 'news', language: 'en', region: 'Southern Africa' },
+  { url: 'https://mg.co.za/rss/', name: 'Mail & Guardian', category: 'news', language: 'en', region: 'Southern Africa' },
+  { url: 'https://www.news24.com/news24/southafrica/rss', name: 'News24 SA', category: 'news', language: 'en', region: 'Southern Africa' },
+
+  // ========================================
+  // REGIONAL — KENYA / EAST AFRICA
+  // ========================================
+  { url: 'https://www.standardmedia.co.ke/rss/headlines.php', name: 'The Standard Kenya', category: 'news', language: 'en', region: 'East Africa' },
+  { url: 'https://www.nation.africa/kenya/rss', name: 'Daily Nation Kenya', category: 'news', language: 'en', region: 'East Africa' },
 ];
 
 // Category-based feed filtering
 export function getFeedsByCategory(category: string): RSSFeed[] {
-  return RSS_FEEDS.filter(feed => feed.category === category);
+  return RSS_FEEDS.filter((feed) => feed.category === category);
 }
 
 // Region-based feed filtering
 export function getFeedsByRegion(region: string): RSSFeed[] {
-  return RSS_FEEDS.filter(feed => feed.region === region);
+  return RSS_FEEDS.filter((feed) => feed.region === region);
 }
 
-// Get all culture, sports, and entertainment feeds (MonoKromatik focus)
+// The feed set the MonoKromatik pipeline pulls from.
+//
+// This now returns the WHOLE curated registry — including the reputable
+// regional 'news' outlets (Premium Times, Punch, Vanguard, IOL, Mail & Guardian,
+// The Standard, etc.), which were previously defined but excluded by a
+// category filter, leaving BellaNaija as the only prolific working culture feed.
+// Relevance is handled downstream: preFilterStories drops hard-negative news and
+// the Claude curator scores each story for culture/sport/entertainment fit, so
+// political noise from general-news feeds is filtered per-story rather than by
+// excluding the outlet wholesale. Concentration is capped in curateStories.
 export function getMonoKromatikFeeds(): RSSFeed[] {
-  return RSS_FEEDS.filter(feed => 
-    feed.category === 'culture' || 
-    feed.category === 'sports' || 
-    feed.category === 'entertainment' ||
-    feed.category === 'music'
-  );
+  return RSS_FEEDS;
 }
