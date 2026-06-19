@@ -996,5 +996,311 @@
       }
     ],
     "media": []
+  },
+  {
+    "slug": "chicken-licken-soul-food-to-the-world",
+    "title": "Chicken Licken’s #SoulFood2TheWorld: What Full African Authorship Looks Like",
+    "standfirst": "A South African fast-food brand declared a “global soul crisis” and answered it with a four-minute anthem of local artists. It is the inverse of the global-sponsor playbook — and it travelled because of it.",
+    "brand": "Chicken Licken (agency: Joe Public)",
+    "collection": "African Authorship in Global Work",
+    "market": "SOUTH AFRICA / DIASPORA",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Campaign facts (the #SoulFood2TheWorld platform, the multi-artist anthem and its reported 2.3m+ views in days, agency Joe Public, and the 2025–2026 campaign run) are reported by Ads of the World and South African press. The strategic read is MonoKromatik interpretation; long-term outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Chicken Licken",
+      "Joe Public",
+      "South Africa",
+      "authorship",
+      "viral",
+      "soul"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "A self-declared “global soul crisis” — bold, absurdist, ownable."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "SA agency (Joe Public) and SA artists — fully African-authored."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "A four-minute anthem film; 2.3m+ views within days."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "“Soul” reframed as a national-cultural export, not a product claim."
+      }
+    ],
+    "context": [
+      "As the culmination of its #SoulFood2TheWorld platform, Chicken Licken — long South Africa’s boldest advertiser, with agency Joe Public — released a four-minute music video uniting respected local artists, framed as a response to a tongue-in-cheek “global soul crisis.” Reported by South African press and Ads of the World, the anthem surged past 2.3 million views within days and ran across radio, digital and stores nationwide.",
+      "It sits in a run of distinctively local work (Boneless Bites of Soul; General Raj) — humour and craft rooted in South African idiom rather than imported templates."
+    ],
+    "strategicBet": [
+      "The bet is that cultural specificity travels further than cultural neutrality. Instead of a globally-legible emotion (the sponsor default), Chicken Licken doubled down on a particular South African sensibility — “soul” — and made the brand its custodian.",
+      "It treats advertising as cultural production: an anthem people share because it is theirs, not a message they tolerate."
+    ],
+    "creativeMove": [
+      "The creative move is to commission a genuine artistic collaboration — local musicians, a real song — and let the brand recede into the role of patron. The product is barely the point; the cultural moment is.",
+      "Authorship is the whole game here: South African creators made South African work, and that authenticity is exactly why it carried."
+    ],
+    "africanRead": [
+      "Set against the global World Cup sponsors — whose African authorship we scored at 2/5 — Chicken Licken is the counter-proof: African-authored work, made by an African agency with African artists, that out-travels the universal template on the metric that matters, belonging.",
+      "The lesson for global brands is uncomfortable and simple: you cannot buy what Chicken Licken has. Local authorship is not a production choice; it is the source of the resonance, and it cannot be outsourced to a neutral global idea."
+    ],
+    "evidence": {
+      "confirmed": [
+        "The #SoulFood2TheWorld anthem, its multi-artist collaboration, agency Joe Public, and the nationwide media run — reported by Ads of the World and South African press."
+      ],
+      "reported": [
+        "The 2.3m+ views “within days” figure and the broader 2025–2026 campaign run are reported in trade and entertainment coverage."
+      ],
+      "notClaimed": [
+        "Sales outcomes or brand-equity effects; international reach beyond the reported view counts."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Specificity travels further than neutrality.",
+        "body": "A particular cultural sensibility out-shares a universal emotional template."
+      },
+      {
+        "title": "Be the patron, not the message.",
+        "body": "Commission real culture and let the brand recede; people share what feels like theirs."
+      },
+      {
+        "title": "Authorship can’t be outsourced.",
+        "body": "Local creators made the resonance — it is not a production line item a global brand can buy."
+      }
+    ],
+    "pullQuotes": [
+      "You cannot buy what Chicken Licken has — local authorship is the source of the resonance, not a production choice."
+    ],
+    "sources": [
+      {
+        "publisher": "Ads of the World (Clio Network)",
+        "label": "Chicken Licken: Soul Food For A Soul Nation",
+        "href": "https://www.adsoftheworld.com/campaigns/soul-food-for-a-soul-nation",
+        "use": "Campaign documentation and creative credit (agency Joe Public)."
+      },
+      {
+        "publisher": "Good Things Guy",
+        "label": "Chicken Licken's New Anthem Brings South Africa's Soul Together in One Powerful Song",
+        "href": "https://www.goodthingsguy.com/lifestyle/chicken-lickens-new-anthem-brings-south-africas-soul-together-in-one-powerful-song/",
+        "use": "Reporting on the anthem collaboration and its viral reception."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "nba-africa-maluach-pipeline",
+    "title": "NBA Africa and the Maluach Pipeline: Building the Market by Building the Talent",
+    "standfirst": "The NBA didn’t market itself into Africa; it built a league there. Khaman Maluach’s route from the Basketball Africa League to a top-ten NBA draft pick is the proof the infrastructure works.",
+    "brand": "NBA Africa / Basketball Africa League",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "AFRICA / GLOBAL / NBA",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (the NBA’s record international-player counts, Khaman Maluach’s 2025 draft position and BAL background, ESPN Africa’s sub-Saharan NBA rights) are reported by ESPN and sports press. The strategic read is MonoKromatik interpretation; outcomes are not claimed.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "NBA Africa",
+      "Basketball Africa League",
+      "Khaman Maluach",
+      "talent pipeline",
+      "sport",
+      "infrastructure"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Build a league and a pipeline, not just a fan-marketing push."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 3,
+        "note": "NBA-led, but the BAL is African infrastructure developing African talent."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "BAL → NBA draft pathway, record international rosters, African media rights."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "A proven pipeline (Maluach) compounds into market and identity."
+      }
+    ],
+    "context": [
+      "The NBA opened the 2025–26 season with a record 135 international players from 43 countries, more than 55 of them born in Africa or with an African parent. South Sudan’s Khaman Maluach was drafted 10th overall in 2025 — the highest former Basketball Africa League player ever drafted — and ESPN secured exclusive sub-Saharan NBA Finals rights, per ESPN reporting.",
+      "The through-line is infrastructure: the NBA co-built the Basketball Africa League rather than simply broadcasting into the continent, and the talent route now runs both ways."
+    ],
+    "strategicBet": [
+      "The bet is that the durable way into a market is to build its talent base, not rent its attention. A league creates players, players create fans, fans create a market — in that order.",
+      "It is a patient, infrastructure-first strategy that most consumer brands, chasing a campaign moment, never attempt."
+    ],
+    "creativeMove": [
+      "The move is the pathway itself: a credible BAL-to-NBA route that gives African players a home-grown on-ramp to the world’s biggest basketball stage, with Maluach as living proof.",
+      "African media rights (ESPN Africa) close the loop, keeping the consequence — the games, the players — visible to the market that produced them."
+    ],
+    "africanRead": [
+      "This is closer to authorship than the World Cup sponsor model: the value isn’t imagery of African talent, it’s an institution (the BAL) that develops and credits it. Authorship is mixed — the NBA leads — but the infrastructure is genuinely African and the talent is captured at source.",
+      "The open question is ownership: how much of the value the pipeline creates is retained on the continent (clubs, coaching, media, IP) versus exported with the players. The pipeline is real; the next test is whose balance sheet it builds."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Record international-player counts, Maluach’s 2025 draft position and BAL background, and ESPN Africa’s sub-Saharan NBA rights — reported by ESPN."
+      ],
+      "reported": [
+        "The BAL-to-NBA pathway and the African-born/African-parent player share are documented in NBA and sports-press coverage."
+      ],
+      "notClaimed": [
+        "Revenue retained on the continent, or long-term market-size outcomes."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Build the talent to build the market.",
+        "body": "A league creates players, players create fans, fans create a market — in that order."
+      },
+      {
+        "title": "Infrastructure beats a campaign moment.",
+        "body": "A pathway (BAL → NBA) is more durable brand equity than any activation."
+      },
+      {
+        "title": "Watch where the value is retained.",
+        "body": "The unresolved question is how much the pipeline builds on the continent versus exports with the players."
+      }
+    ],
+    "pullQuotes": [
+      "The NBA didn’t market its way into Africa — it built a league, and the talent route now runs both ways."
+    ],
+    "sources": [
+      {
+        "publisher": "ESPN",
+        "label": "ESPN Africa secures exclusive NBA Finals rights in sub-Saharan Africa",
+        "href": "https://www.espn.com/espn/story/_/id/48879952/espn-africa-secures-exclusive-nba-finals-rights-more-sub-saharan-africa",
+        "use": "Reporting on NBA Africa media rights and player counts."
+      },
+      {
+        "publisher": "Front Office Sports",
+        "label": "Can Africa Become the Next Sports Hotspot?",
+        "href": "https://frontofficesports.com/can-africa-become-the-next-sports-hotspot/",
+        "use": "Context on the NBA’s Africa infrastructure and talent pipeline."
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "dakar-2026-youth-olympics-first-in-africa",
+    "title": "Dakar 2026: Africa Hosts the Olympics for the First Time — On Its Own Terms",
+    "standfirst": "When Senegal opens the Youth Olympic Games, it ends a 130-year wait for the continent. The strategic read is what Dakar chose to author into the event — including the first gender-equal Games.",
+    "brand": "Dakar 2026 Youth Olympic Games / IOC",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "SENEGAL / AFRICA / GLOBAL",
+    "readingTime": "5 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Facts (Dakar 2026 as the first Olympic event hosted in Africa, the 31 Oct–13 Nov 2026 dates, ~2,700 athletes, the first fully gender-equal Games at 153 events, and the “Africa Welcomes, Dakar Celebrates” motto) are reported by the IOC / Olympics.com. The strategic read is MonoKromatik interpretation.",
+    "publishedAt": "2026-06-19",
+    "tags": [
+      "Dakar 2026",
+      "Youth Olympic Games",
+      "Senegal",
+      "soft power",
+      "gender parity",
+      "sport"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 5,
+        "note": "The first Olympic event hosted on African soil — a historic first."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "Senegal-hosted; an African edition that authored its own firsts."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "~2,700 athletes, venues across Dakar/Diamniadio/Saly, late-2026 staging."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 5,
+        "note": "A continental soft-power milestone and an inspiration template."
+      }
+    ],
+    "context": [
+      "From 31 October to 13 November 2026, Senegal hosts the 4th Summer Youth Olympic Games — the first Olympic event ever staged in Africa. Around 2,700 athletes under 18 compete across venues in Dakar, Diamniadio and Saly. Reported by the IOC / Olympics.com, the edition is the first Summer YOG with full gender parity: 153 events split 73 women’s, 73 men’s and 7 mixed, under the motto “Africa Welcomes, Dakar Celebrates.”",
+      "After more than a century of the modern Olympics, the continent finally hosts — and chose to make its debut a record of firsts."
+    ],
+    "strategicBet": [
+      "The bet is soft power: a host nation converts a sporting event into a statement of capability, modernity and welcome — and a continental one, not merely a Senegalese one (the motto centres “Africa,” then “Dakar”).",
+      "By authoring the first gender-equal Games, Dakar didn’t just host the format; it advanced it — claiming a value position, not only a venue."
+    ],
+    "creativeMove": [
+      "The creative move is framing: positioning the debut as Africa’s, extended to the world (“Africa Welcomes”), rather than the world arriving in Africa. The host writes the narrative.",
+      "Gender parity is the substantive authorship — a structural decision that makes the event a model, not a milestone alone."
+    ],
+    "africanRead": [
+      "This is authorship at the level of an institution: an African host shaping what the Olympic format itself contains, and presenting the continent as convener rather than guest. The “Africa Welcomes” framing is the inverse of the visitor narrative global brands often default to.",
+      "For brands and partners, the read is that the credible way to be present is to back the host’s authored story — youth, parity, continental welcome — not to drape a logo over a borrowed milestone."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Dakar 2026 as the first Olympic event hosted in Africa, the dates, athlete numbers, the first gender-equal YOG (153 events), and the motto — reported by the IOC / Olympics.com."
+      ],
+      "reported": [
+        "Venue locations (Dakar, Diamniadio, Saly) and the continental framing are documented in IOC and ANOCA communications."
+      ],
+      "notClaimed": [
+        "Economic or legacy outcomes for Senegal or the continent, which require evidence over time."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "A host writes the narrative.",
+        "body": "Dakar framed the debut as “Africa Welcomes” — convener, not guest."
+      },
+      {
+        "title": "Advance the format, don’t just host it.",
+        "body": "Authoring the first gender-equal Games is a value position, not only a venue."
+      },
+      {
+        "title": "Back the authored story, not the milestone.",
+        "body": "For partners, credibility comes from supporting the host’s narrative, not draping a logo over it."
+      }
+    ],
+    "pullQuotes": [
+      "“Africa Welcomes, Dakar Celebrates” is the inverse of the visitor narrative — the host as convener, not guest."
+    ],
+    "sources": [
+      {
+        "publisher": "IOC / Olympics.com",
+        "label": "Dakar 2026 Summer Youth Olympic Games",
+        "href": "https://www.olympics.com/en/olympic-games/dakar-2026",
+        "use": "Official source for dates, athletes, events, gender parity and the motto."
+      },
+      {
+        "publisher": "ANOCA (Association of National Olympic Committees of Africa)",
+        "label": "Dakar 2026: historic countdown for Africa",
+        "href": "https://africaolympic.com/en/dakar-2026-historic-countdown-for-africa/",
+        "use": "African Olympic-movement context on the first Games hosted in Africa."
+      }
+    ],
+    "media": []
   }
 ]
