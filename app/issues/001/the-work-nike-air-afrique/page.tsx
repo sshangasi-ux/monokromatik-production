@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import IssueFeature, { FeatureSection, PullQuote } from '../../../components/IssueFeature';
 import { AttributedImage, AttributedImagePair, MediaStatus } from '../../../components/AttributedMedia';
 import { SignalStrength } from '../../../components/dataviz/Charts';
@@ -59,6 +61,12 @@ export default function TheWorkNikeAirAfriquePage() {
       next={{ label: 'Will It Land? Orange WoMen’s Football', href: '/issues/001/will-it-land-orange-womens-football' }}
     >
       <MediaStatus>Displayed campaign imagery is sourced from Nike’s official newsroom asset set and credited directly. Independent publishing is used for reporting context, not as visual inventory.</MediaStatus>
+
+      <p className="not-prose my-8 border-l-4 border-mono-amber bg-mono-soft-white px-5 py-4 text-sm font-display font-bold">
+        <Link href="/intelligence/case-studies/nike-air-afrique-air-max-rk61" className="inline-flex items-center gap-2 text-mono-amber-strong hover:text-mono-amber-hover">
+          Also in Intelligence — read this as a structured Case Study <ArrowRight size={15} />
+        </Link>
+      </p>
 
       <FeatureSection title="The Monokromatik decode">
         <p className="not-prose text-sm text-mono-gray font-body">Our editorial read across the four dimensions we use to assess creative work — idea, authorship, execution and consequence. Strength reflects judgement, not a measured score.</p>

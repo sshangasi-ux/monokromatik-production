@@ -63,6 +63,14 @@ export default function CaseStudyFeature({
             {c.readingTime && <span>{c.readingTime}</span>}
             <span>{c.collection.toUpperCase()}</span>
           </div>
+          {c.related && (
+            <Link
+              href={c.related.href}
+              className="mt-8 inline-flex items-center gap-2 text-xs tracking-[0.18em] font-display font-bold text-mono-amber hover:text-mono-white transition-colors"
+            >
+              {c.related.label.toUpperCase()} <ArrowRight size={14} />
+            </Link>
+          )}
         </div>
       </header>
 

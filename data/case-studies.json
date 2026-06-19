@@ -125,7 +125,11 @@
         "sourceLabel": "Official Nike Newsroom",
         "sourceHref": "https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images"
       }
-    ]
+    ],
+    "related": {
+      "label": "Read it in Issue 001 — The Work",
+      "href": "/issues/001/the-work-nike-air-afrique"
+    }
   },
   {
     "slug": "dr-congo-jmakxparis-world-cup-arrival",
