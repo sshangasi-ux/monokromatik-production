@@ -61,11 +61,11 @@
       ],
       "print": {
         "master": "/issue-covers/001/cover-print.jpg",
-        "pressReady": "/issue-covers/001/cover-a4-print.pdf",
+        "pressReady": "/issue-covers/001/cover-print-cmyk.tif",
         "dpi": 300,
         "trim": "210×297mm",
-        "bleed": "0mm — add 3mm at pre-press",
-        "colorSpace": "sRGB"
+        "bleed": "3mm",
+        "colorSpace": "CMYK"
       }
     }
   },

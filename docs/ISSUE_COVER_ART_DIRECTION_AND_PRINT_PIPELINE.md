@@ -170,12 +170,23 @@ each feature seeded as a visual cue for the second look.
     component lockup is the standing approach. Print masters likewise composite type in
     InDesign/Affinity, not in the generator.
   - *Print master built (this session).* Composited the correct lockup over the 300dpi art
-    via `sharp` + an SVG lockup, flattened to `cover-print.jpg` (2480×3507) and wrapped in a
-    hand-assembled A4 PDF `cover-a4-print.pdf` (full-bleed DCTDecode). `cover.print.*`
-    populated. **Pre-press still owes:** sRGB→CMYK conversion (FOGRA39/US Web Coated), +3mm
-    bleed (extend the bone ground), and substituting the brand display serif (Fraunces) for
-    the master's system-serif fallback. A left bone wash was baked behind the lower-left type
-    so the title reads cleanly over the dark coat.
+    via `sharp` + an SVG lockup, with a left bone wash behind the lower-left type so the title
+    reads cleanly over the dark coat.
+  - *Pre-press finished (this session).* Files in `public/issue-covers/001/`:
+    - `cover-print-cmyk.tif` — **the press file.** 2550×3577 (A4 + **3mm bleed**), 300dpi,
+      **CMYK** converted via macOS *Generic CMYK Profile* (the only coated profile on hand).
+      Verified by round-trip → sRGB: bone/ink intact, burnt orange survives (softened toward
+      terracotta near the CMYK gamut edge — soft-proof at the printer; consider a spot/Pantone
+      for the accent if exactness matters).
+    - `cover-a4-print.pdf` — RGB **proof** PDF, full bleed, with `/TrimBox` + `/BleedBox`
+      (3mm). For layout/preview, not the colour-managed press file.
+    - `cover-print.jpg` — RGB composited master (trim).
+  - **Remaining (must be done in a layout tool that has the brand font, not in-repo):**
+    (1) substitute **Fraunces** for the master's generic-serif fallback — `sharp`/librsvg here
+    would not load the OFL Fraunces (fontconfig override ignored), so the raster uses a generic
+    serif; the *web* cover already uses real Fraunces via `next/font`. (2) Re-separate to the
+    **printer's actual stock profile** (e.g. FOGRA39 / the house's coated/uncoated ICC) rather
+    than Generic CMYK. (3) Add crop/registration marks per the printer's spec.
 - **Resolved — bone (light) direction chosen.** `IssueCover.tsx` now supports a
   `cover.tone: 'light' | 'dark'` field. `'light'` renders the lockup **ink-on-bone**
   (`bg-mono-paper` ground, ink masthead/title, charcoal dek/coverlines, burnt-orange accent,
