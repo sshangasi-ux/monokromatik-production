@@ -42,14 +42,46 @@ export interface Issue {
    * designed type-only fallback. `accent` is the per-issue secondary colour.
    */
   cover?: {
+    /** Web-optimised cover art (webp/avif). The slot the site renders. */
     image?: string;
     imageCredit?: string;
     /** Per-issue accent (CSS colour). Defaults to brand amber when unset. */
     accent?: string;
+    /**
+     * Cover tone. 'light' renders the lockup ink-on-bone (for warm/bright cover
+     * art); 'dark' (default) renders white-on-ink for dark art or the fallback.
+     */
+    tone?: 'light' | 'dark';
+    /**
+     * When true, `image` is a fully-composed cover (masthead, title and
+     * coverlines already baked into the art). IssueCover then shows it whole —
+     * no overlaid type lockup — keeping only the action buttons and an
+     * accessible heading.
+     */
+    composed?: boolean;
     /** Cover blurbs, set like a magazine's coverlines. */
     coverlines?: string[];
     /** The cover dek / sell line under the title. */
     dek?: string;
+    /**
+     * Print-collectible master assets. Set only once print-resolution art
+     * exists; the site never serves these (they're for the run / downloads).
+     * See docs/ISSUE_COVER_ART_DIRECTION_AND_PRINT_PIPELINE.md for the spec.
+     */
+    print?: {
+      /** ≥300dpi flattened master at trim+bleed (e.g. a TIFF or layered source). */
+      master?: string;
+      /** Press-ready export for the run (CMYK PDF/X or TIFF). */
+      pressReady?: string;
+      /** Effective resolution at trim, in dpi. Target ≥ 300. */
+      dpi?: number;
+      /** Trim size, e.g. "210×297mm" (A4 portrait). */
+      trim?: string;
+      /** Bleed per edge, e.g. "3mm". */
+      bleed?: string;
+      /** Working colour space for the press file. */
+      colorSpace?: 'CMYK' | 'sRGB' | 'AdobeRGB';
+    };
   };
 }
 
