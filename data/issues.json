@@ -46,7 +46,28 @@
         "status": "COMMISSION OPEN",
         "icon": "Mic"
       }
-    ]
+    ],
+    "cover": {
+      "image": "/issue-covers/001/cover.webp",
+      "imageCredit": "Cover art: MonoKromatik original — AI-assisted (Canva). Typography by MonoKromatik.",
+      "accent": "#CC5500",
+      "tone": "light",
+      "dek": "A founding collection on authorship, relevance, creative commerce and the brands learning how Africa moves the world.",
+      "coverlines": [
+        "THE WORK · NIKE × AIR AFRIQUE",
+        "WILL IT LAND? · WOMEN’S FOOTBALL",
+        "BRAND WEATHER · FOUR SIGNALS",
+        "THE BOARDROOM / THE BACKROOM"
+      ],
+      "print": {
+        "master": "/issue-covers/001/cover-print.jpg",
+        "pressReady": "/issue-covers/001/cover-print-cmyk.tif",
+        "dpi": 300,
+        "trim": "210×297mm",
+        "bleed": "3mm",
+        "colorSpace": "CMYK"
+      }
+    }
   },
   {
     "number": "002",
@@ -54,7 +75,17 @@
     "focus": "Special Edition / Planned",
     "contents": "Sport · music · hospitality · creators · experience economy",
     "status": "in-development",
-    "features": []
+    "features": [],
+    "cover": {
+      "accent": "#1E6F5C",
+      "dek": "How fandom becomes footfall — sport, music and hospitality, and the commerce of belonging across the continent.",
+      "coverlines": [
+        "FROM FANDOM TO FOOTFALL · SPORT & RETAIL",
+        "THE EXPERIENCE ECONOMY · LIVE CULTURE",
+        "BELONGING AS A BUSINESS MODEL",
+        "WHO OWNS THE CROWD?"
+      ]
+    }
   },
   {
     "number": "003",
@@ -62,6 +93,16 @@
     "focus": "Market Edition / Planned",
     "contents": "Global work tested across African markets and diaspora hubs",
     "status": "in-development",
-    "features": []
+    "features": [],
+    "cover": {
+      "accent": "#2E7D9A",
+      "dek": "The relevance test — celebrated global work, read against African market reality. A scorecard, not a guess.",
+      "coverlines": [
+        "THE RELEVANCE TEST · GLOBAL × LOCAL",
+        "GREAT CAMPAIGN, WRONG MARKET?",
+        "THE SCORECARD · FIVE SIGNALS",
+        "WILL IT LAND — OR WILL IT LECTURE?"
+      ]
+    }
   }
 ]
