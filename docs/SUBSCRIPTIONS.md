@@ -32,10 +32,19 @@ Supabase auth (sign-in) → Paystack subscription plan → webhook → entitleme
   (site + Vercel domains), set `NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY` in Vercel,
   and (optional) configure Google OAuth + production SMTP. Google OAuth deferred —
   magic-link works now.
-- **Phase 3 — Billing + entitlement:** Paystack plans for both tiers; checkout
-  bound to the signed-in user; a webhook (`/api/paystack/webhook`, verifies the
-  signature with the server-only secret) writes an `entitlements` row; a server
-  helper `isMember(user)`.
+- **Phase 3 — Billing + entitlement (SHIPPED):** `entitlements` table created in
+  Supabase (keyed by email, RLS: owner-reads-own; writes only via service role).
+  `/api/paystack/webhook` verifies the HMAC-SHA512 signature with
+  `PAYSTACK_SECRET_KEY` and upserts the entitlement via the service-role client
+  (`lib/supabase/admin.ts`); one-off `charge.success` without a plan is ignored so
+  report-buyers aren't marked members. `lib/entitlements.ts` (`getEntitlement` /
+  `entitlementActive` / `isMember`). Membership page binds the signed-in user's
+  email to the Paystack plan URL (`?email=`) and shows a member banner; account
+  page shows live membership status. **Operator to go live:** create the two
+  Paystack subscription **plans**, set `NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_*_URL`
+  (plan pages) + `PAYSTACK_PLAN_INDIVIDUAL`/`PAYSTACK_PLAN_TEAM` (plan codes) +
+  `PAYSTACK_SECRET_KEY` + `SUPABASE_SERVICE_ROLE_KEY`, and register the webhook URL
+  (`/api/paystack/webhook`) in the Paystack dashboard.
 - **Phase 4 — Flip the gates:** wrap premium case studies/reports/Index report in
   `PaywallGate` keyed off `access` + `isMember`; set the genuinely-premium items
   to `access:'premium'`. Free discovery (scores, signals) stays free.
@@ -44,7 +53,8 @@ Supabase auth (sign-in) → Paystack subscription plan → webhook → entitleme
 - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (public)
 - `SUPABASE_SERVICE_ROLE_KEY` (server-only)
 - `NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL`, `…_TEAM_URL` (public plan links)
-- `PAYSTACK_SECRET_KEY` (server-only — webhook verification)
+- `PAYSTACK_PLAN_INDIVIDUAL`, `PAYSTACK_PLAN_TEAM` (plan codes → tier mapping)
+- `PAYSTACK_SECRET_KEY` (server-only — webhook signature verification)
 
 ## Guardrail
 Claude never enters payment credentials or copies secret keys into the repo; all

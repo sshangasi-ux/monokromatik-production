@@ -4,6 +4,8 @@ import { Check, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import { MEMBERSHIP, membershipCheckoutUrl } from '../../lib/commerce';
+import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
+import { getEntitlement, entitlementActive } from '../../lib/entitlements';
 
 export const metadata: Metadata = {
   title: 'Membership — The Intelligence | MonoKromatik',
@@ -11,7 +13,20 @@ export const metadata: Metadata = {
     'Join the Intelligence membership: the full Cultural-Signal Index, every premium case study and report, and the searchable archive — one membership, billed via Paystack.',
 };
 
-export default function MembershipPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function MembershipPage() {
+  let userEmail: string | null = null;
+  if (isSupabaseConfigured()) {
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    userEmail = user?.email ?? null;
+  }
+  const entitlement = await getEntitlement();
+  const member = entitlementActive(entitlement);
+
   return (
     <div className="min-h-screen bg-mono-paper">
       <Navigation />
@@ -26,6 +41,15 @@ export default function MembershipPage() {
           </p>
         </div>
       </section>
+
+      {member && (
+        <section className="bg-mono-amber/10 border-y border-mono-amber/30 py-6">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
+            <p className="font-display font-bold text-mono-black">✓ You&rsquo;re a member{entitlement?.tier ? ` — ${entitlement.tier} tier` : ''}. The full Intelligence layer is unlocked.</p>
+            <Link href="/account" className="text-mono-amber-strong hover:text-mono-amber-hover font-display font-bold">MANAGE →</Link>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,10 +81,20 @@ export default function MembershipPage() {
                     ))}
                   </ul>
                   <div className="mt-8">
-                    {url ? (
-                      <a href={url} className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
-                        SUBSCRIBE — {tier.priceMonthly}/mo
-                      </a>
+                    {member ? (
+                      <Link href="/account" className="block text-center border border-mono-black text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-soft-white transition-colors">
+                        YOUR MEMBERSHIP
+                      </Link>
+                    ) : url ? (
+                      userEmail ? (
+                        <a href={`${url}?email=${encodeURIComponent(userEmail)}`} className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
+                          SUBSCRIBE — {tier.priceMonthly}/mo
+                        </a>
+                      ) : (
+                        <Link href="/account?next=/membership" className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
+                          SIGN IN TO SUBSCRIBE
+                        </Link>
+                      )
                     ) : (
                       <div className="border border-mono-gray/30 bg-mono-soft-white p-5 text-center">
                         <p className="font-display font-bold text-mono-black text-sm">Memberships open soon.</p>
