@@ -4,6 +4,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
+import { getLearningSignals, describeSignals, type LearningSignals } from './learning-signals';
 
 // IMPORTANT: lazy-initialize the Anthropic client.
 //
@@ -28,7 +29,11 @@ function getClient(): Anthropic {
  * Curate stories using Claude API
  * Ranks stories by diaspora relevance and filters out poverty/negative narratives
  */
-export async function curateStories(stories: Story[], limit: number = 10): Promise<Story[]> {
+export async function curateStories(
+  stories: Story[],
+  limit: number = 10,
+  signals: LearningSignals = getLearningSignals(),
+): Promise<Story[]> {
   if (stories.length === 0) {
     console.log('❌ No stories to curate');
     return [];
@@ -52,6 +57,11 @@ export async function curateStories(stories: Story[], limit: number = 10): Promi
     hasImage: !!story.imageUrl,
     hasVideo: !!story.videoUrl,
   }));
+
+  // Learned priority hint (soft) — the deterministic re-weight below is the hard guarantee.
+  const priorPerf = signals.runs > 0
+    ? `\nPRIOR PERFORMANCE (learned from ${signals.runs} past runs — use ONLY as a tiebreaker between similarly relevant stories; never override the filtering rules above): ${describeSignals(signals)}\n`
+    : '';
 
   const prompt = `You are an AI curator for MonoKromatik Network, an African culture/sports/entertainment platform serving the African diaspora.
 
@@ -79,7 +89,7 @@ FILTERING RULES:
 - ❌ REJECT: War, famine, disease outbreaks, extreme poverty, corruption scandals
 - ❌ REJECT: Generic African news that Western media already covers
 - ✅ ACCEPT: Culture, sports, entertainment, innovation, diaspora connections
-
+${priorPerf}
 STORIES TO RANK:
 ${JSON.stringify(storyData, null, 2)}
 
@@ -123,14 +133,22 @@ Return the top ${poolSize} stories ranked by score (highest first).`;
     }
 
     const result = JSON.parse(jsonMatch[0]);
-    const curatedIndexes = result.curated.map((item: any) => item.index);
+    const curatedIndexes = result.curated.map((item: { index: number }) => item.index);
 
-    // Ranked pool (best first), then cap per-source concentration down to `limit`.
-    const rankedPool = curatedIndexes
+    // Ranked pool — the model's relevance order, best first.
+    const rankedPool: Story[] = curatedIndexes
       .map((index: number) => stories[index])
       .filter(Boolean);
-    const curatedStories = enforceSourceDiversity(rankedPool, limit, maxPerSource);
 
+    // Learning re-weight: tilt the relevance ranking by what actually performed
+    // (clamped ×0.6–1.5, so it only breaks near-ties — relevance still leads),
+    // then cap per-source concentration down to `limit`.
+    const tilted = applyLearningWeight(rankedPool, signals);
+    const curatedStories = enforceSourceDiversity(tilted, limit, maxPerSource);
+
+    if (signals.runs > 0) {
+      console.log(`🧠 Learning applied (${signals.runs} runs): ${describeSignals(signals) || 'neutral'}`);
+    }
     console.log(`✅ Curated ${curatedStories.length} stories (≤${maxPerSource}/source)\n`);
 
     // Log final selection (post-diversity)
@@ -144,6 +162,27 @@ Return the top ${poolSize} stories ranked by score (highest first).`;
     console.log('⚠️  Falling back to recent stories (still source-capped)...');
     return enforceSourceDiversity(stories, limit, maxPerSource);
   }
+}
+
+/**
+ * Re-order a relevance-ranked pool by learned priority. Each story keeps a base
+ * score from its rank (best first), multiplied by its source-trust × category
+ * multiplier from the learning ledger. Clamped multipliers mean this only breaks
+ * near-ties; strong relevance differences still win. Neutral signals (no learning
+ * history) return the input order unchanged — the loop is fail-open.
+ */
+export function applyLearningWeight(ranked: Story[], signals: LearningSignals): Story[] {
+  if (!signals || signals.runs === 0) return ranked;
+  const n = ranked.length;
+  return ranked
+    .map((story, i) => {
+      const base = n - i; // rank score, best first
+      const st = signals.sourceTrust[(story.source || '').trim().toLowerCase()] ?? 1;
+      const cw = signals.categoryWeights[(story.category || '').trim().toLowerCase()] ?? 1;
+      return { story, eff: base * st * cw, i };
+    })
+    .sort((a, b) => b.eff - a.eff || a.i - b.i) // stable: equal scores keep original order
+    .map((x) => x.story);
 }
 
 /**

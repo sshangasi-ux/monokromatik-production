@@ -90,6 +90,22 @@ The platform may never autonomously alter:
 - disclosure policy;
 - paid pricing or commercial claims.
 
+### Status — loop closed (first increment)
+
+`lib/learning-signals.ts` closes the discovery→performance loop: it folds the GA4
+performance report (`analyze-performance.ts`) into a persistent ledger
+(`output/learning-ledger.json`) via EWMA, and the Curator (`curate-stories.ts`)
+applies the resulting **source-trust × category** multipliers as a clamped
+(×0.6–1.5) re-rank over Claude's relevance order. `run-pipeline.ts` updates the
+ledger every run. This realises two of the permitted optimisations above —
+**source rankings** and **story-priority scoring** — and nothing else. Fail-open:
+with no history every multiplier is 1.0 and curation is unchanged.
+
+Still open: feeding the editor's accept/reject verdicts and source-reliability
+outcomes into the same ledger (currently GA4 pageviews + verdict kill-rate only),
+and the coverage **Planner** (region × franchise × format) that commissions to
+fill gaps.
+
 ## The Brand Read pipeline stage (Strategist + Brand Read Editor)
 
 The Brand Read is the dual-read strategic layer that turns a culture story
