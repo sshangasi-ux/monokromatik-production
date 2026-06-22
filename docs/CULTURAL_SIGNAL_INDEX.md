@@ -78,10 +78,12 @@ headline number plus the four-axis breakdown.
 
 ## Phased build
 
-- **Phase 1 — Compute + surface (fast, no new data):** `lib/signal-index.ts`;
-  score chip on case-study cards + detail; sort/filter the library by CSS/axis.
-- **Phase 2 — Index as product:** brand index pages + the ranked leaderboard /
-  Index report; the public methodology page.
+- **Phase 1 — Compute + surface (SHIPPED):** `lib/signal-index.ts`; `SignalScore`
+  chip on case-study cards + detail; "Top signal" sort on the library.
+- **Phase 2 — Index as product (SHIPPED):** `/intelligence/signal-index` ranked
+  leaderboard + on-page methodology; `/intelligence/signal-index/[brand]` brand
+  pages (aggregate score, dimension averages, works). Entry point from the
+  case-studies page.
 - **Phase 3 — Scale the scoring:** AI-drafts the decode from each case study's
   evidence (context / strategicBet / creativeMove / africanRead / evidence) with
   rationale → **human approval** (matches the autonomy matrix — case studies are

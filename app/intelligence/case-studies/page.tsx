@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck } from 'lucide-react';
+import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck, Trophy } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
@@ -148,7 +148,8 @@ export default function CaseStudiesPage() {
 
       <section className="py-16 text-center">
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/intelligence/source-desk" className="inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold"><Layers3 size={17} /> SOURCE DESK</Link>
+          <Link href="/intelligence/signal-index" className="inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold"><Trophy size={17} /> THE CULTURAL-SIGNAL INDEX</Link>
+          <Link href="/intelligence/source-desk" className="inline-flex gap-2 items-center border border-mono-black text-mono-black px-7 py-4 font-display font-bold"><Layers3 size={17} /> SOURCE DESK</Link>
           <Link href="/reports" className="inline-flex gap-2 items-center border border-mono-black text-mono-black px-7 py-4 font-display font-bold">REPORTS <ArrowRight size={18} /></Link>
         </div>
       </section>
