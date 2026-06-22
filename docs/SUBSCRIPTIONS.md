@@ -25,8 +25,13 @@ Supabase auth (sign-in) → Paystack subscription plan → webhook → entitleme
   over locked content) + `/membership` pricing page (two tiers, Paystack-plan URLs
   via env with a waitlist fallback) + `MEMBERSHIP`/`membershipCheckoutUrl` in
   commerce.ts + footer link. Decoupled from auth/billing — nothing gated yet.
-- **Phase 2 — Auth:** Supabase project + `@supabase/ssr`; sign-in/up (magic-link +
-  Google); session in middleware; a minimal account page.
+- **Phase 2 — Auth (SHIPPED):** Supabase project `monokromatik` (eu-west-1, free)
+  created via MCP; `@supabase/ssr` browser + server clients; fail-open session
+  `middleware.ts`; magic-link sign-in at `/account` + `/auth/callback` exchange;
+  account view + sign-out. Operator still: add redirect URLs in Supabase Auth
+  (site + Vercel domains), set `NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY` in Vercel,
+  and (optional) configure Google OAuth + production SMTP. Google OAuth deferred —
+  magic-link works now.
 - **Phase 3 — Billing + entitlement:** Paystack plans for both tiers; checkout
   bound to the signed-in user; a webhook (`/api/paystack/webhook`, verifies the
   signature with the server-only secret) writes an `entitlements` row; a server
