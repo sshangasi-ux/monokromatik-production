@@ -39,3 +39,37 @@ export function reportCheckoutUrl(): string | null {
   const url = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL;
   return url && /^https?:\/\//.test(url) ? url : null;
 }
+
+/** Inbox for commission / partnership enquiries (public; overridable via env). */
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'editor@monokromatik.com';
+
+export interface Service {
+  title: string;
+  blurb: string;
+  /** Pre-selects this option in the enquiry form. */
+  id: string;
+}
+
+/** The commissioned-intelligence service menu (revenue beyond the one-off report). */
+export const SERVICES: Service[] = [
+  {
+    id: 'scorecard',
+    title: "Your brand's Signal Scorecard",
+    blurb: 'Your work scored on the Cultural-Signal Index — the authorship read, the four-axis breakdown, and a roadmap to move the number.',
+  },
+  {
+    id: 'case-study',
+    title: 'Commission a case study',
+    blurb: "A full six-dimension decode of your campaign — or a rival's — evidence-led and credited at the source.",
+  },
+  {
+    id: 'market-read',
+    title: 'Bespoke market read',
+    blurb: 'A commissioned intelligence brief on a market, category or cultural moment across Africa and the diaspora.',
+  },
+  {
+    id: 'partner',
+    title: 'Partner & licensing',
+    blurb: 'Multi-seat access, white-label intelligence, or licensing the Cultural-Signal dataset for your team.',
+  },
+];

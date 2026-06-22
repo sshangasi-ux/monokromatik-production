@@ -96,6 +96,14 @@ export default async function BrandIndexPage({ params }: PageProps) {
           })}
         </div>
 
+        <div className="mt-14 bg-mono-black text-mono-white p-7 md:p-9">
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-3">IS THIS YOUR BRAND?</p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold leading-tight max-w-2xl">Get the full Signal Scorecard — the authorship read, and a roadmap to move the number.</h2>
+          <Link href="/work-with-us?interest=scorecard" className="mt-6 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber-hover transition-colors">
+            GET YOUR SCORECARD <ArrowRight size={18} />
+          </Link>
+        </div>
+
         <div className="mt-12">
           <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 text-mono-amber-strong hover:text-mono-amber-hover font-display font-bold">
             BACK TO THE INDEX <ArrowRight size={16} />

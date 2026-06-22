@@ -191,7 +191,8 @@ function renderPlainText(payload: DigestPayload): string {
  */
 export async function sendDigest(payload: DigestPayload): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.EIC_DIGEST_TO;
+  // All editorial comms land in the editor inbox by default; override per env.
+  const to = process.env.EIC_DIGEST_TO || 'editor@monokromatik.com';
   const from =
     process.env.EIC_DIGEST_FROM ??
     'MonoKromatik EIC <onboarding@resend.dev>';
