@@ -119,7 +119,7 @@ export default function SignalPage() {
             >
               <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
                 <div>
-                  <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{featured.category.toUpperCase()} · BRAND READ</p>
+                  <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-strong">{featured.category.toUpperCase()} · BRAND READ</p>
                   <h3 className="mt-5 text-3xl md:text-4xl font-display font-bold text-mono-black leading-tight">{featured.title}</h3>
                   <p className="mt-5 font-body text-mono-charcoal leading-relaxed">{featured.excerpt}</p>
                   <p className="mt-7 inline-flex gap-2 items-center text-mono-amber font-display font-bold">READ THE BRAND READ <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" /></p>
@@ -146,7 +146,7 @@ export default function SignalPage() {
                     className="group bg-mono-white p-7 flex flex-col justify-between min-h-[230px] hover:bg-mono-soft-white transition-colors"
                   >
                     <div>
-                      <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber">{article.category.toUpperCase()}</p>
+                      <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber-strong">{article.category.toUpperCase()}</p>
                       <h4 className="mt-4 text-xl font-display font-bold text-mono-black leading-snug">{article.title}</h4>
                     </div>
                     <p className="mt-5 inline-flex gap-2 items-center text-xs tracking-[0.16em] font-display font-bold text-mono-charcoal group-hover:text-mono-amber transition-colors">BRAND READ <ArrowRight size={14} /></p>
@@ -182,7 +182,7 @@ export default function SignalPage() {
               <article key={format.title} className="bg-mono-white p-8 md:p-10 min-h-[365px] flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start">
-                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber">{format.label}</p>
+                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-strong">{format.label}</p>
                     <p className="text-xs font-display font-bold text-mono-gray">0{index + 1}</p>
                   </div>
                   <h3 className="mt-10 text-3xl md:text-4xl font-display font-bold text-mono-black">{format.title}</h3>

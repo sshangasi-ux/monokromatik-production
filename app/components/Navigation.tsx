@@ -66,7 +66,7 @@ export default function Navigation() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-4 ml-4">
-              <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber/50 text-mono-amber text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber hover:text-mono-black transition-colors">
+              <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber-strong/50 text-mono-amber-strong text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber-strong hover:text-mono-black transition-colors">
                 SOURCE DESK
               </Link>
               <SearchBar />

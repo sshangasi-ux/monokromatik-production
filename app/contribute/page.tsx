@@ -110,6 +110,10 @@ export default function ContributePage() {
 
       <section className="py-20 bg-mono-black text-mono-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 p-4 border-2 border-mono-amber/50 bg-mono-charcoal">
+            <p className="text-mono-amber font-display text-xs font-bold tracking-[0.18em] uppercase mb-2">Coming Soon</p>
+            <p className="text-mono-white font-body">The submission form is not yet live. This page outlines what we&rsquo;re looking for—standards and submission guidelines coming late 2026.</p>
+          </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold">The form and submission workflow come next.</h2>
           <p className="mt-7 text-lg font-body text-mono-soft-white">For now, this gateway defines what Monokromatik is asking the industry to bring to the platform—and what standard the work must meet.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">

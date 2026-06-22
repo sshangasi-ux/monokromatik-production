@@ -30,7 +30,7 @@ function StoryCard({ article }: { article: Article }) {
         <MediaImage fill src={article.imageUrl} alt={article.title} />
         <div className="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-transparent" />
         <div className="absolute bottom-0 p-5">
-          <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber uppercase">{article.category}</p>
+          <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber-strong uppercase">{article.category}</p>
           <h3 className="mt-3 text-xl text-mono-white font-display font-bold leading-tight">{article.title}</h3>
           <p className="mt-3 text-xs text-mono-gray font-body">{getReadingTime(article.content)} min read</p>
         </div>

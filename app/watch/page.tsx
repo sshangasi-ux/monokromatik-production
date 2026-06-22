@@ -35,6 +35,13 @@ export default function WatchPage() {
     <div className="min-h-screen bg-mono-white">
       <Navigation />
 
+      <section className="bg-mono-amber text-mono-black py-3 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <span className="font-display text-xs font-bold tracking-[0.18em] uppercase">Coming Soon</span>
+          <p className="font-body text-sm">Video storytelling launching in V2</p>
+        </div>
+      </section>
+
       <section className="py-16 bg-mono-black text-mono-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
