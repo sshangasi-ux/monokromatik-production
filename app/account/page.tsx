@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import SignIn from './SignIn';
 import SignOutButton from './SignOutButton';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
+import { getEntitlement, entitlementActive } from '../../lib/entitlements';
 
 export const metadata: Metadata = {
   title: 'Account — MonoKromatik',
@@ -21,6 +22,8 @@ export default async function AccountPage() {
     const { data } = await supabase.auth.getUser();
     email = data.user?.email ?? null;
   }
+  const entitlement = email ? await getEntitlement() : null;
+  const member = entitlementActive(entitlement);
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -49,11 +52,23 @@ export default async function AccountPage() {
                   <p className="font-display font-bold text-mono-black">{email}</p>
                 </div>
               </div>
-              <div className="border-t border-mono-gray/20 pt-6 flex flex-wrap items-center gap-4">
-                <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">MANAGE MEMBERSHIP <ArrowRight size={16} /></Link>
-                <SignOutButton />
+              <div className="border-t border-mono-gray/20 pt-6">
+                <p className="text-[11px] tracking-[0.18em] font-display font-bold text-mono-gray mb-2">MEMBERSHIP</p>
+                {member ? (
+                  <p className="font-display font-bold text-mono-black">
+                    Active{entitlement?.tier ? ` — ${entitlement.tier} tier` : ''}
+                    {entitlement?.current_period_end ? `, renews ${new Date(entitlement.current_period_end).toLocaleDateString()}` : ''}.
+                  </p>
+                ) : (
+                  <p className="font-body text-mono-charcoal text-sm">No active membership yet.</p>
+                )}
+                <div className="mt-5 flex flex-wrap items-center gap-4">
+                  <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">
+                    {member ? 'MANAGE MEMBERSHIP' : 'BECOME A MEMBER'} <ArrowRight size={16} />
+                  </Link>
+                  <SignOutButton />
+                </div>
               </div>
-              <p className="mt-5 text-[12px] font-body text-mono-gray">Membership status and billing land here once subscriptions go live.</p>
             </div>
           ) : (
             <div className="border border-mono-gray/25 bg-mono-white p-7">
