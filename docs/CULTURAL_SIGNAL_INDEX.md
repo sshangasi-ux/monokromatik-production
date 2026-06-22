@@ -89,13 +89,12 @@ headline number plus the four-axis breakdown.
 - **Phase 4 — Monetise:** gate the aggregate Index report behind premium/partner;
   per-brand share cards as the inbound hook.
 
-## Open decisions (to finalise before Phase 1 build)
+## Decisions — LOCKED (2026-06-22)
 
-- **A — Headline scale:** /100 composite (recommended, recognisable) vs keep the
-  native 1–5 (e.g. "4.3").
-- **B — Composite weighting:** authorship-weighted (recommended — encodes the
-  thesis) vs equal weight across the four axes.
-- **C — Scored unit / rollup:** work → brand → index (recommended, gives all three)
-  vs work-only, vs brand-only.
-- **D — Derivation (affects Phase 3, not Phase 1):** hybrid AI-draft → human-approve
-  (recommended, matches governance) vs human-only vs AI-only.
+- **A — Headline scale:** **/100 composite**, with the 1–5 axis breakdown beneath.
+- **B — Composite weighting:** **authorship-weighted** — `IDEA 0.25 · AUTHORSHIP
+  0.35 · EXECUTION 0.15 · CONSEQUENCE 0.25`. Composite = Σ(level/5 × weight) × 100.
+- **C — Scored unit / rollup:** **work → brand → index** (per-case-study score,
+  brand-level mean, overall ranked leaderboard).
+- **D — Derivation:** **hybrid** — AI drafts axis levels from evidence, editor
+  approves (Phase 3; matches the human-gate on case studies).

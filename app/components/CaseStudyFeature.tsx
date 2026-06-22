@@ -5,7 +5,9 @@ import { FeatureSection, PullQuote } from './IssueFeature';
 import { AttributedImage, AttributedImagePair, type AttributedImageAsset } from './AttributedMedia';
 import { SignalStrength } from './dataviz/Charts';
 import ReadingProgress from './ReadingProgress';
+import SignalScore from './SignalScore';
 import { isLocked, type CaseStudy } from '../../lib/case-studies';
+import { compositeScore } from '../../lib/signal-index';
 
 // The evidence-standard label shown in the header, keyed off the analysis
 // confidence. A verified, source-anchored decode reads differently from an
@@ -39,6 +41,7 @@ export default function CaseStudyFeature({
   const c = caseStudy;
   const media = c.media.map(toAsset);
   const locked = isLocked(c);
+  const signalScore = compositeScore(c.decode);
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -80,10 +83,15 @@ export default function CaseStudyFeature({
         <article className="min-w-0">
           {/* The decode matrix — the four-axis editorial read. */}
           <FeatureSection title="The Monokromatik decode">
-            <p className="not-prose text-sm text-mono-gray font-body">
-              Our editorial read across the four dimensions we use to assess creative work — strength reflects
-              judgement, not a measured score.
-            </p>
+            {signalScore !== null && (
+              <div className="not-prose mb-6 flex items-end justify-between gap-5 border-b border-mono-gray/25 pb-5">
+                <p className="text-sm text-mono-gray font-body max-w-md">
+                  Our editorial read across the four dimensions we use to assess creative work — an
+                  authorship-weighted Cultural-Signal Score, reflecting judgement, not a measured metric.
+                </p>
+                <SignalScore score={signalScore} size="lg" />
+              </div>
+            )}
             <div className="not-prose mt-6 grid sm:grid-cols-2 gap-px border border-mono-gray/25 bg-mono-gray/25">
               {c.decode.map((d) => (
                 <div key={d.label} className="bg-mono-white p-5">
