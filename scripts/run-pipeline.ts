@@ -23,6 +23,7 @@ import { optimizeSEO } from '../lib/optimize-seo';
 import { publishArticles } from '../lib/publish-article';
 import { distributeArticles } from '../lib/distribute-social';
 import { generatePerformanceReport } from '../lib/analyze-performance';
+import { getLearningSignals, updateLearningLedger, describeSignals } from '../lib/learning-signals';
 
 // ─── Env loader ───────────────────────────────────────────────────────────
 const envPath = join(process.cwd(), '.env.local');
@@ -91,7 +92,9 @@ async function main() {
 
   // ─── 3. Curate ─────────────────────────────────────────────────────
   log.step(3, TOTAL_STEPS, 'CURATOR — Claude scores diaspora relevance');
-  const curated = await curateStories(filtered, LIMIT);
+  const signals = getLearningSignals();
+  if (signals.runs > 0) console.log(`   🧠 Learning from ${signals.runs} prior runs: ${describeSignals(signals) || 'neutral'}`);
+  const curated = await curateStories(filtered, LIMIT, signals);
   if (curated.length === 0) {
     log.err('Curator returned 0 stories. Aborting.');
     process.exit(1);
@@ -158,9 +161,11 @@ async function main() {
     log.warn('No new articles to distribute (all were duplicates).');
   }
 
-  // ─── Bonus: refresh perf report (no-op until GA4 wired) ────────────
+  // ─── Bonus: refresh perf report + fold it into the learning ledger ──
   console.log('\n   🔁 Refreshing performance report...');
-  await generatePerformanceReport(7);
+  const perfReport = await generatePerformanceReport(7);
+  const updated = updateLearningLedger(perfReport);
+  console.log(`   🧠 Learning ledger updated → run #${updated.runs} (${Object.keys(updated.sourceTrust).length} sources, ${Object.keys(updated.categoryWeights).length} categories)`);
 
   // ─── Summary ───────────────────────────────────────────────────────
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
