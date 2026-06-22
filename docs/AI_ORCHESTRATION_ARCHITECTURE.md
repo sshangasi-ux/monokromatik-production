@@ -101,10 +101,22 @@ ledger every run. This realises two of the permitted optimisations above —
 **source rankings** and **story-priority scoring** — and nothing else. Fail-open:
 with no history every multiplier is 1.0 and curation is unchanged.
 
-Still open: feeding the editor's accept/reject verdicts and source-reliability
-outcomes into the same ledger (currently GA4 pageviews + verdict kill-rate only),
-and the coverage **Planner** (region × franchise × format) that commissions to
-fill gaps.
+Still open for the learning loop: feeding the editor's accept/reject verdicts and
+source-reliability outcomes into the same ledger (currently GA4 pageviews +
+verdict kill-rate only).
+
+### Coverage Planner — steering live (commissioning next)
+
+`lib/coverage-planner.ts` models a **Region × Franchise** matrix, measures what's
+been published lately (`getAllArticles` over a 21-day window), and emits (a) per-cell
+priority multipliers (clamped ×0.7–1.6) the Curator applies so incoming stories
+that fill THIN cells rise, and (b) a ranked **gap brief** that distinguishes cells
+we can fill from existing feeds vs cells with NO source yet (currently North/Central
+Africa + Diaspora — the commission/sourcing queue). `run-pipeline.ts` builds the
+plan each run, logs the gaps, and writes `output/coverage-plan.json`. Pure +
+fail-open. Still open: turning the gap briefs into *targeted discovery* (commission
+Scout/Writer per gap) rather than only re-weighting the reactive pool, and adding
+the editorial franchises (The Work, Will It Land?, Brand Weather) as a third axis.
 
 ## The Brand Read pipeline stage (Strategist + Brand Read Editor)
 
