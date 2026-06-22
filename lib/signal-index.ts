@@ -95,3 +95,18 @@ export function brandIndex(caseStudies: Pick<CaseStudy, 'brand' | 'decode'>[]): 
 export function rankIndex(caseStudies: Pick<CaseStudy, 'brand' | 'decode'>[]): BrandIndexEntry[] {
   return brandIndex(caseStudies).map((e, i) => ({ ...e, rank: i + 1 }));
 }
+
+/** URL-safe slug for a brand name (handles ×, /, & and punctuation). */
+export function brandSlug(brand: string): string {
+  return (
+    (brand || '')
+      .toLowerCase()
+      .replace(/[×&/]/g, ' ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 80) || 'unknown'
+  );
+}
+
+/** The authorship axis weight, exposed for the methodology surface. */
+export const AXIS_LABELS = ['IDEA', 'AUTHORSHIP', 'EXECUTION', 'CONSEQUENCE'] as const;

@@ -1,0 +1,107 @@
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Navigation from '../../../components/Navigation';
+import { SignalStrength } from '../../../components/dataviz/Charts';
+import { getPublicCaseStudies } from '../../../../lib/case-studies';
+import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
+
+interface PageProps {
+  params: Promise<{ brand: string }>;
+}
+
+export const revalidate = 300;
+
+export async function generateStaticParams() {
+  const seen = new Set<string>();
+  for (const c of getPublicCaseStudies()) seen.add(brandSlug(c.brand));
+  return [...seen].map((brand) => ({ brand }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { brand } = await params;
+  const entry = rankIndex(getPublicCaseStudies()).find((e) => brandSlug(e.brand) === brand);
+  if (!entry) return { title: 'Brand not found | MonoKromatik' };
+  return {
+    title: `${entry.brand} — Cultural-Signal Index | MonoKromatik`,
+    description: `${entry.brand} scores ${entry.score}/100 on the MonoKromatik Cultural-Signal Index (rank #${entry.rank}).`,
+  };
+}
+
+export default async function BrandIndexPage({ params }: PageProps) {
+  const { brand } = await params;
+  const studies = getPublicCaseStudies();
+  const ranked = rankIndex(studies);
+  const entry = ranked.find((e) => brandSlug(e.brand) === brand);
+  if (!entry) notFound();
+
+  const works = studies.filter((c) => brandSlug(c.brand) === brand);
+  const clampLevel = (n: number) => Math.min(5, Math.max(1, Math.round(n))) as 1 | 2 | 3 | 4 | 5;
+
+  return (
+    <div className="min-h-screen bg-mono-paper">
+      <Navigation />
+
+      <header className="bg-mono-black text-mono-white py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber-bright transition-colors mb-12">
+            <ArrowLeft size={14} /> THE INDEX
+          </Link>
+          <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber-bright mb-6">RANK #{entry.rank} OF {ranked.length}</p>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <h1 className="max-w-3xl text-4xl md:text-6xl font-display font-bold leading-[0.98]">{entry.brand}</h1>
+            <span className="text-right">
+              <span className="block text-6xl md:text-7xl font-display font-bold leading-none tabular-nums">{entry.score}<span className="text-2xl text-mono-gray"> /100</span></span>
+              <span className="block text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mt-2">CULTURAL-SIGNAL SCORE</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <h2 className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-6">
+          DIMENSION AVERAGES{works.length > 1 ? ` (${works.length} WORKS)` : ''}
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-px border border-mono-gray/25 bg-mono-gray/25">
+          {AXIS_LABELS.map((label) => (
+            <div key={label} className="bg-mono-white p-5 flex items-center justify-between gap-4">
+              <span className="text-[11px] tracking-[0.22em] font-display font-bold text-mono-amber-strong">{label}</span>
+              <div className="flex items-center gap-3">
+                <SignalStrength level={clampLevel(entry.axisAverages[label] ?? 0)} tone="light" />
+                <span className="font-display font-bold text-mono-black tabular-nums w-8 text-right">{entry.axisAverages[label] ?? '—'}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-6">THE WORK</h2>
+        <div className="space-y-4">
+          {works.map((c) => {
+            const sig = workSignal(c);
+            return (
+              <Link key={c.slug} href={`/intelligence/case-studies/${c.slug}`} className="group flex items-center justify-between gap-5 bg-mono-white border border-mono-gray/25 p-6 hover:border-mono-amber transition-colors">
+                <div className="min-w-0">
+                  <p className="font-display font-bold text-mono-black text-xl truncate group-hover:text-mono-amber transition-colors">{c.title}</p>
+                  <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">{c.market} · {c.verification.toUpperCase()}</p>
+                </div>
+                {sig && (
+                  <span className="shrink-0 text-right">
+                    <span className="block text-2xl font-display font-bold text-mono-black leading-none tabular-nums">{sig.score}</span>
+                    <span className="block text-[9px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">SIGNAL</span>
+                  </span>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="mt-12">
+          <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 text-mono-amber-strong hover:text-mono-amber-hover font-display font-bold">
+            BACK TO THE INDEX <ArrowRight size={16} />
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}
