@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Inter, Merriweather, Fraunces } from 'next/font/google';
+import { Space_Grotesk, Inter, Fraunces } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
@@ -7,7 +7,7 @@ import './globals.css';
 // the Turbopack/Tailwind-v4 issue where `@import "tailwindcss"` is inlined above
 // the Google Fonts @import (illegal @import ordering → dev 500), and removes the
 // runtime request to fonts.googleapis.com. The CSS variables below feed the
-// --font-display / --font-body / --font-quote theme tokens in globals.css.
+// --font-display / --font-body / --font-feature theme tokens in globals.css.
 const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display-src',
@@ -16,13 +16,6 @@ const fontDisplay = Space_Grotesk({
 const fontBody = Inter({
   subsets: ['latin'],
   variable: '--font-body-src',
-  display: 'swap',
-});
-const fontQuote = Merriweather({
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-quote-src',
   display: 'swap',
 });
 // Fraunces — a high-contrast display serif (variable optical size) for feature
@@ -71,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${fontDisplay.variable} ${fontBody.variable} ${fontQuote.variable} ${fontFeature.variable}`}
+      className={`h-full antialiased ${fontDisplay.variable} ${fontBody.variable} ${fontFeature.variable}`}
     >
       <body className="min-h-full flex flex-col">
         {children}

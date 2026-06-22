@@ -115,7 +115,6 @@
    * names remain as fallbacks so styling is identical if a var is unset. */
   --font-display: var(--font-display-src), 'Space Grotesk', sans-serif;
   --font-body: var(--font-body-src), 'Inter', sans-serif;
-  --font-quote: var(--font-quote-src), 'Merriweather', serif;
   --font-feature: var(--font-feature-src), 'Fraunces', Georgia, serif;
 
   /* Fluid display sizes (Exaggerated Minimalism) */
