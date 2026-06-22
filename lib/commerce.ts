@@ -41,7 +41,7 @@ export function reportCheckoutUrl(): string | null {
 }
 
 /** Inbox for commission / partnership enquiries (public; overridable via env). */
-export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@monokromatik.com';
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'editor@monokromatik.com';
 
 export interface Service {
   title: string;
