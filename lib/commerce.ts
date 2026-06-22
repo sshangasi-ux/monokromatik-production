@@ -68,6 +68,11 @@ export const SERVICES: Service[] = [
     blurb: 'A commissioned intelligence brief on a market, category or cultural moment across Africa and the diaspora.',
   },
   {
+    id: 'sponsor',
+    title: 'Sponsor a franchise or the weekly',
+    blurb: 'Native, clearly-disclosed sponsorship of a signature franchise or the Weekly Signal — an engaged African brand-and-culture audience.',
+  },
+  {
     id: 'partner',
     title: 'Partner & licensing',
     blurb: 'Multi-seat access, white-label intelligence, or licensing the Cultural-Signal dataset for your team.',
