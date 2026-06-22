@@ -89,7 +89,7 @@ export default function ArticleClient({ article }: { article: Article }) {
           {article.title}
         </h1>
 
-        <p className="text-xl text-mono-gray font-body mb-8 leading-relaxed">
+        <p className="text-xl text-mono-charcoal font-body mb-8 leading-relaxed">
           {article.excerpt}
         </p>
 
@@ -106,7 +106,7 @@ export default function ArticleClient({ article }: { article: Article }) {
               />
             </div>
             {article.imageCredit && (
-              <figcaption className="mt-2 text-[11px] tracking-[0.08em] font-body text-mono-gray">
+              <figcaption className="mt-2 text-xs tracking-[0.08em] font-body text-mono-gray">
                 {article.imageSourceUrl ? (
                   <a href={article.imageSourceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-mono-amber-strong hover:underline">
                     {article.imageCredit}
@@ -145,7 +145,7 @@ export default function ArticleClient({ article }: { article: Article }) {
               )}
             </div>
             {article.videoCredit && (
-              <figcaption className="mt-2 text-[11px] tracking-[0.08em] font-body text-mono-gray">
+              <figcaption className="mt-2 text-xs tracking-[0.08em] font-body text-mono-gray">
                 {article.videoSourceUrl ? (
                   <a href={article.videoSourceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-mono-amber-strong hover:underline">
                     {article.videoCredit}

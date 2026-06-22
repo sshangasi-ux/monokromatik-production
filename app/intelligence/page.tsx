@@ -142,7 +142,7 @@ export default function IntelligencePage() {
           <div className="space-y-4">
             {sourceGroups.map((group) => (
               <div key={group.title} className="bg-mono-white border-l-4 border-mono-amber p-6">
-                <p className="text-[10px] tracking-[0.26em] text-mono-amber font-display font-bold">{group.title}</p>
+                <p className="text-[10px] tracking-[0.26em] text-mono-amber-strong font-display font-bold">{group.title}</p>
                 <p className="mt-4 text-mono-charcoal font-body leading-relaxed">{group.names}</p>
               </div>
             ))}

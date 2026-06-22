@@ -106,7 +106,7 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
           </div>
 
           <div className="border-t lg:border-t-0 lg:border-l border-mono-white/20 pt-6 lg:pt-0 lg:pl-8">
-            <p className="text-[11px] tracking-[0.28em] font-display font-bold text-mono-gray mb-5">IN THIS ISSUE</p>
+            <p className="text-[11px] tracking-[0.28em] font-display font-bold text-mono-soft-white mb-5">IN THIS ISSUE</p>
             {usableSlides.map((slide, index) => (
               <button
                 type="button"
@@ -115,7 +115,7 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
                 className={`block w-full text-left py-4 border-t border-mono-white/15 transition-colors ${index === activeIndex ? 'text-mono-white' : 'text-mono-gray hover:text-mono-white'}`}
               >
                 <span className={`block text-[10px] tracking-[0.26em] font-display font-bold mb-2 ${index === activeIndex ? 'text-mono-amber' : ''}`}>{slide.kicker}</span>
-                <span className="block font-display text-base font-bold leading-tight">{slide.title}</span>
+                <span className="block font-display text-base font-bold leading-tight text-mono-soft-white">{slide.title}</span>
               </button>
             ))}
             {active.videoUrl && (
