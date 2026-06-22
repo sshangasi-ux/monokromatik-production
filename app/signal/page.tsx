@@ -3,6 +3,7 @@ import { ArrowRight, Quote, Users } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
 import { getAllArticles, type Article, type BrandRead } from '../../lib/articles';
+import SponsorSlot from '../components/SponsorSlot';
 
 const franchises = [
   {
@@ -164,6 +165,7 @@ export default function SignalPage() {
             <div>
               <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-4">SIGNATURE FRANCHISES</p>
               <h2 className="text-4xl md:text-5xl font-display font-bold">Formats built to be quoted, shared and contributed to.</h2>
+              <div className="mt-4"><SponsorSlot placement="signal" offer /></div>
             </div>
             <Link href="/conversations" className="inline-flex gap-2 items-center text-mono-amber font-display font-bold shrink-0">BECOME A VOICE <ArrowRight size={18} /></Link>
           </div>

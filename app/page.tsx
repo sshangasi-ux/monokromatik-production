@@ -337,6 +337,7 @@ export default function Home() {
             <Link className="hover:text-mono-amber" href="/intelligence/case-studies">Case Studies</Link>
             <Link className="hover:text-mono-amber" href="/reports">Reports</Link>
             <Link className="hover:text-mono-amber" href="/issues">Issues</Link>
+            <Link className="hover:text-mono-amber" href="/weekly">The Weekly Signal</Link>
             <Link className="hover:text-mono-amber" href="/intelligence/signal-index">The Index</Link>
             <Link className="hover:text-mono-amber" href="/work-with-us">Work With Us</Link>
             <Link className="hover:text-mono-amber" href="/contribute">Contribute</Link>
