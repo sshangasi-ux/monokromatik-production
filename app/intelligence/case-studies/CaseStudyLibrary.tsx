@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Search, X } from 'lucide-react';
 import type { CaseStudy } from '../../../lib/case-studies';
+import { workSignal } from '../../../lib/signal-index';
+import SignalScore from '../../components/SignalScore';
 
 const ALL = 'All';
 
@@ -15,6 +17,7 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
   const [collection, setCollection] = useState<string>(ALL);
   const [verification, setVerification] = useState<string>(ALL);
   const [query, setQuery] = useState('');
+  const [sort, setSort] = useState<'recent' | 'score'>('recent');
 
   const collections = useMemo(
     () => [ALL, ...Array.from(new Set(studies.map((s) => s.collection)))],
@@ -37,6 +40,11 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
       return haystack.includes(q);
     });
   }, [studies, collection, verification, query]);
+
+  const visible = useMemo(() => {
+    if (sort !== 'score') return filtered;
+    return [...filtered].sort((a, b) => (workSignal(b)?.score ?? -1) - (workSignal(a)?.score ?? -1));
+  }, [filtered, sort]);
 
   const hasActiveFilter = collection !== ALL || verification !== ALL || query.trim() !== '';
 
@@ -65,13 +73,19 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
         <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <FilterRow label="Collection" options={collections} active={collection} onSelect={setCollection} />
           <FilterRow label="Confidence" options={verifications} active={verification} onSelect={setVerification} />
+          <FilterRow
+            label="Sort"
+            options={['Recent', 'Top signal']}
+            active={sort === 'score' ? 'Top signal' : 'Recent'}
+            onSelect={(v) => setSort(v === 'Top signal' ? 'score' : 'recent')}
+          />
         </div>
       </div>
 
       {/* Result count + clear */}
       <div className="flex items-center justify-between mb-6 text-[11px] tracking-[0.16em] font-display font-bold text-mono-gray">
         <span>
-          {filtered.length} {filtered.length === 1 ? 'CASE' : 'CASES'}
+          {visible.length} {visible.length === 1 ? 'CASE' : 'CASES'}
           {hasActiveFilter ? ` OF ${studies.length}` : ''}
         </span>
         {hasActiveFilter && (
@@ -82,9 +96,11 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
       </div>
 
       {/* Grid */}
-      {filtered.length > 0 ? (
+      {visible.length > 0 ? (
         <div className="grid md:grid-cols-2 gap-5">
-          {filtered.map((study) => (
+          {visible.map((study) => {
+            const sig = workSignal(study);
+            return (
             <Link
               key={study.slug}
               href={`/intelligence/case-studies/${study.slug}`}
@@ -97,6 +113,7 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
                 <span className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">
                   {study.verification.toUpperCase()}
                 </span>
+                {sig && <SignalScore score={sig.score} className="ml-auto" />}
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">
                 {study.title}
@@ -109,7 +126,8 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
                 </span>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="border border-dashed border-mono-gray/40 p-12 text-center">
