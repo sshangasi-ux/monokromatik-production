@@ -125,6 +125,15 @@ export default function SignalIndexPage() {
         </div>
       </section>
 
+      <section className="bg-mono-paper py-16 md:py-20 border-t border-mono-gray/20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">THE FULL REPORT</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">The scores are free. The Index is the product.</h2>
+          <p className="mt-5 font-body text-mono-charcoal text-lg">Take the complete ranking, every per-axis breakdown, the methodology and the evidence behind each score.</p>
+          <Link href="/pricing" className="mt-8 inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">GET THE FULL INDEX REPORT <ArrowRight size={18} /></Link>
+        </div>
+      </section>
+
       <section className="py-16 text-center">
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/intelligence/case-studies" className="inline-flex gap-2 items-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold"><Layers3 size={17} /> THE CASE STUDIES</Link>
