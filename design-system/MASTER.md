@@ -69,10 +69,11 @@ These flip automatically in dark mode (see §7). Using them = free dark-mode sup
 
 ## 4. Typography
 
-Pairing (existing, keep — more distinctive than generic editorial fonts):
-- **Display / headings:** `font-display` → **Space Grotesk** (600–700). Tight tracking (`-0.02em` to `-0.05em`) at large sizes.
+Pairing — a serif *editorial voice* against a sans *system voice*:
+- **Editorial titles & standfirsts (the reading voice):** `font-feature` → **Fraunces** (high-contrast display serif; italic for standfirsts/deks/quotes). Use for article, feature, case-study, report and issue titles, and the homepage hero proposition. This is what the print cover uses — it carries the authority.
+- **System / UI headings:** `font-display` → **Space Grotesk** (600–700, tight tracking `-0.02em` to `-0.05em`). Nav, kickers, labels, buttons, and section/marketing headings.
 - **Body / UI:** `font-body` → **Inter** (400/500). Line-height 1.5–1.75, measure 65–75ch.
-- **Pull-quotes / editorial flourish:** `font-quote` → **Merriweather** (serif, italic for quotes).
+- *(Retired: Merriweather / `font-quote` — Fraunces italic now carries quotes, and it was never actually rendered. One fewer font download.)*
 
 ### Type scale (fluid — Exaggerated Minimalism)
 | Token / class | Size | Use |

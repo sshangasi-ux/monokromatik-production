@@ -89,7 +89,7 @@ export default function LivingCover({ slides }: { slides: CoverSlide[] }) {
         <div className="grid lg:grid-cols-[1fr_330px] gap-12 items-end py-14">
           <div className="max-w-4xl">
             <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-7">{active.kicker}</p>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-display font-bold leading-[0.93] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-feature font-bold leading-[0.95] tracking-tight">
               {active.title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg md:text-xl font-body text-mono-soft-white leading-relaxed">

@@ -85,11 +85,11 @@ export default function ArticleClient({ article }: { article: Article }) {
           <span className="text-mono-gray">{formatDate(article.publishedAt)}</span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-mono-black mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-feature font-bold text-mono-black mb-6 leading-[1.05]">
           {article.title}
         </h1>
 
-        <p className="text-xl text-mono-charcoal font-body mb-8 leading-relaxed">
+        <p className="text-xl md:text-2xl text-mono-charcoal font-feature italic mb-8 leading-snug">
           {article.excerpt}
         </p>
 
