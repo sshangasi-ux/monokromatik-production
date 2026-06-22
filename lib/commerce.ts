@@ -78,3 +78,57 @@ export const SERVICES: Service[] = [
     blurb: 'Multi-seat access, white-label intelligence, or licensing the Cultural-Signal dataset for your team.',
   },
 ];
+
+// ── The Intelligence membership (recurring) — see docs/SUBSCRIPTIONS.md ──────
+export interface MembershipTier {
+  id: string;
+  name: string;
+  priceMonthly: string;
+  priceAnnual?: string;
+  tagline: string;
+  includes: string[];
+  featured?: boolean;
+}
+
+export const MEMBERSHIP: MembershipTier[] = [
+  {
+    id: 'individual',
+    name: 'Individual',
+    priceMonthly: 'R149',
+    priceAnnual: 'R1,490',
+    tagline: 'For strategists, marketers and creators.',
+    featured: true,
+    includes: [
+      'The full Cultural-Signal Index report + quarterly refreshes',
+      'Every premium case study',
+      'All intelligence reports',
+      'The full searchable archive',
+    ],
+  },
+  {
+    id: 'team',
+    name: 'Team / Agency',
+    priceMonthly: 'R690',
+    tagline: 'For agencies and brand teams.',
+    includes: [
+      'Everything in Individual',
+      'Up to 5 seats',
+      'Licensing for client work',
+      'Priority on commissioned briefs',
+    ],
+  },
+];
+
+/**
+ * The Paystack subscription-plan checkout URL for a tier, or null until billing
+ * is live. Set NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_<TIER>_URL when the plan exists.
+ * (Phase 3 will replace this with auth-bound Paystack subscriptions + a webhook.)
+ */
+export function membershipCheckoutUrl(tierId: string): string | null {
+  const map: Record<string, string | undefined> = {
+    individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL,
+    team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL,
+  };
+  const url = map[tierId];
+  return url && /^https?:\/\//.test(url) ? url : null;
+}
