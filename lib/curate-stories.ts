@@ -5,6 +5,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
 import { getLearningSignals, describeSignals, type LearningSignals } from './learning-signals';
+import { coverageMultiplier, describeCoveragePlan, type CoveragePlan } from './coverage-planner';
 
 // IMPORTANT: lazy-initialize the Anthropic client.
 //
@@ -33,6 +34,7 @@ export async function curateStories(
   stories: Story[],
   limit: number = 10,
   signals: LearningSignals = getLearningSignals(),
+  coverage?: CoveragePlan,
 ): Promise<Story[]> {
   if (stories.length === 0) {
     console.log('❌ No stories to curate');
@@ -62,6 +64,10 @@ export async function curateStories(
   const priorPerf = signals.runs > 0
     ? `\nPRIOR PERFORMANCE (learned from ${signals.runs} past runs — use ONLY as a tiebreaker between similarly relevant stories; never override the filtering rules above): ${describeSignals(signals)}\n`
     : '';
+  // Coverage hint (soft) — favour stories that fill thin parts of the matrix.
+  const coverageHint = coverage
+    ? `\nCOVERAGE PRIORITY (the site is currently light on these — favour stories that fill them, without compromising relevance or the filtering rules): ${describeCoveragePlan(coverage)}\n`
+    : '';
 
   const prompt = `You are an AI curator for MonoKromatik Network, an African culture/sports/entertainment platform serving the African diaspora.
 
@@ -89,7 +95,7 @@ FILTERING RULES:
 - ❌ REJECT: War, famine, disease outbreaks, extreme poverty, corruption scandals
 - ❌ REJECT: Generic African news that Western media already covers
 - ✅ ACCEPT: Culture, sports, entertainment, innovation, diaspora connections
-${priorPerf}
+${priorPerf}${coverageHint}
 STORIES TO RANK:
 ${JSON.stringify(storyData, null, 2)}
 
@@ -143,7 +149,7 @@ Return the top ${poolSize} stories ranked by score (highest first).`;
     // Learning re-weight: tilt the relevance ranking by what actually performed
     // (clamped ×0.6–1.5, so it only breaks near-ties — relevance still leads),
     // then cap per-source concentration down to `limit`.
-    const tilted = applyLearningWeight(rankedPool, signals);
+    const tilted = applyLearningWeight(rankedPool, signals, coverage);
     const curatedStories = enforceSourceDiversity(tilted, limit, maxPerSource);
 
     if (signals.runs > 0) {
@@ -171,15 +177,17 @@ Return the top ${poolSize} stories ranked by score (highest first).`;
  * near-ties; strong relevance differences still win. Neutral signals (no learning
  * history) return the input order unchanged — the loop is fail-open.
  */
-export function applyLearningWeight(ranked: Story[], signals: LearningSignals): Story[] {
-  if (!signals || signals.runs === 0) return ranked;
+export function applyLearningWeight(ranked: Story[], signals: LearningSignals, coverage?: CoveragePlan): Story[] {
+  const hasLearning = !!signals && signals.runs > 0;
+  if (!hasLearning && !coverage) return ranked; // nothing to tilt by → fail-open
   const n = ranked.length;
   return ranked
     .map((story, i) => {
       const base = n - i; // rank score, best first
-      const st = signals.sourceTrust[(story.source || '').trim().toLowerCase()] ?? 1;
-      const cw = signals.categoryWeights[(story.category || '').trim().toLowerCase()] ?? 1;
-      return { story, eff: base * st * cw, i };
+      const st = hasLearning ? (signals.sourceTrust[(story.source || '').trim().toLowerCase()] ?? 1) : 1;
+      const cw = hasLearning ? (signals.categoryWeights[(story.category || '').trim().toLowerCase()] ?? 1) : 1;
+      const cov = coverage ? coverageMultiplier(coverage, story.source, story.category) : 1;
+      return { story, eff: base * st * cw * cov, i };
     })
     .sort((a, b) => b.eff - a.eff || a.i - b.i) // stable: equal scores keep original order
     .map((x) => x.story);

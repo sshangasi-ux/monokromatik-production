@@ -24,6 +24,8 @@ import { publishArticles } from '../lib/publish-article';
 import { distributeArticles } from '../lib/distribute-social';
 import { generatePerformanceReport } from '../lib/analyze-performance';
 import { getLearningSignals, updateLearningLedger, describeSignals } from '../lib/learning-signals';
+import { buildCoveragePlan, describeCoveragePlan } from '../lib/coverage-planner';
+import { getAllArticles } from '../lib/articles';
 
 // ─── Env loader ───────────────────────────────────────────────────────────
 const envPath = join(process.cwd(), '.env.local');
@@ -94,7 +96,12 @@ async function main() {
   log.step(3, TOTAL_STEPS, 'CURATOR — Claude scores diaspora relevance');
   const signals = getLearningSignals();
   if (signals.runs > 0) console.log(`   🧠 Learning from ${signals.runs} prior runs: ${describeSignals(signals) || 'neutral'}`);
-  const curated = await curateStories(filtered, LIMIT, signals);
+  // Coverage Planner: assess what's been published lately and steer toward thin cells.
+  const published = getAllArticles().map((a) => ({ category: a.category, source: a.sourceName, publishedAt: a.publishedAt }));
+  const coverage = buildCoveragePlan(published);
+  if (coverage.gaps.length) console.log(`   🗺️  Coverage → ${describeCoveragePlan(coverage)}`);
+  writeFileSync(join(outputDir, 'coverage-plan.json'), JSON.stringify(coverage, null, 2));
+  const curated = await curateStories(filtered, LIMIT, signals, coverage);
   if (curated.length === 0) {
     log.err('Curator returned 0 stories. Aborting.');
     process.exit(1);
