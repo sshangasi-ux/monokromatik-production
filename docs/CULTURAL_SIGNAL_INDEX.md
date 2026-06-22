@@ -84,10 +84,13 @@ headline number plus the four-axis breakdown.
   leaderboard + on-page methodology; `/intelligence/signal-index/[brand]` brand
   pages (aggregate score, dimension averages, works). Entry point from the
   case-studies page.
-- **Phase 3 — Scale the scoring:** AI-drafts the decode from each case study's
-  evidence (context / strategicBet / creativeMove / africanRead / evidence) with
-  rationale → **human approval** (matches the autonomy matrix — case studies are
-  human-gated). Closes the loop with the content engine.
+- **Phase 3 — Scale the scoring (SHIPPED):** `lib/score-case-study.ts` drafts the
+  decode from each case study's evidence (context / strategicBet / creativeMove /
+  africanRead / evidence) + a rationale, validated/repaired to the canonical four
+  axes. `scripts/score-case-studies.ts` writes drafts to `output/decode-drafts/`
+  for **human approval** — it never edits `data/case-studies.json` (case-study
+  scoring is human-gated per the autonomy matrix). Closes the loop: a new case
+  study can be auto-scored → editor-approved → enters the Index.
 - **Phase 4 — Monetise:** gate the aggregate Index report behind premium/partner;
   per-brand share cards as the inbound hook.
 
