@@ -45,9 +45,18 @@ Supabase auth (sign-in) → Paystack subscription plan → webhook → entitleme
   (plan pages) + `PAYSTACK_PLAN_INDIVIDUAL`/`PAYSTACK_PLAN_TEAM` (plan codes) +
   `PAYSTACK_SECRET_KEY` + `SUPABASE_SERVICE_ROLE_KEY`, and register the webhook URL
   (`/api/paystack/webhook`) in the Paystack dashboard.
-- **Phase 4 — Flip the gates:** wrap premium case studies/reports/Index report in
-  `PaywallGate` keyed off `access` + `isMember`; set the genuinely-premium items
-  to `access:'premium'`. Free discovery (scores, signals) stays free.
+- **Phase 4 — Flip the gates (SHIPPED):** `CaseStudyFeature` + `ReportFeature` now
+  gate the deep body behind a "become a member" upsell when an item is
+  `access:'premium'`, memberships are live, and the viewer isn't a member —
+  keeping the hero/standfirst as a free teaser. `membershipsLive()` (commerce.ts)
+  means a gate only enforces once a Paystack plan URL is set, so marking content
+  premium is **safe before billing goes live** (stays fully visible). Member check
+  runs only for premium items, so free pages stay statically rendered.
+  **To activate:** set selected items to `access:'premium'` in
+  `data/case-studies.json` / `data/reports.json` (an editorial call), and set the
+  Phase-3 Paystack/membership envs. Verified end-to-end with a temporary premium
+  item + dummy plan URL (reverted). Free discovery (scores, signals, live Index)
+  stays free.
 
 ## Env (set when each phase goes live; no secrets in code)
 - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (public)

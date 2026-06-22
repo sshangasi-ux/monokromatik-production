@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, FileText, Lock } from 'lucide-react';
 import Navigation from './Navigation';
 import ReadingProgress from './ReadingProgress';
 import { isLocked, type Report } from '../../lib/reports';
+import { isMember } from '../../lib/entitlements';
+import { membershipsLive } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -16,10 +18,13 @@ const STATUS_LABEL: Record<Report['status'], string> = {
   planned: 'PLANNED',
 };
 
-export default function ReportFeature({ report }: { report: Report }) {
+export default async function ReportFeature({ report }: { report: Report }) {
   const r = report;
   const live = r.status === 'live';
-  const locked = isLocked(r);
+  // Gate only once memberships are purchasable (safe to mark content premium
+  // before billing is live); free reports never read the session.
+  const premium = isLocked(r) && membershipsLive();
+  const locked = premium && !(await isMember());
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -73,8 +78,12 @@ export default function ReportFeature({ report }: { report: Report }) {
                   {ACCESS_LABEL[r.access].toUpperCase()}
                 </p>
                 <p className="font-body text-mono-charcoal max-w-md mx-auto">
-                  The full report is part of the Intelligence tier.
+                  The full report is part of the Intelligence membership.
                 </p>
+                <div className="mt-6 flex flex-wrap gap-3 justify-center">
+                  <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                  <Link href="/account?next=/reports" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
+                </div>
               </div>
             )}
           </article>
