@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 const primaryLinks = [
   { href: '/signal', label: 'SIGNAL', description: 'Ideas, work and brand consequence', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
+  { href: '/ask', label: 'ASK', description: 'Cited answers from the corpus', priority: true },
   { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
   { href: '/conversations', label: 'CONVERSATIONS', description: 'Leaders, creators and operators' },
   { href: '/culture', label: 'CULTURE', description: 'Roots, Arena and Waves' },

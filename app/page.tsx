@@ -333,6 +333,7 @@ export default function Home() {
           <div className="font-body text-sm text-mono-gray grid grid-cols-2 gap-y-3">
             <Link className="hover:text-mono-amber" href="/signal">Signal</Link>
             <Link className="hover:text-mono-amber" href="/intelligence">Intelligence</Link>
+            <Link className="hover:text-mono-amber" href="/ask">Ask MonoKromatik</Link>
             <Link className="hover:text-mono-amber" href="/intelligence/source-desk">Source Desk</Link>
             <Link className="hover:text-mono-amber" href="/intelligence/case-studies">Case Studies</Link>
             <Link className="hover:text-mono-amber" href="/reports">Reports</Link>
