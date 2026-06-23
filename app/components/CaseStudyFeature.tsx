@@ -7,6 +7,8 @@ import { SignalStrength } from './dataviz/Charts';
 import ReadingProgress from './ReadingProgress';
 import SignalScore from './SignalScore';
 import { isLocked, type CaseStudy } from '../../lib/case-studies';
+import { isMember } from '../../lib/entitlements';
+import { membershipsLive } from '../../lib/commerce';
 import { compositeScore } from '../../lib/signal-index';
 
 // The evidence-standard label shown in the header, keyed off the analysis
@@ -31,7 +33,7 @@ function toAsset(m: CaseStudy['media'][number]): AttributedImageAsset {
   };
 }
 
-export default function CaseStudyFeature({
+export default async function CaseStudyFeature({
   caseStudy,
   next,
 }: {
@@ -40,7 +42,11 @@ export default function CaseStudyFeature({
 }) {
   const c = caseStudy;
   const media = c.media.map(toAsset);
-  const locked = isLocked(c);
+  // Gate only premium studies, and only once memberships are purchasable — so
+  // marking content premium is safe before billing is live. Free studies never
+  // read the session, so they stay statically rendered.
+  const premium = isLocked(c) && membershipsLive();
+  const locked = premium && !(await isMember());
   const signalScore = compositeScore(c.decode);
 
   return (
@@ -121,8 +127,12 @@ export default function CaseStudyFeature({
               <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">PREMIUM CASE STUDY</p>
               <p className="font-body text-mono-charcoal max-w-md mx-auto">
                 The full strategic decode — the bet, the creative move, the evidence ledger and the lessons — is part
-                of the Intelligence tier.
+                of the Intelligence membership.
               </p>
+              <div className="mt-6 flex flex-wrap gap-3 justify-center">
+                <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                <Link href="/account?next=/intelligence/case-studies" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
+              </div>
             </div>
           ) : (
             <>

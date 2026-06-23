@@ -132,3 +132,12 @@ export function membershipCheckoutUrl(tierId: string): string | null {
   const url = map[tierId];
   return url && /^https?:\/\//.test(url) ? url : null;
 }
+
+/**
+ * True once memberships are actually purchasable (a Paystack plan URL is set).
+ * Content gates only enforce when this is true — so marking content
+ * `access:'premium'` is safe before billing goes live (it stays fully visible).
+ */
+export function membershipsLive(): boolean {
+  return MEMBERSHIP.some((t) => membershipCheckoutUrl(t.id) !== null);
+}
