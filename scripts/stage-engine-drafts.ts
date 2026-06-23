@@ -62,7 +62,8 @@ const SECTION_KIND: Record<string, ArchiveKind | 'Conversation'> = {
 };
 
 let _client: Anthropic | null = null;
-const client = () => (_client ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
+// Patient retries: non-interactive cron, so ride out transient 429/5xx/529.
+const client = () => (_client ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 5 }));
 
 const EXTRACT_SCHEMA = {
   type: 'object',
