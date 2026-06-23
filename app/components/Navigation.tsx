@@ -67,6 +67,9 @@ export default function Navigation() {
             </div>
 
             <div className="hidden xl:flex items-center space-x-4 ml-4">
+              <Link href="/archive" className="px-3 py-2 border border-mono-white/25 text-mono-white text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-white hover:text-mono-black transition-colors">
+                ARCHIVE
+              </Link>
               <Link href="/intelligence/source-desk" className="px-3 py-2 border border-mono-amber-strong/50 text-mono-amber-strong text-[10px] tracking-[0.18em] font-display font-bold hover:bg-mono-amber-strong hover:text-mono-black transition-colors">
                 SOURCE DESK
               </Link>
@@ -103,8 +106,16 @@ export default function Navigation() {
                 );
               })}
               <Link
+                href="/archive"
+                className="block mt-4 py-3 px-4 border border-mono-white/30 text-mono-white font-display font-bold"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                ARCHIVE
+                <span className="block text-xs text-mono-gray font-body font-normal mt-1">Every Brand Read, case study, report and issue — searchable</span>
+              </Link>
+              <Link
                 href="/intelligence/source-desk"
-                className="block mt-4 py-3 px-4 border border-mono-amber/50 text-mono-amber font-display font-bold"
+                className="block mt-2 py-3 px-4 border border-mono-amber/50 text-mono-amber font-display font-bold"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 SOURCE DESK
