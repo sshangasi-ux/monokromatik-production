@@ -82,6 +82,28 @@ export const RSS_FEEDS: RSSFeed[] = [
   // ========================================
   { url: 'https://www.standardmedia.co.ke/rss/headlines.php', name: 'The Standard Kenya', category: 'news', language: 'en', region: 'East Africa' },
   { url: 'https://www.nation.africa/kenya/rss', name: 'Daily Nation Kenya', category: 'news', language: 'en', region: 'East Africa' },
+
+  // ========================================
+  // REGIONAL — NORTH AFRICA
+  // (Planner v2: closing a previously-unsourced coverage cell.)
+  // ========================================
+  { url: 'https://www.egyptindependent.com/feed/', name: 'Egypt Independent', category: 'news', language: 'en', region: 'North Africa' },
+
+  // ========================================
+  // REGIONAL — CENTRAL AFRICA
+  // (Planner v2: the only live Central-Africa feed found is francophone (DRC);
+  // the Writer renders in English. Better than zero sourcing for the cell.)
+  // ========================================
+  { url: 'https://actualite.cd/feed', name: 'Actualite.cd', category: 'news', language: 'fr', region: 'Central Africa' },
+
+  // ========================================
+  // DIASPORA
+  // (Planner v2: African-diaspora culture, business and commentary.)
+  // ========================================
+  { url: 'https://afropunk.com/feed/', name: 'AFROPUNK', category: 'culture', language: 'en', region: 'Diaspora' },
+  { url: 'https://www.essence.com/feed/', name: 'Essence', category: 'culture', language: 'en', region: 'Diaspora' },
+  { url: 'https://atlantablackstar.com/feed/', name: 'Atlanta Black Star', category: 'entertainment', language: 'en', region: 'Diaspora' },
+  { url: 'https://www.blackenterprise.com/feed/', name: 'Black Enterprise', category: 'news', language: 'en', region: 'Diaspora' },
 ];
 
 // Category-based feed filtering
