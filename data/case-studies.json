@@ -1925,7 +1925,7 @@
     "readingTime": "5 MIN READ",
     "access": "public",
     "verification": "partial",
-    "verificationNote": "Facts (Tyla as Pandora brand ambassador from April 2025 with a personally-curated \"Pandora Styled by Tyla\" collection including South-African-heritage charms; her Nike endorsement; her Chanel runway and red-carpet presence) are reported by WWD and L’Officiel. The strategic read is MonoKromatik interpretation; deal values are not claimed.",
+    "verificationNote": "Facts (Tyla as Pandora brand ambassador from April 2025 with a personally-curated \"Pandora Styled by Tyla\" collection including South-African-heritage charms; her Nike endorsement; her Chanel runway and red-carpet presence) are reported by WWD and L’Officiel. The strategic read is MonoKromatik interpretation; deal values are not claimed. The October 2025 “Tyla Tyger” charm — its two-sided design, pricing and North-America-only launch — and Tyla’s quote are primary-sourced (WWD; National Jeweler; Pandora’s own product page). The North-America-only distribution read is MonoKromatik interpretation.",
     "publishedAt": "2026-06-19",
     "tags": [
       "Tyla",
@@ -1967,21 +1967,25 @@
     ],
     "creativeMove": [
       "The move that distinguishes this from a standard endorsement is co-design: “Styled by Tyla” puts a South African sensibility into the product itself, not just the advertising around it.",
-      "It is the difference between renting a star and commissioning one — and the heritage charms make the authorship explicit."
+      "It is the difference between renting a star and commissioning one — and the heritage charms make the authorship explicit.",
+      "The clearest proof of that authorship arrived in October 2025: the limited-edition “Tyla Tyger” charm, co-created with the artist. It is two-sided — her signature on one face, a tiger on the reverse standing for her fanbase, the “Tygers” — and ships in sterling silver ($75) and 14k gold-plated ($95). Tyla put it in her own words: “The tiger has always been a big part of my story… I hope fans feel like they are carrying a little piece of me when they wear it.” The tell is fandom-as-symbol: it is not “a Tyla charm,” it is a charm that makes you a Tyger."
     ],
     "africanRead": [
       "Where most celebrity deals borrow an artist’s image, Pandora let Tyla author the object — and she chose to encode South African heritage into it. That is the diaspora-demand thesis maturing: not just African presence in global brands, but African authorship of their products.",
-      "The lesson for brands is that the co-design model captures more cultural value than the endorsement model — and the artist who insists on authorship, in her own register, is the one whose partnership compounds."
+      "The lesson for brands is that the co-design model captures more cultural value than the endorsement model — and the artist who insists on authorship, in her own register, is the one whose partnership compounds.",
+      "There is a tension worth naming. The Tyger charm launched limited and online in North America only. Tyla is unambiguously, publicly South African — it is her whole brand — yet the artefact built on that identity did not, at launch, reach the market she comes from. The authorship is African; the addressable market, for now, is not. Co-authorship is real progress up the value chain; it is not the same as access. The next test is the map — whether the products African artists build actually reach the continent that made them."
     ],
     "evidence": {
       "confirmed": [
-        "Tyla as Pandora ambassador (April 2025) with the curated \"Pandora Styled by Tyla\" collection; her Nike endorsement; her Chanel runway/red-carpet presence — reported by WWD and L’Officiel."
+        "Tyla as Pandora ambassador (April 2025) with the curated \"Pandora Styled by Tyla\" collection; her Nike endorsement; her Chanel runway/red-carpet presence — reported by WWD and L’Officiel.",
+        "“Tyla Tyger” charm co-created with the artist, launched 16 Oct 2025: two-sided (signature + tiger), $75 sterling silver / $95 14k-gold-plated, limited, sold online in North America only (WWD; Pandora US product page). Tyla’s quote is verbatim from WWD."
       ],
       "reported": [
         "The breadth of her brand relationships (Pandora, Nike, Chanel, H&M) is documented across fashion press."
       ],
       "notClaimed": [
-        "Deal values, sales figures or net-worth estimates."
+        "Deal values, sales figures or net-worth estimates.",
+        "No unit-sales or revenue figures were disclosed — no sales claim is made. We do not claim a Tyla/Burberry holiday campaign: the widely-cited Burberry holiday film paired Burna Boy with Shakira, not Tyla."
       ]
     },
     "lessons": [
@@ -1999,7 +2003,8 @@
       }
     ],
     "pullQuotes": [
-      "Pandora let Tyla author the object — and she chose to encode South African heritage into it."
+      "Pandora let Tyla author the object — and she chose to encode South African heritage into it.",
+      "Co-authorship is progress; it is not the same as access."
     ],
     "sources": [
       {
@@ -2013,6 +2018,18 @@
         "label": "Tyla Stuns in Pandora's Campaign as Brand Ambassador",
         "href": "https://www.lofficielusa.com/fashion/pandora-tyla-brand-ambassador-campaign",
         "use": "Documentation of the ambassadorship and campaign."
+      },
+      {
+        "publisher": "National Jeweler",
+        "label": "Pandora Names Tyla as Its New Brand Ambassador",
+        "href": "https://nationaljeweler.com/articles/13807-pandora-names-tyla-as-its-new-brand-ambassador",
+        "use": "Primary source for the April 2025 ambassadorship and Pandora’s framing."
+      },
+      {
+        "publisher": "Pandora",
+        "label": "Tyla Signature Tyger Round Tag Dangle Charm (US product page)",
+        "href": "https://us.pandora.net/en/charms/tyla-signature-tyger-round-tag-dangle-charm/ENG398610C00_17.html",
+        "use": "Primary source for the charm design, pricing and North-America availability."
       }
     ],
     "media": []
