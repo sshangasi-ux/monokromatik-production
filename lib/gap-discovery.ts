@@ -17,7 +17,8 @@ import type { CoveragePlan, GapBrief } from './coverage-planner';
 import type { EditorialFranchise } from './editorial-franchises';
 
 let _anthropic: Anthropic | null = null;
-const client = () => (_anthropic ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
+// Patient retries: non-interactive cron, so ride out transient 429/5xx/529.
+const client = () => (_anthropic ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 5 }));
 
 const ts = () => new Date().toISOString();
 const log = (m: string) => console.log(`[${ts()}] [gap-discovery] ${m}`);

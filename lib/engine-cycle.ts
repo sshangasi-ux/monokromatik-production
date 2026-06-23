@@ -21,7 +21,9 @@ import { MODELS } from './ai-models';
 let _anthropic: Anthropic | null = null;
 function getClient(): Anthropic {
   if (!_anthropic) {
-    _anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    // Patient retries: this is a non-interactive cron, so ride out transient
+    // 429/5xx/529 (overloaded) with backoff rather than failing the run.
+    _anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 5 });
   }
   return _anthropic;
 }
