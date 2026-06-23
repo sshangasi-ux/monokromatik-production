@@ -9,6 +9,8 @@
     "lint": "eslint",
     "test:pipeline": "tsx scripts/test-pipeline.ts",
     "generate:articles": "tsx scripts/generate-articles.ts",
+    "engine:cycle": "tsx scripts/run-engine-cycle.ts",
+    "engine:cycle:dry": "tsx scripts/run-engine-cycle.ts -- --dry",
     "agents": "tsx scripts/run-agents.ts",
     "agents:dry": "tsx scripts/run-agents.ts -- --dry",
     "agents:local": "tsx scripts/run-agents.ts -- --no-push",

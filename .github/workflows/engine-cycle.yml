@@ -1,0 +1,99 @@
+name: MonoKromatik Content Engine Cycle (weekly review queue)
+
+on:
+  schedule:
+    # Weekly, Monday 05:07 SAST = 03:07 UTC. Off the :00 mark on purpose.
+    - cron: '7 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated sections to run (signal,intelligence,issues,conversations,culture). Blank = all.'
+        required: false
+        default: ''
+        type: string
+      searches:
+        description: 'Max web searches per section'
+        required: false
+        default: '6'
+        type: string
+
+# Review-gated: the engine sources + drafts across all five sections into a review
+# queue, then STAGES it as a Pull Request. Nothing reaches the live site without a
+# human merging that PR — discovery + drafting are automated, publish is human-gated.
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: engine-cycle
+  cancel-in-progress: false
+
+jobs:
+  run-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Run the content engine cycle (web-sourced, integrity-gated)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MONO_MODEL_FLAGSHIP: ${{ secrets.MONO_MODEL_FLAGSHIP }}
+          NODE_ENV: production
+        run: |
+          ONLY="${{ github.event.inputs.only }}"
+          SEARCHES="${{ github.event.inputs.searches || '6' }}"
+          ARGS="-- --searches=$SEARCHES"
+          if [ -n "$ONLY" ]; then ARGS="$ARGS --only=$ONLY"; fi
+          npm run engine:cycle $ARGS
+
+      - name: Stage the review queue as a Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain output/engine-cycle)" ]; then
+            echo "No changes to the engine review queue this run." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="engine/cycle-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add output/engine-cycle
+          git commit -m "feat(engine): weekly content cycle review queue" -m "AI-sourced + drafted across Signal/Intelligence/Issues/Conversations/Culture. Every claim web-cited; nothing published. Review output/engine-cycle/INDEX.md, then wire approved items into data/*.json."
+          git push origin "$BRANCH"
+
+          BODY="Weekly content engine cycle: AI-sourced + drafted topical content across all five sections (Signal, Intelligence, Issues, Conversations, Culture), grounded in live web search with the integrity contract enforced. Start at \`output/engine-cycle/INDEX.md\`. Everything is a DRAFT for your approval — merging this PR does NOT publish; it just refreshes the review queue. Approve items by wiring them into \`data/*.json\` (the actual publish step). See \`docs/CONTENT_ENGINE_CYCLE.md\`."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Engine cycle review queue — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Queue pushed to $BRANCH; open a PR from that branch if one was not created automatically." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Run summary
+        if: always()
+        run: |
+          echo "### MonoKromatik content engine cycle finished" >> "$GITHUB_STEP_SUMMARY"
+          echo "Time: $(date -u)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "Cross-section review queue refreshed and staged as a PR for human approval — nothing auto-published." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Run failed — check logs above." >> "$GITHUB_STEP_SUMMARY"
+          fi
