@@ -35,6 +35,12 @@ export interface Issue {
   contents: string;
   status: IssueStatus;
   publishedAt?: string;
+  /**
+   * In-development issues are normally not linkable. Set `preview: true` to give
+   * an in-development edition a readable PREVIEW page (its planned slate + cover)
+   * so the roadmap is public before the features are written.
+   */
+  preview?: boolean;
   features: IssueFeatureRef[];
   /**
    * The art-directed cover. `image` is the drop-in slot for commissioned or
@@ -106,7 +112,7 @@ export function getLiveIssues(): Issue[] {
   return getAllIssues().filter((i) => i.status === 'live');
 }
 
-/** The route for an issue's contents page — only meaningful once live. */
+/** The route for an issue's contents page — live editions, or previewable ones. */
 export function issueHref(issue: Issue): string | undefined {
-  return issue.status === 'live' ? `/issues/${issue.number}` : undefined;
+  return issue.status === 'live' || issue.preview ? `/issues/${issue.number}` : undefined;
 }
