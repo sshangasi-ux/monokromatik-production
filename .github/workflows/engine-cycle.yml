@@ -61,12 +61,23 @@ jobs:
           if [ -n "$ONLY" ]; then ARGS="$ARGS --only=$ONLY"; fi
           npm run engine:cycle $ARGS
 
-      - name: Stage the review queue as a Pull Request
+      - name: Gate + auto-patch drafts (deterministic gates; Culture auto-staged)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MONO_MODEL_UTILITY: ${{ secrets.MONO_MODEL_UTILITY }}
+          NODE_ENV: production
+        run: |
+          # Source-count + dedup-vs-archive + schema gates. Low-stakes Culture
+          # articles are auto-patched into data/articles.json; claim-bearing kinds
+          # are routed to human authoring. Verdicts → output/engine-cycle/STAGED.md.
+          npm run engine:stage
+
+      - name: Stage the review queue + patches as a Pull Request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain output/engine-cycle)" ]; then
-            echo "No changes to the engine review queue this run." >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$(git status --porcelain output/engine-cycle data)" ]; then
+            echo "No changes to the engine review queue or data this run." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
@@ -74,12 +85,12 @@ jobs:
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
           git checkout -b "$BRANCH"
-          git add output/engine-cycle
-          git commit -m "feat(engine): weekly content cycle review queue" -m "AI-sourced + drafted across Signal/Intelligence/Issues/Conversations/Culture. Every claim web-cited; nothing published. Review output/engine-cycle/INDEX.md, then wire approved items into data/*.json."
+          git add output/engine-cycle data
+          git commit -m "feat(engine): weekly content cycle — review queue + gated patches" -m "AI-sourced + drafted across all five sections, then deterministically gated (≥2 sources, dedup-vs-archive, schema). Low-stakes Culture articles auto-patched into data/articles.json; claim-bearing items staged for human authoring. See output/engine-cycle/STAGED.md. Merging this PR is the publish step."
           git push origin "$BRANCH"
 
-          BODY="Weekly content engine cycle: AI-sourced + drafted topical content across all five sections (Signal, Intelligence, Issues, Conversations, Culture), grounded in live web search with the integrity contract enforced. Start at \`output/engine-cycle/INDEX.md\`. Everything is a DRAFT for your approval — merging this PR does NOT publish; it just refreshes the review queue. Approve items by wiring them into \`data/*.json\` (the actual publish step). See \`docs/CONTENT_ENGINE_CYCLE.md\`."
-          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Engine cycle review queue — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+          BODY="Weekly content engine cycle — now with the staging gate. AI-sourced + drafted across all five sections (live web search, integrity contract), then run through deterministic gates (≥2 independent sources · dedup vs the existing archive · schema). **Start at \`output/engine-cycle/STAGED.md\`** for the per-item verdicts. Low-stakes Culture articles that pass every gate are auto-patched into \`data/articles.json\` (review the data diff); claim-bearing Signal/Intelligence/Issue items and possible duplicates are staged as proposals for human authoring — never fabricated whole. **Merging this PR is the publish step**; close it to discard. See \`docs/CONTENT_ENGINE_CYCLE.md\`."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Engine cycle — review queue + gated patches — $(date -u +%Y-%m-%d)" --body "$BODY") || true
 
           if [ -n "$PR_URL" ]; then
             echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
@@ -93,7 +104,7 @@ jobs:
           echo "### MonoKromatik content engine cycle finished" >> "$GITHUB_STEP_SUMMARY"
           echo "Time: $(date -u)" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ job.status }}" = "success" ]; then
-            echo "Cross-section review queue refreshed and staged as a PR for human approval — nothing auto-published." >> "$GITHUB_STEP_SUMMARY"
+            echo "Cross-section queue refreshed, gated, and staged as a PR (STAGED.md has the verdicts). Publish = merging the PR." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "Run failed — check logs above." >> "$GITHUB_STEP_SUMMARY"
           fi
