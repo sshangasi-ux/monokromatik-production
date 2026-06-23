@@ -1,0 +1,337 @@
+{
+  "generatedAt": "2026-06-23T16:17:33.187Z",
+  "plan": {
+    "gaps": [
+      {
+        "region": "West Africa",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "West Africa",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "East Africa",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "East Africa",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "East Africa",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "East Africa",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "East Africa",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Southern Africa",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Southern Africa",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Southern Africa",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Southern Africa",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Southern Africa",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "North Africa",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "North Africa",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "North Africa",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "North Africa",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "North Africa",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Central Africa",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Central Africa",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Central Africa",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Central Africa",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Central Africa",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Pan-African",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Pan-African",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Pan-African",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Pan-African",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Pan-African",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Diaspora",
+        "category": "culture",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Diaspora",
+        "category": "sports",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Diaspora",
+        "category": "music",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": false
+      },
+      {
+        "region": "Diaspora",
+        "category": "entertainment",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      },
+      {
+        "region": "Diaspora",
+        "category": "news",
+        "score": 0,
+        "ageDays": null,
+        "count": 0,
+        "sourced": true
+      }
+    ]
+  },
+  "franchisePlan": {
+    "scores": {
+      "The Work": 0.93,
+      "Will It Land?": 0,
+      "Brand Weather": 0.93,
+      "The Boardroom": 0,
+      "Roots": 0.81,
+      "Arena": 0.81,
+      "Waves": 0
+    },
+    "weights": {
+      "The Work": 1,
+      "Will It Land?": 1.61,
+      "Brand Weather": 1,
+      "The Boardroom": 1.61,
+      "Roots": 1,
+      "Arena": 1,
+      "Waves": 1.61
+    },
+    "gaps": [
+      {
+        "franchise": "Will It Land?",
+        "score": 0,
+        "count": 0,
+        "ageDays": null
+      },
+      {
+        "franchise": "The Boardroom",
+        "score": 0,
+        "count": 0,
+        "ageDays": null
+      },
+      {
+        "franchise": "Waves",
+        "score": 0,
+        "count": 0,
+        "ageDays": null
+      }
+    ],
+    "windowDays": 42,
+    "generatedAt": "2026-06-23T16:17:07.988Z"
+  },
+  "results": [
+    {
+      "region": "West Africa",
+      "category": "entertainment",
+      "sourced": true,
+      "leads": [
+        {
+          "title": "West Africa Box Office Grosses N15.6 Billion in 2025, Eyes N20 Billion in 2026",
+          "summary": "Filmone Entertainment data (released Jan 6, 2026) shows West Africa's cinema market hit ₦15.6 billion in 2025 across 248 releases and 122 cinemas in Nigeria, Ghana, and Liberia — with Nollywood (49.4%) narrowly edging Hollywood (48.8%) in market share. A February 2026 follow-up report projects the Nigerian box office alone will cross ₦20 billion in 2026, driven by higher ticket prices and event-driven releases rather than volume growth.",
+          "url": "https://nairametrics.com/2026/01/06/west-africa-box-office-grosses-n15-6-billion-in-2025/",
+          "source": "Nairametrics",
+          "why": "Hard box-office revenue data from West Africa's dominant film market signals commercial maturity and brand investment opportunity for Nollywood and its distributors."
+        },
+        {
+          "title": "Ghana's Mahama Commits GH¢20 Million to Film Sector (Kumawood & Ghallywood) in 2026 SONA",
+          "summary": "During Ghana's February 27, 2026 State of the Nation Address, President John Mahama confirmed a GH¢20 million government allocation specifically for the film industry, targeting Kumawood and Ghallywood, plus a further GH¢20 million for music, fashion, and visual arts — framed as a strategy to diversify Ghana's economy and boost cultural exports.",
+          "url": "https://www.ghanaweb.com/GhanaHomePage/entertainment/2026-SONA-GH-20-million-to-be-invested-in-the-film-industry-Mahama-2023618",
+          "source": "GhanaWeb",
+          "why": "A sovereign government injecting GH¢40 million total into the creative economy is a landmark policy moment for West Africa's entertainment and culture-brand landscape."
+        },
+        {
+          "title": "EbonyLife Group Announces Multi-Studio Adaptation of 'The Secret Lives of Baba Segi's Wives'",
+          "summary": "In January 2026, Nigeria's EbonyLife Group announced it is producing a screen adaptation of Lola Shoneyin's celebrated novel in partnership with Genesis Group, Nile Media Entertainment Group, and Silverbird Group — a landmark multi-company Nollywood co-production signalling a new era of pooled resources, shared risk, and pan-West African studio collaboration.",
+          "url": "https://afrocritik.com/what-trends-will-drive-africas-film-industry-in-2026/",
+          "source": "Afrocritik",
+          "why": "A high-profile literary IP adaptation backed by four major West African entertainment companies is a direct brand-culture story about Nollywood's industrial evolution."
+        }
+      ],
+      "searches": 2
+    }
+  ],
+  "franchiseResults": []
+}
