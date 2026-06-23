@@ -16,8 +16,41 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { getAllArticles } from '../lib/articles';
+import { getAllCaseStudies } from '../lib/case-studies';
+import { getAllReports } from '../lib/reports';
+import { getAllIssues } from '../lib/issues';
 import { buildCoveragePlan, type CoverageItem } from '../lib/coverage-planner';
-import { selectGapCells, discoverForCell, type GapCellResult } from '../lib/gap-discovery';
+import { selectGapCells, discoverForCell, discoverForFranchise, type GapCellResult } from '../lib/gap-discovery';
+import { classifyFranchise } from '../lib/editorial-franchises';
+import { buildFranchisePlan, describeFranchisePlan, type FranchiseItem, type FranchisePlan } from '../lib/franchise-coverage';
+
+/** Aggregate every published item into a franchise-tagged timeline. */
+function collectFranchiseItems(): FranchiseItem[] {
+  const items: FranchiseItem[] = [];
+  for (const a of getAllArticles()) {
+    items.push({
+      franchise: classifyFranchise({ kind: 'article', title: a.title, category: a.category, tags: a.tags, hasBrandRead: Boolean(a.brandRead?.take) }),
+      publishedAt: a.publishedAt,
+    });
+  }
+  for (const c of getAllCaseStudies()) {
+    items.push({
+      franchise: classifyFranchise({ kind: 'case-study', title: c.title, collection: c.collection, tags: c.tags }),
+      publishedAt: c.publishedAt,
+    });
+  }
+  for (const r of getAllReports()) {
+    if (!r.publishedAt) continue; // only live reports have a date
+    items.push({ franchise: classifyFranchise({ kind: 'report', title: r.title, series: r.series, tags: r.tags }), publishedAt: r.publishedAt });
+  }
+  for (const i of getAllIssues()) {
+    if (!i.publishedAt) continue;
+    for (const f of i.features || []) {
+      items.push({ franchise: classifyFranchise({ kind: 'issue-feature', title: f.title, franchise: f.franchise }), publishedAt: i.publishedAt });
+    }
+  }
+  return items;
+}
 
 const envPath = join(__dirname, '../.env.local');
 if (existsSync(envPath)) {
@@ -32,32 +65,50 @@ if (existsSync(envPath)) {
 const ts = () => new Date().toISOString();
 const log = (m: string) => console.log(`[${ts()}] ${m}`);
 
-function brief(results: GapCellResult[], stamp: string): string {
+function renderResult(lines: string[], heading: string, r: GapCellResult) {
+  lines.push(heading);
+  if (r.error) {
+    lines.push(`> search failed: ${r.error}`);
+    lines.push('');
+    return;
+  }
+  if (!r.leads.length) {
+    lines.push('> No real leads found this run (honest emptiness — better than padding).');
+    lines.push('');
+    return;
+  }
+  for (const l of r.leads) {
+    lines.push(`- **${l.title}** — ${l.summary} [${l.source || 'source'}](${l.url})`);
+    if (l.why) lines.push(`  - _Fit:_ ${l.why}`);
+  }
+  lines.push('');
+}
+
+function brief(
+  regionResults: GapCellResult[],
+  franchiseResults: GapCellResult[],
+  franchisePlan: FranchisePlan,
+  stamp: string
+): string {
   const lines: string[] = [];
   lines.push('# Coverage gap — commission brief');
   lines.push('');
-  lines.push(`_Generated ${stamp}. Real, web-sourced leads for the thinnest Region × Franchise cells._`);
+  lines.push(`_Generated ${stamp}. Real, web-sourced leads for the thinnest coverage cells across all three axes._`);
   lines.push('');
   lines.push('**These are LEADS to commission, not published content.** Each is a real,');
   lines.push('citable story for the cell it fills — hand to the Writer or an editor.');
   lines.push('');
-  for (const r of results) {
-    lines.push(`## ${r.region} × ${r.category}${r.sourced ? '' : '  _(no feed — newly sourced via search)_'}`);
-    if (r.error) {
-      lines.push(`> search failed: ${r.error}`);
-      lines.push('');
-      continue;
-    }
-    if (!r.leads.length) {
-      lines.push('> No real leads found this run (honest emptiness — better than padding).');
-      lines.push('');
-      continue;
-    }
-    for (const l of r.leads) {
-      lines.push(`- **${l.title}** — ${l.summary} [${l.source || 'source'}](${l.url})`);
-      if (l.why) lines.push(`  - _Fit:_ ${l.why}`);
-    }
-    lines.push('');
+  lines.push('## Region × Category gaps');
+  lines.push('');
+  for (const r of regionResults) {
+    renderResult(lines, `### ${r.region} × ${r.category}${r.sourced ? '' : '  _(no feed — newly sourced via search)_'}`, r);
+  }
+  lines.push('## Editorial franchise gaps');
+  lines.push('');
+  lines.push(`_${describeFranchisePlan(franchisePlan)}._`);
+  lines.push('');
+  for (const r of franchiseResults) {
+    renderResult(lines, `### ${r.region}  _(franchise)_`, r);
   }
   return lines.join('\n');
 }
@@ -70,34 +121,46 @@ async function main() {
   const args = process.argv.slice(2);
   const dry = args.includes('--dry');
   const cells = parseInt(args.find((a) => a.startsWith('--cells='))?.split('=')[1] || '4', 10);
+  const franchises = parseInt(args.find((a) => a.startsWith('--franchises='))?.split('=')[1] || '2', 10);
   const searches = parseInt(args.find((a) => a.startsWith('--searches='))?.split('=')[1] || '4', 10);
 
+  // Axis 1+2: Region × Category.
   const items: CoverageItem[] = getAllArticles().map((a) => ({
     category: a.category,
     source: a.sourceName,
     publishedAt: a.publishedAt,
   }));
   const plan = buildCoveragePlan(items);
-  const picked = selectGapCells(plan, cells);
+  const pickedCells = selectGapCells(plan, cells);
 
-  log(`Plan: ${plan.gaps.length} gap cell(s). Commissioning top ${picked.length}: ${picked.map((g) => `${g.region}×${g.category}`).join(', ')}`);
+  // Axis 3: editorial franchise.
+  const franchisePlan = buildFranchisePlan(collectFranchiseItems());
+  const pickedFranchises = franchisePlan.gaps.slice(0, franchises).map((g) => g.franchise);
+
+  log(`Region×Category: ${plan.gaps.length} gap(s) → commissioning ${pickedCells.map((g) => `${g.region}×${g.category}`).join(', ')}`);
+  log(`Franchise: ${describeFranchisePlan(franchisePlan)} → commissioning ${pickedFranchises.join(', ') || '(none thin)'}`);
 
   if (dry) {
-    log('Dry run — selected cells only, no search performed.');
+    log('Dry run — selected cells/franchises only, no search performed.');
     return;
   }
 
   const results: GapCellResult[] = [];
-  for (const cell of picked) results.push(await discoverForCell(cell, { maxSearches: searches }));
+  for (const cell of pickedCells) results.push(await discoverForCell(cell, { maxSearches: searches }));
+  const franchiseResults: GapCellResult[] = [];
+  for (const f of pickedFranchises) franchiseResults.push(await discoverForFranchise(f, { maxSearches: searches }));
 
   const outDir = join(__dirname, '../output');
   mkdirSync(outDir, { recursive: true });
   const stamp = ts();
-  writeFileSync(join(outDir, 'gap-candidates.json'), JSON.stringify({ generatedAt: stamp, plan: { gaps: plan.gaps }, results }, null, 2));
-  writeFileSync(join(outDir, 'gap-candidates.md'), brief(results, stamp));
+  writeFileSync(
+    join(outDir, 'gap-candidates.json'),
+    JSON.stringify({ generatedAt: stamp, plan: { gaps: plan.gaps }, franchisePlan, results, franchiseResults }, null, 2)
+  );
+  writeFileSync(join(outDir, 'gap-candidates.md'), brief(results, franchiseResults, franchisePlan, stamp));
 
-  const totalLeads = results.reduce((n, r) => n + r.leads.length, 0);
-  log(`Wrote output/gap-candidates.{json,md} — ${totalLeads} lead(s) across ${results.length} cell(s).`);
+  const totalLeads = [...results, ...franchiseResults].reduce((n, r) => n + r.leads.length, 0);
+  log(`Wrote output/gap-candidates.{json,md} — ${totalLeads} lead(s) across ${results.length} cell(s) + ${franchiseResults.length} franchise(s).`);
 }
 
 main().catch((err) => {
