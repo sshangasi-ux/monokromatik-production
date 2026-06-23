@@ -1,0 +1,103 @@
+name: MonoKromatik Coverage Gap Discovery (weekly commission brief)
+
+on:
+  schedule:
+    # Weekly, Thursday 03:11 UTC — offset from the Monday engine cycle.
+    - cron: '11 3 * * 4'
+  workflow_dispatch:
+    inputs:
+      cells:
+        description: 'How many Region × Category gap cells to commission'
+        required: false
+        default: '4'
+        type: string
+      franchises:
+        description: 'How many thin editorial franchises to commission'
+        required: false
+        default: '2'
+        type: string
+      searches:
+        description: 'Max web searches per cell/franchise'
+        required: false
+        default: '4'
+        type: string
+
+# Review-gated: discovery surfaces real, cited LEADS for the thinnest coverage
+# cells across all three axes (region, category, franchise) and stages the brief
+# as a PR. Nothing is published — an editor commissions from the brief.
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: coverage-discover
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Discover gap-filling leads (web-sourced, integrity-gated)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MONO_MODEL_FLAGSHIP: ${{ secrets.MONO_MODEL_FLAGSHIP }}
+          NODE_ENV: production
+        run: |
+          CELLS="${{ github.event.inputs.cells || '4' }}"
+          FRANCHISES="${{ github.event.inputs.franchises || '2' }}"
+          SEARCHES="${{ github.event.inputs.searches || '4' }}"
+          npm run coverage:discover -- --cells=$CELLS --franchises=$FRANCHISES --searches=$SEARCHES
+
+      - name: Stage the commission brief as a Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain output/gap-candidates.md output/gap-candidates.json)" ]; then
+            echo "No commission brief changes this run." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="coverage/discover-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add output/gap-candidates.md output/gap-candidates.json
+          git commit -m "feat(planner): weekly coverage gap commission brief" -m "Targeted discovery for the thinnest Region x Category cells and editorial franchises. Real, web-sourced, cited leads to commission — nothing published. See output/gap-candidates.md."
+          git push origin "$BRANCH"
+
+          BODY="Weekly coverage gap discovery. The Planner found the thinnest cells across all three axes (region, source-category, editorial franchise) and web-searched for real, citable story LEADS to fill them. **Start at \`output/gap-candidates.md\`.** These are leads to commission — hand to the Writer or an editor — not published content. Merging this PR just records the brief; closing discards it. See \`docs/CONTENT_ENGINE_CYCLE.md\` and the Planner modules (\`lib/coverage-planner.ts\`, \`lib/franchise-coverage.ts\`, \`lib/gap-discovery.ts\`)."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Coverage gap commission brief — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Brief pushed to $BRANCH; open a PR from that branch if one was not created automatically." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Run summary
+        if: always()
+        run: |
+          echo "### MonoKromatik coverage gap discovery finished" >> "$GITHUB_STEP_SUMMARY"
+          echo "Time: $(date -u)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "Commission brief refreshed and staged as a PR — cited leads for the thinnest cells. Nothing auto-published." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Run failed — check logs above." >> "$GITHUB_STEP_SUMMARY"
+          fi
