@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Mic, PenLine, Video } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
+import { getAllConversations } from '../../lib/conversations';
 
 const conversationFormats = [
   {
@@ -34,6 +35,7 @@ const questions = [
 ];
 
 export default function ConversationsPage() {
+  const slate = getAllConversations();
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -50,6 +52,34 @@ export default function ConversationsPage() {
           </div>
         </div>
       </section>
+
+      {/* THE SLATE — the named conversations we're pursuing (sourced briefs). */}
+      {slate.length > 0 && (
+        <section className="py-20 md:py-24 bg-mono-soft-white border-b border-mono-gray/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+              <div className="max-w-2xl">
+                <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">THE SLATE · IN THE WORKS</p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Who we&rsquo;re sitting down with.</h2>
+              </div>
+              <p className="font-body text-mono-charcoal max-w-sm">The named conversations on the desk — the brief and the questions, openly. Each one a builder working the gap between African cultural production and captured value.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-px bg-mono-gray/25 border border-mono-gray/25">
+              {slate.map((c) => (
+                <Link key={c.slug} href={`/conversations/${c.slug}`} className="group bg-mono-white p-7 flex flex-col hover:bg-mono-black transition-colors">
+                  <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber-strong mb-4">{c.franchise}</p>
+                  <h3 className="text-2xl font-display font-bold text-mono-black group-hover:text-mono-white transition-colors">{c.name}</h3>
+                  <p className="mt-2 text-sm font-display font-bold text-mono-gray group-hover:text-mono-soft-white">{c.role}</p>
+                  <p className="mt-4 font-body text-sm text-mono-charcoal group-hover:text-mono-soft-white/90 leading-relaxed line-clamp-4 flex-1">{c.angle}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-xs tracking-[0.18em] font-display font-bold text-mono-amber-strong group-hover:text-mono-amber">
+                    {c.questions.length} QUESTIONS <ArrowRight size={14} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
