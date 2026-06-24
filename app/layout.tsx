@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, Fraunces } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import RegistrationGate from './components/RegistrationGate';
 import './globals.css';
 
 // Self-host the brand fonts via next/font instead of a CSS @import. This avoids
@@ -68,6 +69,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <RegistrationGate />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
       </body>
     </html>
