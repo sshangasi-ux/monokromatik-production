@@ -5,8 +5,12 @@ import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
+import { getMovement, isNewlyRanked, trackingSince } from '../../../lib/index-history';
+import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
 
 export const revalidate = 300;
+
+const SITE = 'https://www.monokromatik.com';
 
 export const metadata: Metadata = {
   title: 'The Cultural-Signal Index | MonoKromatik Intelligence',
@@ -28,13 +32,51 @@ export default function SignalIndexPage() {
   const mean = ranked.length ? Math.round(ranked.reduce((s, e) => s + e.score, 0) / ranked.length) : 0;
   const totalWorks = ranked.reduce((s, e) => s + e.works, 0);
 
+  const leaderEntries: LeaderEntry[] = ranked.map((e) => {
+    const slug = brandSlug(e.brand);
+    return {
+      brand: e.brand,
+      slug,
+      score: e.score,
+      rank: e.rank!,
+      works: e.works,
+      axisAverages: e.axisAverages,
+      movement: getMovement(slug),
+      isNew: isNewlyRanked(slug),
+    };
+  });
+
+  // JSON-LD: a Dataset (so the Index is discoverable in Google Dataset Search /
+  // citable by AI engines) wrapping an ItemList of the ranking.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'The Cultural-Signal Index',
+    description:
+      'A proprietary, authorship-weighted ranking of how brand and cultural work scores on African creative authorship, idea, execution and consequence.',
+    url: `${SITE}/intelligence/signal-index`,
+    creator: { '@type': 'Organization', name: 'MonoKromatik', url: SITE },
+    variableMeasured: ['Cultural-Signal Score', 'Idea', 'Authorship', 'Execution', 'Consequence'],
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: ranked.length,
+      itemListElement: ranked.map((e) => ({
+        '@type': 'ListItem',
+        position: e.rank,
+        url: `${SITE}/intelligence/signal-index/${brandSlug(e.brand)}`,
+        name: e.brand,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-mono-paper">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navigation />
 
       <section className="bg-mono-black text-mono-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs tracking-[0.35em] font-display font-bold text-mono-amber mb-7">INTELLIGENCE / THE CULTURAL-SIGNAL INDEX</p>
+          <p className="text-xs tracking-[0.35em] font-display font-bold text-mono-amber mb-7">INTELLIGENCE / THE CULTURAL-SIGNAL INDEX · THE 2026 CLASS</p>
           <h1 className="max-w-4xl text-5xl md:text-7xl font-display font-bold leading-[0.95]">Who actually <span className="text-mono-amber">authored</span> the influence.</h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-mono-soft-white font-body leading-relaxed">
             A proprietary, authorship-weighted read of brand and cultural work — scored across idea, authorship,
@@ -66,33 +108,7 @@ export default function SignalIndexPage() {
             </div>
             <Trophy className="text-mono-amber shrink-0" size={30} aria-hidden="true" />
           </div>
-          <ol className="space-y-px bg-mono-gray/20 border border-mono-gray/25">
-            {ranked.map((e) => (
-              <li key={e.brand} className="bg-mono-paper">
-                <Link
-                  href={`/intelligence/signal-index/${brandSlug(e.brand)}`}
-                  className="group block px-5 py-5 md:px-7 hover:bg-mono-white transition-colors"
-                >
-                  <div className="flex items-center gap-5">
-                    <span className="w-8 shrink-0 font-display font-bold text-mono-gray text-lg tabular-nums">{e.rank}</span>
-                    <div className="min-w-0 flex-1">
-                      <p className="font-display font-bold text-mono-black text-lg md:text-xl truncate group-hover:text-mono-amber transition-colors">{e.brand}</p>
-                      <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">
-                        {e.works} {e.works === 1 ? 'WORK' : 'WORKS'} · AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
-                      </p>
-                    </div>
-                    <span className="shrink-0 text-right">
-                      <span className="block text-3xl font-display font-bold text-mono-black leading-none tabular-nums">{e.score}</span>
-                      <span className="block text-[9px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">SIGNAL</span>
-                    </span>
-                  </div>
-                  <div className="mt-4 h-1.5 bg-mono-gray/20 overflow-hidden">
-                    <div className="h-full bg-mono-amber" style={{ width: `${e.score}%` }} />
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ol>
+          <IndexLeaderboard entries={leaderEntries} trackingSince={trackingSince()} />
         </div>
       </section>
 

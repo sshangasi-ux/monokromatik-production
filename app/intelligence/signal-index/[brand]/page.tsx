@@ -6,6 +6,8 @@ import Navigation from '../../../components/Navigation';
 import { SignalStrength } from '../../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
+import { getMovement } from '../../../../lib/index-history';
+import BadgeEmbed from '../BadgeEmbed';
 
 interface PageProps {
   params: Promise<{ brand: string }>;
@@ -38,6 +40,7 @@ export default async function BrandIndexPage({ params }: PageProps) {
 
   const works = studies.filter((c) => brandSlug(c.brand) === brand);
   const clampLevel = (n: number) => Math.min(5, Math.max(1, Math.round(n))) as 1 | 2 | 3 | 4 | 5;
+  const movement = getMovement(brand);
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -48,7 +51,14 @@ export default async function BrandIndexPage({ params }: PageProps) {
           <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber-bright transition-colors mb-12">
             <ArrowLeft size={14} /> THE INDEX
           </Link>
-          <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber-bright mb-6">RANK #{entry.rank} OF {ranked.length}</p>
+          <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber-bright mb-6">
+            RANK #{entry.rank} OF {ranked.length}
+            {movement && movement.scoreDelta !== 0 && (
+              <span className={movement.scoreDelta > 0 ? 'text-emerald-400' : 'text-red-400'}>
+                {' '}· {movement.scoreDelta > 0 ? '▲' : '▼'} {Math.abs(movement.scoreDelta)} SINCE {movement.since}
+              </span>
+            )}
+          </p>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h1 className="max-w-3xl text-4xl md:text-6xl font-display font-bold leading-[0.98]">{entry.brand}</h1>
             <span className="text-right">
@@ -95,6 +105,10 @@ export default async function BrandIndexPage({ params }: PageProps) {
             );
           })}
         </div>
+
+        <section className="mt-14 border-t border-mono-gray/20 pt-12">
+          <BadgeEmbed slug={brand} brand={entry.brand} score={entry.score} />
+        </section>
 
         <div className="mt-14 bg-mono-black text-mono-white p-7 md:p-9">
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-3">IS THIS YOUR BRAND?</p>
