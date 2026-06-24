@@ -1,0 +1,71 @@
+name: MonoKromatik Breaking Radar (near-real-time)
+
+# The always-on breaking-news pull: fetches the latest from trusted feeds, the
+# model flags genuine major breaks in our focus segments, and an alert email goes
+# out immediately. Deduped via a committed ledger so each story alerts once.
+#
+# CADENCE / COST: set to HOURLY to stay within the free Actions budget on a private
+# repo. Tighten to '*/30' or '*/15' for more topicality (more Actions minutes; may
+# need a paid plan). TRUE sub-minute / to-the-second detection needs a dedicated
+# always-on worker or push/streaming feeds (the script is trigger-agnostic and ready
+# for that) — this cron is the zero-infra "always-on" version.
+
+on:
+  schedule:
+    # Hourly at :13 (off the :00 mark so runs don't pile onto the API together).
+    - cron: '13 * * * *'
+  workflow_dispatch:
+    inputs:
+      window:
+        description: 'Look-back window in hours'
+        required: false
+        default: '3'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: breaking-radar
+  cancel-in-progress: true
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Watch for breaking news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MONO_MODEL_UTILITY: ${{ secrets.MONO_MODEL_UTILITY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
+          EIC_DIGEST_FROM: ${{ secrets.EIC_DIGEST_FROM }}
+          NODE_ENV: production
+        run: npm run breaking:watch -- --window=${{ github.event.inputs.window || '3' }}
+
+      - name: Persist the dedup ledger
+        run: |
+          if [ -z "$(git status --porcelain output/breaking-ledger.json)" ]; then
+            exit 0
+          fi
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git add output/breaking-ledger.json
+          git commit -m "chore(breaking): update radar ledger [skip ci]"
+          git push origin main
