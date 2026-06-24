@@ -2,8 +2,8 @@ name: MonoKromatik Daily Discovery and Review Run
 
 on:
   schedule:
-    # 06:00 SAST = 04:00 UTC (every day)
-    - cron: '0 4 * * *'
+    # Midday SAST (12:00 SAST = 10:00 UTC), every day. Off the :00 mark on purpose.
+    - cron: '7 10 * * *'
   workflow_dispatch:
     inputs:
       count:
