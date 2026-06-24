@@ -12,9 +12,12 @@
 import type { Story } from './rss-feeds';
 
 /** Our focus segments — the judge only flags major breaks within these. */
-export const FOCUS = `African & diaspora BRAND, business and marketing moves; music (Afrobeats, Amapiano,
-hip-hop); sport and athletes; fashion, film and screen; creators and the culture
-economy; AND the drinks/spirits-brand world (major launches, deals, results).`;
+export const FOCUS = `MAJOR breaking news about AFRICA or the AFRICAN DIASPORA — and only within these
+beats: brand / business / marketing moves; music (Afrobeats, Amapiano, hip-hop,
+etc.); sport and athletes; fashion, film and screen; creators and the culture
+economy; and the drinks / spirits-brand world. The story must clearly involve an
+African or African-diaspora brand, company, market, artist, athlete, creator,
+institution or community.`;
 
 export interface BreakingCandidate {
   title: string;
@@ -50,7 +53,7 @@ export function selectCandidates(stories: Story[], alerted: Set<string>, opts?: 
 /** The judge prompt: a HIGH bar — only genuine, major breaks of follower interest. */
 export function judgePrompt(cands: BreakingCandidate[]): string {
   const list = cands.map((c, i) => `${i}. [${c.source} · ${c.category}] ${c.title}`).join('\n');
-  return `You are MonoKromatik's breaking-news desk. Our followers care about:\n${FOCUS}\n\nBelow are fresh headlines. Flag ONLY genuine BREAKING news that would be of MAJOR interest to our followers — a significant deal, launch, award/record, death, appointment, results or controversy. Be strict: routine coverage, recaps, opinion, listicles and minor items are NOT breaking (importance ≤ 2). Reserve importance 4–5 for stories an editor would drop everything to cover.\n\n${list}\n\nReturn ONLY a JSON array (in a \`\`\`json fence): [{"index": <n>, "breaking": <bool>, "importance": <1-5>, "why": "<one line>"}] — one object per headline.`;
+  return `You are MonoKromatik's breaking-news desk. Our remit:\n${FOCUS}\n\nBelow are fresh headlines. Flag ONLY genuine BREAKING news that is BOTH (a) clearly about Africa or the African diaspora AND (b) inside our beats above — a significant deal, launch, award/record, death, appointment, signing, result or controversy involving an African/diaspora brand, company, market, artist, athlete or creator.\n\nHARD EXCLUSIONS — mark these breaking:false, importance ≤ 2 no matter how globally big: general world news, health/disease/pandemics, natural disasters, geopolitics/elections/war, crime, weather, and any story with NO clear African or diaspora connection within our beats. Also not breaking: routine coverage, recaps, opinion, previews and listicles.\n\nReserve importance 4–5 for a story a MonoKromatik editor would drop everything to cover. When unsure whether the African/diaspora link is real, score it low.\n\n${list}\n\nReturn ONLY a JSON array (in a \`\`\`json fence): [{"index": <n>, "breaking": <bool>, "importance": <1-5>, "why": "<one line, name the African/diaspora link>"}] — one object per headline.`;
 }
 
 /** Parse the judge's JSON, mapping back to links. Fail-safe → []. */
