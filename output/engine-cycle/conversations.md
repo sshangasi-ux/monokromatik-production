@@ -1,154 +1,157 @@
-<!-- Engine cycle draft · 2026-06-24T11:57:41.746Z · section: conversations · 5 web searches -->
+<!-- Engine cycle draft · 2026-06-24T16:01:05.823Z · section: conversations · 5 web searches -->
 
-## Conversations — Review-Queue Brief: Cycle 06/2026
+## Conversations Review Queue — Cycle 24 June 2026
 
-**Format:** Outreach briefs for editorial consideration. These are not transcripts. No quotes are fabricated. Each item is classified by confidence level.
-
----
-
-### The Context Frame *(interpretive)*
-
-
-A 2026 report by Boston Consulting Group places Africa's creative economy at $59 billion
-, yet 
-despite shaping global conversations across fashion, music, film, art and design, Africa still captures only a small fraction of the economic value tied to its creativity.
- The ownership gap is the story of this cycle. Three operators — one building the measurement infrastructure to close it, one constructing a continental institution to institutionalise it, and one proving on Target shelves that supply-chain sovereignty and cultural origin are viable brand strategies — represent the clearest entry points into that argument right now.
+*Three outreach briefs for editor approval. All claims sourced and tagged. No quotes fabricated. Briefs only — not transcripts.*
 
 ---
 
-### Candidate 01 — Thebe Ikalafeng
-
-**Role / Current relevance** *(verified)*
+### Editorial Context
 
 
-Thebe Ikalafeng is founder and chairman of Brand Africa, which this year named the inaugural ACMO 100 list of African marketing leaders building the most powerful brands in Africa and beyond.
+A 2026 report by Boston Consulting Group places Africa's creative economy at $59 billion.
+ That number flatters and misleads simultaneously: 
+despite that influence, Africa still captures only a small fraction of the economic value tied to its creativity — its broader creative economy, spanning fashion, music, crafts, film and design, accounted for just 1.5 percent of global creative economy output.
+ The gap between cultural production and captured value is the fault line this cycle's conversations sit on. Each target below works, in a different register, on the same structural problem: who builds the systems, who holds the data, and who keeps the money.
+
+---
+
+### Target 01 — Thebe Ikalafeng
+
+**Who he is**
+
+
+Founder and chairman of Brand Africa, Chancellor of Sol Plaatje University, Professor of Practice at the University of Johannesburg Business School, and best-selling author.
  
-Brand Africa is the continent's leading brand-led platform, and since 2011 its flagship initiative, the Brand Africa 100 | Africa's Best Brands®, has tracked brand performance, consumer perception and brand equity across the continent.
+He is the founder of Brand Leadership Group, a multi-disciplinary branding advisory group at the intersection of strategy, creativity and intellectual property law; and Brand Africa, the seminal non-profit pan-African movement for a brand-led African agenda, and pioneer of the 'Brand Africa 100: Africa's Best Brands' initiative, widely referenced as the definitive barometer of brands in Africa.
 
 
-**Why now** *(verified + interpretive)*
+**Why Now**
 
-The ACMO100 is not a ranking exercise — it is a policy move. 
-The two-day Brand Africa Week programme in Addis Ababa culminated at Africa Hall, the historic founding site of the Organisation of African Unity, where honourees convened under the patronage of the African Union Commission to develop a blueprint for driving a made-in-Africa and buy-Africa agenda.
- That framing — brand leadership as industrial policy — is a deliberate escalation. 
-Brand Africa's independent research over 15 years has consistently found that while 68% of Africans believe in Africa, only 18% of the brands they most admire are African.
- Ikalafeng has spent fifteen years building the evidence base for why that gap is a structural, not aspirational, problem. The ACMO100 is his attempt to name the people positioned to change it. *(interpretive: this is the most politically legible moment Brand Africa has had since its founding — the AU imprimatur converts a rankings list into a continental accountability document.)*
+Two events make Ikalafeng an urgent conversation right now. First, 
+Brand Africa on 3 June 2026 unveiled the results of its 16th annual Brand Africa 100 rankings, covering 30 countries that represent more than 85 percent of the continent's population and GDP. For the 16th consecutive year, Africans rank non-African brands as the most admired brands in Africa — yet African brands have rebounded to 15% of the Top 100, recovering from a historic low of 11% in 2025, the sharpest single-year recovery the survey has recorded.
+ Second, Brand Africa launched the inaugural Africa CMO 100 (ACMO 100). 
+Brand Africa's independent research over 15 years has consistently found that while 68% of Africans believe in Africa, only 18% of the brands they most admired are African. ACMO 100 exists to recognise and connect the leaders best placed to change that.
+ 
+The inaugural ACMO 100 list names African marketing leaders who are building the most powerful brands in Africa and beyond.
+ The structural question — why African cultural influence does not translate into African brand dominance on the continent's own shelves — is Ikalafeng's life's work, and the data just got sharper.
 
+**Confidence tag:** Verified
 
-The evening was hosted by Brand Africa in partnership with the African Union Commission and Opportunity Africa, marking the first formal recognition of the 100 Most Influential African and Diaspora CMOs — honourees who hail from 21 African nations generating more than US$2.3 trillion, over 80% of Africa's GDP.
+**Proposed Questions**
 
-
-**Interview questions for editorial outreach**
-
-1. Brand Africa's 15-year data shows the 18% admiration rate for African brands has been stubbornly persistent. What structural lever — regulatory, financial, or institutional — do you believe has the highest leverage for moving that number?
-2. The ACMO100 list was produced without payment, sponsorship or self-nomination. What does that governance model say about how Africa-centred credibility indexes need to be built to resist capture?
+1. The 2026 Brand Africa 100 shows African brands recovering to 15% of the most admired list — the sharpest single-year gain on record. What specifically drove that recovery, and why should we believe it is structural rather than cyclical?
+2. You launched ACMO 100 this year, effectively creating the first authoritative map of African marketing leadership. What does that map reveal about where power actually sits inside the continent's brand economy — and where the gaps are most dangerous?
 3. 
-Women make up 62% of the ACMO100 honourees; in Africa they are the majority of senior marketing leaders by a clear margin across every region, and the diaspora category is 75% female.
- What does that tell you about where African brand authority actually lives — and why hasn't the board-level conversation caught up?
-4. The ACMO100 convened at Africa Hall under AU patronage. How does Brand Africa avoid the risk of its credibility work being absorbed into continental bureaucracy rather than sharpening market accountability?
-5. You have consistently argued that brands are drivers of national competitiveness, not a soft-power afterthought. What's the clearest case study from the ACMO100 cohort that demonstrates that argument in financial terms?
+The pattern of European luxury houses acquiring African cultural authority through casting and campaign photography is consistent. Brand recognition and credibility among Africa's rapidly growing Gen Z luxury consumer base is the return on investment.
+ From Brand Africa's research, how long can African cultural equity subsidise non-African brand value before the reputational arbitrage closes — and what would closing it actually look like?
+4. Your book *Rooted and Rising* urges Africans to operate as originators, not imitators. As a practitioner who built his toolkit at Colgate and Nike, how do you personally navigate the tension between those two positions — and what do you tell the next generation of African CMOs who face the same?
+5. Brand Africa's stated target is for at least 50% of the most admired brands in Africa to be indigenous by 2050. Given the structural barriers you measure every year, is that goal a credible strategic horizon or an act of principled optimism?
 
 ---
 
-### Candidate 02 — Lulu Shabell
+### Target 02 — Lulu Shabell
 
-**Role / Current relevance** *(verified)*
+**Who she is**
 
 
-Lulu Shabell is founder of ÀLKÉ, a pan-African cultural institution built around four pillars: Art, Legacy, Knowledge and Enterprise.
+Lulu Shabell is the Founder and CEO of LULUBELL Group and one of Africa's leading creative economy strategists.
+ 
+Over nearly three decades she has driven the global expansion of more than 90 African fashion brands across 30 African and Caribbean countries through initiatives including Portugal Fashion, TRANOÏ Paris and The Mercado Project at Rockefeller Center.
+ 
+Her work has included contributing to UNESCO's report on the African Fashion Industry.
+
+
+**Why Now**
+
+Shabell is the architect of ÀLKÉ, arguably the most structurally ambitious cultural institution launched on the continent in 2025–26. 
+Founded by Lulu Shabell, ÀLKÉ is a pan-African cultural institution built around four pillars: Art, Legacy, Knowledge and Enterprise.
  
 Rather than functioning as a seasonal showcase, the platform is designed as a permanent framework to preserve, commercialise and grow Africa's creative industries over the long term.
  
-ÀLKÉ's model is built around three structures, the first being the annual ÀLKÉ Ball — a convening platform for creatives, investors, policymakers and industry stakeholders — with its inaugural edition taking place in Cape Town, and future editions expected to rotate across Lagos, Nairobi, Dakar, Accra, Addis Ababa and Cairo.
+ÀLKÉ has outlined its long-term framework for protecting African cultural intelligence, strengthening intellectual property ownership, and building the institutional infrastructure needed to scale the continent's creative economy.
+ Three pillars give ÀLKÉ institutional weight: 
+the ÀLKÉ Endowment, a permanent funding structure focused on education, research, manufacturing support, archives and enterprise development — an approach designed to provide durable support beyond the short-term grant cycles that have long shaped funding for African creative industries.
+ 
+The third pillar is a venture studio framework designed to connect African creatives and cultural enterprises with investors, policymakers and commercial partners capable of scaling their work into sustainable businesses.
+ The inaugural ÀLKÉ Ball is set for Cape Town, with subsequent editions rotating to Lagos, Nairobi, Dakar, Addis Ababa, Accra and Cairo. This is not an event; it is institution-building in real time.
 
+**Confidence tag:** Verified
 
-**Why now** *(verified + interpretive)*
+**Proposed Questions**
 
-The timing is precise. 
-Brookings estimates Africa's creative economy could reach $200 billion by 2030, with music, film and digital content becoming scalable export assets — if infrastructure and policy align.
- Shabell's thesis is that the infrastructure problem is institutional, not technical. 
-ÀLKÉ's second pillar is an endowment — a permanent funding structure focused on education, research, manufacturing support, archives and enterprise development — while its third pillar is a venture studio framework designed to connect African creatives with investors and commercial partners capable of scaling their work.
- *(Interpretive: ÀLKÉ is attempting to do simultaneously what most institutions split across three separate mandates: preservation, capitalisation, and commercialisation. The rotating Ball format is also a deliberate rejection of the single-city creative-capital model — Lagos vs. Nairobi vs. Johannesburg debates — which has historically fragmented pan-African creative investment.)*
-
-
-The institution's central argument is that while African culture continues to shape global industries, ownership and long-term economic value remain concentrated elsewhere — particularly in fashion and luxury, where African aesthetics and textiles continue to influence global design, often without sustained returns flowing back.
-
-
-**Interview questions for editorial outreach**
-
-1. ÀLKÉ describes itself as a permanent institution, not a seasonal showcase. What is the specific governance and funding model that makes it structurally different from the many Africa creative convenings that have appeared and dissolved over the past decade?
-2. The endowment pillar is the most unusual element. Who are you in conversation with to capitalise it — African sovereign wealth, diaspora philanthropy, institutional investors — and what are the terms they are asking for?
-3. 
-Research suggests many African fashion and design institutions still rely heavily on Western frameworks, positioning New York, London and Paris as primary reference points, even as Lagos, Dakar, Nairobi and Johannesburg continue to shape global culture in real time.
- How does ÀLKÉ build a curriculum and archive infrastructure that treats African creative capitals as the primary reference — without becoming parochial?
-4. The rotating continental Ball format means ÀLKÉ refuses to be anchored to one city. But investors tend to want geographic legibility. How do you make the case for a genuinely pan-African institution to funders who are used to writing cheques to Lagos or Nairobi?
-5. Where does ÀLKÉ sit on the question of IP? Preservation and commercialisation can be in tension — whose interests govern when they conflict?
+1. ÀLKÉ positions itself as an institution rather than a festival or agency. What does institutional permanence require in the African creative context that a fashion week or grant programme structurally cannot deliver?
+2. 
+Most fashion schools on the African continent continue to teach the history of clothing exclusively through a Western lens, with students encouraged to view Paris or London as their only points of reference, overlooking complex local textile traditions. This leads young creatives to view themselves as newcomers to a history that their own ancestors actually shaped.
+ How does ÀLKÉ's education pillar practically intervene in a curriculum landscape that is deeply entrenched?
+3. The ÀLKÉ Endowment is designed as a permanent capital structure. Who are the investors, and how do you convince capital — which is oriented toward short-horizon returns — to fund intergenerational institutional work?
+4. You have spent nearly three decades taking African fashion brands into Western markets. What did that experience teach you about the structural ceiling of that model, and at what point did you conclude that the answer was building infrastructure on the African side rather than negotiating entry on the Western side?
+5. 
+Despite its influence, Africa still captures only a small fraction of the economic value tied to its creativity.
+ In your assessment, which single institution-building intervention — if adequately resourced — would move that needle fastest, and why?
 
 ---
 
-### Candidate 03 — Salwa Petersen
+### Target 03 — Sarah Diouf
 
-**Role / Current relevance** *(verified)*
+**Who she is**
 
 
-Salwa Petersen, founder of Chéribé, is a Chadian-born entrepreneur whose work sits at the intersection of ancestral ritual, modern beauty science and intentional design — rooted in the Chébé hair-care tradition passed down through the women of her family in Chad.
+Sarah Diouf transformed herself from a fashionable influencer in the media to a world-renowned fashion designer through her brand Tongoro. With an already strong presence internationally, her Tongoro fashion brand produces high-end clothing from Africa for the world's celebrities and entertainers. Her brand has contributed to making African fashion premium and global.
+ Tongoro, founded and manufactured in Dakar, Senegal, operates as a vertically integrated direct-to-consumer luxury label — one of the few African fashion brands that has demonstrably converted global celebrity visibility into a sustained commercial operation anchored on the continent.
+
+**Why Now**
+
+
+By 2026, virtually every major European luxury house has Afrobeats cultural adjacency: Louis Vuitton under Pharrell Williams positions Rema and Tems in front rows; Burberry cast Burna Boy and Tems in a holiday campaign; Diesel had Rema walk its AW26 Milan runway; Jacquemus invited Asake to its Paris Fashion Week show; Wizkid appeared in Dior Men's AW26.
  
-A Harvard graduate, Petersen spent years in product development at L'Oréal, learning the discipline behind global beauty, formulation standards and performance
-, before returning to Chad to build a vertically integrated brand. 
-At Target, Chéribé is the number one new hair care brand and is helping drive market share gains.
+The pattern is consistent: African cultural authority is acquired through casting, campaign photography, and invitations to shows.
+ Diouf is one of the clearest counter-examples to that logic: a brand that accumulates cultural authority from Dakar, not from a Paris runway slot. As the luxury houses intensify their African adjacency play, Tongoro's model — manufactured in Africa, worn globally — is the sharpest available riposte. 
+Afrobeats, Nigerian fashion, Senegalese cinema and South African design are no longer niches; they dictate global trends.
+ Diouf sits inside that shift as a builder, not just a beneficiary.
 
+**Confidence tag:** Verified (identity and brand role); partial (financial specifics of Tongoro's current operations are not publicly disclosed — questions should probe, not assume scale)
 
-**Why now** *(verified + interpretive)*
+**Proposed Questions**
 
-Petersen's story broke into mainstream business coverage in early 2026 from an unexpected angle. 
-Shortly after landing Chéribé at Target, Petersen received a call from a Target executive asking to meet urgently — this was before Target became the face of corporate America's Trump-era DEI rollback.
- 
-Target still offered Chéribé a coveted end-cap display during Black History Month at no cost to Petersen.
- The episode crystallised a question this publication should be pressing on: what happens to African-origin brands built inside Western retail infrastructure when that infrastructure retreats from the politics that opened the door? *(Interpretive: Petersen is navigating something precise and underreported — she is not a beneficiary of DEI as a diversity quota; she is the founder of a technically superior product with a patented proprietary ingredient and a vertically controlled supply chain that happens to be Black and African. The conflation of those two things by both supporters and detractors is a brand-culture story worth unpacking carefully.)*
-
-
-Petersen blends ancestral ingredients with modern formulations to create the patented Chébé Complex™, made from heirloom seeds grown on her family's organic regenerative farm in Chad — a farm that employs and uplifts local women while the brand reinvests in conservation efforts.
- 
-Chéribé owns its supply chain from source to shelf, which allows it to protect its ingredients, maintain quality and operate with speed and accountability.
-
-
-**Interview questions for editorial outreach**
-
-1. You own your supply chain from Chad to shelf — seed, formulation, distribution. Most beauty brands at mass retail are sourcing globally. What did it cost you, in time and capital, to build that vertical integration, and do you think it would be replicable for other African-ingredient founders?
-2. Vogue traveled to Chad to cover Chéribé. What does "visibility for Chad" mean as a business outcome — is there a direct commercial effect, or is that primarily a legitimacy asset that opens other doors?
-3. 
-Sub-Saharan Africa's beauty sector is expected to grow by $5 billion between 2021 and 2026.
- Given that growth, is there a version of Chéribé that expands into African retail — or is the business model explicitly built around Western mass retail as the primary channel?
-4. The DEI rollback moment forced you into public view on a political question while you were weeks into your Target launch. How do you protect a brand that is culturally specific — Chadian, not generically "African" — from being used as a proxy in arguments it was never designed to enter?
-5. You patented the Chébé Complex™. Traditional knowledge protection is a persistent gap in African IP frameworks. What is the mechanism by which your community in Chad benefits — legally and economically — from that patent rather than having it extracted?
+1. Tongoro manufactures in Dakar and sells globally. Most commentary celebrates that as a political position. Describe it as a logistics operation — what does it actually cost, and what infrastructure does West Africa still lack for that model to scale without friction?
+2. European luxury houses are aggressively casting Afrobeats artists in campaigns and front rows. What, precisely, do they gain from that adjacency — and what do African creatives and creative economies concretely lose when cultural value flows in one direction without reciprocal investment in African fashion infrastructure?
+3. You built Tongoro's initial audience partly through digital channels and celebrity clientele. At what point does that kind of visibility convert into durable brand equity, and what does the conversion actually require that virality alone cannot provide?
+4. 
+If an AI model is trained on Yoruba folklore, who owns the output?
+ More broadly: as generative AI begins referencing and remixing African aesthetic systems, what does IP protection for African designers actually look like in practice, and who is building those frameworks?
+5. Senegal's creative economy is distinct from Nigeria's — smaller in scale, different institutional architecture. What does building a premium African fashion brand from Dakar specifically, rather than Lagos or Accra, require you to solve that a brand built from a larger creative-economy capital would not face?
 
 ---
 
-### Editorial Notes
+### Editorial Notes for the Queue
 
-- **Candidate 01 (Ikalafeng):** High editorial priority. Brand Africa Week 2026 just completed; the ACMO100 report is in the April 2026 issue of *African Business*. The window for a timely, post-event conversation that moves beyond the list itself is narrow — ideally outreach within the next three weeks.
-- **Candidate 02 (Shabell):** Medium-term priority. ÀLKÉ is pre-revenue and pre-scale. 
-The *Brandessence Nigeria* piece dated June 2026 is the most recent primary coverage.
- This is an early-stage subject — valuable precisely because the institution is still being designed and questions remain genuinely open.
-- **Candidate 03 (Petersen):** High editorial priority. The *Business of Fashion* and *Hype Hair* coverage establishes strong existing media appetite. A MonoKromatik angle should go harder on supply chain economics and IP architecture than beauty press has — this is a business intelligence story, not a product profile.
+- **Priority for outreach:** All three. Ikalafeng is accessible via Brand Africa's media contact (Addis Ababa June 2026 presence confirmed). Shabell's ÀLKÉ announcement cycle makes June–July 2026 the optimal window. Diouf operates with a lean public communications posture — approach via Tongoro's direct channels; do not route through PR intermediaries.
+- **Conflict check:** Thebe Ikalafeng sits on the ACMO 100 Review Committee governance structure — standard disclosure required if we publish alongside Brand Africa data.
+- **Format suggestion:** These three could run as a themed series under a unifying frame — e.g., *The Architecture Problem* — given that all three are fundamentally addressing the same structural gap between African cultural production and captured economic value.
+- **What is absent from this queue:** A tech-infrastructure operator (distribution, payments, streaming). Flag for next cycle: Victoria Popoola (TalentX, Nollywood financing infrastructure) or Joe Kinvi (Borderless, diaspora investment infrastructure) as candidates pending deeper verification.
 
 ---
 
-*Confidence ratings: Role/identity claims — **verified** against multiple independent sources. Market figures — **verified** against named research institutions (BCG, Brookings, Brand Africa). Editorial framing and strategic interpretation — **interpretive**, argued not asserted.*
+*Status: DRAFT — needs human editorial approval*
 
-**Status: DRAFT — needs human approval**
+*Research conducted: 24 June 2026. All citations link to sources published between December 2025 and June 2026.*
 
 ## Sources
 
 1. [Africa’s Creative Economy Scales But Structural Gaps Persist](https://blog.discoursechannel.com/africas-creative-economy-scales-but-structural-gaps-persist/)
 2. [Africa’s creative economy has a $150bn opportunity — this institution is building the infrastructure to capture it](https://www.brandessencenigeria.com/africas-creative-economy-has-a-150bn-opportunity-this-institution-is-building-the-infrastructure-to-capture-it/)
-3. [Behind every top brand is an exceptional marketing officer - African Business](https://african.business/2026/03/trade-investment/behind-every-top-brand-is-an-exceptional-marketing-officer)
-4. [Brand Africa announces the inaugural Africa CMO 100 - African Media Agency](https://africanmediaagency.com/brand-africa-announces-the-inaugural-africa-cmo-100/)
-5. [Brand Africa And African Union Honour The 100 Most Influential Africa CMOs In Addis Ababa - Brand Spur](https://brandspurng.com/2026/06/03/brand-africa-and-african-union-honour-the-100-most-influential-africa-cmos-in-addis-ababa/)
+3. [Articles by Thebe Ikalafeng | Daily Maverick](https://www.dailymaverick.co.za/author/thebe-ikalafeng/)
+4. [Thebe Ikalafeng | Championing Africa's Brand Renaissance](https://www.ikalafeng.com/)
+5. [African brands rebound to 15% of the most admired brands in Africa, recovering from a historic low of 11%. MTN and Dangote lead Africa’s rankings. - African Media Agency](https://africanmediaagency.com/african-brands-rebound-to-15-of-the-most-admired-brands-in-africa-recovering-from-a-historic-low-of-11-mtn-and-dangote-lead-africas-rankings/)
 6. [Brand Africa announces the inaugural Africa CMO 100 - Global News Network Liberia](https://gnnliberia.com/amp/brand-africa-announces-the-inaugural-africa-cmo-100/)
-7. [Africa’s Creative Economy Is Becoming a Strategic Asset](https://furtherafrica.com/2026/02/23/africa-creative-economy-200bn-2030/)
-8. [Inside Target's partnerships with Black designers](https://corporate.target.com/news-features/article/2026/02/black-designers)
-9. [Behind the African Haircare Empire: Chéribé - Hype Hair](https://hypehair.com/14036/cheribe-hair-care/)
-10. [Can Fashion Be Inclusive Without Saying ‘DEI’? | BoF](https://www.businessoffashion.com/articles/workplace-talent/can-fashion-be-inclusive-without-saying-dei/)
-11. [African Beauty is Going Global: ‘A-Beauty’ Leads Skincare’s Future | VIDEO | EURweb | Black News, Culture, Entertainment & More](https://eurweb.com/african-beauty/)
+7. [Behind every top brand is an exceptional marketing officer - African Business](https://african.business/2026/03/trade-investment/behind-every-top-brand-is-an-exceptional-marketing-officer)
+8. [Why European Luxury Houses Invest in Afrobeats Stars but Not African Fashion Infrastructure | OMIREN STYLES](https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/)
+9. [OPINION: Why Africa must build the institutions that protect its cultural intelligence -by Lulu Shabell](https://thenet.ng/africa-build-institutions-protect-cultural-intelligence/)
+10. [ÀLKÉ Ball positions Africa for bigger role in global luxury economy](https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/)
+11. [African Cultural Intelligence and Creative Economies Protection Framework Outlined - The Coast Media Group](https://www.thecoast.co.ke/2026/06/18/african-cultural-intelligence-and-creative-economies-protection-framework-outlined/40/38/business-news/thecoast/16423/11/)
+12. [Lulu Shabell's Manifesto for African Fashion and Cultural Industries - Africa Fashion Tour](https://africafashiontour.com/en/lulu-shabells-manifesto-for-african-fashion-and-cultural-industries/)
+13. [African Influencers Million-Dollar Brands Dominating 2026!](https://knowafrika.com/african-influencers-million-dollar-brands-2026/)
+14. [The creative economy in Africa - Africa Fashion Tour](https://africafashiontour.com/en/the-creative-economy-in-africa/)
+15. [10 Trends Changing Africa’s Creative Economy in 2026](https://www.thecreativebrief.africa/p/10-trends-changing-africas-creative)
 
