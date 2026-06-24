@@ -23,7 +23,7 @@ on:
         type: string
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: breaking-radar
@@ -46,6 +46,17 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      # Persist the dedup ledger via the Actions cache (NOT a commit) — main is
+      # branch-protected (PR-only), so a direct push is rejected. A unique save
+      # key + a prefix restore-key gives a rolling "latest ledger" between runs.
+      - name: Restore radar ledger
+        uses: actions/cache@v4
+        with:
+          path: output/breaking-ledger.json
+          key: breaking-ledger-${{ github.run_id }}
+          restore-keys: |
+            breaking-ledger-
+
       - name: Install dependencies
         run: npm install --no-fund --no-audit
 
@@ -58,14 +69,3 @@ jobs:
           EIC_DIGEST_FROM: ${{ secrets.EIC_DIGEST_FROM }}
           NODE_ENV: production
         run: npm run breaking:watch -- --window=${{ github.event.inputs.window || '3' }}
-
-      - name: Persist the dedup ledger
-        run: |
-          if [ -z "$(git status --porcelain output/breaking-ledger.json)" ]; then
-            exit 0
-          fi
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
-          git add output/breaking-ledger.json
-          git commit -m "chore(breaking): update radar ledger [skip ci]"
-          git push origin main

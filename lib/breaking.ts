@@ -34,13 +34,20 @@ export interface BreakingVerdict {
   why: string;
 }
 
-/** Recent, deduped candidates: published within `windowHours` and not yet alerted. */
-export function selectCandidates(stories: Story[], alerted: Set<string>, opts?: { windowHours?: number; now?: number }): BreakingCandidate[] {
+/**
+ * Recent, deduped candidates: published within `windowHours`, not yet alerted,
+ * newest first, capped at `max` (default 50) so the judge's verdict JSON always
+ * fits in one response.
+ */
+export function selectCandidates(stories: Story[], alerted: Set<string>, opts?: { windowHours?: number; now?: number; max?: number }): BreakingCandidate[] {
   const windowMs = (opts?.windowHours ?? 3) * 3_600_000;
   const now = opts?.now ?? Date.now();
+  const max = opts?.max ?? 50;
   const seen = new Set<string>();
   const out: BreakingCandidate[] = [];
+  // fetchMonoKromatikStories returns newest-first, so the first `max` are freshest.
   for (const s of stories) {
+    if (out.length >= max) break;
     if (!s.link || alerted.has(s.link) || seen.has(s.link)) continue;
     const t = new Date(s.pubDate).getTime();
     if (!isFinite(t) || now - t > windowMs || t > now + 3_600_000) continue; // within window, not future-dated

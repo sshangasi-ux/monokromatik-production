@@ -80,7 +80,7 @@ async function main() {
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 4 });
   const msg = await client.messages.create({
     model: MODELS.utility,
-    max_tokens: 2000,
+    max_tokens: 4000,
     messages: [{ role: 'user', content: judgePrompt(cands) }],
   });
   const text = msg.content.filter((b): b is Anthropic.TextBlock => b.type === 'text').map((b) => b.text).join('\n');
