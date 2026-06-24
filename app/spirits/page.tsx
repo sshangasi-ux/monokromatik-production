@@ -23,21 +23,22 @@ export const metadata: Metadata = {
 
 export const revalidate = 300;
 
-// Drinks-vertical filter — robust to how the writer categorises feed stories:
-// the explicit 'drinks' category, our drinks trade sources, or drinks vocabulary.
+// The Drinks Desk is AFRICA & DIASPORA-focused: a story qualifies only if it's
+// both about drinks AND connected to Africa or its diaspora.
 const DRINKS_TERMS = /\b(spirit|spirits|liquor|whisk|gin|rum|vodka|tequila|cognac|brandy|wine|champagne|cocktail|distill|brewer|beer|amarula|mezcal|bourbon|liqueur|aperitif|drinks?)\b/i;
-const DRINKS_SOURCES = ['the spirits business', 'the drinks business', 'drinks international', 'just-drinks'];
+// African + diaspora signal: continent/diaspora, major markets/demonyms/cities,
+// and notable African drinks brands.
+const AFRICA_TERMS = /\b(africa|african|diaspora|pan-?african|sub-?saharan|nigeria|nigerian|naija|ghana|ghanaian|kenya|kenyan|south\s?africa|south\s?african|mzansi|ethiopia|tanzania|uganda|senegal|ivory\s?coast|ivorian|c[oô]te\s?d.?ivoire|cameroon|morocc|egypt|egyptian|angola|zimbabwe|zambia|botswana|namibia|mozambiqu|rwanda|congo|drc|lagos|abuja|accra|nairobi|johannesburg|joburg|cape\s?town|kampala|dakar|addis|casablanca|kinshasa|amarula|savanna premium)\b/i;
 
-function isDrinks(a: { category: string; title: string; tags?: string[]; sourceName?: string }): boolean {
-  if (a.category?.toLowerCase() === 'drinks') return true;
-  if (a.sourceName && DRINKS_SOURCES.includes(a.sourceName.toLowerCase())) return true;
-  const hay = [a.title, ...(a.tags ?? [])].join(' ');
-  return DRINKS_TERMS.test(hay);
+function isAfricanDrinks(a: { category: string; title: string; excerpt?: string; content?: string; tags?: string[] }): boolean {
+  const hay = [a.title, a.excerpt, ...(a.tags ?? []), a.content].filter(Boolean).join(' ');
+  const drinks = a.category?.toLowerCase() === 'drinks' || DRINKS_TERMS.test(hay);
+  return drinks && AFRICA_TERMS.test(hay);
 }
 
 export default function SpiritsPage() {
   const articles = getAllArticles()
-    .filter(isDrinks)
+    .filter(isAfricanDrinks)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
   return (
