@@ -38,12 +38,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/ai-methodology`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
   ];
 
-  // Category landings, derived from live article data (self-heals as categories change).
-  const categories = Array.from(
-    new Set(articles.map((a) => a.category).filter((c): c is string => Boolean(c)))
-  );
-  const categoryRoutes: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${SITE}/category/${encodeURIComponent(category)}`,
+  // Branded culture pillar pages (the real top-level routes — Roots/Arena/Waves).
+  // (Replaces the old /category/* emission, which pointed at a now-removed
+  // duplicate route and 404'd.)
+  const categoryRoutes: MetadataRoute.Sitemap = ['roots', 'arena', 'waves'].map((slug) => ({
+    url: `${SITE}/${slug}`,
     lastModified: now,
     changeFrequency: 'daily' as const,
     priority: 0.7,

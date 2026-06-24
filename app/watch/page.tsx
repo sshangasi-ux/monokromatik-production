@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     description: 'Music videos, BTS, interviews, mini-docs — visual storytelling from the continent.',
   },
   alternates: { canonical: 'https://www.monokromatik.com/watch' },
+  // "Coming soon" placeholder — keep it out of search until it ships.
+  robots: { index: false, follow: true },
 };
 
 export const revalidate = 300;
