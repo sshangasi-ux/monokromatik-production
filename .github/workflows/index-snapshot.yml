@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: index-snapshot
@@ -37,15 +38,24 @@ jobs:
       - name: Snapshot the Index
         run: npm run index:snapshot
 
-      - name: Commit the snapshot
+      - name: Open a PR with the snapshot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # main is branch-protected (PR-only) — stage the snapshot as a PR, not a
+          # direct push. The snapshot must land in the repo (the site reads it).
           if [ -z "$(git status --porcelain data/index-history.json)" ]; then
             echo "No Index change this month — snapshot already recorded." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          BRANCH="index/snapshot-${{ github.run_id }}"
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
           git add data/index-history.json
-          git commit -m "chore(index): monthly Cultural-Signal Index snapshot [skip ci]"
-          git push origin main
+          git commit -m "chore(index): monthly Cultural-Signal Index snapshot"
+          git push origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "Cultural-Signal Index snapshot — $(date -u +%Y-%m-%d)" \
+            --body "Monthly Index snapshot — records the current ranking so the Index shows movement over time. Mechanical/derived data; merge to keep history accruing." || true
           echo "Recorded a new Index snapshot." >> "$GITHUB_STEP_SUMMARY"
