@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     description: 'Podcasts, music drops, and audio storytelling — coming soon.',
   },
   alternates: { canonical: 'https://www.monokromatik.com/listen' },
+  // "Coming soon" placeholder — keep it out of search until it ships.
+  robots: { index: false, follow: true },
 };
 
 export default function ListenPage() {

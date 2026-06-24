@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     description: 'Tees, prints, and culture pieces built for the diaspora. Launching late 2026.',
   },
   alternates: { canonical: 'https://www.monokromatik.com/shop' },
+  // "Coming soon" placeholder — keep it out of search until it ships.
+  robots: { index: false, follow: true },
 };
 
 export default function ShopPage() {

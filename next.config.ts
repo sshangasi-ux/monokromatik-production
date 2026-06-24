@@ -13,17 +13,9 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '**' },
     ],
   },
-  // Pretty URLs: /roots renders /category/roots, /arena → /category/arena, etc.
-  async rewrites() {
-    return [
-      { source: '/roots', destination: '/category/roots' },
-      { source: '/arena', destination: '/category/arena' },
-      { source: '/waves', destination: '/category/waves' },
-      { source: '/watch', destination: '/category/watch' },
-      { source: '/listen', destination: '/category/listen' },
-      { source: '/shop', destination: '/category/shop' },
-    ];
-  },
+  // Note: /roots, /arena, /waves, /watch, /listen, /shop are real top-level pages
+  // (app/<slug>/page.tsx). The old rewrites to a duplicate /category/[slug] route
+  // were dead (the real pages always won) — removed along with that route.
 };
 
 export default nextConfig;
