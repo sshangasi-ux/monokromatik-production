@@ -4,6 +4,7 @@ import { getPublicCaseStudies } from '../lib/case-studies';
 import { rankIndex, brandSlug } from '../lib/signal-index';
 import { getLiveReports } from '../lib/reports';
 import { getAllIssues, issueHref } from '../lib/issues';
+import { getAllConversations } from '../lib/conversations';
 
 const SITE = 'https://www.monokromatik.com';
 
@@ -89,6 +90,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((h): h is string => Boolean(h))
     .map((h) => ({ url: `${SITE}${h}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 }));
 
+  // Conversation briefs.
+  const conversationRoutes: MetadataRoute.Sitemap = getAllConversations().map((c) => ({
+    url: `${SITE}/conversations/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
@@ -97,5 +106,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandRoutes,
     ...reportRoutes,
     ...issueRoutes,
+    ...conversationRoutes,
   ];
 }
