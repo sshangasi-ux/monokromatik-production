@@ -115,6 +115,7 @@ export const RSS_FEEDS: RSSFeed[] = [
   { url: 'https://www.thedrinksbusiness.com/feed/', name: 'The Drinks Business', category: 'drinks', language: 'en', region: 'Global' },
   { url: 'https://drinksint.com/feed', name: 'Drinks International', category: 'drinks', language: 'en', region: 'Global' },
   { url: 'https://www.just-drinks.com/feed/', name: 'just-drinks', category: 'drinks', language: 'en', region: 'Global' },
+  { url: 'https://drinkabl.media/feed/', name: 'Drinkabl', category: 'drinks', language: 'en', region: 'Global' },
 ];
 
 // Category-based feed filtering
