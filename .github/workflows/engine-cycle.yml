@@ -65,11 +65,15 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MONO_MODEL_UTILITY: ${{ secrets.MONO_MODEL_UTILITY }}
+          # Media keys so auto-patched Culture articles always get a credited hero
+          # (publisher OG is keyless; these power the stock fallback).
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           NODE_ENV: production
         run: |
           # Source-count + dedup-vs-archive + schema gates. Low-stakes Culture
-          # articles are auto-patched into data/articles.json; claim-bearing kinds
-          # are routed to human authoring. Verdicts → output/engine-cycle/STAGED.md.
+          # articles are auto-patched into data/articles.json WITH a sourced hero
+          # image; claim-bearing kinds are routed to human authoring.
           npm run engine:stage
 
       - name: Stage the review queue + patches as a Pull Request

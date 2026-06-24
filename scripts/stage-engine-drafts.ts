@@ -26,6 +26,7 @@ import { join } from 'path';
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from '../lib/ai-models';
 import { buildArchive } from '../lib/archive';
+import { sourceMedia } from '../lib/source-media';
 import {
   classify,
   candidateToArticle,
@@ -239,7 +240,26 @@ async function main() {
         v.decision = 'ENRICH';
         continue;
       }
-      articles.push(candidateToArticle(v.candidate, stamp) as never);
+      const article = candidateToArticle(v.candidate, stamp) as Record<string, unknown>;
+      // Always ship with a hero: source a credited, self-hosted image (publisher
+      // OG first, then stock). Degrade gracefully — never block publish on media.
+      try {
+        const media = await sourceMedia({
+          sourceLink: v.candidate.sources[0]?.url,
+          sourceName: article.sourceName as string,
+          slug: `eng-${slug}`,
+          title: v.candidate.title,
+          excerpt: v.candidate.summary,
+          category: 'culture',
+        });
+        article.imageUrl = media.image.url;
+        article.imageCredit = media.image.credit;
+        article.imageSourceUrl = media.image.sourceUrl;
+        log(`  ${slug}: hero ${media.image.credit}`);
+      } catch (err) {
+        log(`  ${slug}: media sourcing failed (${err instanceof Error ? err.message : err}) — publishing imageless`);
+      }
+      articles.push(article as never);
       existing.add(slug);
       patched.push(slug);
       changed = true;
