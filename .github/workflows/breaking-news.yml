@@ -4,16 +4,16 @@ name: MonoKromatik Breaking Radar (near-real-time)
 # model flags genuine major breaks in our focus segments, and an alert email goes
 # out immediately. Deduped via a committed ledger so each story alerts once.
 #
-# CADENCE / COST: GitHub Actions' practical floor is ~every few minutes, and each
-# run uses Actions minutes. */15 ≈ 96 runs/day — on a private repo's free tier that
-# can exceed the monthly budget. Dial to '*/30' or '0 * * * *' (hourly) to cut cost,
-# or keep tight on a paid plan. TRUE sub-minute / to-the-second detection needs a
-# dedicated always-on worker or push/streaming feeds (the script is ready for either
-# trigger) — this cron is the zero-infra "always-on" version.
+# CADENCE / COST: set to HOURLY to stay within the free Actions budget on a private
+# repo. Tighten to '*/30' or '*/15' for more topicality (more Actions minutes; may
+# need a paid plan). TRUE sub-minute / to-the-second detection needs a dedicated
+# always-on worker or push/streaming feeds (the script is trigger-agnostic and ready
+# for that) — this cron is the zero-infra "always-on" version.
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    # Hourly at :13 (off the :00 mark so runs don't pile onto the API together).
+    - cron: '13 * * * *'
   workflow_dispatch:
     inputs:
       window:
