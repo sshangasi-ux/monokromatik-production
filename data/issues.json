@@ -74,14 +74,13 @@
     "title": "Culture Is Business",
     "focus": "Special Edition · Who Owns the Upside",
     "contents": "Who owns the upside · The Boardroom · The Work · Will It Land? · Brand Weather · Culture",
-    "status": "in-development",
-    "preview": true,
+    "status": "live",
     "features": [
       {
         "franchise": "COVER ESSAY",
         "title": "Who Owns the Upside",
         "description": "2026 is the year the debate shifts from visibility to ownership. As global capital and global structures move into African culture in force, the question is no longer whether Africa has value — but who holds the infrastructure that captures it.",
-        "href": "",
+        "href": "/issues/002/who-owns-the-upside",
         "status": "COVER ESSAY",
         "icon": "Sparkles"
       },
@@ -136,7 +135,8 @@
         "AFCON’S COMMERCIAL RECORD · WILL IT LAND?",
         "WHO OWNS THE UPSIDE?"
       ]
-    }
+    },
+    "publishedAt": "2026-06-24"
   },
   {
     "number": "003",

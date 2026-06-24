@@ -35,40 +35,50 @@ export default function IssueTwoPreviewPage() {
     <div className="min-h-screen bg-mono-paper">
       <Navigation />
       {issue && (
-        <IssueCover issue={issue} primaryCta={{ label: 'BE FIRST TO READ', href: '/weekly' }} />
+        <IssueCover issue={issue} primaryCta={{ label: 'READ THE COVER ESSAY', href: '/issues/002/who-owns-the-upside' }} />
       )}
 
       <section className="py-20 md:py-24 bg-mono-soft-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mb-12">
-            <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">THE EDITION WE&rsquo;RE BUILDING</p>
+            <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">INSIDE THE EDITION</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Who owns the upside.</h2>
             <p className="mt-6 text-lg font-body text-mono-charcoal">
               Issue 001 argued the world keeps discovering African value late and converting it into someone
               else&rsquo;s case study. Issue 002 reports what happened next — the management companies, development
               banks, sports-rights machines and luxury distributors that moved in, and the contest over who
-              keeps the value. The slate below is in commission; nothing here is published yet.
+              keeps the value. <strong>The cover essay is live now; the rest of the slate is rolling out.</strong>
             </p>
           </div>
 
           <div className="space-y-px border border-mono-gray/25 bg-mono-gray/25">
-            {features.map(({ franchise, title, description, status, icon }, index) => {
+            {features.map(({ franchise, title, description, status, icon, href }, index) => {
               const Icon = ICONS[icon ?? ''] ?? FileText;
-              return (
-                <article key={title} className="grid md:grid-cols-[78px_1fr_190px] gap-6 bg-mono-white p-7 md:p-9">
+              const live = Boolean(href);
+              const inner = (
+                <>
                   <div className="flex md:block items-center gap-4">
                     <p className="text-2xl font-display font-bold text-mono-amber">0{index + 1}</p>
                     <Icon className="mt-0 md:mt-8 text-mono-amber" size={22} />
                   </div>
                   <div>
                     <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber mb-4">{franchise}</p>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black">{title}</h3>
+                    <h3 className={`text-2xl md:text-3xl font-display font-bold text-mono-black ${live ? 'group-hover:text-mono-amber transition-colors' : ''}`}>{title}</h3>
                     <p className="mt-4 font-body text-mono-charcoal leading-relaxed max-w-3xl">{description}</p>
                   </div>
-                  <div className="flex md:flex-col justify-between items-start md:items-end">
-                    <span className="text-[10px] tracking-[0.18em] font-display font-bold border border-mono-gray/30 text-mono-gray px-3 py-2">{status}</span>
+                  <div className="flex md:flex-col justify-between items-start md:items-end gap-3">
+                    <span className={`text-[10px] tracking-[0.18em] font-display font-bold border px-3 py-2 ${live ? 'border-mono-amber bg-mono-amber text-mono-black' : 'border-mono-gray/30 text-mono-gray'}`}>{live ? 'READ NOW' : status}</span>
+                    {live && <span className="hidden md:inline-flex items-center gap-2 text-mono-amber font-display font-bold text-sm">OPEN <ArrowRight size={16} /></span>}
                   </div>
-                </article>
+                </>
+              );
+              const cls = 'grid md:grid-cols-[78px_1fr_190px] gap-6 bg-mono-white p-7 md:p-9';
+              return live ? (
+                <Link key={title} href={href} className={`group ${cls} hover:bg-mono-soft-white transition-colors`}>
+                  {inner}
+                </Link>
+              ) : (
+                <article key={title} className={cls}>{inner}</article>
               );
             })}
           </div>
