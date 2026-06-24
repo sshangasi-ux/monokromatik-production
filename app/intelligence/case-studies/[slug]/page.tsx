@@ -57,5 +57,29 @@ export default async function CaseStudyPage({ params }: PageProps) {
     ? { label: nextStudy.title, href: `/intelligence/case-studies/${nextStudy.slug}` }
     : undefined;
 
-  return <CaseStudyFeature caseStudy={study} next={next} />;
+  const url = `https://www.monokromatik.com/intelligence/case-studies/${study.slug}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AnalysisNewsArticle',
+    headline: study.title,
+    description: study.standfirst,
+    datePublished: study.publishedAt,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: 'en',
+    keywords: study.tags,
+    articleSection: study.collection,
+    about: { '@type': 'Brand', name: study.brand },
+    author: { '@type': 'Organization', name: 'MonoKromatik' },
+    publisher: { '@type': 'Organization', name: 'MonoKromatik', url: 'https://www.monokromatik.com' },
+    ...(study.media?.[0]?.src ? { image: study.media[0].src } : {}),
+    citation: (study.sources ?? []).map((s) => ({ '@type': 'CreativeWork', name: s.label, url: s.href })),
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <CaseStudyFeature caseStudy={study} next={next} />
+    </>
+  );
 }
