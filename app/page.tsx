@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sparkles } from 'lucide-react';
 import Navigation from './components/Navigation';
-import LivingCover, { CoverSlide } from './components/LivingCover';
+import LivingCover from './components/LivingCover';
+import { buildCoverSlides } from '../lib/cover-slides';
 import NewsletterSignup from './components/NewsletterSignup';
 import TrendingArticles from './components/TrendingArticles';
 import MediaImage from './components/MediaImage';
@@ -87,34 +88,9 @@ export default function Home() {
   const featured = articles[0];
   const dispatches = articles.slice(0, 4);
 
-  const coverSlides: CoverSlide[] = [
-    {
-      kicker: 'COVER STORY / CULTURAL SIGNAL',
-      title: featured?.title || 'Culture is not decoration. It is direction.',
-      description: featured?.excerpt || 'A living record of the movements brands should understand before they attempt to participate.',
-      href: featured ? `/article/${featured.slug}` : '/culture',
-      cta: 'READ THE STORY',
-      imageUrl: featured?.imageUrl,
-      videoUrl: featured?.videoUrl,
-      mode: 'story',
-    },
-    {
-      kicker: 'FOUNDING EDITORIAL POSITION',
-      title: 'The Intelligence Behind African Influence.',
-      description: 'Monokromatik decodes the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
-      href: '/signal',
-      cta: 'ENTER SIGNAL',
-      mode: 'signal',
-    },
-    {
-      kicker: 'INTELLIGENCE DESK',
-      title: 'Research the work shaping Africa’s brand future.',
-      description: 'Case studies, reports, source-led insight and a future research assistant grounded in reviewed intelligence.',
-      href: '/intelligence',
-      cta: 'OPEN INTELLIGENCE',
-      mode: 'intelligence',
-    },
-  ];
+  // Daily hero carousel: the day's leading content across articles, case studies
+  // and reports — each in the article-hero format. Refreshes as new content ships.
+  const coverSlides = buildCoverSlides();
 
   return (
     <div className="min-h-screen bg-mono-white">
