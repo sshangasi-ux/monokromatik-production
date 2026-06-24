@@ -8,6 +8,7 @@ import { getPublicCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement } from '../../../../lib/index-history';
 import BadgeEmbed from '../BadgeEmbed';
+import FollowButton from '../../../components/FollowButton';
 
 interface PageProps {
   params: Promise<{ brand: string }>;
@@ -65,6 +66,10 @@ export default async function BrandIndexPage({ params }: PageProps) {
               <span className="block text-6xl md:text-7xl font-display font-bold leading-none tabular-nums">{entry.score}<span className="text-2xl text-mono-gray"> /100</span></span>
               <span className="block text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mt-2">CULTURAL-SIGNAL SCORE</span>
             </span>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <FollowButton slug={brand} variant="chip" />
+            <span className="text-[11px] font-body text-mono-gray max-w-xs">Follow to track this brand&rsquo;s movement on the Index — alerts surface here when the score changes.</span>
           </div>
         </div>
       </header>

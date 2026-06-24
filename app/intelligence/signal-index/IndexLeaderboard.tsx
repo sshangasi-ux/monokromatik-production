@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Search, ArrowUpRight, ArrowDownRight, GitCompare, X } from 'lucide-react';
+import { Search, ArrowUpRight, ArrowDownRight, GitCompare, X, Star, Bell } from 'lucide-react';
+import { useFollowedBrands } from '../../components/useFollowedBrands';
+import FollowButton from '../../components/FollowButton';
 
 const AXES = ['IDEA', 'AUTHORSHIP', 'EXECUTION', 'CONSEQUENCE'] as const;
 
@@ -36,16 +38,23 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
   const [lens, setLens] = useState<Lens>('signal');
   const [compareMode, setCompareMode] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
+  const [followingOnly, setFollowingOnly] = useState(false);
+  const { followed, count } = useFollowedBrands();
 
   const view = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const list = entries.filter((e) => !q || e.brand.toLowerCase().includes(q));
+    const list = entries.filter(
+      (e) => (!q || e.brand.toLowerCase().includes(q)) && (!followingOnly || followed.includes(e.slug))
+    );
     return [...list].sort((a, b) =>
       lens === 'authorship'
         ? (b.axisAverages.AUTHORSHIP ?? 0) - (a.axisAverages.AUTHORSHIP ?? 0)
         : b.score - a.score
     );
-  }, [entries, query, lens]);
+  }, [entries, query, lens, followingOnly, followed]);
+
+  // On-site score-change alert: followed brands that moved in the latest update.
+  const movedFollowed = entries.filter((e) => followed.includes(e.slug) && e.movement && e.movement.scoreDelta !== 0);
 
   const toggle = (slug: string) =>
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : s.length >= 3 ? s : [...s, slug]));
@@ -76,7 +85,31 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
         <button onClick={() => { setCompareMode((c) => !c); setSelected([]); }} className={pill(compareMode)}>
           <GitCompare size={13} className="inline mr-1.5 -mt-0.5" />COMPARE
         </button>
+        {count > 0 && (
+          <button onClick={() => setFollowingOnly((f) => !f)} className={pill(followingOnly)}>
+            <Star size={13} className={`inline mr-1.5 -mt-0.5 ${followingOnly ? 'fill-current' : ''}`} />FOLLOWING ({count})
+          </button>
+        )}
       </div>
+
+      {/* On-site score-change alert for followed brands. */}
+      {movedFollowed.length > 0 && (
+        <div className="mb-6 flex items-start gap-3 border border-mono-amber/40 bg-mono-amber/10 px-4 py-3">
+          <Bell size={16} className="text-mono-amber-strong mt-0.5 shrink-0" />
+          <p className="text-sm font-body text-mono-charcoal">
+            <span className="font-display font-bold">{movedFollowed.length}</span> brand{movedFollowed.length === 1 ? '' : 's'} you follow moved in the latest update:{' '}
+            {movedFollowed.map((e, i) => (
+              <span key={e.slug}>
+                {i > 0 && ', '}
+                <Link href={`/intelligence/signal-index/${e.slug}`} className="font-display font-bold text-mono-black hover:text-mono-amber-strong">
+                  {e.brand} {e.movement!.scoreDelta > 0 ? '▲' : '▼'}{Math.abs(e.movement!.scoreDelta)}
+                </Link>
+              </span>
+            ))}
+          </p>
+        </div>
+      )}
+
       <p className="text-[11px] font-display tracking-[0.14em] text-mono-gray mb-6">
         {view.length} {view.length === 1 ? 'BRAND' : 'BRANDS'}
         {trackingSince ? ` · TRACKING SINCE ${trackingSince}` : ''}
@@ -127,6 +160,8 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
                   {e.works} {e.works === 1 ? 'WORK' : 'WORKS'} · AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
                 </p>
               </div>
+              {/* Follow star — omitted in compare mode to avoid nested buttons. */}
+              {!compareMode && <FollowButton slug={e.slug} variant="icon" />}
               <span className="w-10 shrink-0 text-center"><Movement m={e.movement} isNew={e.isNew} /></span>
               <span className="shrink-0 text-right w-12">
                 <span className="block text-3xl font-display font-bold text-mono-black leading-none tabular-nums">{e.score}</span>
