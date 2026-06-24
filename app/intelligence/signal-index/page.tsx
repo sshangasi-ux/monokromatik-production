@@ -145,8 +145,11 @@ export default function SignalIndexPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">THE FULL REPORT</p>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">The scores are free. The Index is the product.</h2>
-          <p className="mt-5 font-body text-mono-charcoal text-lg">Take the complete ranking, every per-axis breakdown, the methodology and the evidence behind each score.</p>
-          <Link href="/pricing" className="mt-8 inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">GET THE FULL INDEX REPORT <ArrowRight size={18} /></Link>
+          <p className="mt-5 font-body text-mono-charcoal text-lg">Take the complete ranking, every per-axis breakdown, the methodology and the evidence behind each score — or license the data for your team.</p>
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+            <Link href="/pricing" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">GET THE FULL INDEX REPORT <ArrowRight size={18} /></Link>
+            <Link href="/intelligence/license" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-8 py-4 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">LICENSE THE INDEX <ArrowRight size={18} /></Link>
+          </div>
         </div>
       </section>
 

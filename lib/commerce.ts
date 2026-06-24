@@ -73,9 +73,69 @@ export const SERVICES: Service[] = [
     blurb: 'Native, clearly-disclosed sponsorship of a signature franchise or the Weekly Signal — an engaged African brand-and-culture audience.',
   },
   {
+    id: 'license',
+    title: 'License the Index',
+    blurb: 'License the Cultural-Signal league tables and per-brand data for your report, deck, platform or research — by category or the full Index.',
+  },
+  {
     id: 'partner',
     title: 'Partner & licensing',
     blurb: 'Multi-seat access, white-label intelligence, or licensing the Cultural-Signal dataset for your team.',
+  },
+];
+
+// ── B2B data products built on the Index (high-margin, off the dataset) ──────
+// Indicative bands only — actual scope is quoted. (Benchmark: Brand Finance sells
+// brand league tables ~$1,250–6,000; per-brand scorecards as a consulting upsell.)
+export interface DataProduct {
+  id: string;
+  title: string;
+  priceFrom: string; // indicative "from" band
+  blurb: string;
+  includes: string[];
+  /** The work-with-us enquiry option this routes to. */
+  interest: string;
+}
+
+export const DATA_PRODUCTS: DataProduct[] = [
+  {
+    id: 'scorecard',
+    title: 'Brand Signal Scorecard',
+    priceFrom: 'from $900',
+    blurb: 'A single brand, fully decoded on the Index — the authorship read and a roadmap to move the number.',
+    includes: [
+      'Your composite /100 + four-axis breakdown',
+      'Benchmarked against up to five named rivals',
+      'The authorship read: who shaped it, who captured value',
+      'A prioritised roadmap to move each axis',
+    ],
+    interest: 'scorecard',
+  },
+  {
+    id: 'league-table',
+    title: 'Single league table',
+    priceFrom: 'from $1,250',
+    blurb: 'One category or franchise cut of the Index, licensed for your report, deck or platform.',
+    includes: [
+      'One ranked table (category, region or franchise)',
+      'Per-brand composite + axis scores',
+      'Methodology + citation rights',
+      'One refresh within 12 months',
+    ],
+    interest: 'license',
+  },
+  {
+    id: 'full-index',
+    title: 'Full Index license',
+    priceFrom: 'from $6,000',
+    blurb: 'The complete Cultural-Signal dataset, refreshed quarterly — for teams that track the whole field.',
+    includes: [
+      'Every ranked brand, table and axis',
+      'Quarterly refresh + movement history',
+      'Data feed / export for your stack',
+      'Team citation + presentation rights',
+    ],
+    interest: 'license',
   },
 ];
 
