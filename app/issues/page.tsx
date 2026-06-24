@@ -20,7 +20,8 @@ export default function IssuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-7">
           {issues.map((issue) => {
             const href = issueHref(issue);
-            const statusLabel = issue.status === 'live' ? 'OPEN ISSUE' : 'IN DEVELOPMENT';
+            const statusLabel =
+              issue.status === 'live' ? 'OPEN ISSUE' : issue.preview ? 'PREVIEW THE EDITION' : 'IN DEVELOPMENT';
             const card = (
               <>
                 <div>

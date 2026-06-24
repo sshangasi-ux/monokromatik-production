@@ -72,18 +72,69 @@
   {
     "number": "002",
     "title": "Culture Is Business",
-    "focus": "Special Edition / Planned",
-    "contents": "Sport · music · hospitality · creators · experience economy",
+    "focus": "Special Edition · Who Owns the Upside",
+    "contents": "Who owns the upside · The Boardroom · The Work · Will It Land? · Brand Weather · Culture",
     "status": "in-development",
-    "features": [],
+    "preview": true,
+    "features": [
+      {
+        "franchise": "COVER ESSAY",
+        "title": "Who Owns the Upside",
+        "description": "2026 is the year the debate shifts from visibility to ownership. As global capital and global structures move into African culture in force, the question is no longer whether Africa has value — but who holds the infrastructure that captures it.",
+        "href": "",
+        "status": "COVER ESSAY",
+        "icon": "Sparkles"
+      },
+      {
+        "franchise": "THE BOARDROOM / THE BACKROOM",
+        "title": "Hybe Takes Tyla: A Global Machine Meets an African Career",
+        "description": "The company behind BTS formed a global-management joint venture with Grammy-winner Tyla — its first African artist. Who gains scale, who keeps creative control, and what it signals about who manages African stardom.",
+        "href": "",
+        "status": "COMMISSIONING",
+        "icon": "Mic"
+      },
+      {
+        "franchise": "THE WORK",
+        "title": "Afreximbank’s US$1bn Film Fund: Financing the Story, or Owning It?",
+        "description": "A source-led read of the continental capital now backing African film, measured against Nigeria’s creative-export ambition. Does African money finally own African IP, or recreate old ownership patterns?",
+        "href": "",
+        "status": "COMMISSIONING",
+        "icon": "FileText"
+      },
+      {
+        "franchise": "WILL IT LAND?",
+        "title": "AFCON’s Commercial Record: Can the Football Economy Travel?",
+        "description": "AFCON Morocco drove a record revenue surge and sponsor roster. The relevance test: a durable African sports-marketing economy, or a host-and-rights-holder windfall that never reaches the clubs and players?",
+        "href": "",
+        "status": "IN DEVELOPMENT",
+        "icon": "Radar"
+      },
+      {
+        "franchise": "BRAND WEATHER",
+        "title": "The Luxury Frontier: Lagos, Nairobi, Johannesburg and the Distributor Workaround",
+        "description": "Rising affluence, almost no monobrand stores, and access intermediated by distributors and homegrown retail. Who controls the shelf controls the margin.",
+        "href": "",
+        "status": "IN DEVELOPMENT",
+        "icon": "BookOpen"
+      },
+      {
+        "franchise": "CULTURE",
+        "title": "Faces of the House: The Endorsement Economy",
+        "description": "African artists as global campaign faces — Tyla, Burna Boy and the brands courting them. Is ambassadorship building artist-owned equity, or renting African cool by the campaign?",
+        "href": "",
+        "status": "IN DEVELOPMENT",
+        "icon": "Mic"
+      }
+    ],
     "cover": {
       "accent": "#1E6F5C",
-      "dek": "How fandom becomes footfall — sport, music and hospitality, and the commerce of belonging across the continent.",
+      "tone": "dark",
+      "dek": "Global capital and global structures moved into African culture in force. The only question left is who captures the value.",
       "coverlines": [
-        "FROM FANDOM TO FOOTFALL · SPORT & RETAIL",
-        "THE EXPERIENCE ECONOMY · LIVE CULTURE",
-        "BELONGING AS A BUSINESS MODEL",
-        "WHO OWNS THE CROWD?"
+        "HYBE TAKES TYLA · THE BOARDROOM",
+        "AFREXIMBANK’S $1BN FILM FUND · THE WORK",
+        "AFCON’S COMMERCIAL RECORD · WILL IT LAND?",
+        "WHO OWNS THE UPSIDE?"
       ]
     }
   },

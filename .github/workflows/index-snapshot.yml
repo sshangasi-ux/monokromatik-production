@@ -1,0 +1,51 @@
+name: MonoKromatik Cultural-Signal Index snapshot (monthly)
+
+on:
+  schedule:
+    # Monthly, 1st at 04:09 UTC. Records the current ranking so the Index can
+    # show movement over time.
+    - cron: '9 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Snapshot the Index
+        run: npm run index:snapshot
+
+      - name: Commit the snapshot
+        run: |
+          if [ -z "$(git status --porcelain data/index-history.json)" ]; then
+            echo "No Index change this month — snapshot already recorded." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git add data/index-history.json
+          git commit -m "chore(index): monthly Cultural-Signal Index snapshot [skip ci]"
+          git push origin main
+          echo "Recorded a new Index snapshot." >> "$GITHUB_STEP_SUMMARY"

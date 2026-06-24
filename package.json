@@ -29,7 +29,8 @@
     "test:pexels-video": "tsx scripts/test-pexels-video.ts",
     "backfill-video": "tsx scripts/backfill-video.ts",
     "media:audit": "tsx scripts/audit-media.ts",
-    "backfill:cs-media": "tsx scripts/backfill-case-study-media.ts"
+    "backfill:cs-media": "tsx scripts/backfill-case-study-media.ts",
+    "index:snapshot": "tsx scripts/snapshot-index.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
