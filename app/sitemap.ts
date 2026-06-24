@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
     { url: `${SITE}/culture`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${SITE}/spirits`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     { url: `${SITE}/pulse`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE}/signal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/intelligence`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
