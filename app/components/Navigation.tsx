@@ -13,6 +13,7 @@ const primaryLinks = [
   { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
   { href: '/conversations', label: 'CONVERSATIONS', description: 'Leaders, creators and operators' },
   { href: '/culture', label: 'CULTURE', description: 'Roots, Arena and Waves' },
+  { href: '/spirits', label: 'SPIRITS', description: 'The drinks-brand economy' },
   { href: '/about', label: 'ABOUT', description: 'Mission and methodology' },
 ];
 

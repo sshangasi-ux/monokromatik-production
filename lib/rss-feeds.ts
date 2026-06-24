@@ -10,7 +10,7 @@
 export interface RSSFeed {
   url: string;
   name: string;
-  category: 'news' | 'culture' | 'sports' | 'entertainment' | 'music';
+  category: 'news' | 'culture' | 'sports' | 'entertainment' | 'music' | 'drinks';
   language: string;
   region: string;
 }
@@ -104,6 +104,17 @@ export const RSS_FEEDS: RSSFeed[] = [
   { url: 'https://www.essence.com/feed/', name: 'Essence', category: 'culture', language: 'en', region: 'Diaspora' },
   { url: 'https://atlantablackstar.com/feed/', name: 'Atlanta Black Star', category: 'entertainment', language: 'en', region: 'Diaspora' },
   { url: 'https://www.blackenterprise.com/feed/', name: 'Black Enterprise', category: 'news', language: 'en', region: 'Diaspora' },
+
+  // ========================================
+  // DRINKS & SPIRITS — GLOBAL TRADE
+  // The world of liquor as a brand-intelligence vertical (African & diaspora
+  // spirits going global, global houses entering Africa, the drinks-brand economy).
+  // The Curator/EIC keep what carries our lens; the rest is filtered per-story.
+  // ========================================
+  { url: 'https://www.thespiritsbusiness.com/feed/', name: 'The Spirits Business', category: 'drinks', language: 'en', region: 'Global' },
+  { url: 'https://www.thedrinksbusiness.com/feed/', name: 'The Drinks Business', category: 'drinks', language: 'en', region: 'Global' },
+  { url: 'https://drinksint.com/feed', name: 'Drinks International', category: 'drinks', language: 'en', region: 'Global' },
+  { url: 'https://www.just-drinks.com/feed/', name: 'just-drinks', category: 'drinks', language: 'en', region: 'Global' },
 ];
 
 // Category-based feed filtering
