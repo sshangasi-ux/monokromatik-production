@@ -28,8 +28,10 @@ on:
         type: boolean
         default: false
 
+# main is protected (PR-only), so changes land via a review PR rather than a direct push.
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: backfill-video
@@ -44,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node 20
         uses: actions/setup-node@v4
@@ -69,16 +71,29 @@ jobs:
           echo "Running: npm run backfill-video -- $ARGS"
           npm run backfill-video -- $ARGS
 
-      - name: Commit & push articles
+      - name: Open a review PR with the backfilled video
         if: ${{ inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          if [ -n "$(git status --porcelain data/articles.json)" ]; then
-            git config user.name "MonoKromatik Agent"
-            git config user.email "agents@monokromatik.com"
-            git add data/articles.json
-            git commit -m "chore(media): backfill video onto existing articles [skip ci]"
-            git push origin main
-            echo "✅ Backfilled video — Vercel will redeploy." >> "$GITHUB_STEP_SUMMARY"
-          else
+          if [ -z "$(git status --porcelain data/articles.json)" ]; then
             echo "ℹ️ No video changes." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="backfill/video-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/articles.json
+          git commit -m "chore(media): backfill video onto existing articles"
+          git push origin "$BRANCH"
+
+          BODY="One-shot video backfill — attached official/relevant video to existing articles in \`data/articles.json\` via the live chain (publisher embed → YouTube → Pexels). Review the data diff; **merging this PR is the publish step** (Vercel then redeploys). force: ${{ inputs.force }} · since: ${{ inputs.since || 'all' }} · limit: ${{ inputs.limit || 'all' }}."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Video backfill — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Video pushed to $BRANCH; open a PR from that branch if one was not created automatically." >> "$GITHUB_STEP_SUMMARY"
           fi
