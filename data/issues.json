@@ -88,40 +88,40 @@
         "franchise": "THE BOARDROOM / THE BACKROOM",
         "title": "Hybe Takes Tyla: A Global Machine Meets an African Career",
         "description": "The company behind BTS formed a global-management joint venture with Grammy-winner Tyla — its first African artist. Who gains scale, who keeps creative control, and what it signals about who manages African stardom.",
-        "href": "",
-        "status": "COMMISSIONING",
+        "href": "/issues/002/hybe-takes-tyla",
+        "status": "SOURCE-LED ANALYSIS",
         "icon": "Mic"
       },
       {
         "franchise": "THE WORK",
         "title": "Afreximbank’s US$1bn Film Fund: Financing the Story, or Owning It?",
         "description": "A source-led read of the continental capital now backing African film, measured against Nigeria’s creative-export ambition. Does African money finally own African IP, or recreate old ownership patterns?",
-        "href": "",
-        "status": "COMMISSIONING",
+        "href": "/issues/002/afreximbank-film-fund",
+        "status": "SOURCE-LED ANALYSIS",
         "icon": "FileText"
       },
       {
         "franchise": "WILL IT LAND?",
         "title": "AFCON’s Commercial Record: Can the Football Economy Travel?",
         "description": "AFCON Morocco drove a record revenue surge and sponsor roster. The relevance test: a durable African sports-marketing economy, or a host-and-rights-holder windfall that never reaches the clubs and players?",
-        "href": "",
-        "status": "IN DEVELOPMENT",
+        "href": "/issues/002/afcon-commercial-record",
+        "status": "RELEVANCE TEST",
         "icon": "Radar"
       },
       {
         "franchise": "BRAND WEATHER",
         "title": "The Luxury Frontier: Lagos, Nairobi, Johannesburg and the Distributor Workaround",
         "description": "Rising affluence, almost no monobrand stores, and access intermediated by distributors and homegrown retail. Who controls the shelf controls the margin.",
-        "href": "",
-        "status": "IN DEVELOPMENT",
+        "href": "/issues/002/the-luxury-frontier",
+        "status": "SIGNAL BRIEFING",
         "icon": "BookOpen"
       },
       {
         "franchise": "CULTURE",
         "title": "Faces of the House: The Endorsement Economy",
         "description": "African artists as global campaign faces — Tyla, Burna Boy and the brands courting them. Is ambassadorship building artist-owned equity, or renting African cool by the campaign?",
-        "href": "",
-        "status": "IN DEVELOPMENT",
+        "href": "/issues/002/the-endorsement-economy",
+        "status": "EDITORIAL ESSAY",
         "icon": "Mic"
       }
     ],
