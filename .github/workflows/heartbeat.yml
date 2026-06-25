@@ -1,0 +1,93 @@
+name: MonoKromatik Heartbeat (reliable trigger)
+
+# GitHub's native `schedule:` crons are best-effort and get dropped under load
+# (observed: skipped daily runs, hourly radar slots missed). This heartbeat is the
+# reliable layer: an EXTERNAL cron (e.g. cron-job.org) pings it every ~20–30 min
+# via repository_dispatch, and it fans out to the due workflows — with run-history
+# dedup so frequent pings can't double-fire, and time gates so daily/weekly jobs
+# fire on their day only. See docs/RELIABLE_TRIGGERS.md.
+#
+# REQUIRES secrets.GH_PAT: GITHUB_TOKEN cannot trigger other workflows (GitHub
+# blocks it to prevent recursion), so the fan-out uses the PAT. The PAT needs
+# Actions: read/write (plus Contents + Pull requests for the downstream jobs).
+
+on:
+  repository_dispatch:
+    types: [heartbeat]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Comma-list to force-dispatch regardless of schedule (e.g. "breaking-news,agents") or "all"'
+        required: false
+        default: ''
+  schedule:
+    # Best-effort native fallback every 30 min — harmless thanks to dedup; the
+    # external ping is what makes this reliable.
+    - cron: '*/30 * * * *'
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: false
+
+jobs:
+  fanout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      HAS_PAT: ${{ secrets.GH_PAT != '' }}
+      FORCE: ${{ github.event.inputs.force }}
+    steps:
+      - name: Fan out to due workflows
+        run: |
+          set -uo pipefail
+          if [ "$HAS_PAT" != "true" ]; then
+            echo "::warning::secrets.GH_PAT is not set — GITHUB_TOKEN cannot trigger other workflows, so dispatches will NO-OP. Add GH_PAT (Actions: read/write). See docs/RELIABLE_TRIGGERS.md."
+          fi
+
+          NOW=$(date -u +%s)
+          HOUR=$((10#$(date -u +%H)))
+          DOW=$(date -u +%u)   # 1=Mon .. 7=Sun
+          echo "Heartbeat @ $(date -u +%FT%TZ) · hour=$HOUR dow=$DOW · force='${FORCE:-}'"
+
+          mins_since_last() {
+            local last t
+            last=$(gh run list --workflow="$1" --limit 1 --json createdAt -q '.[0].createdAt' 2>/dev/null || echo "")
+            [ -z "$last" ] && { echo 999999; return; }
+            t=$(date -u -d "$last" +%s 2>/dev/null || echo 0)
+            echo $(( (NOW - t) / 60 ))
+          }
+          is_forced() { case ",${FORCE:-}," in *",${1%.yml},"*|*",all,"*) return 0;; *) return 1;; esac; }
+
+          dispatch() {  # <workflow> <min_gap_minutes> <reason>
+            local wf="$1" gap="$2" reason="$3" since
+            if is_forced "$wf"; then
+              echo "FORCE → $wf"; gh workflow run "$wf" --ref main || echo "::warning::dispatch failed: $wf"; return
+            fi
+            since=$(mins_since_last "$wf")
+            if [ "$since" -ge "$gap" ]; then
+              echo "DUE → $wf (last ${since}m ago ≥ ${gap}m) [$reason]"
+              gh workflow run "$wf" --ref main || echo "::warning::dispatch failed: $wf"
+            else
+              echo "skip $wf (last ${since}m ago < ${gap}m)"
+            fi
+          }
+
+          # Breaking radar — hourly, any time.
+          dispatch breaking-news.yml 50 "hourly radar"
+
+          # Daily discovery — once/day, in/after the 10:00 UTC window.
+          [ "$HOUR" -ge 10 ] && dispatch agents.yml 1200 "daily 10:00+ UTC"
+
+          # Weekly jobs — on their day, after the early-morning window. 6-day gap.
+          if [ "$HOUR" -ge 3 ]; then
+            [ "$DOW" -eq 1 ] && dispatch engine-cycle.yml 8640 "weekly Mon"
+            [ "$DOW" -eq 4 ] && dispatch coverage-discover.yml 8640 "weekly Thu"
+          fi
+          [ "$HOUR" -ge 4 ] && [ "$DOW" -eq 1 ] && dispatch index-snapshot.yml 8640 "weekly Mon"
+
+          echo "Heartbeat done." >> "$GITHUB_STEP_SUMMARY"
