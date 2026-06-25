@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import SearchBar from './SearchBar';
 
 const primaryLinks = [
+  { href: '/breaking', label: 'THE WIRE', description: 'Breaking, the moment it breaks', priority: true },
   { href: '/signal', label: 'SIGNAL', description: 'Ideas, work and brand consequence', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
   { href: '/ask', label: 'ASK', description: 'Cited answers from the corpus', priority: true },
