@@ -13,7 +13,8 @@ Legend: ✅ live · 🟡 wired, needs a key/action · ⛔ blocked on an external
 | **Content pipeline + engine** | ✅ live | `ANTHROPIC_API_KEY` (set). Weekly engine cycle, coverage discovery, light cron, monthly Index snapshot all run | GitHub secret / Vercel |
 | **Media sourcing** | ✅ live | `PEXELS_API_KEY` (set); `UNSPLASH_ACCESS_KEY` optional | GitHub/Vercel |
 | **Newsletter (Kit)** | ✅ live | `KIT_API_KEY` + form id (set) | Vercel |
-| **EIC digest email (Resend)** | 🟡 | `RESEND_API_KEY` set; sender is `onboarding@resend.dev` until the domain is verified, then `editor@monokromatik.com` | Resend dashboard (verify domain) |
+| **EIC digest + breaking-alert email (Resend)** | 🟡 | `RESEND_API_KEY` must exist as a **GitHub Actions secret** (the crons send from Actions, not Vercel). Sender is `onboarding@resend.dev` until the domain is verified, then `editor@monokromatik.com` | GitHub secret + Resend dashboard |
+| **Bot PRs trigger CI (optional `GH_PAT`)** | 🟡 | Without it, agent/engine/coverage/index PRs are opened by `GITHUB_TOKEN`, which **does not trigger `ci.yml`** → the required `build` check never runs → the PR can't be merged without an operator nudge. Add a fine-grained PAT as secret `GH_PAT` and the content workflows push as a real user, so CI runs and the PR is mergeable | GitHub secret |
 | **Supabase auth** | 🟡 | `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel prod; add prod **redirect URLs** in Supabase Auth | Vercel + Supabase dashboard |
 | **Entitlements / webhook** | 🟡 | `SUPABASE_SERVICE_ROLE_KEY` + `PAYSTACK_SECRET_KEY` in Vercel; register webhook `…/api/paystack/webhook` in Paystack | Vercel + Paystack |
 | **Report sale (R899)** | ✅ live | `NEXT_PUBLIC_PAYSTACK_REPORT_URL` set; checkout works | — |
@@ -27,6 +28,8 @@ Legend: ✅ live · 🟡 wired, needs a key/action · ⛔ blocked on an external
 3. **Supabase prod:** confirm the two `NEXT_PUBLIC_SUPABASE_*` vars are in Vercel production and add the prod + preview redirect URLs in Supabase Auth.
 4. **Resend domain:** verify `monokromatik.com` in Resend, then set the digest sender to `editor@monokromatik.com`.
 5. **Kit sender:** set the newsletter sender/reply-to to `editor@monokromatik.com` in the Kit dashboard.
+6. **Always-on alert email (`RESEND_API_KEY` in Actions):** the breaking-news radar and the daily run email their alerts/digests **from GitHub Actions**, so the key must be a repo **Actions secret**, not only a Vercel env var. In the repo: _Settings → Secrets and variables → Actions → New repository secret_ → name `RESEND_API_KEY`, paste the key. (Optionally also `EIC_DIGEST_TO` for the digest recipient.) Until then the crons run but silently skip the email.
+7. **Auto-mergeable bot PRs (`GH_PAT`, optional):** create a **fine-grained personal access token** scoped to this repo with **Contents: read/write** and **Pull requests: read/write**, then add it as Actions secret `GH_PAT`. The content workflows already fall back to `GITHUB_TOKEN` when it's absent (`${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}`), so this is purely additive: with the PAT, agent/engine/coverage/index branches push as a real user, `ci.yml` runs, the required `build` check appears, and the PR becomes mergeable without manual intervention. _(Use the bot account's PAT if you want the actor to read "MonoKromatik Agent" rather than your own login.)_
 
 ## Optional enhancements (codeable, no operator key)
 - **Plausible** alongside GA4 (privacy-first, no cookie banner) — set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` and add the script.

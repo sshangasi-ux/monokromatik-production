@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node 20
@@ -63,7 +63,7 @@ jobs:
 
       - name: Stage candidates as a Pull Request
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if [ -z "$(git status --porcelain data/articles.json public/article-media)" ]; then
             echo "No EIC-approved candidates this run — nothing to stage." >> "$GITHUB_STEP_SUMMARY"
