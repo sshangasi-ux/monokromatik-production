@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node 20
         uses: actions/setup-node@v4
@@ -40,7 +40,7 @@ jobs:
 
       - name: Open a PR with the snapshot
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           # main is branch-protected (PR-only) — stage the snapshot as a PR, not a
           # direct push. The snapshot must land in the repo (the site reads it).
