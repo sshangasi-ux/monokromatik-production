@@ -88,6 +88,32 @@ export interface BreakingHit extends BreakingCandidate {
   why: string;
 }
 
+/** A confirmed break as published to The Wire (data/breaking.json). */
+export interface PublishedBreak extends BreakingHit {
+  /** ISO timestamp the radar confirmed and surfaced this break. */
+  detectedAt: string;
+}
+
+export interface BreakingFeed {
+  updatedAt: string;
+  breaks: PublishedBreak[];
+}
+
+/**
+ * Merge fresh hits into the published feed: newest-first, deduped by link,
+ * capped. Pure — the IO (read/write data/breaking.json) lives in the script.
+ */
+export function mergeBreaks(feed: BreakingFeed, hits: BreakingHit[], stamp: string, cap = 60): BreakingFeed {
+  const existing = feed.breaks ?? [];
+  const seen = new Set(existing.map((b) => b.link));
+  const fresh: PublishedBreak[] = hits
+    .filter((h) => h.link && !seen.has(h.link))
+    // highest-importance first within this batch, then they sit atop the feed
+    .sort((a, b) => b.importance - a.importance)
+    .map((h) => ({ ...h, detectedAt: stamp }));
+  return { updatedAt: stamp, breaks: [...fresh, ...existing].slice(0, cap) };
+}
+
 /** Render the alert email (HTML + text). */
 export function renderAlert(hits: BreakingHit[], stamp: string): { subject: string; html: string; text: string } {
   const top = [...hits].sort((a, b) => b.importance - a.importance);

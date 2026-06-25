@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sparkles } from 'lucide-react';
 import Navigation from './components/Navigation';
 import LivingCover from './components/LivingCover';
+import BreakingStrip from './components/BreakingStrip';
 import { buildCoverSlides } from '../lib/cover-slides';
 import NewsletterSignup from './components/NewsletterSignup';
 import TrendingArticles from './components/TrendingArticles';
@@ -96,6 +97,7 @@ export default function Home() {
     <div className="min-h-screen bg-mono-white">
       <Navigation />
       <LivingCover slides={coverSlides} />
+      <BreakingStrip />
 
       <section className="bg-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

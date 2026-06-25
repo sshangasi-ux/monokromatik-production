@@ -23,7 +23,8 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 concurrency:
   group: breaking-radar
@@ -69,3 +70,32 @@ jobs:
           EIC_DIGEST_FROM: ${{ secrets.EIC_DIGEST_FROM }}
           NODE_ENV: production
         run: npm run breaking:watch -- --window=${{ github.event.inputs.window || '3' }}
+
+      # The operator already got the instant email alert; this publishes the same
+      # confirmed break(s) to The Wire as a one-click-merge PR. main is branch-
+      # protected, so we open a PR rather than push. Breaks are infrequent (bar is
+      # importance >= 4) — merge promptly / one at a time to avoid feed clobber.
+      - name: Publish The Wire as a Pull Request
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/breaking.json)" ]; then
+            echo "No new breaks this run — The Wire unchanged." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          BRANCH="breaking/wire-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/breaking.json
+          git commit -m "feat(wire): publish confirmed break(s) to The Wire" -m "AI-confirmed (importance >= 4) from trusted feeds and already alerted. Merge to surface on /breaking + the homepage; close to discard."
+          git push origin "$BRANCH"
+          BODY="The breaking radar confirmed major break(s) in our focus segments and alerted you. This stages the same item(s) for The Wire (/breaking + homepage strip). Merge to publish; close to discard. Each entry carries source, importance, the one-line read and detection time."
+          STAMP=$(date -u +"%Y-%m-%d %H:%MZ")
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "🔴 The Wire — breaking $STAMP" --body "$BODY") || true
+          if [ -n "$PR_URL" ]; then
+            echo "Opened Wire PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Break(s) pushed to $BRANCH; open a PR from that branch if one was not created." >> "$GITHUB_STEP_SUMMARY"
+          fi

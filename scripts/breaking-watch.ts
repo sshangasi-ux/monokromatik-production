@@ -15,7 +15,7 @@ import { join } from 'path';
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from '../lib/ai-models';
 import { fetchMonoKromatikStories } from '../lib/fetch-stories';
-import { selectCandidates, judgePrompt, parseVerdicts, renderAlert, type BreakingHit } from '../lib/breaking';
+import { selectCandidates, judgePrompt, parseVerdicts, renderAlert, mergeBreaks, type BreakingHit, type BreakingFeed } from '../lib/breaking';
 
 const envPath = join(__dirname, '../.env.local');
 if (existsSync(envPath)) {
@@ -28,7 +28,19 @@ if (existsSync(envPath)) {
 const ts = () => new Date().toISOString();
 const log = (m: string) => console.log(`[${ts()}] [breaking] ${m}`);
 const LEDGER = join(__dirname, '../output/breaking-ledger.json');
+const FEED = join(__dirname, '../data/breaking.json');
 const IMPORTANCE_BAR = 4;
+
+/** Publish confirmed hits to The Wire (data/breaking.json). Deduped + capped. */
+function publishBreaks(hits: BreakingHit[]): void {
+  let feed: BreakingFeed = { updatedAt: ts(), breaks: [] };
+  if (existsSync(FEED)) {
+    try { feed = JSON.parse(readFileSync(FEED, 'utf-8')); } catch { /* start fresh */ }
+  }
+  const merged = mergeBreaks(feed, hits, ts());
+  writeFileSync(FEED, JSON.stringify(merged, null, 2) + '\n');
+  log(`Published to The Wire → data/breaking.json (${merged.breaks.length} total).`);
+}
 
 async function sendAlert(hits: BreakingHit[]): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
@@ -101,7 +113,10 @@ async function main() {
     return;
   }
 
-  if (hits.length > 0) await sendAlert(hits);
+  if (hits.length > 0) {
+    await sendAlert(hits);   // instant operator alert (email)
+    publishBreaks(hits);     // audience-facing surface (The Wire); workflow opens a review PR
+  }
 
   // Mark every judged candidate as seen (even non-hits) so we don't re-judge/re-cost.
   for (const c of cands) alerted.add(c.link);
