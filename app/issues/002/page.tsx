@@ -18,7 +18,7 @@ const SOURCE_BASIS = [
 export const metadata: Metadata = {
   title: 'Issue 002 — Culture Is Business: Who Owns the Upside | MonoKromatik',
   description:
-    'A preview of Issue 002. Global capital and global structures moved into African culture in force — the question is who captures the value. The planned slate, grounded in current reporting.',
+    'Issue 002 is live. Global capital and global structures moved into African culture in force — the question is who captures the value. Six features, one fault line, grounded in current reporting.',
   alternates: { canonical: 'https://www.monokromatik.com/issues/002' },
   openGraph: {
     title: 'Issue 002 — Culture Is Business: Who Owns the Upside',
@@ -47,7 +47,7 @@ export default function IssueTwoPreviewPage() {
               Issue 001 argued the world keeps discovering African value late and converting it into someone
               else&rsquo;s case study. Issue 002 reports what happened next — the management companies, development
               banks, sports-rights machines and luxury distributors that moved in, and the contest over who
-              keeps the value. <strong>The cover essay is live now; the rest of the slate is rolling out.</strong>
+              keeps the value. <strong>The full edition is live — six features, one fault line.</strong>
             </p>
           </div>
 
