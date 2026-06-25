@@ -1,10 +1,11 @@
-name: MonoKromatik Cultural-Signal Index snapshot (monthly)
+name: MonoKromatik Cultural-Signal Index snapshot (weekly)
 
 on:
   schedule:
-    # Monthly, 1st at 04:09 UTC. Records the current ranking so the Index can
-    # show movement over time.
-    - cron: '9 4 1 * *'
+    # Weekly, Mondays at 04:09 UTC. Records the current ranking so the Index shows
+    # movement over time. Weekly (not monthly) so the "living index" accrues a
+    # usable history and new/rescored case studies surface as movement sooner.
+    - cron: '9 4 * * 1'
   workflow_dispatch:
 
 permissions:

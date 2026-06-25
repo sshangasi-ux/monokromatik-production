@@ -109,6 +109,14 @@ export default function SignalIndexPage() {
             <Trophy className="text-mono-amber shrink-0" size={30} aria-hidden="true" />
           </div>
           <IndexLeaderboard entries={leaderEntries} trackingSince={trackingSince()} />
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-display font-bold tracking-[0.14em] text-mono-gray">
+            <span className="text-mono-charcoal">OPEN DATA FEED</span>
+            <a href="/api/index" className="text-mono-amber-strong hover:underline">JSON</a>
+            <span aria-hidden="true">·</span>
+            <a href="/api/index?format=csv" className="text-mono-amber-strong hover:underline">CSV</a>
+            <span aria-hidden="true">·</span>
+            <Link href="/intelligence/signal-index/methodology" className="text-mono-amber-strong hover:underline">METHODOLOGY</Link>
+          </div>
         </div>
       </section>
 
@@ -138,6 +146,9 @@ export default function SignalIndexPage() {
             idea, who got access, who captured value. Levels are set by editors today; an AI-assisted draft →
             human-approval workflow is planned, never autonomous.
           </p>
+          <Link href="/intelligence/signal-index/methodology" className="mt-9 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber-bright transition-colors">
+            READ THE FULL METHODOLOGY <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 
