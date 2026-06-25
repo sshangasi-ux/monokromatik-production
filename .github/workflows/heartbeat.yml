@@ -54,9 +54,12 @@ jobs:
           DOW=$(date -u +%u)   # 1=Mon .. 7=Sun
           echo "Heartbeat @ $(date -u +%FT%TZ) · hour=$HOUR dow=$DOW · force='${FORCE:-}'"
 
+          # No checkout in this job, so gh can't infer the repo — pass it explicitly.
+          REPO="$GITHUB_REPOSITORY"
+
           mins_since_last() {
             local last t
-            last=$(gh run list --workflow="$1" --limit 1 --json createdAt -q '.[0].createdAt' 2>/dev/null || echo "")
+            last=$(gh run list -R "$REPO" --workflow="$1" --limit 1 --json createdAt -q '.[0].createdAt' 2>/dev/null || echo "")
             [ -z "$last" ] && { echo 999999; return; }
             t=$(date -u -d "$last" +%s 2>/dev/null || echo 0)
             echo $(( (NOW - t) / 60 ))
@@ -66,12 +69,12 @@ jobs:
           dispatch() {  # <workflow> <min_gap_minutes> <reason>
             local wf="$1" gap="$2" reason="$3" since
             if is_forced "$wf"; then
-              echo "FORCE → $wf"; gh workflow run "$wf" --ref main || echo "::warning::dispatch failed: $wf"; return
+              echo "FORCE → $wf"; gh workflow run "$wf" -R "$REPO" --ref main || echo "::warning::dispatch failed: $wf"; return
             fi
             since=$(mins_since_last "$wf")
             if [ "$since" -ge "$gap" ]; then
               echo "DUE → $wf (last ${since}m ago ≥ ${gap}m) [$reason]"
-              gh workflow run "$wf" --ref main || echo "::warning::dispatch failed: $wf"
+              gh workflow run "$wf" -R "$REPO" --ref main || echo "::warning::dispatch failed: $wf"
             else
               echo "skip $wf (last ${since}m ago < ${gap}m)"
             fi
