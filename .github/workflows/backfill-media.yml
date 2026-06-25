@@ -27,8 +27,10 @@ on:
         type: string
 
 # This job intentionally writes content — distinct from the review-only pipeline.
+# main is protected (PR-only), so changes land via a review PR rather than a direct push.
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: backfill-media
@@ -43,7 +45,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Setup Node 20
@@ -71,18 +73,31 @@ jobs:
           echo "Running: npm run backfill:media -- $ARGS"
           npm run backfill:media -- $ARGS
 
-      - name: Commit & push updated media
+      - name: Open a review PR with the updated media
         if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          if [ -n "$(git status --porcelain data/articles.json public/article-media)" ]; then
-            git config user.name "MonoKromatik Agent"
-            git config user.email "agents@monokromatik.com"
-            git add data/articles.json public/article-media
-            git commit -m "chore(media): backfill self-hosted credited media for existing articles"
-            git push origin main
-            echo "✅ Pushed self-hosted media + data/articles.json to main — Vercel will deploy." >> "$GITHUB_STEP_SUMMARY"
-          else
+          if [ -z "$(git status --porcelain data/articles.json public/article-media)" ]; then
             echo "ℹ️ No media changes." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="backfill/media-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/articles.json public/article-media
+          git commit -m "chore(media): backfill self-hosted credited media for existing articles"
+          git push origin "$BRANCH"
+
+          BODY="One-shot media backfill — re-sourced credited media (reputable-first image + official/stock video) for the existing articles in \`data/articles.json\`, self-hosted under \`public/article-media\`. Review the data + asset diff; **merging this PR is the publish step** (Vercel then deploys). only-missing: ${{ inputs.only_missing }} · stock-video: ${{ inputs.stock_video }} · limit: ${{ inputs.limit || 'all' }}."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Media backfill — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Media pushed to $BRANCH; open a PR from that branch if one was not created automatically." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Summary
