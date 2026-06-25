@@ -43,8 +43,29 @@ export default async function BrandIndexPage({ params }: PageProps) {
   const clampLevel = (n: number) => Math.min(5, Math.max(1, Math.round(n))) as 1 | 2 | 3 | 4 | 5;
   const movement = getMovement(brand);
 
+  // JSON-LD: this brand's score as a structured, citable PropertyValue inside the
+  // Cultural-Signal Index Dataset (per-brand discoverability for search + AI engines).
+  const SITE = 'https://www.monokromatik.com';
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${SITE}/intelligence/signal-index/${brand}`,
+    isPartOf: { '@type': 'Dataset', name: 'The Cultural-Signal Index', url: `${SITE}/intelligence/signal-index` },
+    about: { '@type': 'Brand', name: entry.brand },
+    mainEntity: {
+      '@type': 'PropertyValue',
+      name: 'Cultural-Signal Score',
+      value: entry.score,
+      maxValue: 100,
+      additionalProperty: AXIS_LABELS.map((label) => ({
+        '@type': 'PropertyValue', name: label, value: entry.axisAverages[label] ?? 0, maxValue: 5,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-mono-paper">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navigation />
 
       <header className="bg-mono-black text-mono-white py-16 md:py-24">
