@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-06-25T09:30:00Z",
+  "updatedAt": "2026-06-25T22:43:32.148Z",
   "breaks": [
+    {
+      "title": "World Cup 2026: Pepe Brace Vs Curacao Sends Côte d’Ivoire Into knockout Rounds For The First Time",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/world-cup-2026-pepe-brace-vs-curacao-sends-cote-divoire-into-knockout-rounds-for-the-first-time/",
+      "pubDate": "Thu, 25 Jun 2026 22:35:06 +0000",
+      "importance": 4,
+      "why": "Pepe's goal sends Côte d'Ivoire to World Cup knockout rounds for first time — major African national team sports milestone",
+      "detectedAt": "2026-06-25T22:43:32.148Z"
+    },
+    {
+      "title": "India and South Africa take semi-final fight to final day",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/cricket/articles/cgev5g980n3o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 25 Jun 2026 20:59:47 GMT",
+      "importance": 4,
+      "why": "South Africa in World Cup semi-final — major African national team sports result",
+      "detectedAt": "2026-06-25T22:43:32.148Z"
+    },
     {
       "title": "South Africa's SAFA launches a blockchain fan token for Bafana Bafana",
       "source": "TechCabal",
