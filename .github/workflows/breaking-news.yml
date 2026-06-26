@@ -73,29 +73,60 @@ jobs:
 
       # The operator already got the instant email alert; this publishes the same
       # confirmed break(s) to The Wire as a one-click-merge PR. main is branch-
-      # protected, so we open a PR rather than push. Breaks are infrequent (bar is
-      # importance >= 4) — merge promptly / one at a time to avoid feed clobber.
+      # protected, so we open a PR rather than push. We accumulate onto ONE stable
+      # branch (breaking/wire) — unioning with whatever unmerged breaks already sit
+      # there — so two breaks between merges can't clobber each other's feed entry.
       - name: Publish The Wire as a Pull Request
         if: success()
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
+          set -uo pipefail
           if [ -z "$(git status --porcelain data/breaking.json)" ]; then
             echo "No new breaks this run — The Wire unchanged." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          BRANCH="breaking/wire-${{ github.run_id }}"
+          BRANCH="breaking/wire"
+          REPO="$GITHUB_REPOSITORY"
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
-          git checkout -b "$BRANCH"
-          git add data/breaking.json
-          git commit -m "feat(wire): publish confirmed break(s) to The Wire" -m "AI-confirmed (importance >= 4) from trusted feeds and already alerted. Merge to surface on /breaking + the homepage; close to discard."
-          git push origin "$BRANCH"
-          BODY="The breaking radar confirmed major break(s) in our focus segments and alerted you. This stages the same item(s) for The Wire (/breaking + homepage strip). Merge to publish; close to discard. Each entry carries source, importance, the one-line read and detection time."
-          STAMP=$(date -u +"%Y-%m-%d %H:%MZ")
-          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "🔴 The Wire — breaking $STAMP" --body "$BODY") || true
-          if [ -n "$PR_URL" ]; then
-            echo "Opened Wire PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+
+          # This run's feed (main's feed + the new hit) — stash it; switching branch
+          # would discard the uncommitted change.
+          cp data/breaking.json /tmp/wire-new.json
+
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$BRANCH" -q
+            git show "origin/$BRANCH:data/breaking.json" > /tmp/wire-existing.json 2>/dev/null || echo '{"breaks":[]}' > /tmp/wire-existing.json
+            git checkout -B "$BRANCH" "origin/$BRANCH" -q
           else
-            echo "Break(s) pushed to $BRANCH; open a PR from that branch if one was not created." >> "$GITHUB_STEP_SUMMARY"
+            echo '{"breaks":[]}' > /tmp/wire-existing.json
+            git checkout -B "$BRANCH" -q
+          fi
+
+          # Union (this run's breaks ∪ the branch's unmerged breaks), dedup by link,
+          # newest-first, cap 60 — so nothing already staged is lost.
+          node -e '
+            const fs = require("fs");
+            const ex = JSON.parse(fs.readFileSync("/tmp/wire-existing.json","utf8")).breaks || [];
+            const nw = JSON.parse(fs.readFileSync("/tmp/wire-new.json","utf8")).breaks || [];
+            const seen = new Set(), out = [];
+            for (const b of [...nw, ...ex]) { if (b && b.link && !seen.has(b.link)) { seen.add(b.link); out.push(b); } }
+            out.sort((a,b) => new Date(b.detectedAt) - new Date(a.detectedAt));
+            const feed = { updatedAt: (out[0] && out[0].detectedAt) || new Date().toISOString(), breaks: out.slice(0,60) };
+            fs.writeFileSync("data/breaking.json", JSON.stringify(feed, null, 2) + "\n");
+          '
+
+          git add data/breaking.json
+          git commit -q -m "feat(wire): publish confirmed break(s) to The Wire" -m "AI-confirmed (importance >= 4) from trusted feeds and already alerted. Accumulated on the stable Wire branch. Merge to surface on /breaking + the homepage; close to discard."
+          git push -f origin "$BRANCH"
+
+          STAMP=$(date -u +"%Y-%m-%d %H:%MZ")
+          COUNT=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("data/breaking.json","utf8")).breaks.length)')
+          if [ -z "$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')" ]; then
+            BODY="The breaking radar confirmed major break(s) in our focus segments and alerted you. This is the live Wire queue ($COUNT item(s)) for /breaking + the homepage strip — it accumulates new breaks until you merge. Merge to publish; each entry carries source, importance, the one-line read and detection time."
+            PR_URL=$(gh pr create -R "$REPO" --base main --head "$BRANCH" --title "🔴 The Wire — breaking queue" --body "$BODY") || true
+            echo "Opened Wire PR: ${PR_URL:-(check $BRANCH)}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Updated the open Wire PR ($COUNT item(s) queued) — $STAMP." >> "$GITHUB_STEP_SUMMARY"
           fi

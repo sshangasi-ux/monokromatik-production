@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-06-25T09:30:00Z",
+  "updatedAt": "2026-06-25T13:33:00.465Z",
   "breaks": [
+    {
+      "title": "Morocco breaks Nigeria's World Cup record",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/sports/morocco-breaks-nigerias-world-cup-record/",
+      "pubDate": "Thu, 25 Jun 2026 12:45:57 +0000",
+      "importance": 4,
+      "why": "Morocco breaks Nigeria's World Cup qualification record — major African sports achievement with diaspora significance",
+      "detectedAt": "2026-06-25T13:33:00.465Z"
+    },
+    {
+      "title": "Best Hip Hop Album Race Heats Up As SAMAs Unveil 2026 Nominees",
+      "source": "SA Hip Hop Mag",
+      "category": "music",
+      "link": "https://sahiphopmag.co.za/2026/06/best-hip-hop-album-race-heats-up-as-samas-unveil-2026-nominees/",
+      "pubDate": "Thu, 25 Jun 2026 11:48:41 +0000",
+      "importance": 4,
+      "why": "South African music industry awards and nominees announcement",
+      "detectedAt": "2026-06-25T12:33:04.546Z"
+    },
     {
       "title": "South Africa's SAFA launches a blockchain fan token for Bafana Bafana",
       "source": "TechCabal",
