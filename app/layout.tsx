@@ -57,6 +57,44 @@ export const metadata: Metadata = {
   },
 };
 
+// Site-level entity graph: Organization + WebSite, so search and AI engines
+// recognise MonoKromatik as a publisher entity (knowledge panel, sitelinks,
+// citation). Emitted once, sitewide.
+const SITE = 'https://www.monokromatik.com';
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE}/#organization`,
+      name: 'MonoKromatik',
+      alternateName: 'MonoKromatik Network',
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/favicon.ico` },
+      description:
+        'A living editorial and intelligence network decoding the brands, campaigns, creators and cultural forces shaping how Africa moves the world.',
+      founder: { '@type': 'Person', name: 'Sibu Shangase' },
+      knowsAbout: [
+        'African brand intelligence',
+        'African and diaspora creative economy',
+        'Afrobeats and African music business',
+        'African sport and sponsorship',
+        'African fashion, film and the drinks economy',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      name: 'MonoKromatik',
+      url: SITE,
+      inLanguage: 'en',
+      publisher: { '@id': `${SITE}/#organization` },
+      description:
+        'The intelligence behind African influence — authored analysis, a breaking-news Wire, and the Cultural-Signal Index.',
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,6 +106,7 @@ export default function RootLayout({
       className={`h-full antialiased ${fontDisplay.variable} ${fontBody.variable} ${fontFeature.variable}`}
     >
       <body className="min-h-full flex flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
         {children}
         <RegistrationGate />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
