@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-06-26T12:06:22.301Z",
+  "updatedAt": "2026-06-26T15:08:12.823Z",
   "breaks": [
+    {
+      "title": "World Cup 2026: Pepe Targets More Goals After Helping Côte d’Ivoire  Beat Curaçao",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/world-cup-2026-pepe-targets-more-goals-after-helping-cote-divoire-beat-curacao/",
+      "pubDate": "Fri, 26 Jun 2026 14:06:37 +0000",
+      "importance": 4,
+      "why": "Ivory Coast footballer Pepe scores in World Cup qualifier—major African athlete result",
+      "detectedAt": "2026-06-26T15:08:12.823Z"
+    },
+    {
+      "title": "AkoFresh CEO wins $100,000 OPEC Fund Youth Entrepreneurship Award",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/akofresh-ceo-wins-100000-opec-fund-youth-entrepreneurship-award/",
+      "pubDate": "Fri, 26 Jun 2026 12:37:19 +0000",
+      "importance": 4,
+      "why": "Ghanaian CEO AkoFresh wins major $100k international entrepreneurship award—business/creator beat",
+      "detectedAt": "2026-06-26T15:08:12.823Z"
+    },
     {
       "title": "Haneefah Adam Wins Inaugural Ventures Platform–Ysma Futures Art Award",
       "source": "BellaNaija",
