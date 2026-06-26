@@ -1,6 +1,76 @@
 {
-  "updatedAt": "2026-06-25T13:33:00.465Z",
+  "updatedAt": "2026-06-26T12:06:22.301Z",
   "breaks": [
+    {
+      "title": "Haneefah Adam Wins Inaugural Ventures Platform–Ysma Futures Art Award",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/06/haneefah-adam-wins-inaugural-ventures-platform-ysma-futures-art-award/",
+      "pubDate": "Fri, 26 Jun 2026 09:53:43 +0000",
+      "importance": 4,
+      "why": "Nigerian artist Haneefah Adam wins inaugural art award—breaking culture/creator economy news",
+      "detectedAt": "2026-06-26T12:06:22.301Z"
+    },
+    {
+      "title": "Wizkid confirms title of his upcoming 7th album",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/wizkid-title-of-his-upcoming-album/",
+      "pubDate": "Fri, 26 Jun 2026 09:48:37 +0000",
+      "importance": 4,
+      "why": "Wizkid (Nigerian Afrobeats megastar) album announcement – core music beat",
+      "detectedAt": "2026-06-26T09:50:17.619Z"
+    },
+    {
+      "title": "World Cup 2026: Pepe Brace Vs Curacao Sends Côte d’Ivoire Into knockout Rounds For The First Time",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/world-cup-2026-pepe-brace-vs-curacao-sends-cote-divoire-into-knockout-rounds-for-the-first-time/",
+      "pubDate": "Thu, 25 Jun 2026 22:35:06 +0000",
+      "importance": 4,
+      "why": "Pepe's goal sends Côte d'Ivoire to World Cup knockout rounds for first time — major African national team sports milestone",
+      "detectedAt": "2026-06-25T22:43:32.148Z"
+    },
+    {
+      "title": "India and South Africa take semi-final fight to final day",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/cricket/articles/cgev5g980n3o?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 25 Jun 2026 20:59:47 GMT",
+      "importance": 4,
+      "why": "South Africa in World Cup semi-final — major African national team sports result",
+      "detectedAt": "2026-06-25T22:43:32.148Z"
+    },
+    {
+      "title": "Unilever. Guinness. FanMilk. Kasapreko beat them all",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/unilever-guinness-fanmilk-kasapreko-beat-them-all/",
+      "pubDate": "Thu, 25 Jun 2026 18:33:29 +0000",
+      "importance": 4,
+      "why": "Unilever, Guinness, FanMilk, Kasapreko—major African/diaspora brands beating competitors in business/market story",
+      "detectedAt": "2026-06-25T20:31:51.087Z"
+    },
+    {
+      "title": "ESSENCE Black Women In Music Returns To Honor Brandy, Missy Elliott, Kandi Burruss, And Mona Scott-Young",
+      "source": "Essence",
+      "category": "culture",
+      "link": "https://www.essence.com/entertainment/essence-black-women-in-music-honorees/",
+      "pubDate": "Thu, 25 Jun 2026 17:45:38 +0000",
+      "importance": 4,
+      "why": "ESSENCE honours major Black women artists (Brandy, Missy Elliott, Kandi); African-diaspora culture economy",
+      "detectedAt": "2026-06-25T18:24:09.073Z"
+    },
+    {
+      "title": "NBA Draft 2026: Over 10 Players Of African Heritage Selected, Nigeria Produces Six Draftees",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/nba-draft-2026-over-10-players-of-african-heritage-selected-nigeria-produces-six-draftees/",
+      "pubDate": "Thu, 25 Jun 2026 14:51:52 +0000",
+      "importance": 4,
+      "why": "NBA Draft: six Nigerian players selected — African diaspora sports/athlete achievement in major global event",
+      "detectedAt": "2026-06-25T15:45:05.176Z"
+    },
     {
       "title": "Morocco breaks Nigeria's World Cup record",
       "source": "NotJustOk",
