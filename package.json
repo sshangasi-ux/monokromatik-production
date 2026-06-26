@@ -32,7 +32,9 @@
     "backfill:cs-media": "tsx scripts/backfill-case-study-media.ts",
     "index:snapshot": "tsx scripts/snapshot-index.ts",
     "breaking:watch": "tsx scripts/breaking-watch.ts",
-    "breaking:watch:dry": "tsx scripts/breaking-watch.ts -- --dry"
+    "breaking:watch:dry": "tsx scripts/breaking-watch.ts -- --dry",
+    "social:publish": "tsx scripts/social-publish.ts",
+    "social:publish:dry": "tsx scripts/social-publish.ts -- --dry"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

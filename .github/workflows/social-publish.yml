@@ -1,0 +1,89 @@
+name: MonoKromatik Social Auto-Post (Instagram)
+
+# Posts the next unposted item (Wire break first, else latest article) to Instagram
+# via the Meta Graph API, using the public branded card + generated caption.
+#
+# TWO MODES (both built in):
+#   • REVIEW-GATED (default): scheduled runs only PREVIEW the next post in the run
+#     summary — nothing is published. You approve by manually dispatching this
+#     workflow with publish=true (it then posts that next item).
+#   • FULLY-AUTO: set repo variable SOCIAL_AUTOPOST=on (Settings → Secrets and
+#     variables → Actions → Variables). Scheduled runs then publish automatically.
+#
+# Needs secrets IG_USER_ID + IG_ACCESS_TOKEN (Instagram Business/Creator account
+# linked to a Facebook Page, via a Meta app). Without them every run is a no-op
+# preview. Deduped via an Actions-cache ledger (main is branch-protected).
+
+on:
+  schedule:
+    # Once daily at ~14:37 UTC (16:37 SAST), off the :00 mark.
+    - cron: '37 14 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the next item now (your approval). Leave false to preview only.'
+        type: boolean
+        default: false
+      slug:
+        description: 'Optional: target a specific article slug instead of the next queued item'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Restore post ledger
+        uses: actions/cache@v4
+        with:
+          path: output/social-ledger.json
+          key: social-ledger-${{ github.run_id }}
+          restore-keys: |
+            social-ledger-
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Decide mode
+        id: mode
+        run: |
+          PUBLISH=false
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.publish }}" = "true" ]; then
+            PUBLISH=true
+          fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ vars.SOCIAL_AUTOPOST }}" = "on" ]; then
+            PUBLISH=true
+          fi
+          echo "publish=$PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "Mode: $([ "$PUBLISH" = "true" ] && echo PUBLISH || echo 'REVIEW (preview only)')" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Run social publisher
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          NODE_ENV: production
+        run: |
+          FLAGS=""
+          [ "${{ steps.mode.outputs.publish }}" != "true" ] && FLAGS="$FLAGS --dry"
+          SLUG="${{ github.event.inputs.slug }}"
+          [ -n "$SLUG" ] && FLAGS="$FLAGS --slug=$SLUG"
+          npm run social:publish -- $FLAGS
