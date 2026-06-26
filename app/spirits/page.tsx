@@ -31,9 +31,13 @@ const DRINKS_TERMS = /\b(spirit|spirits|liquor|whisk|gin|rum|vodka|tequila|cogna
 const AFRICA_TERMS = /\b(africa|african|diaspora|pan-?african|sub-?saharan|nigeria|nigerian|naija|ghana|ghanaian|kenya|kenyan|south\s?africa|south\s?african|mzansi|ethiopia|tanzania|uganda|senegal|ivory\s?coast|ivorian|c[oô]te\s?d.?ivoire|cameroon|morocc|egypt|egyptian|angola|zimbabwe|zambia|botswana|namibia|mozambiqu|rwanda|congo|drc|lagos|abuja|accra|nairobi|johannesburg|joburg|cape\s?town|kampala|dakar|addis|casablanca|kinshasa|amarula|savanna premium)\b/i;
 
 function isAfricanDrinks(a: { category: string; title: string; excerpt?: string; content?: string; tags?: string[] }): boolean {
-  const hay = [a.title, a.excerpt, ...(a.tags ?? []), a.content].filter(Boolean).join(' ');
-  const drinks = a.category?.toLowerCase() === 'drinks' || DRINKS_TERMS.test(hay);
-  return drinks && AFRICA_TERMS.test(hay);
+  const full = [a.title, a.excerpt, ...(a.tags ?? []), a.content].filter(Boolean).join(' ');
+  // The drinks SIGNAL must come from the category, title or tags — not a stray word
+  // buried in body copy ("spirit" as soul, "drinks" at a networking mixer). That was
+  // landing culture/music pieces on the Drinks Desk. The Africa link can be anywhere.
+  const signal = [a.title, ...(a.tags ?? [])].filter(Boolean).join(' ');
+  const drinks = a.category?.toLowerCase() === 'drinks' || DRINKS_TERMS.test(signal);
+  return drinks && AFRICA_TERMS.test(full);
 }
 
 export default function SpiritsPage() {
