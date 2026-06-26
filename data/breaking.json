@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-06-26T15:08:12.823Z",
+  "updatedAt": "2026-06-26T17:13:22.419Z",
   "breaks": [
+    {
+      "title": "Pharrel Brought Virgina Beach To Paris For His Latest Louis Vuitton Collection ",
+      "source": "Essence",
+      "category": "culture",
+      "link": "https://www.essence.com/fashion/pharrel-beach-paris-latest-louis-vuitton-collection/",
+      "pubDate": "Fri, 26 Jun 2026 17:03:14 +0000",
+      "importance": 4,
+      "why": "Pharrell Williams (African-American diaspora creator) launches major Louis Vuitton collection inspired by Virginia Beach culture—significant fashion/brand moment.",
+      "detectedAt": "2026-06-26T17:13:22.419Z"
+    },
+    {
+      "title": "7 Brands Crafting A New Visual Language For Black Queer Fashion",
+      "source": "Essence",
+      "category": "culture",
+      "link": "https://www.essence.com/fashion/black-lgbtq-fashion-designer/",
+      "pubDate": "Fri, 26 Jun 2026 16:12:15 +0000",
+      "importance": 4,
+      "why": "Seven Black/African-diaspora brands launching new visual language for queer fashion—significant fashion/culture economy story.",
+      "detectedAt": "2026-06-26T17:13:22.419Z"
+    },
     {
       "title": "World Cup 2026: Pepe Targets More Goals After Helping Côte d’Ivoire  Beat Curaçao",
       "source": "Complete Sports",
