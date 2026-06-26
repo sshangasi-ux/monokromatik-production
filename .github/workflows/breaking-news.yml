@@ -123,10 +123,25 @@ jobs:
 
           STAMP=$(date -u +"%Y-%m-%d %H:%MZ")
           COUNT=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("data/breaking.json","utf8")).breaks.length)')
-          if [ -z "$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')" ]; then
-            BODY="The breaking radar confirmed major break(s) in our focus segments and alerted you. This is the live Wire queue ($COUNT item(s)) for /breaking + the homepage strip — it accumulates new breaks until you merge. Merge to publish; each entry carries source, importance, the one-line read and detection time."
-            PR_URL=$(gh pr create -R "$REPO" --base main --head "$BRANCH" --title "🔴 The Wire — breaking queue" --body "$BODY") || true
-            echo "Opened Wire PR: ${PR_URL:-(check $BRANCH)}" >> "$GITHUB_STEP_SUMMARY"
+          NUM=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')
+          if [ -z "$NUM" ]; then
+            BODY="The breaking radar confirmed major break(s) in our focus segments and alerted you. This is the live Wire queue ($COUNT item(s)) for /breaking + the homepage strip — it accumulates new breaks until it merges. Each entry carries source, importance, the one-line read and detection time."
+            gh pr create -R "$REPO" --base main --head "$BRANCH" --title "🔴 The Wire — breaking queue" --body "$BODY" || true
+            NUM=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number -q '.[0].number')
+            echo "Opened Wire PR #${NUM:-?} ($COUNT queued) — $STAMP." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "Updated the open Wire PR ($COUNT item(s) queued) — $STAMP." >> "$GITHUB_STEP_SUMMARY"
+            echo "Updated open Wire PR #$NUM ($COUNT queued) — $STAMP." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          # Standing policy: Wire breaks are pre-approved to publish (operator decision,
+          # 2026-06-26). Arm GitHub auto-merge so the PR merges itself the moment the
+          # required build check passes — fully autonomous once GH_PAT (CI on bot PRs)
+          # and the repo's "Allow auto-merge" setting are in place. Harmless no-op until
+          # then; the PR simply stays queued for a one-click merge.
+          if [ -n "$NUM" ]; then
+            if gh pr merge "$NUM" -R "$REPO" --auto --merge >/dev/null 2>&1; then
+              echo "Auto-merge armed on Wire PR #$NUM." >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "Auto-merge not active yet (needs GH_PAT + repo 'Allow auto-merge') — #$NUM queued for merge." >> "$GITHUB_STEP_SUMMARY"
+            fi
           fi
