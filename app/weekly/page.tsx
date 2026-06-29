@@ -4,6 +4,7 @@ import { Check, ArrowRight, Mail } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import SponsorSlot from '../components/SponsorSlot';
+import WeeklyDispatchSample from '../components/WeeklyDispatchSample';
 
 export const metadata: Metadata = {
   title: 'The Weekly Signal — MonoKromatik',
@@ -37,7 +38,21 @@ export default function WeeklyPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* Live sample — this week's actual dispatch, so visitors see exactly what they get. */}
+      <section className="py-16 md:py-20 bg-mono-soft-white border-b border-mono-gray/20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between gap-4 mb-8">
+            <div>
+              <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-3">THIS WEEK&rsquo;S DISPATCH</p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">See it before you subscribe.</h2>
+            </div>
+          </div>
+          <WeeklyDispatchSample />
+          <p className="mt-5 text-[12px] font-body text-mono-gray">A live sample, assembled from this week&rsquo;s actual coverage — what lands in your inbox, every week.</p>
+        </div>
+      </section>
+
+      <section id="subscribe" className="py-16 md:py-24 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
