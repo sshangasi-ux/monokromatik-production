@@ -34,7 +34,9 @@
     "breaking:watch": "tsx scripts/breaking-watch.ts",
     "breaking:watch:dry": "tsx scripts/breaking-watch.ts -- --dry",
     "social:publish": "tsx scripts/social-publish.ts",
-    "social:publish:dry": "tsx scripts/social-publish.ts -- --dry"
+    "social:publish:dry": "tsx scripts/social-publish.ts -- --dry",
+    "media:heal": "tsx scripts/heal-media.ts",
+    "media:heal:dry": "tsx scripts/heal-media.ts --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

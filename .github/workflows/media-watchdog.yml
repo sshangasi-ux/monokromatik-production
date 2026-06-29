@@ -1,0 +1,95 @@
+name: Media Watchdog
+
+# Twice-daily self-healing pass over all media + content. It CHECKS every article
+# and case-study hero against the live health bar (file exists on disk AND is
+# photo-shaped, not a logo/icon/ad-banner), AUTO-CORRECTS the unhealthy ones by
+# re-sourcing a credited, self-hosted hero through the shared sourceMedia pipeline,
+# and REPORTS the content/data issues a human should look at. Healthy media is
+# never touched, so a clean run produces no PR.
+#
+# Like every content path, main is PR-protected: corrections land via a review PR
+# (merging it is the publish step), never a direct push.
+#
+# Needs repo secrets: PEXELS_API_KEY, ANTHROPIC_API_KEY (optional UNSPLASH_ACCESS_KEY,
+# YOUTUBE_API_KEY). Set GH_PAT (+ "Allow auto-merge") for the PR to clear CI hands-free.
+
+on:
+  schedule:
+    # 05:30 and 17:30 UTC — twice a day, offset off-the-hour to dodge Actions congestion.
+    - cron: '30 5,17 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — report only, no re-source, no commit'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: media-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Check + heal media
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MONO_STOCK_VIDEO: 'off'
+          NODE_ENV: production
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            npm run media:heal:dry
+          else
+            npm run media:heal
+          fi
+
+      - name: Open a review PR with the corrections
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/articles.json data/case-studies.json public/article-media)" ]; then
+            echo "✅ All media healthy — nothing to correct." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BRANCH="media-watchdog/${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/articles.json data/case-studies.json public/article-media
+          git commit -m "chore(media): watchdog auto-corrected unhealthy media"
+          git push origin "$BRANCH"
+
+          BODY="Automated media watchdog run. Re-sourced credited, self-hosted heroes for media that failed the health bar (missing file, logo/banner dimensions, or undecodable) and/or loaded media for image-less items. Healthy media was left untouched. **Merging this PR is the publish step.** See the run's job summary for the per-item report."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Media watchdog — $(date -u +%Y-%m-%d) corrections" --body "$BODY") || true
+          if [ -n "$PR_URL" ]; then
+            echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Corrections pushed to $BRANCH; open a PR from that branch if one was not created." >> "$GITHUB_STEP_SUMMARY"
+          fi

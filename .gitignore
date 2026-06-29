@@ -51,3 +51,6 @@ __pycache__/
 
 # Local-only warm-start handoff doc (never publish to the public repo)
 CLAUDE-HANDOFF.md
+
+# Generated audit/heal artifacts
+output/
