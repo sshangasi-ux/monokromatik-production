@@ -9,6 +9,9 @@ import TrendingArticles from './components/TrendingArticles';
 import MediaImage from './components/MediaImage';
 import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
+import { getPublicCaseStudies } from '../lib/case-studies';
+import { rankIndex } from '../lib/signal-index';
+import CTA from './components/CTA';
 
 export const revalidate = 60;
 
@@ -93,10 +96,24 @@ export default function Home() {
   // and reports — each in the article-hero format. Refreshes as new content ships.
   const coverSlides = buildCoverSlides();
 
+  // The flagship Index — surfaced on the homepage, not just the footer.
+  const ranked = rankIndex(getPublicCaseStudies());
+  const indexTop = ranked[0]?.score ?? 0;
+  const indexCount = ranked.length;
+
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
       <LivingCover slides={coverSlides} />
+
+      {/* Value prop — what MonoKromatik is, in one line, on first load. */}
+      <section className="bg-mono-paper border-b border-mono-gray/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-5">
+          <p className="text-sm md:text-[15px] font-display font-bold text-mono-black tracking-tight shrink-0">African brand intelligence, built for decision-makers.</p>
+          <p className="text-sm font-body text-mono-charcoal">Authored analysis · a breaking-news Wire · the Cultural-Signal Index — who authors influence in Africa, scored.</p>
+        </div>
+      </section>
+
       <BreakingStrip />
 
       <section className="bg-mono-white py-20 md:py-24">
@@ -124,6 +141,36 @@ export default function Home() {
                 <span className="mt-8 inline-flex items-center gap-2 text-mono-amber-strong font-display font-bold">OPEN THE DESK <ArrowRight size={18} /></span>
               </div>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* The flagship — the Cultural-Signal Index, promoted on the homepage. */}
+      <section className="bg-mono-black text-mono-white py-16 md:py-24 border-y border-mono-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center">
+          <div>
+            <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">THE FLAGSHIP · THE CULTURAL-SIGNAL INDEX</p>
+            <h2 className="text-4xl md:text-6xl font-display font-bold leading-[0.98]">Who authored the influence. <span className="text-mono-amber">Ranked.</span></h2>
+            <p className="mt-6 max-w-xl text-lg text-mono-soft-white font-body leading-relaxed">
+              An authorship-weighted score across four editorial dimensions — Idea, Authorship, Execution, Consequence.
+              Evidence-led, transparent methodology, free public data feed. The standard for who owns the upside of African culture.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <CTA href="/intelligence/signal-index" variant="amber">EXPLORE THE INDEX</CTA>
+              <CTA href="/intelligence/signal-index/methodology" variant="text" className="text-mono-amber hover:text-mono-amber-bright">SEE THE METHODOLOGY</CTA>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-px bg-mono-white/15 border border-mono-white/15">
+            {[
+              { v: String(indexCount), l: 'Brands ranked' },
+              { v: String(indexTop), l: 'Top score /100' },
+              { v: '4', l: 'Scoring axes' },
+            ].map((s) => (
+              <div key={s.l} className="bg-mono-black p-6 md:p-8 text-center">
+                <p className="text-4xl md:text-5xl font-display font-bold text-mono-amber tabular-nums">{s.v}</p>
+                <p className="mt-2 text-[10px] tracking-[0.2em] font-display font-bold text-mono-gray-bright uppercase">{s.l}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -51,20 +51,13 @@ export default function ArticleClient({ article }: { article: Article }) {
     <div className="min-h-screen bg-mono-white">
       <Navigation />
 
-      {/* Reading Progress Bar */}
-      <div className="fixed top-20 left-0 right-0 h-1 bg-mono-soft-white z-40">
+      {/* Reading progress bar — the clean, premium signal (the floating %
+          widget was removed as off-register for an editorial brand). */}
+      <div className="fixed top-20 left-0 right-0 h-1 bg-mono-soft-white z-40" aria-hidden="true">
         <div
           className="h-full bg-mono-amber transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
-      </div>
-
-      {/* Progress Indicator */}
-      <div className="fixed top-24 right-4 bg-mono-black/80 backdrop-blur-sm px-4 py-2 rounded-full z-40">
-        <span className="text-mono-white font-body text-sm">
-          📖 {Math.round(scrollProgress)}%{' '}
-          {scrollProgress > 80 && '- Almost done!'}
-        </span>
       </div>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

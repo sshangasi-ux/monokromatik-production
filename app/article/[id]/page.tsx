@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllArticles, getArticleBySlug } from '../../../lib/articles';
 import ArticleClient from './ArticleClient';
+import RelatedIntelligence from '../../components/RelatedIntelligence';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -93,6 +94,7 @@ export default async function ArticlePage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ArticleClient article={article} />
+      <RelatedIntelligence article={article} />
     </>
   );
 }
