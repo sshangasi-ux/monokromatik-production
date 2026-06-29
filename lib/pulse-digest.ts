@@ -36,6 +36,7 @@
  */
 
 import type { Article } from './articles';
+import { getMovers, type Movers } from './index-history';
 
 const SITE_URL = 'https://www.monokromatik.com';
 const BRAND_NAME = 'MonoKromatik';
@@ -98,6 +99,7 @@ export function renderPulseDigestHtml(
   });
 
   const articleBlocks = articles.map(renderArticleBlock).join('\n');
+  const indexSection = renderIndexSection(getMovers(3));
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -167,7 +169,7 @@ export function renderPulseDigestHtml(
               ${articleBlocks}
             </td>
           </tr>
-
+${indexSection}
           <!-- Footer CTA -->
           <tr>
             <td style="padding: 0 32px 36px 32px;">
@@ -325,6 +327,8 @@ export function renderPulseDigestPlaintext(
     lines.push('—'.repeat(56));
   });
 
+  for (const l of renderIndexPlaintext(getMovers(3))) lines.push(l);
+
   lines.push('');
   lines.push(`Want more? ${SITE_URL}`);
   lines.push('');
@@ -334,6 +338,58 @@ export function renderPulseDigestPlaintext(
   lines.push('Unsubscribe: {{unsubscribe_url}}');
 
   return lines.join('\n');
+}
+
+// ---------------- On the Index (the wedge, distributed weekly) ----------------
+
+/** The week's headline Index move for the digest — top climber + any newcomer.
+ *  Returns '' when there's nothing to report (fewer than 2 snapshots, or no
+ *  movement), so the section simply doesn't render. */
+function renderIndexSection(movers: Movers): string {
+  const top = movers.climbers[0];
+  const newcomer = movers.newcomers[0];
+  if (!top && !newcomer) return '';
+  const rows: string[] = [];
+  if (top) {
+    const rank = top.rankDelta > 0 ? ` (▲${top.rankDelta} rank${top.rankDelta > 1 ? 's' : ''})` : '';
+    rows.push(
+      `<p style="margin:0 0 6px 0; font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.5; color:#e5e7eb;"><strong style="color:#ffffff;">${escapeHtml(top.brand)}</strong> climbed <span style="color:#d97706; font-weight:700;">+${top.scoreDelta}</span> to ${top.score}/100${rank}.</p>`,
+    );
+  }
+  if (newcomer) {
+    rows.push(
+      `<p style="margin:0 0 6px 0; font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.5; color:#e5e7eb;">New entry: <strong style="color:#ffffff;">${escapeHtml(newcomer.brand)}</strong> joins the Index at ${newcomer.score}/100.</p>`,
+    );
+  }
+  return `
+          <!-- On the Index -->
+          <tr>
+            <td style="padding: 0 32px 24px 32px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="background-color:#0a0a0a; padding:24px;">
+                    <p style="margin:0 0 10px 0; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; color:#d97706; text-transform:uppercase;">On the Index</p>
+                    ${rows.join('\n                    ')}
+                    <a href="${SITE_URL}/intelligence/signal-index" style="display:inline-block; margin-top:12px; font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:1px; color:#d97706; text-decoration:none; text-transform:uppercase;">See the full Index &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>`;
+}
+
+function renderIndexPlaintext(movers: Movers): string[] {
+  const top = movers.climbers[0];
+  const newcomer = movers.newcomers[0];
+  if (!top && !newcomer) return [];
+  const lines = ['', 'ON THE INDEX', ''];
+  if (top) lines.push(`${top.brand} climbed +${top.scoreDelta} to ${top.score}/100.`);
+  if (newcomer) lines.push(`New entry: ${newcomer.brand} joins at ${newcomer.score}/100.`);
+  lines.push('');
+  lines.push(`The Index: ${SITE_URL}/intelligence/signal-index`);
+  lines.push('');
+  lines.push('—'.repeat(56));
+  return lines;
 }
 
 // ---------------- Helpers ----------------
