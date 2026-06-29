@@ -4,6 +4,22 @@ import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import CaseStudyLibrary from './CaseStudyLibrary';
+import type { Metadata } from 'next';
+
+const SITE = 'https://www.monokromatik.com';
+
+export const metadata: Metadata = {
+  title: 'Intelligence Case Studies | MonoKromatik',
+  description:
+    'Six-dimension decodes of African and diaspora brand work — context, strategic bet, creative move, evidence, the African read and the lesson. The library behind the Cultural-Signal Index.',
+  alternates: { canonical: `${SITE}/intelligence/case-studies` },
+  openGraph: {
+    title: 'Intelligence Case Studies | MonoKromatik',
+    description: 'Six-dimension decodes of African and diaspora brand work — the library behind the Cultural-Signal Index.',
+    url: `${SITE}/intelligence/case-studies`,
+    images: [`${SITE}/opengraph-image`],
+  },
+};
 
 const caseStructure = [
   ['THE CONTEXT', 'Market, audience, cultural territory and the tension the work needed to address.'],

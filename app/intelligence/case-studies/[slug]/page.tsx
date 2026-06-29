@@ -21,6 +21,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `https://www.monokromatik.com/intelligence/case-studies/${study.slug}`;
   const title = `${study.title} | MonoKromatik Intelligence`;
   const desc = study.standfirst;
+  // Prefer the study's own hero; fall back to the branded site OG card.
+  const heroSrc = study.media?.[0]?.src;
+  const ogImage = heroSrc
+    ? heroSrc.startsWith('http')
+      ? heroSrc
+      : `https://www.monokromatik.com${heroSrc}`
+    : 'https://www.monokromatik.com/opengraph-image';
 
   return {
     title,
@@ -34,11 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       publishedTime: study.publishedAt,
       tags: study.tags,
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title: study.title,
       description: desc,
+      images: [ogImage],
     },
     alternates: { canonical: url },
   };
