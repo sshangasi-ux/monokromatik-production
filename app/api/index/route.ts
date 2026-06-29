@@ -69,6 +69,9 @@ export async function GET(req: Request) {
     name: 'The Cultural-Signal Index',
     description:
       'An authorship-weighted ranking of how brand and cultural work scores on African creative idea, authorship, execution and consequence.',
+    version: '1.0',
+    documentation: `${SITE}/intelligence/signal-index/api`,
+    terms: 'Free to use and cite with attribution to MonoKromatik and a link to the source page. Licensed tiers add refresh cadence, history, segmentation and team rights.',
     publisher: { name: 'MonoKromatik', url: SITE },
     url: `${SITE}/intelligence/signal-index`,
     license: `${SITE}/intelligence/license`,

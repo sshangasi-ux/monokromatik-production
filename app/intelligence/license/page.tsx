@@ -37,7 +37,7 @@ export default function LicensePage() {
 
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-px bg-mono-gray/25 border border-mono-gray/25">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-mono-gray/25 border border-mono-gray/25">
             {DATA_PRODUCTS.map((p) => {
               const Icon = ICON[p.id] ?? Database;
               return (
