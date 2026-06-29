@@ -38,7 +38,8 @@
     "media:heal": "tsx scripts/heal-media.ts",
     "media:heal:dry": "tsx scripts/heal-media.ts --dry-run",
     "links:check": "tsx scripts/check-links.ts",
-    "seo:check": "tsx scripts/check-seo.ts"
+    "seo:check": "tsx scripts/check-seo.ts",
+    "firewall:check": "tsx scripts/check-firewall.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

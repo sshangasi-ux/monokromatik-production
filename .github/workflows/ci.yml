@@ -37,6 +37,9 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit
 
+      - name: Editorial firewall check
+        run: npm run firewall:check
+
       - name: Build
         env:
           NODE_ENV: production
