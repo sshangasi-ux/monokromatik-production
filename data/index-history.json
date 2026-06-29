@@ -172,5 +172,186 @@
         "works": 1
       }
     ]
+  },
+  {
+    "date": "2026-06-29",
+    "generatedAt": "2026-06-29T09:05:26.344Z",
+    "entries": [
+      {
+        "brand": "Letsile Tebogo × De Beers / Botswana",
+        "slug": "letsile-tebogo-de-beers-botswana",
+        "score": 97,
+        "rank": 1,
+        "works": 1
+      },
+      {
+        "brand": "The Black Book (Editi Effiong) / Nollywood on Netflix",
+        "slug": "the-black-book-editi-effiong-nollywood-on-netflix",
+        "score": 97,
+        "rank": 2,
+        "works": 1
+      },
+      {
+        "brand": "Achraf Hakimi / Morocco national team",
+        "slug": "achraf-hakimi-morocco-national-team",
+        "score": 95,
+        "rank": 3,
+        "works": 1
+      },
+      {
+        "brand": "Kava (Inkblot Studios + Filmhouse Group)",
+        "slug": "kava-inkblot-studios-filmhouse-group",
+        "score": 94,
+        "rank": 4,
+        "works": 1
+      },
+      {
+        "brand": "The Met Gala 2025 — “Superfine: Tailoring Black Style”",
+        "slug": "the-met-gala-2025-superfine-tailoring-black-style",
+        "score": 93,
+        "rank": 5,
+        "works": 1
+      },
+      {
+        "brand": "Burna Boy × FIFA ('Dai Dai', with Shakira)",
+        "slug": "burna-boy-fifa-dai-dai-with-shakira",
+        "score": 93,
+        "rank": 6,
+        "works": 1
+      },
+      {
+        "brand": "DR Congo (Léopards) × JMAKxPARIS",
+        "slug": "dr-congo-l-opards-jmakxparis",
+        "score": 92,
+        "rank": 7,
+        "works": 1
+      },
+      {
+        "brand": "Dakar 2026 Youth Olympic Games / IOC",
+        "slug": "dakar-2026-youth-olympic-games-ioc",
+        "score": 90,
+        "rank": 8,
+        "works": 1
+      },
+      {
+        "brand": "Wizkid × Asake — REAL, Vol. 1",
+        "slug": "wizkid-asake-real-vol-1",
+        "score": 90,
+        "rank": 9,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × the World Cup Stage",
+        "slug": "tyla-the-world-cup-stage",
+        "score": 90,
+        "rank": 10,
+        "works": 1
+      },
+      {
+        "brand": "Nike × Air Afrique",
+        "slug": "nike-air-afrique",
+        "score": 88,
+        "rank": 11,
+        "works": 1
+      },
+      {
+        "brand": "Chicken Licken (agency: Joe Public)",
+        "slug": "chicken-licken-agency-joe-public",
+        "score": 87,
+        "rank": 12,
+        "works": 1
+      },
+      {
+        "brand": "Flutterwave",
+        "slug": "flutterwave",
+        "score": 84,
+        "rank": 13,
+        "works": 1
+      },
+      {
+        "brand": "Faith Kipyegon / Kenyan distance running",
+        "slug": "faith-kipyegon-kenyan-distance-running",
+        "score": 83,
+        "rank": 14,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × Pandora (and Nike, Chanel, H&M)",
+        "slug": "tyla-pandora-and-nike-chanel-h-m",
+        "score": 83,
+        "rank": 15,
+        "works": 1
+      },
+      {
+        "brand": "FIFA World Cup Stage × Rema",
+        "slug": "fifa-world-cup-stage-rema",
+        "score": 83,
+        "rank": 16,
+        "works": 1
+      },
+      {
+        "brand": "Ayra Starr (× Maybelline / New Balance / Pepsi)",
+        "slug": "ayra-starr-maybelline-new-balance-pepsi",
+        "score": 80,
+        "rank": 17,
+        "works": 1
+      },
+      {
+        "brand": "AfroPlus Fest 2026",
+        "slug": "afroplus-fest-2026",
+        "score": 80,
+        "rank": 18,
+        "works": 1
+      },
+      {
+        "brand": "Sarkodie × Shatta Wale (EVERLASTING)",
+        "slug": "sarkodie-shatta-wale-everlasting",
+        "score": 80,
+        "rank": 19,
+        "works": 1
+      },
+      {
+        "brand": "NBA Africa / Basketball Africa League",
+        "slug": "nba-africa-basketball-africa-league",
+        "score": 73,
+        "rank": 20,
+        "works": 1
+      },
+      {
+        "brand": "Visa",
+        "slug": "visa",
+        "score": 71,
+        "rank": 21,
+        "works": 1
+      },
+      {
+        "brand": "Rema × Diesel",
+        "slug": "rema-diesel",
+        "score": 68,
+        "rank": 22,
+        "works": 1
+      },
+      {
+        "brand": "Adidas",
+        "slug": "adidas",
+        "score": 64,
+        "rank": 23,
+        "works": 1
+      },
+      {
+        "brand": "Coca-Cola",
+        "slug": "coca-cola",
+        "score": 64,
+        "rank": 24,
+        "works": 1
+      },
+      {
+        "brand": "Budweiser (AB InBev)",
+        "slug": "budweiser-ab-inbev",
+        "score": 61,
+        "rank": 25,
+        "works": 1
+      }
+    ]
   }
 ]
