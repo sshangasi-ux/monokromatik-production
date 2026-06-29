@@ -29,9 +29,13 @@ const MEDIA_DIR = join(process.cwd(), 'public', 'article-media');
 // expose a wordmark (e.g. 125×20) or an IAB ad unit (728×90 leaderboard, 300×250
 // MPU) as a scrapeable image; byte-size alone doesn't catch these (a banner can
 // be >8KB). So we gate on real pixel dimensions + aspect ratio after download.
+// The minimum-size floor is the reliable junk signal (logos/icons/standard ad
+// units are all small in at least one dimension). The aspect bound only catches
+// extreme strips (e.g. 970×250 billboards); it stays loose enough to admit legit
+// wide campaign key art (a 1600×525 billboard-style hero is ~3.05).
 const MIN_HERO_W = 400;
 const MIN_HERO_H = 225;
-const MAX_HERO_ASPECT = 3.0; // wider than 3:1 → leaderboard/strip
+const MAX_HERO_ASPECT = 3.5; // wider than 3.5:1 → leaderboard/billboard strip
 const MIN_HERO_ASPECT = 0.4; // taller than 1:2.5 → skyscraper/vertical strip
 
 /** True when the decoded image is too small or too banner-shaped to be a hero. */
