@@ -1,6 +1,6 @@
 # Engine drafts — staging report
 
-_Generated 2026-06-24T16:03:37.903Z._
+_Generated 2026-06-29T08:33:51.458Z._
 
 Deterministic gates over the review queue. **Publish = merging this PR.**
 Auto-patched items are appended to `data/articles.json` (review the diff);
@@ -9,97 +9,73 @@ everything else is a proposal with its gate verdict.
 | Decision | Count | Meaning |
 |---|---|---|
 | 🟢 AUTO_PATCH | 2 | Culture article, ≥2 sources, no dup — written to data |
-| 🟠 NEEDS_AUTHORING | 8 | Claim-bearing — human authors it (gates pre-passed) |
+| 🟠 NEEDS_AUTHORING | 5 | Claim-bearing — human authors it (gates pre-passed) |
 | 🔵 ENRICH | 0 | Duplicates an existing entry — enrich, don't duplicate |
-| 📇 OUTREACH | 6 | Contributor brief — reach out, not publish |
-| 🟡 HOLD | 1 | <2 independent sources — needs corroboration |
+| 📇 OUTREACH | 3 | Contributor brief — reach out, not publish |
+| 🟡 HOLD | 2 | <2 independent sources — needs corroboration |
 | 🔴 REJECT | 0 | Failed schema — not usable as-is |
 
-**Auto-patched into `data/articles.json`:** `tylas-apop-moment-and-the-infrastructure-behind-it`, `we-are-not-your-reference-point-cape-verde-the-world-cup-and-who-gets-to-name-af`
+**Auto-patched into `data/articles.json`:** `the-accra-accord-from-un-resolution-to-a-global-framework`, `samuel-ogazi-4338-the-nigerian-who-rewrote-the-rulebook-of-ncaa-and-turned-pro-a`
 
 ## Per-item verdicts
 
-### 📇 OUTREACH — Africa's Creative Economy: $59 Billion Headline Masks a Structural Value Gap
+### 📇 OUTREACH — HYBE & African Music Managers: The K-Pop Model Meets Afrobeats
 - **Section:** conversations · **Kind:** Conversation
-- **Sources:** 1 (https://blog.discoursechannel.com/africas-creative-economy-scales-but-structural-gaps-persist/)
+- **Sources:** 2 (https://www.musicbusinessworldwide.com/hybe-to-build-a-global-platform-for-african-talent-via-new-partnership-with-tyla-managers-brandon-hixon-and-colin-gayle/; https://www.businesswire.com/news/home/20251215194889/en/HYBE-Partners-with-Acclaimed-Music-Executives-Brandon-Hixon-and-Colin-Gayle-To-Manage-Grammy-Award-Winning-Artist-Tyla-and-To-Build-A-Global-Platform-for-African-Talent)
 - **Why:** contributor brief — action is outreach, not publish
 
-### 📇 OUTREACH — Brand Africa 100 Rankings: African Brands Recover to 15% After Historic Low
+### 📇 OUTREACH — Vivo Fashion & Shop Zetu: African Operator Building Home-Market Brand Authority
 - **Section:** conversations · **Kind:** Conversation
-- **Sources:** 1 (https://africanmediaagency.com/african-brands-rebound-to-15-of-the-most-admired-brands-in-africa-recovering-from-a-historic-low-of-11-mtn-and-dangote-lead-africas-rankings/)
+- **Sources:** 2 (https://african.business/2026/03/trade-investment/african-business-women-in-leadership-2026-part-three; https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles)
 - **Why:** contributor brief — action is outreach, not publish
 
-### 📇 OUTREACH — Brand Africa Launches Africa CMO 100: Mapping Marketing Leadership on the Continent
+### 📇 OUTREACH — The Fashion Law Africa Summit: Building Legal Infrastructure to Protect African Design IP
 - **Section:** conversations · **Kind:** Conversation
-- **Sources:** 2 (https://gnnliberia.com/amp/brand-africa-announces-the-inaugural-africa-cmo-100/; https://african.business/2026/03/trade-investment/behind-every-top-brand-is-an-exceptional-marketing-officer)
+- **Sources:** 4 (https://www.tflas.com/; https://businessday.ng/news/article/fashion-law-institute-africa-debuts-summit-unveils-continental-report-journal/; https://www.fashionlawinstitute.com/institute-events/13th-annual-symposium; https://www.clearlyinvincible.com/post/fashion-law-in-africa)
 - **Why:** contributor brief — action is outreach, not publish
 
-### 📇 OUTREACH — ÀLKÉ: A Pan-African Cultural Institution Built for Permanence, Not Seasonality
-- **Section:** conversations · **Kind:** Conversation
-- **Sources:** 3 (https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/; https://www.thecoast.co.ke/2026/06/18/african-cultural-intelligence-and-creative-economies-protection-framework-outlined/40/38/business-news/thecoast/16423/11/; https://thenet.ng/africa-build-institutions-protect-cultural-intelligence/)
-- **Why:** contributor brief — action is outreach, not publish
-
-### 📇 OUTREACH — European Luxury Houses Cast Afrobeats Stars but Invest Nothing in African Fashion Infrastructure
-- **Section:** conversations · **Kind:** Conversation
-- **Sources:** 1 (https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/)
-- **Why:** contributor brief — action is outreach, not publish
-
-### 📇 OUTREACH — Tongoro: An African Fashion Brand That Builds Authority from Dakar, Not Paris
-- **Section:** conversations · **Kind:** Conversation
-- **Sources:** 1 (https://knowafrika.com/african-influencers-million-dollar-brands-2026/)
-- **Why:** contributor brief — action is outreach, not publish
-
-### 🟢 AUTO_PATCH — Tyla's *A*Pop* Moment and the Infrastructure Behind It
+### 🟢 AUTO_PATCH — The Accra Accord: From UN Resolution to a Global Framework
 - **Section:** culture · **Kind:** Culture
-- **Sources:** 6 (OkayAfrica; Channels TV; Music Business Worldwide; Music In Africa)
+- **Sources:** 6 (Graphic Online; AllAfrica/Ghanaian Times; Ghana Ministry of Foreign Affairs; GBC Ghana Online)
 - **Why:** Culture article, ≥2 sources, no duplicate — eligible for auto-patch
 
-### 🟢 AUTO_PATCH — "We Are Not Your Reference Point": Cape Verde, the World Cup, and Who Gets to Name African Identity
+### 🟢 AUTO_PATCH — Samuel Ogazi, 43.38: The Nigerian Who Rewrote the Rulebook of NCAA and Turned Pro at 20
 - **Section:** culture · **Kind:** Culture
-- **Sources:** 5 (EURweb; Pulse Sports Nigeria; GBC Ghana; Lipstick Alley)
+- **Sources:** 8 (Alabama Athletics; World Athletics; Wikipedia; Blueprint Newspapers)
 - **Why:** Culture article, ≥2 sources, no duplicate — eligible for auto-patch
 
-### 🟠 NEEDS_AUTHORING — Rema x Diesel AW26: When the Afrobeats Body Owns the Runway
+### 🟠 NEEDS_AUTHORING — Nike × Air Afrique — *Première Classe*: Reclaiming the Archive, Selling the Elevation
 - **Section:** intelligence · **Kind:** Intelligence
-- **Sources:** 6 (https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/; https://tricklemedia.net/rema-diesel-milan-fashion-week-aw26/; https://ournigerianews.com/rema-turns-heads-at-milan-fashion-week-walking-diesels-aw26-runway/; https://www.afropolitain.com/rema-just-took-afrobeats-to-the-milan-runway/)
-- **Why:** Intelligence carries analysis/scores — staged for human authoring (gates pre-checked)
+- **Sources:** 12 (https://about.nike.com/en/newsroom/releases/nike-air-afrique-air-max-rk61-official-images; https://sneakernews.com/2025/09/16/nike-air-max-rk61-release-date/; https://www.okayafrica.com/air-afrique-pays-tribute-to-afro-diasporic-elegance-with-new-nike-collaboration/1411318; https://wwd.com/footwear-news/sneaker-news/air-afrique-nike-air-max-rk61-sneaker-loafer-release-date-hq6416-001-1238290750/)
+- **Duplicate of:** `cs:tyla-pandora-styled-authorship`
+- **Why:** Intelligence carries analysis/scores — staged for human authoring (gates pre-checked); ⚠️ possible duplicate of "cs:tyla-pandora-styled-authorship" (similarity 0.45) — verify before authoring/publishing
 
-### 🟠 NEEDS_AUTHORING — The IP Gap: Africa's Cultural Renaissance Is Creating Wealth — Just Not Always for Africans
+### 🟠 NEEDS_AUTHORING — Streaming Millions, Publishing Zeros: The African Music Money Gap
 - **Section:** issues · **Kind:** Issue
-- **Sources:** 2 (https://www.ecofinagency.com/news/1703-53839-morocco-leads-africa-in-2026-intellectual-property-index; https://www.aripo.org/)
+- **Sources:** 6 (https://trendsnafrica.com/africas-creative-economy-poised-to-reach-usd-200-bn-by-2030/; https://downtownmusic.africa/what-changed-between-ifpis-2025-and-2026-global-music-reports-and-why-africas-story-still-matters/; https://www.okayafrica.com/global-sound-local-loss-africas-music-money-gap/1427679; https://www.afrosoundtrack.com/how-african-songwriters-make-money/)
 - **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
 
-### 🟠 NEEDS_AUTHORING — The New Sound Economy: Beyond Afrobeats — Who Owns the Next Wave?
+### 🟡 HOLD — The Next Export: Lekompo, Krio Fusion, and the Sounds Africa Is Building Behind Afrobeats
 - **Section:** issues · **Kind:** Issue
-- **Sources:** 2 (https://intalks.africa/the-emergence-of-new-genres-of-african-music-in-2026/; https://www.okayafrica.com/the-rising-african-music-genres-of-2026/1421063)
-- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
-
-### 🟠 NEEDS_AUTHORING — Made in Africa: Fashion's Infrastructure Problem Is the Story
-- **Section:** issues · **Kind:** Issue
-- **Sources:** 3 (https://thevoiceofafrica.com/2026/05/25/african-fashion-global-rise-luxury-identity/; https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles; https://guzangs.com/trends-defining-african-fashion-2026/)
-- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
-
-### 🟠 NEEDS_AUTHORING — The Distribution Bet: Nollywood Builds Its Own Pipes
-- **Section:** issues · **Kind:** Issue
-- **Sources:** 4 (https://africa.com/nigerias-film-industry-pivots-to-building-global-distribution/; https://whatkeptmeup.com/nollywood-movies/the-current-state-of-film-distribution-in-nollywood/; https://afrocritik.com/what-trends-will-drive-africas-film-industry-in-2026/; https://akoroko.com/african-screen-culture-2026/)
-- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
-
-### 🟠 NEEDS_AUTHORING — The Diaspora Capital Question: $100 Billion Sent, How Much Invested?
-- **Section:** issues · **Kind:** Issue
-- **Sources:** 4 (https://techpoint.africa/insight/africas-diaspora-can-fuel-startup-growth/; https://thecondia.com/investors-african-startup-ecosystem/; https://mohacafrica.org/venture-capital-funding-in-africa/; https://thenextafrica.com/african-venture-capital-steps-into-silicon-valley-spotlight-as-500-global-names-vc-unlocked-2026-scholars/)
-- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
-
-### 🟡 HOLD — The Post-Genre Ear: African Music's New Underground and What It Costs to Build a Scene Without a Deal
-- **Section:** issues · **Kind:** Issue
-- **Sources:** 1 (https://www.riotimesonline.com/african-music-new-genres-going-global-2026/)
+- **Sources:** 1 (https://www.okayafrica.com/the-rising-african-music-genres-of-2026/1421063)
 - **Why:** only 1 independent source domain(s) — needs ≥2
 
-### 🟠 NEEDS_AUTHORING — Damson Idris at Prada: When Peckham Carries the Bag for Milan
-- **Section:** signal · **Kind:** Signal
-- **Sources:** 7 (https://www.channelstv.com/2026/05/05/nigerian-heritage-shines-through-at-2026-met-gala/; https://www.imdb.com/name/nm5072010/bio/; https://en.wikipedia.org/wiki/Damson_Idris; https://grokipedia.com/page/Damson_Idris)
-- **Why:** Signal carries analysis/scores — staged for human authoring (gates pre-checked)
+### 🟠 NEEDS_AUTHORING — 'Made in Africa' Is Not a Trend. It's a Power Position.
+- **Section:** issues · **Kind:** Issue
+- **Sources:** 3 (https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles; https://www.sundaytimes.timeslive.co.za/lifestyle/fashion-and-beauty/2026-04-20-how-africa-and-the-uae-are-shaping-the-luxury-fashion-industry/; https://www.businessoffashion.com/articles/global-markets/the-bank-investing-millions-in-africa-fashion-industry/)
+- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
 
-### 🟠 NEEDS_AUTHORING — Equity Group's DRC Insurance Push: The Continent's Most Underreported Expansion Play
+### 🟠 NEEDS_AUTHORING — Producing the World's Athletes, Capturing Almost None of the Revenue
+- **Section:** issues · **Kind:** Issue
+- **Sources:** 4 (https://www.mission33group.com/post/the-african-sports-economy-a-20-billion-asset-the-world-is-underpricing; https://panafricanvisions.com/2026/01/premier-invest-advances-launch-of-african-sports-infrastructure-fund-asif-at-game-time-africa-summit-2026/; https://www.howwemadeitinafrica.com/the-rise-of-sports-business-in-africa/153553/; https://shore.africa/2026/01/15/african-billionaires-investing-in-sports/)
+- **Why:** Issue carries analysis/scores — staged for human authoring (gates pre-checked)
+
+### 🟡 HOLD — African Fashion Off the Pop-Up Rack — and Into the Ledger
 - **Section:** signal · **Kind:** Signal
-- **Sources:** 5 (https://www.billionaires.africa/2026/05/30/james-mwangis-equity-group-plans-to-set-up-two-insurance-businesses-in-the-drc/; https://www.abojani.com/equity-group-q1-2026-profit-growth-of-24-percent/; https://www.billionaires.africa/2026/06/01/african-wealth-briefing-mon-june-1-2026/; https://www.billionaries.africa/2026/05/19/kenyan-banker-james-mwangi-eyes-bank-acquisitions-along-the-lobito-corridor-for-equity-group/)
+- **Sources:** 1 (https://africafashiontour.com/en/africa-now-2026-how-does-the-galeries-lafayette-pop-up-showcase-the-maturity-of-african-fashion/)
+- **Why:** only 1 independent source domain(s) — needs ≥2
+
+### 🟠 NEEDS_AUTHORING — ÀLKÉ and the Infrastructure Argument — Building the Machine, Not Just the Moment
+- **Section:** signal · **Kind:** Signal
+- **Sources:** 5 (https://www.thecoast.co.ke/2026/06/18/african-cultural-intelligence-and-creative-economies-protection-framework-outlined/40/38/business-news/thecoast/16423/11/; https://www.brandessencenigeria.com/africas-creative-economy-has-a-150bn-opportunity-this-institution-is-building-the-infrastructure-to-capture-it/; https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/; https://uk.fashionnetwork.com/news/Alke-ball-launches-as-a-new-institution-to-secure-recognition-for-african-fashion,1791898.html)
 - **Why:** Signal carries analysis/scores — staged for human authoring (gates pre-checked)

@@ -1,210 +1,208 @@
-<!-- Engine cycle draft · 2026-06-24T16:01:05.823Z · section: issues · 6 web searches -->
+<!-- Engine cycle draft · 2026-06-29T08:31:28.168Z · section: issues · 5 web searches -->
 
-## MonoKromatik | Issue Review Queue
-### Proposed Issue: **"The Ownership Moment"**
-**Cover line:** *Africa's creative economy has gone global. The question now is who keeps the returns.*
-**On sale target:** Q4 2026
+## MonoKromatik — Issue Commissioning Plan: Q3 2026
 
 ---
 
-### EDITORIAL THESIS
+# THE OWNERSHIP ISSUE
+**Cover Line: "Make the Money Move. Then Make It Stay."**
 
-The numbers are no longer in dispute. 
-Brookings Institution analysis projects Africa's creative economy could generate up to $200 billion in annual revenues by 2030.
- A 2026 BCG report puts the sector's current value at 
-$59 billion — one of the clearest snapshots yet of a sector rapidly expanding in both cultural influence and economic value.
- 
-Creative industries generate intellectual property rather than extractive commodities. They require less capital intensity than mining or hydrocarbons, yet they produce foreign exchange earnings, employment and domestic value retention — a combination that is strategically attractive in economies seeking diversification.
-
-
-But a structural fault line runs through the boom. 
-The coming years will likely decide whether African creators retain greater control over the value they generate or continue to operate within global structures shaped elsewhere.
- 
-International investment can bring scale, but local investment matters more for ownership and control.
- 
-Revenue capture depends on intellectual property enforcement, reliable broadband, efficient digital payments and regulatory clarity. Without these foundations, value leaks outward through informal distribution and weak contractual frameworks. The countries that recognise the creative economy as industrial policy rather than cultural policy will move first.
-
-
-This is the issue where MonoKromatik names that fault line, maps the players working on both sides of it, and holds the complexity without collapsing into either boosterism or despair.
-
-**Theme confidence: VERIFIED** | **Editorial framing: INTERPRETIVE**
+*Theme: African and diaspora creatives are winning the global attention game. The decisive question of this cycle is whether they — and the institutions being built around them — can capture, retain, and compound the economic value their culture generates.*
 
 ---
 
-### FEATURE SLATE
+## Editorial Thesis
 
----
+*[interpretive]*
 
-#### 1. ROOTS | The IP Gap: Africa's Cultural Renaissance Is Creating Wealth — Just Not Always for Africans
+The numbers compel a harder conversation than celebration allows. 
+Africa's creative economy could be worth an estimated $200 billion by 2030, according to analysis from the Brookings Institution, with growth across music, film, fashion, and gaming driven by rapid demographic expansion and digital adoption.
+ But 
+despite that influence, Africa still captures only a small fraction of the economic value tied to its creativity: the continent's broader creative economy accounted for just 1.5 percent of global creative economy output.
 
-**Franchise:** Roots (historical & structural analysis)
-**Angle:** A reported long-read examining how the ownership infrastructure — royalty collection, copyright enforcement, trademark registration — persistently lags behind the creative output it is supposed to protect, and what specific institutions are now trying to close that gap.
 
-**Why it earns a place:** 
-Morocco ranks first in Africa and 22nd globally in the 2026 Intellectual Property Index, with a score of 59.19. Only seven African countries appear in the index at all, highlighting the continent's lag in intellectual property protection.
+The cultural product is undeniably global. 
+In January 2026, Wizkid surpassed 10 billion streams on Spotify, becoming the first African artist to hit that mark.
  
-There is a lack of distribution infrastructure — only 1,700 cinemas for a population of 1.4 billion people. Digital platforms offer scalability, but revenue distribution between platform owners and creators needs to be addressed. Intellectual property protection is crucial, as the continent's fragmented jurisdictions make enforcing rights difficult.
+According to YouTube, more than 70% of watch time for the platform's Top 100 African artists now comes from outside Africa.
+ 
+Global recorded music revenues reached US$29.6 billion in 2024, then climbed to US$31.7 billion in 2025, up 6.4%.
+ Sub-Saharan Africa is inside that wave — but its structural position within it is precarious.
+
+
+Africa creates culture. Someone else owns the pipe.
+ 
+As one 2025 analysis concluded, Africa does not lack creative talent. It lacks consumer capacity. If the creative economy is to scale beyond hit-and-hope models, 2026 must be about building stronger economic foundations.
  Meanwhile, 
-ARIPO's World IP Day 2026 theme — "Leveraging Intellectual Property to Elevate Sport in Africa" — and a new symposium on copyright matters signal growing institutional urgency on the continent.
+infrastructure, intellectual property, taxation, funding, and trade policies often decide whether creativity becomes an economy or just a vibe.
 
 
-**Candidate subjects:** Thebe Ikalafeng / Africa Intellectual Property Partners (the only specialist brand-led IP law practice on the continent); ARIPO's Director General Bemanya Twebaze; a Ghanaian music producer navigating royalty collection; a Lagos fashion designer who has had work replicated without attribution.
-
-**Specific commissioning ask:** A 3,500-word reported feature with data visualisation on the royalty-collection gap across four markets (Nigeria, South Africa, Kenya, Ghana). Needs legal reporter + culture reporter working together. Commission from a writer with both IP fluency and creative economy sourcing.
-
-**Status: DRAFT — needs human approval**
+The Ownership Issue maps the architectures being built — and the gaps that still bleed value out of the ecosystem. It commissions across music IP, fashion infrastructure, sports capital, next-wave genre exports, and emerging continental institutions, and holds each to a single editorial test: *who holds the asset, and what does it actually return?*
 
 ---
 
-#### 2. ARENA | The New Sound Economy: Beyond Afrobeats — Who Owns the Next Wave?
+## Feature Slate
 
-**Franchise:** Arena (competitive landscape, sector power dynamics)
-**Angle:** A market-intelligence feature on the business architecture of the post-Afrobeats moment — who signs, distributes, and monetises the genre-fluid sounds now breaking out of South Africa, Sierra Leone, and Algeria — and whether local operators or global majors will capture the margin.
+---
 
-**Why it earns a place:** 
-In 2026, the African music landscape is shifting away from a singular focus on Afrobeats and Amapiano towards a "post-genre" era defined by hyper-local fusions and experimental underground sounds.
+### FEATURE 1 — **The Index**
+**"Streaming Millions, Publishing Zeros: The African Music Money Gap"**
+
+**The Angle:** African music is posting record global consumption figures while the royalty infrastructure to capture that value remains critically underdeveloped. This is not an anecdote — it is a structural revenue failure legible in hard data, live legal battles, and first-generation publishing startups racing to close the gap.
+
+**Why It Earns a Place (verified):**
+
+
+The global recorded music industry generated $31.7 billion in 2025. Sub-Saharan Africa, the continent that gave the world Afrobeats, officially accounts for $120 million of that. Nigeria, which drives more of Afrobeats' global cultural reach than any other country, does not appear as a named market.
  
-In South Africa, lekompo and Bacardi house are staking a serious claim as the country's next export-ready sounds, rooted in specific communities yet engineered for wide circulation. Meanwhile, Krio Fusion is positioning Sierra Leone for a long-overdue shift from the margins to the centre, while Way-Way has embedded itself in Algerian youth culture, spreading rapidly through YouTube and street-level circulation.
- At the global level, 
-YouTube reports that more than 70% of watch time for the platform's Top 100 African artists now comes from outside Africa
- — meaning the audience is already globalised, even where the business infrastructure is not. 
-Africa's music sector is beginning to move from breakout attention to a more sustained, more demanding phase of growth.
-
-
-The structural tension: 
-when Universal Music Group acquired a majority stake in Nigerian record company Mavin Global, valued at $150–200 million, it was investing in the continent with the fastest growing music industry in the world.
- The UMG-Mavin deal is the template for how global majors absorb African IP. The question for this piece is whether the next wave of genre founders build local infrastructure first — or sell early again.
-
-**Candidate subjects:** Artists and label operators in the lekompo/Bacardi house scene (South Africa); SAMRO, whose new strategic partnership with ARMC 2026 in Johannesburg signals institutional intent; a comparison of the UMG-Mavin deal terms vs. what pan-African independent labels currently offer talent.
-
-**Specific commissioning ask:** 2,800-word business feature, with a sidebar deal-structure explainer. Needs a music industry reporter based in Johannesburg or Lagos.
-
-**Status: DRAFT — needs human approval**
-
----
-
-#### 3. WAVES | Made in Africa: Fashion's Infrastructure Problem Is the Story
-
-**Franchise:** Waves (culture in motion, trend with depth)
-**Angle:** African fashion's creative legitimacy is no longer contested. The unsolved problem is logistics, capital, and IP — the plumbing that prevents brands from scaling beyond boutique visibility. This feature maps the gap between the red-carpet moment and the back office.
-
-**Why it earns a place:** 
-African designers are increasingly gaining recognition in major fashion capitals like Paris, London, and New York. Brands such as Thebe Magugu, Maki Oh, Veekee James, and Abbaswoman are now part of global conversations around luxury, sustainability, and design innovation. This shift shows that African fashion is no longer trying to catch up; it is actively influencing global style direction.
+Afrobeats streams on Spotify grew 34% globally in 2024. Amapiano clocked over 1.4 billion streams the year before, and 61% of those came from outside the continent.
  Yet 
-as African designers gain international visibility, logistical challenges often get in the way of business expansion.
- 
-There is also the matter of protecting intellectual property and cultural identity. Not all designers can afford to hire an attorney, and experts advise all brands to prioritize understanding the legal landscape of the countries in which they operate or are expanding into.
+the world is listening to music from the continent, but when the money gets counted, Africa is barely at the table — and the gap between the global noise and the local return is the most important conversation the African music industry is not having loudly enough.
 
 
-On the design side, 
-one of the clearest expressions from Lagos and Dakar Fashion Week SS26 was the rise of cotton yarns and earth textures as luxury materials. Designers like IAMISIGO and younger Dakar-based artisans have proven that natural fibres can communicate both sophistication and heritage. Their work represents a reclamation of materials historically overlooked by mainstream fashion. The significance lies not only in the aesthetic shift but in the economic and cultural one: local fibres empower local artisans, reduce dependency on imported textiles, and elevate African ecology into global desirability.
-
-
-**Candidate subjects:** Sana Ahmed (Fashion Business Co Agency / The Fashion Law Africa Summit); IAMISIGO; a comparative look at Studio Imo, MaXhosa, and Veekee James on how each is building (or not) a scalable backend. African fashion's logistics gap as a reportable business story, not a style story.
-
-**Specific commissioning ask:** 2,500-word feature plus a short "infrastructure scorecard" box on duties, transit times, and trademark costs for Lagos-to-London and Lagos-to-Nairobi. Ideal writer has both fashion and supply-chain literacy.
-
-**Status: DRAFT — needs human approval**
-
----
-
-#### 4. THE INDEX | The Distribution Bet: Nollywood Builds Its Own Pipes
-
-**Franchise:** The Index (data-led sector intelligence)
-**Angle:** An analytical briefing — our data-driven format — on Nollywood's strategic pivot toward self-owned distribution infrastructure after global streamers pulled back. Maps who is building what, what the revenue model looks like, and what the ownership implications are.
-
-**Why it earns a place:** 
-Nigeria's film industry is entering a new phase after major streaming platforms reduced investments in African original content. Economic pressures and low subscription growth led to both Netflix and Amazon Prime Video pulling back in 2024. Industry leaders now see regional distribution, expanded cinema access, and cross-cultural storytelling as the next stage of growth.
- The infrastructure response is already forming: 
-new Nigerian/African distribution platforms — Circuits, Kava, EbonyLife ON Plus, FaithStream, and EnfiTv — are designed to serve specific markets and viewing habits. Circuits launched as a virtual cinema in December 2024, operating pay-per-view for Nollywood titles globally. Kava, launched in 2025 with backing from the CEOs of FilmHouse Group and Inkblot Studios, positions itself as a global home for Nollywood and African cinema, offering a catalogue of post-cinema releases and exclusive originals.
+The legal terrain is shifting. 
+Kenya's Copyright and Related Rights Bill 2026, introduced by the Kenya Copyright Board, directly targets payment failures at the centre of the CMO crisis: it clearly defines digital revenue rights covering streaming, downloads, and ringtones, and replaces the 2001 Copyright Act — a law written before streaming or social media existed.
+ Meanwhile, 
+in February 2026, the Nigerian Copyright Commission disbursed N1.21 billion in private copying levy funds to MCSN for distribution to rights holders — the first time Nigeria formally distributed funds under the private copying levy framework.
+ And the administrative gap has real-world consequences: 
+Blaqbonez's "ACL" had all the markings of one of last year's defining rap records — then, in early April 2026, it abruptly disappeared from Spotify, Apple Music, and other DSPs because the underlying beat had changed hands due to an under-documented licensing arrangement.
 
 
 
-Over the past five years, the Nigerian box office has grown from ₦5 billion in 2021 to ₦15.6 billion in 2025.
- But the critical ownership question is whether that box office value is being captured by Nigerian operators. 
-The majority of African films that premiere at major international festivals do not receive theatrical releases in their countries of origin — or anywhere else in Africa at all.
- That distribution failure is where this briefing begins.
+AfroSoundtrack's data shows that if a song released in early 2023 isn't registered until 2026, most income from 2023 and 2024 is lost outside North America — either going unclaimed or paid to other rights holders.
 
-**Candidate subjects/data points:** Comparative revenue model analysis of Kava vs. Circuits vs. EbonyLife ON Plus; the EbonyLife-Genesis-Nile Media-Silverbird co-production consortium as a new industry architecture model; 
-Afreximbank's $1 billion Africa Film Fund
- as potential infrastructure capital; the AACC ratification question.
 
-**Specific commissioning ask:** 2,000-word data briefing in Index format — structured as a market map, not a narrative. Requires an analyst-reporter. Commission with a dedicated data visualisation budget for distribution flow charts.
+**Candidate Subjects:** AfroSoundtrack (Lagos-based publishing admin startup); Downtown Music Publishing Africa; the Kenya Copyright Board; SAMRO's Music Business Lab Publisher Programme 2026; and rights attorneys active in Lagos and Johannesburg.
 
-**Status: DRAFT — needs human approval**
+**Commissioning Note:** Commission a data journalist alongside a music-rights lawyer. The frame is forensic, not polemical. Build a model showing what a mid-tier Afrobeats act with 200 million annual streams theoretically earns vs. what they likely collect, broken out by revenue stream.
+
+**Confidence:** verified / interpretive frame
 
 ---
 
-#### 5. ROOTS | The Diaspora Capital Question: $100 Billion Sent, How Much Invested?
+### FEATURE 2 — **Waves**
+**"The Next Export: Lekompo, Krio Fusion, and the Sounds Africa Is Building Behind Afrobeats"**
 
-**Franchise:** Roots (structural, historical, cross-cutting)
-**Angle:** The African diaspora sends nearly $100 billion annually to the continent — yet formal venture capital deployed across the entire African tech ecosystem is a fraction of that. This feature interrogates why diaspora capital remains largely in remittance rails rather than equity, and profiles the funds and vehicles trying to redirect it.
+**The Angle:** Afrobeats and Amapiano have set the commercial runway. A new cohort of genre movements — rooted in specific communities, not yet platform-optimised — is testing whether African music's next chapter is defined by the continent or handed off, again, to global intermediaries to package and export.
 
-**Why it earns a place:** 
-Last year, the African diaspora sent nearly $100 billion to the continent, dwarfing the $3.5 billion in venture capital funding.
- 
-The African diaspora accounts for 33% of Africa's angel investors and 60% of all angel investments tracked over the past decade
- — a sign of structural intent, but not yet institutional scale. 
-The funding gap between male and female founders is not a minor disparity — it is severe. In 2025, only 90 startups with female founders raised equity, representing 19% of total deal counts. These startups raised $254 million — a 60% improvement on 2024 — but still represented only 10% of overall equity funding. Male founders raised on average 8.5 times the amount raised by their female counterparts.
+**Why It Earns a Place (verified):**
 
 
+Spotify Wrapped 2025 offered clear proof that African music exports are a foundation, not a trend: listenership of Afrobeats globally grew by 22% in 2025, while in Nigeria, local music consumption shot up 82% over the previous year.
+ But the more consequential development sits below the charts. 
+In South Africa, lekompo and Bacardi house are staking a serious claim as the country's next export-ready sounds, rooted in specific communities yet engineered for wide circulation. Meanwhile, Krio Fusion is positioning Sierra Leone for a long-overdue shift from the margins to the centre, while Way-Way has embedded itself in Algerian youth culture, spreading rapidly through YouTube links and street-level circulation.
 
-A small but strategically significant group of global investors, three of them deeply embedded in Africa's venture ecosystem, has been selected for 500 Global's VC Unlocked: Silicon Valley 2026 programme — underscoring a broader shift in how African entrepreneurship is being financed, understood and scaled globally.
+
+The structural question for each of these movements is identical to the one Afrobeats now faces at scale: 
+the stronger case is about what sits underneath the growth — infrastructure, rights readiness, clean ownership data, and the ability to convert market expansion into lasting value for creators and rights holders. A fast-growing market is important. A market that can identify, register, track, and monetise rights efficiently is far more durable.
 
 
-**Candidate subjects:** Fatoumata Bâ / Janngo Capital (whose $78 million Fund II is backed by the European Investment Bank and the African Development Bank, 
-with 50% committed to companies founded or co-founded by women, and a portfolio that is 56% female-founded or led
-); the African Diaspora Investment Symposium 2026 (ADIS26) as a live commissioning peg; Ajim Capital's Eunice Ajim; the Techpoint Diaspora San Francisco convening as a scene-setting moment.
 
-**Specific commissioning ask:** 3,000-word reported feature, with a sidebar mapping the six most active diaspora-linked investment vehicles currently deploying in Africa. This is a finance story told through people — needs a writer who can move between LP economics and human stakes.
+Warner Music Group has also strengthened its continental presence through the full acquisition of Africori, which represents more than 7,000 artists
+ — signalling that the appetite for catalogue acquisition is moving faster than the rights infrastructure supporting it.
 
-**Status: DRAFT — needs human approval**
+**Candidate Subjects:** Focalistic (Lekompo/Amapiano intersection); ApreeL and Driziik (Krio Fusion, Freetown); Way-Way producers (Oran, Algeria); Mr Eazi as an industry figure who has flagged Krio Fusion's potential; Africori/Warner post-acquisition editorial.
+
+**Commissioning Note:** This is a Waves genre map, not a fan piece. Commission a critic who can argue which of these sounds has structural export potential and which is being over-hyped prematurely. Pair with a sidebar on how each movement's rights are currently administered — or not.
+
+**Confidence:** verified / interpretive frame
 
 ---
 
-#### 6. WAVES | The Post-Genre Ear: African Music's New Underground and What It Costs to Build a Scene Without a Deal
+### FEATURE 3 — **Roots**
+**"'Made in Africa' Is Not a Trend. It's a Power Position."**
 
-**Franchise:** Waves (culture in motion)
-**Angle:** A reported profile-plus-scene piece on the independent artists and micro-label operators building the infrastructure-free end of Africa's new sound economy — the lekompo DJs, the Krio Fusion collectives, the Algerian Way-Way producers — and what the economics of that underground actually look like in 2026.
+**The Angle:** African fashion's global moment has arrived — but coverage keeps treating it as an arrival when the harder editorial task is to examine the ownership architecture underneath the red-carpet placement and the Paris pop-up. Who holds the IP, who controls manufacturing, and which institutions are building the infrastructure that makes 'Made in Africa' a durable category rather than a seasonal story?
 
-**Why it earns a place:** 
-Community-driven music is on the rise — a shift from purely viral, chart-driven music to artists focusing on building dedicated, localised, and digital communities. Organic and emotional sounds are ascending, as a contrast to intense pop, embracing real instruments and storytelling.
- 
-For years the creative economy in Africa often meant "get seen" — a viral moment, global coverage — but not necessarily "get paid." The trend now is moving from exposure to sustainable earnings. Creators are demanding revenue models that match reach: direct sales, subscriptions, memberships, digital products, brand partnerships, diaspora markets, local licensing.
+**Why It Earns a Place (verified):**
 
 
-This piece is the human counterpart to the Arena feature above — where Arena does the market architecture, Waves goes inside the scene. The tension: 
-if the amapiano playbook is any guide, the path from local craze to global export can be remarkably short — a single viral dance or a well-placed DJ set can carry a sound across oceans.
- But speed of exposure does not equal financial capture.
+The pattern has repeated for years: reporters present African designers as ones to watch, the hype dies down, another market grabs attention, and news of Africa's fashion industry remains sparse — until it's back to "the boom."
+ But the underlying commercial position has shifted materially. 
+Designers such as South Africa's Thebe Magugu, the winner of the 2019 LVMH Prize, and Cameroon's Imane Ayissi, the first sub-Saharan African invited into the official Paris Haute Couture Week calendar, are not merely borrowing from Western aesthetics — they are embedding African narratives, craft, and history into the global vocabulary of high fashion.
 
-**Candidate subjects:** Artists and producers in the lekompo/Bacardi house ecosystem (South Africa); ApreeL and Driziik in the Krio
+
+On the capital side: 
+Cairo-based Afreximbank is funding projects across the continent, from textile and garment manufacturing facilities in Benin and Nigeria to export programmes for designer brands from Kenya, Ghana and beyond — including a Paris pop-up for brands such as Ghana's Boyedoe and Nigeria's Wuman in collaboration with trade show Tranoi and Galeries Lafayette.
+ And 
+the Bain & Company and Altagamma report confirmed that while the overall global personal luxury goods market is stabilising at flat or slightly negative growth, emerging markets including Africa, the Middle East, Latin America, Southeast Asia, and India have reached a monumental €45 billion in market value — matching mainland China in scale.
+
+
+The structural challenge is unresolved. 
+Considerable logistical challenges keep designers from scaling internationally: tariffs, legal regulations, and cross-border shipping costs are the most notable.
+ And 
+in fashion and luxury especially, African aesthetics, textiles, and cultural references continue to influence global design — often without sustained returns flowing back to the communities connected to those traditions.
+
+
+**Candidate Subjects:** Thebe Magugu (Johannesburg, legacy-building model); Afreximbank's creative economy desk; ÀLKÉ — the pan-African cultural institution founded by Lulu Shabell, 
+built around four pillars (Art, Legacy, Knowledge, Enterprise), designed as a permanent framework to preserve, commercialise, and grow Africa's creative industries
+; The Fashion Law Africa Summit's Sana Ahmed; Iamisigo (Lagos/Dakar SS26 collections).
+
+**Commissioning Note:** The story needs a fashion writer and a trade economist in the same room. The editorial angle is institutional architecture — not aesthetic. What does it take to build a category, not just a label? Use Iamisigo's SS26 "Dual Mandate" collection as the cultural entry point.
+
+**Confidence:** verified / interpretive frame
+
+---
+
+### FEATURE 4 — **Arena**
+**"Producing the World's Athletes, Capturing Almost None of the Revenue"**
+
+**The Angle:** Africa supplies global sport with elite talent at scale while its own sports economy captures less than 3% of global sports revenue. A new generation of investors — African businesspeople, diaspora tech founders, athlete-linked funds — is beginning to challenge that extraction model. The Dakar Youth Olympics in 2026 and the continent's 2030 FIFA World Cup co-hosting role are focusing capital and attention. The question is whether the governance and ownership infrastructure is ready to convert that spotlight into retained value.
+
+**Why It Earns a Place (verified):**
+
+
+Africa is the fastest-growing sports betting market on the planet, approaching 440 million participants; it will co-host a FIFA World Cup in 2030 and host the Youth Olympics in 2026 — yet Africa captures less than 3% of global sports revenue.
+ The prize money mathematics are stark: 
+an African club reaching the quarterfinals of the FIFA 2025 Club World Cup — five matches, defeating opponents across the most gruelling schedule of continental football — received a prize of $36.2 million. A European club eliminated in the group stage after three games received $38.19 million.
+
+
+The extraction model on talent is equally documented. 
+African communities, families, local coaches, and village academies invest in young athletes — then, when that talent is identified, often by foreign scouts with minimal regulatory oversight, it moves to European academies, European leagues, and European commercial ecosystems. The value created by African development becomes European commercial property.
+
+
+Counter-moves are emerging. 
+The African Sports & Infrastructure Fund (ASIF) has a target fund size of approximately $150 million, structured with equity contributions from leading African athletes, creatives, and strategic private investors, combined with debt financing from a Development Finance Institution.
+ And 
+Paystack co-founder Shola Akinlade acquired a majority stake in Danish football club Aarhus Fremad Fodbold while also owning Sporting Lagos FC — with a stated plan to facilitate players transitioning from Sporting Lagos into the European football market.
+
+
+**Candidate Subjects:** ASIF/Premier Invest's René Awambeng; Shola Akinlade (Sporting Lagos / Aarhus); Senegalese financier Ibrahim Sagna 
+— founding partner and vice-chairman of the Cape Town Tigers, one of the standout teams in the Basketball Africa League
+; Mohamed Mansour (Right to Dream Academy, San Diego FC); the Mission33 Group analysis of Africa's sports revenue deficit; the Dakar 2026 Youth Olympics organising committee.
+
+**Commissioning Note:** This is an Arena business piece, not a sports profile. Commission a sports economist or finance journalist with continental beat experience. The frame is governance and capital structure, not scorelines. Avoid the "Africa rising" register — hold each investment vehicle to the question of what it returns to the continent and on what timeline.
+
+**Confidence:** verified / interpretive frame
+
+---
+
+### FEATURE 5 — **The Index**
+**"HYBE Went to Tyla. What Comes Next for African Artists Who Want Global Scale Without Surrendering the Wheel?"**
+
+**The Angle:** HYBE's partnership with Tyla's management team is the most visible marker of a deepening global-label push into African music. The deal raises the question that will define this era: what deal structure should an African artist at global scale actually want — and what does the recent wave of major-label and K-pop conglomerate moves tell us about how the industry is being carved up?
+
+**Why It Earns a Place (verified):**
 
 ## Sources
 
-1. [Africa’s creative economy offers new investment opportunities | Semafor](https://www.semafor.com/article/02/18/2026/africas-creative-economy-offers-new-investment-opportunities)
-2. [Africa’s Creative Economy Is Becoming a Strategic Asset](https://furtherafrica.com/2026/02/23/africa-creative-economy-200bn-2030/)
-3. [Africa’s Creative Economy Scales But Structural Gaps Persist](https://blog.discoursechannel.com/africas-creative-economy-scales-but-structural-gaps-persist/)
-4. [Africa’s Creative Economy Becomes Industry- TechTrendsKE](https://techtrendske.co.ke/2026/02/18/africas-creative-economy-industry-growth/)
-5. [10 Trends Changing Africa’s Creative Economy in 2026](https://www.thecreativebrief.africa/p/10-trends-changing-africas-creative)
-6. [Morocco Leads Africa in 2026 Intellectual Property Index - Ecofin Agency](https://www.ecofinagency.com/news/1703-53839-morocco-leads-africa-in-2026-intellectual-property-index)
-7. [Africa’s creative economy to reach $200bn by 2030 - CNBC Africa](https://www.cnbcafrica.com/media/7765533811350/africas-creative-economy-to-reach-200bn-by-2030)
-8. [Home - The African Regional Intellectual Property Organization (ARIPO)](https://www.aripo.org/)
-9. [THE EMERGENCE OF NEW GENRES OF AFRICAN MUSIC IN 2026 – Intalks Africa](https://intalks.africa/the-emergence-of-new-genres-of-african-music-in-2026/)
-10. [The Rising African Music Genres of 2026](https://www.okayafrica.com/the-rising-african-music-genres-of-2026/1421063)
-11. [The Grammys: African music in the global spotlight | CNN](https://www.cnn.com/world/africa/african-music-grammy-moment-spc)
-12. [What Changed Between IFPI’s 2025 and 2026 Global Music Reports — and Why Africa’s Story Still Matters - Downtown Music Publishing Africa](https://downtownmusic.africa/what-changed-between-ifpis-2025-and-2026-global-music-reports-and-why-africas-story-still-matters/)
-13. [The rise of Africa’s creative economy | Brookings](https://www.brookings.edu/articles/the-rise-of-africas-creative-economy/)
-14. [Why African Fashion is Becoming a Global Force in Culture and Luxury - The Voice of Africa](https://thevoiceofafrica.com/2026/05/25/african-fashion-global-rise-luxury-identity/)
-15. [What Will It Take for African Fashion to Reach Its Global Potential? - Fashionista](https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles)
-16. [The Trends Defining African Fashion in 2026 *By Ugonna-Ora Owoh* ![Iamisigo SS26 collection. Photo credit: Kamba Miri Danielsson] If 2025 marked a year of expansion for African fashion—designers embracing quiet luxury, soft silhouettes, craft revival, and bold prints—then 2026 is the year the continent sharpens those ideas into something more assertive. The shift is subtle but unmistakable. Viewed against the backdrop of Lagos Fashion Week and Dakar Fashion Week SS26, the themes that shaped 2025 have re](https://guzangs.com/trends-defining-african-fashion-2026/)
-17. [Nigeria's Film Industry Pivots to Building Global Distribution](https://africa.com/nigerias-film-industry-pivots-to-building-global-distribution/)
-18. [The Current State of Film Distribution in Nollywood - What Kept Me Up](https://whatkeptmeup.com/nollywood-movies/the-current-state-of-film-distribution-in-nollywood/)
-19. [What Trends Will Drive Africa’s Film Industry in 2026? - Afrocritik](https://afrocritik.com/what-trends-will-drive-africas-film-industry-in-2026/)
-20. [African Screen Culture 2026: 10 Questions Shaping the Years Ahead](https://akoroko.com/african-screen-culture-2026/)
-21. [The Film Industry in Africa: Foreign Film Production, Key Players, and International Collaborations](https://www.ibn.co.za/blog-and-news/film-industry-africa/)
-22. [Diaspora dollars: How Africa's diaspora can fuel startup growth](https://techpoint.africa/insight/africas-diaspora-can-fuel-startup-growth/)
-23. [11 investors shaping Africa’s startup ecosystem in 2026](https://thecondia.com/investors-african-startup-ecosystem/)
-24. [Venture Capital Funding in Africa: Opportunities, Gaps, and Future | MOHAC AFRICA](https://mohacafrica.org/venture-capital-funding-in-africa/)
-25. [African Venture Capital Steps Into Silicon Valley Spotlight as 500 Global Names VC Unlocked 2026 Scholars - Catalysing Growth. Connecting Entrepreneurs. Transforming Africa.](https://thenextafrica.com/african-venture-capital-steps-into-silicon-valley-spotlight-as-500-global-names-vc-unlocked-2026-scholars/)
-26. [African Music: The New Genres Going Global in 2026](https://www.riotimesonline.com/african-music-new-genres-going-global-2026/)
+1. [Africa’s Creative Economy Poised to Reach USD 200 bn by 2030](https://trendsnafrica.com/africas-creative-economy-poised-to-reach-usd-200-bn-by-2030/)
+2. [Africa’s creative economy has a $150bn opportunity — this institution is building the infrastructure to capture it](https://www.brandessencenigeria.com/africas-creative-economy-has-a-150bn-opportunity-this-institution-is-building-the-infrastructure-to-capture-it/)
+3. [The Grammys: African music in the global spotlight | CNN](https://www.cnn.com/world/africa/african-music-grammy-moment-spc)
+4. [What Changed Between IFPI’s 2025 and 2026 Global Music Reports — and Why Africa’s Story Still Matters - Downtown Music Publishing Africa](https://downtownmusic.africa/what-changed-between-ifpis-2025-and-2026-global-music-reports-and-why-africas-story-still-matters/)
+5. [Why Africa's Music Industry Earns So Little Despite Its Global Dominance](https://www.okayafrica.com/global-sound-local-loss-africas-music-money-gap/1427679)
+6. [Seven Things Africa’s Creative Industry Learned in 2025](https://www.thecreativebrief.africa/p/seven-things-africas-creative-industry)
+7. [Africa’s Creative Industry Projected to Hit $50B by 2030 — But Policy May Decide the Payoff](https://www.thecreativebrief.africa/p/africas-creative-industry-projected)
+8. [African Music Summit](https://africanmusicsummit.com/)
+9. [How African Songwriters Monetize Globally: Publishing Infrastructure, Royalties & Sync - Afro Soundtrack — Music Rights & Monetization Platform for African Music Creators](https://www.afrosoundtrack.com/how-african-songwriters-make-money/)
+10. [Beat Licences, Publishing Rights, and What African Artistes Keep Getting Wrong - Afrocritik](https://afrocritik.com/beat-licences-publishing-rights-what-african-artistes-keep-getting-wrong/)
+11. [Royalties, Rights, and Returns: Why Africa's Next Billion- ...](https://medium.com/included-vc/royalties-rights-and-returns-why-africas-next-billion-dollar-opportunity-lies-in-music-ip-d6b8833d78e9)
+12. [The Rising African Music Genres of 2026](https://www.okayafrica.com/the-rising-african-music-genres-of-2026/1421063)
+13. [What Will It Take for African Fashion to Reach Its Global Potential? - Fashionista](https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles)
+14. [How Africa and the UAE are shaping the luxury fashion industry](https://www.sundaytimes.timeslive.co.za/lifestyle/fashion-and-beauty/2026-04-20-how-africa-and-the-uae-are-shaping-the-luxury-fashion-industry/)
+15. [The Bank Investing Millions in Africa’s Fashion Industry | BoF](https://www.businessoffashion.com/articles/global-markets/the-bank-investing-millions-in-africas-fashion-industry/)
+16. [The African Sports Economy; A $20 Billion Asset the World Is Underpricing.](https://www.mission33group.com/post/the-african-sports-economy-a-20-billion-asset-the-world-is-underpricing)
+17. [Premier Invest Advances Launch of African Sports & Infrastructure Fund (ASIF) at Game Time Africa Summit 2026 - PAN AFRICAN VISIONS](https://panafricanvisions.com/2026/01/premier-invest-advances-launch-of-african-sports-infrastructure-fund-asif-at-game-time-africa-summit-2026/)
+18. [Investing in African sports talent](https://www.howwemadeitinafrica.com/the-rise-of-sports-business-in-africa/153553/)
+19. [10 renowned Africans investing billions to shape the future of sports](https://shore.africa/2026/01/15/african-billionaires-investing-in-sports/)
 

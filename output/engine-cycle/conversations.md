@@ -1,157 +1,174 @@
-<!-- Engine cycle draft · 2026-06-24T16:01:05.823Z · section: conversations · 5 web searches -->
+<!-- Engine cycle draft · 2026-06-29T08:31:28.168Z · section: conversations · 5 web searches -->
 
-## Conversations Review Queue — Cycle 24 June 2026
+## Conversations: Review-Queue — Q3 2026 Cycle
 
-*Three outreach briefs for editor approval. All claims sourced and tagged. No quotes fabricated. Briefs only — not transcripts.*
-
----
-
-### Editorial Context
-
-
-A 2026 report by Boston Consulting Group places Africa's creative economy at $59 billion.
- That number flatters and misleads simultaneously: 
-despite that influence, Africa still captures only a small fraction of the economic value tied to its creativity — its broader creative economy, spanning fashion, music, crafts, film and design, accounted for just 1.5 percent of global creative economy output.
- The gap between cultural production and captured value is the fault line this cycle's conversations sit on. Each target below works, in a different register, on the same structural problem: who builds the systems, who holds the data, and who keeps the money.
+*Outreach briefs for editorial consideration. These are not transcripts. No contributor has been approached or agreed to speak. All claims sourced and confidence-tagged below.*
 
 ---
 
-### Target 01 — Thebe Ikalafeng
+### A Note on Method
 
-**Who he is**
-
-
-Founder and chairman of Brand Africa, Chancellor of Sol Plaatje University, Professor of Practice at the University of Johannesburg Business School, and best-selling author.
- 
-He is the founder of Brand Leadership Group, a multi-disciplinary branding advisory group at the intersection of strategy, creativity and intellectual property law; and Brand Africa, the seminal non-profit pan-African movement for a brand-led African agenda, and pioneer of the 'Brand Africa 100: Africa's Best Brands' initiative, widely referenced as the definitive barometer of brands in Africa.
-
-
-**Why Now**
-
-Two events make Ikalafeng an urgent conversation right now. First, 
-Brand Africa on 3 June 2026 unveiled the results of its 16th annual Brand Africa 100 rankings, covering 30 countries that represent more than 85 percent of the continent's population and GDP. For the 16th consecutive year, Africans rank non-African brands as the most admired brands in Africa — yet African brands have rebounded to 15% of the Top 100, recovering from a historic low of 11% in 2025, the sharpest single-year recovery the survey has recorded.
- Second, Brand Africa launched the inaugural Africa CMO 100 (ACMO 100). 
-Brand Africa's independent research over 15 years has consistently found that while 68% of Africans believe in Africa, only 18% of the brands they most admired are African. ACMO 100 exists to recognise and connect the leaders best placed to change that.
- 
-The inaugural ACMO 100 list names African marketing leaders who are building the most powerful brands in Africa and beyond.
- The structural question — why African cultural influence does not translate into African brand dominance on the continent's own shelves — is Ikalafeng's life's work, and the data just got sharper.
-
-**Confidence tag:** Verified
-
-**Proposed Questions**
-
-1. The 2026 Brand Africa 100 shows African brands recovering to 15% of the most admired list — the sharpest single-year gain on record. What specifically drove that recovery, and why should we believe it is structural rather than cyclical?
-2. You launched ACMO 100 this year, effectively creating the first authoritative map of African marketing leadership. What does that map reveal about where power actually sits inside the continent's brand economy — and where the gaps are most dangerous?
-3. 
-The pattern of European luxury houses acquiring African cultural authority through casting and campaign photography is consistent. Brand recognition and credibility among Africa's rapidly growing Gen Z luxury consumer base is the return on investment.
- From Brand Africa's research, how long can African cultural equity subsidise non-African brand value before the reputational arbitrage closes — and what would closing it actually look like?
-4. Your book *Rooted and Rising* urges Africans to operate as originators, not imitators. As a practitioner who built his toolkit at Colgate and Nike, how do you personally navigate the tension between those two positions — and what do you tell the next generation of African CMOs who face the same?
-5. Brand Africa's stated target is for at least 50% of the most admired brands in Africa to be indigenous by 2050. Given the structural barriers you measure every year, is that goal a credible strategic horizon or an act of principled optimism?
+Each brief below draws on web-sourced reporting from the last eight months. Confidence tags — **verified**, **partial**, **interpretive** — appear at the point of claim. Questions are framed to serve MonoKromatik's brand-intelligence lens: ownership, infrastructure, and how culture converts to durable value.
 
 ---
 
-### Target 02 — Lulu Shabell
+## 01 — Brandon Hixon & Colin Gayle
+**Co-Managing Directors, We Make Music / Africa Creative Agency — HYBE Africa Management Partnership**
 
-**Who she is**
-
-
-Lulu Shabell is the Founder and CEO of LULUBELL Group and one of Africa's leading creative economy strategists.
- 
-Over nearly three decades she has driven the global expansion of more than 90 African fashion brands across 30 African and Caribbean countries through initiatives including Portugal Fashion, TRANOÏ Paris and The Mercado Project at Rockefeller Center.
- 
-Her work has included contributing to UNESCO's report on the African Fashion Industry.
+### Who They Are
 
 
-**Why Now**
-
-Shabell is the architect of ÀLKÉ, arguably the most structurally ambitious cultural institution launched on the continent in 2025–26. 
-Founded by Lulu Shabell, ÀLKÉ is a pan-African cultural institution built around four pillars: Art, Legacy, Knowledge and Enterprise.
- 
-Rather than functioning as a seasonal showcase, the platform is designed as a permanent framework to preserve, commercialise and grow Africa's creative industries over the long term.
- 
-ÀLKÉ has outlined its long-term framework for protecting African cultural intelligence, strengthening intellectual property ownership, and building the institutional infrastructure needed to scale the continent's creative economy.
- Three pillars give ÀLKÉ institutional weight: 
-the ÀLKÉ Endowment, a permanent funding structure focused on education, research, manufacturing support, archives and enterprise development — an approach designed to provide durable support beyond the short-term grant cycles that have long shaped funding for African creative industries.
- 
-The third pillar is a venture studio framework designed to connect African creatives and cultural enterprises with investors, policymakers and commercial partners capable of scaling their work into sustainable businesses.
- The inaugural ÀLKÉ Ball is set for Cape Town, with subsequent editions rotating to Lagos, Nairobi, Dakar, Addis Ababa, Accra and Cairo. This is not an event; it is institution-building in real time.
-
-**Confidence tag:** Verified
-
-**Proposed Questions**
-
-1. ÀLKÉ positions itself as an institution rather than a festival or agency. What does institutional permanence require in the African creative context that a fashion week or grant programme structurally cannot deliver?
-2. 
-Most fashion schools on the African continent continue to teach the history of clothing exclusively through a Western lens, with students encouraged to view Paris or London as their only points of reference, overlooking complex local textile traditions. This leads young creatives to view themselves as newcomers to a history that their own ancestors actually shaped.
- How does ÀLKÉ's education pillar practically intervene in a curriculum landscape that is deeply entrenched?
-3. The ÀLKÉ Endowment is designed as a permanent capital structure. Who are the investors, and how do you convince capital — which is oriented toward short-horizon returns — to fund intergenerational institutional work?
-4. You have spent nearly three decades taking African fashion brands into Western markets. What did that experience teach you about the structural ceiling of that model, and at what point did you conclude that the answer was building infrastructure on the African side rather than negotiating entry on the Western side?
-5. 
-Despite its influence, Africa still captures only a small fraction of the economic value tied to its creativity.
- In your assessment, which single institution-building intervention — if adequately resourced — would move that needle fastest, and why?
-
----
-
-### Target 03 — Sarah Diouf
-
-**Who she is**
+Brandon Hixon founded New York-based We Make Music in 2009, while Colin Gayle co-founded Johannesburg-based Africa Creative Agency in 2016.
+ **[verified]**
 
 
-Sarah Diouf transformed herself from a fashionable influencer in the media to a world-renowned fashion designer through her brand Tongoro. With an already strong presence internationally, her Tongoro fashion brand produces high-end clothing from Africa for the world's celebrities and entertainers. Her brand has contributed to making African fashion premium and global.
- Tongoro, founded and manufactured in Dakar, Senegal, operates as a vertically integrated direct-to-consumer luxury label — one of the few African fashion brands that has demonstrably converted global celebrity visibility into a sustained commercial operation anchored on the continent.
+Hixon has managed Tyla since 2018, when he discovered her on Instagram, with Gayle joining as co-manager by 2020, guiding her to global breakthrough.
+ **[verified]**
 
-**Why Now**
+In December 2025, the partnership entered a new structural phase. 
+HYBE announced a significant expansion into the rapidly growing African music market through a new global management partnership with Hixon and Gayle. Together, they are launching a global management initiative designed to amplify African artists, develop cross-cultural storytelling, and build long-term creative pathways across the U.S., Asia, and the world.
+ **[verified]** 
+Under this partnership, HYBE will establish a robust pipeline of emerging and established talent and has the ability to sign new artists, while providing comprehensive international growth support.
+ **[verified]**
 
+The market context is not speculative. 
+Sub-Saharan Africa's recorded music revenues grew 22.6% year-on-year in 2024, surpassing USD $100 million annually for the first time. The region's growth has been powered by genres like Afrobeats and Amapiano, and propelled by platforms such as TikTok, YouTube, and Reels.
+ **[verified]**
 
-By 2026, virtually every major European luxury house has Afrobeats cultural adjacency: Louis Vuitton under Pharrell Williams positions Rema and Tems in front rows; Burberry cast Burna Boy and Tems in a holiday campaign; Diesel had Rema walk its AW26 Milan runway; Jacquemus invited Asake to its Paris Fashion Week show; Wizkid appeared in Dior Men's AW26.
- 
-The pattern is consistent: African cultural authority is acquired through casting, campaign photography, and invitations to shows.
- Diouf is one of the clearest counter-examples to that logic: a brand that accumulates cultural authority from Dakar, not from a Paris runway slot. As the luxury houses intensify their African adjacency play, Tongoro's model — manufactured in Africa, worn globally — is the sharpest available riposte. 
-Afrobeats, Nigerian fashion, Senegalese cinema and South African design are no longer niches; they dictate global trends.
- Diouf sits inside that shift as a builder, not just a beneficiary.
+Their flagship artist's trajectory reflects exactly what is at stake. 
+Tyla won the inaugural Grammy Award for Best African Music Performance in 2024 and has surpassed 3 billion total streams.
+ **[verified]** 
+Her most recent single *Chanel*, released in October 2025, reached No. 36 on the Billboard Global 200 — her highest-charting song on that chart since *Water* — and sold over 100,000 units in the United States in its first month.
+ **[verified]**
 
-**Confidence tag:** Verified (identity and brand role); partial (financial specifics of Tongoro's current operations are not publicly disclosed — questions should probe, not assume scale)
+### Why Now
 
-**Proposed Questions**
+Hixon and Gayle are the clearest current example of African diaspora managers building *institutional* infrastructure — not just booking deals — for African artists inside a global entertainment conglomerate. The HYBE partnership is the same structural template the K-pop industry used to industrialise Korean cultural exports. That this model is now being applied to African music, with Black creative leadership holding the wheel, is the conversation MonoKromatik should be documenting in real time. The question of who controls the pipeline is the question of who captures the value. **[interpretive]**
 
-1. Tongoro manufactures in Dakar and sells globally. Most commentary celebrates that as a political position. Describe it as a logistics operation — what does it actually cost, and what infrastructure does West Africa still lack for that model to scale without friction?
-2. European luxury houses are aggressively casting Afrobeats artists in campaigns and front rows. What, precisely, do they gain from that adjacency — and what do African creatives and creative economies concretely lose when cultural value flows in one direction without reciprocal investment in African fashion infrastructure?
-3. You built Tongoro's initial audience partly through digital channels and celebrity clientele. At what point does that kind of visibility convert into durable brand equity, and what does the conversion actually require that virality alone cannot provide?
-4. 
-If an AI model is trained on Yoruba folklore, who owns the output?
- More broadly: as generative AI begins referencing and remixing African aesthetic systems, what does IP protection for African designers actually look like in practice, and who is building those frameworks?
-5. Senegal's creative economy is distinct from Nigeria's — smaller in scale, different institutional architecture. What does building a premium African fashion brand from Dakar specifically, rather than Lagos or Accra, require you to solve that a brand built from a larger creative-economy capital would not face?
+### Interview Questions
+
+1. HYBE built its global empire by owning the full stack — label, management, merch, fan platforms. What parts of that stack do African artists currently *not* own, and what's your plan to close that gap through this partnership?
+
+2. You've both spent your careers as independent operators — Hixon since 2009, Gayle since 2016. Why surrender any independence to a Korean conglomerate *now*, rather than continuing to build separately?
+
+3. Tyla's success was built on a sound — *popiano* — that crossed genres and geographies. How do you avoid the industry's tendency to flatten the next African artist into whatever template *Water* suggests the algorithm rewards?
+
+4. HYBE's expansion playbook went Japan → U.S. → Latin America → China → India → Africa. What does Africa get from being last, and what leverage does that sequencing actually give you in the negotiation?
+
+5. African music streaming revenues crossed $100 million for the first time in 2024. Who, structurally, is capturing most of that growth — artists, labels, platforms, or intermediaries? And what does your partnership with HYBE do to shift that balance?
 
 ---
 
-### Editorial Notes for the Queue
+## 02 — Wandia Gichuru
+**Co-Founder & CEO, Vivo Fashion Group / Founder, Shop Zetu**
 
-- **Priority for outreach:** All three. Ikalafeng is accessible via Brand Africa's media contact (Addis Ababa June 2026 presence confirmed). Shabell's ÀLKÉ announcement cycle makes June–July 2026 the optimal window. Diouf operates with a lean public communications posture — approach via Tongoro's direct channels; do not route through PR intermediaries.
-- **Conflict check:** Thebe Ikalafeng sits on the ACMO 100 Review Committee governance structure — standard disclosure required if we publish alongside Brand Africa data.
-- **Format suggestion:** These three could run as a themed series under a unifying frame — e.g., *The Architecture Problem* — given that all three are fundamentally addressing the same structural gap between African cultural production and captured economic value.
-- **What is absent from this queue:** A tech-infrastructure operator (distribution, payments, streaming). Flag for next cycle: Victoria Popoola (TalentX, Nollywood financing infrastructure) or Joe Kinvi (Borderless, diaspora investment infrastructure) as candidates pending deeper verification.
+### Who She Is
+
+
+Wandia Gichuru, co-founder and chief executive of Vivo Fashion Group, has overseen the company's evolution from a small startup into a global brand sustaining hundreds of jobs.
+ **[verified]** 
+The company focuses on ladies' fashion and operates 24 retail outlets across Kenya, Uganda, and Rwanda. It produces all its clothing locally with a workforce of more than 360 employees, over 70% of whom are women.
+ **[verified]**
+
+Her founding path is consequential context. 
+Gichuru's path into entrepreneurship was unconventional. Before launching Vivo, she had a career in governance and policy with institutions such as the World Bank, the United Nations Development Programme, the UK's Department for International Development, and the Kenya Wildlife Service.
+ **[verified]**
+
+Her most recent strategic move reveals her theory of the business. 
+This philosophy underpins Shop Zetu, the e-commerce marketplace that Gichuru launched in 2022 to give smaller local brands a platform and broaden access to African fashion.
+ **[verified]**
+
+The U.S. market experiment, and its outcome, is instructive. 
+In 2024 the company ventured into the U.S. market, opening a store in Atlanta during President William Ruto's state visit. The store closed in April 2025, with the firm transitioning to an online model for its U.S. business.
+ **[verified]** Her operating thesis is explicit: 
+"Our mission is to see Africa dress herself and Africa dress the world."
+ **[verified]**
+
+### Why Now
+
+The Atlanta store closure is not a failure story — it is a *decision* story, and the distinction is where brand intelligence lives. Gichuru chose to exit physical U.S. retail and go digital. That pivot, alongside running Africa's only meaningful home-market fashion brand of this scale *and* building a multi-brand marketplace, puts her at the exact intersection MonoKromatik tracks: production sovereignty, domestic consumer identity, and controlled international expansion. Most African fashion coverage runs on designer profiles. Gichuru is an operator. **[interpretive]**
+
+### Interview Questions
+
+1. You closed the Atlanta store after less than a year and moved to an online model. Walk us through that call — was it the unit economics, the brand positioning, the cultural translation gap, or something else entirely?
+
+2. Vivo produces all its clothing locally in East Africa. Every external pressure — currency volatility, AGOA uncertainty, shipping costs — hits you directly. What's the operational advantage that makes that commitment worth defending?
+
+3. Shop Zetu gives independent African brands a marketplace. But marketplaces are infrastructure plays, not brand plays. How do you ensure Shop Zetu builds African brand equity rather than just aggregating it for someone else's platform to monetise later?
+
+4. African fashion coverage tends to celebrate designers who get Western retail placement. Vivo's model inverts that — you serve the African consumer first. What commercial proof do you have that the domestic market can sustain a fashion business without a Western co-sign?
+
+5. You came to fashion from the World Bank and UNDP. How has that policy and institutional background shaped *how* you build, specifically around worker ownership, supply chain governance, and what "scale" is actually supposed to mean?
 
 ---
 
-*Status: DRAFT — needs human editorial approval*
+## 03 — Sana Ahmed
+**Founder & Director, The Fashion Law Africa Summit (TFLAS) / Principal, Fashion Business Co Agency**
 
-*Research conducted: 24 June 2026. All citations link to sources published between December 2025 and June 2026.*
+### Who She Is
+
+
+Sana Ahmed is a consultant and founder of Fashion Business Co Agency and The Fashion Law Africa Summit.
+ **[verified]**
+
+
+Growing interest in the market prompted Ahmed to create The Fashion Law Africa Summit (TFLAS), a platform dedicated to protecting Africa's fashion industry by providing resources, education, and legal tools to safeguard creations and cultural identity. The organisation helps creatives know how to protect themselves when entering international markets, especially when it comes to IP, trademark, copyright, and scaling in efficient ways.
+ **[verified]**
+
+
+TFLAS is dedicated to addressing the disparities affecting the African fashion industry, including the lack of resources and information available for African brands and designers, and the insufficient protection of African designs and culture. It also offers free legal and business consulting to empower African designers and ensure their work and the culture it represents is protected and advanced globally.
+ **[verified]**
+
+The institutional landscape around her is accelerating. 
+A 2026 Pan-African Fashion Law and Policy Summit marked three historic firsts simultaneously: the establishment of PAFALAPS as Africa's dedicated annual platform for fashion law and policy dialogue; the launch of the *State of Fashion Law and Policy in Africa 2026 Report*, the first comprehensive pan-continental legal analysis of the African fashion industry ever published; and the announcement of the inaugural issue of the *Journal of African Fashion Law, Policy and Innovation.*
+ **[verified]** Ahmed's TFLAS sits adjacent to — and helped create conditions for — this emerging institutional field. **[partial]**
+
+The structural problem she is solving has a sharp edge. 
+Mandisa Nzimande, founder of Nzimande MN Attorneys, described how the cost of legal assistance required to complete IP registration creates a registration gap, which in turn enables dupe culture: better-resourced actors registering designs first while original creators are left without legal protection.
+ **[verified — sourced as conference speaker context, not Ahmed's direct statement]**
+
+Ahmed's own framing of the core issue is direct. 
+Her declared mandate is cultural ownership.
+ **[verified]** She has also appeared on the Faculty of the Fashion Law Institute's Annual Symposium alongside counsel from Louis Vuitton, Gucci, Chanel, and the FTC — institutional validation that she is engaging the centres of Western fashion power, not just speaking to them from outside. **[partial]** 
+She is listed among panellists alongside legal representatives from Louis Vuitton, Gucci, Chanel, and the FTC at the Fashion Law Institute's symposium.
+
+
+### Why Now
+
+The African fashion industry's global expansion moment and its legal vulnerability moment are arriving simultaneously. 
+While it might appear that Africa's fashion relevance is fluctuating, the region has had a steady stream of talent for decades.
+ **[verified]** The pattern of Western attention followed by appropriation — and the IP gap that makes appropriation cheap — is precisely what Ahmed has built a career around disrupting. With the first pan-continental fashion law report now published, and with trade policy instruments like AGOA under pressure, 
+the legal pathway forward has to operate on two tracks simultaneously: reducing dependence on AGOA by using AfCFTA to build intra-African textile trade, and negotiating carve-outs for cultural and heritage textiles in any future trade agreement.
+ **[verified — sourced from aligned legal commentary, not Ahmed directly]** Ahmed is the practitioner sitting at the centre of that debate. **[interpretive]**
+
+### Interview Questions
+
+1. You offer free legal and business consulting to African designers. Free is a choice. What's the theory behind it — is it a loss-leader for the summit, a political stance on access, or something else?
+
+2. The first pan-continental fashion law report dropped this year. What does it reveal that the industry has been collectively pretending wasn't a problem, and who has the most incentive to keep ignoring it?
+
+3. Western luxury houses — Louis Vuitton, Chanel, Gucci — are among the most aggressive filers of IP claims globally. You've shared rooms with their lawyers. What's the honest read: are those companies protecting their creativity, or protecting their ability to absorb African creativity without attribution?
+
+4. AGOA's extension runs only to the end of 2026. African textile exporters now face a structural cliff. What's the specific legal tool or policy mechanism you'd push governments toward right now, while there's still a window?
+
+5. "Cultural ownership" is your stated mission. But African fashion is not monolithic — whose culture, and who decides? How do you avoid TFLAS becoming a platform that advantages designers in Accra and Lagos while the textile communities those designs draw from remain unprotected?
+
+---
+
+*Editor's note: Targets 01 and 02 have clear PR contact pathways — HYBE America press office and Vivo Fashion Group's Nairobi office respectively. Target 03 (Ahmed) operates independently; outreach is best routed through TFLAS direct or Fashion Business Co Agency. All three are active on LinkedIn. Recommend prioritising 01 (Hixon/Gayle) for the music vertical and 03 (Ahmed) for the policy/IP vertical in this cycle.*
+
+---
+
+**Status: DRAFT — needs human editorial approval**
 
 ## Sources
 
-1. [Africa’s Creative Economy Scales But Structural Gaps Persist](https://blog.discoursechannel.com/africas-creative-economy-scales-but-structural-gaps-persist/)
-2. [Africa’s creative economy has a $150bn opportunity — this institution is building the infrastructure to capture it](https://www.brandessencenigeria.com/africas-creative-economy-has-a-150bn-opportunity-this-institution-is-building-the-infrastructure-to-capture-it/)
-3. [Articles by Thebe Ikalafeng | Daily Maverick](https://www.dailymaverick.co.za/author/thebe-ikalafeng/)
-4. [Thebe Ikalafeng | Championing Africa's Brand Renaissance](https://www.ikalafeng.com/)
-5. [African brands rebound to 15% of the most admired brands in Africa, recovering from a historic low of 11%. MTN and Dangote lead Africa’s rankings. - African Media Agency](https://africanmediaagency.com/african-brands-rebound-to-15-of-the-most-admired-brands-in-africa-recovering-from-a-historic-low-of-11-mtn-and-dangote-lead-africas-rankings/)
-6. [Brand Africa announces the inaugural Africa CMO 100 - Global News Network Liberia](https://gnnliberia.com/amp/brand-africa-announces-the-inaugural-africa-cmo-100/)
-7. [Behind every top brand is an exceptional marketing officer - African Business](https://african.business/2026/03/trade-investment/behind-every-top-brand-is-an-exceptional-marketing-officer)
-8. [Why European Luxury Houses Invest in Afrobeats Stars but Not African Fashion Infrastructure | OMIREN STYLES](https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/)
-9. [OPINION: Why Africa must build the institutions that protect its cultural intelligence -by Lulu Shabell](https://thenet.ng/africa-build-institutions-protect-cultural-intelligence/)
-10. [ÀLKÉ Ball positions Africa for bigger role in global luxury economy](https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/)
-11. [African Cultural Intelligence and Creative Economies Protection Framework Outlined - The Coast Media Group](https://www.thecoast.co.ke/2026/06/18/african-cultural-intelligence-and-creative-economies-protection-framework-outlined/40/38/business-news/thecoast/16423/11/)
-12. [Lulu Shabell's Manifesto for African Fashion and Cultural Industries - Africa Fashion Tour](https://africafashiontour.com/en/lulu-shabells-manifesto-for-african-fashion-and-cultural-industries/)
-13. [African Influencers Million-Dollar Brands Dominating 2026!](https://knowafrika.com/african-influencers-million-dollar-brands-2026/)
-14. [The creative economy in Africa - Africa Fashion Tour](https://africafashiontour.com/en/the-creative-economy-in-africa/)
-15. [10 Trends Changing Africa’s Creative Economy in 2026](https://www.thecreativebrief.africa/p/10-trends-changing-africas-creative)
+1. [HYBE ‘to build a global platform for African talent’ via new partnership with Tyla managers Brandon Hixon and Colin Gayle - Music Business Worldwide](https://www.musicbusinessworldwide.com/hybe-to-build-a-global-platform-for-african-talent-via-new-partnership-with-tyla-managers-brandon-hixon-and-colin-gayle/)
+2. [HYBE Partners with Acclaimed Music Executives Brandon Hixon and Colin Gayle To Manage Grammy® Award-Winning Artist Tyla and To Build A Global Platform for African Talent](https://www.businesswire.com/news/home/20251215194889/en/HYBE-Partners-with-Acclaimed-Music-Executives-Brandon-Hixon-and-Colin-Gayle-To-Manage-Grammy-Award-Winning-Artist-Tyla-and-To-Build-A-Global-Platform-for-African-Talent)
+3. [African Business Women in Leadership 2026: Part Three - African Business](https://african.business/2026/03/trade-investment/african-business-women-in-leadership-2026-part-three)
+4. [What Will It Take for African Fashion to Reach Its Global Potential? - Fashionista](https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles)
+5. [HOME | TFLAS](https://www.tflas.com/)
+6. [Fashion Law Institute Africa debuts summit, unveils continental report, journal - Businessday NG](https://businessday.ng/news/article/fashion-law-institute-africa-debuts-summit-unveils-continental-report-journal/)
+7. [13th Annual Symposium – Fashion Law Institute](https://www.fashionlawinstitute.com/institute-events/13th-annual-symposium)
+8. [Fashion Law in Africa](https://www.clearlyinvincible.com/post/fashion-law-in-africa)
 
