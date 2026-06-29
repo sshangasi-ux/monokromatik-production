@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Users, Mic, FileBarChart, Utensils } from 'lucide-react';
+import { Users, Mic, FileBarChart, Utensils } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import CTA from '../components/CTA';
