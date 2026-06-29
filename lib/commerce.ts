@@ -137,6 +137,19 @@ export const DATA_PRODUCTS: DataProduct[] = [
     ],
     interest: 'license',
   },
+  {
+    id: 'enterprise',
+    title: 'Index API & Dashboard',
+    priceFrom: 'from $15,000 / yr',
+    blurb: 'Live programmatic access to the whole Index for platforms and intelligence teams that build on the data.',
+    includes: [
+      'Authenticated API — full ranking, axes, movement, history',
+      'A live dashboard with filters, alerts and exports',
+      'Monthly refresh + movement webhooks',
+      'Seats, SLA and an OpenAPI contract',
+    ],
+    interest: 'enterprise',
+  },
 ];
 
 // ── The Intelligence membership (recurring) — see docs/SUBSCRIPTIONS.md ──────

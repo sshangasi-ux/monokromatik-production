@@ -160,6 +160,8 @@ export default function SignalIndexPage() {
             <a href="/api/index?format=csv" className="text-mono-amber-strong hover:underline">CSV</a>
             <span aria-hidden="true">·</span>
             <Link href="/intelligence/signal-index/methodology" className="text-mono-amber-strong hover:underline">METHODOLOGY</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/intelligence/signal-index/api" className="text-mono-amber-strong hover:underline">API DOCS</Link>
           </div>
         </div>
       </section>

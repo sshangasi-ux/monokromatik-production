@@ -48,6 +48,7 @@ MonoKromatik is an editorial and intelligence network. Every score and claim tra
 - [Cultural-Signal Index API — JSON](${SITE}/api/index): the full ranking with per-axis scores, movement and methodology metadata.
 - [Cultural-Signal Index API — CSV](${SITE}/api/index?format=csv): the same ranking as a spreadsheet download.
 - [Index methodology](${SITE}/intelligence/signal-index/methodology): exactly how the score is built — and what it is not.
+- [Index API docs](${SITE}/intelligence/signal-index/api): endpoints, response schema, versioning and terms for the data feed.
 - [Sitemap](${SITE}/sitemap.xml): every indexable URL.
 
 ## The Index right now (top 5)
