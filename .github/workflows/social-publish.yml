@@ -28,6 +28,10 @@ on:
         description: 'Optional: target a specific article slug instead of the next queued item'
         required: false
         type: string
+      verify:
+        description: 'Verify IG credentials only (no post). Use this right after setting the secrets.'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -76,7 +80,15 @@ jobs:
           echo "publish=$PUBLISH" >> "$GITHUB_OUTPUT"
           echo "Mode: $([ "$PUBLISH" = "true" ] && echo PUBLISH || echo 'REVIEW (preview only)')" >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Verify IG credentials (no post)
+        if: ${{ github.event.inputs.verify == 'true' }}
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: npm run social:verify
+
       - name: Run social publisher
+        if: ${{ github.event.inputs.verify != 'true' }}
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
