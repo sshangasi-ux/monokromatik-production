@@ -16,8 +16,8 @@
     "sourceName": "OMIREN",
     "sourceLink": "https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/",
     "publishedAt": "2026-06-29T09:02:00.000Z",
-    "imageUrl": "",
-    "imageCredit": "",
+    "imageUrl": "/article-media/luxury-houses-afrobeats-stars-no-african-factory-bdaf7b7f.webp",
+    "imageCredit": "Via OMIREN",
     "brandRead": {
       "attribution": "The MonoKromatik Team",
       "attributionRole": "Brand Intelligence",
@@ -34,7 +34,8 @@
           "move": "African designers and brands should treat global-runway visibility as a launchpad to build owned distribution, not as the destination."
         }
       ]
-    }
+    },
+    "imageSourceUrl": "https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/"
   },
   {
     "title": "Meta Puts Nollywood and South African Cinema at the Centre of 'Made by Africa' 2026",
@@ -53,8 +54,8 @@
     "sourceName": "Meta Newsroom",
     "sourceLink": "https://about.fb.com/news/2026/05/celebrating-african-cinema-with-the-made-by-africa-loved-by-the-world-2026-campaign/",
     "publishedAt": "2026-06-29T09:04:00.000Z",
-    "imageUrl": "",
-    "imageCredit": "",
+    "imageUrl": "/article-media/meta-made-by-africa-2026-nollywood-cinema-6f428bda.webp",
+    "imageCredit": "Via Meta Newsroom",
     "brandRead": {
       "attribution": "The MonoKromatik Team",
       "attributionRole": "Brand Intelligence",
@@ -71,7 +72,8 @@
           "move": "When a platform invites you to 'celebrate your culture' with its AI tools, read it as a product-adoption play and negotiate the terms from there."
         }
       ]
-    }
+    },
+    "imageSourceUrl": "https://about.fb.com/news/2026/05/celebrating-african-cinema-with-the-made-by-africa-loved-by-the-world-2026-campaign/"
   },
   {
     "title": "The Blue Sharks Played the Whole Diaspora Onto the Pitch",
@@ -89,8 +91,9 @@
     "sourceName": "ESPN",
     "sourceLink": "https://www.espn.com/soccer/story/_/id/49192570/cape-verde-w2026-world-cup-knockout-stage-smallest-nation",
     "publishedAt": "2026-06-29T09:06:00.000Z",
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "/article-media/cape-verde-world-cup-diaspora-blue-sharks-a3a0bc40.webp",
+    "imageCredit": "Photo: Pexels",
+    "imageSourceUrl": "https://www.pexels.com"
   },
   {
     "title": "Afrobeats Didn't Win the World Cup Song. It Became Infrastructure.",
@@ -109,8 +112,9 @@
     "sourceName": "Rolling Stone",
     "sourceLink": "https://www.rollingstone.com/music/music-news/shakira-burna-boy-perform-dai-dai-fifa-2026-world-cup-1235574123/",
     "publishedAt": "2026-06-29T09:08:00.000Z",
-    "imageUrl": "",
-    "imageCredit": ""
+    "imageUrl": "/article-media/afrobeats-fifa-2026-world-cup-album-infrastructure-a3b11053.webp",
+    "imageCredit": "Via Rolling Stone",
+    "imageSourceUrl": "https://www.rollingstone.com/music/music-news/shakira-burna-boy-perform-dai-dai-fifa-2026-world-cup-1235574123/"
   },
   {
     "title": "Amarula Bottled the Marula Tree. Now It's Pouring It Into Europe.",
