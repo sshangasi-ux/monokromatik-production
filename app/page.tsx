@@ -168,7 +168,8 @@ export default function Home() {
               {intelligencePrompts.map((prompt) => (
                 <div key={prompt} className="bg-mono-white border-l-4 border-mono-amber p-5 mb-4 font-body text-mono-charcoal text-lg">{prompt}</div>
               ))}
-              <div className="mt-8 grid sm:grid-cols-3 gap-3 text-center text-xs tracking-[0.16em] font-display font-bold">
+              <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs tracking-[0.16em] font-display font-bold">
+                <Link href="/intelligence/signal-index" className="border border-mono-amber bg-mono-amber/10 text-mono-amber-strong px-3 py-5 hover:bg-mono-amber/20 transition-colors">THE INDEX</Link>
                 <Link href="/intelligence/case-studies" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">CASE STUDIES</Link>
                 <Link href="/reports" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">REPORTS</Link>
                 <Link href="/intelligence/source-desk" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">SOURCE DESK</Link>
@@ -249,7 +250,8 @@ export default function Home() {
               <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">ON THE PULSE</p>
               <h2 className="text-4xl font-display font-bold text-mono-black leading-tight">What the network is reading right now.</h2>
               <p className="mt-6 max-w-lg text-lg text-mono-charcoal font-body">
-                The freshest signals across culture, sport and sound — updated continuously as our agents publish.
+                The wider daily stream across culture, sport and sound — every story the network is tracking. For the
+                major breaks alone, with the read attached, see <Link href="/breaking" className="text-mono-amber-strong font-bold hover:underline">The Wire</Link>.
               </p>
               <Link href="/pulse" className="mt-8 inline-flex items-center gap-2 font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
                 SEE THE FULL PULSE <ArrowRight size={18} />

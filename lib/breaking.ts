@@ -34,6 +34,12 @@ export interface BreakingVerdict {
   why: string;
 }
 
+/** Tidy a raw RSS headline for The Wire: collapse runs of whitespace and trim.
+ *  Pure formatting only — never rewrites words (spelling stays an editor call). */
+export function cleanTitle(t: string): string {
+  return (t || '').replace(/\s+/g, ' ').trim();
+}
+
 /**
  * Recent, deduped candidates: published within `windowHours`, not yet alerted,
  * newest first, capped at `max` (default 50) so the judge's verdict JSON always
@@ -52,7 +58,7 @@ export function selectCandidates(stories: Story[], alerted: Set<string>, opts?: 
     const t = new Date(s.pubDate).getTime();
     if (!isFinite(t) || now - t > windowMs || t > now + 3_600_000) continue; // within window, not future-dated
     seen.add(s.link);
-    out.push({ title: s.title, source: s.source, category: s.category, link: s.link, pubDate: s.pubDate });
+    out.push({ title: cleanTitle(s.title), source: s.source, category: s.category, link: s.link, pubDate: s.pubDate });
   }
   return out;
 }
