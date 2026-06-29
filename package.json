@@ -36,7 +36,8 @@
     "social:publish": "tsx scripts/social-publish.ts",
     "social:publish:dry": "tsx scripts/social-publish.ts -- --dry",
     "media:heal": "tsx scripts/heal-media.ts",
-    "media:heal:dry": "tsx scripts/heal-media.ts --dry-run"
+    "media:heal:dry": "tsx scripts/heal-media.ts --dry-run",
+    "links:check": "tsx scripts/check-links.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
