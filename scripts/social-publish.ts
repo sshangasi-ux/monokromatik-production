@@ -15,9 +15,7 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import { getAllArticles } from '../lib/articles';
-import { getBreaks } from '../lib/breaking-feed';
-import { articleCaption, breakCaption } from '../lib/social-caption';
+import { nextCandidate, type SocialCandidate } from '../lib/social-queue';
 
 const envPath = join(__dirname, '../.env.local');
 if (existsSync(envPath)) {
@@ -27,7 +25,6 @@ if (existsSync(envPath)) {
   });
 }
 
-const SITE = 'https://www.monokromatik.com';
 const GRAPH = 'https://graph.facebook.com/v21.0';
 const LEDGER = join(__dirname, '../output/social-ledger.json');
 const log = (m: string) => console.log(`[${new Date().toISOString()}] [social] ${m}`);
@@ -36,39 +33,7 @@ const summary = (m: string) => {
   if (f) { try { writeFileSync(f, m + '\n', { flag: 'a' }); } catch { /* ignore */ } }
 };
 
-interface Candidate { id: string; kind: 'break' | 'article'; title: string; cardUrl: string; caption: string; link: string; }
-
-function nextCandidate(posted: Set<string>): Candidate | null {
-  const slugFlag = process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1];
-  if (slugFlag) {
-    const a = getAllArticles().find((x) => x.slug === slugFlag);
-    if (a) return mkArticle(a);
-  }
-  // Wire breaks first (most timely), newest → oldest.
-  for (const [i, b] of getBreaks().entries()) {
-    const id = `break:${b.link}`;
-    if (!posted.has(id)) return {
-      id, kind: 'break', title: b.title,
-      cardUrl: `${SITE}/api/social-card?break=${i}&format=jpg`,
-      caption: breakCaption(b), link: `${SITE}/breaking`,
-    };
-  }
-  for (const a of getAllArticles()) {
-    const id = `art:${a.slug}`;
-    if (!posted.has(id)) return mkArticle(a);
-  }
-  return null;
-}
-
-function mkArticle(a: ReturnType<typeof getAllArticles>[number]): Candidate {
-  return {
-    id: `art:${a.slug}`, kind: 'article', title: a.title,
-    cardUrl: `${SITE}/api/social-card?slug=${encodeURIComponent(a.slug)}&format=jpg`,
-    caption: articleCaption(a), link: `${SITE}/article/${a.slug}`,
-  };
-}
-
-async function publishToInstagram(c: Candidate): Promise<boolean> {
+async function publishToInstagram(c: SocialCandidate): Promise<boolean> {
   const userId = process.env.IG_USER_ID;
   const token = process.env.IG_ACCESS_TOKEN;
   if (!userId || !token) {
@@ -112,7 +77,8 @@ async function main() {
   if (existsSync(LEDGER)) { try { ledger = JSON.parse(readFileSync(LEDGER, 'utf-8')); } catch { /* reset */ } }
   const posted = new Set(ledger.posted || []);
 
-  const c = nextCandidate(posted);
+  const slug = process.argv.find((a) => a.startsWith('--slug='))?.split('=')[1];
+  const c = nextCandidate(posted, slug);
   if (!c) { log('Nothing new to post.'); summary('Nothing new to post.'); return; }
 
   log(`Next ${c.kind}: ${c.title.slice(0, 70)}`);
