@@ -10,11 +10,12 @@ const primaryLinks = [
   { href: '/breaking', label: 'THE WIRE', description: 'Breaking, the moment it breaks', priority: true },
   { href: '/signal', label: 'SIGNAL', description: 'Ideas, work and brand consequence', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
-  { href: '/ask', label: 'ASK', description: 'Cited answers from the corpus', priority: true },
+  { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
   { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
   { href: '/conversations', label: 'CONVERSATIONS', description: 'Leaders, creators and operators' },
   { href: '/culture', label: 'CULTURE', description: 'Roots, Arena and Waves' },
   { href: '/spirits', label: 'SPIRITS', description: 'The drinks-brand economy' },
+  { href: '/ask', label: 'ASK', description: 'Cited answers from the corpus' },
   { href: '/about', label: 'ABOUT', description: 'Mission and methodology' },
 ];
 
@@ -52,7 +53,7 @@ export default function Navigation() {
                     key={link.href}
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
-                    className={`relative px-3 py-3 font-display text-xs font-bold tracking-[0.13em] transition-all ${
+                    className={`relative px-3 py-3 font-display text-xs font-bold tracking-[0.13em] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mono-amber-bright focus-visible:ring-inset ${
                       link.priority
                         ? 'text-mono-amber hover:bg-mono-amber hover:text-mono-black'
                         : 'text-mono-white hover:bg-mono-white/10'
