@@ -63,3 +63,42 @@ export function isNewlyRanked(slug: string): boolean {
   const previous = history[history.length - 2];
   return Boolean(current.entries.find((e) => e.slug === slug)) && !previous.entries.find((e) => e.slug === slug);
 }
+
+export interface BrandPoint { date: string; score: number; rank: number; }
+
+/** A brand's score/rank across every snapshot, oldest first — for the trajectory
+ *  sparkline on the per-brand page. */
+export function getBrandHistory(slug: string): BrandPoint[] {
+  const out: BrandPoint[] = [];
+  for (const snap of history) {
+    const e = snap.entries.find((x) => x.slug === slug);
+    if (e) out.push({ date: snap.date, score: e.score, rank: e.rank });
+  }
+  return out;
+}
+
+export interface Mover { brand: string; slug: string; score: number; scoreDelta: number; rankDelta: number; }
+export interface Movers { since: string | null; climbers: Mover[]; newcomers: Mover[]; }
+
+/** What moved since the previous snapshot — climbers (score up) and newly-ranked
+ *  brands. Powers the "Movers" surface + the auto-briefing. Empty until ≥2 snapshots. */
+export function getMovers(limit = 5): Movers {
+  if (history.length < 2) return { since: null, climbers: [], newcomers: [] };
+  const current = history[history.length - 1];
+  const previous = history[history.length - 2];
+  const prevSlugs = new Set(previous.entries.map((e) => e.slug));
+
+  const climbers: Mover[] = [];
+  const newcomers: Mover[] = [];
+  for (const e of current.entries) {
+    if (!prevSlugs.has(e.slug)) {
+      newcomers.push({ brand: e.brand, slug: e.slug, score: e.score, scoreDelta: 0, rankDelta: 0 });
+      continue;
+    }
+    const then = previous.entries.find((p) => p.slug === e.slug)!;
+    const scoreDelta = e.score - then.score;
+    if (scoreDelta > 0) climbers.push({ brand: e.brand, slug: e.slug, score: e.score, scoreDelta, rankDelta: then.rank - e.rank });
+  }
+  climbers.sort((a, b) => b.scoreDelta - a.scoreDelta || b.rankDelta - a.rankDelta);
+  return { since: previous.date, climbers: climbers.slice(0, limit), newcomers: newcomers.slice(0, limit) };
+}

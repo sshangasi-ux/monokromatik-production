@@ -6,7 +6,8 @@ import Navigation from '../../../components/Navigation';
 import { SignalStrength } from '../../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
-import { getMovement } from '../../../../lib/index-history';
+import { getMovement, getBrandHistory } from '../../../../lib/index-history';
+import Sparkline from '../Sparkline';
 import BadgeEmbed from '../BadgeEmbed';
 import FollowButton from '../../../components/FollowButton';
 
@@ -42,6 +43,8 @@ export default async function BrandIndexPage({ params }: PageProps) {
   const works = studies.filter((c) => brandSlug(c.brand) === brand);
   const clampLevel = (n: number) => Math.min(5, Math.max(1, Math.round(n))) as 1 | 2 | 3 | 4 | 5;
   const movement = getMovement(brand);
+  const history = getBrandHistory(brand);
+  const peers = ranked.filter((e) => brandSlug(e.brand) !== brand && Math.abs(e.score - entry.score) <= 4).slice(0, 5);
 
   // JSON-LD: this brand's score as a structured, citable PropertyValue inside the
   // Cultural-Signal Index Dataset (per-brand discoverability for search + AI engines).
@@ -110,6 +113,34 @@ export default async function BrandIndexPage({ params }: PageProps) {
             </div>
           ))}
         </div>
+
+        {history.length > 0 && (
+          <>
+            <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">TRAJECTORY</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5 border border-mono-gray/25 bg-mono-white p-6">
+              <Sparkline points={history.map((p) => p.score)} />
+              <p className="text-sm font-body text-mono-charcoal">
+                {history.length > 1
+                  ? `Score ${history[0].score} → ${history[history.length - 1].score} since ${history[0].date}.`
+                  : `First recorded ${history[0].date}. The trajectory builds as the Index re-snapshots.`}
+              </p>
+            </div>
+          </>
+        )}
+
+        {peers.length > 0 && (
+          <>
+            <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">IN THE SAME BAND</h2>
+            <div className="flex flex-wrap gap-3">
+              {peers.map((p) => (
+                <Link key={p.brand} href={`/intelligence/signal-index/${brandSlug(p.brand)}`} className="inline-flex items-center gap-3 border border-mono-gray/25 bg-mono-white px-4 py-3 hover:border-mono-amber transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mono-amber-strong">
+                  <span className="font-display font-bold text-mono-black text-sm">{p.brand}</span>
+                  <span className="text-mono-amber-strong font-display font-bold tabular-nums">{p.score}</span>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
 
         <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-6">THE WORK</h2>
         <div className="space-y-4">
