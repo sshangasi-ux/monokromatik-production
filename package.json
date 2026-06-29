@@ -40,7 +40,8 @@
     "links:check": "tsx scripts/check-links.ts",
     "seo:check": "tsx scripts/check-seo.ts",
     "firewall:check": "tsx scripts/check-firewall.ts",
-    "a11y:check": "tsx scripts/check-a11y.ts"
+    "a11y:check": "tsx scripts/check-a11y.ts",
+    "social:verify": "tsx scripts/verify-ig.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
