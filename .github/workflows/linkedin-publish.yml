@@ -1,0 +1,101 @@
+name: MonoKromatik Social Auto-Post (LinkedIn)
+
+# Posts the next unposted item (Wire break first, else latest article) to a
+# LinkedIn Page via the versioned Posts API, using the public branded card +
+# generated caption (with the link in the post text).
+#
+# TWO MODES (same as Instagram):
+#   • REVIEW-GATED (default): scheduled runs only PREVIEW; you approve by
+#     dispatching with publish=true.
+#   • FULLY-AUTO: set repo variable LINKEDIN_AUTOPOST=on.
+#
+# Needs secrets LINKEDIN_ACCESS_TOKEN + LINKEDIN_AUTHOR_URN (e.g.
+# urn:li:organization:12345678). Without them every run is a no-op preview.
+# Deduped via an Actions-cache ledger (independent of Instagram).
+
+on:
+  schedule:
+    # Once daily at ~15:07 UTC (17:07 SAST), offset from the Instagram run.
+    - cron: '7 15 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the next item now (your approval). Leave false to preview only.'
+        type: boolean
+        default: false
+      slug:
+        description: 'Optional: target a specific article slug instead of the next queued item'
+        required: false
+        type: string
+      verify:
+        description: 'Verify LinkedIn credentials only (no post). Use this right after setting the secrets.'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: linkedin-publish
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Restore post ledger
+        uses: actions/cache@v4
+        with:
+          path: output/linkedin-ledger.json
+          key: linkedin-ledger-${{ github.run_id }}
+          restore-keys: |
+            linkedin-ledger-
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Decide mode
+        id: mode
+        run: |
+          PUBLISH=false
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.publish }}" = "true" ]; then
+            PUBLISH=true
+          fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ vars.LINKEDIN_AUTOPOST }}" = "on" ]; then
+            PUBLISH=true
+          fi
+          echo "publish=$PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "Mode: $([ "$PUBLISH" = "true" ] && echo PUBLISH || echo 'REVIEW (preview only)')" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify LinkedIn credentials (no post)
+        if: ${{ github.event.inputs.verify == 'true' }}
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+        run: npm run linkedin:verify
+
+      - name: Run LinkedIn publisher
+        if: ${{ github.event.inputs.verify != 'true' }}
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
+          NODE_ENV: production
+        run: |
+          FLAGS=""
+          [ "${{ steps.mode.outputs.publish }}" != "true" ] && FLAGS="$FLAGS --dry"
+          SLUG="${{ github.event.inputs.slug }}"
+          [ -n "$SLUG" ] && FLAGS="$FLAGS --slug=$SLUG"
+          npm run linkedin:publish -- $FLAGS

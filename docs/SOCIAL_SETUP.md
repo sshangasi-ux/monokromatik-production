@@ -50,6 +50,29 @@ API, using the public branded card (`/api/social-card`) + an AI caption.
 
 ---
 
-## LinkedIn
+## LinkedIn (built — needs credentials)
 
-_Coming next — integration to be built, then this section will list its setup steps._
+Posts the next unposted item to a LinkedIn **Page** via the versioned Posts API,
+using the same branded card + caption (with the link in the post text).
+
+**Secrets to set:** `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_AUTHOR_URN`
+**Optional repo variables:** `LINKEDIN_AUTOPOST=on` (daily auto-post), `LINKEDIN_VERSION` (API version override, default `202405`)
+
+### Prerequisites
+1. A **LinkedIn Page** (Company Page) you administer — posts go out as the Page.
+2. A **LinkedIn Developer app** (<https://www.linkedin.com/developers/apps>) with your Page set as its associated organization, and the **Community Management API** product requested/approved (this grants the org posting scopes).
+
+### Steps
+1. **Request the scopes** on the app: `w_organization_social` + `r_organization_social` (Page posting). For posting as a *person* instead, use `w_member_social`.
+2. **Generate an OAuth access token** with those scopes (the app's *Auth* tab → OAuth 2.0, or the token generator). Tokens are typically ~60 days — refresh before expiry. → `LINKEDIN_ACCESS_TOKEN`.
+3. **Find your `LINKEDIN_AUTHOR_URN`:**
+   - Page: `urn:li:organization:<ORG_ID>` — the numeric ID is in your Page's admin URL (`/company/<ORG_ID>/admin/`), or via `GET https://api.linkedin.com/rest/organizationAcls?q=roleAssignee` (header `LinkedIn-Version: 202405`).
+   - Person: `urn:li:person:<ID>` from `GET https://api.linkedin.com/v2/me`.
+4. **Set the two secrets** in GitHub Actions.
+5. **Verify (no post):** Actions → *MonoKromatik Social Auto-Post (LinkedIn)* → **Run workflow** → check **verify** → Run. It validates the token and echoes the author it will post as.
+6. **Send one real post:** Run workflow again with **publish = true**. Confirm it appears on the Page.
+7. **Go fully automatic (optional):** add repo **variable** `LINKEDIN_AUTOPOST=on`. The daily 17:07 SAST run then posts automatically.
+
+> Local testing: put the values in `.env.local` and run `npm run linkedin:verify` then `npm run linkedin:publish -- --dry`.
+
+> Note: LinkedIn sunsets API versions periodically. If posts start failing with a version error, set the `LINKEDIN_VERSION` repo variable to a current `YYYYMM` value.
