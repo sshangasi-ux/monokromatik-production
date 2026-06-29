@@ -15,9 +15,14 @@ export interface LeaderEntry {
   rank: number;
   works: number;
   axisAverages: Record<string, number>;
+  market?: string;
   movement: { scoreDelta: number; rankDelta: number } | null;
   isNew: boolean;
 }
+
+type Band = 'all' | 'b90' | 'b80' | 'b70';
+const inBand = (score: number, band: Band) =>
+  band === 'all' || (band === 'b90' && score >= 90) || (band === 'b80' && score >= 80 && score < 90) || (band === 'b70' && score < 80);
 
 type Lens = 'signal' | 'authorship';
 
@@ -39,19 +44,30 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
   const [compareMode, setCompareMode] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [followingOnly, setFollowingOnly] = useState(false);
+  const [market, setMarket] = useState('');
+  const [band, setBand] = useState<Band>('all');
   const { followed, count } = useFollowedBrands();
+
+  const markets = useMemo(
+    () => [...new Set(entries.map((e) => e.market).filter(Boolean) as string[])].sort(),
+    [entries]
+  );
 
   const view = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = entries.filter(
-      (e) => (!q || e.brand.toLowerCase().includes(q)) && (!followingOnly || followed.includes(e.slug))
+      (e) =>
+        (!q || e.brand.toLowerCase().includes(q)) &&
+        (!followingOnly || followed.includes(e.slug)) &&
+        (!market || e.market === market) &&
+        inBand(e.score, band)
     );
     return [...list].sort((a, b) =>
       lens === 'authorship'
         ? (b.axisAverages.AUTHORSHIP ?? 0) - (a.axisAverages.AUTHORSHIP ?? 0)
         : b.score - a.score
     );
-  }, [entries, query, lens, followingOnly, followed]);
+  }, [entries, query, lens, followingOnly, followed, market, band]);
 
   // On-site score-change alert: followed brands that moved in the latest update.
   const movedFollowed = entries.filter((e) => followed.includes(e.slug) && e.movement && e.movement.scoreDelta !== 0);
@@ -90,6 +106,29 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             <Star size={13} className={`inline mr-1.5 -mt-0.5 ${followingOnly ? 'fill-current' : ''}`} />FOLLOWING ({count})
           </button>
         )}
+      </div>
+
+      {/* Filters — market/region + score band. Turns the ranking into a cut-able tool. */}
+      <div className="flex flex-wrap items-center gap-3 mb-5">
+        <span className="text-[10px] tracking-[0.18em] font-display font-bold text-mono-gray">FILTER</span>
+        {markets.length > 1 && (
+          <select
+            value={market}
+            onChange={(e) => setMarket(e.target.value)}
+            aria-label="Filter by market"
+            className="text-[11px] font-display font-bold tracking-[0.06em] px-3 py-2 bg-mono-paper border border-mono-gray/30 text-mono-charcoal focus:outline-none focus:border-mono-amber max-w-[200px]"
+          >
+            <option value="">All markets</option>
+            {markets.map((m) => <option key={m} value={m}>{m}</option>)}
+          </select>
+        )}
+        <button onClick={() => setBand((b) => (b === 'b90' ? 'all' : 'b90'))} className={pill(band === 'b90')}>90+</button>
+        <button onClick={() => setBand((b) => (b === 'b80' ? 'all' : 'b80'))} className={pill(band === 'b80')}>80–89</button>
+        <button onClick={() => setBand((b) => (b === 'b70' ? 'all' : 'b70'))} className={pill(band === 'b70')}>UNDER 80</button>
+        {(market || band !== 'all') && (
+          <button onClick={() => { setMarket(''); setBand('all'); }} className="text-[11px] font-display font-bold tracking-[0.12em] text-mono-amber-strong hover:underline">CLEAR</button>
+        )}
+        <span className="ml-auto text-[11px] font-body text-mono-gray tabular-nums">{view.length} shown</span>
       </div>
 
       {/* On-site score-change alert for followed brands. */}

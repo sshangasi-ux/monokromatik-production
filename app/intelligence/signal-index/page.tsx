@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
-import { getMovement, isNewlyRanked, trackingSince } from '../../../lib/index-history';
+import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
 import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
 
 export const revalidate = 300;
@@ -32,6 +32,13 @@ export default function SignalIndexPage() {
   const mean = ranked.length ? Math.round(ranked.reduce((s, e) => s + e.score, 0) / ranked.length) : 0;
   const totalWorks = ranked.reduce((s, e) => s + e.works, 0);
 
+  // First market seen per brand — powers the market/region filter.
+  const marketBySlug = new Map<string, string>();
+  for (const cs of studies) {
+    const s = brandSlug(cs.brand);
+    if (cs.market && !marketBySlug.has(s)) marketBySlug.set(s, cs.market);
+  }
+
   const leaderEntries: LeaderEntry[] = ranked.map((e) => {
     const slug = brandSlug(e.brand);
     return {
@@ -41,10 +48,17 @@ export default function SignalIndexPage() {
       rank: e.rank!,
       works: e.works,
       axisAverages: e.axisAverages,
+      market: marketBySlug.get(slug) ?? '',
       movement: getMovement(slug),
       isNew: isNewlyRanked(slug),
     };
   });
+
+  const movers = getMovers(5);
+  const topClimber = movers.climbers[0];
+  const briefing = movers.since
+    ? `Since ${movers.since}, ${movers.climbers.length} brand${movers.climbers.length === 1 ? '' : 's'} climbed and ${movers.newcomers.length} entered the Index${topClimber ? ` — ${topClimber.brand} led, up ${topClimber.scoreDelta} to ${topClimber.score}/100` : ''}.`
+    : '';
 
   // JSON-LD: a Dataset (so the Index is discoverable in Google Dataset Search /
   // citable by AI engines) wrapping an ItemList of the ranking.
@@ -98,6 +112,36 @@ export default function SignalIndexPage() {
           />
         </div>
       </section>
+
+      {(movers.climbers.length > 0 || movers.newcomers.length > 0) && (
+        <section className="py-14 md:py-16 bg-mono-black text-mono-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-3">MOVERS · SINCE {movers.since}</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">What moved.</h2>
+            <p className="mt-4 max-w-2xl text-lg text-mono-soft-white font-body">{briefing}</p>
+            <div className="mt-9 grid sm:grid-cols-2 gap-px bg-mono-white/15 border border-mono-white/15">
+              <div className="bg-mono-black p-6">
+                <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mb-5">▲ CLIMBERS</p>
+                {movers.climbers.length ? movers.climbers.map((m) => (
+                  <Link key={m.slug} href={`/intelligence/signal-index/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
+                    <span className="font-display font-bold text-mono-soft-white group-hover:text-mono-amber-bright transition-colors truncate">{m.brand}</span>
+                    <span className="shrink-0 text-emerald-400 font-display font-bold text-sm tabular-nums">▲ {m.scoreDelta} → {m.score}</span>
+                  </Link>
+                )) : <p className="text-sm text-mono-gray font-body">No score climbs this update.</p>}
+              </div>
+              <div className="bg-mono-black p-6">
+                <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mb-5">NEW ENTRIES</p>
+                {movers.newcomers.length ? movers.newcomers.map((m) => (
+                  <Link key={m.slug} href={`/intelligence/signal-index/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
+                    <span className="font-display font-bold text-mono-soft-white group-hover:text-mono-amber-bright transition-colors truncate">{m.brand}</span>
+                    <span className="shrink-0 text-mono-amber-bright font-display font-bold text-sm tabular-nums">NEW · {m.score}</span>
+                  </Link>
+                )) : <p className="text-sm text-mono-gray font-body">No new entries this update.</p>}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
