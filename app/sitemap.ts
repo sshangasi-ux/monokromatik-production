@@ -38,6 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE}/membership`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE}/work-with-us`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${SITE}/partner`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE}/events`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${SITE}/contribute`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${SITE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE}/editorial-standards`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
