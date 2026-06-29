@@ -155,5 +155,73 @@
         "WILL IT LAND — OR WILL IT LECTURE?"
       ]
     }
+  },
+  {
+    "number": "004",
+    "title": "The Machine and the Maker",
+    "focus": "Standard Edition · AI, platforms and the contest over African authorship",
+    "contents": "Cover essay · The Boardroom · The Work · Will It Land? · Brand Weather · Culture",
+    "status": "in-development",
+    "features": [
+      {
+        "franchise": "COVER ESSAY",
+        "title": "The Machine and the Maker",
+        "description": "The contest has moved from visibility (001) and ownership of upside (002) to control of authorship and infrastructure. When AI can replicate the sound, the platform can withdraw the budget, and the rights regime can't say who the author is, African creative power needs a new playbook.",
+        "status": "PROPOSED",
+        "icon": "Sparkles",
+        "href": ""
+      },
+      {
+        "franchise": "THE BOARDROOM / THE BACKROOM",
+        "title": "After Showmax: Who Commissions African Stories Now?",
+        "description": "Canal+/MultiChoice's move to wind down Showmax removes a core funding pipeline for African originals just as Amazon scales back local commissions — a rigorous conversation on the post-Showmax commissioning map, awaiting a confirmed producer/commissioner voice.",
+        "status": "COMMISSION OPEN",
+        "icon": "Mic",
+        "href": ""
+      },
+      {
+        "franchise": "THE WORK",
+        "title": "The AI Authorship Grey Zone: African Creativity Without a Rights Floor",
+        "description": "A source-led decode of where AI sits in African creative production in 2026 — and the legal vacuum underneath it. Nigeria's 2022 Copyright Act and South Africa's regime both assume a human author; neither has ruled on AI-assisted work, even as African catalogues get pulled into global training sets.",
+        "status": "IN DEVELOPMENT",
+        "icon": "FileText",
+        "href": ""
+      },
+      {
+        "franchise": "WILL IT LAND?",
+        "title": "₦60 Billion, ₦2 a Stream: Does the Streaming Economy Reach the Maker?",
+        "description": "The relevance test on Spotify's first hard Nigeria disclosure — ₦60bn paid to Nigerian artists in 2025, ~58% to independents, off 30bn+ streams. The headline says African music has arrived; the test asks whether a payout that large still leaves a viable economy per artist.",
+        "status": "IN DEVELOPMENT",
+        "icon": "Radar",
+        "href": ""
+      },
+      {
+        "franchise": "BRAND WEATHER",
+        "title": "The Localisation Land-Grab: Beauty Builds for African Skin",
+        "description": "Multinationals are localising hard into a ~$4.4bn African cosmetics market — L'Oréal's Johannesburg R&D centre, ongoing personal-care M&A — while homegrown brands built the category first. When the multinational finally formulates for you, is that validation, acquisition bait, or both?",
+        "status": "IN DEVELOPMENT",
+        "icon": "BookOpen",
+        "href": ""
+      },
+      {
+        "franchise": "CULTURE",
+        "title": "Voice and Likeness: When the Deepfake Sings Afrobeats",
+        "description": "AI voice-cloning now targets the exact assets African artists were finally getting paid for — voice, likeness, style — in a market where AI music tools train on copyrighted material without consent. A culture read on what 'authorship' means when the most replicable thing about you is the thing the world loves.",
+        "status": "IN DEVELOPMENT",
+        "icon": "Mic",
+        "href": ""
+      }
+    ],
+    "cover": {
+      "accent": "#3B4A6B",
+      "tone": "dark",
+      "dek": "AI, platforms and multinational capital moved into the infrastructure layer underneath African culture. The contest is no longer just the upside — it's authorship itself.",
+      "coverlines": [
+        "AFTER SHOWMAX · THE BOARDROOM",
+        "₦60BN, ₦2 A STREAM · WILL IT LAND?",
+        "THE AI AUTHORSHIP GREY ZONE · THE WORK",
+        "THE MACHINE AND THE MAKER"
+      ]
+    }
   }
 ]

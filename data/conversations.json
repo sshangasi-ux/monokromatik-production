@@ -15,9 +15,18 @@
       "Brand Africa targets ≥50% indigenous brands among Africa's most admired by 2050. Given the barriers you measure yearly, is that a credible horizon or principled optimism?"
     ],
     "sources": [
-      { "publisher": "Brand Africa 100 (2026 results, via African Media Agency)", "href": "https://africanmediaagency.com/african-brands-rebound-to-15-of-the-most-admired-brands-in-africa-recovering-from-a-historic-low-of-11-mtn-and-dangote-lead-africas-rankings/" },
-      { "publisher": "Brand Africa — inaugural Africa CMO 100", "href": "https://gnnliberia.com/amp/brand-africa-announces-the-inaugural-africa-cmo-100/" },
-      { "publisher": "Ikalafeng.com", "href": "https://www.ikalafeng.com/" }
+      {
+        "publisher": "Brand Africa 100 (2026 results, via African Media Agency)",
+        "href": "https://africanmediaagency.com/african-brands-rebound-to-15-of-the-most-admired-brands-in-africa-recovering-from-a-historic-low-of-11-mtn-and-dangote-lead-africas-rankings/"
+      },
+      {
+        "publisher": "Brand Africa — inaugural Africa CMO 100",
+        "href": "https://gnnliberia.com/amp/brand-africa-announces-the-inaugural-africa-cmo-100/"
+      },
+      {
+        "publisher": "Ikalafeng.com",
+        "href": "https://www.ikalafeng.com/"
+      }
     ]
   },
   {
@@ -36,9 +45,18 @@
       "Africa captures only a small fraction of the value tied to its creativity. Which single institution-building intervention, adequately resourced, moves that needle fastest — and why?"
     ],
     "sources": [
-      { "publisher": "Lulu Shabell — OPINION: building institutions that protect cultural intelligence", "href": "https://thenet.ng/africa-build-institutions-protect-cultural-intelligence/" },
-      { "publisher": "ÀLKÉ Ball positions Africa for a bigger role in global luxury", "href": "https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/" },
-      { "publisher": "Lulu Shabell's manifesto — Africa Fashion Tour", "href": "https://africafashiontour.com/en/lulu-shabells-manifesto-for-african-fashion-and-cultural-industries/" }
+      {
+        "publisher": "Lulu Shabell — OPINION: building institutions that protect cultural intelligence",
+        "href": "https://thenet.ng/africa-build-institutions-protect-cultural-intelligence/"
+      },
+      {
+        "publisher": "ÀLKÉ Ball positions Africa for a bigger role in global luxury",
+        "href": "https://businessamlive.com/alke-ball-positions-africa-for-bigger-role-in-global-luxury-economy/"
+      },
+      {
+        "publisher": "Lulu Shabell's manifesto — Africa Fashion Tour",
+        "href": "https://africafashiontour.com/en/lulu-shabells-manifesto-for-african-fashion-and-cultural-industries/"
+      }
     ]
   },
   {
@@ -57,9 +75,108 @@
       "Senegal's creative economy differs from Nigeria's. What does building a premium brand from Dakar specifically require you to solve that a brand from a larger creative capital would not?"
     ],
     "sources": [
-      { "publisher": "African influencers & million-dollar brands (2026)", "href": "https://knowafrika.com/african-influencers-million-dollar-brands-2026/" },
-      { "publisher": "Why luxury houses invest in Afrobeats stars but not African fashion infrastructure — OMIREN", "href": "https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/" },
-      { "publisher": "The creative economy in Africa — Africa Fashion Tour", "href": "https://africafashiontour.com/en/the-creative-economy-in-africa/" }
+      {
+        "publisher": "African influencers & million-dollar brands (2026)",
+        "href": "https://knowafrika.com/african-influencers-million-dollar-brands-2026/"
+      },
+      {
+        "publisher": "Why luxury houses invest in Afrobeats stars but not African fashion infrastructure — OMIREN",
+        "href": "https://omirenstyles.com/european-luxury-fashion-afrobeats-stars/"
+      },
+      {
+        "publisher": "The creative economy in Africa — Africa Fashion Tour",
+        "href": "https://africafashiontour.com/en/the-creative-economy-in-africa/"
+      }
+    ]
+  },
+  {
+    "slug": "anyiko-owoko-anyiko-pr",
+    "name": "Anyiko Owoko",
+    "role": "Founder & CEO, Anyiko PR — music & entertainment publicist (ex-Sauti Sol, Coke Studio Africa)",
+    "franchise": "THE BOARDROOM / THE BACKROOM",
+    "status": "pursuing",
+    "confidence": "interpretive",
+    "angle": "How a Nairobi-built PR practice became infrastructure for moving African music and culture across borders. Owoko helped build Sauti Sol from an unknown quartet into one of Africa's biggest acts and ran communications for Coke Studio Africa across 10+ markets; Anyiko PR now handles East African PR for Universal Music Group, Platoon, Boomplay, SoundCloud and Sony Music Africa. As the 2026 conversation shifts from 'going viral' to durable distribution and ownership, she's the operator's view of the creator/music economy.",
+    "questions": [
+      "You built Sauti Sol's narrative before 'Afrobeats as export' was a thesis. What did you understand about cross-border storytelling then that the global labels are only discovering now?",
+      "When a multinational label hires you for 'East African PR', what are they usually getting wrong about the market that you have to fix first?",
+      "The creator economy is celebrated for reach. From where you sit, where does reach stop translating into a career — and what actually does?",
+      "What's a campaign you're proud of that looked quiet but did the real work — and how do you measure that to a client who only wants numbers?",
+      "If you were advising a young East African publicist starting today, what part of your 2017 playbook would you tell them to throw out?"
+    ],
+    "sources": [
+      {
+        "publisher": "Anyiko PR — Anyiko Owoko",
+        "href": "https://www.anyiko-pr.com/anyiko-owoko/"
+      },
+      {
+        "publisher": "Anyiko PR — About",
+        "href": "https://www.anyiko-pr.com/about/"
+      },
+      {
+        "publisher": "Anyiko Owoko — LinkedIn",
+        "href": "https://ke.linkedin.com/in/anyiko-owoko"
+      }
+    ]
+  },
+  {
+    "slug": "cherie-kihato-savannah-space",
+    "name": "Cherie Kihato",
+    "role": "Founder & Lead Designer, Savannah Space — Nairobi-made furniture & interiors",
+    "franchise": "BRAND WEATHER",
+    "status": "pursuing",
+    "confidence": "interpretive",
+    "angle": "A design founder who turned heritage craft into a brand by treating storytelling — and TikTok — as a distribution channel. Savannah Space (2018) draws on mkeka weavers, soapstone carvers and welders; Kihato won the 2019 Sinapis competition and in 2026 was featured in TikTok's African all-stars coverage for using storytelling to grow a luxury furniture brand internationally. A rare case study where 'made-in-Africa luxury', artisan supply chains and platform distribution collide in one founder — and it's documented in public.",
+    "questions": [
+      "You left a path into the development sector to make furniture. What did you come to believe about craft and economics that policy work couldn't deliver?",
+      "'Made in Africa luxury' is everywhere as a slogan now. What does it actually cost — in time, in supply chain, in margin — to make it real rather than aesthetic?",
+      "You've said storytelling brought real clients. Walk us through one piece of content that converted — what was true in it that a polished ad couldn't be?",
+      "Your suppliers are weavers, carvers, welders. How do you price a piece so the heritage isn't extracted cheaply — and where does that put you against imported 'African-inspired' goods?",
+      "If a Western brand wants to 'collaborate' with African craft, what's the difference between a partnership you'd take and one you'd walk away from?"
+    ],
+    "sources": [
+      {
+        "publisher": "Sinapis — Cherie Kihato",
+        "href": "https://www.sinapis.org/blog/cheriekihato"
+      },
+      {
+        "publisher": "Net Influencer — TikTok spotlights Savannah Space",
+        "href": "https://www.netinfluencer.com/tiktok-spotlights-savannah-space-founder-cherie-kihato-in-african-all-stars-series/"
+      },
+      {
+        "publisher": "Cherie Kihato — LinkedIn",
+        "href": "https://www.linkedin.com/in/cheriekihato/"
+      }
+    ]
+  },
+  {
+    "slug": "mimi-kalinda-africa-communications",
+    "name": "Mimi Kalinda",
+    "role": "Group CEO & co-founder, Africa Communications Media Group — strategist & author",
+    "franchise": "THE BOARDROOM / THE BACKROOM",
+    "status": "pursuing",
+    "confidence": "interpretive",
+    "angle": "The strategist's case that culture is the missing variable in African brand communications — and that 'owning your story' is a measurable discipline, not a slogan. Kalinda (25+ years; LinkedIn Top Voice; IE University adjunct) wrote 'Talking to Africa: Considering Culture in Communications for a Complex Continent'. As generative AI floods every market with culturally flat content and AfCFTA pushes brands across borders, her two-decade argument has become acutely practical: the 'one message, many cultures' failure mode is about to get expensive.",
+    "questions": [
+      "You wrote 'Talking to Africa' in 2017 arguing culture is the missing variable. Nearly a decade on, which of your warnings did the industry ignore — and what did it cost?",
+      "'Own your narrative' has become a slogan. As a practitioner, how do you make narrative ownership measurable for a client who needs a business case, not a manifesto?",
+      "AI now generates culturally flat content at infinite scale. Does that make the cultural strategist more valuable — or does it just raise the floor for everyone? Be specific about where the human work still lives.",
+      "Across Nigeria, Kenya, Ethiopia and South Africa, what's the single most common assumption foreign brands make that quietly sinks their campaigns?",
+      "If a young African communications professional wanted to build authority the way you have, what would you tell them to stop doing on day one?"
+    ],
+    "sources": [
+      {
+        "publisher": "Mimi Kalinda — official site",
+        "href": "https://www.mimikalinda.com/"
+      },
+      {
+        "publisher": "Mimi Kalinda — Wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Mimi_Kalinda"
+      },
+      {
+        "publisher": "Mimi Kalinda — LinkedIn",
+        "href": "https://www.linkedin.com/in/mimi-kalinda-6ba1314a/"
+      }
     ]
   }
 ]
