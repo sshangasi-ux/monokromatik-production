@@ -34,11 +34,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       publishedTime: report.publishedAt,
       tags: report.tags,
+      images: ['https://www.monokromatik.com/opengraph-image'],
     },
     twitter: {
       card: 'summary_large_image',
       title: report.title,
       description: desc,
+      images: ['https://www.monokromatik.com/opengraph-image'],
     },
     alternates: { canonical: url },
   };

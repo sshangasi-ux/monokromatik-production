@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: 'The Cultural-Signal Index | MonoKromatik Intelligence',
   description:
     'A proprietary, authorship-weighted ranking of how brand and cultural work scores on African creative authorship, idea, execution and consequence.',
+  alternates: { canonical: `${SITE}/intelligence/signal-index` },
 };
 
 const AXES: [string, string][] = [

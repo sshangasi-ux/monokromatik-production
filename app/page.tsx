@@ -12,6 +12,12 @@ import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
 import { getPublicCaseStudies } from '../lib/case-studies';
 import { rankIndex } from '../lib/signal-index';
 import CTA from './components/CTA';
+import type { Metadata } from 'next';
+
+// Canonical only — title/description/OG are inherited from the root layout.
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.monokromatik.com' },
+};
 
 export const revalidate = 60;
 
