@@ -25,24 +25,51 @@ const SITE = 'https://www.monokromatik.com';
 
 const MEDIA_DIR = join(process.cwd(), 'public', 'article-media');
 
+// A hero must be photo-shaped, not a logo/icon/ad-banner. Publisher pages often
+// expose a wordmark (e.g. 125×20) or an IAB ad unit (728×90 leaderboard, 300×250
+// MPU) as a scrapeable image; byte-size alone doesn't catch these (a banner can
+// be >8KB). So we gate on real pixel dimensions + aspect ratio after download.
+const MIN_HERO_W = 400;
+const MIN_HERO_H = 225;
+const MAX_HERO_ASPECT = 3.0; // wider than 3:1 → leaderboard/strip
+const MIN_HERO_ASPECT = 0.4; // taller than 1:2.5 → skyscraper/vertical strip
+
+/** True when the decoded image is too small or too banner-shaped to be a hero. */
+export function isUnusableHero(width?: number, height?: number): boolean {
+  const w = width ?? 0;
+  const h = height ?? 0;
+  if (w < MIN_HERO_W || h < MIN_HERO_H) return true;
+  const aspect = h ? w / h : 0;
+  return aspect > MAX_HERO_ASPECT || aspect < MIN_HERO_ASPECT;
+}
+
+type LocalizeResult =
+  | { ok: true; path: string }
+  /** Couldn't fetch/decode — caller may keep the remote URL as a last resort. */
+  | { ok: false; reason: 'fetch' }
+  /** Decoded fine but it's a logo/icon/banner — caller should use the fallback. */
+  | { ok: false; reason: 'unusable' };
+
 /**
  * Self-host a sourced image: download it server-side (no browser Referer, so
- * publisher hotlink protection doesn't apply), normalise to a resized webp and
+ * publisher hotlink protection doesn't apply), reject anything that isn't
+ * photo-shaped (logos/icons/ad banners), then normalise to a resized webp and
  * write it under public/article-media so it's served same-origin from our own
- * domain — no third-party proxy. Returns the public path, or null on failure
- * (caller keeps the remote URL as a last resort).
+ * domain — no third-party proxy.
  */
-async function localizeImage(remoteUrl: string, slug?: string): Promise<string | null> {
-  if (remoteUrl.startsWith('/')) return remoteUrl; // already local
-  if (!/^https?:\/\//i.test(remoteUrl)) return null;
+async function localizeImage(remoteUrl: string, slug?: string): Promise<LocalizeResult> {
+  if (remoteUrl.startsWith('/')) return { ok: true, path: remoteUrl }; // already local
+  if (!/^https?:\/\//i.test(remoteUrl)) return { ok: false, reason: 'fetch' };
   try {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 12000);
     const res = await fetch(remoteUrl, { headers: { 'User-Agent': UA, Accept: 'image/*' }, signal: ctrl.signal });
     clearTimeout(t);
-    if (!res.ok) return null;
+    if (!res.ok) return { ok: false, reason: 'fetch' };
     const input = Buffer.from(await res.arrayBuffer());
-    if (input.length < 1024) return null;
+    if (input.length < 1024) return { ok: false, reason: 'unusable' };
+    const meta = await sharp(input).metadata();
+    if (isUnusableHero(meta.width, meta.height)) return { ok: false, reason: 'unusable' };
     const output = await sharp(input)
       .rotate()
       .resize({ width: 1600, height: 1600, fit: 'inside', withoutEnlargement: true })
@@ -53,9 +80,9 @@ async function localizeImage(remoteUrl: string, slug?: string): Promise<string |
     const filename = `${base}-${hash}.webp`;
     if (!existsSync(MEDIA_DIR)) mkdirSync(MEDIA_DIR, { recursive: true });
     writeFileSync(join(MEDIA_DIR, filename), output);
-    return `/article-media/${filename}`;
+    return { ok: true, path: `/article-media/${filename}` };
   } catch {
-    return null;
+    return { ok: false, reason: 'fetch' };
   }
 }
 
@@ -379,10 +406,23 @@ export async function sourceMedia(args: {
     category: args.category,
   });
   const credit = creditForImage(img.source as ImageSource, args.sourceName, args.sourceLink);
-  // Self-host the chosen image (same-origin webp). On failure keep the remote
-  // URL; the branded fallback in MediaImage still catches anything that breaks.
-  const localUrl = img.source === 'fallback' ? '/fallback-hero.svg' : await localizeImage(img.url, args.slug);
-  const image: MediaAsset = { url: localUrl ?? img.url, ...credit };
+  const fallbackCredit = creditForImage('fallback', args.sourceName, args.sourceLink);
+  // Self-host the chosen image (same-origin webp). A logo/banner/too-small image
+  // is rejected in favour of the branded fallback (never published as a hero);
+  // a download failure keeps the remote URL as a proxied last resort.
+  let image: MediaAsset;
+  if (img.source === 'fallback') {
+    image = { url: '/fallback-hero.svg', ...fallbackCredit };
+  } else {
+    const local = await localizeImage(img.url, args.slug);
+    if (local.ok) {
+      image = { url: local.path, ...credit };
+    } else if (local.reason === 'fetch') {
+      image = { url: img.url, ...credit };
+    } else {
+      image = { url: '/fallback-hero.svg', ...fallbackCredit };
+    }
+  }
 
   const video = await sourceArticleVideo({
     sourceLink: args.sourceLink,
