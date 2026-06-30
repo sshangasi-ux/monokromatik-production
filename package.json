@@ -48,7 +48,8 @@
     "test": "tsx --test lib/*.test.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "search:insights": "tsx scripts/search-insights.ts",
-    "perf:report": "tsx scripts/perf-report.ts"
+    "perf:report": "tsx scripts/perf-report.ts",
+    "review:monthly": "tsx scripts/monthly-review.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
