@@ -1,0 +1,21 @@
+{
+  "categoryWeights": {
+    "culture": 1.1621875,
+    "drinks": 0.964516129032258,
+    "sports": 0.9564516129032258,
+    "entertainment": 0.9403225806451613
+  },
+  "sourceTrust": {
+    "(direct)": 1.21625,
+    "vercel.com": 1.1278820598006645,
+    "google": 1.0470577242524919,
+    "default": 0.932890365448505,
+    "bing": 0.9269102990033222,
+    "(not set)": 0.9194352159468439,
+    "footer": 0.9059800664451827,
+    "teams.public.onecdn.static.microsoft": 0.9029900332225913,
+    "chatgpt.com": 0.9014950166112957
+  },
+  "updatedAt": "2026-06-30T20:39:50.013Z",
+  "runs": 1
+}
