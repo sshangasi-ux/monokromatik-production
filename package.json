@@ -43,7 +43,8 @@
     "a11y:check": "tsx scripts/check-a11y.ts",
     "social:verify": "tsx scripts/verify-ig.ts",
     "linkedin:publish": "tsx scripts/linkedin-publish.ts",
-    "linkedin:verify": "tsx scripts/verify-linkedin.ts"
+    "linkedin:verify": "tsx scripts/verify-linkedin.ts",
+    "health:check": "tsx scripts/check-health.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
