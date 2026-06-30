@@ -120,7 +120,12 @@ export default function SignalIndexPage() {
         <section className="py-14 md:py-16 bg-mono-black text-mono-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-3">MOVERS · SINCE {movers.since}</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">What moved.</h2>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold">What moved.</h2>
+              <Link href="/intelligence/signal-index/movers" className="inline-flex items-center gap-2 text-xs tracking-[0.16em] font-display font-bold text-mono-amber hover:text-mono-amber-bright transition-colors">
+                SHARE THIS UPDATE <ArrowRight size={15} />
+              </Link>
+            </div>
             <p className="mt-4 max-w-2xl text-lg text-mono-soft-white font-body">{briefing}</p>
             <div className="mt-9 grid sm:grid-cols-2 gap-px bg-mono-white/15 border border-mono-white/15">
               <div className="bg-mono-black p-6">

@@ -285,3 +285,64 @@ export async function renderIndexCard(opts: IndexCardOptions): Promise<ImageResp
     { width: 1200, height: 630, fonts: ogFonts().length > 0 ? ogFonts() : undefined }
   );
 }
+
+export interface MoversCardOptions {
+  since: string | null;
+  /** Up to ~5 movers, climbers first then new entries. */
+  movers: { brand: string; score: number; scoreDelta: number; isNew: boolean }[];
+}
+
+/**
+ * The Index "drop" share-card — the recurring-reveal artifact ("the Index just
+ * dropped"): what climbed and what entered since the last snapshot, on one
+ * shareable 1200×630 card. Pairs with the per-brand share-card; this one is for
+ * the *update itself*, the ritual the whole audience shares.
+ */
+export async function renderMoversCard(opts: MoversCardOptions): Promise<ImageResponse> {
+  const { since, movers } = opts;
+  const rows = movers.slice(0, 5);
+
+  return new ImageResponse(
+    (
+      <div style={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'row', backgroundColor: COLORS.black, fontFamily: 'Space Grotesk, system-ui, sans-serif' }}>
+        <div style={{ width: ACCENT_BAR_WIDTH, height: '100%', backgroundColor: COLORS.amber }} />
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '60px 72px', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', fontSize: 20, fontWeight: 700, letterSpacing: '0.22em', color: COLORS.amber, textTransform: 'uppercase' }}>
+              Cultural-Signal Index {since ? `· Movers since ${since}` : ''}
+            </div>
+            <div style={{ display: 'flex', fontFamily: 'DM Serif Display, Georgia, serif', fontSize: 76, fontWeight: 400, color: COLORS.white, lineHeight: 1.02, marginTop: 16 }}>
+              What moved.
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {rows.length === 0 ? (
+              <div style={{ display: 'flex', fontSize: 30, color: MUTE }}>A new class is being scored.</div>
+            ) : rows.map((m) => (
+              <div key={m.brand} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: 16, paddingBottom: 16 }}>
+                <span style={{ display: 'flex', fontSize: 34, fontWeight: 700, color: COLORS.white, maxWidth: 720, overflow: 'hidden' }}>
+                  {m.brand.length > 34 ? `${m.brand.slice(0, 33)}…` : m.brand}
+                </span>
+                {m.isNew ? (
+                  <span style={{ display: 'flex', fontSize: 26, fontWeight: 700, letterSpacing: '0.1em', color: COLORS.amber }}>NEW · {m.score}</span>
+                ) : (
+                  <span style={{ display: 'flex', alignItems: 'center', fontSize: 28, fontWeight: 700, color: GREEN }}>
+                    <div style={{ width: 0, height: 0, borderLeft: '9px solid transparent', borderRight: '9px solid transparent', borderBottom: `13px solid ${GREEN}`, marginRight: 12 }} />
+                    {m.scoreDelta} → {m.score}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', fontWeight: 700, fontSize: 28, letterSpacing: '0.04em', color: COLORS.white }}>
+            <span>MONO</span>
+            <span style={{ color: COLORS.amber }}>KROMATIK</span>
+          </div>
+        </div>
+      </div>
+    ),
+    { width: 1200, height: 630, fonts: ogFonts().length > 0 ? ogFonts() : undefined }
+  );
+}
