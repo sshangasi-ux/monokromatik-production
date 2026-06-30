@@ -1,0 +1,65 @@
+name: Performance Loop
+
+# Weekly GA4 performance refresh — scores each article from real Data API
+# metrics and folds the result into the committed learning ledger
+# (data/learning-ledger.json) that biases the content curator toward winning
+# categories/sources. Lands the updated ledger via a review PR. No-op-safe
+# until GA4 is configured (GA4_PROPERTY_ID + GA4_SERVICE_ACCOUNT_JSON).
+
+on:
+  schedule:
+    - cron: '40 4 * * 1' # Monday 04:40 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: performance-loop
+  cancel-in-progress: false
+
+jobs:
+  perf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Score performance + fold into the learning ledger
+        env:
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: npm run perf:report
+
+      - name: Open a PR with the refreshed ledger
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/learning-ledger.json)" ]; then
+            echo "Learning ledger unchanged (GA4 not configured, or no new signal)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          BRANCH="perf/ledger-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/learning-ledger.json
+          git commit -m "chore(learning): fold GA4 performance into the curator ledger"
+          git push origin "$BRANCH"
+          BODY="Weekly GA4 performance refresh — folded real article performance into the learning ledger that biases the content curator toward winning categories/sources. The per-article scoring is in the run summary. Merging applies the updated weights to the next daily run."
+          gh pr create --base main --head "$BRANCH" --title "Learning ledger — performance refresh $(date -u +%Y-%m-%d)" --body "$BODY" || true
