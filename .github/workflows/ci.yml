@@ -40,6 +40,12 @@ jobs:
       - name: Editorial firewall check
         run: npm run firewall:check
 
+      - name: Validate content data
+        run: npm run validate:data
+
+      - name: Unit tests
+        run: npm test
+
       - name: Build
         env:
           NODE_ENV: production
