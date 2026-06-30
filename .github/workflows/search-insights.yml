@@ -1,0 +1,80 @@
+name: Search Insights
+
+# Weekly Google Search Console pull — surfaces organic query data and, most
+# usefully, page-2 opportunities (queries ranking 8–20 where a small on-page lift
+# converts impressions to clicks). Posts the report to the run summary and keeps
+# a single "Search insights" issue updated. No-ops cleanly until the Google
+# service account is configured (GA4_SERVICE_ACCOUNT_JSON + GSC access).
+
+on:
+  schedule:
+    - cron: '20 5 * * 1' # Monday 05:20 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: search-insights
+  cancel-in-progress: false
+
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Pull Search Console insights
+        env:
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+        run: npm run search:insights
+
+      - name: Update the Search insights issue
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          CONFIGURED=$(python3 -c "import json;print(json.load(open('output/search-insights.json')).get('configured', False))")
+          if [ "$CONFIGURED" != "True" ]; then
+            echo "Search Console not configured — set GA4_SERVICE_ACCOUNT_JSON + grant GSC access." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          BODY=$(python3 -c "
+          import json
+          d=json.load(open('output/search-insights.json'))
+          w=d['window']
+          print(f\"Organic search for {d['site']} · {w['start']} → {w['end']}. Full report in the workflow run summary.\n\")
+          ops=d.get('opportunities',[])
+          if ops:
+              print('### 🎯 Page-2 opportunities (rank 8–20 — a lift wins clicks)')
+              print('| query | impressions | CTR | position |')
+              print('|---|---|---|---|')
+              for r in ops[:15]:
+                  print(f\"| {r['key'][:60]} | {r['impressions']} | {r['ctr']*100:.1f}% | {r['position']:.1f} |\")
+          else:
+              print('_No page-2 opportunities this window._')
+          print('\n_Auto-generated weekly by .github/workflows/search-insights.yml._')
+          ")
+
+          TITLE="🔍 Search insights — page-2 opportunities"
+          EXISTING=$(gh issue list --state open --search "Search insights in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --title "$TITLE" --body "$BODY"
+            echo "Updated issue #$EXISTING" >> "$GITHUB_STEP_SUMMARY"
+          else
+            URL=$(gh issue create --title "$TITLE" --body "$BODY" --label "seo" 2>/dev/null || gh issue create --title "$TITLE" --body "$BODY")
+            echo "Opened $URL" >> "$GITHUB_STEP_SUMMARY"
+          fi
