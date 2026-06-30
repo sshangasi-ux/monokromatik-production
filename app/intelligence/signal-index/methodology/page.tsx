@@ -79,7 +79,7 @@ export default function MethodologyPage() {
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 space-y-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 space-y-16">
         <section>
           <div className="flex items-center gap-3 mb-5">
             <Scale className="text-mono-amber" size={22} />
@@ -185,7 +185,7 @@ export default function MethodologyPage() {
             <Link href="/intelligence/license" className="inline-flex items-center gap-2 border border-mono-gray/40 text-mono-charcoal px-7 py-4 font-display font-bold hover:border-mono-amber transition-colors">LICENSE THE INDEX <ArrowRight size={17} /></Link>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

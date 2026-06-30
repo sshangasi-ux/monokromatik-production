@@ -98,7 +98,7 @@ export default async function BrandIndexPage({ params }: PageProps) {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <h2 className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-6">
           DIMENSION AVERAGES{works.length > 1 ? ` (${works.length} WORKS)` : ''}
         </h2>
@@ -180,7 +180,7 @@ export default async function BrandIndexPage({ params }: PageProps) {
             BACK TO THE INDEX <ArrowRight size={16} />
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

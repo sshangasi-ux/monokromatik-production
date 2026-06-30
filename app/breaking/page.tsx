@@ -85,7 +85,7 @@ export default function BreakingPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 grid lg:grid-cols-[minmax(0,1fr)_300px] gap-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 grid lg:grid-cols-[minmax(0,1fr)_300px] gap-14">
         <div className="min-w-0">
           {breaks.length === 0 ? (
             <div className="border border-mono-gray/25 bg-mono-white p-10 text-center">
@@ -125,7 +125,7 @@ export default function BreakingPage() {
             <span className="mt-4 inline-flex items-center gap-2 text-mono-amber-strong font-display font-bold text-sm">READ SIGNAL <ArrowRight size={15} /></span>
           </Link>
         </aside>
-      </main>
+      </div>
     </div>
   );
 }

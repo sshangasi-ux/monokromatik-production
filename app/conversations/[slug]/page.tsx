@@ -50,7 +50,7 @@ export default async function ConversationPage({ params }: PageProps) {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <h2 className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">WHY THIS, WHY NOW</h2>
         <p className="font-feature text-xl md:text-2xl text-mono-black leading-relaxed">{c.angle}</p>
 
@@ -96,7 +96,7 @@ export default async function ConversationPage({ params }: PageProps) {
             BACK TO CONVERSATIONS <ArrowRight size={16} />
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

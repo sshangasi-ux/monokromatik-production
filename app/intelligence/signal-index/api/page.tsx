@@ -97,7 +97,7 @@ export default function IndexApiPage() {
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 space-y-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 space-y-16">
         <section>
           <div className="flex items-center gap-3 mb-5">
             <Code2 className="text-mono-amber" size={22} />
@@ -173,7 +173,7 @@ export default function IndexApiPage() {
             <Link href="/intelligence/license" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">LICENSE THE INDEX <ArrowRight size={17} /></Link>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }
