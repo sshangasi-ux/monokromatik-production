@@ -95,6 +95,12 @@ jobs:
           # would discard the uncommitted change.
           cp data/breaking.json /tmp/wire-new.json
 
+          # Clean the working tree before switching to the Wire branch. `npm install`
+          # dirties package-lock.json, and the new feed is already saved to /tmp, so
+          # discarding tracked changes here keeps `git checkout -B` from aborting
+          # ("local changes would be overwritten by checkout").
+          git checkout -- . 2>/dev/null || true
+
           if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
             git fetch origin "$BRANCH" -q
             git show "origin/$BRANCH:data/breaking.json" > /tmp/wire-existing.json 2>/dev/null || echo '{"breaks":[]}' > /tmp/wire-existing.json
