@@ -15,8 +15,10 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-const OUTPUT_DIR = join(process.cwd(), 'output');
-const LEDGER_PATH = join(OUTPUT_DIR, 'learning-ledger.json');
+// The ledger lives in data/ (committed) — NOT output/ (gitignored) — so the
+// signals persist across CI runs and the live daily curator actually reads them.
+const LEDGER_DIR = join(process.cwd(), 'data');
+const LEDGER_PATH = join(LEDGER_DIR, 'learning-ledger.json');
 
 const ALPHA = 0.4; // EWMA weight on the newest run (≈2–3 runs of memory)
 const MIN = 0.6;
@@ -123,7 +125,7 @@ export function updateLearningLedger(report: PerfReportLike, prior: LearningSign
       runs: prior.runs + 1,
     };
 
-    if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
+    if (!existsSync(LEDGER_DIR)) mkdirSync(LEDGER_DIR, { recursive: true });
     writeFileSync(LEDGER_PATH, JSON.stringify(next, null, 2));
     return next;
   } catch {

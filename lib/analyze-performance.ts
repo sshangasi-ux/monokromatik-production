@@ -5,8 +5,10 @@
 
 import { writeFileSync, existsSync, readFileSync } from 'fs';
 import { join } from 'path';
+import { getGoogleAccessToken } from './google-auth';
 
 const REPORT_PATH = join(process.cwd(), 'output', 'performance-report.json');
+const ARTICLES_PATH = join(process.cwd(), 'data', 'articles.json');
 
 interface PerformanceReport {
   generatedAt: string;
@@ -23,48 +25,54 @@ interface PerformanceReport {
 }
 
 const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID;
-const GA4_API_KEY = process.env.GA4_SERVICE_ACCOUNT_JSON; // base64-encoded service account
+const GA4_SCOPE = 'https://www.googleapis.com/auth/analytics.readonly';
 
-/**
- * Decode + validate the base64 service account JSON. GA4_SERVICE_ACCOUNT_JSON is
- * stored base64 (single-line secret), so it must be decoded *before* JSON.parse —
- * the credential path is wired correctly here so enabling GA4 is drop-in.
- * Returns the parsed credentials, or null if absent/malformed.
- */
-function decodeGA4Credentials(): { client_email?: string; private_key?: string } | null {
-  if (!GA4_API_KEY) return null;
-  try {
-    const raw = GA4_API_KEY.trim().startsWith('{')
-      ? GA4_API_KEY // already raw JSON
-      : Buffer.from(GA4_API_KEY, 'base64').toString('utf-8');
-    const creds = JSON.parse(raw);
-    if (!creds.client_email || !creds.private_key) {
-      console.log('   ⚠️  GA4 credentials missing client_email/private_key — ignoring');
-      return null;
-    }
-    return creds;
-  } catch {
-    console.log('   ⚠️  GA4_SERVICE_ACCOUNT_JSON is not valid base64 JSON — ignoring');
-    return null;
+interface GA4Row {
+  dimensionValues?: { value?: string }[];
+  metricValues?: { value?: string }[];
+}
+
+/** One GA4 Data API runReport call (REST). Returns rows, or [] on failure. */
+async function runReport(token: string, body: unknown): Promise<GA4Row[]> {
+  const res = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${GA4_PROPERTY_ID}:runReport`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!res.ok) {
+    console.log(`   ⚠️  GA4 runReport failed (${res.status})`);
+    return [];
   }
+  const json = (await res.json()) as { rows?: GA4Row[] };
+  return json.rows || [];
 }
 
 /**
- * Fetch GA4 data via the Reporting API.
- * Returns null if not configured — caller handles fallback.
+ * Pull per-article page metrics + traffic sources from the GA4 Data API via the
+ * shared service-account auth (REST, no extra deps). Returns null when GA4 isn't
+ * configured (no property id / credential) so the caller falls back gracefully.
  */
-async function fetchGA4(days: number): Promise<any | null> {
-  const credentials = decodeGA4Credentials();
-  if (!GA4_PROPERTY_ID || !credentials) return null;
+async function fetchGA4(days: number): Promise<{ pages: GA4Row[]; sources: GA4Row[] } | null> {
+  if (!GA4_PROPERTY_ID) return null;
+  const token = await getGoogleAccessToken(GA4_SCOPE);
+  if (!token) return null;
 
-  // Credentials are decoded + validated above. The remaining step is the Data
-  // API client, which needs an extra dependency:
-  //   const { BetaAnalyticsDataClient } = require('@google-analytics/data');
-  //   const client = new BetaAnalyticsDataClient({ credentials });
-  //   const [response] = await client.runReport({ property: `properties/${GA4_PROPERTY_ID}`, ... });
-  void days;
-  console.log('   ℹ️  GA4 credentials valid — install @google-analytics/data to enable reporting');
-  return null;
+  const dateRanges = [{ startDate: `${days}daysAgo`, endDate: 'today' }];
+  const pages = await runReport(token, {
+    dateRanges,
+    dimensions: [{ name: 'pagePath' }],
+    metrics: [{ name: 'screenPageViews' }, { name: 'userEngagementDuration' }],
+    dimensionFilter: { filter: { fieldName: 'pagePath', stringFilter: { matchType: 'BEGINS_WITH', value: '/article/' } } },
+    limit: 1000,
+  });
+  const sources = await runReport(token, {
+    dateRanges,
+    dimensions: [{ name: 'sessionSource' }],
+    metrics: [{ name: 'screenPageViews' }],
+    limit: 25,
+  });
+  return { pages, sources };
 }
 
 /**
@@ -107,17 +115,48 @@ export async function generatePerformanceReport(windowDays = 7): Promise<Perform
     return report;
   }
 
-  // When GA4 wired: parse rows, score each article, build report
-  const report: PerformanceReport = {
-    generatedAt: new Date().toISOString(),
-    windowDays,
-    articles: [], // populated from ga4
-    topCategories: [],
-    topSources: [],
-  };
+  // slug → category from the article catalogue (GA4 only knows the URL).
+  const categoryBySlug = new Map<string, string>();
+  try {
+    const arts = JSON.parse(readFileSync(ARTICLES_PATH, 'utf-8')) as { slug: string; category?: string }[];
+    for (const a of arts) categoryBySlug.set(a.slug, (a.category || '').trim());
+  } catch {
+    /* no catalogue — categories simply stay empty */
+  }
 
+  const articles = ga4.pages
+    .map((row) => {
+      const path = (row.dimensionValues?.[0]?.value || '').split('?')[0];
+      const slug = path.replace(/^\/article\//, '').replace(/\/$/, '');
+      const pageviews = Number(row.metricValues?.[0]?.value || 0);
+      const engagementTotal = Number(row.metricValues?.[1]?.value || 0);
+      const avgEngagementSec = pageviews ? Math.round(engagementTotal / pageviews) : 0;
+      const { score, verdict } = scoreArticle(pageviews, avgEngagementSec);
+      return { slug, pageviews, avgEngagementSec, score, verdict };
+    })
+    .filter((a) => a.slug)
+    .sort((a, b) => b.pageviews - a.pageviews);
+
+  const catTotals = new Map<string, number>();
+  for (const a of articles) {
+    const cat = categoryBySlug.get(a.slug);
+    if (cat) catTotals.set(cat, (catTotals.get(cat) || 0) + a.pageviews);
+  }
+  const topCategories = [...catTotals.entries()]
+    .map(([category, pageviews]) => ({ category, pageviews }))
+    .sort((a, b) => b.pageviews - a.pageviews)
+    .slice(0, 10);
+
+  const topSources = ga4.sources
+    .map((row) => ({ source: row.dimensionValues?.[0]?.value || '(unknown)', pageviews: Number(row.metricValues?.[0]?.value || 0) }))
+    .sort((a, b) => b.pageviews - a.pageviews)
+    .slice(0, 10);
+
+  const report: PerformanceReport = { generatedAt: new Date().toISOString(), windowDays, articles, topCategories, topSources };
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
-  console.log(`   📊 Performance report saved: ${REPORT_PATH}`);
+  const stars = articles.filter((a) => a.verdict === 'star').length;
+  const kills = articles.filter((a) => a.verdict === 'kill').length;
+  console.log(`   📊 Performance report: ${articles.length} articles scored (${stars} star, ${kills} kill) → ${REPORT_PATH}`);
   return report;
 }
 
