@@ -101,14 +101,19 @@ jobs:
           # ("local changes would be overwritten by checkout").
           git checkout -- . 2>/dev/null || true
 
+          # Preserve any breaks still queued on the existing Wire branch, THEN
+          # rebuild the branch on top of CURRENT main. Basing the Wire branch on
+          # main (not on its own diverged history) makes it always main + 1 commit
+          # — so it's always cleanly mergeable, eliminating the recurring
+          # breaking.json conflict that used to leave the Wire PR stuck.
+          git fetch origin main -q
           if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
             git fetch origin "$BRANCH" -q
             git show "origin/$BRANCH:data/breaking.json" > /tmp/wire-existing.json 2>/dev/null || echo '{"breaks":[]}' > /tmp/wire-existing.json
-            git checkout -B "$BRANCH" "origin/$BRANCH" -q
           else
             echo '{"breaks":[]}' > /tmp/wire-existing.json
-            git checkout -B "$BRANCH" -q
           fi
+          git checkout -B "$BRANCH" origin/main -q
 
           # Union (this run's breaks ∪ the branch's unmerged breaks), dedup by link,
           # newest-first, cap 60 — so nothing already staged is lost.
@@ -124,7 +129,13 @@ jobs:
           '
 
           git add data/breaking.json
-          git commit -q -m "feat(wire): publish confirmed break(s) to The Wire" -m "AI-confirmed (importance >= 4) from trusted feeds and already alerted. Accumulated on the stable Wire branch. Merge to surface on /breaking + the homepage; close to discard."
+          # Rebased on main, the unioned feed can already equal main's — skip an
+          # empty commit (would otherwise fail the run).
+          if git diff --cached --quiet; then
+            echo "Wire already current with main — nothing new to publish." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -q -m "feat(wire): publish confirmed break(s) to The Wire" -m "AI-confirmed (importance >= 4) from trusted feeds. Rebased on main each run so the Wire PR is always cleanly mergeable. Merge to surface on /breaking + the homepage; close to discard."
           git push -f origin "$BRANCH"
 
           STAMP=$(date -u +"%Y-%m-%d %H:%MZ")
