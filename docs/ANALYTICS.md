@@ -20,6 +20,9 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 | `newsletter_signup` | `NewsletterSignup` (on success) | `source` | Primary conversion — newsletter is the growth metric |
 | `article_view` | `ArticleClient` (on mount) | `slug`, `category` | Per-article + per-category readership beyond raw page_view |
 | `source_click` | `ArticleClient` credited-source link | `slug`, `source` | Outbound to original publisher — credibility/attribution signal |
+| `case_study_view` | `CaseStudyFeature` via `TrackView` | `slug`, `brand` | Per-decode readership — the moat content |
+| `index_view` | Signal Index page via `TrackView` | — | Usage of the Cultural-Signal Index (the wedge) |
+| `cta_click` | `CTA` component (every CTA) | `href`, `variant`, `external` | Conversion funnel — which CTAs drive action |
 
 Add more by importing `track` in a client component: `track('event_name', { ...params })`. Keep it a no-op-safe wrapper (it already swallows errors).
 
@@ -41,6 +44,34 @@ In GA4 → Admin → **Events** (or Key events), mark these as **key events (con
 - `source` (event param) — segment newsletter signups by placement.
 
 ## Next instrumentation candidates
-- CTA clicks on Issue/Signal/Intelligence cards (`cta_click` with destination).
+- ~~CTA clicks~~ ✅ shipped (`cta_click` on every `CTA`).
 - "Read the full feature" / "See all" navigation intents.
 - Once monetization lands: `report_view`, `report_download`, `checkout_start`, `purchase` (GA4 ecommerce).
+
+---
+
+## Programmatic data — the backend loop (one credential powers it all)
+
+The on-site instrumentation above feeds GA4. To pull that data **back into the
+product**, the repo has two integrations that both authenticate with **one shared
+Google service account** (zero extra deps — `lib/google-auth.ts` signs a JWT with
+Node `crypto`):
+
+| Integration | File | What it does | Run |
+|---|---|---|---|
+| **GA4 performance** | `lib/analyze-performance.ts` | Scores articles by views + engagement; the content engine doubles down on winners, prunes losers | in `scripts/run-pipeline.ts` |
+| **Search Console** | `lib/search-console.ts` → `scripts/search-insights.ts` | Top queries/pages + **page-2 opportunities** (rank 8–20) to convert impressions to clicks | weekly `search-insights.yml` (Mon) |
+
+Both **no-op gracefully** until the credential is set, then light up automatically.
+
+### Service-account setup (the single switch)
+1. **Google Cloud Console** → create (or pick) a project → **IAM & Admin → Service Accounts → Create service account** (e.g. `monokromatik-analytics`). No roles needed at the project level.
+2. On that service account → **Keys → Add key → Create new key → JSON** → download.
+3. **APIs & Services → Enable APIs**: enable **Google Analytics Data API** and **Google Search Console API** for the project.
+4. **Grant it data access** (separate from IAM):
+   - **GA4:** Admin → Property → **Property access management** → add the service account's `client_email` as **Viewer**. (Also note the **GA4 *property* ID** — the numeric one under Admin → Property details — set it as the `GA4_PROPERTY_ID` repo variable.)
+   - **Search Console:** open the property → **Settings → Users and permissions → Add user** → the `client_email` → **Restricted** (read) is enough.
+5. **Store the key:** base64-encode the JSON (`base64 -i key.json | pbcopy`) and set it as the repo **secret `GA4_SERVICE_ACCOUNT_JSON`**. (Optional repo **variable** `GSC_SITE_URL` if the property is a domain property — `sc-domain:monokromatik.com`; default is `https://www.monokromatik.com/`.)
+6. Verify: Actions → **Search Insights** → Run workflow. It should report real query data instead of "not configured."
+
+> Note: `lib/analyze-performance.ts` currently validates the credential but its GA4 reporting call is a stub — finishing it means either adding `@google-analytics/data` or porting it onto `lib/google-auth.ts` + the GA Data REST API (same pattern as `search-console.ts`).

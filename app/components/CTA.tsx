@@ -1,9 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { track } from '../../lib/analytics';
 
 // One consistent, accessible call-to-action. Variants cover the three patterns
 // scattered across the site (solid button / outline button / text link). Every
 // variant ships a visible focus-visible ring — fixing the keyboard-a11y gap.
+// Client component so every CTA emits a `cta_click` GA event (conversion funnel).
 
 type Variant = 'primary' | 'outline' | 'text' | 'amber';
 
@@ -38,10 +42,11 @@ export default function CTA({
     </>
   );
   const cls = `${BASE} ${VARIANTS[variant]} ${className}`;
+  const onClick = () => track('cta_click', { href, variant, external });
 
   return external ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={cls} onClick={onClick}>{inner}</a>
   ) : (
-    <Link href={href} className={cls}>{inner}</Link>
+    <Link href={href} className={cls} onClick={onClick}>{inner}</Link>
   );
 }

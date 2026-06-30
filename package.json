@@ -46,7 +46,8 @@
     "linkedin:verify": "tsx scripts/verify-linkedin.ts",
     "health:check": "tsx scripts/check-health.ts",
     "test": "tsx --test lib/*.test.ts",
-    "validate:data": "tsx scripts/validate-data.ts"
+    "validate:data": "tsx scripts/validate-data.ts",
+    "search:insights": "tsx scripts/search-insights.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, Layers3, Trophy, ShieldCheck } from 'lucide-react';
 import Navigation from '../../components/Navigation';
+import TrackView from '../../components/TrackView';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
@@ -87,6 +88,7 @@ export default function SignalIndexPage() {
   return (
     <div className="min-h-screen bg-mono-paper">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <TrackView event="index_view" />
       <Navigation />
 
       <section className="bg-mono-black text-mono-white py-20 md:py-28">

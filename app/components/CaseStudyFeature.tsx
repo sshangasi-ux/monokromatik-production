@@ -5,6 +5,7 @@ import { FeatureSection, PullQuote } from './IssueFeature';
 import { AttributedImage, AttributedImagePair, type AttributedImageAsset } from './AttributedMedia';
 import { SignalStrength } from './dataviz/Charts';
 import ReadingProgress from './ReadingProgress';
+import TrackView from './TrackView';
 import SignalScore from './SignalScore';
 import { isLocked, type CaseStudy } from '../../lib/case-studies';
 import { isMember } from '../../lib/entitlements';
@@ -52,6 +53,7 @@ export default async function CaseStudyFeature({
   return (
     <div className="min-h-screen bg-mono-paper">
       <ReadingProgress />
+      <TrackView event="case_study_view" params={{ slug: c.slug, brand: c.brand }} />
       <Navigation />
       <header className="bg-mono-black text-mono-white py-16 md:py-24 border-b border-mono-white/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
