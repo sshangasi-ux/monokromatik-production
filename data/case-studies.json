@@ -106,7 +106,15 @@
         "href": "https://blueprint.ng/ntda-to-host-naija-flavour-destination-december-2025-in-abuja/"
       }
     ],
-    "media": [],
+    "media": [
+      {
+        "src": "/article-media/cs-nationalising-the-vibe-detty-december-state-brand-policy-d48f7b5c.webp",
+        "alt": "Nigeria — 'Detty December' / Naija Season — Nationalising the Vibe: Nigeria Turns 'Detty December' Into State Brand Policy",
+        "credit": "Via The Conversation",
+        "sourceLabel": "The Conversation",
+        "sourceHref": "https://theconversation.com/detty-december-started-as-a-nigerian-cultural-moment-now-its-spreading-across-the-continent-and-minting-money-258949"
+      }
+    ],
     "related": {
       "label": "See the live Cultural-Signal Index",
       "href": "/intelligence/signal-index"
@@ -1555,7 +1563,15 @@
         "use": "Reporting on the 2025 Met Gala look (Ozwald Boateng)."
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-ayra-starr-global-brand-ambassador-a73ad2e8.webp",
+        "alt": "Ayra Starr (× Maybelline / New Balance / Pepsi) — Ayra Starr, Inc.: When the African Pop Star Becomes the Global Brand",
+        "credit": "Photo: Pexels",
+        "sourceLabel": "Business of Fashion",
+        "sourceHref": "https://www.pexels.com"
+      }
+    ]
   },
   {
     "slug": "flutterwave-creative-economy-capital",
