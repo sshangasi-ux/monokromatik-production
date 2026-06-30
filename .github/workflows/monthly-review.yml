@@ -1,0 +1,75 @@
+name: Monthly Strategy Review
+
+# Automated, internal-telemetry version of the deep strategy review
+# (docs/STRATEGY-REVIEW.md). On the 1st of each month it measures the site
+# against the strategic bars — depth-per-piece, Index scale, proof, GA4
+# performance, GSC opportunities — and writes an honest assessment + a short
+# prioritised action list to docs/reviews/YYYY-MM.md, landed as a review PR.
+#
+# Grounds only on what the repo + analytics know. No-op-safe: emits the full
+# data section even when ANTHROPIC_API_KEY / GA4 / GSC aren't configured.
+
+on:
+  schedule:
+    - cron: '20 6 1 * *' # 1st of the month, 06:20 UTC (08:20 SAST)
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Month to review (YYYY-MM). Defaults to the current month.'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Generate the monthly review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+        run: npm run review:monthly -- --month "${{ github.event.inputs.month }}"
+
+      - name: Open a PR with the review
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain docs/reviews)" ]; then
+            echo "No review file changes." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          MONTH="$(date -u +%Y-%m)"
+          BRANCH="review/monthly-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add docs/reviews
+          git commit -m "docs(review): monthly strategy review — ${MONTH}"
+          git push origin "$BRANCH"
+          BODY="Automated monthly strategy review — measures the site against the strategic bars (depth, Index scale, proof, performance, search) and proposes the next month's priorities. The full assessment is in the run summary and the committed file. Internal-telemetry only; the deep competitive web-research pass stays a periodic manual exercise."
+          gh pr create --base main --head "$BRANCH" --title "Monthly strategy review — ${MONTH}" --body "$BODY" || true
