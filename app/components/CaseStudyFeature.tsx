@@ -85,7 +85,7 @@ export default async function CaseStudyFeature({
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 grid lg:grid-cols-[minmax(0,760px)_300px] gap-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 grid lg:grid-cols-[minmax(0,760px)_300px] gap-14">
         <article className="min-w-0">
           {/* The decode matrix — the four-axis editorial read. */}
           <FeatureSection title="The Monokromatik decode">
@@ -229,7 +229,7 @@ export default async function CaseStudyFeature({
             </p>
           </Link>
         </aside>
-      </main>
+      </div>
 
       {next && (
         <section className="bg-mono-black text-mono-white py-16">

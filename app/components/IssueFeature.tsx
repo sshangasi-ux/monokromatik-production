@@ -63,7 +63,7 @@ export default function IssueFeature({ franchise, title, standfirst, readingTime
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 grid lg:grid-cols-[minmax(0,760px)_300px] gap-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 grid lg:grid-cols-[minmax(0,760px)_300px] gap-14">
         <article className="min-w-0">{children}</article>
         <aside className="lg:sticky lg:top-28 h-fit space-y-8">
           <div className="bg-mono-soft-white border-l-4 border-mono-amber p-6">
@@ -89,7 +89,7 @@ export default function IssueFeature({ franchise, title, standfirst, readingTime
             <p className="text-sm font-body text-mono-charcoal mt-2">How Monokromatik converts sources into intelligence.</p>
           </Link>
         </aside>
-      </main>
+      </div>
 
       {next && (
         <section className="bg-mono-black text-mono-white py-16">

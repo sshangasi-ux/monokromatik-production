@@ -107,7 +107,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
-        {children}
+        {/* Primary landmark so all page content sits inside a <main> (a11y: axe
+            "region"). Each page renders its own fixed <nav> inside; utility
+            components below stay as siblings. */}
+        <main id="main-content" className="flex-1 flex flex-col">{children}</main>
         <RegistrationGate />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
       </body>

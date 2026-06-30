@@ -54,7 +54,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         {live && r.sections && r.sections.length > 0 ? (
           // Published report: render the body. If it's a locked tier, show only
           // the opening section as a teaser behind the gate.
@@ -132,7 +132,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }
