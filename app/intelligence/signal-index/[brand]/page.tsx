@@ -9,6 +9,7 @@ import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/s
 import { getMovement, getBrandHistory } from '../../../../lib/index-history';
 import Sparkline from '../Sparkline';
 import BadgeEmbed from '../BadgeEmbed';
+import ShareIndexCard from './ShareIndexCard';
 import FollowButton from '../../../components/FollowButton';
 
 interface PageProps {
@@ -27,9 +28,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { brand } = await params;
   const entry = rankIndex(getPublicCaseStudies()).find((e) => brandSlug(e.brand) === brand);
   if (!entry) return { title: 'Brand not found | MonoKromatik' };
+  const title = `${entry.brand} — Cultural-Signal Index | MonoKromatik`;
+  const description = `${entry.brand} scores ${entry.score}/100 on the MonoKromatik Cultural-Signal Index (rank #${entry.rank}).`;
+  // og:image is supplied by the co-located opengraph-image route (the share-card).
   return {
-    title: `${entry.brand} — Cultural-Signal Index | MonoKromatik`,
-    description: `${entry.brand} scores ${entry.score}/100 on the MonoKromatik Cultural-Signal Index (rank #${entry.rank}).`,
+    title,
+    description,
+    openGraph: { title, description, type: 'profile', url: `https://www.monokromatik.com/intelligence/signal-index/${brand}` },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -94,6 +100,16 @@ export default async function BrandIndexPage({ params }: PageProps) {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <FollowButton slug={brand} variant="chip" />
             <span className="text-[11px] font-body text-mono-gray max-w-xs">Follow to track this brand&rsquo;s movement on the Index — alerts surface here when the score changes.</span>
+          </div>
+          <div className="mt-7">
+            <ShareIndexCard
+              slug={brand}
+              brand={entry.brand}
+              score={entry.score}
+              rank={entry.rank!}
+              total={ranked.length}
+              scoreDelta={movement?.scoreDelta ?? null}
+            />
           </div>
         </div>
       </header>
