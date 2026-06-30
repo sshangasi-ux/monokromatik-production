@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-06-26T21:01:56.901Z",
+  "updatedAt": "2026-06-30T14:32:51.852Z",
   "breaks": [
+    {
+      "title": "Gyakie’s ‘After Midnight’ album earns SAMA nomination",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/gyakies-after-midnight-album-earns-sama-nomination/",
+      "pubDate": "Tue, 30 Jun 2026 12:37:55 +0000",
+      "importance": 4,
+      "why": "Ghanaian artist Gyakie earns SAMA nomination for 'After Midnight' album",
+      "detectedAt": "2026-06-30T14:32:51.852Z"
+    },
     {
       "title": "Zlatan announces free concert in 2026",
       "source": "NotJustOk",
@@ -12,7 +22,7 @@
       "detectedAt": "2026-06-26T21:01:56.901Z"
     },
     {
-      "title": "Pharrel Brought Virgina Beach To Paris For His Latest Louis Vuitton Collection ",
+      "title": "Pharrell Brought Virginia Beach To Paris For His Latest Louis Vuitton Collection",
       "source": "Essence",
       "category": "culture",
       "link": "https://www.essence.com/fashion/pharrel-beach-paris-latest-louis-vuitton-collection/",
@@ -32,7 +42,7 @@
       "detectedAt": "2026-06-26T17:13:22.419Z"
     },
     {
-      "title": "World Cup 2026: Pepe Targets More Goals After Helping Côte d’Ivoire  Beat Curaçao",
+      "title": "World Cup 2026: Pepe Targets More Goals After Helping Côte d’Ivoire Beat Curaçao",
       "source": "Complete Sports",
       "category": "sports",
       "link": "https://www.completesports.com/world-cup-2026-pepe-targets-more-goals-after-helping-cote-divoire-beat-curacao/",
