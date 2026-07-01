@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-07-01T10:10:17.622Z",
+  "updatedAt": "2026-07-01T12:46:49.453Z",
   "breaks": [
+    {
+      "title": "The Kingdom Expands! Davido Announces New Album Oriadé",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/07/music-davido-oriade-new-album-july-2026/",
+      "pubDate": "Wed, 01 Jul 2026 11:25:13 +0000",
+      "importance": 4,
+      "why": "Davido announces new album Oriadé; major Afrobeats artist album release",
+      "detectedAt": "2026-07-01T12:46:49.453Z"
+    },
+    {
+      "title": "Emenalo Leaves Role As Chief Football Executive Of Saudi Pro League",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/emenalo-leaves-role-as-chief-football-executive-of-saudi-pro-league/",
+      "pubDate": "Wed, 01 Jul 2026 10:55:46 +0000",
+      "importance": 4,
+      "why": "Emenalo exits Saudi Pro League chief role; major African sports executive departure from major league",
+      "detectedAt": "2026-07-01T12:46:49.453Z"
+    },
     {
       "title": "Yemi Alade & Bien Deliver a Cross-Continental Love Anthem with “Don’t Be Shy” | Watch the Official Video",
       "source": "BellaNaija",
