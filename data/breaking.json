@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-07-03T14:29:57.837Z",
+  "updatedAt": "2026-07-03T16:44:12.709Z",
   "breaks": [
+    {
+      "title": "OFFICIAL: Ake Joins Turkish Giants Fenerbahce",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/official-ake-joins-turkish-giants-fenerbahce/",
+      "pubDate": "Fri, 03 Jul 2026 15:54:43 +0000",
+      "importance": 4,
+      "why": "Ake (Nathan Aké, Dutch-Nigerian footballer) official transfer to Fenerbahçe — major sports signing",
+      "detectedAt": "2026-07-03T16:44:12.709Z"
+    },
+    {
+      "title": "When Malcolm Smiled earns Best Actor award at Cannes FIFI 2026",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/when-malcolm-smiled-earns-best-actor-award-at-cannes-fifi-2026/",
+      "pubDate": "Fri, 03 Jul 2026 15:00:57 +0000",
+      "importance": 4,
+      "why": "African film ('Malcolm Smiled') wins Best Actor at Cannes FIFI 2026 — major film award",
+      "detectedAt": "2026-07-03T16:44:12.709Z"
+    },
     {
       "title": "Nigerian Conservationist Rachel Ikemeh Wins Prestigious 2026 Rolex Award for Her Work in the Niger Delta",
       "source": "BellaNaija",
