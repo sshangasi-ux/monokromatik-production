@@ -3597,5 +3597,449 @@
       }
     ],
     "media": []
+  },
+  {
+    "slug": "moniepoint-africa-s-profitable-unicorn-builds-the-rails-then-buys-the-bank",
+    "title": "Moniepoint: Africa's Profitable Unicorn Builds the Rails, Then Buys the Bank",
+    "standfirst": "A Nigerian fintech reached unicorn status while profitable — rare anywhere — then moved into Kenya and the UK diaspora. African-built financial infrastructure, owned and led from the continent.",
+    "brand": "Moniepoint",
+    "collection": "African-Authored Brand Moves",
+    "market": "Nigeria · Pan-African · Diaspora",
+    "readingTime": "3 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "The Series C, unicorn valuation, named investors, the Kenyan Sumac acquisition approval and the MonieWorld launch are confirmed across Moniepoint's own release and independent fintech and tech press. The exact round total ($200m vs $250m across phases), the customer and payment-volume figures and the profitability claim are company-reported. A precise valuation is not consistently disclosed.",
+    "publishedAt": "2026-07-06T19:32:20.742Z",
+    "tags": [
+      "fintech",
+      "Nigeria",
+      "mobile money",
+      "financial inclusion",
+      "unicorn",
+      "payments",
+      "Moniepoint"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Building profitable financial infrastructure for underserved African businesses — physical agents plus digital, not app-only — is a distinctive, hard-to-copy model."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "Nigerian-founded and led, expanding on its own terms into Kenya and the UK diaspora; global investors, but the pen and control stay African."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 5,
+        "note": "Profitability at unicorn scale is rare globally — 10m+ customers and, by its own account, $250bn+ in annual payments is exceptional operating craft."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "A billion-dollar raise, an East-African bank acquisition and a diaspora remittance launch is real, compounding consequence for financial inclusion."
+      }
+    ],
+    "context": [
+      "In October 2025 Moniepoint announced the completion of a $200 million Series C, pushing its valuation past $1 billion and confirming its status as one of Africa's fintech unicorns. Its backers include Google, Visa, the IFC, Development Partners International and LeapFrog — global capital behind an African-run company.",
+      "Moniepoint's model is business-first and hybrid: it serves more than 10 million business and personal customers and, by its own figures, processes over $250 billion in payments annually, combining physical agent networks with digital banking. The company describes itself as one of the few fintechs globally — and the first in Africa — to reach profitability at unicorn scale."
+    ],
+    "strategicBet": [
+      "The bet is that the durable prize in African fintech is infrastructure and profitability, not user-growth vanity. Rather than chase scale at any cost, Moniepoint built a business-banking backbone that makes money — and is now using that strength to expand geographically (a 78% stake in Kenya's Sumac Microfinance Bank) and up the value chain (MonieWorld, remittances for the UK African diaspora)."
+    ],
+    "creativeMove": [
+      "The move that matters is going from rails to bank: parlaying a payments-and-agent network into regulated banking (the Sumac acquisition) and into the diaspora-remittance corridor. It is vertical integration — owning more of the customer's financial life, and more of the margin, across borders."
+    ],
+    "africanRead": [
+      "This is the authorship story African tech needs more of: a company built, owned and led from Nigeria, taking global capital without surrendering control, and exporting its model to Kenya and to the diaspora rather than being acquired to scale. Profitability is the quiet radicalism here — it is what buys independence. The watch-item is execution risk as it multi-markets, and whether the financial-inclusion mission holds as the business optimises for margin. But the shape is right: African founders owning the rails, the bank and the upside."
+    ],
+    "lessons": [
+      {
+        "title": "Profit is independence.",
+        "body": "Reaching unicorn scale while profitable is what let Moniepoint expand on its own terms rather than sell to scale. In African tech, a business that funds itself keeps the pen."
+      },
+      {
+        "title": "Own the stack, cross the border.",
+        "body": "Going from payments rails to a regulated bank to diaspora remittances is vertical and geographic integration — capturing more of the customer's financial life, and more of the margin, than a single-product app ever could."
+      }
+    ],
+    "evidence": {
+      "confirmed": [
+        "Moniepoint completed a $200 million Series C announced in October 2025, taking its valuation past $1 billion, with investors including Google, Visa, the IFC, DPI and LeapFrog — corroborated by Moniepoint's own release, fintech.global and TechAfrica News.",
+        "In 2025 Moniepoint secured regulatory approval to acquire a 78% stake in Kenya's Sumac Microfinance Bank and launched MonieWorld, a remittance service for the UK African diaspora."
+      ],
+      "reported": [
+        "Some outlets describe the round as reaching up to $250 million across phases (a 2024 tranche plus the 2025 raise); Moniepoint's own release states a $200 million Series C.",
+        "The figures of 10 million+ customers and $250 billion+ in annual payments, and the 'first in Africa to be profitable at unicorn scale' claim, are company-reported."
+      ],
+      "notClaimed": [
+        "A precise post-money valuation beyond '$1 billion+' is not consistently disclosed.",
+        "The long-term financial-inclusion impact is still compounding and unaudited; the profitability claim is company-stated."
+      ]
+    },
+    "pullQuotes": [
+      "Profitability is the quiet radicalism here — it is what buys independence."
+    ],
+    "sources": [
+      {
+        "publisher": "Moniepoint",
+        "label": "Moniepoint Announces Successful Completion of US$200 Million Series C Round",
+        "href": "https://moniepoint.com/blog/moniepoint-announces-successful-completion-of-usdollar200-million-series-c-round-to-power-financial-inclusion",
+        "use": "Primary announcement of the Series C, investors and scale figures"
+      },
+      {
+        "publisher": "fintech.global",
+        "label": "Moniepoint bags $200m Series C to expand financial inclusion",
+        "href": "https://fintech.global/2025/10/21/moniepoint-bags-200m-series-c-to-expand-financial-inclusion/",
+        "use": "Independent corroboration of the raise and unicorn status"
+      },
+      {
+        "publisher": "TechCrunch",
+        "label": "Africa's newest fintech unicorns are winning by keeping their feet on the ground",
+        "href": "https://techcrunch.com/2024/12/29/africas-fintech-unicorns-blend-digital-banking-and-physical-touchpoints/",
+        "use": "Context on the hybrid physical-plus-digital model and profitability"
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "Moniepoint Inc.",
+        "href": "https://en.wikipedia.org/wiki/Moniepoint_Inc.",
+        "use": "Company overview, founding and expansion timeline"
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "uncover-k-beauty-science-african-skin-kenyan-ownership",
+    "title": "Uncover: K-Beauty Science, African Skin, Kenyan Ownership",
+    "standfirst": "A Nairobi skincare brand built for melanated skin raised seed capital to cross into the US, Ghana and Uganda — pairing Korean lab science with African botanicals and an African market read.",
+    "brand": "Uncover",
+    "collection": "African-Authored Brand Moves",
+    "market": "Kenya · Pan-African · Diaspora",
+    "readingTime": "3 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "The Nairobi founding, the $1.4m seed round, the melanated-skin positioning and the K-beauty-plus-African-botanicals model are confirmed across independent tech and business press. The exact founder line-up and the Korean-lab method are reported and vary slightly by outlet. No revenue or unit economics are disclosed; the expansion outcome is unproven.",
+    "publishedAt": "2026-07-06T19:32:20.742Z",
+    "tags": [
+      "beauty",
+      "skincare",
+      "Kenya",
+      "melanated skin",
+      "K-beauty",
+      "startup",
+      "Uncover"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Personalised, science-backed skincare for melanated skin — long underserved by global beauty — is a sharp, specific idea, sharpened by app-data personalisation."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "Nairobi-built, African-skin-focused, with an African co-founder and market ownership; it leans on Korean lab science, so the technical backbone is partly borrowed."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "A real brand with dermatologist-approved formulas, an app-data model and a $1.4m seed round funding a three-market expansion — strong for its stage."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "Seed-stage momentum and a credible expansion plan; the durable commercial outcome is still to be proven."
+      }
+    ],
+    "context": [
+      "Uncover, a Nairobi-based skincare brand founded in 2021, secured $1.4 million in seed funding to expand into the United States, Ghana and Uganda. Its pitch is precise: 'K-Beauty meets African botanicals' — lab-developed, dermatologist-approved formulas built specifically for melanated skin, a segment global beauty has long underserved.",
+      "The brand personalises through data: quizzes and app inputs feed product development done in collaboration with South Korean labs. It is African market insight and ownership paired with imported formulation science — a hybrid model rather than a purely local one."
+    ],
+    "strategicBet": [
+      "The bet is that melanated skin is a large, underserved and loyal market, and that an African brand with a genuine market read plus credible science can win it before a global incumbent bothers to. Raising to expand into the US as well as Ghana and Uganda signals an ambition beyond the region — to serve the African skin market wherever it lives."
+    ],
+    "creativeMove": [
+      "The move is to marry two credibilities: the technical authority of K-beauty science and the cultural authority of building for African skin from Nairobi. Neither alone is novel; together, aimed at a segment the majors treat as an afterthought, it is a defensible position."
+    ],
+    "africanRead": [
+      "The authorship is largely African — a Kenya-based brand, an African co-founder, an African-skin market it understands better than any global incumbent — with an honest asterisk: the formulation science leans on Korean labs. That is not a failing; it is a pragmatic hybrid, and the ownership and the market read stay African. The prize is to convert that read into scale before a global beauty giant notices the segment and outspends it. The risk is the usual seed-stage one: distribution and capital against much deeper pockets."
+    ],
+    "lessons": [
+      {
+        "title": "Serve the segment the majors ignore.",
+        "body": "Melanated skin is large, loyal and underserved by global beauty. An African brand with a real market read can own it — if it moves before an incumbent decides the category is worth the spend."
+      },
+      {
+        "title": "Borrowed science, owned market.",
+        "body": "Leaning on Korean lab science is not a weakness when the market insight, the brand and the ownership are African. The hybrid is the strategy, not a compromise."
+      }
+    ],
+    "evidence": {
+      "confirmed": [
+        "Uncover, founded in Nairobi in 2021, raised $1.4 million in seed funding to expand into the US, Ghana and Uganda, corroborated by Empower Africa, AfroTech and earlier CNN coverage.",
+        "The brand builds dermatologist-approved, lab-developed formulas for melanated skin, combining K-beauty science with African botanicals and app-based personalisation."
+      ],
+      "reported": [
+        "The founding team is reported as Jade Oyateru and Sneha Mehta, with some coverage also naming Catherine Lee — the exact line-up varies by outlet.",
+        "The collaboration with South Korean labs and the app-data personalisation method are described in company and interview sources."
+      ],
+      "notClaimed": [
+        "Revenue, customer numbers and unit economics are not disclosed.",
+        "The $1.4m is seed-stage capital; the outcome of the US/Ghana/Uganda expansion is unproven."
+      ]
+    },
+    "pullQuotes": [
+      "African market insight and ownership, paired with imported formulation science — a hybrid, not a compromise."
+    ],
+    "sources": [
+      {
+        "publisher": "Empower Africa",
+        "label": "Kenyan Skincare Startup Uncover Secures $1.4 Million for US, Ghana, and Uganda Expansion",
+        "href": "https://empowerafrica.com/kenyan-skincare-startup-uncover-secures-1-4-million-for-us-ghana-and-uganda-expansion/",
+        "use": "Primary detail on the seed raise, founders and expansion markets"
+      },
+      {
+        "publisher": "AfroTech",
+        "label": "This Kenya-Based Skincare Company Created To Empower Those With Melanated Skin Has Raised $1.4M",
+        "href": "https://afrotech.com/uncover-raises-1-4m",
+        "use": "Corroborates the raise and the melanated-skin positioning"
+      },
+      {
+        "publisher": "CNN",
+        "label": "Uncover: The Kenya skincare brand targeting African skin",
+        "href": "https://www.cnn.com/2023/10/05/africa/uncover-africa-skincare-startup-spc-intl/index.html",
+        "use": "Independent profile of the brand, model and founders"
+      },
+      {
+        "publisher": "BellaNaija Style",
+        "label": "Nairobi-based Skincare Brand 'Uncover' is Set to Launch in Nigeria",
+        "href": "https://www.bellanaijastyle.com/uncover-skin-care/",
+        "use": "Corroborates the brand's expansion ambitions and positioning"
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "uncle-waffles-taking-amapiano-to-the-arena-on-her-own-terms",
+    "title": "Uncle Waffles: Taking Amapiano to the Arena, on Her Own Terms",
+    "standfirst": "From Eswatini to the O2, an Amapiano DJ turned a South African sound into a global arena act — headlining her own tour and guesting on the biggest stages of 2026.",
+    "brand": "Uncle Waffles",
+    "collection": "Diaspora Demand",
+    "market": "Eswatini · South Africa · Global",
+    "readingTime": "3 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "The 2025 World Tour, the EDC set, and the 2026 guest runs with Kaytranada and Asake plus the Afro Nation billing are confirmed across Wikipedia and independent music press. Specific dates vary slightly by outlet, and the 'on her own terms' framing is interpretive. Touring financials and headline-draw figures are not disclosed.",
+    "publishedAt": "2026-07-06T19:32:20.742Z",
+    "tags": [
+      "music",
+      "Amapiano",
+      "Uncle Waffles",
+      "touring",
+      "diaspora",
+      "South Africa",
+      "Eswatini"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Positioning Amapiano — and herself — as an arena-scale global act rides and shapes a genre's international wave; a strong bet, if built on a rising tide."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "An African artist carrying an African genre to the world on her own terms and her own brand — not a localisation of someone else's product."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Sustained global touring, EDC, and guest runs with Kaytranada and Asake show real live-execution and stagecraft at scale."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "Amapiano in global arenas and on marquee festival stages is measurable genre mainstreaming — a durable footprint, still expanding."
+      }
+    ],
+    "context": [
+      "Uncle Waffles — born in Eswatini, based in South Africa — has become Amapiano's most visible global export. Her 2025 World Tour ran across Europe, the US, Canada and Africa, opening in Milan in May 2025 and taking in a set at Electric Daisy Carnival, one of the world's largest dance-music festivals.",
+      "In 2026 she scaled up: a guest run on Kaytranada's UK and European arena tour (including The O2 in June), a slot on Asake's 'In God We Trust' arena tour across Europe and North America, and a billing at Afro Nation Portugal's Piano People stage alongside Burna Boy. A South African sound, carried onto the biggest international stages by an artist who owns her own brand."
+    ],
+    "strategicBet": [
+      "The bet is that Amapiano's global moment needs a face and a live act, not just a playlist — and that being that act, on arena stages, converts a genre trend into a durable career and a personal brand. Guesting with established global headliners (Kaytranada, Asake) is a deliberate ladder: borrow their rooms to build her own."
+    ],
+    "creativeMove": [
+      "The move is to be the live embodiment of a sound that mostly travelled as streams. Amapiano crossed borders on platforms; Uncle Waffles gave it a body on stage — DJ, dancer, performer — turning a genre into a spectacle that fills arenas, and turning festival and support slots into a personal-brand engine."
+    ],
+    "africanRead": [
+      "This is authorship travelling well. Amapiano is a South African invention; Uncle Waffles is an African artist carrying it to global arenas as her own act, not as a supporting texture in someone else's product. The value she builds — brand, fanbase, bookings — accrues to her. The open question is the one every genre-defining artist faces: converting a wave into a franchise, and headline status into ownership of the rooms, the promotions and the recordings, rather than remaining the world's favourite guest."
+    ],
+    "lessons": [
+      {
+        "title": "A genre needs a body.",
+        "body": "Amapiano crossed the world as streams; it fills arenas because an artist embodies it live. Genres globalise faster when a performer gives them a face and a spectacle."
+      },
+      {
+        "title": "Borrow the room, build the brand.",
+        "body": "Guesting with established global headliners is a ladder, not a ceiling — a deliberate way to reach arena audiences while compounding a personal brand toward headline ownership."
+      }
+    ],
+    "evidence": {
+      "confirmed": [
+        "Uncle Waffles (from Eswatini, based in South Africa) staged a 2025 World Tour across Europe, the US, Canada and Africa, including a set at Electric Daisy Carnival, corroborated across Wikipedia and South African music press.",
+        "In 2026 she featured as a guest on Kaytranada's UK/European arena tour and Asake's 'In God We Trust' arena tour, and is billed at Afro Nation Portugal's Piano People stage alongside Burna Boy (Variety, The Yanos)."
+      ],
+      "reported": [
+        "Specific venue and date details (e.g. an O2 date in June 2026) appear across outlets with minor variation.",
+        "The framing of her taking Amapiano global 'on her own terms' is an interpretive characterisation from single-outlet coverage."
+      ],
+      "notClaimed": [
+        "Touring grosses, fees and audience figures are not disclosed.",
+        "The size of her independent headline draw — versus guest and support billings — is still building and not quantified here."
+      ]
+    },
+    "pullQuotes": [
+      "Amapiano crossed borders as streams; Uncle Waffles gave it a body on stage."
+    ],
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Uncle Waffles",
+        "href": "https://en.wikipedia.org/wiki/Uncle_Waffles",
+        "use": "Biography, origin and tour history"
+      },
+      {
+        "publisher": "Variety",
+        "label": "Asake Announces 'In God We Trust' Tour Dates With Uncle Waffles",
+        "href": "https://variety.com/2026/music/news/asake-in-god-we-trust-tour-dates-uncle-waffles-1236758593/",
+        "use": "Confirms the 2026 arena-tour guest run"
+      },
+      {
+        "publisher": "The Yanos Magazine",
+        "label": "Uncle Waffles Continues Taking Amapiano to Global Arenas",
+        "href": "https://theyanos.co.za/2026/05/uncle-waffles-continues-taking-amapiano-to-global-arenas/",
+        "use": "Corroborates the 2026 arena and festival billings, including Afro Nation"
+      },
+      {
+        "publisher": "Afropolitain",
+        "label": "Uncle Waffles Is Taking Amapiano Global On Her Own Terms",
+        "href": "https://www.afropolitain.com/uncle-waffles-is-taking-amapiano-global-on-her-own-terms/",
+        "use": "Source for the authorship framing (interpretive)"
+      }
+    ],
+    "media": []
+  },
+  {
+    "slug": "the-durban-july-2026-who-won-and-lost-from-a-brand-s-point-of-view",
+    "title": "The Durban July 2026: Who Won and Lost, from a Brand's Point of View",
+    "standfirst": "Under a 'Country Allure' theme, South Africa's biggest raceday doubled as its biggest brand stage — and the real contest was between home-grown culture and imported luxury.",
+    "brand": "The Hollywoodbets Durban July 2026",
+    "collection": "Sport, Culture & Brand Belonging",
+    "market": "South Africa",
+    "readingTime": "3 MIN READ",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "The date, theme, record prize, title sponsor, race winner, the ~150-entrant fashion competition, the Young Designer Award and MaXhosa's debut showcase, and the global-brand marquee roster are confirmed across the organiser and independent South African press. The 'winners and losers' read and the future-of-the-event argument are explicitly interpretive analysis; no brand spend or ROI figures are disclosed.",
+    "publishedAt": "2026-07-06T19:32:20.742Z",
+    "tags": [
+      "Durban July",
+      "South Africa",
+      "fashion",
+      "sponsorship",
+      "luxury brands",
+      "events",
+      "Hollywoodbets"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "A horse race that became South Africa's premier fashion-and-brand spectacle is a durable, high-ceiling platform idea — the racing is almost the pretext."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 3,
+        "note": "The cultural equity — the fashion, the designers, the Amapiano, the crowd — is emphatically South African; the headline marquees are dominated by global luxury. African culture fills the event; global brands buy the hospitality."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "A record R10m prize, a 150-strong fashion competition and a dense activation village — a large, well-run production."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "A single day that launches design careers, debuts African luxury on a national stage and commands the country's attention — real cultural and commercial consequence."
+      }
+    ],
+    "context": [
+      "The 2026 Hollywoodbets Durban July, run on 4 July under the theme 'Country Allure', staged Africa's richest horse race — a record R10 million prize, won by Note To Self (trained by Justin Snaith, ridden by Richard Fourie) — but the bigger contest, as ever, was for brand and fashion attention. Hollywoodbets held title sponsorship for a fifth year.",
+      "Around 150 designers competed in the Raceday Fashion Awards, with the Young Designer Award going to Durban University of Technology's Mlungisi Ndlovu for a creation inspired by Nguni cow markings. In the hospitality village, premium marquees ran on global luxury — Moet & Chandon, Hennessy, Martell, G.H. Mumm, Johnnie Walker's Boomtown, Stella Artois, Mercedes-Benz — while MaXhosa Africa staged its first-ever Durban July fashion showcase."
+    ],
+    "strategicBet": [
+      "For every brand present, the bet is that a single day of concentrated national attention — fashion, celebrity, Amapiano, betting, luxury — is worth outsized spend. For the event, the bet is that curating that attention (theme, marquees, fashion awards) keeps it South Africa's most valuable one-day brand platform, ahead of any rival."
+    ],
+    "creativeMove": [
+      "The organising move is the theme: 'Country Allure' set a Western, rural-elegance dress code that turned every racegoer and designer into a content-maker, and gave every brand a shared aesthetic to activate against. It is a soft, unifying brief that manufactures a day of coordinated spectacle and shareable imagery."
+    ],
+    "africanRead": [
+      "Who won, from a brand's point of view: MaXhosa Africa. Laduma Ngxokolo's proudly African luxury house staging its first July showcase is the standout — a signal that the event's cultural centre of gravity can shift toward African-authored luxury, not only European liquor. The young designers won too: the DUT Young Designer Award and the Nguni-cow-markings winner confirm the July as South African fashion's most valuable single-day platform, a genuine career-maker. Who won on visibility but not authorship: the global drinks and auto houses — Moet, Hennessy, Martell, G.H. Mumm, Johnnie Walker, Mercedes — who own the marquees and pour the champagne. That is the value-capture tension in plain sight: African culture (the fashion, the Amapiano, the crowd) fills the event; global brands buy the premium hospitality at the top of it. The future question for the July is exactly this balance. Does it elevate African brands — MaXhosa, local designers, local spirits — to marquee-headline status, or remain a home-grown cultural spectacle monetised at the top by global luxury? 'Country Allure' and MaXhosa's debut suggest the former is possible; the marquee roster suggests the latter still pays the bills. The event that gets this right — making African brands the headline hospitality, not just the runway content — owns the next decade of the July."
+    ],
+    "lessons": [
+      {
+        "title": "The runway is local; the marquees are global.",
+        "body": "At the Durban July, African culture supplies the spectacle while global luxury supplies the hospitality spend. The strategic prize is moving African brands from the runway into the marquee — from content to headline sponsor."
+      },
+      {
+        "title": "A theme is a brand brief.",
+        "body": "'Country Allure' turned an entire crowd into coordinated content-makers. A strong, shareable dress code is the cheapest, most effective activation an event owns."
+      }
+    ],
+    "evidence": {
+      "confirmed": [
+        "The 2026 Hollywoodbets Durban July ran on 4 July under the 'Country Allure' theme, with a record R10m prize and Hollywoodbets as title sponsor for a fifth consecutive year; Note To Self won the feature race (Snaith/Fourie) — corroborated across Hollywoodbets, The Citizen and IOL.",
+        "Around 150 designers competed in the Raceday Fashion Awards; DUT's Mlungisi Ndlovu won the Young Designer Award, and MaXhosa Africa staged its first Durban July fashion showcase, with premium marquees run by global brands including Moet & Chandon, Hennessy, Martell, G.H. Mumm, Johnnie Walker, Stella Artois and Mercedes-Benz."
+      ],
+      "reported": [
+        "Which marquees 'won' the day's buzz is a press-and-social judgement, not an official ranking.",
+        "Brand spend and activation budgets at the event are not publicly disclosed."
+      ],
+      "notClaimed": [
+        "No brand-by-brand ROI or spend figures are available; the 'winners and losers' framing is interpretive analysis.",
+        "The claim about the event's future direction is a strategic read, not a stated plan by the organisers."
+      ]
+    },
+    "pullQuotes": [
+      "African culture fills the event; global brands buy the premium hospitality at the top of it."
+    ],
+    "sources": [
+      {
+        "publisher": "Hollywoodbets Sports Blog",
+        "label": "COUNTRY ALLURE: 2026 Hollywoodbets Durban July Theme Revealed",
+        "href": "https://blog.hollywoodbets.net/horse-racing/country-allure-2026-hollywoodbets-durban-july-theme-revealed/",
+        "use": "Confirms the theme, title sponsorship and framing"
+      },
+      {
+        "publisher": "The Citizen",
+        "label": "Hollywoodbets Durban July 2026: winners of the day's races",
+        "href": "https://www.citizen.co.za/sport/hollywoodbets-durban-july-2026-winners-first-two-races/",
+        "use": "Confirms the raceday result, prize and event details"
+      },
+      {
+        "publisher": "IOL",
+        "label": "Hollywoodbets Durban July 2026: 'Country Allure' fashion steals the spotlight",
+        "href": "https://iol.co.za/lifestyle/style-beauty/2026-07-04-hollywoodbets-durban-july-2026-country-allure-fashion-steals-the-spotlight/",
+        "use": "Fashion awards, designers, MaXhosa showcase and the day's brand/fashion story"
+      },
+      {
+        "publisher": "The Citizen",
+        "label": "Top 10 Durban July marquees everyone will be talking about this year",
+        "href": "https://www.citizen.co.za/lifestyle/top-10-durban-july-marquees-everyone-will-be-talking-about-this-year/",
+        "use": "Corroborates the marquee brand roster and hospitality activations"
+      }
+    ],
+    "media": []
   }
 ]
