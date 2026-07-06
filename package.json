@@ -51,7 +51,8 @@
     "perf:report": "tsx scripts/perf-report.ts",
     "review:monthly": "tsx scripts/monthly-review.ts",
     "casestudy:cycle": "tsx scripts/stage-case-studies.ts",
-    "casestudy:cycle:dry": "tsx scripts/stage-case-studies.ts -- --dry"
+    "casestudy:cycle:dry": "tsx scripts/stage-case-studies.ts -- --dry",
+    "casestudy:author": "tsx scripts/author-case-studies.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
