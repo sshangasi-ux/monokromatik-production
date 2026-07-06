@@ -80,8 +80,17 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain output/engine-cycle data)" ]; then
-            echo "No changes to the engine review queue or data this run." >> "$GITHUB_STEP_SUMMARY"
+          # STAGED.md (the per-item verdicts) lives in gitignored output/ — surface it
+          # in the run summary + PR body rather than `git add`-ing an ignored path
+          # (which fails with exit 1 and drops the whole run).
+          if [ -f output/engine-cycle/STAGED.md ]; then
+            { echo "### Engine cycle — staged verdicts"; echo; cat output/engine-cycle/STAGED.md; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          # Only the tracked data/ patches are committable. If nothing was auto-patched,
+          # the staged proposals are drafts only (surfaced above) — no PR to open.
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "No auto-patched content to publish this run (any staged proposals are in the verdicts above)." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
@@ -89,12 +98,18 @@ jobs:
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
           git checkout -b "$BRANCH"
-          git add output/engine-cycle data
-          git commit -m "feat(engine): weekly content cycle — review queue + gated patches" -m "AI-sourced + drafted across all five sections, then deterministically gated (≥2 sources, dedup-vs-archive, schema). Low-stakes Culture articles auto-patched into data/articles.json; claim-bearing items staged for human authoring. See output/engine-cycle/STAGED.md. Merging this PR is the publish step."
+          git add data
+          git commit -m "feat(engine): weekly content cycle — gated auto-patches" -m "AI-sourced + drafted across all five sections, then deterministically gated (>=2 sources, dedup-vs-archive, schema). Low-stakes Culture articles auto-patched into data/articles.json; claim-bearing items staged for human authoring (verdicts in the PR body). Merging this PR is the publish step."
           git push origin "$BRANCH"
 
-          BODY="Weekly content engine cycle — now with the staging gate. AI-sourced + drafted across all five sections (live web search, integrity contract), then run through deterministic gates (≥2 independent sources · dedup vs the existing archive · schema). **Start at \`output/engine-cycle/STAGED.md\`** for the per-item verdicts. Low-stakes Culture articles that pass every gate are auto-patched into \`data/articles.json\` (review the data diff); claim-bearing Signal/Intelligence/Issue items and possible duplicates are staged as proposals for human authoring — never fabricated whole. **Merging this PR is the publish step**; close it to discard. See \`docs/CONTENT_ENGINE_CYCLE.md\`."
-          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Engine cycle — review queue + gated patches — $(date -u +%Y-%m-%d)" --body "$BODY") || true
+          {
+            echo "Weekly content engine cycle. Low-stakes Culture articles that passed every gate (>=2 independent sources, dedup vs the archive, schema) are auto-patched into \`data/articles.json\` — review the data diff. Claim-bearing Signal/Intelligence/Issue items are staged as proposals for human authoring, never fabricated whole. **Merging this PR is the publish step**; close it to discard. See \`docs/CONTENT_ENGINE_CYCLE.md\`."
+            echo
+            echo "### Per-item verdicts (STAGED.md)"
+            echo
+            if [ -f output/engine-cycle/STAGED.md ]; then cat output/engine-cycle/STAGED.md; fi
+          } > "$RUNNER_TEMP/engine-pr-body.md"
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Engine cycle — gated content patches — $(date -u +%Y-%m-%d)" --body-file "$RUNNER_TEMP/engine-pr-body.md") || true
 
           if [ -n "$PR_URL" ]; then
             echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
