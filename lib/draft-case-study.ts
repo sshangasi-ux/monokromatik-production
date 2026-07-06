@@ -165,6 +165,14 @@ export function assembleCaseStudy(raw: unknown, stamp: string): CaseStudy | null
     pullQuotes: asArr(r.pullQuotes),
     sources: normalizeSources(r.sources),
     media: [],
+    ...(str(r.videoUrl)
+      ? {
+          videoUrl: str(r.videoUrl),
+          videoType: (['youtube', 'vimeo', 'file'] as const).find((t) => t === str(r.videoType)) ?? 'youtube',
+          videoCredit: str(r.videoCredit) || undefined,
+          videoSourceUrl: str(r.videoSourceUrl) || undefined,
+        }
+      : {}),
   };
 }
 
