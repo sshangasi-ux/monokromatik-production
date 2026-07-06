@@ -1,0 +1,66 @@
+name: Operator's Daily Brief
+
+# A deterministic daily review of backend operations — growth, monetisation,
+# insight-mining and product refinement — emailed to the operator (Resend),
+# posted to the run summary, and committed to docs/briefs/YYYY-MM-DD.md.
+# No AI/credits needed, so it always delivers. The deep competitive take is the
+# monthly strategy review (1st of the month).
+
+on:
+  schedule:
+    - cron: '30 5 * * *' # daily 05:30 UTC (07:30 SAST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Generate + deliver the brief
+        env:
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DAILY_BRIEF_TO: ${{ vars.DAILY_BRIEF_TO }}
+          EIC_DIGEST_FROM: ${{ vars.EIC_DIGEST_FROM }}
+          NEXT_PUBLIC_PAYSTACK_REPORT_URL: ${{ vars.NEXT_PUBLIC_PAYSTACK_REPORT_URL }}
+          NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL: ${{ vars.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL }}
+          NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL: ${{ vars.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL }}
+        run: npm run brief:daily
+
+      - name: Commit the brief copy
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain docs/briefs)" ]; then
+            echo "No brief file change." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git add docs/briefs
+          git commit -m "docs(brief): operator daily brief — $(date -u +%Y-%m-%d)"
+          git push origin HEAD:main || echo "push skipped"
