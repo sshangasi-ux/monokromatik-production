@@ -85,7 +85,8 @@ export async function GET(req: Request) {
     methodology: {
       scale: '0–100 composite, authorship-weighted; each axis scored 1–5',
       axes: AXIS_LABELS.map((label) => ({ label, weight: AXIS_WEIGHTS[label] })),
-      note: 'Interpretive editorial judgement — defensible and evidence-led, not a measured market metric. Axis levels are set by editors.',
+      note: 'Interpretive editorial judgement — defensible and evidence-led, not a measured market metric. Axis levels are set and signed by a named analyst, Sibu Shangase (Founder & Lead Analyst, MonoKromatik).',
+      analyst: { name: 'Sibu Shangase', role: 'Founder & Lead Analyst, MonoKromatik' },
       evidenceStrength: {
         what: 'A MEASURED anchor beside the editorial score (0–100) — counted, not scored. Derived deterministically from the corroboration behind each brand’s works: independently-confirmed facts (weighted most), cited sources, and verification status, passed through an exponential saturation.',
         tiers: 'Strong ≥75 · Moderate ≥45 · Developing <45',
