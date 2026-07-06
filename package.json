@@ -49,7 +49,9 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "search:insights": "tsx scripts/search-insights.ts",
     "perf:report": "tsx scripts/perf-report.ts",
-    "review:monthly": "tsx scripts/monthly-review.ts"
+    "review:monthly": "tsx scripts/monthly-review.ts",
+    "casestudy:cycle": "tsx scripts/stage-case-studies.ts",
+    "casestudy:cycle:dry": "tsx scripts/stage-case-studies.ts -- --dry"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
