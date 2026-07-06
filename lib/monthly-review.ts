@@ -22,6 +22,7 @@ import { getHistory, getMovers } from './index-history';
 import { getLearningSignals, describeSignals } from './learning-signals';
 import { generatePerformanceReport } from './analyze-performance';
 import { getSearchInsights } from './search-console';
+import { evidenceByBrand } from './evidence-strength';
 
 const REPO_ROOT = join(__dirname, '..');
 
@@ -41,7 +42,8 @@ const wordCount = (html: string): number =>
 export interface SiteState {
   generatedAt: string;
   articles: { count: number; medianWords: number; withBrandRead: number; withVideo: number };
-  caseStudies: { count: number; avgSources: number; avgEvidence: number; confirmed: number; partial: number };
+  caseStudies: { count: number; avgSources: number; avgEvidence: number; verified: number; partial: number };
+  evidence: { strong: number; moderate: number; developing: number; medianScore: number };
   index: { brands: number; works: number; snapshots: number; top: { brand: string; score: number }[]; climbers: number; newcomers: number; since: string | null };
   reports: { count: number; live: number };
   learning: string;
@@ -76,6 +78,11 @@ export async function gatherState(perfWindowDays = 30): Promise<SiteState> {
   const sourceCounts = studies.map((c) => (c.sources?.length ?? 0));
   const evidenceCounts = studies.map((c) => (c.evidence?.confirmed?.length ?? 0) + (c.evidence?.reported?.length ?? 0));
 
+  // Measured Evidence Strength distribution across ranked brands.
+  const evMap = evidenceByBrand(getPublicCaseStudies());
+  const evScores = [...evMap.values()].map((e) => e.score).sort((a, b) => a - b);
+  const evTier = (t: string) => [...evMap.values()].filter((e) => e.tier === t).length;
+
   // GA4 + GSC: both return gracefully (empty/null) when not configured.
   const perf = await generatePerformanceReport(perfWindowDays).catch(() => null);
   const search = await getSearchInsights(28).catch(() => null);
@@ -92,8 +99,14 @@ export async function gatherState(perfWindowDays = 30): Promise<SiteState> {
       count: studies.length,
       avgSources: avg(sourceCounts),
       avgEvidence: avg(evidenceCounts),
-      confirmed: studies.filter((c) => (c.verification || '').toLowerCase() === 'confirmed').length,
+      verified: studies.filter((c) => (c.verification || '').toLowerCase() === 'verified').length,
       partial: studies.filter((c) => (c.verification || '').toLowerCase() === 'partial').length,
+    },
+    evidence: {
+      strong: evTier('Strong'),
+      moderate: evTier('Moderate'),
+      developing: evTier('Developing'),
+      medianScore: evScores.length ? evScores[Math.floor(evScores.length / 2)] : 0,
     },
     index: {
       brands: ranked.length,
@@ -131,7 +144,8 @@ export function renderDataSection(s: SiteState): string {
   L.push(`| — with Brand Read | ${s.articles.withBrandRead} | the intelligence layer |`);
   L.push(`| — with video | ${s.articles.withVideo} | richer media |`);
   L.push(`| Case studies | ${s.caseStudies.count} · avg ${s.caseStudies.avgSources} sources / ${s.caseStudies.avgEvidence} evidence | 8–15 sources, evidence ledger |`);
-  L.push(`| — verification | ${s.caseStudies.confirmed} confirmed · ${s.caseStudies.partial} partial | push top entries to confirmed |`);
+  L.push(`| — verification | ${s.caseStudies.verified} verified · ${s.caseStudies.partial} partial | push top entries to verified |`);
+  L.push(`| Evidence Strength (measured) | median ${s.evidence.medianScore}/100 · ${s.evidence.strong} Strong / ${s.evidence.moderate} Moderate / ${s.evidence.developing} Developing | deepen corroboration → climb tiers |`);
   L.push(`| Index | ${s.index.brands} brands / ${s.index.works} works | scale to 150–300+ works, >1 work/brand |`);
   L.push(`| Index snapshots | ${s.index.snapshots} (${s.index.climbers} climbers, ${s.index.newcomers} new since ${s.index.since ?? '—'}) | a recurring "reveal" ritual |`);
   L.push(`| Reports | ${s.reports.count} (${s.reports.live} live) | one original data point each |`);

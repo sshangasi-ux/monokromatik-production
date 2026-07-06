@@ -7,6 +7,7 @@ import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
+import { evidenceByBrand } from '../../../lib/evidence-strength';
 import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
 
 export const revalidate = 300;
@@ -41,8 +42,10 @@ export default function SignalIndexPage() {
     if (cs.market && !marketBySlug.has(s)) marketBySlug.set(s, cs.market);
   }
 
+  const evidence = evidenceByBrand(studies);
   const leaderEntries: LeaderEntry[] = ranked.map((e) => {
     const slug = brandSlug(e.brand);
+    const ev = evidence.get(slug);
     return {
       brand: e.brand,
       slug,
@@ -53,6 +56,8 @@ export default function SignalIndexPage() {
       market: marketBySlug.get(slug) ?? '',
       movement: getMovement(slug),
       isNew: isNewlyRanked(slug),
+      evidenceScore: ev?.score ?? null,
+      evidenceTier: ev?.tier ?? null,
     };
   });
 
@@ -72,7 +77,8 @@ export default function SignalIndexPage() {
       'A proprietary, authorship-weighted ranking of how brand and cultural work scores on African creative authorship, idea, execution and consequence.',
     url: `${SITE}/intelligence/signal-index`,
     creator: { '@type': 'Organization', name: 'MonoKromatik', url: SITE },
-    variableMeasured: ['Cultural-Signal Score', 'Idea', 'Authorship', 'Execution', 'Consequence'],
+    author: { '@type': 'Person', name: 'Sibu Shangase', jobTitle: 'Founder & Lead Analyst', affiliation: { '@type': 'Organization', name: 'MonoKromatik' } },
+    variableMeasured: ['Cultural-Signal Score', 'Idea', 'Authorship', 'Execution', 'Consequence', 'Evidence Strength'],
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: ranked.length,
@@ -197,8 +203,9 @@ export default function SignalIndexPage() {
           </div>
           <p className="mt-8 max-w-2xl text-sm font-body text-mono-gray-bright">
             AUTHORSHIP carries the heaviest weight: it is the question MonoKromatik exists to ask — who shaped the
-            idea, who got access, who captured value. Levels are set by editors today; an AI-assisted draft →
-            human-approval workflow is planned, never autonomous.
+            idea, who got access, who captured value. Every score is set and signed by a named analyst,
+            <span className="text-mono-soft-white"> Sibu Shangase</span> — an AI-assisted draft → analyst-approval
+            workflow, never autonomous.
           </p>
           <Link href="/intelligence/signal-index/methodology" className="mt-9 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber-bright transition-colors">
             READ THE FULL METHODOLOGY <ArrowRight size={18} />

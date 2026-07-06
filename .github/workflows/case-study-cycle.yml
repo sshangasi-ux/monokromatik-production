@@ -1,0 +1,88 @@
+name: Case-Study Cycle (Index scaling)
+
+# The content engine that FEEDS the Cultural-Signal Index. Drafts N
+# schema-complete, web-grounded case studies (fail-closed validation), dedup'd
+# against the brands already scored, and opens a review PR appending them to
+# data/case-studies.json. Merging the PR is the analyst's sign-off — the model
+# drafts, a human reviews and signs the scores (verification stays 'partial'
+# until the analyst upgrades it). This is how the Index scales 26 -> 150-300.
+#
+# Twice a week; dispatch on demand with a count. No-op-safe without secrets.
+
+on:
+  schedule:
+    - cron: '17 6 * * 2,5' # Tue + Fri, 06:17 UTC (08:17 SAST)
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many case studies to draft for review'
+        required: false
+        default: '3'
+      dry:
+        description: 'Dry run (draft + print, write nothing)'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: case-study-cycle
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Draft + stage case studies
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          COUNT="${{ github.event.inputs.count || '3' }}"
+          if [ "${{ github.event.inputs.dry }}" = "true" ]; then
+            npm run casestudy:cycle -- --count="$COUNT" --dry
+          else
+            npm run casestudy:cycle -- --count="$COUNT"
+          fi
+
+      - name: Open a review PR
+        if: ${{ github.event.inputs.dry != 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/case-studies.json)" ]; then
+            echo "No new case studies staged this run." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          BRANCH="casestudy/cycle-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/case-studies.json
+          git commit -m "feat(index): draft case studies for review — $(date -u +%Y-%m-%d)"
+          git push origin "$BRANCH"
+          {
+            echo "New, web-grounded case studies drafted for the Cultural-Signal Index — **review, edit, and merge to sign them onto the Index**. Every draft passed fail-closed validation (all four axes 1-5, >=2 real sources, an evidence ledger). \`verification\` is **\`partial\`** on each until you check the sources and upgrade to \`verified\` (which is what raises its Evidence Strength). Close the PR to discard."
+            echo
+            if [ -f output/case-study-cycle/STAGED.md ]; then cat output/case-study-cycle/STAGED.md; fi
+          } > "$RUNNER_TEMP/casestudy-pr-body.md"
+          gh pr create --base main --head "$BRANCH" --title "Case studies for review — $(date -u +%Y-%m-%d)" --body-file "$RUNNER_TEMP/casestudy-pr-body.md" || true

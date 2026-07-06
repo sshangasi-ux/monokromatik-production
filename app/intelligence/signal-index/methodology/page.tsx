@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database } from 'lucide-react';
+import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database, PenLine } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
 import { AXIS_WEIGHTS } from '../../../../lib/signal-index';
 
@@ -147,6 +147,32 @@ export default function MethodologyPage() {
 
         <section>
           <div className="flex items-center gap-3 mb-5">
+            <Database className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE MEASURED ANCHOR</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">A number you can count, beside the one we judge.</h2>
+          <div className="mt-6 space-y-4 font-body text-lg text-mono-charcoal leading-relaxed">
+            <p>
+              The Signal Score is editorial judgement. So every brand also carries an <strong>Evidence Strength</strong> —
+              a second score, 0&ndash;100, that is <strong>measured, not judged</strong>: it is counted directly from the
+              corroboration behind the work. Independently-<strong>confirmed facts</strong> weigh most, then
+              <strong> verification</strong> status, then <strong>cited sources</strong>, then single-source reported
+              claims — passed through a saturation curve so it rises with corroboration without running away on volume.
+            </p>
+            <p>
+              It answers a different question than the rating: not <em>how good</em>, but <em>how well-backed</em>. A high
+              Signal Score with a Developing evidence base is an honest signal — a strong read that is still thinly
+              corroborated. Tiers: <strong>Strong</strong> (75+), <strong>Moderate</strong> (45+), <strong>Developing</strong> (below 45).
+            </p>
+            <p>
+              This is the rating-agency pattern — a rating paired with a data-quality indicator. It gives a buyer a
+              measured anchor for a judged number, and it gives every brand a clear way to climb: deepen the evidence.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center gap-3 mb-5">
             <ShieldCheck className="text-mono-amber" size={22} />
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">WHAT IT IS NOT</p>
           </div>
@@ -158,14 +184,42 @@ export default function MethodologyPage() {
               honesty is the point: every score traces to a case study and the evidence behind it.
             </p>
             <p>
-              Axis levels are <strong>set by editors</strong> today. An AI-assisted workflow — a model drafts the decode,
-              an editor approves it — is planned to scale the scoring without surrendering the judgement. It will never
-              be autonomous: a human signs every score.
+              Axis levels are <strong>set by a named human analyst</strong> (see below), not an anonymous committee.
+              An AI-assisted workflow — a model drafts the decode, the analyst approves it — scales the scoring without
+              surrendering the judgement. It is never autonomous: a person signs every score.
             </p>
             <p>
               The weighting is locked and versioned in code. If it ever changes, that change is documented — a ranking
               you can&rsquo;t audit isn&rsquo;t intelligence.
             </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <PenLine className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE ANALYST</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">A name behind the number.</h2>
+          <div className="mt-6 space-y-4 font-body text-lg text-mono-charcoal leading-relaxed">
+            <p>
+              Trust in a rating is personal. Every score on the Cultural-Signal Index is set and signed off by
+              <strong> Sibu Shangase</strong>, founder and lead analyst of MonoKromatik — who built the methodology,
+              weights each axis against the evidence, and is accountable for the read. Where a score is wrong, the
+              correction carries the same byline.
+            </p>
+            <p>
+              This is deliberate: an index is only as credible as the judgement behind it, and judgement has a name.
+              The analyst works to the locked methodology above and the measured Evidence Strength beside each score —
+              disclosure, not a black box.
+            </p>
+          </div>
+          <div className="mt-7 flex items-center gap-4 border border-mono-gray/25 bg-mono-white p-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-mono-black text-mono-amber font-display font-bold text-lg">SS</div>
+            <div>
+              <p className="font-display font-bold text-mono-black">Sibu Shangase</p>
+              <p className="text-sm font-body text-mono-gray">Founder &amp; Lead Analyst, MonoKromatik &middot; Cultural-Signal Index</p>
+            </div>
           </div>
         </section>
 

@@ -7,6 +7,7 @@ import { SignalStrength } from '../../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement, getBrandHistory } from '../../../../lib/index-history';
+import { brandEvidence, describeEvidence } from '../../../../lib/evidence-strength';
 import Sparkline from '../Sparkline';
 import BadgeEmbed from '../BadgeEmbed';
 import ShareIndexCard from './ShareIndexCard';
@@ -47,6 +48,7 @@ export default async function BrandIndexPage({ params }: PageProps) {
   if (!entry) notFound();
 
   const works = studies.filter((c) => brandSlug(c.brand) === brand);
+  const evidence = brandEvidence(works);
   const clampLevel = (n: number) => Math.min(5, Math.max(1, Math.round(n))) as 1 | 2 | 3 | 4 | 5;
   const movement = getMovement(brand);
   const history = getBrandHistory(brand);
@@ -61,14 +63,30 @@ export default async function BrandIndexPage({ params }: PageProps) {
     url: `${SITE}/intelligence/signal-index/${brand}`,
     isPartOf: { '@type': 'Dataset', name: 'The Cultural-Signal Index', url: `${SITE}/intelligence/signal-index` },
     about: { '@type': 'Brand', name: entry.brand },
+    author: { '@type': 'Person', name: 'Sibu Shangase', jobTitle: 'Founder & Lead Analyst', affiliation: { '@type': 'Organization', name: 'MonoKromatik' } },
     mainEntity: {
       '@type': 'PropertyValue',
       name: 'Cultural-Signal Score',
       value: entry.score,
       maxValue: 100,
-      additionalProperty: AXIS_LABELS.map((label) => ({
-        '@type': 'PropertyValue', name: label, value: entry.axisAverages[label] ?? 0, maxValue: 5,
-      })),
+      additionalProperty: [
+        ...AXIS_LABELS.map((label) => ({
+          '@type': 'PropertyValue', name: label, value: entry.axisAverages[label] ?? 0, maxValue: 5,
+        })),
+        // The measured anchor: a countable corroboration score beside the editorial rating.
+        {
+          '@type': 'PropertyValue',
+          name: 'Evidence Strength',
+          description: 'Measured corroboration behind the rating: confirmed facts, cited sources and verification.',
+          value: evidence.score,
+          maxValue: 100,
+          additionalProperty: [
+            { '@type': 'PropertyValue', name: 'Confirmed facts', value: evidence.confirmed },
+            { '@type': 'PropertyValue', name: 'Sources cited', value: evidence.sources },
+            { '@type': 'PropertyValue', name: 'Verified works', value: evidence.verifiedWorks },
+          ],
+        },
+      ],
     },
   };
 
@@ -92,10 +110,17 @@ export default async function BrandIndexPage({ params }: PageProps) {
           </p>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h1 className="max-w-3xl text-4xl md:text-6xl font-display font-bold leading-[0.98]">{entry.brand}</h1>
-            <span className="text-right">
-              <span className="block text-6xl md:text-7xl font-display font-bold leading-none tabular-nums">{entry.score}<span className="text-2xl text-mono-gray"> /100</span></span>
-              <span className="block text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mt-2">CULTURAL-SIGNAL SCORE</span>
-            </span>
+            <div className="flex items-end gap-8">
+              <span className="text-right">
+                <span className="block text-[11px] tracking-[0.18em] font-display font-bold text-mono-gray mb-1">EVIDENCE</span>
+                <span className="block text-3xl md:text-4xl font-display font-bold leading-none tabular-nums text-mono-soft-white">{evidence.score}</span>
+                <span className="block text-[11px] tracking-[0.14em] font-display font-bold text-mono-amber mt-1.5">{evidence.tier.toUpperCase()} · MEASURED</span>
+              </span>
+              <span className="text-right">
+                <span className="block text-6xl md:text-7xl font-display font-bold leading-none tabular-nums">{entry.score}<span className="text-2xl text-mono-gray"> /100</span></span>
+                <span className="block text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mt-2">CULTURAL-SIGNAL SCORE</span>
+              </span>
+            </div>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <FollowButton slug={brand} variant="chip" />
@@ -128,6 +153,25 @@ export default async function BrandIndexPage({ params }: PageProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* The measured anchor — a countable corroboration signal beside the editorial score. */}
+        <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">EVIDENCE BASE · MEASURED</h2>
+        <div className="border border-mono-gray/25 bg-mono-white p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="text-4xl font-display font-bold text-mono-black tabular-nums leading-none">{evidence.score}<span className="text-lg text-mono-gray">/100</span></span>
+              <span className={`text-[11px] tracking-[0.16em] font-display font-bold px-2.5 py-1 ${evidence.tier === 'Strong' ? 'bg-emerald-600/15 text-emerald-700' : evidence.tier === 'Moderate' ? 'bg-mono-amber/20 text-mono-amber-strong' : 'bg-mono-gray/15 text-mono-charcoal'}`}>{evidence.tier.toUpperCase()}</span>
+            </div>
+            <div className="flex items-center gap-6 text-right">
+              <span><span className="block text-2xl font-display font-bold text-mono-black tabular-nums leading-none">{evidence.confirmed}</span><span className="block text-[10px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">CONFIRMED</span></span>
+              <span><span className="block text-2xl font-display font-bold text-mono-black tabular-nums leading-none">{evidence.sources}</span><span className="block text-[10px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">SOURCES</span></span>
+              <span><span className="block text-2xl font-display font-bold text-mono-black tabular-nums leading-none">{evidence.verifiedWorks}</span><span className="block text-[10px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">VERIFIED</span></span>
+            </div>
+          </div>
+          <p className="mt-5 text-sm font-body text-mono-charcoal leading-relaxed border-t border-mono-gray/20 pt-5">
+            A <span className="font-display font-bold">measured</span> reading — counted, not scored by an editor: {describeEvidence(evidence)} across {evidence.works} {evidence.works === 1 ? 'work' : 'works'}. It sits beside the editorial Cultural-Signal Score so the rating carries its own data-quality indicator. The number rises as corroboration deepens — more independently-confirmed facts, more sources, and verified reporting.
+          </p>
         </div>
 
         {history.length > 0 && (
