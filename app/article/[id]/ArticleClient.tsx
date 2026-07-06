@@ -69,6 +69,11 @@ export default function ArticleClient({ article }: { article: Article }) {
         </Link>
 
         <div className="flex flex-wrap items-center gap-4 mb-6 font-body text-sm">
+          {article.format === 'feature' && (
+            <span className="px-3 py-1 bg-mono-black text-mono-amber font-display font-bold uppercase tracking-[0.14em] text-xs">
+              Feature
+            </span>
+          )}
           <span className="px-3 py-1 bg-mono-amber text-mono-black font-display font-bold uppercase">
             {article.category}
           </span>

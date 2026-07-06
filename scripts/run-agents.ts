@@ -46,6 +46,9 @@ const COUNT = parseInt(
 );
 const DRY_RUN = args.includes('--dry');
 const NO_PUSH = args.includes('--no-push');
+// Content tier: 'brief' (default, fast daily culture pieces) or 'feature'
+// (deeply-reported flagship analysis — fewer, longer, higher authority).
+const DEPTH: 'brief' | 'feature' = args.includes('--depth=feature') ? 'feature' : 'brief';
 // Review-gated: write the approved candidates to data/articles.json but do NO
 // git operations — the workflow stages them as a PR for human one-click merge.
 const STAGE = args.includes('--stage');
@@ -140,7 +143,7 @@ async function main() {
 
   // 6. Writer — Claude drafts articles
   log('\n✍️  [WRITER] Generating articles in MonoKromatik voice...');
-  const generated = await generateArticles(curated.slice(0, COUNT));
+  const generated = await generateArticles(curated.slice(0, COUNT), DEPTH);
   if (generated.length === 0) {
     throw new Error('Writer produced 0 articles — check Claude API logs');
   }

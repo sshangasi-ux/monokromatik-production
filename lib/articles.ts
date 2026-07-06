@@ -10,6 +10,10 @@ export interface Article {
   excerpt: string;
   category: string;
   tags: string[];
+  /** Content tier: 'brief' = the fast, punchy daily culture piece (default);
+   *  'feature' = a deeply-reported, longer flagship analysis. Lets the two tiers
+   *  be generated, counted and presented differently. */
+  format?: 'brief' | 'feature';
   imageUrl?: string;
   /** Credit for the hero image, e.g. "Via BellaNaija" / "Photo: Pexels". */
   imageCredit?: string;

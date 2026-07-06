@@ -14,6 +14,7 @@ export interface GeneratedArticle {
   excerpt: string;
   category: string;
   tags: string[];
+  format?: 'brief' | 'feature';
   imageUrl?: string;
   imageCredit?: string;
   imageSourceUrl?: string;
@@ -45,8 +46,75 @@ function getAnthropicClient() {
 /**
  * Generate a full article from a curated story
  */
-export async function generateArticle(story: Story): Promise<GeneratedArticle> {
-  console.log(`\n✍️  Generating article: "${story.title}"\n`);
+export type ArticleDepth = 'brief' | 'feature';
+
+// The flagship-feature override — appended for depth:'feature'. It supersedes the
+// brief template's length + voice, switching from the fast, scroll-stopping
+// culture-brief register to the deeply-reported MonoKromatik intelligence voice.
+const FEATURE_OVERRIDE = `
+
+========================================================================
+FLAGSHIP FEATURE MODE — THIS SUPERSEDES THE LENGTH, STRUCTURE AND VOICE ABOVE
+========================================================================
+You are NOT writing a fast news brief. You are writing a flagship feature — the
+deeply-reported, authored analysis that builds MonoKromatik's authority and the
+long dwell-time that sells memberships.
+
+LENGTH: 1,800–2,600 words. This is a hard minimum of 1,800 — a shorter piece is a
+failure. Depth is the point.
+
+VOICE: the MonoKromatik intelligence register — precise, declarative,
+business-literate, African/diaspora-centred. Analysis over hype. Drop the
+"make them STOP scrolling", "turn up the volume", "group chats are buzzing"
+devices; those are for briefs, not features. Still vivid and readable, never academic.
+
+STRUCTURE (use ## headings, write real analysis under each):
+- A sharp opening that states the thesis — the argument this piece makes.
+- What happened, in specific, sourced detail (names, dates, numbers).
+- Why it matters: the strategic and cultural stakes, argued in depth.
+- The authorship read: who shaped it, who captured the value (the question MonoKromatik exists to ask).
+- What it means for brands, creators and the culture — the "so what", concrete.
+- A close that lands the argument, not just the vibe.
+
+RIGOUR: cite every factual beat with an inline markdown link to a real source
+you were given or can stand behind — [publisher](https://url). Separate what is
+confirmed from what is reported. Never fabricate a quote, stat or source.`;
+
+/**
+ * Word-floor enforcement: if the draft undershoots the tier's minimum, do ONE
+ * expand pass. Fixes the chronic undershoot (briefs landing ~820w vs target).
+ */
+async function enforceFloor(
+  anthropic: ReturnType<typeof getAnthropicClient>,
+  basePrompt: string,
+  result: WriterResult,
+  floor: number,
+  maxTokens: number
+): Promise<WriterResult> {
+  const words = result.content.split(/\s+/).filter(Boolean).length;
+  if (words >= floor) return result;
+  console.log(`   ↔ Draft is ${words}w (< ${floor}) — expanding once.`);
+  try {
+    const msg = await anthropic.messages.create({
+      model: MODELS.flagship,
+      max_tokens: maxTokens,
+      messages: [
+        { role: 'user', content: basePrompt },
+        { role: 'assistant', content: JSON.stringify(result) },
+        { role: 'user', content: `That draft is ${words} words — below the ${floor}-word minimum. Return the SAME JSON object, but expand "content" to at least ${floor} words by adding more reporting, sourced detail and analysis (not padding or repetition). Keep the title, excerpt and tags unless they need to change. JSON only.` },
+      ],
+    });
+    const t = msg.content.find((b) => b.type === 'text');
+    const expanded = parseWriterResponseSafely(t && t.type === 'text' ? t.text : '');
+    if (expanded && expanded.content.split(/\s+/).filter(Boolean).length > words) return expanded;
+  } catch (e) {
+    console.log(`   ⚠️  Expand pass failed (${e instanceof Error ? e.message : 'unknown'}) — keeping the draft.`);
+  }
+  return result;
+}
+
+export async function generateArticle(story: Story, depth: ArticleDepth = 'brief'): Promise<GeneratedArticle> {
+  console.log(`\n✍️  Generating ${depth === 'feature' ? 'FLAGSHIP FEATURE' : 'article'}: "${story.title}"\n`);
 
   // Fetch the full source article body for context. Critical for sources
   // (Complete Sports, NotJustOk, etc.) whose RSS only ships a short snippet.
@@ -69,7 +137,7 @@ export async function generateArticle(story: Story): Promise<GeneratedArticle> {
     console.log(`   ⚠️  Source fetch threw — falling back to RSS excerpt: ${err instanceof Error ? err.message : 'unknown'}`);
   }
 
-  const prompt = `You are the lead writer for MonoKromatik Network - an AI-powered African culture/sports/entertainment platform serving 1.4 billion Africans + diaspora worldwide.
+  let prompt = `You are the lead writer for MonoKromatik Network - an AI-powered African culture/sports/entertainment platform serving 1.4 billion Africans + diaspora worldwide.
 
 YOUR MISSION: Transform this story into a publication-quality article that makes diaspora readers feel connected to home.
 
@@ -186,11 +254,15 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
   "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"] (5 specific, searchable tags)
 }`;
 
+  if (depth === 'feature') prompt += FEATURE_OVERRIDE;
+  const maxTokens = depth === 'feature' ? 8000 : 4000;
+  const floor = depth === 'feature' ? 1800 : 900;
+
   try {
     const anthropic = getAnthropicClient();
     const message = await anthropic.messages.create({
       model: MODELS.flagship,
-      max_tokens: 4000,
+      max_tokens: maxTokens,
       messages: [
         {
           role: 'user',
@@ -202,10 +274,12 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
     // Robust against non-text leading blocks (e.g. if adaptive thinking is enabled).
     const textBlock = message.content.find((b) => b.type === 'text');
     const responseText = textBlock && textBlock.type === 'text' ? textBlock.text : '';
-    const result = parseWriterResponseSafely(responseText);
-    if (!result) {
+    const parsed = parseWriterResponseSafely(responseText);
+    if (!parsed) {
       throw new Error('Writer response had no parseable article structure');
     }
+    // End the chronic undershoot: expand once if below the tier's floor.
+    const result = await enforceFloor(anthropic, prompt, parsed, floor, maxTokens);
 
     // Create slug from title
     const slug = result.title
@@ -225,6 +299,7 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
       sourceLink: story.link,
       sourceName: story.source,
       publishedAt: new Date().toISOString(),
+      format: depth,
     };
 
     console.log(`   ✅ Generated: "${article.title}"`);
@@ -241,14 +316,14 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
 /**
  * Generate multiple articles in batch
  */
-export async function generateArticles(stories: Story[]): Promise<GeneratedArticle[]> {
-  console.log(`\n📚 Generating ${stories.length} articles...\n`);
+export async function generateArticles(stories: Story[], depth: ArticleDepth = 'brief'): Promise<GeneratedArticle[]> {
+  console.log(`\n📚 Generating ${stories.length} ${depth === 'feature' ? 'flagship features' : 'articles'}...\n`);
 
   const articles: GeneratedArticle[] = [];
 
   for (const story of stories) {
     try {
-      const article = await generateArticle(story);
+      const article = await generateArticle(story, depth);
       articles.push(article);
 
       // Rate limiting (Claude API allows 50 requests/min)

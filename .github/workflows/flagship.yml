@@ -1,0 +1,77 @@
+name: MonoKromatik Flagship Feature (depth tier)
+
+# The DEPTH tier of the two-tier content model. Where the daily agents run
+# produces fast, punchy culture briefs (cadence), this produces a small number
+# of deeply-reported flagship features (1,800–2,600 words, the intelligence
+# voice) — the authority + dwell-time that sells memberships. Weekly, low volume,
+# review-gated (same staging path as the daily run).
+
+on:
+  schedule:
+    - cron: '7 8 * * 3' # Wednesday 08:07 UTC (10:07 SAST)
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of flagship features to generate for review'
+        required: false
+        default: '1'
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: flagship-feature
+  cancel-in-progress: false
+
+jobs:
+  flagship:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Generate flagship feature(s) — depth tier, review-gated
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MONOKROMATIK_PUBLICATION_MODE: review_gated
+          NODE_ENV: production
+        run: npm run agents -- --count=${{ github.event.inputs.count || '1' }} --depth=feature --stage
+
+      - name: Stage flagship feature(s) as a Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain data/articles.json public/article-media)" ]; then
+            echo "No approved flagship feature this run — nothing to stage." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          BRANCH="flagship/feature-${{ github.run_id }}"
+          git config user.name "MonoKromatik Agent"
+          git config user.email "agents@monokromatik.com"
+          git checkout -b "$BRANCH"
+          git add data/articles.json public/article-media
+          git commit -m "feat(flagship): staged flagship feature(s) for review"
+          git push origin "$BRANCH"
+          BODY="Depth tier: a deeply-reported flagship feature (1,800-2,600 words, the intelligence voice), EIC-reviewed and staged for your decision. Merge to publish; close to discard. This is the authority/dwell-time tier that complements the daily culture briefs."
+          gh pr create --base main --head "$BRANCH" --title "Flagship feature for review — $(date -u +%Y-%m-%d)" --body "$BODY" || true
