@@ -3041,7 +3041,15 @@
         "use": "Primary listing of the brand in the LVMH Prize cohort"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-boyedoe-waste-to-wear-from-accra-to-the-lvmh-prize-fdfc88db.webp",
+        "alt": "Boyedoe (David Kusi Boye-Doe) — Boyedoe: Waste-to-Wear from Accra to the LVMH Prize",
+        "credit": "Via OkayAfrica",
+        "sourceLabel": "OkayAfrica",
+        "sourceHref": "https://www.okayafrica.com/meet-david-kusi-boye-doe-the-first-lvmh-prize-semi-finalist-from-ghana/244591"
+      }
+    ]
   },
   {
     "slug": "iamisigo-s-dual-mandate-african-craft-takes-the-zalando-visionary-award",
@@ -3152,7 +3160,15 @@
         "use": "Trade-press corroboration of the award and the brand's craft positioning"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-iamisigo-s-dual-mandate-african-craft-takes-the-zalando-v-122b6c5d.webp",
+        "alt": "Iamisigo (Bubu Ogisi) — Iamisigo's 'Dual Mandate': African Craft Takes the Zalando Visionary Award",
+        "credit": "Photo: Pexels",
+        "sourceLabel": "Zalando Corporate",
+        "sourceHref": "https://www.pexels.com"
+      }
+    ]
   },
   {
     "slug": "spotify-x-afro-nation-who-captures-the-value-when-afrobeats-goes-to-portugal",
@@ -3263,6 +3279,14 @@
         "use": "Corroborates the 'festival destination on the platform' construction"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-spotify-x-afro-nation-who-captures-the-value-when-afrobea-3a8c0827.webp",
+        "alt": "Spotify x Afro Nation (The Malachite Group) — Spotify x Afro Nation: Who Captures the Value When Afrobeats Goes to Portugal",
+        "credit": "Photo: Pexels",
+        "sourceLabel": "Premium Times",
+        "sourceHref": "https://www.pexels.com"
+      }
+    ]
   }
 ]
