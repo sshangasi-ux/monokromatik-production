@@ -147,6 +147,32 @@ export default function MethodologyPage() {
 
         <section>
           <div className="flex items-center gap-3 mb-5">
+            <Database className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE MEASURED ANCHOR</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">A number you can count, beside the one we judge.</h2>
+          <div className="mt-6 space-y-4 font-body text-lg text-mono-charcoal leading-relaxed">
+            <p>
+              The Signal Score is editorial judgement. So every brand also carries an <strong>Evidence Strength</strong> —
+              a second score, 0&ndash;100, that is <strong>measured, not judged</strong>: it is counted directly from the
+              corroboration behind the work. Independently-<strong>confirmed facts</strong> weigh most, then
+              <strong> verification</strong> status, then <strong>cited sources</strong>, then single-source reported
+              claims — passed through a saturation curve so it rises with corroboration without running away on volume.
+            </p>
+            <p>
+              It answers a different question than the rating: not <em>how good</em>, but <em>how well-backed</em>. A high
+              Signal Score with a Developing evidence base is an honest signal — a strong read that is still thinly
+              corroborated. Tiers: <strong>Strong</strong> (75+), <strong>Moderate</strong> (45+), <strong>Developing</strong> (below 45).
+            </p>
+            <p>
+              This is the rating-agency pattern — a rating paired with a data-quality indicator. It gives a buyer a
+              measured anchor for a judged number, and it gives every brand a clear way to climb: deepen the evidence.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center gap-3 mb-5">
             <ShieldCheck className="text-mono-amber" size={22} />
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">WHAT IT IS NOT</p>
           </div>
