@@ -63,6 +63,7 @@ export default async function BrandIndexPage({ params }: PageProps) {
     url: `${SITE}/intelligence/signal-index/${brand}`,
     isPartOf: { '@type': 'Dataset', name: 'The Cultural-Signal Index', url: `${SITE}/intelligence/signal-index` },
     about: { '@type': 'Brand', name: entry.brand },
+    author: { '@type': 'Person', name: 'Sibu Shangase', jobTitle: 'Founder & Lead Analyst', affiliation: { '@type': 'Organization', name: 'MonoKromatik' } },
     mainEntity: {
       '@type': 'PropertyValue',
       name: 'Cultural-Signal Score',
