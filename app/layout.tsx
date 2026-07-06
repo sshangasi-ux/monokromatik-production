@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, Fraunces } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import RegistrationGate from './components/RegistrationGate';
+import SiteFooter from './components/SiteFooter';
 import './globals.css';
 
 // Self-host the brand fonts via next/font instead of a CSS @import. This avoids
@@ -111,6 +112,7 @@ export default function RootLayout({
             "region"). Each page renders its own fixed <nav> inside; utility
             components below stay as siblings. */}
         <main id="main-content" className="flex-1 flex flex-col">{children}</main>
+        <SiteFooter />
         <RegistrationGate />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
       </body>
