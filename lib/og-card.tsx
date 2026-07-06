@@ -200,6 +200,8 @@ export interface IndexCardOptions {
   scoreDelta?: number | null;
   /** Per-axis averages (1–5) to render as a "reads" strip; up to 4 shown. */
   axes?: { label: string; level: number }[];
+  /** The measured corroboration anchor beside the editorial score. */
+  evidence?: { score: number; tier: string } | null;
 }
 
 const GREEN = '#3FB984';
@@ -214,7 +216,7 @@ const MUTE = '#9A958C';
  * (ink + amber + serif name) so the badge and the share-card read as one system.
  */
 export async function renderIndexCard(opts: IndexCardOptions): Promise<ImageResponse> {
-  const { brand, score, rank, total, scoreDelta, axes = [] } = opts;
+  const { brand, score, rank, total, scoreDelta, axes = [], evidence } = opts;
 
   const len = brand.length;
   let brandSize = 92;
@@ -274,6 +276,11 @@ export async function renderIndexCard(opts: IndexCardOptions): Promise<ImageResp
               <span style={{ fontSize: 40, fontWeight: 500, color: MUTE, marginLeft: 6 }}>/100</span>
             </div>
             <span style={{ display: 'flex', fontSize: 16, fontWeight: 700, letterSpacing: '0.22em', color: COLORS.amber, marginTop: 10 }}>SIGNAL SCORE</span>
+            {evidence ? (
+              <span style={{ display: 'flex', fontSize: 15, fontWeight: 700, letterSpacing: '0.14em', color: MUTE, marginTop: 14 }}>
+                EVIDENCE · {evidence.tier.toUpperCase()} {evidence.score}
+              </span>
+            ) : null}
           </div>
           <div style={{ display: 'flex', fontWeight: 700, fontSize: 28, letterSpacing: '0.04em', color: COLORS.white }}>
             <span>MONO</span>

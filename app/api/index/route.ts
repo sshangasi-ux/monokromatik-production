@@ -9,6 +9,7 @@
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS, AXIS_LABELS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince } from '../../../lib/index-history';
+import { evidenceByBrand } from '../../../lib/evidence-strength';
 
 export const revalidate = 300;
 
@@ -16,10 +17,13 @@ const SITE = 'https://www.monokromatik.com';
 const CACHE = 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400';
 
 function buildRows() {
-  const ranked = rankIndex(getPublicCaseStudies());
+  const studies = getPublicCaseStudies();
+  const ranked = rankIndex(studies);
+  const evidence = evidenceByBrand(studies);
   return ranked.map((e) => {
     const slug = brandSlug(e.brand);
     const movement = getMovement(slug);
+    const ev = evidence.get(slug);
     const axes: Record<string, number> = {};
     for (const ax of AXIS_LABELS) axes[ax] = e.axisAverages[ax] ?? 0;
     return {
@@ -29,6 +33,8 @@ function buildRows() {
       score: e.score,
       works: e.works,
       axes,
+      // The measured anchor beside the editorial score.
+      evidence: ev ? { score: ev.score, tier: ev.tier, confirmed: ev.confirmed, reported: ev.reported, sources: ev.sources, verifiedWorks: ev.verifiedWorks } : null,
       movement,
       newlyRanked: isNewlyRanked(slug),
       url: `${SITE}/intelligence/signal-index/${slug}`,
@@ -46,10 +52,11 @@ export async function GET(req: Request) {
   const format = new URL(req.url).searchParams.get('format');
 
   if (format === 'csv') {
-    const header = ['rank', 'brand', 'slug', 'score', 'works', 'idea', 'authorship', 'execution', 'consequence', 'score_delta', 'rank_delta', 'url'];
+    const header = ['rank', 'brand', 'slug', 'score', 'evidence_score', 'evidence_tier', 'confirmed_facts', 'sources', 'verified_works', 'works', 'idea', 'authorship', 'execution', 'consequence', 'score_delta', 'rank_delta', 'url'];
     const lines = rows.map((r) =>
       [
-        r.rank, r.brand, r.slug, r.score, r.works,
+        r.rank, r.brand, r.slug, r.score,
+        r.evidence?.score ?? '', r.evidence?.tier ?? '', r.evidence?.confirmed ?? '', r.evidence?.sources ?? '', r.evidence?.verifiedWorks ?? '', r.works,
         r.axes.IDEA, r.axes.AUTHORSHIP, r.axes.EXECUTION, r.axes.CONSEQUENCE,
         r.movement?.scoreDelta ?? '', r.movement?.rankDelta ?? '', r.url,
       ].map(csvEscape).join(',')
@@ -79,6 +86,11 @@ export async function GET(req: Request) {
       scale: '0–100 composite, authorship-weighted; each axis scored 1–5',
       axes: AXIS_LABELS.map((label) => ({ label, weight: AXIS_WEIGHTS[label] })),
       note: 'Interpretive editorial judgement — defensible and evidence-led, not a measured market metric. Axis levels are set by editors.',
+      evidenceStrength: {
+        what: 'A MEASURED anchor beside the editorial score (0–100) — counted, not scored. Derived deterministically from the corroboration behind each brand’s works: independently-confirmed facts (weighted most), cited sources, and verification status, passed through an exponential saturation.',
+        tiers: 'Strong ≥75 · Moderate ≥45 · Developing <45',
+        why: 'It tells a reader how well-backed a rating is, independent of how high it is — the rating + a data-quality indicator, the Brand Finance / AAPOR pattern.',
+      },
       reference: `${SITE}/intelligence/signal-index/methodology`,
     },
     generatedAt: new Date().toISOString(),

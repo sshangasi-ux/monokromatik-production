@@ -7,6 +7,7 @@ import { StatStrip } from '../../components/dataviz/Charts';
 import { getPublicCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
+import { evidenceByBrand } from '../../../lib/evidence-strength';
 import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
 
 export const revalidate = 300;
@@ -41,8 +42,10 @@ export default function SignalIndexPage() {
     if (cs.market && !marketBySlug.has(s)) marketBySlug.set(s, cs.market);
   }
 
+  const evidence = evidenceByBrand(studies);
   const leaderEntries: LeaderEntry[] = ranked.map((e) => {
     const slug = brandSlug(e.brand);
+    const ev = evidence.get(slug);
     return {
       brand: e.brand,
       slug,
@@ -53,6 +56,8 @@ export default function SignalIndexPage() {
       market: marketBySlug.get(slug) ?? '',
       movement: getMovement(slug),
       isNew: isNewlyRanked(slug),
+      evidenceScore: ev?.score ?? null,
+      evidenceTier: ev?.tier ?? null,
     };
   });
 

@@ -18,13 +18,19 @@ export interface LeaderEntry {
   market?: string;
   movement: { scoreDelta: number; rankDelta: number } | null;
   isNew: boolean;
+  /** The measured corroboration anchor (0–100) + tier. */
+  evidenceScore?: number | null;
+  evidenceTier?: 'Strong' | 'Moderate' | 'Developing' | null;
 }
+
+const tierClass = (t: LeaderEntry['evidenceTier']) =>
+  t === 'Strong' ? 'text-emerald-600' : t === 'Moderate' ? 'text-mono-amber-strong' : 'text-mono-gray';
 
 type Band = 'all' | 'b90' | 'b80' | 'b70';
 const inBand = (score: number, band: Band) =>
   band === 'all' || (band === 'b90' && score >= 90) || (band === 'b80' && score >= 80 && score < 90) || (band === 'b70' && score < 80);
 
-type Lens = 'signal' | 'authorship';
+type Lens = 'signal' | 'authorship' | 'evidence';
 
 function Movement({ m, isNew }: { m: LeaderEntry['movement']; isNew: boolean }) {
   if (isNew) return <span className="text-[10px] font-display font-bold tracking-[0.16em] text-mono-amber-strong">NEW</span>;
@@ -65,7 +71,9 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
     return [...list].sort((a, b) =>
       lens === 'authorship'
         ? (b.axisAverages.AUTHORSHIP ?? 0) - (a.axisAverages.AUTHORSHIP ?? 0)
-        : b.score - a.score
+        : lens === 'evidence'
+          ? (b.evidenceScore ?? 0) - (a.evidenceScore ?? 0)
+          : b.score - a.score
     );
   }, [entries, query, lens, followingOnly, followed, market, band]);
 
@@ -98,6 +106,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
         </div>
         <button onClick={() => setLens('signal')} className={pill(lens === 'signal')}>BY SIGNAL</button>
         <button onClick={() => setLens('authorship')} className={pill(lens === 'authorship')}>BY AUTHORSHIP</button>
+        <button onClick={() => setLens('evidence')} className={pill(lens === 'evidence')}>BY EVIDENCE</button>
         <button onClick={() => { setCompareMode((c) => !c); setSelected([]); }} className={pill(compareMode)}>
           <GitCompare size={13} className="inline mr-1.5 -mt-0.5" />COMPARE
         </button>
@@ -197,6 +206,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
                 <p className="font-display font-bold text-mono-black text-lg md:text-xl truncate group-hover:text-mono-amber transition-colors">{e.brand}</p>
                 <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">
                   {e.works} {e.works === 1 ? 'WORK' : 'WORKS'} · AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
+                  {e.evidenceTier && <> · <span className={tierClass(e.evidenceTier)}>EVIDENCE {e.evidenceTier.toUpperCase()}</span></>}
                 </p>
               </div>
               {/* Follow star — omitted in compare mode to avoid nested buttons. */}

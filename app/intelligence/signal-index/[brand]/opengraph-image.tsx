@@ -10,6 +10,7 @@ import { renderIndexCard } from '../../../../lib/og-card';
 import { getPublicCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement } from '../../../../lib/index-history';
+import { brandEvidence } from '../../../../lib/evidence-strength';
 
 // Node runtime: lib/case-studies + lib/index-history read from disk.
 export const runtime = 'nodejs';
@@ -35,6 +36,8 @@ export default async function Image({ params }: { params: Promise<{ brand: strin
   }
 
   const movement = getMovement(brand);
+  const works = getPublicCaseStudies().filter((c) => brandSlug(c.brand) === brand);
+  const evidence = brandEvidence(works);
   return renderIndexCard({
     brand: entry.brand,
     score: entry.score,
@@ -42,5 +45,6 @@ export default async function Image({ params }: { params: Promise<{ brand: strin
     total: ranked.length,
     scoreDelta: movement?.scoreDelta ?? null,
     axes: AXIS_LABELS.map((label) => ({ label, level: entry.axisAverages[label] ?? 0 })),
+    evidence: { score: evidence.score, tier: evidence.tier },
   });
 }
