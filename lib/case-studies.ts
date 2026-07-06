@@ -79,6 +79,12 @@ export interface CaseStudy {
   pullQuotes?: string[];
   sources: CaseStudySource[];
   media: CaseStudyMedia[];
+  /** Optional supporting video embed (same shape as Article) — a sourced clip
+   *  that enriches the decode. Rendered by CaseStudyFeature. */
+  videoUrl?: string;
+  videoType?: 'youtube' | 'vimeo' | 'file';
+  videoCredit?: string;
+  videoSourceUrl?: string;
   /** Optional cross-link to a related surface (e.g. the issue it also runs in). */
   related?: { label: string; href: string };
 }

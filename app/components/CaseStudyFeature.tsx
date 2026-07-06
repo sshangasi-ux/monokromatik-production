@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, BookOpen, ShieldCheck, Lock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen, ShieldCheck, Lock, Film } from 'lucide-react';
 import Navigation from './Navigation';
 import { FeatureSection, PullQuote } from './IssueFeature';
 import { AttributedImage, AttributedImagePair, type AttributedImageAsset } from './AttributedMedia';
@@ -153,6 +153,35 @@ export default async function CaseStudyFeature({
               </FeatureSection>
 
               {media.length > 1 && <AttributedImagePair assets={media.slice(0, 2)} />}
+
+              {c.videoUrl && (
+                <figure className="my-10">
+                  <div className="aspect-video overflow-hidden bg-mono-charcoal border border-mono-gray/20">
+                    {c.videoType === 'file' ? (
+                      <video src={c.videoUrl} className="w-full h-full object-cover" autoPlay muted loop playsInline />
+                    ) : (
+                      <iframe
+                        src={c.videoUrl.includes('vimeo.com')
+                          ? c.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')
+                          : c.videoUrl.replace('watch?v=', 'embed/')}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    )}
+                  </div>
+                  {c.videoCredit && (
+                    <figcaption className="mt-3 flex items-center gap-2 text-[10px] tracking-[0.16em] font-display font-bold text-mono-gray">
+                      <Film size={13} className="text-mono-amber shrink-0" />
+                      {c.videoSourceUrl ? (
+                        <a href={c.videoSourceUrl} target="_blank" rel="noopener noreferrer" className="text-mono-amber-strong hover:text-mono-amber-hover hover:underline">{c.videoCredit}</a>
+                      ) : (
+                        <span>{c.videoCredit}</span>
+                      )}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
 
               <FeatureSection title="The evidence">
                 {c.evidence.confirmed.map((e, i) => (
