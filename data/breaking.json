@@ -1,6 +1,56 @@
 {
-  "updatedAt": "2026-07-03T22:15:01.426Z",
+  "updatedAt": "2026-07-05T20:21:20.703Z",
   "breaks": [
+    {
+      "title": "Carlos Quieroz leaves Black Stars head coach role after World Cup exit",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/carlos-quieroz-leaves-black-stars-head-coach-role-after-world-cup-exit/",
+      "pubDate": "Sun, 05 Jul 2026 19:47:26 +0000",
+      "importance": 4,
+      "why": "Ghana Black Stars head coach departure after World Cup – major African sports institution leadership change",
+      "detectedAt": "2026-07-05T20:21:20.703Z"
+    },
+    {
+      "title": "Carlos Queiroz leaves Ghana job, calls for stronger off-field structures for Black Stars",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/carlos-queiroz-leaves-ghana-job-calls-for-stronger-off-field-structures-for-black-stars/",
+      "pubDate": "Sun, 05 Jul 2026 19:44:43 +0000",
+      "importance": 4,
+      "why": "Ghana Black Stars coach exits with structural critique – significant African football story",
+      "detectedAt": "2026-07-05T20:21:20.703Z"
+    },
+    {
+      "title": "Unbeaten in 34 matches – why Morocco are World Cup contenders",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/unbeaten-in-34-matches-why-morocco-are-world-cup-contenders/",
+      "pubDate": "Sun, 05 Jul 2026 10:11:00 +0000",
+      "importance": 4,
+      "why": "Morocco's World Cup performance is a major African sports story",
+      "detectedAt": "2026-07-05T10:28:16.928Z"
+    },
+    {
+      "title": "Nigeria’s Young Mathematicians Just Made History at the 2026 Pan-African Mathematics Olympiad",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/07/nigeria-pan-african-mathematics-olympiad-2026/",
+      "pubDate": "Sat, 04 Jul 2026 22:03:36 +0000",
+      "importance": 4,
+      "why": "Nigerian youth achievement at Pan-African competition; education/culture beat with clear African institutional link",
+      "detectedAt": "2026-07-04T22:11:07.220Z"
+    },
+    {
+      "title": "World Cup 2026: Morocco Secures Quarterfinal Spot After Comfortable 3-0 Win Against Canada",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/world-cup-2026-morocco-secures-quarterfinal-spot-after-comfortable-3-0-win-against-canada/",
+      "pubDate": "Sat, 04 Jul 2026 19:27:31 +0000",
+      "importance": 4,
+      "why": "Morocco reaches World Cup 2026 quarterfinal—major African nation sports result",
+      "detectedAt": "2026-07-04T21:12:57.627Z"
+    },
     {
       "title": "Egypt take historic step with shootout win over Socceroos",
       "source": "MyJoyOnline",
