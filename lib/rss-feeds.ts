@@ -116,6 +116,20 @@ export const RSS_FEEDS: RSSFeed[] = [
   { url: 'https://drinksint.com/feed', name: 'Drinks International', category: 'drinks', language: 'en', region: 'Global' },
   { url: 'https://www.just-drinks.com/feed/', name: 'just-drinks', category: 'drinks', language: 'en', region: 'Global' },
   { url: 'https://drinkabl.media/feed/', name: 'Drinkabl', category: 'drinks', language: 'en', region: 'Global' },
+
+  // ========================================
+  // TECH · BUSINESS · TRADE · REGIONAL — the lanes our Index case studies keep
+  // coming from (fintech & e-mobility, media M&A, Nollywood/streaming, pan-African
+  // music, East Africa) but which the news/culture feeds under-cover. Each added
+  // + validated live (HTTP 200 + parseable RSS) on 2026-07-06.
+  // ========================================
+  { url: 'https://techcabal.com/feed/', name: 'TechCabal', category: 'news', language: 'en', region: 'Pan-African' },
+  { url: 'https://restofworld.org/feed/', name: 'Rest of World', category: 'news', language: 'en', region: 'Global' },
+  { url: 'https://african.business/feed', name: 'African Business', category: 'news', language: 'en', region: 'Pan-African' },
+  { url: 'https://www.theeastafrican.co.ke/rss.xml', name: 'The EastAfrican', category: 'news', language: 'en', region: 'East Africa' },
+  { url: 'https://www.musicinafrica.net/feed/', name: 'Music In Africa', category: 'music', language: 'en', region: 'Pan-African' },
+  { url: 'https://whatkeptmeup.com/feed/', name: 'What Kept Me Up', category: 'entertainment', language: 'en', region: 'West Africa' },
+  { url: 'https://variety.com/feed/', name: 'Variety', category: 'entertainment', language: 'en', region: 'Global' },
 ];
 
 // Category-based feed filtering
