@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database, PenLine } from 'lucide-react';
+import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database, PenLine, FileCheck2 } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
 import { AXIS_WEIGHTS } from '../../../../lib/signal-index';
 
@@ -220,6 +220,43 @@ export default function MethodologyPage() {
               <p className="font-display font-bold text-mono-black">Sibu Shangase</p>
               <p className="text-sm font-body text-mono-gray">Founder &amp; Lead Analyst, MonoKromatik &middot; Cultural-Signal Index</p>
             </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <FileCheck2 className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">CORRECTIONS &amp; INTEGRITY</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">Sourced, challengeable, correctable.</h2>
+          <div className="mt-6 space-y-4 font-body text-lg text-mono-charcoal leading-relaxed">
+            <p>
+              <strong>The sourcing standard.</strong> Every case study and report is web-sourced and cited. A draft that
+              can&rsquo;t meet the bar — at least two independent, real sources, every factual beat traceable, fact kept
+              separate from interpretation — is rejected before it publishes. We do not invent quotes, statistics, dates
+              or sources; an unverifiable claim is dropped, not padded. Verification is stated on every decode
+              (<em>verified · partial · interpretive</em>) and reflected in the Evidence Strength beside the score.
+            </p>
+            <p>
+              <strong>Right of reply.</strong> If you are a rated brand, you can respond. Send us evidence — a correction,
+              context we missed, or proof of an outcome — and it is reviewed against the same methodology. New evidence can
+              move a score; that is precisely how the Index is meant to work.
+            </p>
+            <p>
+              <strong>How we correct.</strong> Flag an error or dispute a score at{' '}
+              <a href="mailto:editor@monokromatik.com" className="text-mono-amber-strong font-bold hover:text-mono-amber-hover underline">editor@monokromatik.com</a>.
+              Material factual errors are corrected promptly; the correction carries the same analyst byline, is dated, and
+              — where it changes a score — is recorded in the Index&rsquo;s movement history so the change is auditable. We
+              would rather be corrected than wrong.
+            </p>
+          </div>
+          <div className="mt-7">
+            <a
+              href="mailto:editor@monokromatik.com?subject=Cultural-Signal%20Index%20%E2%80%94%20correction%20%2F%20right%20of%20reply"
+              className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors"
+            >
+              FLAG AN ERROR / RIGHT OF REPLY <ArrowRight size={17} />
+            </a>
           </div>
         </section>
 

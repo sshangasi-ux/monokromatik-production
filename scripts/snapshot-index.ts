@@ -11,14 +11,17 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
-import { getPublicCaseStudies } from '../lib/case-studies';
+import { getAllCaseStudies } from '../lib/case-studies';
 import { rankIndex, brandSlug } from '../lib/signal-index';
 
 const PATH = join(process.cwd(), 'data', 'index-history.json');
 const dateArg = process.argv.find((a) => a.startsWith('--date='))?.split('=')[1];
 const DATE = dateArg || new Date().toISOString().slice(0, 10);
 
-const ranked = rankIndex(getPublicCaseStudies());
+// Snapshot ALL ranked works — the movement history must match the public Index
+// (ratings are public; premium decodes stay gated). Public-only would leave the
+// top premium works out of the trajectory moat.
+const ranked = rankIndex(getAllCaseStudies());
 const snapshot = {
   date: DATE,
   generatedAt: new Date().toISOString(),
