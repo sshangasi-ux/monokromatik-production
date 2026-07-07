@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { ArrowRight, BarChart3, Compass, Filter, Layers3, SearchCheck, Trophy } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import { StatStrip } from '../../components/dataviz/Charts';
-import { getPublicCaseStudies } from '../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../lib/case-studies';
+import { membershipsLive } from '../../../lib/commerce';
 import CaseStudyLibrary from './CaseStudyLibrary';
 import type { Metadata } from 'next';
 
@@ -60,7 +61,11 @@ const firstCollections = [
 const futureFilters = ['Brand', 'Market', 'Category', 'Objective', 'Cultural Territory', 'Creator', 'Channel', 'Evidence Level'];
 
 export default function CaseStudiesPage() {
-  const studies = getPublicCaseStudies();
+  // Show the whole library — premium decodes appear with a members lock (the
+  // rating is public, the full decode is gated on the case-study page). This
+  // makes the paid tier discoverable and turns the library into a funnel.
+  const studies = getAllCaseStudies();
+  const gated = membershipsLive();
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -88,7 +93,7 @@ export default function CaseStudiesPage() {
               </div>
               <p className="font-body text-mono-charcoal max-w-sm">Each one decoded across the six dimensions, evidence-led and credited at the source.</p>
             </div>
-            <CaseStudyLibrary studies={studies} />
+            <CaseStudyLibrary studies={studies} gated={gated} />
           </div>
         </section>
       )}
