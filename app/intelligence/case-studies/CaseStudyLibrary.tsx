@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Search, X } from 'lucide-react';
+import { ArrowRight, Search, X, Lock } from 'lucide-react';
 import type { CaseStudy } from '../../../lib/case-studies';
 import { workSignal } from '../../../lib/signal-index';
 import SignalScore from '../../components/SignalScore';
@@ -13,7 +13,7 @@ const ALL = 'All';
 // verification level, plus a free-text search over title/brand/standfirst/tags.
 // All client-side over the already-loaded set — no fetch, no router churn. This
 // is the "interrogate, don't browse" index the page used to only gesture at.
-export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) {
+export default function CaseStudyLibrary({ studies, gated = false }: { studies: CaseStudy[]; gated?: boolean }) {
   const [collection, setCollection] = useState<string>(ALL);
   const [verification, setVerification] = useState<string>(ALL);
   const [query, setQuery] = useState('');
@@ -100,6 +100,7 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
         <div className="grid md:grid-cols-2 gap-5">
           {visible.map((study) => {
             const sig = workSignal(study);
+            const locked = study.access === 'premium' && gated;
             return (
             <Link
               key={study.slug}
@@ -113,6 +114,11 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
                 <span className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">
                   {study.verification.toUpperCase()}
                 </span>
+                {locked && (
+                  <span className="inline-flex items-center gap-1 text-[10px] tracking-[0.16em] px-2.5 py-1.5 bg-mono-amber text-mono-black font-display font-bold">
+                    <Lock size={10} /> MEMBERS
+                  </span>
+                )}
                 {sig && <SignalScore score={sig.score} className="ml-auto" />}
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">
@@ -122,7 +128,7 @@ export default function CaseStudyLibrary({ studies }: { studies: CaseStudy[] }) 
               <div className="mt-auto pt-6 flex items-center justify-between text-[11px] tracking-[0.16em] font-display font-bold text-mono-gray">
                 <span>{study.market}</span>
                 <span className="inline-flex items-center gap-2 text-mono-amber-strong group-hover:text-mono-amber-hover">
-                  READ THE DECODE <ArrowRight size={15} />
+                  {locked ? <>UNLOCK THE DECODE <Lock size={13} /></> : <>READ THE DECODE <ArrowRight size={15} /></>}
                 </span>
               </div>
             </Link>

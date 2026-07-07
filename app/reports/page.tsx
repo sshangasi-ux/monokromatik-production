@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { ArrowRight, Bookmark, Download, FileText, LockKeyhole } from 'lucide-react';
+import { ArrowRight, Bookmark, Download, FileText, Lock, LockKeyhole } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
-import { getAllReports } from '../../lib/reports';
+import { getAllReports, isLocked } from '../../lib/reports';
+import { membershipsLive } from '../../lib/commerce';
 
 const STATUS_LABEL: Record<string, string> = {
   live: 'LIVE',
@@ -31,6 +32,7 @@ const productTiers = [
 export default function ReportsPage() {
   const reports = getAllReports();
   const liveCount = reports.filter((r) => r.status === 'live').length;
+  const gated = membershipsLive();
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
@@ -74,6 +76,11 @@ export default function ReportsPage() {
                   <div className="flex flex-wrap items-center gap-3">
                     <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-strong">{report.series}</p>
                     <span className="text-[9px] tracking-[0.2em] px-2.5 py-1 bg-mono-black text-mono-white font-display font-bold">{STATUS_LABEL[report.status] ?? report.status.toUpperCase()}</span>
+                    {isLocked(report) && gated && (
+                      <span className="inline-flex items-center gap-1 text-[9px] tracking-[0.16em] px-2 py-1 bg-mono-amber text-mono-black font-display font-bold">
+                        <Lock size={9} /> MEMBERS
+                      </span>
+                    )}
                   </div>
                   <h3 className="mt-8 text-3xl font-display font-bold text-mono-black leading-tight group-hover:text-mono-amber transition-colors">{report.title}</h3>
                   <p className="mt-5 text-mono-charcoal font-body leading-relaxed">{report.summary}</p>
@@ -84,7 +91,7 @@ export default function ReportsPage() {
                   </div>
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-xs text-mono-gray font-body">{report.access === 'open' ? 'Open Signal Briefing' : report.access === 'premium' ? 'Premium Report' : 'Partner Edition'}{report.statusNote ? ` · ${report.statusNote}` : ''}</p>
-                    <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] font-display font-bold text-mono-amber-strong group-hover:text-mono-amber-hover whitespace-nowrap">{report.status === 'live' ? 'READ' : 'PREVIEW'} <ArrowRight size={14} /></span>
+                    <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] font-display font-bold text-mono-amber-strong group-hover:text-mono-amber-hover whitespace-nowrap">{report.status === 'live' ? (isLocked(report) && gated ? 'UNLOCK' : 'READ') : 'PREVIEW'} <ArrowRight size={14} /></span>
                   </div>
                 </div>
               </Link>
