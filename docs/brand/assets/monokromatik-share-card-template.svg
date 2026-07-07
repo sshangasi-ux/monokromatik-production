@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="MonoKromatik share card template">
+  <rect width="1200" height="630" fill="#141210"/>
+  <rect width="1200" height="6" fill="#CC5500"/>
+  <text x="72" y="96" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="34" letter-spacing="-1"><tspan fill="#FAF8F4">MONO</tspan><tspan fill="#E8631C">KROMATIK</tspan></text>
+  <text x="74" y="128" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="14" letter-spacing="4" fill="#E8631C">WILL IT LAND? · DOSSIER</text>
+  <text x="72" y="300" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="58" fill="#FAF8F4"><tspan x="72" dy="0">Can an African spirits</tspan><tspan x="72" dy="70">brand own a global shelf?</tspan></text>
+  <text x="72" y="565" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="120" fill="#E8631C">81</text>
+  <text x="230" y="540" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="15" letter-spacing="2" fill="#928A7D">/ 100 COMPOSITE</text>
+  <text x="230" y="565" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="15" letter-spacing="2" fill="#FAF8F4">SPEARHEAD SPIRITS</text>
+  <text x="1128" y="565" text-anchor="end" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="13" letter-spacing="3" fill="#928A7D">CULTURAL-SIGNAL INDEX</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 76" role="img" aria-label="Ranked by MonoKromatik badge">
+  <rect width="360" height="76" fill="#141210"/>
+  <rect x="0.5" y="0.5" width="359" height="75" fill="none" stroke="#E8631C" stroke-opacity="0.55"/>
+  <text x="22" y="34" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="10" letter-spacing="2" fill="#928A7D">RANKED BY</text>
+  <text x="22" y="54" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="17" letter-spacing="-0.5"><tspan fill="#FAF8F4">MONO</tspan><tspan fill="#E8631C">KROMATIK</tspan></text>
+  <line x1="256" y1="16" x2="256" y2="60" stroke="#FAF8F4" stroke-opacity="0.18"/>
+  <text x="300" y="46" text-anchor="middle" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="30" fill="#E8631C">81</text>
+  <text x="338" y="46" text-anchor="middle" font-family="'Space Grotesk',Arial,sans-serif" font-weight="700" font-size="14" fill="#928A7D">#4</text>
+</svg>

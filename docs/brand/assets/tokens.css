@@ -1,0 +1,25 @@
+/* MonoKromatik — design tokens (colour + type). Import or copy into any project. */
+:root{
+  /* Ink */
+  --mono-black:#000000;
+  --mono-ink:#141210;
+  --mono-charcoal:#1A1A1A;
+  /* Amber — the signal */
+  --mono-amber:#CC5500;
+  --mono-amber-strong:#A85416;
+  --mono-amber-hover:#8F4612;
+  --mono-amber-bright:#E8631C;
+  /* Neutrals */
+  --mono-gray:#666666;
+  --mono-gray-bright:#8A8A8A;
+  --mono-border:#E5E5E5;
+  /* Paper / surfaces */
+  --mono-paper:#FAF8F4;
+  --mono-soft-white:#F5F5F5;
+  --mono-muted:#F0F0F0;
+  --mono-white:#FFFFFF;
+  /* Type */
+  --font-display:'Space Grotesk', 'Arial Narrow', Helvetica, Arial, sans-serif;
+  --font-feature:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}

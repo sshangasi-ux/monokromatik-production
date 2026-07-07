@@ -1,0 +1,13 @@
+Name,Role,HEX,RGB,CMYK (convert/verify),Pantone (approx.)
+Mono Black,Primary ink,#000000,"0, 0, 0","0, 0, 0, 100",Black 6 C
+Mono Ink,Warm ink,#141210,"20, 18, 16","0, 10, 20, 92",Black 6 C
+Mono Charcoal,Charcoal,#1A1A1A,"26, 26, 26","0, 0, 0, 90",Neutral Black C
+Mono Amber,Signal accent,#CC5500,"204, 85, 0","0, 58, 100, 20",1595 C
+Amber Strong,Links / strong,#A85416,"168, 84, 22","0, 50, 87, 34",1605 C
+Amber Hover,Hover,#8F4612,"143, 70, 18","0, 51, 87, 44",1615 C
+Amber Bright,Bright / on-dark,#E8631C,"232, 99, 28","0, 57, 88, 9",1585 C
+Mono Grey,Text grey,#666666,"102, 102, 102","0, 0, 0, 60",Cool Gray 9 C
+Mono Border,Hairlines,#E5E5E5,"229, 229, 229","0, 0, 0, 10",Cool Gray 2 C
+Mono Paper,Background,#FAF8F4,"250, 248, 244","0, 1, 2, 2",Warm Gray 1 C (tint)
+Mono Soft White,Surface,#F5F5F5,"245, 245, 245","0, 0, 0, 4",Cool Gray 1 C
+Mono White,Pure,#FFFFFF,"255, 255, 255","0, 0, 0, 0",—
