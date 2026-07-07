@@ -129,3 +129,120 @@ export function StatStrip({
     </dl>
   );
 }
+
+/**
+ * The Cultural-Signal Index scorecard — a rating-box treatment of a "Will It
+ * Land?" dossier's predictive read: the weighted composite plus four axis bars
+ * (0–100). Authorship (the moat, .35) is highlighted. Judgement, not a metric.
+ */
+export function IndexScorecard({
+  scores,
+}: {
+  scores: {
+    idea: number;
+    authorship: number;
+    execution: number;
+    consequence: number;
+    composite: number;
+    verdict: string;
+  };
+}) {
+  const rows = [
+    { label: 'IDEA', weight: '×.25', v: scores.idea },
+    { label: 'AUTHORSHIP', weight: '×.35', v: scores.authorship, moat: true },
+    { label: 'EXECUTION', weight: '×.15', v: scores.execution },
+    { label: 'CONSEQUENCE', weight: '×.25', v: scores.consequence },
+  ];
+  const clamp = (n: number) => Math.max(0, Math.min(100, n));
+  return (
+    <figure
+      role="img"
+      aria-label={`Cultural-Signal Index predictive read: composite ${scores.composite} of 100. Idea ${scores.idea}, Authorship ${scores.authorship}, Execution ${scores.execution}, Consequence ${scores.consequence}.`}
+      className="not-prose bg-mono-black text-mono-white border border-mono-amber/40 p-7 md:p-9"
+    >
+      <div className="flex items-start justify-between gap-6 border-b border-mono-white/15 pb-6 mb-6">
+        <div>
+          <p className="text-[10px] tracking-[0.26em] font-display font-bold text-mono-amber mb-3">
+            CULTURAL-SIGNAL INDEX · PREDICTIVE READ
+          </p>
+          <p className="text-sm font-body text-mono-gray max-w-xs leading-relaxed">
+            Authorship-weighted analytical projection across four axes — MonoKromatik&rsquo;s judgement, not a
+            measured metric.
+          </p>
+        </div>
+        <div className="text-right shrink-0">
+          <div className="font-display font-bold text-6xl md:text-7xl text-mono-amber tabular-nums leading-none">
+            {scores.composite}
+          </div>
+          <div className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-gray mt-2">/ 100 COMPOSITE</div>
+        </div>
+      </div>
+      <div className="space-y-4" aria-hidden="true">
+        {rows.map((r) => (
+          <div key={r.label} className="flex items-center gap-4">
+            <div className="w-36 md:w-44 shrink-0 flex items-baseline gap-2">
+              <span
+                className={`text-[11px] tracking-[0.14em] font-display font-bold ${r.moat ? 'text-mono-amber' : 'text-mono-white'}`}
+              >
+                {r.label}
+              </span>
+              <span className="text-[10px] font-display text-mono-gray tabular-nums">{r.weight}</span>
+            </div>
+            <div className="flex-1 h-2.5 bg-mono-white/12 rounded-[1px] overflow-hidden">
+              <span className="block h-full rounded-[1px] bg-mono-amber" style={{ width: `${clamp(r.v)}%` }} />
+            </div>
+            <span className="w-9 text-right font-display font-bold text-sm tabular-nums text-mono-white">{r.v}</span>
+          </div>
+        ))}
+      </div>
+      {scores.verdict && (
+        <div className="mt-7 pt-6 border-t border-mono-white/15">
+          <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber mb-3">THE VERDICT</p>
+          <p className="font-feature text-lg md:text-xl text-mono-soft-white leading-snug">{scores.verdict}</p>
+        </div>
+      )}
+    </figure>
+  );
+}
+
+/** A dependency-free horizontal bar chart built strictly from real, sourced data. */
+export function BarChart({
+  title,
+  note,
+  data,
+}: {
+  title: string;
+  note?: string;
+  data: { label: string; value: number; display: string }[];
+}) {
+  const max = Math.max(...data.map((d) => d.value), 1);
+  return (
+    <figure
+      role="img"
+      aria-label={`${title}: ${data.map((d) => `${d.label} ${d.display}`).join(', ')}`}
+      className="not-prose bg-mono-soft-white border border-mono-gray/25 p-6 md:p-7"
+    >
+      <figcaption className="mb-5">
+        <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber-strong">{title}</p>
+        {note && <p className="mt-2 text-sm font-body text-mono-charcoal leading-relaxed">{note}</p>}
+      </figcaption>
+      <div className="space-y-3" aria-hidden="true">
+        {data.map((d) => (
+          <div key={d.label} className="flex items-center gap-3">
+            <span className="w-24 shrink-0 text-[11px] font-display font-bold text-mono-charcoal tabular-nums">
+              {d.label}
+            </span>
+            <div className="flex-1 h-7 bg-mono-gray/15 overflow-hidden">
+              <span
+                className="flex h-full items-center justify-end bg-mono-amber px-2 text-[11px] font-display font-bold text-mono-black tabular-nums"
+                style={{ width: `${Math.max(9, (d.value / max) * 100)}%` }}
+              >
+                {d.display}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </figure>
+  );
+}

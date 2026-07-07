@@ -172,9 +172,9 @@ export const MEMBERSHIP: MembershipTier[] = [
     tagline: 'For strategists, marketers and creators.',
     featured: true,
     includes: [
-      'The full Cultural-Signal Index report + quarterly refreshes',
-      'Every premium case study',
-      'All intelligence reports',
+      'The full Cultural-Signal Index — every brand, every score',
+      'The premium “Will It Land?” dossier library',
+      'All intelligence reports, refreshed as the field moves',
       'The full searchable archive',
     ],
   },

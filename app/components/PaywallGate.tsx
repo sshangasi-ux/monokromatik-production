@@ -28,7 +28,7 @@ export default function PaywallGate({
           This is part of the Intelligence membership.
         </h3>
         <p className="mt-4 font-body text-mono-charcoal max-w-md mx-auto">
-          The full Cultural-Signal Index, every premium case study and report, and the searchable archive — under one membership.
+          The full Cultural-Signal Index, every premium report and “Will It Land?” dossier, and the searchable archive — under one membership.
         </p>
         <div className="mt-7 flex flex-wrap gap-4 justify-center">
           <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">

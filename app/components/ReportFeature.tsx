@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, FileText, Lock } from 'lucide-react';
 import Navigation from './Navigation';
 import ReadingProgress from './ReadingProgress';
+import { StatStrip, IndexScorecard, BarChart } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
 import { membershipsLive } from '../../lib/commerce';
@@ -55,6 +56,15 @@ export default async function ReportFeature({ report }: { report: Report }) {
       </header>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        {/* Exhibits — the weighty visual read. Shown above the body so they
+            remain visible (and enticing) even when the analysis is gated. */}
+        {(r.keyStats?.length || r.index || r.exhibit) && (
+          <div className="mb-14 space-y-10">
+            {r.keyStats && r.keyStats.length > 0 && <StatStrip items={r.keyStats} tone="light" />}
+            {r.index && <IndexScorecard scores={r.index} />}
+            {r.exhibit && <BarChart title={r.exhibit.title} note={r.exhibit.note} data={r.exhibit.data} />}
+          </div>
+        )}
         {live && r.sections && r.sections.length > 0 ? (
           // Published report: render the body. If it's a locked tier, show only
           // the opening section as a teaser behind the gate.
