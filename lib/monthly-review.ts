@@ -16,7 +16,7 @@ import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { MODELS } from './ai-models';
 import { withRetry } from './ai-retry';
-import { getPublicCaseStudies } from './case-studies';
+import { getAllCaseStudies } from './case-studies';
 import { rankIndex } from './signal-index';
 import { getHistory, getMovers } from './index-history';
 import { getLearningSignals, describeSignals } from './learning-signals';
@@ -65,12 +65,14 @@ function readData<T>(rel: string, fallback: T): T {
 export async function gatherState(perfWindowDays = 30): Promise<SiteState> {
   const articles = readData<ArticleLite[]>('data/articles.json', []);
   const reports = readData<ReportLite[]>('data/reports.json', []);
-  const studies = getPublicCaseStudies() as unknown as CaseLite[];
+  // Report against ALL scored works, matching the public Index (ratings are
+  // public; only the full analysis is gated) — not the public-only subset.
+  const studies = getAllCaseStudies() as unknown as CaseLite[];
 
   const words = articles.map((a) => wordCount(a.content || '')).filter((n) => n > 0);
   const withVideo = articles.filter((a) => Boolean(a.videoUrl)).length;
 
-  const ranked = rankIndex(getPublicCaseStudies());
+  const ranked = rankIndex(getAllCaseStudies());
   const works = ranked.reduce((n, e) => n + (e.works || 0), 0);
   const movers = getMovers(5);
 
@@ -79,7 +81,7 @@ export async function gatherState(perfWindowDays = 30): Promise<SiteState> {
   const evidenceCounts = studies.map((c) => (c.evidence?.confirmed?.length ?? 0) + (c.evidence?.reported?.length ?? 0));
 
   // Measured Evidence Strength distribution across ranked brands.
-  const evMap = evidenceByBrand(getPublicCaseStudies());
+  const evMap = evidenceByBrand(getAllCaseStudies());
   const evScores = [...evMap.values()].map((e) => e.score).sort((a, b) => a - b);
   const evTier = (t: string) => [...evMap.values()].filter((e) => e.tier === t).length;
 
