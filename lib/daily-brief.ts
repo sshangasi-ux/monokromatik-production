@@ -8,7 +8,7 @@
 
 import { gatherState, type SiteState } from './monthly-review';
 import { reportCheckoutUrl, membershipCheckoutUrl, DATA_PRODUCTS, MEMBERSHIP } from './commerce';
-import { getPublicCaseStudies } from './case-studies';
+import { getAllCaseStudies } from './case-studies';
 import { queuedSubjects, queueCounts, type QueueSubject } from './case-study-queue';
 
 export interface Monetisation {
@@ -29,7 +29,7 @@ export interface OpsSnapshot extends SiteState {
 /** Gather the full operational picture. GA4/GSC are no-op-safe when unconfigured. */
 export async function gatherOps(): Promise<OpsSnapshot> {
   const state = await gatherState(7); // 7-day window suits a daily cadence
-  const cs = getPublicCaseStudies();
+  const cs = getAllCaseStudies(); // media coverage across the whole library, not public-only
 
   return {
     ...state,
