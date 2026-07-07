@@ -9,6 +9,7 @@
 import { gatherState, type SiteState } from './monthly-review';
 import { reportCheckoutUrl, membershipCheckoutUrl, DATA_PRODUCTS, MEMBERSHIP } from './commerce';
 import { getPublicCaseStudies } from './case-studies';
+import { queuedSubjects, queueCounts, type QueueSubject } from './case-study-queue';
 
 export interface Monetisation {
   reportCheckoutLive: boolean;
@@ -22,6 +23,7 @@ export interface Monetisation {
 export interface OpsSnapshot extends SiteState {
   monetisation: Monetisation;
   media: { caseStudiesTotal: number; withStill: number; withVideo: number };
+  commissionQueue: { counts: ReturnType<typeof queueCounts>; top: QueueSubject[] };
 }
 
 /** Gather the full operational picture. GA4/GSC are no-op-safe when unconfigured. */
@@ -44,6 +46,7 @@ export async function gatherOps(): Promise<OpsSnapshot> {
       withStill: cs.filter((c) => c.media && c.media.length > 0).length,
       withVideo: cs.filter((c) => Boolean(c.videoUrl)).length,
     },
+    commissionQueue: { counts: queueCounts(), top: queuedSubjects().slice(0, 5) },
   };
 }
 
@@ -77,7 +80,12 @@ export function deriveActions(o: OpsSnapshot): { grow: string[]; refine: string[
   // MINE INSIGHT — what's resonating; what to make next.
   if (o.learning && o.learning !== 'no signal yet') mine.push(`**Audience is telling you what wins:** ${o.learning}. Bias the next content + case-study load toward the positive categories.`);
   if (o.performance.configured && o.performance.topCategories.length) mine.push(`Top categories by views: ${o.performance.topCategories.slice(0, 3).map((c) => c.category).join(', ')} — commission more here.`);
-  mine.push('**Feed the Index from the radar** — the newly-added trade feeds (TechCabal, African Business, Music In Africa, Variety, The EastAfrican) should surface fresh case-study candidates; sweep them for the next `casestudy:author` batch.');
+  const qc = o.commissionQueue.counts;
+  mine.push(
+    qc.queued > 0
+      ? `**${qc.queued} subjects queued for premium case studies** — the cycle drafts the top of \`data/case-study-queue.json\` (directed + gated); keep it stocked by sweeping the trade feeds (TechCabal, African Business, Music In Africa, Variety) for fresh topical subjects.`
+      : '**Commission queue is empty** — add topical subjects to `data/case-study-queue.json` from the radar/trade feeds so the premium case-study pipeline has fuel.'
+  );
 
   // REFINE — Index credibility + product health.
   if (o.evidence.strong === 0) refine.push(`**No "Strong" evidence tiers yet** — verify the sources on the top-scoring works and upgrade them to \`verified\`; that's what lifts Evidence Strength from Moderate to Strong and makes the score buyer-grade.`);
@@ -111,6 +119,17 @@ export function renderBrief(o: OpsSnapshot, dateLabel: string): string {
   L.push(`- Index Full Report checkout: **${o.monetisation.reportCheckoutLive ? 'LIVE' : 'DORMANT'}**`);
   L.push(`- Data licences (enquiry-led): ${o.monetisation.dataProductBands.join(' · ')}`);
   L.push(`- Badge licensing (\`/api/badge\`): **built, not yet sold** — a rating-agency revenue line left on the floor.`);
+
+  L.push('\n## 🎯 Commission queue — next premium case studies\n');
+  const q = o.commissionQueue;
+  L.push(`_${q.counts.queued} queued · ${q.counts.drafted} drafted · ${q.counts.published} published — the strategy input for monetisation, engagement and reach. The case-study cycle drafts the top items as gated decodes; keep it stocked._`);
+  if (q.top.length) {
+    L.push('\n| # | Subject | Lane | Tier |');
+    L.push('|---|---|---|---|');
+    q.top.forEach((s, i) => L.push(`| ${i + 1} | ${s.subject} | ${s.lane} | ${s.access} |`));
+  } else {
+    L.push('\n_Queue empty — add topical subjects to `data/case-study-queue.json` to feed the pipeline._');
+  }
 
   const section = (title: string, items: string[]) => {
     L.push(`\n## ${title}\n`);
