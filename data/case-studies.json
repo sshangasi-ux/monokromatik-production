@@ -175,7 +175,15 @@
         "use": "Low card penetration and recurring-billing failure in Africa; why direct carrier billing / airtime is the credible rail (e.g. Netflix via Vodacom)"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-mtn-connectivity-to-content-b1236a1d.webp",
+        "alt": "MTN Group — The Pipe Wants to Own the Story: MTN's Third Run at African Streaming",
+        "credit": "Via MTN Group",
+        "sourceLabel": "MTN Group",
+        "sourceHref": "https://www.mtn.com/mtn-group-reports-exceptional-2025-results-unveils-evolved-platform-strategy/"
+      }
+    ]
   },
   {
     "slug": "checkers-sixty60-retail-moat",
@@ -359,7 +367,15 @@
         "use": "Peak-load reliability: 7.5m products, 97.6% picked in full, 95.3% on time, 33-min average delivery"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-checkers-sixty60-retail-moat-122b6c5d.webp",
+        "alt": "Checkers Sixty60 (Shoprite Holdings) — Sixty60: How a Grocery App Became South Africa's Most Feared Retail Weapon",
+        "credit": "Photo: Pexels",
+        "sourceLabel": "Moneyweb",
+        "sourceHref": "https://www.pexels.com"
+      }
+    ]
   },
   {
     "slug": "maxhosa-africa-owned-house",
@@ -700,7 +716,15 @@
         "use": "April 2026 denial of $75m federal stake and imminent IPO, governance-over-listing framing, Mono deal value range"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-flutterwave-comeback-and-ipo-8a88eef4.webp",
+        "alt": "Flutterwave — Flutterwave's Long Walk Back: Owning the Rails, Rebuilding the Trust, and the IPO That Won't Be Rushed",
+        "credit": "Via TechCabal",
+        "sourceLabel": "TechCabal",
+        "sourceHref": "https://techcabal.com/2026/04/02/flutterwave-mfb/"
+      }
+    ]
   },
   {
     "slug": "springboks-national-brand",
@@ -856,7 +880,15 @@
         "use": "Fourth title, first nation to four, back-to-back away double, Kolisi record"
       }
     ],
-    "media": [],
+    "media": [
+      {
+        "src": "/article-media/cs-springboks-national-brand-5fd13a25.webp",
+        "alt": "South African Rugby Union (Springboks) — The Springboks: back-to-back champions, sixth-most-valuable brand",
+        "credit": "Via Brand Finance",
+        "sourceLabel": "Brand Finance",
+        "sourceHref": "https://brandfinance.com/press-releases/the-springboks-slip-one-place-in-most-valuable-rugby-brand-rankings-while-all-blacks-remain-the-worlds-most-valuable-rugby-brand"
+      }
+    ],
     "videoUrl": "https://www.youtube.com/watch?v=pF6qN-jVdOs",
     "videoType": "youtube",
     "videoCredit": "Rugby World Cup (official)",
@@ -1387,7 +1419,15 @@
         "use": "Departure of the African co-founders in November 2013"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-jumia-african-ecommerce-thesis-122b6c5d.webp",
+        "alt": "Jumia Technologies AG — Jumia: The Long Turnaround and the Question of Who Owns African E-Commerce",
+        "credit": "Photo: Pexels",
+        "sourceLabel": "Jumia Technologies AG (Investor Relations)",
+        "sourceHref": "https://www.pexels.com"
+      }
+    ]
   },
   {
     "slug": "billiato-celebrity-spirits",
@@ -1576,7 +1616,15 @@
         "use": "Family Tree Records, Fill Up, Root of Fame, Cîroc endorsement; net-worth estimate"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-billiato-celebrity-spirits-d272a983.webp",
+        "alt": "Billiato (Family Tree / Cassper Nyovest) — Billiato: The Artist Who Refused to Be an Ambassador",
+        "credit": "Via The Citizen",
+        "sourceLabel": "The Citizen",
+        "sourceHref": "https://www.citizen.co.za/lifestyle/entertainment/celebrity-news/cassper-nyovest-clears-the-air-about-billiato-ownership/"
+      }
+    ]
   },
   {
     "slug": "trace-african-music-media",
@@ -1748,7 +1796,15 @@
         "use": "Trace Play streaming service and US-market expansion"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-trace-african-music-media-1ccfa9f4.webp",
+        "alt": "Trace — Trace: Who Owns the Pipes of Afro-Urban Culture?",
+        "credit": "Via Hollywood Reporter",
+        "sourceLabel": "Hollywood Reporter",
+        "sourceHref": "https://www.hollywoodreporter.com/business/business-news/mtg-sells-majority-stake-leading-pan-african-music-network-trace-1075840/"
+      }
+    ]
   },
   {
     "slug": "the-league-africa-plays-but-does-not-yet-own",
@@ -2063,7 +2119,15 @@
         "use": "Ghana partnership since 2005; Nike-Nigeria and comparative sponsor landscape"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "src": "/article-media/cs-puma-owns-the-look-who-owns-the-value-34e41bb7.webp",
+        "alt": "Puma — Puma Owns the Look of African Football. Who Owns the Value?",
+        "credit": "Via PUMA",
+        "sourceLabel": "PUMA",
+        "sourceHref": "https://about.puma.com/en/newsroom/product-and-brand-news/2024/15-11-2024-puma-unveils-their-new-african-national-team-home"
+      }
+    ]
   },
   {
     "slug": "nationalising-the-vibe-detty-december-state-brand-policy",
