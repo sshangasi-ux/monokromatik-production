@@ -53,7 +53,8 @@
     "casestudy:cycle": "tsx scripts/stage-case-studies.ts",
     "casestudy:cycle:dry": "tsx scripts/stage-case-studies.ts -- --dry",
     "casestudy:author": "tsx scripts/author-case-studies.ts",
-    "brief:daily": "tsx scripts/daily-brief.ts"
+    "brief:daily": "tsx scripts/daily-brief.ts",
+    "feature:author": "tsx scripts/author-feature.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
