@@ -4,7 +4,7 @@ import { ArrowRight, Layers3, Trophy, ShieldCheck } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import TrackView from '../../components/TrackView';
 import { StatStrip } from '../../components/dataviz/Charts';
-import { getPublicCaseStudies } from '../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
 import { evidenceByBrand } from '../../../lib/evidence-strength';
@@ -29,7 +29,11 @@ const AXES: [string, string][] = [
 ];
 
 export default function SignalIndexPage() {
-  const studies = getPublicCaseStudies();
+  // Rank ALL scored works — the Index publishes the RATINGS (public, like any
+  // rating agency); premium case studies still gate their full decode on the
+  // case-study page. Using public-only here would drop top-scored premium works
+  // off the league table and hollow the moat.
+  const studies = getAllCaseStudies();
   const ranked = rankIndex(studies);
   const top = ranked[0]?.score ?? 0;
   const mean = ranked.length ? Math.round(ranked.reduce((s, e) => s + e.score, 0) / ranked.length) : 0;

@@ -101,6 +101,106 @@
       "access": "premium",
       "status": "queued",
       "rationale": "Media-ownership thesis; distribution-as-moat."
+    },
+    {
+      "subject": "Dangote Refinery — the continent's biggest industrial brand bet",
+      "brand": "Dangote",
+      "lane": "Energy / industry",
+      "angle": "Can African-owned heavy industry rewrite the continent's fuel-import dependency — and the brand of African capital?",
+      "priority": 11,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Investor-grade; the boldest African-ownership-of-infrastructure story on the continent."
+    },
+    {
+      "subject": "Capitec — the bank built for the 'unbankable' that became SA's most valuable",
+      "brand": "Capitec",
+      "lane": "Banking / fintech",
+      "angle": "Out-understanding the market rather than out-spending it; owning the under-35 majority.",
+      "priority": 12,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Proof African-owned value-capture wins at home; companion to the SA Brand Culture Brief."
+    },
+    {
+      "subject": "Universal x Mavin Records — Afrobeats' ownership consolidation",
+      "brand": "Mavin Records",
+      "lane": "Music / IP",
+      "angle": "Don Jazzy's label sells to a global major — authorship of the sound vs ownership of the catalogue.",
+      "priority": 13,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Direct Afrobeats parallel to the Warner/Africori dossier; high-stakes ownership read."
+    },
+    {
+      "subject": "Ethiopian Airlines — the pan-African brand that actually works",
+      "brand": "Ethiopian Airlines",
+      "lane": "Aviation / pan-African",
+      "angle": "State-owned, profitable, continental — a rare African brand that both scales and stays owned.",
+      "priority": 14,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Counter-model to the extraction thesis; reach + credibility."
+    },
+    {
+      "subject": "Carry1st — African mobile gaming's global publishing bet",
+      "brand": "Carry1st",
+      "lane": "Gaming / tech",
+      "angle": "Building the distribution + payments layer for games in Africa — owning the rails, not just the players.",
+      "priority": 15,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Fresh lane (gaming); investor-grade; distribution-as-moat thesis."
+    },
+    {
+      "subject": "Mamelodi Sundowns — Africa's most dominant football club brand",
+      "brand": "Mamelodi Sundowns",
+      "lane": "Sport / club brand",
+      "angle": "Motsepe money, continental dominance — building a club brand that competes with Europe's for African attention.",
+      "priority": 16,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Reach magnet; keep public to pull football audiences toward the premium shelf."
+    },
+    {
+      "subject": "Showmax's relaunch under Canal+ — rebuilding after the sovereignty shutdown",
+      "brand": "Showmax",
+      "lane": "Media / streaming",
+      "angle": "Foreign owner reboots the African streamer it shut — who authors and owns the second act.",
+      "priority": 17,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Extends the flagship media-sovereignty feature at brand level; topical."
+    },
+    {
+      "subject": "Chicken Licken — the homegrown SA brand that out-advertised the giants",
+      "brand": "Chicken Licken",
+      "lane": "QSR / advertising",
+      "angle": "African-owned fast food beating global chains on cultural storytelling, not budget.",
+      "priority": 18,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Beloved, shareable, engagement-driving; a free funnel piece."
+    },
+    {
+      "subject": "Kenneth Ize — aso-oke craft into an owned global fashion house",
+      "brand": "Kenneth Ize",
+      "lane": "Fashion / authorship",
+      "angle": "Nigerian handwoven heritage scaled globally — designer-owned house vs licensing the craft.",
+      "priority": 19,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Rounds out the fashion-authorship set (Magugu, MaXhosa, Ize)."
+    },
+    {
+      "subject": "OPay vs PalmPay — Nigeria's consumer super-app fintech war",
+      "brand": "OPay",
+      "lane": "Fintech",
+      "angle": "Chinese-backed consumer fintechs owning Nigeria's everyday payments — reach vs ownership of the rails.",
+      "priority": 20,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "High topicality; the ownership/dependency question in consumer fintech."
     }
   ]
 }
