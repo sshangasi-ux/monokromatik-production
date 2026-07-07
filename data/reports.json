@@ -102,6 +102,28 @@
           "African Business — Spirited African distillers aim for the global market — https://african.business/2025/05/trade-investment/spirited-african-distillers-aim-for-the-global-market"
         ]
       }
+    ],
+    "index": {
+      "idea": 78,
+      "authorship": 88,
+      "execution": 72,
+      "consequence": 80,
+      "composite": 81,
+      "verdict": "Cautious yes — the moat and mission endure; the US scale-up is under-capitalised for a brutal market."
+    },
+    "keyStats": [
+      {
+        "value": "85k",
+        "label": "Bottles, year 3"
+      },
+      {
+        "value": "2,000+",
+        "label": "Distribution points"
+      },
+      {
+        "value": "−5%",
+        "label": "US spirits volume, 2025"
+      }
     ]
   },
   {
@@ -205,6 +227,28 @@
           "News24 TrueLove — 10 years of Thebe Magugu: milestones that made the iconic global brand — https://www.news24.com/truelove/fashion/10-years-of-thebe-magugu-milestones-that-made-the-iconic-global-brand-20250930-0786"
         ]
       }
+    ],
+    "index": {
+      "idea": 82,
+      "authorship": 84,
+      "execution": 68,
+      "consequence": 80,
+      "composite": 80,
+      "verdict": "It lands as an authorship model — not yet as a machine. Whether owned retail carries the revenue is the open question."
+    },
+    "keyStats": [
+      {
+        "value": "€300k",
+        "label": "LVMH Prize, 2019"
+      },
+      {
+        "value": "~45%",
+        "label": "Season-on-season growth"
+      },
+      {
+        "value": "60%",
+        "label": "Direct-to-consumer target"
+      }
     ]
   },
   {
@@ -305,6 +349,28 @@
           "Variety — EbonyLife CEO Mo Abudu to Launch New Streamer for Pan-African Series, Movies, Talk Shows and Lifestyle Content (Exclusive) — https://variety.com/2025/tv/global/ebonylife-mo-abudu-new-streamer-ebonylife-on-plus-1236477693/",
           "Deadline — Mo Abudu's Pan-African Digital Platform EbonyLife ON Plus Launches Globally — https://deadline.com/2025/11/mo-abudus-african-digital-platform-ebonylife-on-plus-1236608524/"
         ]
+      }
+    ],
+    "index": {
+      "idea": 70,
+      "authorship": 88,
+      "execution": 62,
+      "consequence": 80,
+      "composite": 78,
+      "verdict": "Conditional yes — the ownership win is already banked; the business win is still to be earned."
+    },
+    "keyStats": [
+      {
+        "value": "$10–30",
+        "label": "Annual membership"
+      },
+      {
+        "value": "$50M",
+        "label": "Afro Film Fund target"
+      },
+      {
+        "value": "Top 10",
+        "label": "Baby Farm, Netflix global"
       }
     ]
   },
@@ -408,6 +474,28 @@
           "TechFundingNews — Scoop: LemFi set to raise a €30M Series B extension — https://techfundingnews.com/scoop-lemfi-30m-series-b-extension-remittance-fintech/"
         ]
       }
+    ],
+    "index": {
+      "idea": 72,
+      "authorship": 80,
+      "execution": 74,
+      "consequence": 78,
+      "composite": 77,
+      "verdict": "Qualified yes — the beachhead lands; corridor dominance and the full banking vision remain unproven."
+    },
+    "keyStats": [
+      {
+        "value": "$200M",
+        "label": "Series C, Oct 2025"
+      },
+      {
+        "value": "$22B",
+        "label": "Monthly transaction value"
+      },
+      {
+        "value": "£2.76B",
+        "label": "UK→Nigeria remittances"
+      }
     ]
   },
   {
@@ -504,6 +592,28 @@
           "BeautyMatter — How African Beauty Brands Are Finding Success — https://beautymatter.com/articles/how-african-beauty-brands-are-finding-success",
           "Uncover Skincare — About Us (brand positioning and claims) — https://ke.uncoverskincare.com/pages/about-us"
         ]
+      }
+    ],
+    "index": {
+      "idea": 78,
+      "authorship": 80,
+      "execution": 72,
+      "consequence": 74,
+      "composite": 77,
+      "verdict": "Qualified yes — a pan-African and diaspora leader is likely; a Western mass-retail shelf is a stretch, not the base case."
+    },
+    "keyStats": [
+      {
+        "value": "$1.4M",
+        "label": "Seed II, 2024"
+      },
+      {
+        "value": "10×",
+        "label": "Revenue in 24 months"
+      },
+      {
+        "value": "200k+",
+        "label": "Community members"
       }
     ]
   },
@@ -608,6 +718,28 @@
           "Kabza de Small — Wikipedia (PianoHub, artist-owned label context) — https://en.wikipedia.org/wiki/Kabza_de_Small"
         ]
       }
+    ],
+    "index": {
+      "idea": 72,
+      "authorship": 34,
+      "execution": 80,
+      "consequence": 85,
+      "composite": 63,
+      "verdict": "It will land — for the platform, not for African ownership. Extraction-shaped success."
+    },
+    "keyStats": [
+      {
+        "value": "7,000+",
+        "label": "Africori artists"
+      },
+      {
+        "value": "74%",
+        "label": "SA royalties from abroad"
+      },
+      {
+        "value": "+22.6%",
+        "label": "Sub-Saharan music, 2024"
+      }
     ]
   },
   {
@@ -707,7 +839,50 @@
           "SportBusiness — CAF puts Sportfive case to bed with $50m pay out — https://www.sportbusiness.com/news/caf-puts-sportfive-case-to-bed-with-50m-pay-out/"
         ]
       }
-    ]
+    ],
+    "index": {
+      "idea": 62,
+      "authorship": 44,
+      "execution": 72,
+      "consequence": 70,
+      "composite": 59,
+      "verdict": "Partial land — rented reach, not cultural authorship. The name is bought; the culture is rented."
+    },
+    "keyStats": [
+      {
+        "value": "23",
+        "label": "Sponsors, 2025"
+      },
+      {
+        "value": "+90%",
+        "label": "Competition revenue surge"
+      },
+      {
+        "value": "1.34M",
+        "label": "Total attendance"
+      }
+    ],
+    "exhibit": {
+      "title": "AFCON SPONSORS BY EDITION",
+      "note": "The roster nearly tripled in four years — the commercial breakout TotalEnergies’ name now sits atop. Source: CAF.",
+      "data": [
+        {
+          "label": "2021",
+          "value": 9,
+          "display": "9"
+        },
+        {
+          "label": "2023",
+          "value": 17,
+          "display": "17"
+        },
+        {
+          "label": "2025",
+          "value": 23,
+          "display": "23"
+        }
+      ]
+    }
   },
   {
     "slug": "african-spirits-report-2026-who-owns-the-pour",

@@ -33,6 +33,27 @@ export interface Report {
   publishedAt?: string;
   /** Long-form body — present only once a report is written (status 'live'). */
   sections?: { heading: string; paragraphs: string[] }[];
+  /**
+   * The predictive Cultural-Signal Index read (0–100 per axis + weighted
+   * composite) for "Will It Land?" dossiers. Rendered as a scorecard — the
+   * authorship-weighted verdict, not a measured metric.
+   */
+  index?: {
+    idea: number;
+    authorship: number;
+    execution: number;
+    consequence: number;
+    composite: number;
+    verdict: string;
+  };
+  /** Key figures shown as a stat strip beneath the standfirst. */
+  keyStats?: { value: string; label: string }[];
+  /** One optional bar-chart exhibit built strictly from real, sourced data. */
+  exhibit?: {
+    title: string;
+    note?: string;
+    data: { label: string; value: number; display: string }[];
+  };
 }
 
 const reports = reportsData as Report[];
