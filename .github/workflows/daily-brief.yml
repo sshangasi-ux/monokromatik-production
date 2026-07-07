@@ -51,16 +51,27 @@ jobs:
           NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL: ${{ vars.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL }}
         run: npm run brief:daily
 
-      - name: Commit the brief copy
+      - name: Publish the brief to the daily-briefs branch
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if [ -z "$(git status --porcelain docs/briefs)" ]; then
-            echo "No brief file change." >> "$GITHUB_STEP_SUMMARY"
+            echo "No brief file this run." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git config user.name "MonoKromatik Agent"
           git config user.email "agents@monokromatik.com"
+          # main is a protected branch (requires PRs), so a direct push is rejected.
+          # Land the brief on a dedicated, non-protected branch that accumulates the
+          # daily reports — searchable in the repo, no PR/CI noise. The brief is also
+          # emailed (Resend) and posted to this run summary.
+          git fetch origin daily-briefs >/dev/null 2>&1 || true
+          if git rev-parse --verify origin/daily-briefs >/dev/null 2>&1; then
+            git checkout -B daily-briefs origin/daily-briefs
+          else
+            git checkout -B daily-briefs
+          fi
           git add docs/briefs
           git commit -m "docs(brief): operator daily brief — $(date -u +%Y-%m-%d)"
-          git push origin HEAD:main || echo "push skipped"
+          git push origin daily-briefs
+          echo "Brief published to the daily-briefs branch." >> "$GITHUB_STEP_SUMMARY"
