@@ -131,7 +131,11 @@ function readingTime(cs: Pick<CaseStudy, 'context' | 'strategicBet' | 'creativeM
  * Pure: turn a raw model draft into a schema-complete CaseStudy (or null if
  * fundamentally unparseable). verification is HARD-SET to 'partial'.
  */
-export function assembleCaseStudy(raw: unknown, stamp: string): CaseStudy | null {
+export function assembleCaseStudy(
+  raw: unknown,
+  stamp: string,
+  access: 'public' | 'premium' = 'public'
+): CaseStudy | null {
   if (!raw || typeof raw !== 'object') return null;
   const r = raw as Record<string, unknown>;
   const title = str(r.title);
@@ -154,7 +158,7 @@ export function assembleCaseStudy(raw: unknown, stamp: string): CaseStudy | null
     collection: (COLLECTIONS as readonly string[]).includes(str(r.collection)) ? str(r.collection) : COLLECTIONS[0],
     market: str(r.market) || '—',
     readingTime: readingTime(base),
-    access: 'public',
+    access,
     verification: 'partial', // hard-set — the analyst upgrades to 'verified' on review
     verificationNote: str(r.verificationNote),
     publishedAt: stamp,
@@ -197,9 +201,12 @@ export function validateDraft(cs: CaseStudy | null, avoid: Set<string>): { ok: b
   return { ok: reasons.length === 0, reasons };
 }
 
-function buildPrompt(avoidBrands: string[]): string {
+function buildPrompt(avoidBrands: string[], subject?: string): string {
   const avoid = avoidBrands.length ? `\n\nALREADY SCORED — pick something NOT in this list (a different brand/work):\n${avoidBrands.map((b) => `- ${b}`).join('\n')}` : '';
-  return `Find ONE recent (ideally last 18 months), well-sourced African or Diaspora brand × culture move — a campaign, collaboration, launch, or creative/commercial play — worth decoding for the Cultural-Signal Index. Use the web_search tool FIRST to find and verify it, then decode it.${avoid}
+  const lead = subject
+    ? `Decode this specific, editor-chosen subject for the Cultural-Signal Index: ${subject}\nUse the web_search tool FIRST to find and verify the facts, then decode it. Anchor the record on the specific, real, named move the subject implies.`
+    : `Find ONE recent (ideally last 18 months), well-sourced African or Diaspora brand × culture move — a campaign, collaboration, launch, or creative/commercial play — worth decoding for the Cultural-Signal Index. Use the web_search tool FIRST to find and verify it, then decode it.${avoid}`;
+  return `${lead}
 
 Return ONLY a single JSON object (no prose, no markdown fences) with EXACTLY these fields:
 {
@@ -240,6 +247,10 @@ Requirements: ≥2 real sources with working URLs; every factual beat traceable 
 export async function draftCaseStudy(opts: {
   avoidBrands: string[];
   stamp: string;
+  /** An editor-chosen subject from the commission queue; omit to self-source. */
+  subject?: string;
+  /** Access tier for the staged draft. Directed premium subjects monetise. */
+  access?: 'public' | 'premium';
   maxSearches?: number;
   client?: Anthropic;
 }): Promise<DraftResult> {
@@ -255,7 +266,7 @@ export async function draftCaseStudy(opts: {
         max_tokens: 6000,
         system: INTEGRITY,
         tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: opts.maxSearches ?? 6 }],
-        messages: [{ role: 'user', content: buildPrompt(opts.avoidBrands) }],
+        messages: [{ role: 'user', content: buildPrompt(opts.avoidBrands, opts.subject) }],
       })
     );
 
@@ -263,7 +274,7 @@ export async function draftCaseStudy(opts: {
     const text = textBlocks.map((b) => b.text).join('\n');
     const searches = msg.content.filter((b) => b.type === 'web_search_tool_result').length;
 
-    const cs = assembleCaseStudy(extractJson(text), opts.stamp);
+    const cs = assembleCaseStudy(extractJson(text), opts.stamp, opts.access ?? 'public');
 
     // Supplement thin source lists with web_search citations the model actually hit.
     if (cs && cs.sources.length < 2) {

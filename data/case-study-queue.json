@@ -1,0 +1,106 @@
+{
+  "updated": "2026-07-07",
+  "note": "Topical subjects to decode into premium case studies — sourced for monetisation, engagement and reach. The case-study cycle drafts the top `queued` items (respecting each subject's `access`); the Operator's Daily Brief surfaces the queue every day. Keep it stocked: add subjects the radar/RSS and audience signals surface, retire drafted ones.",
+  "subjects": [
+    {
+      "subject": "MTN's pivot from connectivity to content — can a telco own African streaming distribution?",
+      "brand": "MTN",
+      "lane": "Telco / media",
+      "angle": "The billing relationship + mobile-money rails as the most credible African-owned route into streaming.",
+      "priority": 1,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "High reach; extends the media-sovereignty thesis at brand level; strong monetisation lane."
+    },
+    {
+      "subject": "Checkers Sixty60 — how a grocery app became South Africa's most feared retail brand",
+      "brand": "Checkers Sixty60",
+      "lane": "Retail / commerce",
+      "angle": "Retail-as-tech: owning the last mile and the customer relationship while rivals stumble (Pick n Pay).",
+      "priority": 2,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Engagement magnet; a rare African-owned platform winning on execution + data."
+    },
+    {
+      "subject": "MaXhosa Africa (Laduma Ngxokolo) — knitwear heritage into an owned global house",
+      "brand": "MaXhosa Africa",
+      "lane": "Fashion / authorship",
+      "angle": "Owned-retail expansion vs licensing the aesthetic; the authorship-retention play, a companion to the Magugu dossier.",
+      "priority": 3,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Pairs with the fashion dossier; strong African-authorship story."
+    },
+    {
+      "subject": "Flutterwave — the comeback bet and the IPO question",
+      "brand": "Flutterwave",
+      "lane": "Fintech",
+      "angle": "Rebuilding trust and governance after turbulence; can it stay African-owned through a public listing?",
+      "priority": 4,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "High topicality; monetisation-relevant; companion to the Moniepoint dossier."
+    },
+    {
+      "subject": "The Springboks — building the world's most bankable rugby brand",
+      "brand": "Springboks",
+      "lane": "Sport / national brand",
+      "angle": "Converting back-to-back World Cups into a durable, monetisable national brand — who captures the value.",
+      "priority": 5,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Reach + belonging; a national-brand authorship read."
+    },
+    {
+      "subject": "Nando's — the South African brand that quietly conquered the world",
+      "brand": "Nando's",
+      "lane": "FMCG / hospitality",
+      "angle": "African-authored global brand-building done right — humour, culture and ownership travelling intact.",
+      "priority": 6,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Rare proof of African value-capture at global scale; evergreen engagement."
+    },
+    {
+      "subject": "Tyla — engineering a global African pop brand",
+      "brand": "Tyla",
+      "lane": "Music / talent brand",
+      "angle": "Grammy, 'Water', luxury deals — who owns the Tyla brand and how much value stays African.",
+      "priority": 7,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Top-of-funnel reach magnet; keep public to pull audience toward the premium shelf."
+    },
+    {
+      "subject": "Jumia — the long turnaround and the African e-commerce thesis",
+      "brand": "Jumia",
+      "lane": "E-commerce",
+      "angle": "Path to profitability and whether pan-African e-commerce can be owned on the continent.",
+      "priority": 8,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Investor-grade subject; monetisation and data-licence relevance."
+    },
+    {
+      "subject": "Cassper Nyovest's Billiato — celebrity spirits and the African drinks land-grab",
+      "brand": "Billiato",
+      "lane": "Drinks / celebrity brand",
+      "angle": "Artist-owned spirits vs multinational acquisition (Inverroche/Pernod) — companion to the Spearhead dossier.",
+      "priority": 9,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Engagement + a bridge into the premium spirits dossier."
+    },
+    {
+      "subject": "Trace — owning the pipes of African music media",
+      "brand": "Trace",
+      "lane": "Media / music",
+      "angle": "A pan-African media brand built on the culture — how much of the value it actually owns.",
+      "priority": 10,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Media-ownership thesis; distribution-as-moat."
+    }
+  ]
+}
