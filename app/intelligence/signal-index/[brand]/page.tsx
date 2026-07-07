@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
 import { SignalStrength } from '../../../components/dataviz/Charts';
-import { getPublicCaseStudies } from '../../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement, getBrandHistory } from '../../../../lib/index-history';
 import { brandEvidence, describeEvidence } from '../../../../lib/evidence-strength';
@@ -21,13 +21,13 @@ export const revalidate = 300;
 
 export async function generateStaticParams() {
   const seen = new Set<string>();
-  for (const c of getPublicCaseStudies()) seen.add(brandSlug(c.brand));
+  for (const c of getAllCaseStudies()) seen.add(brandSlug(c.brand));
   return [...seen].map((brand) => ({ brand }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { brand } = await params;
-  const entry = rankIndex(getPublicCaseStudies()).find((e) => brandSlug(e.brand) === brand);
+  const entry = rankIndex(getAllCaseStudies()).find((e) => brandSlug(e.brand) === brand);
   if (!entry) return { title: 'Brand not found | MonoKromatik' };
   const title = `${entry.brand} — Cultural-Signal Index | MonoKromatik`;
   const description = `${entry.brand} scores ${entry.score}/100 on the MonoKromatik Cultural-Signal Index (rank #${entry.rank}).`;
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BrandIndexPage({ params }: PageProps) {
   const { brand } = await params;
-  const studies = getPublicCaseStudies();
+  const studies = getAllCaseStudies();
   const ranked = rankIndex(studies);
   const entry = ranked.find((e) => brandSlug(e.brand) === brand);
   if (!entry) notFound();

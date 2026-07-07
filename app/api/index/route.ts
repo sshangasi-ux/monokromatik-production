@@ -6,7 +6,7 @@
 //   GET /api/index            → JSON (ranking + axes + movement + methodology)
 //   GET /api/index?format=csv → CSV (one row per ranked brand)
 
-import { getPublicCaseStudies } from '../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_WEIGHTS, AXIS_LABELS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince } from '../../../lib/index-history';
 import { evidenceByBrand } from '../../../lib/evidence-strength';
@@ -17,7 +17,9 @@ const SITE = 'https://www.monokromatik.com';
 const CACHE = 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400';
 
 function buildRows() {
-  const studies = getPublicCaseStudies();
+  // Ratings are public — rank all scored works (premium decodes stay gated on
+  // their own pages). See app/intelligence/signal-index/page.tsx.
+  const studies = getAllCaseStudies();
   const ranked = rankIndex(studies);
   const evidence = evidenceByBrand(studies);
   return ranked.map((e) => {
