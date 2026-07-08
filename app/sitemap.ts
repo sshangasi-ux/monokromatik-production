@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllArticles } from '../lib/articles';
-import { getPublicCaseStudies } from '../lib/case-studies';
+import { getAllCaseStudies } from '../lib/case-studies';
 import { rankIndex, brandSlug } from '../lib/signal-index';
 import { getLiveReports } from '../lib/reports';
 import { getAllIssues, issueHref } from '../lib/issues';
@@ -10,7 +10,10 @@ const SITE = 'https://www.monokromatik.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles();
-  const caseStudies = getPublicCaseStudies();
+  // ALL scored works — ratings are public (only the full analysis is gated), so
+  // every case-study + per-brand Index page is a public, indexable URL. Was
+  // public-only, which hid the premium decodes and their brand pages from search.
+  const caseStudies = getAllCaseStudies();
   const now = new Date();
 
   // Core editorial + intelligence + commercial surfaces that ship today.

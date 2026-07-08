@@ -51,5 +51,26 @@ export default async function ReportPage({ params }: PageProps) {
   const report = getReportBySlug(slug);
   if (!report) notFound();
 
-  return <ReportFeature report={report} />;
+  const url = `https://www.monokromatik.com/reports/${report.slug}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Report',
+    headline: report.title,
+    description: report.summary,
+    ...(report.publishedAt ? { datePublished: report.publishedAt } : {}),
+    url,
+    mainEntityOfPage: url,
+    inLanguage: 'en',
+    keywords: report.tags,
+    articleSection: report.series,
+    author: { '@type': 'Organization', name: 'MonoKromatik' },
+    publisher: { '@type': 'Organization', name: 'MonoKromatik', url: 'https://www.monokromatik.com' },
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ReportFeature report={report} />
+    </>
+  );
 }
