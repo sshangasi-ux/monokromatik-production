@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllCaseStudies, getCaseStudyBySlug } from '../../../../lib/case-studies';
+import { compositeScore } from '../../../../lib/signal-index';
 import CaseStudyFeature from '../../../components/CaseStudyFeature';
 
 interface PageProps {
@@ -85,9 +86,32 @@ export default async function CaseStudyPage({ params }: PageProps) {
     citation: (study.sources ?? []).map((s) => ({ '@type': 'CreativeWork', name: s.label, url: s.href })),
   };
 
+  // The Cultural-Signal Score is a rating — mark it up as a Review so search can
+  // surface the authorship-weighted score (and potentially ★ rich results). The
+  // rated entity is the brand/organisation; the analyst is the named author.
+  const score = compositeScore(study.decode);
+  const reviewLd =
+    score != null
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Review',
+          name: `Cultural-Signal Index — ${study.brand}`,
+          reviewBody: study.standfirst,
+          datePublished: study.publishedAt,
+          url,
+          itemReviewed: { '@type': 'Organization', name: study.brand },
+          author: { '@type': 'Person', name: 'Sibu Shangase', jobTitle: 'Founder & Lead Analyst' },
+          publisher: { '@type': 'Organization', name: 'MonoKromatik', url: 'https://www.monokromatik.com' },
+          reviewRating: { '@type': 'Rating', ratingValue: score, bestRating: 100, worstRating: 0 },
+        }
+      : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {reviewLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewLd) }} />
+      )}
       <CaseStudyFeature caseStudy={study} next={next} />
     </>
   );
