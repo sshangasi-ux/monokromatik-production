@@ -96,12 +96,15 @@ export function parseVerdicts(text: string, cands: BreakingCandidate[]): Breakin
 // Lower ceiling than the AI read — it curates, it doesn't interpret — but every
 // item is a real, attributable headline from a trusted feed.
 
-const SIGNAL_RE = /\b(launch(?:e[sd])?|acquir\w+|raise[sd]?|funding|round|sign[s]?|signs|deal|partner\w*|debut\w*|unveil\w*|invest\w*|expand\w*|appoint\w*|win[s]?|won|record|first|announce\w*|listing|ipo|merger|stake|backs?|secures?|lands?|joins?|drops?|releases?)\b/i;
+// STRONG news signals only. Ambiguous verbs (back/joins/drops/lands/releases/
+// secures/round) were removed — they match incidentally ("push back", "drops by")
+// and floated governance/legal stories over the bar. Deal/launch/award verbs stay.
+const SIGNAL_RE = /\b(launch(?:e[sd])?|acquir\w+|raise[sd]?|funding|sign[s]?|signs|deal|partner\w*|debut\w*|unveil\w*|invest\w*|expand\w*|appoint\w*|win[s]?|won|record|first|announce\w*|listing|ipo|merger|stake)\b/i;
 const MONEY_RE = /(\$|€|£|₦|\bR\d)|\b\d+(?:\.\d+)?\s?(?:m|bn|k|million|billion)\b/i;
 const SOFT_EXCLUDE_RE = /\b(opinion|recap|preview|review|how to|top \d+|best of|ranked|explainer|guide|things you|watch:|listen:|throwback|vs\.?|roundup|weekly wrap)\b/i;
 // Off-beat topics the desk hard-excludes (disease/health, disaster, geopolitics,
 // crime, weather). Note: a person's "death/dies" is NOT excluded — it can break.
-const HARD_EXCLUDE_RE = /\b(election|coup|\bwar\b|flood\w*|earthquake|drought|famine|outbreak|pandemic|covid|ebola|cholera|malaria|cyclone|hurricane|storm|weather|disease|cancer|\bfda\b|vaccine|hospital|murder|arrest\w*|robbery|fraud|scam|court|jail\w*|prison|rape|assault|kidnap\w*|terror\w*|protest\w*|sanction\w*|felony|firearm|shooting|indict\w*|sentenced|lawsuit|manslaughter|trump|biden|putin|netanyahu|zelensky|\bnato\b|summit|gaza|ukraine|russia|israel|palestin\w*|senate|congress|parliament|impeach\w*)\b/i;
+const HARD_EXCLUDE_RE = /\b(election|coup|\bwar\b|flood\w*|earthquake|drought|famine|outbreak|pandemic|covid|ebola|cholera|malaria|cyclone|hurricane|storm|weather|disease|cancer|\bfda\b|vaccine|hospital|murder|arrest\w*|robbery|fraud|scam|court|jail\w*|prison|rape|assault|kidnap\w*|terror\w*|protest\w*|sanction\w*|felony|firearm|shooting|indict\w*|sentenced|lawsuit|manslaughter|judge\w*|judiciary|lawyer\w*|ruling|verdict|trump|biden|putin|netanyahu|zelensky|\bnato\b|summit|gaza|ukraine|russia|israel|palestin\w*|senate|congress|parliament|impeach\w*)\b/i;
 
 /** Shared beat gate: true if a headline is off our editorial beats (disease,
  *  disaster, geopolitics, crime, weather) and should never surface. Used by both
@@ -133,6 +136,14 @@ const AFRICA_RE = new RegExp(
   'i'
 );
 
+// The BEAT gate: our remit is brand/business, music, sport, screen, fashion,
+// creators and drinks — NOT the government policy, health and energy-infrastructure
+// copy that general news feeds (e.g. a Ghana wire) also carry. An African news verb
+// alone floated "Mahama announces cardiac care centres" over the bar; requiring a
+// positive brand-culture signal keeps the desk on its beats. Broad on purpose — a
+// rare off-beat match is caught by the exclusions above.
+const BEAT_RE = /\b(brand\w*|campaign|advert\w*|marketing|rebrand|music|album|single|mixtape|\bep\b|song|rapper|singer|afrobeat\w*|amapiano|hip-?hop|concert|tour|festival|gig|film|movie|cinema|nollywood|box office|screen|series|premiere|netflix|showmax|grammy|oscar|award\w*|nomination|fashion|designer|runway|couture|\bmodel\b|\bart\b|gallery|exhibition|sport\w*|football|soccer|basketball|athlet\w*|league|\bcup\b|championship|trophy|\bmedal\b|olympic\w*|signing|transfer|creator|influencer|podcast|streaming|startup|funding|\bipo\b|acquisition|merger|\bdeal\b|sponsor\w*|endorsement|drinks?|spirits?|whisky|whiskey|\bgin\b|beer|brewery|distiller\w*|\bwine\b|cognac)\b/i;
+
 /** Deterministic verdicts — same shape as parseVerdicts, no LLM. */
 export function deterministicVerdicts(cands: BreakingCandidate[]): BreakingVerdict[] {
   return cands.map((c) => {
@@ -148,11 +159,13 @@ export function deterministicVerdicts(cands: BreakingCandidate[]): BreakingVerdi
     if (c.category === 'news') score += 0.5;
     if (SOFT_EXCLUDE_RE.test(title)) score -= 3;
     if (hard) score -= 4;
-    // No clear Africa/diaspora link → cannot clear the FOCUS bar. Cap low so it
-    // never publishes; this is the deterministic mirror of "when unsure, low".
-    if (!african) score = Math.min(score, 2);
+    const onBeat = BEAT_RE.test(title);
+    // No clear Africa/diaspora link, or not on our brand-culture beats → cannot
+    // clear the FOCUS bar. Cap low so it never publishes; the deterministic mirror
+    // of the AI's "when unsure, score low".
+    if (!african || !onBeat) score = Math.min(score, 2);
     const importance = Math.max(1, Math.min(5, Math.round(score)));
-    const breaking = african && !hard && importance >= 4;
+    const breaking = african && onBeat && !hard && importance >= 4;
     const why = signals.length
       ? `Signal: ${signals.join(', ')} · ${c.source} (${c.category}) · auto-curated`
       : `Fresh from ${c.source} (${c.category}) · auto-curated`;
