@@ -20,7 +20,9 @@ import { getAllCaseStudies } from '../lib/case-studies';
 import { getAllReports } from '../lib/reports';
 import { getAllIssues } from '../lib/issues';
 import { buildCoveragePlan, type CoverageItem } from '../lib/coverage-planner';
-import { selectGapCells, discoverForCell, discoverForFranchise, type GapCellResult } from '../lib/gap-discovery';
+import { fetchMonoKromatikStories } from '../lib/fetch-stories';
+import { selectGapCells, discoverForCell, discoverForFranchise, discoverGapsFromPool, discoverForFranchiseFromPool, type GapCellResult } from '../lib/gap-discovery';
+import type { Story } from '../lib/rss-feeds';
 import { classifyFranchise } from '../lib/editorial-franchises';
 import { buildFranchisePlan, describeFranchisePlan, type FranchiseItem, type FranchisePlan } from '../lib/franchise-coverage';
 
@@ -114,10 +116,6 @@ function brief(
 }
 
 async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('❌ ANTHROPIC_API_KEY not set.');
-    process.exit(1);
-  }
   const args = process.argv.slice(2);
   const dry = args.includes('--dry');
   const cells = parseInt(args.find((a) => a.startsWith('--cells='))?.split('=')[1] || '4', 10);
@@ -145,10 +143,48 @@ async function main() {
     return;
   }
 
+  // Auto-fallback: web-search via AI when a key works; on absence or the FIRST
+  // API error, switch to the deterministic RSS pool for the rest — so the brief
+  // is always produced, credit-free when needed. The pool is fetched lazily and
+  // only once (it's free but ~feed-latency, so we skip it while AI is healthy).
+  //
+  // The deterministic path can't chase the AI-selected cells (they're the thinnest
+  // — often UNSOURCED cells no feed carries). Instead it fills the SOURCED gaps the
+  // pool can actually serve, so the brief still carries real, commissionable leads.
+  let useRules = !process.env.ANTHROPIC_API_KEY;
+  if (useRules) log('No ANTHROPIC_API_KEY — sourcing leads from the RSS pool (credit-free).');
+  let pool: Story[] | null = null;
+  const getPool = async (): Promise<Story[]> => (pool ??= await fetchMonoKromatikStories());
+
   const results: GapCellResult[] = [];
-  for (const cell of pickedCells) results.push(await discoverForCell(cell, { maxSearches: searches }));
+  if (!useRules) {
+    for (const cell of pickedCells) {
+      const r = await discoverForCell(cell, { maxSearches: searches });
+      if (r.error) { log(`AI discovery failed (${r.error.slice(0, 100)}) — switching to deterministic RSS pool.`); useRules = true; break; }
+      results.push(r);
+    }
+  }
+  if (useRules) {
+    const have = new Set(results.map((r) => `${r.region}|${r.category}`));
+    for (const r of discoverGapsFromPool(plan, await getPool(), cells)) {
+      if (!have.has(`${r.region}|${r.category}`)) results.push(r);
+    }
+  }
+
   const franchiseResults: GapCellResult[] = [];
-  for (const f of pickedFranchises) franchiseResults.push(await discoverForFranchise(f, { maxSearches: searches }));
+  if (!useRules) {
+    for (const f of pickedFranchises) {
+      const r = await discoverForFranchise(f, { maxSearches: searches });
+      if (r.error) { log(`AI discovery failed (${r.error.slice(0, 100)}) — switching to deterministic RSS pool.`); useRules = true; break; }
+      franchiseResults.push(r);
+    }
+  }
+  if (useRules) {
+    const pl = await getPool();
+    for (const f of pickedFranchises) {
+      if (!franchiseResults.some((x) => x.region === f)) franchiseResults.push(discoverForFranchiseFromPool(f, pl));
+    }
+  }
 
   const outDir = join(__dirname, '../output');
   mkdirSync(outDir, { recursive: true });

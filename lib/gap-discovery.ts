@@ -13,8 +13,10 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
-import type { CoveragePlan, GapBrief } from './coverage-planner';
+import { sourceRegion, type CoveragePlan, type GapBrief } from './coverage-planner';
+import { offBeat } from './breaking';
 import type { EditorialFranchise } from './editorial-franchises';
+import type { Story } from './rss-feeds';
 
 let _anthropic: Anthropic | null = null;
 // Patient retries: non-interactive cron, so ride out transient 429/5xx/529.
@@ -158,6 +160,100 @@ const FRANCHISE_QUERY: Record<EditorialFranchise, string> = {
   Waves: 'a current African or diaspora music, screen, style or internet-culture moment with commercial weight.',
   Unclassified: 'a notable recent African or diaspora brand-culture story.',
 };
+
+// ── Deterministic pool discovery (credit-free fallback) ──────────────────────
+// When no Anthropic key / credits are available, we can't web-search the open
+// web — but we CAN surface real, citable leads from the RSS story pool the Scout
+// already fetched (free). A "gap" is an UNDER-PUBLISHED cell, so a sourced cell
+// (a feed exists but the editor hasn't covered it lately) usually has fresh pool
+// items to commission. Unsourced cells (no feed — Diaspora, North/Central) yield
+// nothing here, and we say so: honest emptiness, never fabrication.
+
+const MAX_POOL_LEADS = 3;
+
+// A COMMISSIONABLE signal — the pool carries plenty of general-interest news even
+// inside a culture/entertainment feed (race incidents, accidents, viral drama),
+// which is real but off our brand-culture remit. Without the AI's interpretation,
+// we require a positive brand / business / music / screen / fashion / sport signal
+// in the headline; anything without one is skipped (honest emptiness > padding).
+// Deliberately STRONG nouns only — ambiguous verbs (launch/drops/raised/star)
+// match incidentally ("FIFA launches investigation", "raised by…"), so they're out.
+const BEAT_SIGNAL_RE = /\b(brand\w*|campaign|rebrand|album|mixtape|\bep\b|music video|concert|tour|festival|\bfilm\b|movie|cinema|nollywood|box office|series|premiere|netflix|showmax|prime video|grammy|oscar|bet awards?|nomination|fashion|designer|runway|couture|sponsor\w*|endorsement|signing|transfer|startup|funding|\bipo\b|acquisition|merger|streaming|record label|afrobeat\w*|amapiano|championship|trophy|\bmedal\b|award\w*)\b/i;
+
+// Off-beat if EITHER the headline or the excerpt trips the exclusion — clickbait
+// headlines often hide the real (off-remit) subject in the body.
+function poolOffBeat(s: Story): boolean {
+  return offBeat(s.title) || offBeat(s.excerpt || '');
+}
+
+function storyToLead(s: Story, why: string): GapLead {
+  return {
+    title: s.title,
+    summary: (s.excerpt || '').replace(/\s+/g, ' ').trim().slice(0, 180),
+    url: s.link,
+    source: s.source,
+    why,
+  };
+}
+
+/** Real RSS leads whose (source→region, category) match a thin cell. Newest-first. */
+export function discoverForCellFromPool(cell: GapBrief, stories: Story[]): GapCellResult {
+  const cat = cell.category.toLowerCase();
+  const leads = stories
+    .filter((s) => s.link && !poolOffBeat(s) && BEAT_SIGNAL_RE.test(s.title) && (s.category || '').toLowerCase() === cat && sourceRegion(s.source) === cell.region)
+    .slice(0, MAX_POOL_LEADS)
+    .map((s) => storyToLead(s, `Fresh ${s.category} from ${s.source} — fills ${cell.region} × ${cell.category}.`));
+  return { region: cell.region, category: cell.category, sourced: cell.sourced, leads, searches: 0 };
+}
+
+/**
+ * Deterministic region×category brief: walk the plan's gaps thinnest-first and,
+ * for each SOURCED cell (a feed exists — the pool can actually fill it), pull the
+ * freshest matching pool stories. Unsourced cells (Diaspora, North/Central, and
+ * the `news` axis the Scout pool doesn't carry) can't be filled from the pool, so
+ * they're skipped here rather than reported empty. Returns up to `max` cells that
+ * genuinely have leads — real, commissionable stories, never fabricated.
+ */
+export function discoverGapsFromPool(plan: CoveragePlan, stories: Story[], max = 4): GapCellResult[] {
+  const out: GapCellResult[] = [];
+  for (const g of plan.gaps) {
+    if (out.length >= max) break;
+    if (!g.sourced) continue;
+    const r = discoverForCellFromPool(g, stories);
+    if (r.leads.length) out.push(r);
+  }
+  return out;
+}
+
+// Franchise → how to match pool stories (feed category and/or a title keyword).
+const FRANCHISE_POOL_MATCH: Record<EditorialFranchise, { cats?: string[]; kw?: RegExp }> = {
+  Roots: { cats: ['culture'] },
+  Arena: { cats: ['sports'] },
+  Waves: { cats: ['music', 'entertainment'] },
+  'The Work': { kw: /\b(campaign|brand|launch\w*|collab\w*|rebrand|advert\w*|marketing|product|partner\w*|sponsor\w*)\b/i },
+  'Will It Land?': { kw: /\b(global|worldwide|international|campaign|launch\w*|viral|super bowl|brand)\b/i },
+  'Brand Weather': { kw: /\b(market\w*|report|consumer\w*|econom\w*|data|growth|sales|spend\w*|inflation|revenue|industry)\b/i },
+  'The Boardroom': { kw: /\b(ceo|founder|co-?founder|appoint\w*|leader\w*|executive|chief|managing director|chairman|chairperson)\b/i },
+  Unclassified: {},
+};
+
+/** Real RSS leads matching an editorial franchise. Newest-first. */
+export function discoverForFranchiseFromPool(franchise: EditorialFranchise, stories: Story[]): GapCellResult {
+  const m = FRANCHISE_POOL_MATCH[franchise] || {};
+  const leads = stories
+    .filter((s) => {
+      if (!s.link || poolOffBeat(s)) return false;
+      if (m.cats && !m.cats.includes((s.category || '').toLowerCase())) return false;
+      if (m.kw && !m.kw.test(s.title)) return false;
+      // Franchises matched only by category (Roots/Arena/Waves) still need a
+      // commissionable signal; keyword-matched franchises already carry one.
+      if (!m.kw && !BEAT_SIGNAL_RE.test(s.title)) return false;
+      return true;
+    })
+    .slice(0, MAX_POOL_LEADS)
+    .map((s) => storyToLead(s, `Matches ${franchise} — from ${s.source}.`));
+  return { region: franchise, category: 'franchise', sourced: true, leads, searches: 0 };
+}
 
 /** Search the live web for a lead to commission within one editorial franchise. */
 export async function discoverForFranchise(
