@@ -89,6 +89,77 @@ export function parseVerdicts(text: string, cands: BreakingCandidate[]): Breakin
   }
 }
 
+// ── Deterministic judge (credit-free fallback) ───────────────────────────────
+// A rule-based ranker that stands in for the AI judge when no Anthropic key /
+// credits are available. It scores REAL feed items (no fabrication) by news
+// signal, source authority and recency, and applies the same hard exclusions.
+// Lower ceiling than the AI read — it curates, it doesn't interpret — but every
+// item is a real, attributable headline from a trusted feed.
+
+const SIGNAL_RE = /\b(launch(?:e[sd])?|acquir\w+|raise[sd]?|funding|round|sign[s]?|signs|deal|partner\w*|debut\w*|unveil\w*|invest\w*|expand\w*|appoint\w*|win[s]?|won|record|first|announce\w*|listing|ipo|merger|stake|backs?|secures?|lands?|joins?|drops?|releases?)\b/i;
+const MONEY_RE = /(\$|€|£|₦|\bR\d)|\b\d+(?:\.\d+)?\s?(?:m|bn|k|million|billion)\b/i;
+const SOFT_EXCLUDE_RE = /\b(opinion|recap|preview|review|how to|top \d+|best of|ranked|explainer|guide|things you|watch:|listen:|throwback|vs\.?|roundup|weekly wrap)\b/i;
+// Off-beat topics the desk hard-excludes (disease/health, disaster, geopolitics,
+// crime, weather). Note: a person's "death/dies" is NOT excluded — it can break.
+const HARD_EXCLUDE_RE = /\b(election|coup|\bwar\b|flood\w*|earthquake|drought|famine|outbreak|pandemic|covid|ebola|cholera|malaria|cyclone|hurricane|storm|weather|disease|cancer|\bfda\b|vaccine|hospital|murder|arrest\w*|robbery|fraud|scam|court|jail\w*|prison|rape|assault|kidnap\w*|terror\w*|protest\w*|sanction\w*|felony|firearm|shooting|indict\w*|sentenced|lawsuit|manslaughter|trump|biden|putin|netanyahu|zelensky|\bnato\b|summit|gaza|ukraine|russia|israel|palestin\w*|senate|congress|parliament|impeach\w*)\b/i;
+
+/** Shared beat gate: true if a headline is off our editorial beats (disease,
+ *  disaster, geopolitics, crime, weather) and should never surface. Used by both
+ *  the deterministic radar and the deterministic coverage-gap pool. */
+export function offBeat(title: string): boolean {
+  return HARD_EXCLUDE_RE.test(title || '');
+}
+const HIGH_AUTHORITY = /(techcabal|african business|business of fashion|variety|music in africa|rest of world|the eastafrican|bloomberg|reuters|deadline|hollywood reporter)/i;
+
+// The FOCUS gate: an item must show a CLEAR Africa/diaspora link to publish. The
+// feeds carry global wire copy too (a Ghana outlet running a US-FDA story, an
+// entertainment feed on a US actor), so — like the AI judge's "when unsure, score
+// low" rule — we require a positive African/diaspora signal in the headline.
+// African countries, demonyms, major cities, regional + culture/diaspora markers,
+// and a handful of the biggest African/diaspora names.
+const AFRICA_RE = new RegExp(
+  '\\b(' +
+  // continent / regions
+  'africa\\w*|sub-?saharan|sahel|maghreb|pan-?african|' +
+  // countries + demonyms (stems)
+  'niger\\w*|ghana\\w*|kenya\\w*|south\\s?africa\\w*|ethiopia\\w*|egypt\\w*|morocc\\w*|senegal\\w*|ivor\\w*|cote d.?ivoire|tanzania\\w*|uganda\\w*|rwanda\\w*|zimbabwe\\w*|zambia\\w*|botswana\\w*|namibia\\w*|mozambiqu\\w*|angola\\w*|cameroon\\w*|congo\\w*|\\bdrc\\b|mali\\w*|algeria\\w*|tunisia\\w*|sudan\\w*|somali\\w*|malawi\\w*|benin\\w*|togo\\w*|burkina|gabon\\w*|guinea\\w*|sierra leone|liberia\\w*|gambia\\w*|mauriti\\w*|madagascar|eswatini|lesotho|djibouti|eritrea\\w*|' +
+  // major cities
+  'lagos|abuja|accra|nairobi|johannesburg|joburg|cape town|pretoria|durban|cairo|casablanca|dakar|addis ababa|kampala|kigali|kinshasa|ibadan|kano|kumasi|mombasa|marrakech|tangier|' +
+  // culture / diaspora markers
+  'afrobeat\\w*|amapiano|nollywood|naija|gqom|highlife|kwaito|azonto|diaspora|afro-?caribbean|afro-?beats|black british|african[- ]american|' +
+  // biggest African / diaspora names
+  'burna boy|wizkid|davido|\\btems\\b|\\brema\\b|asake|\\btyla\\b|ayra starr|stormzy|black sherif|tebogo|hakimi' +
+  ')\\b',
+  'i'
+);
+
+/** Deterministic verdicts — same shape as parseVerdicts, no LLM. */
+export function deterministicVerdicts(cands: BreakingCandidate[]): BreakingVerdict[] {
+  return cands.map((c) => {
+    const title = c.title || '';
+    const hard = HARD_EXCLUDE_RE.test(title);
+    const african = AFRICA_RE.test(title);
+    let score = 2; // base for any fresh, on-beat feed item
+    const signals: string[] = [];
+    const sig = title.match(SIGNAL_RE);
+    if (sig) { score += 2; signals.push(sig[0].toLowerCase()); }
+    if (MONEY_RE.test(title)) { score += 1; signals.push('$'); }
+    if (HIGH_AUTHORITY.test(c.source)) score += 1;
+    if (c.category === 'news') score += 0.5;
+    if (SOFT_EXCLUDE_RE.test(title)) score -= 3;
+    if (hard) score -= 4;
+    // No clear Africa/diaspora link → cannot clear the FOCUS bar. Cap low so it
+    // never publishes; this is the deterministic mirror of "when unsure, low".
+    if (!african) score = Math.min(score, 2);
+    const importance = Math.max(1, Math.min(5, Math.round(score)));
+    const breaking = african && !hard && importance >= 4;
+    const why = signals.length
+      ? `Signal: ${signals.join(', ')} · ${c.source} (${c.category}) · auto-curated`
+      : `Fresh from ${c.source} (${c.category}) · auto-curated`;
+    return { link: c.link, breaking, importance, why };
+  });
+}
+
 export interface BreakingHit extends BreakingCandidate {
   importance: number;
   why: string;
@@ -138,7 +209,7 @@ export function renderAlert(hits: BreakingHit[], stamp: string): { subject: stri
     <p style="font-size:12px;letter-spacing:2px;color:#E8A33D;font-weight:700">MONOKROMATIK · BREAKING RADAR</p>
     <p style="font-size:13px;color:#777">${hits.length} story${hits.length === 1 ? '' : 'ies'} just broke in your focus segments — ${stamp}.</p>
     <table style="width:100%;border-collapse:collapse">${rows}</table>
-    <p style="font-size:12px;color:#999;margin-top:16px">AI-flagged from trusted feeds. Move fast.</p>
+    <p style="font-size:12px;color:#999;margin-top:16px">Flagged from trusted feeds. Move fast.</p>
   </div>`;
   const text = `MONOKROMATIK — BREAKING (${hits.length}) · ${stamp}\n\n` +
     top.map((h) => `• [${h.source} · ${h.importance}/5] ${h.title}\n  ${h.why}\n  ${h.link}`).join('\n\n');

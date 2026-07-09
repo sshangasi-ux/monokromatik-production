@@ -15,7 +15,7 @@ import { join } from 'path';
 import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from '../lib/ai-models';
 import { fetchMonoKromatikStories } from '../lib/fetch-stories';
-import { selectCandidates, judgePrompt, parseVerdicts, renderAlert, mergeBreaks, type BreakingHit, type BreakingFeed } from '../lib/breaking';
+import { selectCandidates, judgePrompt, parseVerdicts, deterministicVerdicts, renderAlert, mergeBreaks, type BreakingCandidate, type BreakingVerdict, type BreakingHit, type BreakingFeed } from '../lib/breaking';
 
 const envPath = join(__dirname, '../.env.local');
 if (existsSync(envPath)) {
@@ -64,11 +64,38 @@ async function sendAlert(hits: BreakingHit[]): Promise<boolean> {
   return true;
 }
 
-async function main() {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('❌ ANTHROPIC_API_KEY not set.');
-    process.exit(1);
+/**
+ * Classify candidates as breaking or not. Auto-fallback: use the AI judge when a
+ * working Anthropic key is present; on no-key OR any API error (e.g. out of
+ * credits, rate limit), fall back to the deterministic rule-based ranker so the
+ * radar NEVER fails and The Wire stays fresh credit-free. Returns the verdicts
+ * plus which path produced them (for the log).
+ */
+async function classify(cands: BreakingCandidate[]): Promise<{ verdicts: BreakingVerdict[]; mode: 'ai' | 'rules' }> {
+  if (process.env.ANTHROPIC_API_KEY) {
+    try {
+      const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 2 });
+      const msg = await client.messages.create({
+        model: MODELS.utility,
+        max_tokens: 4000,
+        messages: [{ role: 'user', content: judgePrompt(cands) }],
+      });
+      const text = msg.content.filter((b): b is Anthropic.TextBlock => b.type === 'text').map((b) => b.text).join('\n');
+      const verdicts = parseVerdicts(text, cands);
+      // A valid empty parse (0 verdicts) from a non-empty batch means the model
+      // returned nothing usable — treat as a miss and fall through to rules.
+      if (verdicts.length > 0) return { verdicts, mode: 'ai' };
+      log('AI judge returned no parsable verdicts — falling back to deterministic ranker.');
+    } catch (err) {
+      log(`AI judge unavailable (${err instanceof Error ? err.message.slice(0, 120) : 'error'}) — using deterministic ranker.`);
+    }
+  } else {
+    log('No ANTHROPIC_API_KEY — using deterministic ranker (credit-free).');
   }
+  return { verdicts: deterministicVerdicts(cands), mode: 'rules' };
+}
+
+async function main() {
   const args = process.argv.slice(2);
   const dry = args.includes('--dry');
   const windowHours = parseInt(args.find((a) => a.startsWith('--window='))?.split('=')[1] || '3', 10);
@@ -88,15 +115,8 @@ async function main() {
     return;
   }
 
-  // AI judge (cheap utility model; the bar is strict).
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, maxRetries: 4 });
-  const msg = await client.messages.create({
-    model: MODELS.utility,
-    max_tokens: 4000,
-    messages: [{ role: 'user', content: judgePrompt(cands) }],
-  });
-  const text = msg.content.filter((b): b is Anthropic.TextBlock => b.type === 'text').map((b) => b.text).join('\n');
-  const verdicts = parseVerdicts(text, cands);
+  // Judge: AI when available, deterministic rules as auto-fallback (credit-free).
+  const { verdicts, mode } = await classify(cands);
 
   const hits: BreakingHit[] = verdicts
     .filter((v) => v.breaking && v.importance >= IMPORTANCE_BAR)
@@ -105,7 +125,7 @@ async function main() {
       return { ...c, importance: v.importance, why: v.why };
     });
 
-  log(`Judged ${verdicts.length} · ${hits.length} breaking (importance ≥ ${IMPORTANCE_BAR}).`);
+  log(`Judged ${verdicts.length} [${mode}] · ${hits.length} breaking (importance ≥ ${IMPORTANCE_BAR}).`);
   hits.forEach((h) => log(`  🔴 [${h.importance}/5] ${h.source}: ${h.title.slice(0, 70)}`));
 
   if (dry) {
