@@ -35,6 +35,8 @@ articles.forEach((a, i) => {
   const b = a.brandRead as Record<string, unknown> | undefined;
   if (b) {
     if (!isStr(b.take)) at('brandRead.take not a string');
+    // attribution is required — /signal renders featured.brandRead.attribution.toUpperCase()
+    if (!nonEmpty(b.attribution)) at('brandRead.attribution missing (crashes /signal)');
     if (b.takeaways !== undefined && !isArr(b.takeaways)) at('brandRead.takeaways must be an array');
   }
 });
@@ -80,6 +82,9 @@ reports.forEach((r, i) => {
   const at = (m: string) => err(`reports[${i}] (${(r.slug as string) || '?'}) — ${m}`);
   if (!nonEmpty(r.slug)) at('missing slug');
   if (!nonEmpty(r.title)) at('missing title');
+  // access must be a known tier — ReportFeature does ACCESS_LABEL[access].toUpperCase()
+  // ('public' is NOT valid for reports — that's a case-study tier; reports use 'open').
+  if (r.access !== undefined && !['open', 'premium', 'partner'].includes(r.access as string)) at(`invalid access '${r.access}' (use open|premium|partner)`);
   // Planned reports are placeholders without sections; live ones must have them.
   if (r.sections !== undefined && !isArr(r.sections)) at('sections must be an array if present');
   if (r.status === 'live' && (!isArr(r.sections) || (r.sections as unknown[]).length === 0)) at('live report has no sections');
