@@ -135,9 +135,6 @@
       "attribution": "Sibu Shangase",
       "attributionRole": "Founder & Lead Analyst"
     },
-    "imageUrl": "/fallback-hero.svg",
-    "imageCredit": "MonoKromatik",
-    "imageSourceUrl": "https://www.monokromatik.com",
     "videoUrl": "https://www.youtube.com/watch?v=_8I9bQm6E28",
     "videoType": "embed",
     "videoCredit": "Video via Wikipedia / Walt Disney Animation Studios",
@@ -171,10 +168,7 @@
       ],
       "attribution": "Sibu Shangase",
       "attributionRole": "Founder & Lead Analyst"
-    },
-    "imageUrl": "/fallback-hero.svg",
-    "imageCredit": "MonoKromatik",
-    "imageSourceUrl": "https://www.monokromatik.com"
+    }
   },
   {
     "title": "Castle Lager: How a South African Beer Became a Global Powerhouse — and Who Owns It Now",
@@ -237,10 +231,7 @@
       ],
       "attribution": "Sibu Shangase",
       "attributionRole": "Founder & Lead Analyst"
-    },
-    "imageUrl": "/fallback-hero.svg",
-    "imageCredit": "MonoKromatik",
-    "imageSourceUrl": "https://www.monokromatik.com"
+    }
   },
   {
     "title": "Who Banks the Boom? The African Art Market's Value-Capture Problem",
@@ -4388,10 +4379,7 @@
     "stylistNote": "The draft had strong bones but spent too long explaining its own emotion — 'here's why this hits different' told the reader what to feel instead of making them feel it. I stripped the instructional scaffolding and let the specifics carry the weight: diaspora detail, Hassan's exact words, the rhythm of the penalty sequence. The closing reframe echoes the map image from the brand's core voice — Egypt isn't just arriving somewhere, it's defining new terrain.",
     "eicScore": 7.8,
     "eicNotes": "The diaspora layer section is the piece — specific, earned, emotionally precise without being sentimental. The reframe in the opening header lands clean and the Hassan quote is used correctly: introduced, then interrogated. Two issues hold it back. First, the 'What the Match Actually Was' section is the thinnest: 'dangerous enough that Australia had no real choice but to sit deep' is a generic match report beat that any wire service could have written, and the 'own goal' detail contradicts the excerpt's implication of an Australian leveler — needs a factual check before publication. Second, the closing section is short enough to feel rushed against the depth of what preceded it; the 'not done drawing the map' callback is earned but the two paragraphs before it don't build enough runway. The piece is approvable with one editorial ask: confirm the own goal attribution and, if the match detail is thin, cut that section to two sentences rather than defending it.",
-    "eicReviewedAt": "2026-07-04T11:48:06.216Z",
-    "imageUrl": "/fallback-hero.svg",
-    "imageCredit": "MonoKromatik",
-    "imageSourceUrl": "https://www.monokromatik.com"
+    "eicReviewedAt": "2026-07-04T11:48:06.216Z"
   },
   {
     "title": "Davido Names His Sixth Album After His Own Crown — and Means Every Word",
