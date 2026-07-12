@@ -309,15 +309,7 @@
         "use": "Post-deal independence and continued African operations"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Paystack — Paystack: The Rails Under Nigeria's Internet — and the Exit That Split the Room",
-        "credit": "MonoKromatik",
-        "sourceLabel": "TechCrunch",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "indomie-nigeria-cultural-icon",
@@ -462,15 +454,7 @@
         "use": "Dufil scale, local manufacturing story and the Nigerian FMCG opportunity framing."
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Indomie — Indomie: The Foreign Brand Nigeria Adopted as Its Own",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "dangote-refinery-industrial-bet",
@@ -635,11 +619,11 @@
     ],
     "media": [
       {
-        "src": "/fallback-hero.svg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Column-Dangote-refinery-nig2.jpg/330px-Column-Dangote-refinery-nig2.jpg",
         "alt": "Dangote Petroleum Refinery — Dangote Refinery: Building the Brand of African Capital",
-        "credit": "MonoKromatik",
+        "credit": "Via Wikipedia",
         "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
+        "sourceHref": "https://en.wikipedia.org/wiki/Dangote_refinery"
       }
     ]
   },
@@ -1998,15 +1982,7 @@
         "use": "Paris Fashion Week debut context, aso-oke weaving and artisans, positioning of the house"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Kenneth Ize — Kenneth Ize: Owning the Loom, Not Just the Label",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "opay-nigeria-payments-war",
@@ -2728,15 +2704,7 @@
         "use": "IP-controlled, South African-made category collaboration"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "MaXhosa Africa — MaXhosa Africa: Owning the Loom, Not Just the Logo",
-        "credit": "MonoKromatik",
-        "sourceLabel": "FHCM (Fédération de la Haute Couture et de la Mode)",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "flutterwave-comeback-and-ipo",
@@ -3243,11 +3211,11 @@
     ],
     "media": [
       {
-        "src": "/fallback-hero.svg",
+        "src": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Nandos_logo.svg/250px-Nandos_logo.svg.png",
         "alt": "Nando's — Nando's: The African Brand That Exported Its Own Culture — and Kept the Upside",
-        "credit": "MonoKromatik",
+        "credit": "Via Wikipedia",
         "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
+        "sourceHref": "https://en.wikipedia.org/wiki/Nando's"
       }
     ]
   },
@@ -5237,15 +5205,7 @@
         "use": "Reporting on the Panini peel-back-label mechanic and fan activations."
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Coca-Cola — Coca-Cola’s Uncanned Emotions: Universal Feeling, Whose Specifics?",
-        "credit": "MonoKromatik",
-        "sourceLabel": "The Coca-Cola Company",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "visa-2026-world-cup-tap-in-access",
@@ -7732,15 +7692,7 @@
         "use": "Confirms full ownership, founder and fynbos provenance"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Inverroche × Pernod Ricard — Inverroche: A Fynbos Gin Goes Global — Under French Ownership",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Pernod Ricard",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "one-voice-kaizer-chiefs-carling-black-label-and-the-business-of-belonging",
@@ -7970,15 +7922,7 @@
         "use": "Source for the downstream acquisition prompted by the show's success (reported)"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "The Polygamist (Stained Glass TV / Netflix) — The Polygamist: A South African Telenovela Tops Netflix in 16 Countries",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "moniepoint-africa-s-profitable-unicorn-builds-the-rails-then-buys-the-bank",
@@ -8089,15 +8033,7 @@
         "use": "Company overview, founding and expansion timeline"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Moniepoint — Moniepoint: Africa's Profitable Unicorn Builds the Rails, Then Buys the Bank",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Moniepoint",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "uncover-k-beauty-science-african-skin-kenyan-ownership",
@@ -8327,15 +8263,7 @@
         "use": "Source for the authorship framing (interpretive)"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Uncle Waffles — Uncle Waffles: Taking Amapiano to the Arena, on Her Own Terms",
-        "credit": "MonoKromatik",
-        "sourceLabel": "Wikipedia",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ]
+    "media": []
   },
   {
     "slug": "the-durban-july-2026-who-won-and-lost-from-a-brand-s-point-of-view",
@@ -8838,15 +8766,7 @@
         "use": "Ownership (Distell), founding and range overview"
       }
     ],
-    "media": [
-      {
-        "src": "/fallback-hero.svg",
-        "alt": "Three Ships Whisky (James Sedgwick Distillery) — Three Ships: A Wellington Whisky Beats Scotland and Japan",
-        "credit": "MonoKromatik",
-        "sourceLabel": "TimesLIVE",
-        "sourceHref": "https://www.monokromatik.com"
-      }
-    ],
+    "media": [],
     "videoUrl": "https://www.youtube.com/watch?v=d3ZOQsFeCyc",
     "videoType": "youtube",
     "videoCredit": "The James Sedgwick Distillery, Wellington (via YouTube)",
