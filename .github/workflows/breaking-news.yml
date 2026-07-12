@@ -66,8 +66,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MONO_MODEL_UTILITY: ${{ secrets.MONO_MODEL_UTILITY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          EIC_DIGEST_TO: ${{ secrets.EIC_DIGEST_TO }}
-          EIC_DIGEST_FROM: ${{ secrets.EIC_DIGEST_FROM }}
+          # Recipient/from are non-secret addresses — repo variables (match daily-brief.yml).
+          EIC_DIGEST_TO: ${{ vars.EIC_DIGEST_TO }}
+          EIC_DIGEST_FROM: ${{ vars.EIC_DIGEST_FROM }}
           NODE_ENV: production
         run: npm run breaking:watch -- --window=${{ github.event.inputs.window || '3' }}
 
