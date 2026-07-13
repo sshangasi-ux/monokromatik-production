@@ -281,9 +281,9 @@
         "use": "Reported one-billion-stream milestone and the Wait for U feature framing."
       },
       {
-        "publisher": "Grammy.com",
-        "label": "Tems Wins Best African Music Performance | 2025 GRAMMYs Acceptance Speech",
-        "href": "https://www.grammy.com/videos/tems-wins-best-african-music-performance-2025-grammys",
+        "publisher": "OkayAfrica",
+        "label": "Tems Wins 'Best African Music Performance' at the 2025 Grammys",
+        "href": "https://www.okayafrica.com/tems-wins-best-african-music-performance-at-the-2025-grammys/114472",
         "use": "Confirms the 2025 'Love Me Jeje' Grammy win — her second Grammy."
       },
       {
@@ -4070,9 +4070,11 @@
     ],
     "media": [
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Tyla_at_Coachella_2025_01.jpg",
-        "alt": "Tyla performing at Coachella 2025",
-        "credit": "Drew sucks at life, CC BY 3.0, via Wikimedia Commons"
+        "src": "/article-media/cs-tyla-global-pop-brand-e0a55702.webp",
+        "alt": "Tyla — Tyla: Engineering a Global African Pop Brand",
+        "credit": "Via GRAMMY.com",
+        "sourceLabel": "GRAMMY.com",
+        "sourceHref": "https://www.grammy.com/news/tyla-winner-best-african-music-performance-water-2024-grammys-meaning"
       }
     ],
     "videoUrl": "https://www.youtube.com/watch?v=XoiOOiuH8iI",

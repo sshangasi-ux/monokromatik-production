@@ -923,9 +923,6 @@
     "sourceLink": "https://www.tourismupdate.com/article/massive-tourism-revenue-leakages-in-africa",
     "sourceName": "Tourism Update",
     "publishedAt": "2026-07-07T13:14:00.000Z",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Mount_Nelson_Hotel_%283464448937%29.jpg",
-    "imageCredit": "Mount Nelson Hotel, Cape Town (via Wikimedia Commons)",
-    "imageSourceUrl": "https://en.wikipedia.org/wiki/Belmond_Mount_Nelson_Hotel",
     "brandRead": {
       "attribution": "Sibu Shangase",
       "attributionRole": "Founder & Lead Analyst, MonoKromatik",
@@ -942,7 +939,10 @@
         }
       ],
       "confidence": "interpretive"
-    }
+    },
+    "imageUrl": "/article-media/the-bush-is-booked-who-actually-banks-it-88625c3f.webp",
+    "imageCredit": "Via Tourism Update",
+    "imageSourceUrl": "https://www.tourismupdate.com/article/massive-tourism-revenue-leakages-in-africa"
   },
   {
     "title": "Who Owns the Cape? South African Wine's Black Founders and the Tariff That Rewrote the Map",
