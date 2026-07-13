@@ -1,7 +1,37 @@
 {
-  "updated": "2026-07-07",
-  "note": "Topical subjects to decode into premium case studies — sourced for monetisation, engagement and reach. The case-study cycle drafts the top `queued` items (respecting each subject's `access`); the Operator's Daily Brief surfaces the queue every day. Keep it stocked: add subjects the radar/RSS and audience signals surface, retire drafted ones.",
+  "updated": "2026-07-13",
+  "note": "Topical subjects to decode into premium case studies — sourced for monetisation, engagement and reach. The case-study cycle drafts the top `queued` items (respecting each subject's `access`); the Operator's Daily Brief surfaces the queue every day. Keep it stocked: add subjects the radar/RSS and audience signals surface, retire drafted ones. | 13 Jul: restocked with 3 timely QUEUED subjects (Jay-Z Yankee Stadium, Wimbledon fashion, Brand SA at NASCAR) for tomorrow.",
   "subjects": [
+    {
+      "subject": "Jay-Z's Yankee Stadium anniversary run — catalog-as-monument and what it means for the Continent and Diaspora",
+      "brand": "Jay-Z / Roc Nation",
+      "lane": "Music / IP",
+      "angle": "Three Yankee Stadium nights built on ALBUM ANNIVERSARIES (Reasonable Doubt at 30, The Blueprint at 25), guests Beyoncé and Nas — the diaspora blueprint for turning OWNED catalog into a stadium-scale, multi-generational brand asset. Read against African artists who often do NOT own their masters: the ownership/longevity lesson and the continent–diaspora cultural bridge.",
+      "priority": 1,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Timely (10–12 Jul 2026); the ownership/catalog thesis maps straight onto the African-authorship moat; marquee-name reach + SEO."
+    },
+    {
+      "subject": "Wimbledon as a fashion and celebrity stage — the African and diaspora presence in tennis's whitest tradition",
+      "brand": "Wimbledon (AELTC)",
+      "lane": "Sport / culture",
+      "angle": "The all-white dress code + Royal Box celebrity as a global luxury-brand stage, read through the African and diaspora lens: Ons Jabeur (Tunisia) rewriting who belongs, the Williams/Gauff diaspora lineage, diaspora style, and African designers/brands chasing the tennis-fashion halo.",
+      "priority": 2,
+      "access": "public",
+      "status": "queued",
+      "rationale": "Timely (Wimbledon fortnight); fashion x sport x diaspora identity — widens the beat beyond music/football; reach/SEO play."
+    },
+    {
+      "subject": "Brand South Africa at NASCAR — nation-branding as economic diplomacy on America's most unlikely stage",
+      "brand": "Brand South Africa",
+      "lane": "Sport / national brand",
+      "angle": "The No. 45 Brand South Africa Chevrolet (Alpha Prime Racing, driver Lavar Scott) at Atlanta EchoPark + the 'Accelerating to Africa' trade forum — a government nation-brand agency buying into NASCAR to court US trade, tourism and the diaspora, building on South Africa's World Cup soft-power moment. A sharp nation-branding-as-brand-strategy decode: does motorsport sponsorship actually move trade, and who is the real audience?",
+      "priority": 3,
+      "access": "premium",
+      "status": "queued",
+      "rationale": "Timely (Jul 2026 Atlanta weekend; 3-year SA presence); rare nation-brand-as-brand case; strong premium decode + monetisation lane."
+    },
     {
       "subject": "MTN's pivot from connectivity to content — can a telco own African streaming distribution?",
       "brand": "MTN",
