@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-07-14T11:43:02.510Z",
+  "updatedAt": "2026-07-14T17:33:25.525Z",
   "breaks": [
+    {
+      "title": "Ghana plans tougher crackdown on TV and movie piracy after Nollywood filmmakers raise alarm",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/ghana-plans-tougher-crackdown-on-tv-and-movie-piracy-after-nollywood-filmmakers-raise-alarm/",
+      "pubDate": "Tue, 14 Jul 2026 16:46:01 +0000",
+      "importance": 4,
+      "why": "Signal: raise · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-07-14T17:33:25.525Z"
+    },
+    {
+      "title": "Guinness Ghana DJ Awards 2026 to officially launch on August 1",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/guinness-ghana-dj-awards-2026-to-officially-launch-on-august-1/",
+      "pubDate": "Tue, 14 Jul 2026 15:42:40 +0000",
+      "importance": 4,
+      "why": "Signal: launch · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-07-14T17:33:25.525Z"
+    },
+    {
+      "title": "Visit Rwanda strikes Aston Villa sponsorship deal",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c3dydped4gmo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Tue, 14 Jul 2026 14:48:01 GMT",
+      "importance": 4,
+      "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
+      "detectedAt": "2026-07-14T17:33:25.525Z"
+    },
     {
       "title": "Ghana’s Diamond Rackets stun Kenya with 2026 Billie Jean Cup opening win",
       "source": "MyJoyOnline",
