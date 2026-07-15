@@ -1,5 +1,230 @@
 [
   {
+    "slug": "african-startup-funding-concentration-2026",
+    "title": "More Money, Fewer Companies: Africa's Funding Market Is Consolidating",
+    "series": "MARKET BRIEFING",
+    "status": "live",
+    "access": "open",
+    "summary": "African startup funding rose about 27% year-on-year in Q1 2026 — but the number of companies getting cheques fell 31% over the first four months, and four markets took roughly three-quarters of the capital. This is not a recovery. It is a narrowing.",
+    "tags": [
+      "venture capital",
+      "africa",
+      "startup funding",
+      "market structure",
+      "founders"
+    ],
+    "publishedAt": "2026-07-15T09:00:00.000Z",
+    "sections": [
+      {
+        "heading": "The headline is true. It is also the least interesting fact in the data.",
+        "paragraphs": [
+          "Start with the number everyone quoted. Africa: The Big Deal, the continent's most-cited deal tracker, recorded African startup funding up 27% year-on-year in Q1 2026, to roughly $600m — a figure carried by CNBC Africa and BusinessDay in April. That is a real number from a real methodology: non-exit deals of $100,000 and above, disclosed.",
+          "Other trackers put the quarter higher. Data compiled by Condia and reported by African Business and Africa.com puts Q1 2026 at $705m across 59 deals in 14 countries, up 26.5% year-on-year. TechCabal Insights, counting differently again — including grants and deals with undisclosed values — logged $711m across 80-plus deals. So the $597m–$705m range circulating in founder WhatsApp groups is not a contradiction; it is three organisations counting three different things and arriving, remarkably, at the same directional read: money went up.",
+          "Here is the problem. Extend the window by one month and the growth evaporates. Africa: The Big Deal's own series shows April 2026 at $110m across 32 deals — a 13-month low. Add that to Q1 and the first four months of 2026 come to $708m across 124 deals, against $813m across 180 deals over the same stretch of 2025. That is funding down 13% and deal count down 31%. The +27% was a quarter-boundary artefact. The -31% is the structure."
+        ]
+      },
+      {
+        "heading": "The funnel is closing faster than the money is leaving",
+        "paragraphs": [
+          "A 13% fall in dollars against a 31% fall in deals is the whole briefing in one ratio. The market is not running out of capital. It is running out of companies it is willing to give capital to. The same pot, spread across a third fewer names, is by definition a bigger cheque for whoever is still in the room.",
+          "The composition of who is in the room has changed too. Africa: The Big Deal counted 162 unique investors backing African startups in the first four months of 2026, down from 220 in the same period of 2025 and 222 in 2024 — a 26% year-on-year drop, and a five-year low against the 556 who were active in the 2022 peak. Roughly one investor in four simply stopped showing up. Launch Base Africa's read on early 2026 sharpens the point at stage level: Series A rounds fell from 13 deals to four, a 69% collapse, and Series B went from three deals worth $99m to zero. US-based investor participation roughly halved, from more than 30 funds to about 14.",
+          "And the money that remains is a different kind of money. Africa: The Big Deal recorded debt expanding roughly six-fold in Q1, from about $50m a year earlier to $305m, while equity fell 27% to around $290m. Over the first four months, equity ($364m) and debt ($340m) were close to an even split; a year earlier equity outweighed debt $652m to $138m. Launch Base Africa's H1 2026 read has debt at 36.7% of disclosed capital, up from 18.5%, with debt deals nearly tripling from nine to twenty-six. Debt is not venture capital wearing a different hat. It requires collateral, receivables, or a development-finance institution comfortable with hard assets. It is available to companies that already work.",
+          "That is what a flight to quality actually looks like from the inside: not a market that has stopped believing in Africa, but a market that has stopped underwriting belief at all, and will now only underwrite proof."
+        ]
+      },
+      {
+        "heading": "The Big Four, and the correction worth making",
+        "paragraphs": [
+          "The concentration story is real, but the widely-repeated 83% figure needs a date attached. Approximately 83% of African startup funding going to just four countries — Kenya, Nigeria, South Africa and Egypt — is a Q1 2025 number, not a Q1 2026 one. Quoting it as current overstates a trend that is already bad enough on its own numbers.",
+          "Here is Q1 2026 as Africa: The Big Deal reported it, via BusinessDay and African Business: Egypt led with $190m, followed by South Africa at $157m, Kenya at $94m and Nigeria at $78m, with Morocco fifth at $48m. The Big Four therefore took $519m. What share that represents depends entirely on whose denominator you accept — about 74% of Condia's $705m, or closer to 87% of Africa: The Big Deal's own $600m. We would not defend a single decimal here. The honest sentence is: three-quarters to seven-eighths of a quarter's capital, four markets, fifty-plus others sharing what is left.",
+          "For the annual baseline, Partech's 2025 Africa Tech VC Report — the most methodologically transparent number on the table — puts the Big Four at 72% of the $4.1bn raised across the continent in 2025, with Kenya first at $1.04bn (+72%), South Africa at $715m, Egypt at $604m and Nigeria at $572m. Partech's own framing is that this confirms a hub-driven landscape rather than a diversifying one.",
+          "One counter-signal, and we will not bury it: Launch Base Africa's H1 2026 analysis finds those four markets accounted for 53% of deals, down from 64% a year earlier. By deal count, concentration is loosening. By dollars, it is tightening. Both are true, and together they say something specific — the small deals are dispersing across the continent while the large ones are not. Kigali, Accra, Dakar and Abidjan can win seed. They still cannot win growth."
+        ]
+      },
+      {
+        "heading": "Fintech lost a month, and the reason matters",
+        "paragraphs": [
+          "February 2026 produced the sector headline of the year: logistics and transport became Africa's top-funded sector for the month at $119.6m, displacing fintech, according to TechCabal's analysis of the January–February window. In January, fintech had led with $131.6m while logistics and transport trailed at $27.1m. By February fintech had fallen to fourth at $54.1m, with energy and water taking $94m. Two deals did most of the work: Spiro, the e-mobility company, at $57m, and GoCab at $45m. Across January and February, African startups raised $575m across 58 deals.",
+          "It is tempting to read this as taste — investors falling for mobility and infrastructure the way they once fell for payments. Launch Base Africa's H1 read punctures that. E-mobility deals rose from seven to twenty-one, but largely through asset-backed lending structures. Their conclusion is worth sitting with: the apparent surge in mobility investment says more about development finance institutions' comfort with hard collateral than about venture investors' newfound conviction.",
+          "In other words, the sector rotation is a financing-instrument rotation wearing a sector costume. Capital did not move toward mobility because mobility is more exciting. It moved because mobility has bikes, batteries and repayment schedules — things a lender can repossess. A software company with a brilliant brand and a subscription base has nothing to hand back.",
+          "The concentration inside sectors is starker still. Launch Base Africa reports that Spiro alone captured $320m in H1 2026 — 26% of all disclosed capital on the continent. The comparable figure a year earlier was Wave at $137.2m, under 10%. One company is now a quarter of the market. Meanwhile the median deal size fell from $4.65m to $2.65m, a 43% drop, while the mean held near $12m. Any summary quoting the mean is describing a market almost no founder is actually in."
+        ]
+      },
+      {
+        "heading": "What this does to the brand and creative economy",
+        "paragraphs": [
+          "MonoKromatik's interest in a VC table is narrow and specific: venture capital is the largest single upstream buyer of African brand and creative work. Every seed round is a naming exercise, an identity system, a launch film, a content retainer, a market-entry campaign. When 180 companies become 124, roughly fifty-six briefs disappear from the market — and they were disproportionately the early-stage briefs, the ones where a studio gets to build something from zero rather than iterate someone else's guidelines.",
+          "What replaces them is worse for creative range and better for creative rate. A consolidated market means fewer, larger clients with real budgets, longer horizons and — because debt-funded companies answer to lenders — a low appetite for risk. Expect more brand systems and fewer brand swings. Expect procurement. Expect the work to be judged on whether it moved a repayment-relevant number rather than whether it moved a culture. Studios built to serve twenty scrappy seed-stage clients are about to discover they are competing for four.",
+          "The geographic read is the one African founders and studios should take personally. If the Big Four hard-code three-quarters of the capital, they hard-code three-quarters of the briefs — and the creative infrastructure that grows around briefs. Lagos, Nairobi, Cairo and Johannesburg do not just get the money; they get the agencies, the production houses, the casting depth, the post facilities, the price benchmarks and the case studies that attract the next round of money. That is a compounding loop, and Partech has now watched it hold for consecutive years. The other fifty markets are not short of talent. They are short of the client base that turns talent into a portfolio.",
+          "There is one honest upside. A market that only funds proof is a market where proof is worth more. The founders still raising in 2026 are, by construction, operators with revenue, retention and a story that survives a lender's spreadsheet. Those are the clients worth having — and the ones for whom a serious authorship-led brand argument actually lands, because they are no longer buying a costume for a pitch deck. They are buying a durable asset. That is a smaller market and a better one. Whether that trade is worth fifty-six lost briefs depends entirely on which side of the funnel you are standing."
+        ]
+      },
+      {
+        "heading": "The honest caveats",
+        "paragraphs": [
+          "Three trackers, three totals. Africa: The Big Deal counts non-exit deals of $100,000 and above and got $600m for Q1 2026. Condia got $705m across 59 deals. TechCabal Insights got $711m across 80-plus, with roughly 18% of those deals carrying undisclosed amounts. None is wrong; they are answering different questions. Anyone quoting a single continental number without naming the tracker is telling you less than they think.",
+          "We have used Africa: The Big Deal's series wherever a trend required internal consistency — its Q1 ($600m, 92 deals) and April ($110m, 32 deals) figures reconcile cleanly to the $708m across 124 deals reported for the first four months, which is why the -31% deal-count comparison against 2025's 180 deals is the load-bearing statistic in this briefing rather than any headline dollar figure. The country splits in the exhibit are that tracker's Q1 numbers.",
+          "Two things we would flag as unresolved. First, disclosed funding undercounts a market shifting toward debt and development finance, where terms are frequently private — the real 2026 total is above every figure here, by an unknown margin. Second, monthly and quarterly cuts of a market this thin are hostage to single transactions; one Spiro round rewrites a sector table. Read the direction, not the decimal."
+        ]
+      }
+    ],
+    "keyStats": [
+      {
+        "value": "-31%",
+        "label": "Fall in African startups raising $100k+ deals, Jan–Apr 2026 vs 2025 (124 deals vs 180) — Africa: The Big Deal"
+      },
+      {
+        "value": "$519M",
+        "label": "Taken by Egypt, South Africa, Kenya and Nigeria combined in Q1 2026 — roughly 74–87% of the quarter, depending on the tracker"
+      },
+      {
+        "value": "162",
+        "label": "Unique investors backing African startups Jan–Apr 2026, down from 220 a year earlier and 556 in 2022 — Africa: The Big Deal"
+      },
+      {
+        "value": "26%",
+        "label": "Share of all disclosed H1 2026 African capital captured by a single company, Spiro ($320m) — Launch Base Africa"
+      }
+    ],
+    "exhibit": {
+      "title": "Q1 2026 startup funding by market — the Big Four took $519m of it",
+      "note": "Source: Africa: The Big Deal, Q1 2026 data as reported by BusinessDay and African Business (April 2026). Non-exit deals of $100,000+. The Big Four total of $519m equals ~87% of this tracker's $600m quarterly figure, or ~74% of the $705m compiled by Condia — the denominator, not the country splits, is what trackers disagree on.",
+      "data": [
+        {
+          "label": "Egypt",
+          "value": 190,
+          "display": "$190M"
+        },
+        {
+          "label": "South Africa",
+          "value": 157,
+          "display": "$157M"
+        },
+        {
+          "label": "Kenya",
+          "value": 94,
+          "display": "$94M"
+        },
+        {
+          "label": "Nigeria",
+          "value": 78,
+          "display": "$78M"
+        },
+        {
+          "label": "Morocco",
+          "value": 48,
+          "display": "$48M"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "afrobeats-export-summer-economics",
+    "title": "The Export Summer: Why Afrobeats' Biggest Payday Happens 4,000km From Home",
+    "series": "MARKET BRIEFING",
+    "status": "live",
+    "access": "open",
+    "summary": "Every July, the global Afrobeats economy convenes on a beach in southern Portugal — and the ticketing, hospitality, sponsorship and now streaming value books offshore. Nigeria and South Africa export the talent; the Algarve, London and Atlanta own the till.",
+    "tags": [
+      "afrobeats",
+      "live music",
+      "music economics",
+      "afro nation",
+      "value capture",
+      "streaming"
+    ],
+    "publishedAt": "2026-07-15T09:00:00.000Z",
+    "sections": [
+      {
+        "heading": "The calendar tells you where the money is",
+        "paragraphs": [
+          "From 3–5 July 2026, Afro Nation staged its flagship edition at Praia da Rocha in Portimão, Portugal. Burna Boy opened the Lit Stage on the 3rd alongside South Africa's Tyla; Asake took the 4th; Wizkid closed the festival on the 5th, with Gunna and Kehlani billed as special guests and dedicated Piano People and Afrotronic stages running the amapiano and electronic sides of the room. That is not a festival lineup. That is the annual general meeting of the African music industry — and it convened in the Algarve.",
+          "The dates matter more than the names. Afrobeats has no single home-market moment with anything like this gravitational pull. December in Lagos — Detty December — is bigger in cultural volume, but it is diffuse, informally promoted and largely uncapitalised. July in Portimão is the opposite: a fixed date, a fixed site, a licensed footprint, contracted inventory and a promoter with a balance sheet. When an industry's most bankable weekend has a permanent address, that address accrues the option value.",
+          "Afro Nation is organised by The Malachite Group, working with Live Nation, and has run at Praia da Rocha since 2019. Its promoter has since signed a long-term licence with the Municipality of Portimão securing the site through 2030. Read that as an infrastructure decision, not a booking. Portimão has locked in four more editions of the biggest African music gathering on earth, and it did so on paper, in advance — the exact instrument no African market has offered the genre."
+        ]
+      },
+      {
+        "heading": "The venue is the business",
+        "paragraphs": [
+          "Afro Nation Portugal draws roughly 40,000 people per day, up from about 20,000 daily in its 2019 debut, with attendees travelling from 140-plus countries. The 2023 edition was assessed at a direct impact of around €114 million on the local economy. Portimão is a town of well under 60,000 residents. For three days each July, an African cultural product functions as the single largest economic event in an Algarve municipality's year.",
+          "Trace where those euros actually land. The ticket clears through a European promoter. The site licence pays a Portuguese municipality. Accommodation, ground transport, bars, restaurants and the entire hospitality wrap — the majority of that €114 million — is Portuguese small and mid-sized business revenue. Sponsorship inventory is sold into a European media market at European rates. VIP and premium tiers, the highest-margin product in modern festival economics, are denominated in euros and settled in euros. The artist takes a fee. The ecosystem takes everything else.",
+          "This is the distinction the celebratory coverage keeps collapsing. An artist fee is income. A venue, a licence, a sponsorship base and a hospitality supply chain are assets — they compound, they attract capital, they survive any individual artist's career. Africa is being paid in income. Europe is accumulating the assets. Both parties can be doing well while only one of them is building something."
+        ]
+      },
+      {
+        "heading": "Now the platform layer follows the venue layer",
+        "paragraphs": [
+          "For 2026, Spotify came on as Afro Nation Portugal's primary sponsor and exclusive streaming partner — the first deal of its kind between the two. Selected performances now live inside a dedicated Afro Nation hub on the app, alongside official festival playlists and featured-artist programming. Financial terms were not disclosed.",
+          "The significance is structural rather than editorial. The festival had already captured the physical value of the export summer: gate, hospitality, sponsorship. The Spotify deal captures its digital afterlife — the performances, the discovery surface, the post-festival attention — and routes it through a Stockholm-listed platform's owned inventory. The stage was already in Europe. Now the recording of the stage is a European platform's exclusive too.",
+          "Spotify closed March 2026 with 761 million monthly active users and 293 million Premium subscribers, and treats Sub-Saharan Africa as a growth frontier. That framing is honest and worth sitting with: Africa is, on the platform's own map, a frontier — a place to acquire users — while African music is a mature, revenue-generating catalogue it already monetises globally. The genre is further along than the market it came from, and the deal structure reflects exactly that asymmetry."
+        ]
+      },
+      {
+        "heading": "The tour map has no Africa on it",
+        "paragraphs": [
+          "Burna Boy's 'I Told Them' run is the highest-grossing tour in African music history on reported box-office data — roughly $30.5 million from about 302,800 tickets across 22 shows, ahead of the estimated $25 million from Wizkid's 'Made in Lagos' cycle. Its landmarks are a London Stadium night that grossed $6.147 million from 58,973 tickets — the biggest single show by an African act on record — and the first African headline of the Stade de France. London. Paris. The record for African touring was set almost entirely in Europe and North America.",
+          "The reason is not preference. It is inventory. Billboard's reporting on African touring infrastructure is blunt: South Africa carries roughly six arenas and a Live Nation-owned promoter in Big Concerts, making it the continent's only genuine touring market. Nigeria — over 200 million people, the genre's engine room — has effectively nothing above 5,000 capacity for a solo headline show. Artists have historically routed through hotel ballrooms: Eko Convention Centre at 6,000, Balmoral at 4,500, or temporary builds in Muri Okunola Park and Tafawa Balewa Square. As promoter Chinedu Okeke put it, beyond 5,000 capacity, the venues simply do not exist.",
+          "That gap has a compounding cost. Without a venue ladder — 1,000 to 3,000 to 8,000 to arena — an artist cannot develop at home. They cannot build the gradual, repeatable local audience that turns into a touring business. So the domestic circuit collapses into brand-sponsored festivals clustered around December and Easter, and the real career is built on someone else's ladder, abroad. Lagos Arena, a 12,000-capacity Lekki build, was meant to break that logjam by December 2025; its completion has since slipped to Q2 2028. The one structural fix on the board is three years late before it opens."
+        ]
+      },
+      {
+        "heading": "The counter-case, taken seriously",
+        "paragraphs": [
+          "The strongest rebuttal is that this is what winning looks like. South African artists earned $30.69 million (about R504 million) on Spotify in 2025, up 28% year on year and nearly double 2023 — and roughly 74% of it came from listeners outside South Africa. Nigerian artists generated over ₦60 billion on the platform in 2025, growth of more than 140% in two years, with about 58% of those royalties going to independent artists and labels. That is hard currency flowing into African accounts from foreign consumption. An export industry earning 74% of its revenue abroad is not being exploited; it is exporting successfully.",
+          "The leverage argument holds too. Portimão is where an African artist gets priced against a global market rather than a thin domestic one — and headline fees at that altitude do not exist at home at any capacity. Diaspora demand is real demand, not charity. And 140 countries of attendance is a distribution asset no Lagos-only calendar could manufacture. Exposure earned in the Algarve converts into brand deals, sync placements and catalogue value that book to African artists and, increasingly, African-owned independents.",
+          "But note what the counter-case concedes. Every one of those wins is artist-level or catalogue-level. None of them is market-level. Nigeria's Spotify pool — roughly $40 million at prevailing rates — and South Africa's $30.7 million are, combined, a fraction of what one European beach town books from three days of the same music. The talent is capturing value. The home market is not. Those are different claims, and conflating them is how a genuine structural problem gets celebrated for a decade."
+        ]
+      },
+      {
+        "heading": "What retention would actually require",
+        "paragraphs": [
+          "Three things, none of them cultural. First, venue depth — not one prestige arena but a ladder, and ideally a network. Vivendi's CanalOlympia already runs 14 modular venues across West Africa at 300–3,000 capacity; the constraint is that cross-border routing through ECOWAS remains logistically punishing. A bookable 10-venue circuit is a more valuable asset to Afrobeats than any single 12,000-seat building.",
+          "Second, a corporate sponsorship base deep enough to underwrite dates rather than sponsor moments. European festivals sell inventory into a mature advertising market at rates that de-risk the promoter before the gate opens. African festivals largely sell activations to telcos and breweries at a fraction of that, which is why the domestic calendar clusters into the two windows where consumer spend is guaranteed. Third, promoter capital willing to take multi-year site risk — the exact thing Portimão's council understood and signed for through 2030.",
+          "The uncomfortable read is that the export summer is not a phase the genre grows out of. It is an equilibrium, and it is hardening: a licence to 2030, a platform exclusive on top of it, and the one Nigerian arena that might have started a counterweight now slipping to 2028. Every year that gap stays open, Africa is not just exporting music. It is exporting the demand signal — the proof of a paying audience — that would justify building the thing at home. Watch three numbers: whether Lagos Arena holds its Q2 2028 date, whether any African market signs a multi-year site licence of Portimão's kind, and whether a single African-domiciled promoter ever books a top-tier Afrobeats headline at export prices. Until one of those moves, the continent remains an exporter of the talent that funds someone else's music economy."
+        ]
+      }
+    ],
+    "keyStats": [
+      {
+        "value": "74%",
+        "label": "Share of South African artists' 2025 Spotify royalties earned from listeners outside South Africa (total $30.69M / R504M)"
+      },
+      {
+        "value": "€114M",
+        "label": "Assessed direct impact of Afro Nation's 2023 edition on the local Algarve economy — one three-day weekend"
+      },
+      {
+        "value": "6",
+        "label": "Arenas in South Africa — the continent's only real touring market; Nigeria has effectively nothing above 5,000 capacity (Billboard)"
+      },
+      {
+        "value": "40,000/day",
+        "label": "Afro Nation Portugal daily attendance, fans from 140+ countries — up from ~20,000/day in 2019"
+      }
+    ],
+    "exhibit": {
+      "title": "What African music actually earns (US$m, 2025 revenue)",
+      "note": "Like-for-like revenue only. Nigerian and South African artist royalty totals: Spotify Loud & Clear / TechCabal (2025). Burna Boy tour gross: Billboard Boxscore (I Told Them tour, 22 shows). Afro Nation's €114M is an assessed local economic-impact estimate, NOT revenue — it is deliberately excluded from this chart and reported as a stat instead.",
+      "data": [
+        {
+          "label": "Nigerian artists → total Spotify royalties (2025)",
+          "value": 40,
+          "display": "≈$40M (₦60bn+)"
+        },
+        {
+          "label": "South African artists → total Spotify royalties (2025)",
+          "value": 30.7,
+          "display": "$30.7M"
+        },
+        {
+          "label": "Burna Boy 'I Told Them' → record tour gross (22 shows)",
+          "value": 30.5,
+          "display": "$30.5M"
+        }
+      ]
+    }
+  },
+  {
     "slug": "will-it-land-brand-south-africa-nascar",
     "title": "Will It Land? Brand South Africa's NASCAR Bet",
     "series": "WILL IT LAND?",
