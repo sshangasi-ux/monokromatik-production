@@ -1,66 +1,65 @@
-# Image rights requests — ready to send (Jul 2026)
+# Image rights requests — Jul 2026
 
-*We exhausted the free/CC route: there is no lawfully-usable 2026 imagery for these subjects. Both rights-holders explicitly prohibit use without written consent AND publish an official request channel. These are the requests. Editorial-use grants are routinely given to publications, free, in exchange for a credit line.*
+*We exhausted the free/CC route: there is no lawfully-usable 2026 imagery for these subjects. Rather than chase every rights-holder, we've narrowed to the asks that are actually worth making.*
 
 **Rule we're applying:** a credit line is not a licence. We only publish images we have the right to publish. Until a grant lands, the pieces run honest illustrative imagery.
 
+**Status at 15 Jul 2026**
+
+| Ask | Status |
+|---|---|
+| Kaizer Chiefs — club photography | **Sent** by Sibu, 15 Jul. Awaiting reply. |
+| MaXhosa Africa — Durban July showcase | **Drafted, awaiting send.** The live one. |
+| Race Coast / Durban July | **Dropped** — see below. |
+| Shoprite / Checkers Sixty60 | **Dropped** — see below. |
+
 ---
 
-## 1 · Kaizer Chiefs — club photography
+## 1 · MaXhosa Africa — Durban July 2026 showcase images
+**To:** press@maxhosa.africa
+**Subject:** Image request — MaXhosa at the Hollywoodbets Durban July 2026 (MonoKromatik)
+
+> Hi MaXhosa Africa press team,
+>
+> I'm Sibu Shangase, founder of MonoKromatik (monokromatik.com) — an independent African brand-intelligence publication. We run the Cultural-Signal Index, an authorship-weighted rating of African brand-and-culture work, and we have previously decoded MaXhosa Africa as a case study in African-owned luxury.
+>
+> We've just published an analysis of the 2026 Hollywoodbets Durban July, read as a brand and culture event rather than a horse race — who actually won, who lost, and what it means for the event from here:
+>
+> https://www.monokromatik.com/intelligence/case-studies/the-durban-july-2026-who-won-and-lost-from-a-brand-s-point-of-view
+>
+> MaXhosa is central to the argument. Our finding is that the real contest at the July is between African-authored houses and imported luxury renting the room for the day — and that MaXhosa becoming Saso's official Culture and Fashion Partner, and staging its first Durban July showcase, is the most consequential thing that happened at the event. The piece argues that exposure is not equity, and that African houses should stop accepting that swap.
+>
+> Which is why we would rather run your image than a stock racing photo.
+>
+> Could we request one or two images of the MaXhosa Durban July 2026 showcase to run as the article's lead image?
+> - **Use:** editorial only, on the article page
+> - **Credit:** exactly as you require. Our default would be "Photo: MaXhosa Africa", linked to maxhosa.africa
+> - Photographer credited by name if you tell us who to name
+> - **No** commercial repurposing, no sub-licensing, and removed on request at any time
+>
+> Even a single frame would do, and we will take whatever you are comfortable clearing.
+>
+> Thank you — Sibu Shangase, Founder & Lead Analyst, MonoKromatik
+
+**Why this is the one we push.** MaXhosa is a warm target, not a gatekeeper: an African house with its own showcase images, a live case study on our site, and a published piece that argues *their* side of the trade. The ask is aligned with their interest rather than extracted against it — and if it lands, the hero image is authored by the subject of the argument, which is the honest outcome.
+
+---
+
+## 2 · Kaizer Chiefs — club photography — **SENT 15 Jul**
 **To:** studio@kaizerchiefs.com · **cc:** media@kaizerchiefs.com
 **Subject:** Editorial image request — Kaizer Chiefs brand analysis (MonoKromatik)
 
-> Hi Kaizer Chiefs media team,
->
-> I'm Sibu Shangase, founder of MonoKromatik (monokromatik.com) — an independent African brand-intelligence publication. We run the Cultural-Signal Index, an authorship-weighted rating of African brand-and-culture work.
->
-> We've published an analysis of the Kaizer Chiefs brand and the Carling Black Label partnership — "the business of belonging" — looking at how the club converts fandom into commercial equity. It's editorial and analytical; the club comes out of it well.
->
-> Per your photography policy, I'd like written consent to use **one Kaizer Chiefs photograph** as the article's lead image — ideally a recent (2025/26) matchday or supporters image. Details:
-> - **Use:** editorial only, one hero image on the article page
-> - **Credit:** exactly as you require — our default would be "Photo: Kaizer Chiefs" with a link to kaizerchiefs.com
-> - **No** merchandising, resale, or commercial repurposing; we will not sub-license
-> - Happy to sign any usage terms, and to remove on request at any time
->
-> If a specific image is easier to clear, we'll take whatever you're comfortable with. The piece: monokromatik.com/intelligence/case-studies/one-voice-kaizer-chiefs-carling-black-label-and-the-business-of-belonging
->
-> Thank you — Sibu Shangase, Founder & Lead Analyst, MonoKromatik
+Sent by Sibu on 15 Jul; awaiting reply. Requested one recent (2025/26) matchday or supporters photograph as the hero for the Carling Black Label "business of belonging" analysis — editorial use only, credited "Photo: Kaizer Chiefs", no merchandising or sub-licensing, removed on request.
+
+Their policy is explicit: *"any use of these images without the consent of the club will be deemed as illegal."* So this one waits for a written yes. No consent, no image.
 
 ---
 
-## 2 · Race Coast / Hollywoodbets Durban July — raceday imagery + accreditation
-**Form:** https://www.hollywoodbetsdurbanjuly.co.za/media-accreditation-form/
-**Also try:** the Race Coast Media Portal (racecoast.co.za/media-portal) for the media manager's address
+## Dropped — and why
 
-> Hi Race Coast Media Office,
->
-> I'm Sibu Shangase, founder of MonoKromatik (monokromatik.com) — an independent African brand-intelligence publication covering how African brands and culture create commercial value. We publish the Cultural-Signal Index, an authorship-weighted rating of African brand work.
->
-> **Two requests:**
->
-> **1. Image consent (immediate).** We've published a brand analysis of the 2026 Hollywoodbets Durban July — the 130th running, the record R10-million purse, Note To Self's win, and the "Country Allure" fashion programme — examining who won and lost commercially. Per your media rules, I'm requesting **written consent to use one or two official 2026 raceday photographs** (a fashion/Best Dressed frame and/or the winning moment) as editorial lead images, credited exactly as you require (our default: "Photo: Race Coast / Hollywoodbets Durban July"). Editorial use only, no commercial exploitation, no sub-licensing, removed on request.
->
-> **2. Media accreditation (ongoing).** We'd like to apply for accreditation as a recognised publication for future Race Coast meetings, including the 2027 Durban July. We cover the event annually as a brand-and-fashion story, not a tipping service.
->
-> The current piece: monokromatik.com/intelligence/case-studies/the-durban-july-2026-who-won-and-lost-from-a-brand-s-point-of-view
->
-> Happy to supply anything you need to assess us. Thank you — Sibu Shangase, Founder & Lead Analyst, MonoKromatik
+**Race Coast / Hollywoodbets Durban July (image consent + 2027 accreditation).** Dropped 15 Jul. Race Coast is the gatekeeper of the very economy the piece critiques — the marquee-tier landlord — and their media rules threaten legal action for unconsented use (*"Commercial exploitation of rider or racecourse photographs without the written consent of… Race Coast is prohibited"*). Asking the landlord to illustrate a piece about the landlord's pricing was never a strong hand. The accreditation ask can be re-opened closer to the 2027 event, on its own merits, rather than bundled with a favour request.
 
----
-
-## 3 · Shoprite Holdings — Checkers Sixty60 (bonus: their newsroom exists)
-**To:** the media contact on shopriteholdings.co.za/newsroom (their 2026 newsroom is active)
-**Subject:** Editorial image request — Checkers Sixty60 analysis (MonoKromatik)
-
-> Hi Shoprite Holdings media team,
->
-> I'm Sibu Shangase, founder of MonoKromatik (monokromatik.com), an independent African brand-intelligence publication. We've published a decode of the **Checkers Sixty60 retail moat** — the on-demand model, its scale (694 stores; +47.7% to R18.9bn) and why it's been so hard for rivals to copy. It's a positive, analytical read.
->
-> We couldn't find any lawfully-reusable image of Sixty60, so I'd like consent to use **one press image** — ideally the Sixty60 delivery fleet or a store — as the article's lead image. Editorial use only, credited "Photo: Shoprite Holdings" with a link, no commercial repurposing, removed on request.
->
-> The piece: monokromatik.com/intelligence/case-studies/checkers-sixty60-retail-moat
->
-> Thank you — Sibu Shangase, Founder & Lead Analyst, MonoKromatik
+**Shoprite / Checkers Sixty60.** Dropped 15 Jul. The Sixty60 case study reads fine on its current imagery, the newsroom is hard-blocked to automated access (403), and the only route was a generic media-enquiry web form — low odds, low payoff. Not worth the outreach budget. The piece is unaffected.
 
 ---
 
@@ -71,6 +70,7 @@
 | Durban July official site | Footer: **"© 2026 Race Coast \| A Gameplan Media website."** No press kit. |
 | Race Coast media rules | *"Commercial exploitation of rider or racecourse photographs without the written consent of… Race Coast is prohibited."* Violations → **legal action**. |
 | Kaizer Chiefs photo policy | *"any use of these images without the consent of the club will be deemed as illegal."* |
+| Shoprite newsroom | Hard-blocked (403) to fetchers and the browser tool. Media-enquiry form only. |
 | News sites (IOL, Citizen, Star) | Photos are Gallo/Getty — licensable, not free. |
 
 **Fallback if consent doesn't land:** licence the exact frames from Gallo Images / Getty editorial (~$50–500 each), or keep the current honest illustrative imagery.
