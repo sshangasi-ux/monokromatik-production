@@ -921,9 +921,9 @@
     ],
     "sources": [
       {
-        "publisher": "Nothing But The Wax",
-        "label": "Maison Château Rouge, the new face of cool",
-        "href": "http://nothingbutthewax.com/en/fashion/maison-chateau-rouge-the-new-face-of-cool/138/",
+        "publisher": "Nothing But The Wax — via Internet Archive",
+        "label": "Maison Château Rouge, the new face of cool (archived)",
+        "href": "https://web.archive.org/web/20260516145243/http://nothingbutthewax.com/en/fashion/maison-chateau-rouge-the-new-face-of-cool/138/",
         "use": "Founding, naming after the métro station, Goutte d'Or sourcing, wax and patchwork materials, produced in Paris."
       },
       {
@@ -2301,11 +2301,11 @@
     ],
     "media": [
       {
-        "src": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Mamelodi_Sundowns_F.C.svg/1280px-Mamelodi_Sundowns_F.C.svg.png",
-        "alt": "Mamelodi Sundowns — The Brazilians: Can an African Club Own African Attention?",
-        "credit": "Via Wikipedia",
-        "sourceLabel": "Wikipedia",
-        "sourceHref": "https://en.wikipedia.org/wiki/Mamelodi_Sundowns_F.C."
+        "src": "/article-media/cs-mamelodi-sundowns-club-brand-ea1c2aeb.webp",
+        "alt": "Mamelodi Sundowns squad in the club's yellow-and-green Puma kit carrying Ubuntu-Botho shirt sponsorship",
+        "credit": "Photo: Phakamisa Lensman/BackpagePix (CC BY 4.0, via Wikimedia Commons)",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceHref": "https://commons.wikimedia.org/wiki/File:Mamelodi_Sundowns_Ladies_Academy.jpg"
       }
     ]
   },
@@ -2439,9 +2439,9 @@
         "use": "Deal structure, ownership stakes, contributions, EPL rights, executive quotes"
       },
       {
-        "publisher": "WeeTracker",
-        "label": "Canal+ Deems Showmax Unsuccessful, Cuts Funding After MultiChoice Buy",
-        "href": "https://weetracker.com/2026/01/29/canal-plus-declares-showmax-failure-cuts-investment/",
+        "publisher": "WeeTracker — via Internet Archive",
+        "label": "Canal+ Deems Showmax Unsuccessful, Cuts Funding After MultiChoice Buy (archived)",
+        "href": "https://web.archive.org/web/20260207105615/https://weetracker.com/2026/01/29/canal-plus-declares-showmax-failure-cuts-investment/",
         "use": "2025 loss figures, Saada and CFO quotes, subscriber decline, cost-synergy targets"
       },
       {
@@ -3321,9 +3321,9 @@
         "use": "Growth deceleration 47.7%→34.6%, competitors (PnP asap!, Spar2U, Uber Eats), adjacent brands"
       },
       {
-        "publisher": "WeeTracker",
-        "label": "Shoprite's Sixty60 Bet Tests Rivals In SA's Grocery Delivery Rush",
-        "href": "https://weetracker.com/2025/10/17/shoprite-sixty60-market-dominance-zulzi-partnership/",
+        "publisher": "WeeTracker — via Internet Archive",
+        "label": "Shoprite's Sixty60 Bet Tests Rivals In SA's Grocery Delivery Rush (archived)",
+        "href": "https://web.archive.org/web/20251109034909/https://weetracker.com/2025/10/17/shoprite-sixty60-market-dominance-zulzi-partnership/",
         "use": "Zulzi 26% stake, ShopriteX retail-media R647m, Xtra Savings 33m members, 80% share, USD 1.05bn"
       },
       {
@@ -3708,9 +3708,9 @@
         "use": "2026 profitability target, stablecoin strategy, enterprise growth and margin figures, Uber/Booking.com"
       },
       {
-        "publisher": "WeeTracker",
-        "label": "Flutterwave Pushes For Profits Amid Financial Pressures Stalling IPO",
-        "href": "https://weetracker.com/2025/08/26/flutterwave-ipo-valuation-revenue-2025/",
+        "publisher": "WeeTracker — via Internet Archive",
+        "label": "Flutterwave Pushes For Profits Amid Financial Pressures Stalling IPO (archived)",
+        "href": "https://web.archive.org/web/20250916222454/https://weetracker.com/2025/08/26/flutterwave-ipo-valuation-revenue-2025/",
         "use": "Valuation and revenue estimates, 2023 secondary down-round, group audit and governance progress"
       },
       {
@@ -10127,8 +10127,8 @@
       },
       {
         "publisher": "eNCA",
-        "label": "e.tv, Netflix partner to stream The Four of Us",
-        "href": "https://www.enca.com/lifestyle-press-release/etv-netflix-partner-stream-four-us"
+        "label": "e.tv's new daily drama The Four of Us becomes the first e.tv telenovela to stream on Netflix",
+        "href": "https://www.enca.com/lifestyle/etvs-new-daily-drama-four-us-becomes-first-etv-telenovela-stream-netflix"
       },
       {
         "publisher": "Sowetan (S Mag)",
