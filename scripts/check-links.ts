@@ -84,7 +84,16 @@ async function checkUrl(u: string): Promise<{ verdict: Verdict; detail: string }
         return { verdict: 'blocked', detail: `${res.status} (bot protection)` };
       if (method === 'GET') return { verdict: 'dead', detail: `HTTP ${res.status}` };
     } catch (e) {
-      if (method === 'GET') return { verdict: 'dead', detail: e instanceof Error ? e.message : 'unreachable' };
+      if (method === 'GET') {
+        // fetch() throws a bare "fetch failed"; the useful reason is on .cause.
+        const cause = e instanceof Error ? (e.cause as Error | undefined)?.message : undefined;
+        const reason = [e instanceof Error ? e.message : 'unreachable', cause].filter(Boolean).join(': ');
+        // A redirect loop is a consent/geo/bot wall bouncing non-browser clients
+        // (Statista et al) — the page is fine in a browser, so it's blocked, not dead.
+        if (cause && /redirect count exceeded|too many redirects/i.test(cause))
+          return { verdict: 'blocked', detail: 'redirect loop (bot protection)' };
+        return { verdict: 'dead', detail: reason };
+      }
     }
   }
   return { verdict: 'dead', detail: 'unreachable' };
