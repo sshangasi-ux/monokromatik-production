@@ -32,6 +32,38 @@ export function compositeScore(decode?: CaseStudyDecode[]): number | null {
   return wsum === 0 ? null : Math.round((acc / wsum) * 100);
 }
 
+/**
+ * Letter bands over the /100 composite — a rating, not a mark out of a hundred.
+ *
+ * Why this exists: Brand Finance, Interbrand, Kantar and YouGov all publish a
+ * score and NONE of them publish the band cut-offs behind it. Publishing ours —
+ * with the boundaries stated — is the cheapest credibility available to an
+ * independent index, and it's the thing that reads as "rating agency" rather
+ * than "review score". Cut-offs are fixed and versioned; changing them is a
+ * methodology change and must be dated in docs/CULTURAL_SIGNAL_INDEX.md.
+ */
+export interface SignalBand {
+  band: string;
+  min: number;
+  label: string;
+}
+
+export const SIGNAL_BANDS: SignalBand[] = [
+  { band: 'AAA', min: 90, label: 'Exceptional — authored, executed and consequential' },
+  { band: 'AA', min: 80, label: 'Strong — clear authorship, real consequence' },
+  { band: 'A', min: 70, label: 'Sound — good work, incomplete capture' },
+  { band: 'BBB', min: 60, label: 'Mixed — the idea outruns the ownership' },
+  { band: 'BB', min: 50, label: 'Weak — visibility without value capture' },
+  { band: 'B', min: 40, label: 'Poor — borrowed authorship, thin consequence' },
+  { band: 'C', min: 0, label: 'Failing — value created, value surrendered' },
+];
+
+/** The letter band for a composite score; null when unscored. */
+export function signalBand(score: number | null | undefined): SignalBand | null {
+  if (score === null || score === undefined || Number.isNaN(score)) return null;
+  return SIGNAL_BANDS.find((b) => score >= b.min) ?? SIGNAL_BANDS[SIGNAL_BANDS.length - 1];
+}
+
 export interface AxisScore {
   label: string;
   level: number;
