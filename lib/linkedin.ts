@@ -93,19 +93,49 @@ export async function publishToLinkedIn(args: {
   return { ok: false, error: `posts create failed (${res.status}): ${JSON.stringify(json?.message ?? json)}` };
 }
 
-/** No-post credential check: confirm the token is valid and report the author. */
+/**
+ * No-post credential check: confirm the token is valid, name the authorizing
+ * member, and — when LINKEDIN_AUTHOR_URN isn't set yet — DERIVE and report it so
+ * setup is copy-paste.
+ *
+ * Prefers /v2/userinfo (OpenID Connect — matches the `openid`/`profile` scopes
+ * granted by "Sign In with LinkedIn using OpenID Connect"). Falls back to the
+ * legacy /v2/me, which needs `r_liteprofile` and 403s on OIDC-only apps.
+ */
 export async function verifyLinkedIn(token: string, authorUrn?: string): Promise<{ ok: boolean; detail: string }> {
-  // /v2/me validates the token (returns the authorizing member).
-  const res = await fetch('https://api.linkedin.com/v2/me', {
-    headers: { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0' },
+  let who: string | undefined;
+  let derivedUrn: string | undefined;
+
+  const oidc = await fetch('https://api.linkedin.com/v2/userinfo', {
+    headers: { Authorization: `Bearer ${token}` },
   });
-  if (res.status === 401) return { ok: false, detail: 'Token invalid or expired (401).' };
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    return { ok: false, detail: `Token check failed (${res.status}): ${JSON.stringify(j?.message ?? j)}` };
+  if (oidc.status === 401) return { ok: false, detail: 'Token invalid or expired (401). Generate a new one.' };
+
+  if (oidc.ok) {
+    const u = (await oidc.json().catch(() => ({}))) as { sub?: string; name?: string; given_name?: string };
+    who = u.name || u.given_name || u.sub;
+    if (u.sub) derivedUrn = `urn:li:person:${u.sub}`;
+  } else {
+    const res = await fetch('https://api.linkedin.com/v2/me', {
+      headers: { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0' },
+    });
+    if (res.status === 401) return { ok: false, detail: 'Token invalid or expired (401). Generate a new one.' };
+    if (!res.ok) {
+      const j = await res.json().catch(() => ({}));
+      return { ok: false, detail: `Token check failed (${res.status}): ${JSON.stringify((j as { message?: string })?.message ?? j)}` };
+    }
+    const me = (await res.json().catch(() => ({}))) as { id?: string; localizedFirstName?: string; localizedLastName?: string };
+    who = me.localizedFirstName ? `${me.localizedFirstName} ${me.localizedLastName ?? ''}`.trim() : me.id;
+    if (me.id) derivedUrn = `urn:li:person:${me.id}`;
   }
-  const me = await res.json().catch(() => ({}));
-  const who = me?.localizedFirstName ? `${me.localizedFirstName} ${me.localizedLastName ?? ''}`.trim() : me?.id || 'member';
-  if (!authorUrn) return { ok: false, detail: `Token valid (as ${who}), but LINKEDIN_AUTHOR_URN is not set.` };
-  return { ok: true, detail: `Token valid (authorized by ${who}); posting as ${authorUrn}.` };
+
+  if (!authorUrn) {
+    return {
+      ok: false,
+      detail: derivedUrn
+        ? `Token valid (as ${who ?? 'member'}). LINKEDIN_AUTHOR_URN is not set — set it to: ${derivedUrn}`
+        : `Token valid (as ${who ?? 'member'}), but LINKEDIN_AUTHOR_URN is not set.`,
+    };
+  }
+  return { ok: true, detail: `Token valid (authorized by ${who ?? 'member'}); posting as ${authorUrn}.` };
 }
