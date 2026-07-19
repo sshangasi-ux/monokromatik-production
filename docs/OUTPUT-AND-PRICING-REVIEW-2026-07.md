@@ -185,6 +185,51 @@ proven self-serve price in this market. Not speculative; anchored.
    **nothing published in between.** Read this as: sell either at the prosumer anchor OR at
    enterprise quote-only. Don't invent a mid-price nobody in the market has proven.
 
+---
+
+## Part 6 — African media pricing (and a correction to Part 5)
+
+### ✅ R149/mo is CORRECTLY priced — this corrects the "Stears" alarm above
+**The Africa Report charges exactly R149/mo · R1,490/yr in South Africa** (geo-priced;
+₦4,900 Nigeria, KES 950 Kenya). We are priced identically to a pan-African premium title
+that is a going concern. The ZAR band:
+
+| Publication | ZAR/month |
+|---|---|
+| Mail & Guardian | R99 |
+| **News24** (Africa's largest paid news site) | R109 |
+| Business Day Premium | R129 |
+| **The Africa Report** | **R149** |
+| **MonoKromatik** | **R149** |
+
+So the price is right. **The problem was never the number — it's that consumer news
+subscriptions don't scale in this market:** News24 + Netwerk24 sit at 212,473 subscribers,
+up just **+1.6% YoY**. Naspers' scale, flatlined.
+
+### 🎯 The single most useful finding in the whole review
+> **"The paid product is rarely the news."**
+
+The Africa Report's paywall doesn't gate articles — it gates **rankings (Top 200 Banks,
+Top 500 Companies), country reports, and EVENT ACCESS** (incl. Africa CEO Forum priority).
+Semafor and Rest of World give the journalism away entirely.
+
+**We already own the equivalent asset: the Index is a ranking.** This validates the whole
+direction — gate the Index depth, the data and the access. Never the essays.
+
+### Pay-what-you-can outperforms tiering in SA
+**Daily Maverick**: 32,000 Maverick Insiders, **no tiers**, voluntary R75–R350+/mo,
+**membership = 40% of total revenue** — the strongest African reader-revenue result
+relative to size. They also won back 10,000 lapsed members (the only public African
+churn-recovery case study). Worth testing against our fixed R149.
+
+### Also proven
+- **Geo-pricing works**: Jeune Afrique's dynamic, per-market pricing + mobile-money options
+  **doubled** subscription-offer conversion. Relevant the moment we sell beyond SA.
+- **Events, again**: Semafor 2025 — ~$40m revenue, first profitable year, events grew from
+  30% (2022) to **>50%**.
+- **Nobody can quote a reliable African "% who pay for news"** — Reuters Institute
+  deliberately withholds it (online, English-only, 18–50 samples). Treat any such stat as false.
+
 ### Strategic warning
 **You cannot out-give the donor-funded players.** Briter's and TechCabal's free research is
 subsidised by Gates/FMO/FCDO and DFI contracts. Competing on volume-of-free is unwinnable.
