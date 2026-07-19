@@ -6,6 +6,7 @@ import SignIn from './SignIn';
 import SignOutButton from './SignOutButton';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
 import { getEntitlement, entitlementActive } from '../../lib/entitlements';
+import { CONTACT_EMAIL } from '../../lib/commerce';
 
 export const metadata: Metadata = {
   title: 'Account — MonoKromatik',
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default async function AccountPage() {
+export default async function AccountPage({ searchParams }: { searchParams: Promise<{ manage?: string }> }) {
+  const { manage } = await searchParams;
   const configured = isSupabaseConfigured();
   let email: string | null = null;
   if (configured) {
@@ -63,11 +65,25 @@ export default async function AccountPage() {
                   <p className="font-body text-mono-charcoal text-sm">No active membership yet.</p>
                 )}
                 <div className="mt-5 flex flex-wrap items-center gap-4">
-                  <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">
-                    {member ? 'MANAGE MEMBERSHIP' : 'BECOME A MEMBER'} <ArrowRight size={16} />
+                  <Link
+                    href={member ? '/account/manage' : '/membership'}
+                    className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors"
+                  >
+                    {member ? 'MANAGE / CANCEL MEMBERSHIP' : 'BECOME A MEMBER'} <ArrowRight size={16} />
                   </Link>
                   <SignOutButton />
                 </div>
+                {member && (
+                  <p className="mt-4 text-[12px] font-body text-mono-gray">
+                    Manage opens your secure Paystack page to update your card or cancel. Cancelling stops future renewals; access runs to the end of the paid period.
+                  </p>
+                )}
+                {member && manage && manage !== 'ok' && (
+                  <p className="mt-3 text-[12px] font-body text-mono-amber-strong">
+                    We couldn&rsquo;t open the management page just now. To cancel or update your card, email{' '}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="underline">{CONTACT_EMAIL}</a> and we&rsquo;ll sort it right away.
+                  </p>
+                )}
               </div>
             </div>
           ) : (
