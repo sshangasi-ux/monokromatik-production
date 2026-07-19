@@ -6,6 +6,8 @@ import NewsletterSignup from '../components/NewsletterSignup';
 import { MEMBERSHIP, membershipCheckoutUrl } from '../../lib/commerce';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
 import { getEntitlement, entitlementActive } from '../../lib/entitlements';
+import { getAllCaseStudies, isLocked as isCaseStudyLocked } from '../../lib/case-studies';
+import { getLiveReports, isLocked as isReportLocked } from '../../lib/reports';
 
 export const metadata: Metadata = {
   title: 'Membership — The Intelligence | MonoKromatik',
@@ -26,6 +28,16 @@ export default async function MembershipPage() {
   }
   const entitlement = await getEntitlement();
   const member = entitlementActive(entitlement);
+
+  // Proof-of-shelf: surface the actual members-only catalogue so the value is
+  // shown, not just asserted. Each title links into the piece (free teaser → gate).
+  const premiumStudies = getAllCaseStudies().filter(isCaseStudyLocked);
+  const premiumReports = getLiveReports().filter(isReportLocked);
+  const shelfCount = premiumStudies.length + premiumReports.length;
+  const showcase = [
+    ...premiumStudies.slice(0, 8).map((c) => ({ href: `/intelligence/case-studies/${c.slug}`, title: c.title, label: c.brand || 'Case study' })),
+    ...premiumReports.slice(0, 4).map((r) => ({ href: `/reports/${r.slug}`, title: r.title, label: r.series || 'Intelligence report' })),
+  ];
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -50,6 +62,36 @@ export default async function MembershipPage() {
           </div>
         </section>
       )}
+
+      {/* Proof of shelf — show the members-only catalogue, don't just assert it */}
+      <section className="py-16 md:py-20 border-b border-mono-gray/15">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">WHAT MEMBERSHIP UNLOCKS</p>
+          <h2 className="max-w-3xl text-3xl md:text-5xl font-display font-bold text-mono-black leading-[1.03]">
+            {shelfCount} members-only decodes and reports — plus the full Cultural-Signal Index.
+          </h2>
+          <p className="mt-5 max-w-2xl font-body text-mono-charcoal text-lg leading-relaxed">
+            Not a teaser feed. The complete strategic decode of who authors African brand value and who captures it — every
+            bet, creative move, evidence ledger and lesson. A sample of what&rsquo;s behind the membership:
+          </p>
+
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-mono-gray/20 border border-mono-gray/20">
+            {showcase.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group bg-mono-white p-6 hover:bg-mono-soft-white transition-colors flex flex-col justify-between min-h-[8.5rem]"
+              >
+                <p className="text-[10px] tracking-[0.2em] font-display font-bold text-mono-amber-strong mb-3 line-clamp-1">{item.label.toUpperCase()}</p>
+                <h3 className="font-display font-bold text-mono-black leading-snug group-hover:text-mono-charcoal line-clamp-3">{item.title}</h3>
+              </Link>
+            ))}
+          </div>
+          {shelfCount > showcase.length && (
+            <p className="mt-6 font-body text-mono-gray text-sm">…and {shelfCount - showcase.length} more members-only decodes and reports, with new work every week.</p>
+          )}
+        </div>
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
