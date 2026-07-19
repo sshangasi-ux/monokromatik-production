@@ -41,7 +41,7 @@ async function main() {
   if (existsSync(LEDGER)) { try { ledger = JSON.parse(readFileSync(LEDGER, 'utf-8')); } catch { /* reset */ } }
   const posted = new Set(ledger.posted || []);
 
-  const c = nextCandidate(posted, slug);
+  const c = nextCandidate(posted, slug, { network: 'linkedin' });
   if (!c) { log('Nothing new to post.'); summary('Nothing new to post.'); return; }
 
   log(`Next ${c.kind}: ${c.title.slice(0, 70)}`);
