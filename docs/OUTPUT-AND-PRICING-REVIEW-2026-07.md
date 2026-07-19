@@ -152,6 +152,46 @@ republish the badge. Fully available to a one-person operation.
 
 ---
 
+---
+
+## Part 5 — Verified African pricing (and one correction to the plan above)
+
+Deep-dive on Stears / TechCabal Insights / Asoko / Briter / Africa: The Big Deal. **Four of
+five publish no prices at all.** Verified findings:
+
+| Player | Price | Note |
+|---|---|---|
+| **Africa: The Big Deal** | **$249/yr** or $169/6mo (deals database) | The ONLY transactable published price in African BI. 16,000+ free newsletter subs. Discounts hard ("under $7/month", 50% off) — $249 is a ceiling. |
+| Stears | Not published (quote-only) | **Stears Premium was ~$100/yr — discontinued Oct 2023.** |
+| TechCabal Insights | Not published | Reports **free, email-gated**; money is in custom research/consulting. |
+| Asoko Insight | Not published | Buyers: LSE, AfDB, UK DBT, US DFC, USAID. |
+| Briter | Not published | Public research part-funded by **FMO (verified), Gates Foundation, FCDO**. |
+
+### 🔴 The uncomfortable coincidence
+**Our R149/mo is R1,788/yr ≈ $99/yr — almost exactly Stears Premium's ~$100/yr price point.**
+Stears had ~$4m and the best consumer product in African business media, and **shut it down**.
+We are priced precisely where the strongest-funded attempt concluded there was no business.
+
+### ✅ What this VALIDATES
+The proposed **Index Access seat at ~R3,500–6,000/yr** brackets **$249/yr (~R4,500)** — the one
+proven self-serve price in this market. Not speculative; anchored.
+
+### ⚠️ Two corrections to Part 4
+1. **The annual flagship should be FREE and email-gated, not "free ranking / paid depth."**
+   Across TechCabal, Briter and Stears, *reports are universally the funnel, never the product* —
+   nobody sells a report per-unit at a listed price. Monetise the **relationship** (audits, seats,
+   licences), not the download.
+2. **The market is barbelled** — $249 self-serve at one end, quote-only enterprise at the other,
+   **nothing published in between.** Read this as: sell either at the prosumer anchor OR at
+   enterprise quote-only. Don't invent a mid-price nobody in the market has proven.
+
+### Strategic warning
+**You cannot out-give the donor-funded players.** Briter's and TechCabal's free research is
+subsidised by Gates/FMO/FCDO and DFI contracts. Competing on volume-of-free is unwinnable.
+The only defensible ground is being **the sole rater of African brand-culture craft.**
+
+---
+
 ## What NOT to do
 - **Don't write more articles.** 119 articles produced 0 star performers last week. The 120th
   behaves the same. Distribution and packaging are the constraint, not volume.
