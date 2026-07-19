@@ -114,6 +114,22 @@ export function renderBrief(o: OpsSnapshot, dateLabel: string): string {
   L.push(`| Search (GSC) | ${o.search.configured ? `${o.search.queries} queries · ${o.search.opportunities.length} page-2 opportunities` : 'not returning data'} |`);
   L.push(`| Learning ledger | ${o.learning} |`);
 
+  // ── Where the traffic actually came from ──────────────────────────────────
+  // Social distribution should be measured, not assumed. LinkedIn is called out
+  // by name because it's the channel we actively publish to.
+  L.push('\n## Where traffic came from (7d)\n');
+  if (!o.performance.configured || o.performance.topSources.length === 0) {
+    L.push('- GA4 not returning source data yet.');
+  } else {
+    const total = o.performance.topSources.reduce((n, s) => n + s.pageviews, 0) || 1;
+    const isLinkedIn = (s: string) => /linkedin|lnkd/i.test(s);
+    const li = o.performance.topSources.filter((s) => isLinkedIn(s.source)).reduce((n, s) => n + s.pageviews, 0);
+    L.push(`- **LinkedIn: ${li} views** (${pct(li, total)}% of measured traffic)${li === 0 ? ' — nothing landing yet; check the last post actually carried a link.' : ''}`);
+    for (const s of o.performance.topSources.slice(0, 5)) {
+      L.push(`  - ${isLinkedIn(s.source) ? '**' : ''}${s.source}${isLinkedIn(s.source) ? '**' : ''} — ${s.pageviews} views (${pct(s.pageviews, total)}%)`);
+    }
+  }
+
   L.push('\n## Monetisation status\n');
   L.push(`- Membership checkout — individual: **${o.monetisation.membershipIndividualLive ? 'LIVE' : 'DORMANT'}** · team: **${o.monetisation.membershipTeamLive ? 'LIVE' : 'DORMANT'}** (${o.monetisation.membershipPrices.join(' · ')})`);
   L.push(`- Index Full Report checkout: **${o.monetisation.reportCheckoutLive ? 'LIVE' : 'DORMANT'}**`);

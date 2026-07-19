@@ -49,7 +49,7 @@ async function main() {
   summary(`**${c.title}**\n`);
   summary(`Card: ${c.cardUrl}\n`);
   summary(`Caption:\n\n\`\`\`\n${c.caption}\n\`\`\`\n`);
-  summary(`Link: ${c.link}`);
+  summary(`First comment (keeps the link out of the post body): \`Full piece → ${c.link}\``);
 
   if (dry) {
     log('Dry run — preview only, no publish, ledger unchanged.');
@@ -65,12 +65,27 @@ async function main() {
     return;
   }
 
-  // The caption embeds the link in text (LinkedIn makes URLs clickable).
-  const caption = `${c.caption}\n\n${c.link}`;
-  const res = await publishToLinkedIn({ token, authorUrn, imageUrl: c.cardUrl, caption, altText: c.title });
+  // LinkedIn demotes posts that carry an outbound link in the body, so the post
+  // stays link-free and the URL rides in the first comment instead.
+  const res = await publishToLinkedIn({
+    token,
+    authorUrn,
+    imageUrl: c.cardUrl,
+    caption: c.caption,
+    altText: c.title,
+    firstComment: `Full piece → ${c.link}`,
+  });
   if (res.ok) {
     log(`Published to LinkedIn (${res.id ?? 'ok'}).`);
     summary(`> ✅ **Posted to LinkedIn** — \`${res.id ?? 'ok'}\``);
+    if (res.commentOk) {
+      log('First comment posted with the link.');
+      summary(`> 💬 Link posted as the first comment.`);
+    } else if (res.commentError) {
+      // Non-fatal: the post is live, the link just needs adding by hand.
+      log(`⚠️ First comment failed: ${res.commentError}`);
+      summary(`> ⚠️ **Post is live but the link comment failed** — add it manually: ${c.link}\n> \`${res.commentError}\``);
+    }
     posted.add(c.id);
     mkdirSync(join(__dirname, '../output'), { recursive: true });
     writeFileSync(LEDGER, JSON.stringify({ posted: [...posted].slice(-500), updatedAt: new Date().toISOString() }, null, 2) + '\n');
