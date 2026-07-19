@@ -15,8 +15,12 @@ name: MonoKromatik Social Auto-Post (LinkedIn)
 
 on:
   schedule:
-    # Once daily at ~15:07 UTC (17:07 SAST), offset from the Instagram run.
-    - cron: '7 15 * * *'
+    # Tue + Thu at 07:07 UTC (09:07 SAST) — a personal professional profile, not
+    # a content feed. Daily website cards flood the timeline, dilute the personal
+    # brand that carries the reach, and train the audience to scroll past. Two
+    # weekday-morning slots is the sustainable cadence; the rest of the week is
+    # left for Sibu's own first-person posts, which materially out-reach these.
+    - cron: '7 7 * * 2,4'
   workflow_dispatch:
     inputs:
       publish:

@@ -28,6 +28,30 @@ export interface LinkedInResult {
   ok: boolean;
   id?: string;
   error?: string;
+  /** Whether the follow-up first comment (carrying the link) landed. */
+  commentOk?: boolean;
+  commentError?: string;
+}
+
+/**
+ * Comment on a post. Used to put the LINK IN THE FIRST COMMENT: LinkedIn
+ * demotes posts carrying an outbound link in the body, so the post itself stays
+ * link-free and the URL rides in a comment instead.
+ */
+export async function commentOnPost(
+  token: string,
+  actorUrn: string,
+  postUrn: string,
+  text: string,
+): Promise<{ ok: boolean; error?: string }> {
+  const res = await fetch(`${REST}/socialActions/${encodeURIComponent(postUrn)}/comments`, {
+    method: 'POST',
+    headers: headers(token),
+    body: JSON.stringify({ actor: actorUrn, object: postUrn, message: { text } }),
+  });
+  if (res.ok || res.status === 201) return { ok: true };
+  const j = await res.json().catch(() => ({}));
+  return { ok: false, error: `comment failed (${res.status}): ${JSON.stringify((j as { message?: string })?.message ?? j)}` };
 }
 
 /** Register an image upload for `authorUrn`; returns the upload URL + image URN. */
@@ -68,8 +92,10 @@ export async function publishToLinkedIn(args: {
   imageUrl: string;
   caption: string;
   altText: string;
+  /** Posted as a follow-up comment (keeps the outbound link out of the post body). */
+  firstComment?: string;
 }): Promise<LinkedInResult> {
-  const { token, authorUrn, imageUrl, caption, altText } = args;
+  const { token, authorUrn, imageUrl, caption, altText, firstComment } = args;
 
   const init = await initImageUpload(token, authorUrn);
   if ('error' in init) return { ok: false, error: init.error };
@@ -92,6 +118,12 @@ export async function publishToLinkedIn(args: {
   const res = await fetch(`${REST}/posts`, { method: 'POST', headers: headers(token), body: JSON.stringify(body) });
   if (res.status === 201 || res.ok) {
     const id = res.headers.get('x-restli-id') || res.headers.get('x-linkedin-id') || undefined;
+    if (firstComment && id) {
+      // The post is already live; a failed comment must NOT fail the publish —
+      // report it so the run summary shows the link needs adding by hand.
+      const c = await commentOnPost(token, authorUrn, id, firstComment);
+      return { ok: true, id, commentOk: c.ok, commentError: c.error };
+    }
     return { ok: true, id };
   }
   const json = await res.json().catch(() => ({}));

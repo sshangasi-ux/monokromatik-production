@@ -47,7 +47,7 @@ export interface SiteState {
   index: { brands: number; works: number; snapshots: number; top: { brand: string; score: number }[]; climbers: number; newcomers: number; since: string | null };
   reports: { count: number; live: number };
   learning: string;
-  performance: { configured: boolean; scored: number; stars: number; kills: number; topCategories: { category: string; pageviews: number }[] };
+  performance: { configured: boolean; scored: number; stars: number; kills: number; topCategories: { category: string; pageviews: number }[]; topSources: { source: string; pageviews: number }[] };
   search: { configured: boolean; queries: number; opportunities: { query: string; position: number; impressions: number }[] };
 }
 
@@ -127,6 +127,9 @@ export async function gatherState(perfWindowDays = 30): Promise<SiteState> {
       stars: perf?.articles.filter((a) => a.verdict === 'star').length ?? 0,
       kills: perf?.articles.filter((a) => a.verdict === 'kill').length ?? 0,
       topCategories: perf?.topCategories.slice(0, 5) ?? [],
+      // Referral sources — surfaced in the daily brief so social distribution
+      // (LinkedIn in particular) is measured, not assumed.
+      topSources: perf?.topSources.slice(0, 8) ?? [],
     },
     search: {
       configured: Boolean(search),
