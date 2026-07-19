@@ -9,9 +9,11 @@
 //       https://learn.microsoft.com/linkedin/marketing/community-management/shares/images-api
 
 const REST = 'https://api.linkedin.com/rest';
-// LinkedIn requires a version header (YYYYMM). Bump as versions sunset; override
-// with LINKEDIN_VERSION if needed.
-const VERSION = process.env.LINKEDIN_VERSION || '202405';
+// LinkedIn requires a version header (YYYYMM) and SUNSETS each one after ~12
+// months — a stale value 426s with "Requested version … is not active". 202405
+// died in the wild; bump this periodically, or override per-environment with the
+// LINKEDIN_VERSION repo variable (which the workflow already passes through).
+const VERSION = process.env.LINKEDIN_VERSION || '202606';
 
 function headers(token: string): Record<string, string> {
   return {
@@ -75,6 +77,10 @@ export async function publishToLinkedIn(args: {
   const upErr = await uploadImageBytes(init.uploadUrl, token, imageUrl);
   if (upErr) return { ok: false, error: upErr };
 
+  // NB: `isReblogDisabledByAuthor` was accepted by older API versions but is
+  // rejected outright from ~202600 onward ("unrecognized field found but not
+  // allowed"), so it must not be sent. Keep this body minimal — the versioned
+  // Posts API 422s on any field it doesn't recognise.
   const body = {
     author: authorUrn,
     commentary: caption,
@@ -82,7 +88,6 @@ export async function publishToLinkedIn(args: {
     distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
     content: { media: { altText: altText.slice(0, 290), id: init.image } },
     lifecycleState: 'PUBLISHED',
-    isReblogDisabledByAuthor: false,
   };
   const res = await fetch(`${REST}/posts`, { method: 'POST', headers: headers(token), body: JSON.stringify(body) });
   if (res.status === 201 || res.ok) {
