@@ -111,8 +111,13 @@ export function linkedinArticleCaption(a: ArticleLike): string {
   const cat = (a.category || '').toLowerCase();
   const hook = a.title.trim();
   const context = trim(a.brandRead?.pullQuote || a.excerpt || '', 260);
+  // Prefer the piece's OWN tag for the topical hashtag. A category tag misfires:
+  // "entertainment" maps to #Nollywood, which is plain wrong on a hip-hop
+  // catalog-ownership story. Fall back to the category only if tags are absent.
+  const own = (a.tags || []).map((t) => toHashtag(t)).filter((t) => t.length >= 3).slice(0, 1);
+  const topical = own.length ? own : (CATEGORY_TAGS[cat] || []).slice(0, 1);
   // The publisher appends the canonical link, so no CTA-to-nowhere here.
-  return [hook, context, linkedinTags(cat)].filter(Boolean).join('\n\n');
+  return [hook, context, buildHashtags([...LINKEDIN_TAGS, ...topical], 4)].filter(Boolean).join('\n\n');
 }
 
 /** A relayed Wire item — credited, not overclaimed. */
