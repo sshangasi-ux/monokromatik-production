@@ -6,7 +6,7 @@
 //     <img src="https://www.monokromatik.com/api/badge/<slug>.svg" alt="..." />
 //   </a>
 
-import { getPublicCaseStudies } from '../../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug } from '../../../../lib/signal-index';
 
 export const revalidate = 3600;
@@ -37,7 +37,13 @@ function badgeSvg(brand: string, score: number, rank: number, total: number): st
 export async function GET(_req: Request, { params }: { params: Promise<{ brand: string }> }) {
   const { brand: raw } = await params;
   const slug = raw.replace(/\.svg$/i, '');
-  const ranked = rankIndex(getPublicCaseStudies());
+  // Rank over ALL scored works — the same universe the Index page uses. The
+  // RATINGS are public even where the analysis is gated, so a public-only
+  // ranking is a different, smaller Index: it 404'd the badge for every
+  // premium-only brand (25 of 69, including ranks #1–#4) and gave every
+  // remaining brand a rank computed out of 44 instead of 69. A badge that
+  // contradicts the site is worse than no badge — the brand publishes it.
+  const ranked = rankIndex(getAllCaseStudies());
   const entry = ranked.find((e) => brandSlug(e.brand) === slug);
 
   if (!entry) {

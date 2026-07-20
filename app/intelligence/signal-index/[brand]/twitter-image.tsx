@@ -4,7 +4,7 @@
  * by Next.js convention.
  */
 import { renderIndexCard } from '../../../../lib/og-card';
-import { getPublicCaseStudies } from '../../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement } from '../../../../lib/index-history';
 import { brandEvidence } from '../../../../lib/evidence-strength';
@@ -17,21 +17,22 @@ export const contentType = 'image/png';
 
 export default async function Image({ params }: { params: Promise<{ brand: string }> }) {
   const { brand } = await params;
-  const ranked = rankIndex(getPublicCaseStudies());
+  // Same universe as the Index page — see opengraph-image.tsx.
+  const ranked = rankIndex(getAllCaseStudies());
   const entry = ranked.find((e) => brandSlug(e.brand) === brand);
 
   if (!entry) {
-    const top = ranked[0];
+    // Neutral house card — never attribute the top brand's score to an unknown slug.
     return renderIndexCard({
-      brand: top?.brand ?? 'MonoKromatik',
-      score: top?.score ?? 0,
-      rank: top?.rank ?? 1,
+      brand: 'The Cultural-Signal Index',
+      score: 0,
+      rank: 0,
       total: ranked.length || 1,
     });
   }
 
   const movement = getMovement(brand);
-  const works = getPublicCaseStudies().filter((c) => brandSlug(c.brand) === brand);
+  const works = getAllCaseStudies().filter((c) => brandSlug(c.brand) === brand);
   const evidence = brandEvidence(works);
   return renderIndexCard({
     brand: entry.brand,
