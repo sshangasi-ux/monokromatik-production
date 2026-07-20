@@ -262,6 +262,52 @@ Nigeria-angled derivatives until 2 Oct. (24 Sept, SA Heritage Day, warms a cultu
 - **Day +7** — a **citation page**: "how to cite the Cultural-Signal Index", suggested citation string, chart pack under a permissive licence. Almost nobody in African BI does this.
 - **Day 0** — **publicly commit to Edition 02's date.** Google/IFC's e-Conomy Africa 2020 was massively cited, never repeated, and left no franchise. One line, enormous compounding value.
 
+### Citability — the mechanics, not the aspiration
+
+Being quotable is a build task, not a hope. The evidence:
+
+- **Data-availability statements that link to an actual URL or persistent identifier are
+  associated with up to +25% citation impact** (531,889 articles analysed). Vague "available on
+  request" language shows no such effect.
+- **Open-access material is ~65% more likely to be cited on Wikipedia** than paywalled material.
+- Journalists stall when data isn't public and complete. **Anything that requires emailing us is
+  a story that doesn't get written.**
+
+What to build, cheapest first:
+
+1. **Pre-write the citation line, in two lengths, printed on the artefact itself** — top and
+   bottom, not on a separate page. Nobody composes a citation who wasn't handed one. Our World
+   in Data publishes both a short and a long form and a dual-attribution norm; copy the shape.
+2. **A machine-readable file at a predictable URL suffix.** OWID's pattern is
+   `/grapher/<slug>.csv`, `.metadata.json`, `.zip` (both + a README). We already serve
+   `/api/index`; extending exhibits to `?format=csv` is small and is the single highest-leverage
+   citability item after ungating.
+3. **Never let a URL carry the citation alone.** Author, title and year must be on the page and
+   in the recommended citation, so the work stays findable when a URL dies.
+4. **An archived embed alongside the live one.** OWID lets an embedder choose a frozen version.
+   This removes the reuser's fear that the number moves under their published article — a real
+   objection for us, since our whole product is that scores move.
+5. **Mint a DOI.** Not academic-only: DataCite covers grey literature and datasets, and needs
+   five fields (creator, title, publisher, year, resource type). It removes our dependence on
+   our own URL structure surviving, which matters for a series meant to run for years.
+6. **`schema.org/Dataset` JSON-LD on every data surface** — `license` (version-specific URL),
+   `identifier`, `isAccessibleForFree`, `temporalCoverage`, `spatialCoverage`, and
+   `DataDownload`/`contentUrl`. We already ship Dataset JSON-LD on the Index; extend it to the
+   edition and the exhibits.
+7. **Methodology as its own addressable URL**, not a section inside the report. Pew publishes it
+   as a separate document per study — it makes the method independently citable and separately
+   attackable, which is the point.
+8. **Build the trend line into the appendix.** Pew prints prior-wave results beside current ones
+   as standard, which is what makes edition N+1 automatically newsworthy. Our equivalent: every
+   score carries its rubric version and prior value once a same-rubric comparison exists.
+
+### Embargo — the template
+
+Adopt PLOS's shape for the T-21d send: materials **7 days** ahead, embargo lifts at **one fixed
+clock time** (08:00 SAST / 07:00 WAT on 30 September), **no exclusives**, recipients must credit
+and link to the source page, and the sanction for breaking it is removal from the list. Say all
+of that in the email, bolded, and repeat the lift time in the subject line.
+
 ### Gating
 Ungate everything citable. Every African report that achieved citation is free (Partech,
 Disrupt Africa, UNESCO, Africa No Filter); every paid-first consumer play struggled (Stears
