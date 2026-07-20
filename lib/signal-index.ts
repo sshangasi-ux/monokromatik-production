@@ -7,6 +7,17 @@
 
 import type { CaseStudy, CaseStudyDecode } from './case-studies';
 
+/**
+ * The scoring rubric currently in force (docs/SCORING-RUBRIC.md).
+ *
+ * Stamped onto every Index snapshot so movement can never be computed across a
+ * methodology change. When the rubric version differs between two snapshots the
+ * scores are not comparable: v2.0 re-scored the whole corpus and the mean fell
+ * 79.4 → 70.2, which is our ruler changing, not 60 brands declining in a week.
+ * Bump this ONLY alongside a dated change to the rubric doc.
+ */
+export const RUBRIC_VERSION = 'v2.0';
+
 /** Authorship-weighted axis weights — AUTHORSHIP carries the founding thesis. */
 export const AXIS_WEIGHTS: Record<string, number> = {
   IDEA: 0.25,

@@ -102,11 +102,13 @@ export default async function BrandIndexPage({ params }: PageProps) {
           </Link>
           <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber-bright mb-6">
             RANK #{entry.rank} OF {ranked.length}
-            {movement && movement.scoreDelta !== 0 && (
+            {movement?.rebased ? (
+              <span className="text-mono-gray"> · REBASED — RUBRIC {movement.rubricTo?.toUpperCase()}</span>
+            ) : movement && movement.scoreDelta !== 0 ? (
               <span className={movement.scoreDelta > 0 ? 'text-emerald-400' : 'text-red-400'}>
                 {' '}· {movement.scoreDelta > 0 ? '▲' : '▼'} {Math.abs(movement.scoreDelta)} SINCE {movement.since}
               </span>
-            )}
+            ) : null}
           </p>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h1 className="max-w-3xl text-4xl md:text-6xl font-display font-bold leading-[0.98]">{entry.brand}</h1>
@@ -174,19 +176,41 @@ export default async function BrandIndexPage({ params }: PageProps) {
           </p>
         </div>
 
-        {history.length > 0 && (
-          <>
-            <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">TRAJECTORY</h2>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-5 border border-mono-gray/25 bg-mono-white p-6">
-              <Sparkline points={history.map((p) => p.score)} />
-              <p className="text-sm font-body text-mono-charcoal">
-                {history.length > 1
-                  ? `Score ${history[0].score} → ${history[history.length - 1].score} since ${history[0].date}.`
-                  : `First recorded ${history[0].date}. The trajectory builds as the Index re-snapshots.`}
-              </p>
-            </div>
-          </>
-        )}
+        {history.length > 0 && (() => {
+          // Only plot the trailing run of snapshots that share the current rubric.
+          // A line drawn across a rubric change reads as a collapse — it isn't one,
+          // the scale moved under it. The earlier era is disclosed, not deleted.
+          const rubricNow = history[history.length - 1].rubricVersion;
+          let start = history.length - 1;
+          while (start > 0 && history[start - 1].rubricVersion === rubricNow) start--;
+          const era = history.slice(start);
+          const priorEra = history.slice(0, start);
+          return (
+            <>
+              <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">TRAJECTORY</h2>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5 border border-mono-gray/25 bg-mono-white p-6">
+                <Sparkline points={era.map((p) => p.score)} />
+                <div className="text-sm font-body text-mono-charcoal">
+                  <p>
+                    {era.length > 1
+                      ? `Score ${era[0].score} → ${era[era.length - 1].score} since ${era[0].date}.`
+                      : `First recorded under rubric ${rubricNow} on ${era[0].date}. The trajectory builds as the Index re-snapshots.`}
+                  </p>
+                  {priorEra.length > 0 && (
+                    <p className="mt-2 text-mono-gray">
+                      {priorEra.length} earlier reading{priorEra.length === 1 ? '' : 's'} (from {priorEra[0].date}) were scored under
+                      rubric {priorEra[priorEra.length - 1].rubricVersion} and are not plotted — they are not comparable to{' '}
+                      {rubricNow} scores.{' '}
+                      <Link href="/intelligence/signal-index/methodology" className="text-mono-amber-strong hover:underline">
+                        How scoring works
+                      </Link>
+                    </p>
+                  )}
+                </div>
+              </div>
+            </>
+          );
+        })()}
 
         {peers.length > 0 && (
           <>
