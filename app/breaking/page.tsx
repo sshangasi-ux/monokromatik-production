@@ -105,7 +105,7 @@ export default function BreakingPage() {
           )}
         </div>
 
-        <aside className="lg:sticky lg:top-28 h-fit space-y-8">
+        <aside aria-label="About the Wire" className="lg:sticky lg:top-28 h-fit space-y-8">
           <div className="bg-mono-soft-white border-l-4 border-mono-amber p-6">
             <Radar className="text-mono-amber mb-5" size={22} />
             <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">HOW THE WIRE WORKS</p>

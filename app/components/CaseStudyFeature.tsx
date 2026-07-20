@@ -240,7 +240,9 @@ export default async function CaseStudyFeature({
           )}
         </article>
 
-        <aside className="lg:sticky lg:top-28 h-fit space-y-8">
+        {/* Named so it doesn't collide with the BrandRead <aside> further up the
+            page — both are "complementary" landmarks. */}
+        <aside aria-label="Evidence and sources" className="lg:sticky lg:top-28 h-fit space-y-8">
           <div className="bg-mono-soft-white border-l-4 border-mono-amber p-6">
             <ShieldCheck className="text-mono-amber mb-5" size={22} />
             <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">EVIDENCE STANDARD</p>
