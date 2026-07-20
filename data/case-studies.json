@@ -9973,10 +9973,22 @@
       ]
     },
     "lessons": [
-      "A communal recipe cannot be patented, so the real contest is over naming, story and shelf space — whoever formalises and trademarks a shared cultural artefact first can privatise value the whole culture created for free.",
-      "Distribution is the asset, not the flavour: the founders traded upside to CAADES for the manufacturing and market-access rails that convert nostalgia into retail revenue, which is where beverage equity actually lives.",
-      "Onshore ownership changes the moral maths but not the core question — a partly Nigerian cap table is better than offshore extraction, yet the community that authored the drink still holds no stake in the brand selling it back.",
-      "When heritage is used as marketing, look for the missing mechanism: if there is no royalty, fund, or acknowledgement flowing to the communal source, the culture is being paid in exposure while a few capture the equity."
+      {
+        "title": "A communal recipe cannot be patented, so the contest moves to naming, story and shelf space.",
+        "body": "Whoever formalises and trademarks a shared cultural artefact first can privatise value the whole culture created for free."
+      },
+      {
+        "title": "Distribution is the asset, not the flavour.",
+        "body": "The founders traded upside to CAADES for the manufacturing and market-access rails that convert nostalgia into retail revenue — which is where beverage equity actually lives."
+      },
+      {
+        "title": "Onshore ownership changes the moral maths, not the core question.",
+        "body": "A partly Nigerian cap table is better than offshore extraction — yet the community that authored the drink still holds no stake in the brand selling it back."
+      },
+      {
+        "title": "When heritage is used as marketing, look for the missing mechanism.",
+        "body": "If there is no royalty, fund or acknowledgement flowing to the communal source, the culture is being paid in exposure while a few capture the equity."
+      }
     ],
     "pullQuotes": [
       "The trademark is private; the artefact it trades on is public. That asymmetry is the whole story.",
@@ -10115,10 +10127,22 @@
       ]
     },
     "lessons": [
-      "Ownership is the necessary condition for value capture, but not the sufficient one — a retained-IP licence is only a better deal than a sale if the window is priced against the asset's full future value.",
-      "Unbundling reach from equity lets a rights-holder monetise a global platform's distribution without surrendering the copyright, the format, or the right to license the same asset again elsewhere.",
-      "Licensing a show that already has a primetime slot converts free-to-air ratings into a live demand signal a platform will pay to de-risk against — the broadcaster's mass audience is the product, so selling it outright destroys the very thing being bought.",
-      "A model is only proven when it is repeatable: this is one anchor title at an undisclosed fee, and turning it into a norm needs slate depth, pricing power, and the discipline to keep refusing the acquisition cheque."
+      {
+        "title": "Ownership is necessary for value capture, but not sufficient.",
+        "body": "A retained-IP licence is only a better deal than a sale if the window is priced against the asset's full future value."
+      },
+      {
+        "title": "Unbundle reach from equity.",
+        "body": "It lets a rights-holder monetise a global platform's distribution without surrendering the copyright, the format, or the right to license the same asset again elsewhere."
+      },
+      {
+        "title": "A primetime slot converts ratings into a demand signal a platform will pay to de-risk against.",
+        "body": "The broadcaster's mass audience is the product — so selling it outright destroys the very thing being bought."
+      },
+      {
+        "title": "A model is only proven when it is repeatable.",
+        "body": "This is one anchor title at an undisclosed fee. Turning it into a norm needs slate depth, pricing power, and the discipline to keep refusing the acquisition cheque."
+      }
     ],
     "pullQuotes": [
       "A licence is not an acquisition. eMedia kept the show and sold Netflix a place to watch it.",
