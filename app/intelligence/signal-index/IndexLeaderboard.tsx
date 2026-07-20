@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Search, ArrowUpRight, ArrowDownRight, GitCompare, X, Star, Bell } from 'lucide-react';
+import { SIGNAL_BANDS, signalBand } from '../../../lib/signal-index';
 import { useFollowedBrands } from '../../components/useFollowedBrands';
 import FollowButton from '../../components/FollowButton';
 
@@ -26,9 +27,12 @@ export interface LeaderEntry {
 const tierClass = (t: LeaderEntry['evidenceTier']) =>
   t === 'Strong' ? 'text-emerald-600' : t === 'Moderate' ? 'text-mono-amber-strong' : 'text-mono-gray';
 
-type Band = 'all' | 'b90' | 'b80' | 'b70';
-const inBand = (score: number, band: Band) =>
-  band === 'all' || (band === 'b90' && score >= 90) || (band === 'b80' && score >= 80 && score < 90) || (band === 'b70' && score < 80);
+// Filter by the PUBLISHED letter bands, not ad-hoc 90/80/70 buckets. The
+// methodology page publishes these cut-offs; the filter has to agree with them
+// or the Index contradicts its own stated method. (Pre-v2.0 the whole corpus sat
+// at 57+, so three buckets covered it; the re-score populated B and BB.)
+type Band = 'all' | string;
+const inBand = (score: number, band: Band) => band === 'all' || signalBand(score)?.band === band;
 
 type Lens = 'signal' | 'authorship' | 'evidence';
 
@@ -131,9 +135,18 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             {markets.map((m) => <option key={m} value={m}>{m}</option>)}
           </select>
         )}
-        <button onClick={() => setBand((b) => (b === 'b90' ? 'all' : 'b90'))} className={pill(band === 'b90')}>90+</button>
-        <button onClick={() => setBand((b) => (b === 'b80' ? 'all' : 'b80'))} className={pill(band === 'b80')}>80–89</button>
-        <button onClick={() => setBand((b) => (b === 'b70' ? 'all' : 'b70'))} className={pill(band === 'b70')}>UNDER 80</button>
+        {/* Only offer bands that actually contain a brand — an empty filter pill
+            reads as a broken control. */}
+        {SIGNAL_BANDS.filter((b) => entries.some((e) => signalBand(e.score)?.band === b.band)).map((b) => (
+          <button
+            key={b.band}
+            onClick={() => setBand((cur) => (cur === b.band ? 'all' : b.band))}
+            className={pill(band === b.band)}
+            title={`${b.band} — ${b.label}`}
+          >
+            {b.band}
+          </button>
+        ))}
         {(market || band !== 'all') && (
           <button onClick={() => { setMarket(''); setBand('all'); }} className="text-[11px] font-display font-bold tracking-[0.12em] text-mono-amber-strong hover:underline">CLEAR</button>
         )}
@@ -175,7 +188,10 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             {chosen.map((e) => (
               <div key={e.slug}>
                 <p className="font-display font-bold text-mono-black truncate">{e.brand}</p>
-                <p className="text-3xl font-display font-bold text-mono-black tabular-nums mt-1">{e.score}<span className="text-sm text-mono-gray"> /100</span></p>
+                <p className="text-3xl font-display font-bold text-mono-black tabular-nums mt-1">
+                  {e.score}<span className="text-sm text-mono-gray"> /100</span>
+                  <span className="ml-2 align-middle inline-block text-[10px] font-display font-bold tracking-[0.08em] border border-mono-black/25 px-1.5 py-0.5">{signalBand(e.score)?.band}</span>
+                </p>
                 <div className="mt-4 space-y-2.5">
                   {AXES.map((ax) => {
                     const lvl = e.axisAverages[ax] ?? 0;
@@ -212,9 +228,14 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
               {/* Follow star — omitted in compare mode to avoid nested buttons. */}
               {!compareMode && <FollowButton slug={e.slug} variant="icon" />}
               <span className="w-10 shrink-0 text-center"><Movement m={e.movement} isNew={e.isNew} /></span>
-              <span className="shrink-0 text-right w-12">
+              <span className="shrink-0 text-right w-16">
                 <span className="block text-3xl font-display font-bold text-mono-black leading-none tabular-nums">{e.score}</span>
-                <span className="block text-[9px] tracking-[0.2em] font-display font-bold text-mono-amber-strong">SIGNAL</span>
+                <span
+                  className="mt-1 inline-block text-[10px] font-display font-bold tracking-[0.08em] text-mono-black border border-mono-black/25 px-1.5 py-0.5"
+                  title={signalBand(e.score)?.label}
+                >
+                  {signalBand(e.score)?.band}
+                </span>
               </span>
             </div>
           );
