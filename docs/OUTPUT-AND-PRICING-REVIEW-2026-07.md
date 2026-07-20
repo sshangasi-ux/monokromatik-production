@@ -161,7 +161,7 @@ five publish no prices at all.** Verified findings:
 
 | Player | Price | Note |
 |---|---|---|
-| **Africa: The Big Deal** | **$249/yr** or $169/6mo (deals database) | The ONLY transactable published price in African BI. 16,000+ free newsletter subs. Discounts hard ("under $7/month", 50% off) — $249 is a ceiling. |
+| **Africa: The Big Deal** | **$219/yr** (deals database, sold via Gumroad) | The ONLY transactable published price in African BI. Free weekly newsletter is the citation engine; the database is the product. *(Corrected 20 Jul 2026 — previously recorded here as $249; the listed price is $219/yr, verified on africathebigdeal.com. The lower anchor matters: it sets the ceiling for a self-serve African BI seat.)* |
 | Stears | Not published (quote-only) | **Stears Premium was ~$100/yr — discontinued Oct 2023.** |
 | TechCabal Insights | Not published | Reports **free, email-gated**; money is in custom research/consulting. |
 | Asoko Insight | Not published | Buyers: LSE, AfDB, UK DBT, US DFC, USAID. |
@@ -173,7 +173,7 @@ Stears had ~$4m and the best consumer product in African business media, and **s
 We are priced precisely where the strongest-funded attempt concluded there was no business.
 
 ### ✅ What this VALIDATES
-The proposed **Index Access seat at ~R3,500–6,000/yr** brackets **$249/yr (~R4,500)** — the one
+The proposed **Index Access seat at ~R3,500–6,000/yr** brackets **$219/yr (~R4,000)** — the one
 proven self-serve price in this market. Not speculative; anchored.
 
 ### ⚠️ Two corrections to Part 4
@@ -181,7 +181,7 @@ proven self-serve price in this market. Not speculative; anchored.
    Across TechCabal, Briter and Stears, *reports are universally the funnel, never the product* —
    nobody sells a report per-unit at a listed price. Monetise the **relationship** (audits, seats,
    licences), not the download.
-2. **The market is barbelled** — $249 self-serve at one end, quote-only enterprise at the other,
+2. **The market is barbelled** — ~$219 self-serve at one end, quote-only enterprise at the other,
    **nothing published in between.** Read this as: sell either at the prosumer anchor OR at
    enterprise quote-only. Don't invent a mid-price nobody in the market has proven.
 
