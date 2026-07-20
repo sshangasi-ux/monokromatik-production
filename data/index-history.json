@@ -2,6 +2,7 @@
   {
     "date": "2026-06-23",
     "generatedAt": "2026-06-23T22:05:55.584Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Letsile Tebogo × De Beers / Botswana",
@@ -176,6 +177,7 @@
   {
     "date": "2026-06-29",
     "generatedAt": "2026-06-29T09:05:26.344Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Letsile Tebogo × De Beers / Botswana",
@@ -357,6 +359,7 @@
   {
     "date": "2026-07-06",
     "generatedAt": "2026-07-06T08:39:24.936Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Letsile Tebogo × De Beers / Botswana",
@@ -545,6 +548,7 @@
   {
     "date": "2026-07-07",
     "generatedAt": "2026-07-07T17:37:13.989Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Letsile Tebogo × De Beers / Botswana",
@@ -845,6 +849,7 @@
   {
     "date": "2026-07-08",
     "generatedAt": "2026-07-08T08:59:20.392Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Capitec Bank",
@@ -1278,6 +1283,7 @@
   {
     "date": "2026-07-13",
     "generatedAt": "2026-07-13T07:32:41.737Z",
+    "rubricVersion": "v1",
     "entries": [
       {
         "brand": "Capitec Bank",
@@ -1725,6 +1731,496 @@
         "slug": "jumia-technologies-ag",
         "score": 58,
         "rank": 64,
+        "works": 1
+      }
+    ]
+  },
+  {
+    "date": "2026-07-20",
+    "generatedAt": "2026-07-20T15:44:32.428Z",
+    "rubricVersion": "v2.0",
+    "entries": [
+      {
+        "brand": "Ethiopian Airlines",
+        "slug": "ethiopian-airlines",
+        "score": 95,
+        "rank": 1,
+        "works": 1
+      },
+      {
+        "brand": "Capitec Bank",
+        "slug": "capitec-bank",
+        "score": 95,
+        "rank": 2,
+        "works": 1
+      },
+      {
+        "brand": "Checkers Sixty60 (Shoprite Holdings)",
+        "slug": "checkers-sixty60-shoprite-holdings",
+        "score": 95,
+        "rank": 3,
+        "works": 1
+      },
+      {
+        "brand": "Nando's",
+        "slug": "nando-s",
+        "score": 90,
+        "rank": 4,
+        "works": 1
+      },
+      {
+        "brand": "Thebe Magugu",
+        "slug": "thebe-magugu",
+        "score": 90,
+        "rank": 5,
+        "works": 1
+      },
+      {
+        "brand": "Dangote Petroleum Refinery",
+        "slug": "dangote-petroleum-refinery",
+        "score": 87,
+        "rank": 6,
+        "works": 1
+      },
+      {
+        "brand": "Iamisigo (Bubu Ogisi)",
+        "slug": "iamisigo-bubu-ogisi",
+        "score": 87,
+        "rank": 7,
+        "works": 1
+      },
+      {
+        "brand": "The Black Book (Editi Effiong) / Nollywood on Netflix",
+        "slug": "the-black-book-editi-effiong-nollywood-on-netflix",
+        "score": 87,
+        "rank": 8,
+        "works": 1
+      },
+      {
+        "brand": "Tems",
+        "slug": "tems",
+        "score": 83,
+        "rank": 9,
+        "works": 1
+      },
+      {
+        "brand": "TymeBank",
+        "slug": "tymebank",
+        "score": 83,
+        "rank": 10,
+        "works": 1
+      },
+      {
+        "brand": "Paystack",
+        "slug": "paystack",
+        "score": 83,
+        "rank": 11,
+        "works": 1
+      },
+      {
+        "brand": "Tongoro",
+        "slug": "tongoro",
+        "score": 82,
+        "rank": 12,
+        "works": 1
+      },
+      {
+        "brand": "Maison Château Rouge",
+        "slug": "maison-ch-teau-rouge",
+        "score": 82,
+        "rank": 13,
+        "works": 1
+      },
+      {
+        "brand": "Chicken Licken",
+        "slug": "chicken-licken",
+        "score": 82,
+        "rank": 14,
+        "works": 1
+      },
+      {
+        "brand": "Moniepoint",
+        "slug": "moniepoint",
+        "score": 82,
+        "rank": 15,
+        "works": 1
+      },
+      {
+        "brand": "Chicken Licken (agency: Joe Public)",
+        "slug": "chicken-licken-agency-joe-public",
+        "score": 82,
+        "rank": 16,
+        "works": 1
+      },
+      {
+        "brand": "Achraf Hakimi / Morocco national team",
+        "slug": "achraf-hakimi-morocco-national-team",
+        "score": 80,
+        "rank": 17,
+        "works": 1
+      },
+      {
+        "brand": "eMedia (e.tv) & Tshedza Pictures",
+        "slug": "emedia-e-tv-tshedza-pictures",
+        "score": 79,
+        "rank": 18,
+        "works": 1
+      },
+      {
+        "brand": "Bathu",
+        "slug": "bathu",
+        "score": 79,
+        "rank": 19,
+        "works": 1
+      },
+      {
+        "brand": "MaXhosa Africa",
+        "slug": "maxhosa-africa",
+        "score": 79,
+        "rank": 20,
+        "works": 1
+      },
+      {
+        "brand": "Boyedoe (David Kusi Boye-Doe)",
+        "slug": "boyedoe-david-kusi-boye-doe",
+        "score": 79,
+        "rank": 21,
+        "works": 1
+      },
+      {
+        "brand": "Kava (Inkblot Studios + Filmhouse Group)",
+        "slug": "kava-inkblot-studios-filmhouse-group",
+        "score": 79,
+        "rank": 22,
+        "works": 1
+      },
+      {
+        "brand": "Mamelodi Sundowns",
+        "slug": "mamelodi-sundowns",
+        "score": 78,
+        "rank": 23,
+        "works": 1
+      },
+      {
+        "brand": "Burna Boy × FIFA ('Dai Dai', with Shakira)",
+        "slug": "burna-boy-fifa-dai-dai-with-shakira",
+        "score": 78,
+        "rank": 24,
+        "works": 1
+      },
+      {
+        "brand": "Tyla",
+        "slug": "tyla",
+        "score": 76,
+        "rank": 25,
+        "works": 1
+      },
+      {
+        "brand": "The Met Gala 2025 — “Superfine: Tailoring Black Style”",
+        "slug": "the-met-gala-2025-superfine-tailoring-black-style",
+        "score": 76,
+        "rank": 26,
+        "works": 1
+      },
+      {
+        "brand": "Carry1st",
+        "slug": "carry1st",
+        "score": 75,
+        "rank": 27,
+        "works": 1
+      },
+      {
+        "brand": "NBA Africa / Basketball Africa League",
+        "slug": "nba-africa-basketball-africa-league",
+        "score": 73,
+        "rank": 28,
+        "works": 1
+      },
+      {
+        "brand": "South African Rugby Union (Springboks)",
+        "slug": "south-african-rugby-union-springboks",
+        "score": 72,
+        "rank": 29,
+        "works": 1
+      },
+      {
+        "brand": "Letsile Tebogo × De Beers / Botswana",
+        "slug": "letsile-tebogo-de-beers-botswana",
+        "score": 72,
+        "rank": 30,
+        "works": 1
+      },
+      {
+        "brand": "Three Ships Whisky (James Sedgwick Distillery)",
+        "slug": "three-ships-whisky-james-sedgwick-distillery",
+        "score": 71,
+        "rank": 31,
+        "works": 1
+      },
+      {
+        "brand": "Visit Rwanda",
+        "slug": "visit-rwanda",
+        "score": 70,
+        "rank": 32,
+        "works": 1
+      },
+      {
+        "brand": "Flutterwave",
+        "slug": "flutterwave",
+        "score": 70,
+        "rank": 33,
+        "works": 2
+      },
+      {
+        "brand": "Uncle Waffles",
+        "slug": "uncle-waffles",
+        "score": 70,
+        "rank": 34,
+        "works": 1
+      },
+      {
+        "brand": "DR Congo (Léopards) × JMAKxPARIS",
+        "slug": "dr-congo-l-opards-jmakxparis",
+        "score": 70,
+        "rank": 35,
+        "works": 1
+      },
+      {
+        "brand": "Kenneth Ize",
+        "slug": "kenneth-ize",
+        "score": 69,
+        "rank": 36,
+        "works": 1
+      },
+      {
+        "brand": "Mavin Global",
+        "slug": "mavin-global",
+        "score": 68,
+        "rank": 37,
+        "works": 1
+      },
+      {
+        "brand": "Trace",
+        "slug": "trace",
+        "score": 68,
+        "rank": 38,
+        "works": 1
+      },
+      {
+        "brand": "Spiro",
+        "slug": "spiro",
+        "score": 68,
+        "rank": 39,
+        "works": 1
+      },
+      {
+        "brand": "Inverroche × Pernod Ricard",
+        "slug": "inverroche-pernod-ricard",
+        "score": 68,
+        "rank": 40,
+        "works": 1
+      },
+      {
+        "brand": "The Polygamist (Stained Glass TV / Netflix)",
+        "slug": "the-polygamist-stained-glass-tv-netflix",
+        "score": 68,
+        "rank": 41,
+        "works": 1
+      },
+      {
+        "brand": "FIFA World Cup Stage × Rema",
+        "slug": "fifa-world-cup-stage-rema",
+        "score": 68,
+        "rank": 42,
+        "works": 1
+      },
+      {
+        "brand": "Nike × Air Afrique",
+        "slug": "nike-air-afrique",
+        "score": 68,
+        "rank": 43,
+        "works": 1
+      },
+      {
+        "brand": "Uncover",
+        "slug": "uncover",
+        "score": 67,
+        "rank": 44,
+        "works": 1
+      },
+      {
+        "brand": "Wizkid × Asake — REAL, Vol. 1",
+        "slug": "wizkid-asake-real-vol-1",
+        "score": 67,
+        "rank": 45,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × Pandora (and Nike, Chanel, H&M)",
+        "slug": "tyla-pandora-and-nike-chanel-h-m",
+        "score": 65,
+        "rank": 46,
+        "works": 1
+      },
+      {
+        "brand": "Nigeria — 'Detty December' / Naija Season",
+        "slug": "nigeria-detty-december-naija-season",
+        "score": 64,
+        "rank": 47,
+        "works": 1
+      },
+      {
+        "brand": "The Hollywoodbets Durban July 2026",
+        "slug": "the-hollywoodbets-durban-july-2026",
+        "score": 63,
+        "rank": 48,
+        "works": 1
+      },
+      {
+        "brand": "Faith Kipyegon / Kenyan distance running",
+        "slug": "faith-kipyegon-kenyan-distance-running",
+        "score": 63,
+        "rank": 49,
+        "works": 1
+      },
+      {
+        "brand": "Sarkodie × Shatta Wale (EVERLASTING)",
+        "slug": "sarkodie-shatta-wale-everlasting",
+        "score": 62,
+        "rank": 50,
+        "works": 1
+      },
+      {
+        "brand": "OPay",
+        "slug": "opay",
+        "score": 61,
+        "rank": 51,
+        "works": 1
+      },
+      {
+        "brand": "Basketball Africa League",
+        "slug": "basketball-africa-league",
+        "score": 61,
+        "rank": 52,
+        "works": 1
+      },
+      {
+        "brand": "Puma",
+        "slug": "puma",
+        "score": 61,
+        "rank": 53,
+        "works": 1
+      },
+      {
+        "brand": "Billiato (Family Tree / Cassper Nyovest)",
+        "slug": "billiato-family-tree-cassper-nyovest",
+        "score": 60,
+        "rank": 54,
+        "works": 1
+      },
+      {
+        "brand": "Kaizer Chiefs × Carling Black Label",
+        "slug": "kaizer-chiefs-carling-black-label",
+        "score": 60,
+        "rank": 55,
+        "works": 1
+      },
+      {
+        "brand": "Ayra Starr (× Maybelline / New Balance / Pepsi)",
+        "slug": "ayra-starr-maybelline-new-balance-pepsi",
+        "score": 60,
+        "rank": 56,
+        "works": 1
+      },
+      {
+        "brand": "Indomie",
+        "slug": "indomie",
+        "score": 59,
+        "rank": 57,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × the World Cup Stage",
+        "slug": "tyla-the-world-cup-stage",
+        "score": 58,
+        "rank": 58,
+        "works": 1
+      },
+      {
+        "brand": "Spotify x Afro Nation (The Malachite Group)",
+        "slug": "spotify-x-afro-nation-the-malachite-group",
+        "score": 56,
+        "rank": 59,
+        "works": 1
+      },
+      {
+        "brand": "Adidas",
+        "slug": "adidas",
+        "score": 56,
+        "rank": 60,
+        "works": 1
+      },
+      {
+        "brand": "MTN Group",
+        "slug": "mtn-group",
+        "score": 55,
+        "rank": 61,
+        "works": 1
+      },
+      {
+        "brand": "Visa",
+        "slug": "visa",
+        "score": 54,
+        "rank": 62,
+        "works": 1
+      },
+      {
+        "brand": "Jumia Technologies AG",
+        "slug": "jumia-technologies-ag",
+        "score": 53,
+        "rank": 63,
+        "works": 1
+      },
+      {
+        "brand": "Rema × Diesel",
+        "slug": "rema-diesel",
+        "score": 51,
+        "rank": 64,
+        "works": 1
+      },
+      {
+        "brand": "Coca-Cola",
+        "slug": "coca-cola",
+        "score": 49,
+        "rank": 65,
+        "works": 1
+      },
+      {
+        "brand": "Budweiser (AB InBev)",
+        "slug": "budweiser-ab-inbev",
+        "score": 49,
+        "rank": 66,
+        "works": 1
+      },
+      {
+        "brand": "Ikoyi Chapmans",
+        "slug": "ikoyi-chapmans",
+        "score": 48,
+        "rank": 67,
+        "works": 1
+      },
+      {
+        "brand": "Canal+ × MultiChoice (the end of Showmax)",
+        "slug": "canal-multichoice-the-end-of-showmax",
+        "score": 46,
+        "rank": 68,
+        "works": 1
+      },
+      {
+        "brand": "Showmax",
+        "slug": "showmax",
+        "score": 43,
+        "rank": 69,
         "works": 1
       }
     ]

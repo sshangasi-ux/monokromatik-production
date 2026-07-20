@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { getAllCaseStudies } from '../lib/case-studies';
-import { rankIndex, brandSlug } from '../lib/signal-index';
+import { rankIndex, brandSlug, RUBRIC_VERSION } from '../lib/signal-index';
 
 const PATH = join(process.cwd(), 'data', 'index-history.json');
 const dateArg = process.argv.find((a) => a.startsWith('--date='))?.split('=')[1];
@@ -22,9 +22,13 @@ const DATE = dateArg || new Date().toISOString().slice(0, 10);
 // (ratings are public; premium decodes stay gated). Public-only would leave the
 // top premium works out of the trajectory moat.
 const ranked = rankIndex(getAllCaseStudies());
+// Stamp the rubric in force. Movement is only computed between snapshots sharing
+// a rubric — without this, a re-scoring would render as every brand collapsing
+// overnight, which is our ruler changing, not the work getting worse.
 const snapshot = {
   date: DATE,
   generatedAt: new Date().toISOString(),
+  rubricVersion: RUBRIC_VERSION,
   entries: ranked.map((e) => ({ brand: e.brand, slug: brandSlug(e.brand), score: e.score, rank: e.rank!, works: e.works })),
 };
 

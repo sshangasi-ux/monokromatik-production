@@ -67,7 +67,12 @@ export default function SignalIndexPage() {
 
   const movers = getMovers(5);
   const topClimber = movers.climbers[0];
-  const briefing = movers.since
+  // After a re-scoring, movement since the last snapshot is not movement — it is
+  // the scale changing. Say that plainly instead of narrating climbs and falls
+  // that never happened.
+  const briefing = movers.rebased
+    ? `The Index was rescored under rubric ${movers.rubricTo} on ${movers.since ? `the snapshot following ${movers.since}` : 'the latest snapshot'}. Scores are not comparable to earlier readings, so no movement is reported this update — the methodology changed, not the work. Tracking resumes from the next snapshot.`
+    : movers.since
     ? `Since ${movers.since}, ${movers.climbers.length} brand${movers.climbers.length === 1 ? '' : 's'} climbed and ${movers.newcomers.length} entered the Index${topClimber ? ` — ${topClimber.brand} led, up ${topClimber.scoreDelta} to ${topClimber.score}/100` : ''}.`
     : '';
 
@@ -145,7 +150,13 @@ export default function SignalIndexPage() {
                     <span className="font-display font-bold text-mono-soft-white group-hover:text-mono-amber-bright transition-colors truncate">{m.brand}</span>
                     <span className="shrink-0 text-emerald-400 font-display font-bold text-sm tabular-nums">▲ {m.scoreDelta} → {m.score}</span>
                   </Link>
-                )) : <p className="text-sm text-mono-gray font-body">No score climbs this update.</p>}
+                )) : (
+                  <p className="text-sm text-mono-gray font-body">
+                    {movers.rebased
+                      ? `Suppressed — the Index was rescored under rubric ${movers.rubricTo}. Comparing to ${movers.rubricFrom} scores would report our own methodology change as brand movement.`
+                      : 'No score climbs this update.'}
+                  </p>
+                )}
               </div>
               <div className="bg-mono-black p-6">
                 <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mb-5">NEW ENTRIES</p>

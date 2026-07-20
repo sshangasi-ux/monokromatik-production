@@ -17,7 +17,7 @@ export interface LeaderEntry {
   works: number;
   axisAverages: Record<string, number>;
   market?: string;
-  movement: { scoreDelta: number; rankDelta: number } | null;
+  movement: { scoreDelta: number; rankDelta: number; rebased?: boolean; rubricFrom?: string; rubricTo?: string } | null;
   isNew: boolean;
   /** The measured corroboration anchor (0–100) + tier. */
   evidenceScore?: number | null;
@@ -38,6 +38,16 @@ type Lens = 'signal' | 'authorship' | 'evidence';
 
 function Movement({ m, isNew }: { m: LeaderEntry['movement']; isNew: boolean }) {
   if (isNew) return <span className="text-[10px] font-display font-bold tracking-[0.16em] text-mono-amber-strong">NEW</span>;
+  // A rubric change is not movement. Show the rebase rather than a delta.
+  if (m?.rebased)
+    return (
+      <span
+        className="text-[10px] font-display font-bold tracking-[0.12em] text-mono-gray"
+        title={`Rescored under rubric ${m.rubricTo} — not comparable to ${m.rubricFrom} scores`}
+      >
+        REBASED
+      </span>
+    );
   if (!m || m.scoreDelta === 0) return <span className="text-[11px] font-display text-mono-gray">—</span>;
   const up = m.scoreDelta > 0;
   return (
