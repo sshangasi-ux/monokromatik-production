@@ -66,7 +66,15 @@ caseStudies.forEach((c, i) => {
   for (const k of ['confirmed', 'reported', 'notClaimed']) {
     if (!isArr(ev[k])) at(`evidence.${k} must be an array`);
   }
+  // lessons render as `<strong>{l.title}</strong> {l.body}` — a plain string yields
+  // undefined for both, so the section silently renders EMPTY. React doesn't throw
+  // and the build passes, so nothing catches it but the reader. (Shipped twice.)
   if (!isArr(c.lessons)) at('lessons must be an array');
+  else
+    (c.lessons as Record<string, unknown>[]).forEach((l, j) => {
+      if (typeof l === 'string') at(`lessons[${j}] is a string — must be {title, body} or it renders blank`);
+      else if (!nonEmpty(l?.title) || !nonEmpty(l?.body)) at(`lessons[${j}] needs a non-empty title and body`);
+    });
   if (!isArr(c.sources)) at('sources must be an array');
   else (c.sources as Record<string, unknown>[]).forEach((s, j) => { if (!nonEmpty(s.href)) at(`sources[${j}].href missing`); });
   if (!isArr(c.media)) at('media must be an array');
