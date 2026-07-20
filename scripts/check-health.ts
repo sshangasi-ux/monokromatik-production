@@ -102,18 +102,64 @@ async function checkRoutes(): Promise<RouteDown[]> {
   return down;
 }
 
+/**
+ * Generated per-brand assets: the embeddable badge and the share cards.
+ *
+ * These had a blind spot no other check covered — the link checker only follows
+ * hrefs in content and the media audit only reads files on disk, so nothing
+ * exercised a route that BUILDS an image. The badge silently 404'd for 25 of 69
+ * ranked brands (including #1 Ethiopian Airlines) and printed the wrong rank for
+ * the other 44, because it ranked over a different set of works than the site.
+ * A brand embeds that badge on its own site, so a wrong rank is a wrong claim
+ * published under our name. Sampled, not exhaustive — enough to catch a
+ * systematic break without hammering the origin on every run.
+ */
+async function checkBrandAssets(): Promise<RouteDown[]> {
+  log(`\n## Generated brand assets (badge + share cards)`);
+  const down: RouteDown[] = [];
+  let ranked: { brand: string; slug: string; rank: number }[] = [];
+  try {
+    const res = await fetch(`${BASE}/api/index`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
+    const data = (await res.json()) as { index?: { brand: string; slug: string; rank: number }[] };
+    ranked = data.index ?? [];
+  } catch {
+    log('- ⏭️ skipped (could not read /api/index)');
+    return down;
+  }
+  if (!ranked.length) { log('- ⏭️ skipped (no ranked brands)'); return down; }
+
+  // Top, middle and bottom of the ranking — a universe mismatch shows up at the
+  // edges first (the old bug 404'd precisely the top-ranked brands).
+  const picks = [ranked[0], ranked[Math.floor(ranked.length / 2)], ranked[ranked.length - 1]].filter(Boolean);
+  for (const b of picks) {
+    for (const path of [`/api/badge/${b.slug}.svg`, `/intelligence/signal-index/${b.slug}`]) {
+      try {
+        const r = await fetch(`${BASE}${path}`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
+        if (r.ok) log(`- ✅ ${path} (${r.status})`);
+        else { down.push({ route: path, status: `HTTP ${r.status}` }); log(`- 🔴 ${path} — HTTP ${r.status} (rank #${b.rank} ${b.brand})`); }
+      } catch (e) {
+        down.push({ route: path, status: e instanceof Error ? e.message : 'unreachable' });
+        log(`- 🔴 ${path} — unreachable`);
+      }
+    }
+  }
+  return down;
+}
+
 async function main() {
   log(`# Health monitor — ${new Date().toISOString().replace('T', ' ').slice(0, 16)} UTC\n`);
   const workflowIssues = await checkWorkflows();
   const routesDown = await checkRoutes();
+  const assetsDown = await checkBrandAssets();
 
-  const problems = workflowIssues.length + routesDown.length;
-  log(`\n**Summary: ${workflowIssues.length} workflow issue(s) · ${routesDown.length} route(s) down.**`);
+  const allDown = [...routesDown, ...assetsDown];
+  const problems = workflowIssues.length + allDown.length;
+  log(`\n**Summary: ${workflowIssues.length} workflow issue(s) · ${allDown.length} route(s)/asset(s) down.**`);
 
   mkdirSync(join(process.cwd(), 'output'), { recursive: true });
   writeFileSync(
     join(process.cwd(), 'output/health.json'),
-    JSON.stringify({ generatedAt: new Date().toISOString(), base: BASE, ok: problems === 0, workflowIssues, routesDown }, null, 2),
+    JSON.stringify({ generatedAt: new Date().toISOString(), base: BASE, ok: problems === 0, workflowIssues, routesDown: allDown }, null, 2),
   );
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, report.join('\n') + '\n');
 }

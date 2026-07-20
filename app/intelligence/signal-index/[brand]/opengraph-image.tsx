@@ -7,7 +7,7 @@
  * into a distributor.
  */
 import { renderIndexCard } from '../../../../lib/og-card';
-import { getPublicCaseStudies } from '../../../../lib/case-studies';
+import { getAllCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, brandSlug, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement } from '../../../../lib/index-history';
 import { brandEvidence } from '../../../../lib/evidence-strength';
@@ -21,22 +21,26 @@ export const contentType = 'image/png';
 
 export default async function Image({ params }: { params: Promise<{ brand: string }> }) {
   const { brand } = await params;
-  const ranked = rankIndex(getPublicCaseStudies());
+  // Rank over ALL scored works — must match the Index page and the brand page,
+  // or a shared card reports a different rank than the page it links to.
+  const ranked = rankIndex(getAllCaseStudies());
   const entry = ranked.find((e) => brandSlug(e.brand) === brand);
 
   if (!entry) {
-    // Fallback for stale slugs — never 500 the unfurl.
-    const top = ranked[0];
+    // Fallback for stale slugs — never 500 the unfurl. Render a neutral house
+    // card: the old fallback rendered the TOP-RANKED brand's card, so an unknown
+    // slug unfurled as another brand's score. Attributing one brand's rating to
+    // another is the worst failure this surface can have.
     return renderIndexCard({
-      brand: top?.brand ?? 'MonoKromatik',
-      score: top?.score ?? 0,
-      rank: top?.rank ?? 1,
+      brand: 'The Cultural-Signal Index',
+      score: 0,
+      rank: 0,
       total: ranked.length || 1,
     });
   }
 
   const movement = getMovement(brand);
-  const works = getPublicCaseStudies().filter((c) => brandSlug(c.brand) === brand);
+  const works = getAllCaseStudies().filter((c) => brandSlug(c.brand) === brand);
   const evidence = brandEvidence(works);
   return renderIndexCard({
     brand: entry.brand,
