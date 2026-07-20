@@ -2,7 +2,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database, PenLine, FileCheck2 } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
-import { AXIS_WEIGHTS } from '../../../../lib/signal-index';
+import SignalScore from '../../../components/SignalScore';
+import { AXIS_WEIGHTS, SIGNAL_BANDS, compositeScore } from '../../../../lib/signal-index';
+import { getCaseStudyBySlug } from '../../../../lib/case-studies';
 
 export const revalidate = 3600;
 
@@ -108,6 +110,115 @@ export default function MethodologyPage() {
           <p className="mt-5 font-body text-sm text-mono-gray">
             Composite = Σ ( axis level ÷ 5 × axis weight ) × 100, rounded. A brand&rsquo;s Index score is the mean
             composite across its scored works.
+          </p>
+        </section>
+
+        {/* The published band cut-offs. Brand Finance, Interbrand, Kantar and YouGov
+            all publish a score; none publishes the boundaries behind it. Ours are
+            fixed and versioned — changing them is a dated methodology change. */}
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <Scale className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE BANDS</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+            A rating, not a mark out of a hundred.
+          </h2>
+          <p className="mt-6 font-body text-lg text-mono-charcoal leading-relaxed">
+            The composite maps to a letter band. The cut-offs are fixed and published here — most rating
+            providers publish a score but keep the boundaries behind it private. Ours are open, so anyone can
+            check that a number and its band agree.
+          </p>
+          <div className="mt-8 border border-mono-gray/25 bg-mono-white">
+            {SIGNAL_BANDS.map((b, i) => {
+              const upper = i === 0 ? 100 : SIGNAL_BANDS[i - 1].min - 1;
+              return (
+                <div key={b.band} className="flex items-center gap-4 px-5 py-4 border-b border-mono-gray/15 last:border-b-0">
+                  <span className="w-14 shrink-0 text-center text-sm font-display font-bold text-mono-black border border-mono-black/25 py-1">
+                    {b.band}
+                  </span>
+                  <span className="w-20 shrink-0 text-sm font-display font-bold text-mono-gray tabular-nums">
+                    {b.min === 0 ? '< 40' : `${b.min}–${upper}`}
+                  </span>
+                  <span className="font-body text-sm text-mono-charcoal">{b.label}</span>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Worked examples — computed from the live data, so the page can never
+            drift from the scores it claims to explain. One at each end of the
+            scale: a rating that only publishes its top band isn't a rating. */}
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <FileCheck2 className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">WORKED EXAMPLES</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+            Here is the arithmetic, on two real works.
+          </h2>
+          <p className="mt-6 font-body text-lg text-mono-charcoal leading-relaxed">
+            One at the top of the scale and one near the bottom. Both are live case studies; the numbers below are
+            read from the same data that powers the Index, so they cannot drift from what we actually published.
+          </p>
+          <div className="mt-8 space-y-8">
+            {(['checkers-sixty60-retail-moat', 'showmax-relaunch-under-canal'] as const).map((slug) => {
+              const study = getCaseStudyBySlug(slug);
+              if (!study || study.decode.length === 0) return null;
+              const total = compositeScore(study.decode);
+              return (
+                <div key={slug} className="border border-mono-gray/25 bg-mono-white">
+                  <div className="flex items-start justify-between gap-5 p-5 md:p-6 border-b border-mono-gray/25">
+                    <div className="min-w-0">
+                      <p className="text-[11px] tracking-[0.22em] font-display font-bold text-mono-amber-strong">
+                        {study.brand.toUpperCase()}
+                      </p>
+                      <Link
+                        href={`/intelligence/case-studies/${study.slug}`}
+                        className="mt-1 block font-display font-bold text-lg md:text-xl text-mono-black hover:text-mono-amber-strong"
+                      >
+                        {study.title}
+                      </Link>
+                    </div>
+                    {total !== null && <SignalScore score={total} />}
+                  </div>
+                  <table className="w-full text-sm font-body">
+                    <tbody>
+                      {study.decode.map((d) => {
+                        const w = AXIS_WEIGHTS[d.label] ?? 0;
+                        return (
+                          <tr key={d.label} className="border-b border-mono-gray/15">
+                            <td className="px-5 py-3 text-[11px] tracking-[0.18em] font-display font-bold text-mono-black whitespace-nowrap">
+                              {d.label}
+                            </td>
+                            <td className="px-3 py-3 text-mono-charcoal tabular-nums whitespace-nowrap">
+                              {d.level} ÷ 5 × {w.toFixed(2)}
+                            </td>
+                            <td className="px-5 py-3 text-right font-display font-bold text-mono-black tabular-nums">
+                              {((d.level / 5) * w * 100).toFixed(1)}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                      <tr className="bg-mono-soft-white">
+                        <td className="px-5 py-3 text-[11px] tracking-[0.18em] font-display font-bold text-mono-black" colSpan={2}>
+                          COMPOSITE
+                        </td>
+                        <td className="px-5 py-3 text-right font-display font-bold text-mono-black tabular-nums">
+                          {total}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-6 font-body text-sm text-mono-gray leading-relaxed">
+            The gap between them is the whole point. Both are competent, well-resourced products built for the same
+            continent. What separates a 95 from a 43 is not craft — it is who ended up owning the thing that was
+            built, and whether anything verifiable followed.
           </p>
         </section>
 
