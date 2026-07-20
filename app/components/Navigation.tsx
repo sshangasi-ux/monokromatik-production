@@ -36,7 +36,10 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-mono-black/95 backdrop-blur-md border-b border-mono-white/10">
+      {/* Named landmark: this page also renders the footer's three <nav> columns,
+          and multiple same-role landmarks need distinct accessible names or a
+          screen-reader's landmark list reads "navigation" four times. */}
+      <nav aria-label="Primary" className="fixed top-0 left-0 right-0 z-50 bg-mono-black/95 backdrop-blur-md border-b border-mono-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="font-display text-2xl font-bold tracking-tight group shrink-0">

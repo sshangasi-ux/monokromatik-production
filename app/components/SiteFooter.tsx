@@ -45,17 +45,22 @@ export default function SiteFooter() {
             </a>
           </div>
 
+          {/* Each column is its own navigation landmark, named by the heading
+              already on screen (aria-labelledby, not a duplicated aria-label, so
+              the accessible name and the visible label can never drift apart).
+              Without names, these three plus the primary nav all announce as
+              "navigation" and the landmark list is useless. */}
           <div>
-            <p className={head}>EXPLORE</p>
-            <nav className={col}>{EXPLORE.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
+            <p className={head} id="footer-explore">EXPLORE</p>
+            <nav className={col} aria-labelledby="footer-explore">{EXPLORE.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
           </div>
           <div>
-            <p className={head}>COMPANY</p>
-            <nav className={col}>{COMPANY.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
+            <p className={head} id="footer-company">COMPANY</p>
+            <nav className={col} aria-labelledby="footer-company">{COMPANY.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
           </div>
           <div>
-            <p className={head}>LEGAL</p>
-            <nav className={col}>{LEGAL.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
+            <p className={head} id="footer-legal">LEGAL</p>
+            <nav className={col} aria-labelledby="footer-legal">{LEGAL.map((l) => <Link key={l.href} href={l.href} className={link}>{l.label}</Link>)}</nav>
           </div>
         </div>
 
