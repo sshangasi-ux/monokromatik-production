@@ -69,6 +69,18 @@ export interface CaseStudy {
   publishedAt: string;
   tags?: string[];
   decode: CaseStudyDecode[];
+  /** The scoring rubric this decode was set under (docs/SCORING-RUBRIC.md).
+   *  Scores are versioned, not permanent — re-scoring under a new rubric is a
+   *  disclosed methodology change, never a silent edit. */
+  rubricVersion?: string;
+  /** ISO date the decode was last set/reviewed. */
+  scoredOn?: string;
+  /** Why this work carries no score. Set ONLY with an empty `decode` — the work
+   *  is not scoreable yet (typically: the event has not happened). Publishing a
+   *  number for something that hasn't occurred rates a forecast, not work, and
+   *  a low number is the same error as a high one. Rendered in place of the
+   *  decode matrix so the absence is stated, never a silently empty section. */
+  scoreWithheld?: string;
   // The six-dimension analysis — each is an array of paragraphs.
   context: string[];
   strategicBet: string[];

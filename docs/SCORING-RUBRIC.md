@@ -92,6 +92,18 @@ both. That is the cheapest credibility available to an independent index.
 > A score of **5 requires evidence a third party could check.** Our own reporting is not
 > evidence of consequence.
 
+> ### Don't score what hasn't happened
+> **A work that has not yet taken place is not scored at all.** No decode, no composite —
+> `decode: []` plus a `scoreWithheld` line stating why, published in place of the matrix.
+>
+> Rating a forecast is a category error, and **a low score is the same error as a high one**:
+> both assert a verdict on something with no result to verify. Two works in the v1 corpus were
+> scored months before the event they described (AfroPlus Fest, September 2026; Dakar 2026),
+> one of them at 80/100 — including EXECUTION 4 for an event nobody had seen.
+>
+> Withholding is not a gap in the Index. It is the Index declining to guess, and it is stated
+> on the page. Score it after the event, on what it actually did.
+
 ---
 
 ## Scoring rules
