@@ -6620,28 +6620,7 @@
       "gender parity",
       "sport"
     ],
-    "decode": [
-      {
-        "label": "IDEA",
-        "level": 5,
-        "note": "The first Olympic event on African soil, staged with the first gender-equal Games programme (153 events) — a genuine first that changes what the format itself contains. Holds."
-      },
-      {
-        "label": "AUTHORSHIP",
-        "level": 3,
-        "note": "Dropped from 4. Senegal hosts and shapes programme elements, which is real participation in the making — but the rings, the format, the rights and the commercial rails are IOC property under a host contract. A 4 requires meaningful ownership; the evidence shows convening, not owning."
-      },
-      {
-        "label": "EXECUTION",
-        "level": 3,
-        "note": "Dropped from 4. The Games are staged late 2026 and had not taken place at publication. Athlete counts and venue lists are plan figures, not delivered execution. Nothing has been made yet to judge."
-      },
-      {
-        "label": "CONSEQUENCE",
-        "level": 3,
-        "note": "Dropped from 5. The clearest misapplication in the batch: an unstaged event scored as a durable verified outcome. The entry itself states no economic or legacy outcomes are claimed. A hosting award and a stated intention cap at 3 under the announcement rule."
-      }
-    ],
+    "decode": [],
     "context": [
       "From 31 October to 13 November 2026, Senegal hosts the 4th Summer Youth Olympic Games — the first Olympic event ever staged in Africa. Around 2,700 athletes under 18 compete across venues in Dakar, Diamniadio and Saly. Reported by the IOC / Olympics.com, the edition is the first Summer YOG with full gender parity: 153 events split 73 women’s, 73 men’s and 7 mixed, under the motto “Africa Welcomes, Dakar Celebrates.”",
       "After more than a century of the modern Olympics, the continent finally hosts — and chose to make its debut a record of firsts."
@@ -6709,8 +6688,7 @@
         "sourceHref": "https://www.olympics.com/en/olympic-games/dakar-2026"
       }
     ],
-    "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoreWithheld": "The Dakar 2026 Youth Olympic Games had not opened at publication. We do not score work that has not happened. The strategic read stands; the score follows the Games, on evidence of what Senegal actually captured."
   },
   {
     "slug": "ayra-starr-global-brand-ambassador",
@@ -8361,28 +8339,7 @@
       "live music",
       "hip-hop"
     ],
-    "decode": [
-      {
-        "label": "IDEA",
-        "level": 3,
-        "note": "Lowered from 4. A stadium festival billing Afrobeats alongside hip-hop is the diaspora live sector's conventional play by 2026, with established precedents. Competent and conventional, run at scale."
-      },
-      {
-        "label": "AUTHORSHIP",
-        "level": 3,
-        "note": "Lowered from 4. The confirmed evidence names a venue, dates and headliners — nothing else. Who promotes, owns or capitalises the festival is not evidenced anywhere in the entry, so 'diaspora-built' is asserted, not shown. African artists are confirmed as the draw, which supports participation in the making; ownership is unestablished."
-      },
-      {
-        "label": "EXECUTION",
-        "level": 2,
-        "note": "Lowered from 4. The event is dated 4–6 September 2026 and the entry was published in June 2026 — the festival had not happened. There is no execution to assess beyond a billing, and scoring an unheld event 4 on how well it was made is not defensible under the rubric."
-      },
-      {
-        "label": "CONSEQUENCE",
-        "level": 2,
-        "note": "Lowered from 4. A lineup reveal for a future event, with attendance, ticket revenue and box office all explicitly notClaimed. The announcement rule caps this at 3, and since the event had not yet occurred there is not even an announced outcome to weigh — little discernible consequence, which is a 2."
-      }
-    ],
+    "decode": [],
     "context": [
       "Wizkid and Davido are among the headliners of AfroPlus Fest 2026 at Northwest Stadium in Washington, D.C. (4–6 September), sharing the bill with major hip-hop acts — reported by Revolt, which frames it as proof Afrobeats and Hip-Hop “are closer than ever.”",
       "African artists are not guesting on someone else’s festival; they are anchoring a stadium event aimed squarely at the diaspora market."
@@ -8450,8 +8407,7 @@
         "sourceHref": "https://www.revolt.tv/article/afroplus-fest-2026-lineup-wizkid-davido-lil-baby-latto"
       }
     ],
-    "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoreWithheld": "AfroPlus Fest runs 4–6 September 2026. At publication it had not taken place. We do not score work that has not happened — a forecast is not a result, and a low score would be the same error as a high one. This piece will be scored after the event, on what it actually did."
   },
   {
     "slug": "rema-diesel-aw26-afrobeats-runway",

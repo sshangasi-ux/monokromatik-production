@@ -58,6 +58,13 @@ caseStudies.forEach((c, i) => {
     if (!nonEmpty(d.label)) at(`decode[${j}].label missing`);
     if (typeof d.level !== 'number' || d.level < 1 || d.level > 5) at(`decode[${j}].level invalid (${d.level})`);
   });
+  // An empty decode renders a headed section with nothing under it — the same
+  // silent-blank class of bug as string lessons. Withholding a score is a valid
+  // editorial act (e.g. the event hasn't happened), but it must be STATED.
+  if (isArr(c.decode) && (c.decode as unknown[]).length === 0 && !nonEmpty(c.scoreWithheld))
+    at('empty decode needs scoreWithheld explaining why, or the decode section renders blank');
+  if (nonEmpty(c.scoreWithheld) && isArr(c.decode) && (c.decode as unknown[]).length > 0)
+    at('scoreWithheld is set but decode is populated — a work is scored or withheld, not both');
 
   for (const k of ['context', 'strategicBet', 'creativeMove', 'africanRead']) {
     if (!isArr(c[k])) at(`${k} must be an array (renders with .map)`);

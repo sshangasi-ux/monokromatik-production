@@ -100,6 +100,19 @@ export default async function CaseStudyFeature({
                 <SignalScore score={signalScore} size="lg" />
               </div>
             )}
+            {/* A work we have deliberately not scored — say so, in place of the
+                matrix. An empty grid under a heading reads as a rendering bug. */}
+            {c.decode.length === 0 && c.scoreWithheld && (
+              <div className="not-prose mt-6 border border-mono-gray/25 bg-mono-white p-5">
+                <span className="text-[11px] tracking-[0.22em] font-display font-bold text-mono-amber-strong">
+                  NOT SCORED
+                </span>
+                <p className="mt-3 text-sm font-body text-mono-charcoal leading-relaxed">
+                  {c.scoreWithheld}
+                </p>
+              </div>
+            )}
+            {c.decode.length > 0 && (
             <div className="not-prose mt-6 grid sm:grid-cols-2 gap-px border border-mono-gray/25 bg-mono-gray/25">
               {c.decode.map((d) => (
                 <div key={d.label} className="bg-mono-white p-5">
@@ -113,6 +126,7 @@ export default async function CaseStudyFeature({
                 </div>
               ))}
             </div>
+            )}
           </FeatureSection>
 
           <FeatureSection title="The context">
