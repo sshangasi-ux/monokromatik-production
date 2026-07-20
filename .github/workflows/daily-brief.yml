@@ -66,14 +66,26 @@ jobs:
           # daily reports — searchable in the repo, no PR/CI noise. The brief is also
           # emailed (Resend) and posted to this run summary.
           git fetch origin daily-briefs >/dev/null 2>&1 || true
-          # Set the freshly-generated brief aside so switching to daily-briefs can't
-          # collide with a same-day copy already on that branch (a manual re-run),
-          # then restore it so the newest brief wins and the step never fails.
-          git stash push -u -- docs/briefs >/dev/null 2>&1 || true
+          # Carry the freshly-generated brief across the branch switch via a temp dir.
+          #
+          # This used to use `git stash push -u` + `git checkout stash@{0} -- docs/briefs`,
+          # which SILENTLY DROPPED THE BRIEF ON EVERY RUN: `docs/briefs` does not exist on
+          # main, so the new file is always UNTRACKED, and `stash push -u` stores untracked
+          # entries in stash@{0}^3 — not stash@{0}. The restore therefore never matched,
+          # failed quietly behind `|| true`, and the step exited "already current" with
+          # nothing staged. The archive silently stopped for a week while the email kept
+          # sending, so nothing looked broken. A plain copy has no such semantics.
+          BRIEF_TMP="$(mktemp -d)"
+          cp -R docs/briefs/. "$BRIEF_TMP"/ 2>/dev/null || true
           git checkout -B daily-briefs origin/daily-briefs 2>/dev/null || git checkout -B daily-briefs
-          git checkout stash@{0} -- docs/briefs >/dev/null 2>&1 || true
-          git stash drop >/dev/null 2>&1 || true
+          mkdir -p docs/briefs
+          cp -R "$BRIEF_TMP"/. docs/briefs/ 2>/dev/null || true
+          rm -rf "$BRIEF_TMP"
           git add docs/briefs
+          # Prove the file survived the switch — never publish an empty commit silently.
+          if [ -z "$(git status --porcelain --staged docs/briefs 2>/dev/null)" ] && git diff --cached --quiet; then
+            echo "⚠️ Brief did not survive the branch switch — investigate." >> "$GITHUB_STEP_SUMMARY"
+          fi
           if git diff --cached --quiet; then
             echo "Brief already current on daily-briefs — nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
