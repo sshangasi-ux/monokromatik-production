@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-07-20T07:25:21.431Z",
+  "updatedAt": "2026-07-21T11:58:19.266Z",
   "breaks": [
+    {
+      "title": "Ghana, World Gold Council sign $250,000 deal to clean up artisanal mining sector",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/ghana-world-gold-council-sign-250000-deal-to-clean-up-artisanal-mining-sector/",
+      "pubDate": "Tue, 21 Jul 2026 10:33:00 +0000",
+      "importance": 5,
+      "why": "Signal: sign, $ · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-07-21T11:58:19.266Z"
+    },
+    {
+      "title": "PACE Coaches Clinic 2026 Returns To Raise The Standard Of Basketball Coaching In Nigeria",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/pace-coaches-clinic-2026-returns-to-raise-the-standard-of-basketball-coaching-in-nigeria/",
+      "pubDate": "Tue, 21 Jul 2026 10:58:53 +0000",
+      "importance": 4,
+      "why": "Signal: raise · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-07-21T11:58:19.266Z"
+    },
     {
       "title": "Done Deal: Fenerbahçe Sign Nigerian Midfielder",
       "source": "Complete Sports",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "ESSENCE honours major Black women artists (Brandy, Missy Elliott, Kandi); African-diaspora culture economy",
       "detectedAt": "2026-06-25T18:24:09.073Z"
-    },
-    {
-      "title": "NBA Draft 2026: Over 10 Players Of African Heritage Selected, Nigeria Produces Six Draftees",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/nba-draft-2026-over-10-players-of-african-heritage-selected-nigeria-produces-six-draftees/",
-      "pubDate": "Thu, 25 Jun 2026 14:51:52 +0000",
-      "importance": 4,
-      "why": "NBA Draft: six Nigerian players selected — African diaspora sports/athlete achievement in major global event",
-      "detectedAt": "2026-06-25T15:45:05.176Z"
-    },
-    {
-      "title": "Morocco breaks Nigeria's World Cup record",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/sports/morocco-breaks-nigerias-world-cup-record/",
-      "pubDate": "Thu, 25 Jun 2026 12:45:57 +0000",
-      "importance": 4,
-      "why": "Morocco breaks Nigeria's World Cup qualification record — major African sports achievement with diaspora significance",
-      "detectedAt": "2026-06-25T13:33:00.465Z"
     }
   ]
 }
