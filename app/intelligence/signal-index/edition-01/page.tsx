@@ -234,7 +234,7 @@ export default function EditionOnePage() {
             title="A worked scorecard"
             subtitle={`${lead.brand} — the highest-rated work in Edition ${EDITION.number}.`}
             source={`${lead.brand} · scored work`}
-            note="The card shows a band, not a rank. With 34 distinct scores across 70 works, rank between tied works is arithmetic noise; the band is the honest position."
+            note={`The card shows a band, not a rank. With only ${lim.ties.distinctScores} distinct scores across ${stats.works} works, rank between tied works is arithmetic noise; the band is the honest position.`}
           >
             <WorkScorecard
               brand={lead.brand}
