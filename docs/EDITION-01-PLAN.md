@@ -100,6 +100,64 @@ campaign. Saying so first is cheaper than being caught.
 
 ---
 
+## 2b. 🔴 Edition 01 has no legitimate movement — and the fix is an outlook
+
+**The problem.** The 20 July 2026 snapshot is the *only* v2.0 snapshot; all six before it are
+v1. Our own code correctly refuses to compute movement across that boundary. So Edition 01 has
+**no legitimate year-over-year deltas at all** — and "movement is the product" has nothing to
+stand on in the first edition. Publishing any delta would be publishing the rebase as brand
+movement, which is the one thing we have already built guards against.
+
+**The fix, borrowed from S&P and Moody's — who have a device Brand Finance entirely lacks:**
+
+| Device | Definition |
+|---|---|
+| **Outlook** | Assigned where there is **at least a one-in-three likelihood** of a rating action over the intermediate term. Positive / Negative / Stable / Developing. |
+| **Watch** | **At least a one-in-two likelihood** of a change **within 90 days**. |
+
+A watchlist without a stated probability and a clock is just a mood. Both numbers are the
+whole point — they are what make it a rating instrument rather than a hunch.
+
+**Why this is the highest-leverage missing mechanic:**
+- An outlook is **forward-looking, so it needs no history.** It is the only device that gives
+  Edition 01 a movement story on day one.
+- It converts a frozen annual into a live surface, which is the plan's own "cadence beats scale"
+  conclusion made concrete.
+- Brand Finance freezes every rating for 12 months and publishes **no outlooks at all**. This is
+  a place where a one-operator outlet genuinely beats a global incumbent, at near-zero cost.
+
+**Also free: treat an affirmation as a publishable event.** Moody's does. "We looked again and
+nothing changed, here is why" is content, and it is cadence without new scoring.
+
+**And take the second headline.** Brand Finance splits "most valuable" from "strongest" so a
+smaller entrant wins something — in Africa 200, MTN leads on value while Tusker leads on
+strength. Our free second headline is the **AUTHORSHIP winner**: a different, more on-thesis
+story than the composite winner, from the same dataset at zero extra cost.
+
+---
+
+## 2c. What we cannot borrow — and must say out loud
+
+Henley's method has **zero judgement in it**: 1 point per visa-free destination, "no additional
+weighting or calculations applied," over licensed IATA data. Its credibility is borrowed
+wholesale from IATA; its originality is entirely in the framing.
+
+**We are the exact inverse — 100% analyst judgement, no external data spine.** We can copy
+Henley's *distribution* model and none of its *credibility* model. Everything that carries
+authority for us has to come from the rubric, the worked examples, the corrections route and
+the right of reply. The plan already assumes this; it needs to be stated on the page, because
+it is the first thing a hostile reader attacks.
+
+**Related honesty check:** our AAA share is **7.2%** (5 of 69). That is Brand-Finance-generous,
+not S&P-scarce — S&P has 7 AAA issuers *globally*. The two are not comparable and we must never
+imply they are. The empty C band is worth one line of disclosure, not a fix.
+
+**Unverified — do not print without checking:** the Henley mobility-gap arithmetic (192 − 24 =
+168) and the "UAE angle published same day" claim cited in §2 and §8 could not be confirmed
+against a primary source before the research budget ran out.
+
+---
+
 ## 3. Charts we must never build
 
 - **Sankey / transition matrix / alluvial from v1 bands to v2.0 bands.** The canonical

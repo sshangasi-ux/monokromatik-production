@@ -246,13 +246,24 @@ export default function MethodologyPage() {
             <GitBranch className="text-mono-amber" size={22} />
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE ROLLUP</p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">Work, to brand, to Index.</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">We rate the work.</h2>
           <p className="mt-6 font-body text-lg text-mono-charcoal leading-relaxed">
-            Scoring happens at the level of a single <strong>work</strong> — a specific case study, with evidence. A
-            <strong> brand&rsquo;s</strong> position is the mean of its scored works, so one strong campaign doesn&rsquo;t
-            permanently define a brand, and a brand earns its rank across a body of work. The <strong>Index</strong> is
-            every scored brand, ranked. As new case studies are decoded, brands move — and the monthly snapshot records
-            that movement so the ranking has a memory.
+            Scoring happens at the level of a single <strong>work</strong> — a specific case study, with evidence
+            attached. That is the unit we stand behind, and it is what the Index ranks.
+          </p>
+          {/* Stated plainly because it is the first thing a competent critic checks. The
+              brand roll-up is real arithmetic but, at one work for almost every brand, it
+              is not yet a track record — and the page must not imply that it is. */}
+          <p className="mt-5 font-body text-lg text-mono-charcoal leading-relaxed">
+            A <strong>brand&rsquo;s</strong> position is the mean of its scored works. Today that mean is drawn from a
+            single work for almost every brand in the Index, so treat a brand-level score as a reading of{' '}
+            <em>that work</em>, not a verdict on the organisation&rsquo;s record. A brand only earns a track record once
+            it carries several scored works, and we say how many each one has beside its score.
+          </p>
+          <p className="mt-5 font-body text-lg text-mono-charcoal leading-relaxed">
+            As new case studies are decoded, positions move — and the snapshot records that movement so the ranking has
+            a memory. Movement is only ever computed between snapshots scored under the same rubric: a re-scoring
+            changes the ruler, not the work, and we will not publish it as though brands had moved.
           </p>
         </section>
 
