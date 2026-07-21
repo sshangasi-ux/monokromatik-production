@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
 import { SignalStrength } from '../../../components/dataviz/Charts';
 import { getAllCaseStudies } from '../../../../lib/case-studies';
-import { rankIndex, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
+import { rankIndex, rankWorks, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement, getBrandHistory } from '../../../../lib/index-history';
 import { brandEvidence, describeEvidence } from '../../../../lib/evidence-strength';
 import Sparkline from '../Sparkline';
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entry = rankIndex(getAllCaseStudies()).find((e) => brandSlug(e.brand) === brand);
   if (!entry) return { title: 'Brand not found | MonoKromatik' };
   const title = `${entry.brand} — Cultural-Signal Index | MonoKromatik`;
-  const description = `${entry.brand} scores ${entry.score}/100 on the MonoKromatik Cultural-Signal Index (rank #${entry.rank}).`;
+  const description = `${entry.brand} averages ${entry.score}/100 across ${entry.works} scored ${entry.works === 1 ? 'work' : 'works'} on the MonoKromatik Cultural-Signal Index.`;
   // og:image is supplied by the co-located opengraph-image route (the share-card).
   return {
     title,
@@ -53,6 +53,9 @@ export default async function BrandIndexPage({ params }: PageProps) {
   const movement = getMovement(brand);
   const history = getBrandHistory(brand);
   const peers = ranked.filter((e) => brandSlug(e.brand) !== brand && Math.abs(e.score - entry.score) <= 4).slice(0, 5);
+  // The Index ranks works, so this brand's standing IS its best-ranked work.
+  const allWorks = rankWorks(studies);
+  const bestWork = allWorks.find((w) => w.brandSlug === brand) ?? null;
 
   // JSON-LD: this brand's score as a structured, citable PropertyValue inside the
   // Cultural-Signal Index Dataset (per-brand discoverability for search + AI engines).
@@ -100,8 +103,11 @@ export default async function BrandIndexPage({ params }: PageProps) {
           <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] font-display font-bold text-mono-gray hover:text-mono-amber-bright transition-colors mb-12">
             <ArrowLeft size={14} /> THE INDEX
           </Link>
+          {/* The Index ranks WORK, so this page reports the brand's best-ranked
+              work rather than inventing a brand rank the Index no longer keeps. */}
           <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber-bright mb-6">
-            RANK #{entry.rank} OF {ranked.length}
+            {bestWork ? <>BEST-RANKED WORK #{bestWork.rank} OF {allWorks.length}</> : <>UNRANKED</>}
+            {' '}· {entry.works} SCORED {entry.works === 1 ? 'WORK' : 'WORKS'}
             {movement?.rebased ? (
               <span className="text-mono-gray"> · REBASED — RUBRIC {movement.rubricTo?.toUpperCase()}</span>
             ) : movement && movement.scoreDelta !== 0 ? (
@@ -133,8 +139,8 @@ export default async function BrandIndexPage({ params }: PageProps) {
               slug={brand}
               brand={entry.brand}
               score={entry.score}
-              rank={entry.rank!}
-              total={ranked.length}
+              rank={bestWork?.rank ?? 0}
+              total={allWorks.length}
               scoreDelta={movement?.scoreDelta ?? null}
             />
           </div>

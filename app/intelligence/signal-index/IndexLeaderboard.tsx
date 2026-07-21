@@ -11,7 +11,12 @@ const AXES = ['IDEA', 'AUTHORSHIP', 'EXECUTION', 'CONSEQUENCE'] as const;
 
 export interface LeaderEntry {
   brand: string;
+  /** The work's title — the Index ranks works, so this is the row's headline. */
+  title: string;
+  /** The WORK slug. Identity of the row, and the case-study link. */
   slug: string;
+  /** The brand slug — used for following and for the brand roll-up page. */
+  brandSlug: string;
   score: number;
   rank: number;
   works: number;
@@ -38,12 +43,12 @@ type Lens = 'signal' | 'authorship' | 'evidence';
 
 function Movement({ m, isNew }: { m: LeaderEntry['movement']; isNew: boolean }) {
   if (isNew) return <span className="text-[10px] font-display font-bold tracking-[0.16em] text-mono-amber-strong">NEW</span>;
-  // A rubric change is not movement. Show the rebase rather than a delta.
+  // A change of rubric OR of ranking unit is not movement. Show the rebase.
   if (m?.rebased)
     return (
       <span
         className="text-[10px] font-display font-bold tracking-[0.12em] text-mono-gray"
-        title={`Rescored under rubric ${m.rubricTo} — not comparable to ${m.rubricFrom} scores`}
+        title={`Index basis changed: ${m.rubricFrom} → ${m.rubricTo}. Earlier readings are not comparable.`}
       >
         REBASED
       </span>
@@ -77,8 +82,8 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
     const q = query.trim().toLowerCase();
     const list = entries.filter(
       (e) =>
-        (!q || e.brand.toLowerCase().includes(q)) &&
-        (!followingOnly || followed.includes(e.slug)) &&
+        (!q || e.brand.toLowerCase().includes(q) || e.title.toLowerCase().includes(q)) &&
+        (!followingOnly || followed.includes(e.brandSlug)) &&
         (!market || e.market === market) &&
         inBand(e.score, band)
     );
@@ -92,7 +97,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
   }, [entries, query, lens, followingOnly, followed, market, band]);
 
   // On-site score-change alert: followed brands that moved in the latest update.
-  const movedFollowed = entries.filter((e) => followed.includes(e.slug) && e.movement && e.movement.scoreDelta !== 0);
+  const movedFollowed = entries.filter((e) => followed.includes(e.brandSlug) && e.movement && e.movement.scoreDelta !== 0);
 
   const toggle = (slug: string) =>
     setSelected((s) => (s.includes(slug) ? s.filter((x) => x !== slug) : s.length >= 3 ? s : [...s, slug]));
@@ -113,7 +118,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Find a brand…"
+            placeholder="Find a work or brand…"
             aria-label="Search the Index"
             className="w-full pl-9 pr-3 py-2.5 bg-mono-paper border border-mono-gray/30 font-body text-mono-black placeholder:text-mono-gray focus:outline-none focus:border-mono-amber"
           />
@@ -197,7 +202,8 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
           <div className="grid gap-5" style={{ gridTemplateColumns: `repeat(${chosen.length}, minmax(0,1fr))` }}>
             {chosen.map((e) => (
               <div key={e.slug}>
-                <p className="font-display font-bold text-mono-black truncate">{e.brand}</p>
+                <p className="text-[10px] tracking-[0.16em] font-display font-bold text-mono-amber-strong truncate">{e.brand.toUpperCase()}</p>
+                <p className="font-display font-bold text-mono-black truncate">{e.title}</p>
                 <p className="text-3xl font-display font-bold text-mono-black tabular-nums mt-1">
                   {e.score}<span className="text-sm text-mono-gray"> /100</span>
                   <span className="ml-2 align-middle inline-block text-[10px] font-display font-bold tracking-[0.08em] border border-mono-black/25 px-1.5 py-0.5">{signalBand(e.score)?.band}</span>
@@ -229,14 +235,15 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             <div className="flex items-center gap-4 px-5 py-5 md:px-7">
               <span className="w-7 shrink-0 font-display font-bold text-mono-gray text-lg tabular-nums">{e.rank}</span>
               <div className="min-w-0 flex-1">
-                <p className="font-display font-bold text-mono-black text-lg md:text-xl truncate group-hover:text-mono-amber transition-colors">{e.brand}</p>
+                <p className="text-[11px] tracking-[0.16em] font-display font-bold text-mono-amber-strong truncate">{e.brand.toUpperCase()}</p>
+                <p className="font-display font-bold text-mono-black text-lg md:text-xl truncate group-hover:text-mono-amber transition-colors mt-0.5">{e.title}</p>
                 <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1">
-                  {e.works} {e.works === 1 ? 'WORK' : 'WORKS'} · AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
+                  AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
                   {e.evidenceTier && <> · <span className={tierClass(e.evidenceTier)}>EVIDENCE {e.evidenceTier.toUpperCase()}</span></>}
                 </p>
               </div>
               {/* Follow star — omitted in compare mode to avoid nested buttons. */}
-              {!compareMode && <FollowButton slug={e.slug} variant="icon" />}
+              {!compareMode && <FollowButton slug={e.brandSlug} variant="icon" />}
               <span className="w-10 shrink-0 text-center"><Movement m={e.movement} isNew={e.isNew} /></span>
               <span className="shrink-0 text-right w-16">
                 <span className="block text-3xl font-display font-bold text-mono-black leading-none tabular-nums">{e.score}</span>
@@ -256,7 +263,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
                   {Row}
                 </button>
               ) : (
-                <Link href={`/intelligence/signal-index/${e.slug}`} className="block hover:bg-mono-white transition-colors">
+                <Link href={`/intelligence/case-studies/${e.slug}`} className="block hover:bg-mono-white transition-colors">
                   {Row}
                 </Link>
               )}

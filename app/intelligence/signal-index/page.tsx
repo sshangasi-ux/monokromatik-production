@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import TrackView from '../../components/TrackView';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getAllCaseStudies } from '../../../lib/case-studies';
-import { rankIndex, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
+import { rankWorks, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
 import { evidenceByBrand } from '../../../lib/evidence-strength';
 import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
@@ -29,37 +29,38 @@ const AXES: [string, string][] = [
 ];
 
 export default function SignalIndexPage() {
-  // Rank ALL scored works — the Index publishes the RATINGS (public, like any
-  // rating agency); premium case studies still gate their full decode on the
-  // case-study page. Using public-only here would drop top-scored premium works
-  // off the league table and hollow the moat.
+  // THE INDEX RANKS WORK, NOT BRANDS. The unit we assess is a single work with
+  // evidence attached; almost every brand carries exactly one, so a brand-level
+  // league table would dress one judgement up as a track record. The brand
+  // roll-up still exists on the per-brand pages, correctly framed as a mean.
+  // Ratings are public even where the analysis is gated, so premium works are
+  // ranked here too — public-only would drop top-scored works off the table.
   const studies = getAllCaseStudies();
-  const ranked = rankIndex(studies);
+  const ranked = rankWorks(studies);
   const top = ranked[0]?.score ?? 0;
   const mean = ranked.length ? Math.round(ranked.reduce((s, e) => s + e.score, 0) / ranked.length) : 0;
-  const totalWorks = ranked.reduce((s, e) => s + e.works, 0);
+  const totalWorks = ranked.length;
+  const totalBrands = new Set(ranked.map((e) => e.brandSlug)).size;
 
-  // First market seen per brand — powers the market/region filter.
   const marketBySlug = new Map<string, string>();
-  for (const cs of studies) {
-    const s = brandSlug(cs.brand);
-    if (cs.market && !marketBySlug.has(s)) marketBySlug.set(s, cs.market);
-  }
+  for (const cs of studies) if (cs.market) marketBySlug.set(cs.slug, cs.market);
 
+  // Evidence strength is computed per brand; a work inherits its brand's reading.
   const evidence = evidenceByBrand(studies);
   const leaderEntries: LeaderEntry[] = ranked.map((e) => {
-    const slug = brandSlug(e.brand);
-    const ev = evidence.get(slug);
+    const ev = evidence.get(e.brandSlug);
     return {
       brand: e.brand,
-      slug,
+      title: e.title,
+      slug: e.slug,
+      brandSlug: e.brandSlug,
       score: e.score,
-      rank: e.rank!,
-      works: e.works,
-      axisAverages: e.axisAverages,
-      market: marketBySlug.get(slug) ?? '',
-      movement: getMovement(slug),
-      isNew: isNewlyRanked(slug),
+      rank: e.rank,
+      works: 1,
+      axisAverages: e.levels,
+      market: marketBySlug.get(e.slug) ?? '',
+      movement: getMovement(e.slug),
+      isNew: isNewlyRanked(e.slug),
       evidenceScore: ev?.score ?? null,
       evidenceTier: ev?.tier ?? null,
     };
@@ -70,10 +71,16 @@ export default function SignalIndexPage() {
   // After a re-scoring, movement since the last snapshot is not movement — it is
   // the scale changing. Say that plainly instead of narrating climbs and falls
   // that never happened.
+  // `rubricFrom`/`rubricTo` carry the full comparability basis, "<rubric>/<unit>".
+  // A change in EITHER half means earlier readings aren't comparable.
+  const unitChanged =
+    movers.rebased && movers.rubricFrom?.split('/')[1] !== movers.rubricTo?.split('/')[1];
   const briefing = movers.rebased
-    ? `The Index was rescored under rubric ${movers.rubricTo} on ${movers.since ? `the snapshot following ${movers.since}` : 'the latest snapshot'}. Scores are not comparable to earlier readings, so no movement is reported this update — the methodology changed, not the work. Tracking resumes from the next snapshot.`
+    ? unitChanged
+      ? `The Index now ranks individual works rather than brand roll-ups. Earlier readings counted a different kind of thing, so they are not comparable and no movement is reported this update — the instrument changed, not the work. Tracking resumes from the next snapshot.`
+      : `The Index was rescored under rubric ${movers.rubricTo?.split('/')[0]}. Scores are not comparable to earlier readings, so no movement is reported this update — the methodology changed, not the work. Tracking resumes from the next snapshot.`
     : movers.since
-    ? `Since ${movers.since}, ${movers.climbers.length} brand${movers.climbers.length === 1 ? '' : 's'} climbed and ${movers.newcomers.length} entered the Index${topClimber ? ` — ${topClimber.brand} led, up ${topClimber.scoreDelta} to ${topClimber.score}/100` : ''}.`
+    ? `Since ${movers.since}, ${movers.climbers.length} work${movers.climbers.length === 1 ? '' : 's'} climbed and ${movers.newcomers.length} entered the Index${topClimber ? ` — ${topClimber.brand} led, up ${topClimber.scoreDelta} to ${topClimber.score}/100` : ''}.`
     : '';
 
   // JSON-LD: a Dataset (so the Index is discoverable in Google Dataset Search /
@@ -94,8 +101,8 @@ export default function SignalIndexPage() {
       itemListElement: ranked.map((e) => ({
         '@type': 'ListItem',
         position: e.rank,
-        url: `${SITE}/intelligence/signal-index/${brandSlug(e.brand)}`,
-        name: e.brand,
+        url: `${SITE}/intelligence/case-studies/${e.slug}`,
+        name: `${e.brand} — ${e.title}`,
       })),
     },
   };
@@ -122,8 +129,8 @@ export default function SignalIndexPage() {
           <StatStrip
             tone="light"
             items={[
-              { value: String(ranked.length), label: 'Brands ranked' },
-              { value: String(totalWorks), label: 'Works scored' },
+              { value: String(totalWorks), label: 'Works ranked' },
+              { value: String(totalBrands), label: 'Brands represented' },
               { value: String(top), label: 'Top score' },
               { value: String(mean), label: 'Index average' },
             ]}
@@ -146,14 +153,14 @@ export default function SignalIndexPage() {
               <div className="bg-mono-black p-6">
                 <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mb-5">▲ CLIMBERS</p>
                 {movers.climbers.length ? movers.climbers.map((m) => (
-                  <Link key={m.slug} href={`/intelligence/signal-index/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
+                  <Link key={m.slug} href={`/intelligence/case-studies/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
                     <span className="font-display font-bold text-mono-soft-white group-hover:text-mono-amber-bright transition-colors truncate">{m.brand}</span>
                     <span className="shrink-0 text-emerald-400 font-display font-bold text-sm tabular-nums">▲ {m.scoreDelta} → {m.score}</span>
                   </Link>
                 )) : (
                   <p className="text-sm text-mono-gray font-body">
                     {movers.rebased
-                      ? `Suppressed — the Index was rescored under rubric ${movers.rubricTo}. Comparing to ${movers.rubricFrom} scores would report our own methodology change as brand movement.`
+                      ? `Suppressed — the Index changed basis (${movers.rubricFrom} → ${movers.rubricTo}). Comparing across that would report our own methodology change as movement.`
                       : 'No score climbs this update.'}
                   </p>
                 )}
@@ -161,7 +168,7 @@ export default function SignalIndexPage() {
               <div className="bg-mono-black p-6">
                 <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber mb-5">NEW ENTRIES</p>
                 {movers.newcomers.length ? movers.newcomers.map((m) => (
-                  <Link key={m.slug} href={`/intelligence/signal-index/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
+                  <Link key={m.slug} href={`/intelligence/case-studies/${m.slug}`} className="flex items-center justify-between gap-4 py-2.5 border-b border-mono-white/10 last:border-0 group">
                     <span className="font-display font-bold text-mono-soft-white group-hover:text-mono-amber-bright transition-colors truncate">{m.brand}</span>
                     <span className="shrink-0 text-mono-amber-bright font-display font-bold text-sm tabular-nums">NEW · {m.score}</span>
                   </Link>
@@ -177,7 +184,7 @@ export default function SignalIndexPage() {
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
               <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">THE RANKING</p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">Every scored brand, ranked.</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">Every scored work, ranked.</h2>
             </div>
             <Trophy className="text-mono-amber shrink-0" size={30} aria-hidden="true" />
           </div>

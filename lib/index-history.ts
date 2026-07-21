@@ -18,11 +18,19 @@ export interface IndexSnapshot {
   /** The scoring rubric in force when this snapshot was taken. Snapshots taken
    *  under different rubrics are NOT comparable — see `rebased` below. */
   rubricVersion?: string;
+  /** What each entry counts: a brand roll-up, or a single scored work. Changing
+   *  the unit is a bigger methodology break than changing the rubric — the rows
+   *  stop being the same kind of thing — so it suppresses movement identically. */
+  unit?: 'brand' | 'work';
   entries: IndexHistoryEntry[];
 }
 
 /** Treat an unstamped snapshot as v1 — everything before the rubric was written. */
 const rubricOf = (s: IndexSnapshot): string => s.rubricVersion ?? 'v1';
+/** Snapshots predating the work-level Index ranked brands. */
+const unitOf = (s: IndexSnapshot): string => s.unit ?? 'brand';
+/** The comparability key. Movement is only ever computed within one of these. */
+const basisOf = (s: IndexSnapshot): string => `${rubricOf(s)}/${unitOf(s)}`;
 
 const history = (historyData as IndexSnapshot[])
   .slice()
@@ -55,7 +63,7 @@ export interface Movement {
  *  deltas are meaningless until the next same-rubric pair exists. */
 export function isRebased(): boolean {
   if (history.length < 2) return false;
-  return rubricOf(history[history.length - 1]) !== rubricOf(history[history.length - 2]);
+  return basisOf(history[history.length - 1]) !== basisOf(history[history.length - 2]);
 }
 
 /** The rubric the latest snapshot was scored under. */
@@ -79,8 +87,8 @@ export function getMovement(slug: string): Movement | null {
   const now = current.entries.find((e) => e.slug === slug);
   const then = previous.entries.find((e) => e.slug === slug);
   if (!now || !then) return null;
-  const from = rubricOf(previous);
-  const to = rubricOf(current);
+  const from = basisOf(previous);
+  const to = basisOf(current);
   if (from !== to) {
     return { scoreDelta: 0, rankDelta: 0, since: previous.date, rebased: true, rubricFrom: from, rubricTo: to };
   }
@@ -108,7 +116,7 @@ export function getBrandHistory(slug: string): BrandPoint[] {
   const out: BrandPoint[] = [];
   for (const snap of history) {
     const e = snap.entries.find((x) => x.slug === slug);
-    if (e) out.push({ date: snap.date, score: e.score, rank: e.rank, rubricVersion: rubricOf(snap) });
+    if (e) out.push({ date: snap.date, score: e.score, rank: e.rank, rubricVersion: basisOf(snap) });
   }
   return out;
 }
@@ -137,8 +145,8 @@ export function getMovers(limit = 5): Movers {
   const current = history[history.length - 1];
   const previous = history[history.length - 2];
   const prevSlugs = new Set(previous.entries.map((e) => e.slug));
-  const from = rubricOf(previous);
-  const to = rubricOf(current);
+  const from = basisOf(previous);
+  const to = basisOf(current);
   if (from !== to) {
     const newcomers = current.entries
       .filter((e) => !prevSlugs.has(e.slug))
