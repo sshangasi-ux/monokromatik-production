@@ -4,6 +4,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
 import Exhibit from '../../../components/dataviz/Exhibit';
 import UniverseStrip from '../../../components/dataviz/UniverseStrip';
+import { BandLedger, RebaseExhibit, PanelLedger } from '../../../components/dataviz/CorpusExhibits';
+import { ContributionBar, EvidenceRow, AxisLadder, WorkScorecard } from '../../../components/dataviz/WorkExhibits';
+import { getHistory } from '../../../../lib/index-history';
+import { brandEvidence } from '../../../../lib/evidence-strength';
+import { getAllCaseStudies, getCaseStudyBySlug } from '../../../../lib/case-studies';
+import { AXIS_WEIGHTS } from '../../../../lib/signal-index';
 import {
   EDITION,
   scoredWorks,
@@ -41,6 +47,15 @@ export default function EditionOnePage() {
   const gap = craftCaptureGap(works);
   const bands = bandCounts(works);
   const lim = limitations(works);
+
+  // Exhibit 05 uses the top-ranked work as the worked scorecard; exhibits 06 and
+  // 08 read the snapshot history.
+  const lead = works[0];
+  const leadStudy = getCaseStudyBySlug(lead.slug);
+  const leadEvidence = brandEvidence(getAllCaseStudies().filter((c) => c.brand === lead.brand));
+  const history = getHistory();
+  const lastV1 = [...history].reverse().find((h) => (h.rubricVersion ?? 'v1') === 'v1');
+  const firstV2 = history.find((h) => h.rubricVersion === 'v2.0');
 
   // The press number: how few works can show an outcome a third party could check.
   // CONSEQUENCE 4+ is "a real, documented outcome"; 3 and below cannot demonstrate one.
@@ -155,66 +170,134 @@ export default function EditionOnePage() {
         </div>
       </section>
 
-      {/* ---------- BANDS + AXES ---------- */}
+      {/* ---------- EXHIBITS 02–08 ---------- */}
       <section className="py-14 border-t border-mono-gray/20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
-          <div>
-            <p className={kicker}>THE DISTRIBUTION</p>
-            <h3 className="mt-4 font-feature text-2xl md:text-3xl text-mono-black">Where the work sits.</h3>
-            <div className="mt-6 border border-mono-gray/25 bg-mono-white">
-              {bands.map((b) => (
-                <div key={b.band} className="flex items-center gap-4 px-5 py-3 border-b border-mono-gray/15 last:border-b-0">
-                  <span className="w-12 shrink-0 text-center text-sm font-display font-bold text-mono-black border border-mono-black/25 py-1">
-                    {b.band}
-                  </span>
-                  <span className="w-16 shrink-0 text-xs font-display font-bold text-mono-gray tabular-nums">
-                    {b.min === 0 ? '< 40' : `${b.min}–${b.max}`}
-                  </span>
-                  <div className="flex-1 flex flex-wrap gap-[3px]">
-                    {Array.from({ length: b.count }).map((_, i) => (
-                      <span key={i} className="w-[10px] h-[10px] bg-mono-ink" />
-                    ))}
-                  </div>
-                  <span className="w-8 text-right text-sm font-display font-bold text-mono-black tabular-nums">
-                    {b.count}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 font-body text-xs text-mono-gray leading-relaxed">
-              One square per work. Bands are absolute cut-offs, published in advance — not forced
-              percentiles.
-            </p>
-          </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className={kicker}>THE DISTRIBUTION</p>
+          <h2 className="mt-4 font-feature text-3xl md:text-4xl text-mono-black leading-tight max-w-2xl">
+            Where the work sits.
+          </h2>
 
-          <div>
-            <p className={kicker}>THE AXES</p>
-            <h3 className="mt-4 font-feature text-2xl md:text-3xl text-mono-black">Made well. Owned less well.</h3>
-            <div className="mt-6 space-y-4">
-              {axes.map((a) => (
-                <div key={a.axis}>
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-black">
-                      {a.axis}
-                    </span>
-                    <span className="text-xs font-display text-mono-gray tabular-nums">
-                      {Math.round(a.weight * 100)}% weight · mean {a.mean.toFixed(2)}/5
-                    </span>
-                  </div>
-                  <div className="mt-2 h-3 bg-mono-soft-white border border-mono-gray/20">
-                    <div
-                      className="h-full bg-mono-ink"
-                      style={{ width: `${(a.mean / 5) * 100}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 font-body text-sm text-mono-charcoal leading-relaxed">
-              Authorship carries the heaviest weight because it is the question this publication
-              exists to ask: not who appeared in the work, but who originated it and who kept it.
-            </p>
-          </div>
+          <Exhibit
+            n={2}
+            title="The band ledger"
+            subtitle={`Scored works by published band, in rating order. ${stats.works} works.`}
+            source={`${stats.works} scored works`}
+            note="Bands are absolute cut-offs published in advance, not forced percentiles — the shape of this distribution was not designed, it is what the rubric produced. Band order is the scale and is never re-sorted by count."
+          >
+            <BandLedger bands={bands} />
+          </Exhibit>
+
+          <Exhibit
+            n={3}
+            title="How a score is built"
+            subtitle="Each axis occupies a slot as wide as its weight, filled to the level awarded. Shown here at the corpus mean."
+            source="Mean level per axis across all scored works"
+            note="Slot width is the axis weight; fill is the level. Levels are 1–5 editorial judgements against a published standard, not measurements — a 3 is a defined level, not 60%. A radar chart is not used here: its spokes are equal by construction, which would render AUTHORSHIP (35%) and EXECUTION (15%) as the same size."
+          >
+            <ContributionBar
+              levels={Object.fromEntries(axes.map((a) => [a.axis, a.mean])) as Record<string, number>}
+            />
+          </Exhibit>
+
+          <p className="mt-4 font-body text-mono-charcoal leading-relaxed max-w-2xl">
+            Authorship carries the heaviest weight because it is the question this publication exists to ask:
+            not who appeared in the work, but who originated it and who kept it. On the exhibit above, it is
+            the widest slot — and the corpus fills it less completely than it fills execution.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-14 border-t border-mono-gray/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className={kicker}>ONE WORK, IN FULL</p>
+          <h2 className="mt-4 font-feature text-3xl md:text-4xl text-mono-black leading-tight max-w-2xl">
+            What a rating actually contains.
+          </h2>
+          <p className="mt-5 font-body text-mono-charcoal leading-relaxed max-w-2xl">
+            The highest-rated work in this edition, shown the way every rating in the Index is built — score,
+            band, the weighted contribution of each axis, and the evidence behind it.
+          </p>
+
+          <Exhibit
+            n={4}
+            title="The evidence behind a reading"
+            subtitle="How many scored works sit behind the rating, and how much corroboration."
+            source={`${lead.brand} · evidence tier from cited sources and confirmed facts`}
+            note="We publish no confidence interval because we have no sampling and could not honestly compute one. What is shown is what can be counted: works behind the reading, and a qualitative corroboration tier. With one scored work behind almost every brand, that count is the most important number on the card."
+          >
+            <EvidenceRow works={leadEvidence.works} tier={leadEvidence.tier} score={leadEvidence.score} />
+          </Exhibit>
+
+          <Exhibit
+            n={5}
+            title="A worked scorecard"
+            subtitle={`${lead.brand} — the highest-rated work in Edition ${EDITION.number}.`}
+            source={`${lead.brand} · scored work`}
+            note="The card shows a band, not a rank. With 34 distinct scores across 70 works, rank between tied works is arithmetic noise; the band is the honest position."
+          >
+            <WorkScorecard
+              brand={lead.brand}
+              title={lead.title}
+              score={lead.score}
+              levels={lead.levels}
+              works={leadEvidence.works}
+              tier={leadEvidence.tier}
+              evidenceScore={leadEvidence.score}
+              scoredOn={leadStudy?.scoredOn}
+              rubric={EDITION.rubric}
+            />
+          </Exhibit>
+
+          <Exhibit
+            n={6}
+            title="The rubric, made visible"
+            subtitle={`All five levels of the highest-weighted axis, with the level awarded to ${lead.brand} marked.`}
+            source={`docs/SCORING-RUBRIC.md ${EDITION.rubric}`}
+            note="Levels are not equal intervals and should not be read as a percentage scale. They are named standards; the distance between a 3 and a 4 is a difference in kind, not in degree."
+          >
+            <AxisLadder axis="AUTHORSHIP" level={lead.levels.AUTHORSHIP} />
+          </Exhibit>
+        </div>
+      </section>
+
+      <section className="py-14 border-t border-mono-gray/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className={kicker}>WHAT CHANGED, AND WHAT DIDN&rsquo;T</p>
+          <h2 className="mt-4 font-feature text-3xl md:text-4xl text-mono-black leading-tight max-w-2xl">
+            The ruler moved. The work didn&rsquo;t.
+          </h2>
+          <p className="mt-5 font-body text-mono-charcoal leading-relaxed max-w-2xl">
+            Every work in this edition was re-scored against rubric {EDITION.rubric}. Scores fell. That is the
+            correction working — but it means readings from before the change are not comparable to readings
+            after it, and we do not present them as though they were.
+          </p>
+
+          {lastV1 && firstV2 && (
+            <Exhibit
+              n={7}
+              title="Before and after the rescoring"
+              subtitle={`Band distribution under the previous rubric (${lastV1.date}) beside the first reading under ${EDITION.rubric} (${firstV2.date}).`}
+              source="Index snapshots · brand basis, before the Index moved to ranking works"
+              note="There is deliberately no arrow, slope or connector between these two distributions. A connector would assert that entries moved. They did not — the ruler did. A Sankey or slope chart across this boundary would render our own methodology change as roughly sixty downgrades, and it is the one chart we will not build."
+            >
+              <RebaseExhibit
+                unit="brands"
+                before={{ label: `Previous rubric · ${lastV1.date}`, scores: lastV1.entries.map((e) => e.score) }}
+                after={{ label: `Rubric ${EDITION.rubric} · ${firstV2.date}`, scores: firstV2.entries.map((e) => e.score) }}
+              />
+            </Exhibit>
+          )}
+
+          <Exhibit
+            n={8}
+            title="How the rated universe was built"
+            subtitle="Entries per snapshot, with the comparability basis beneath each."
+            source="Index snapshot history"
+            note="This plots count, never mean. The panel is not a fixed cohort — it nearly tripled — so a line of means across these snapshots would not be a time series of the same thing. It is shown beside the rescoring for a reason: the mean also fell while the rubric was unchanged, purely because the panel grew, and any honest reading has to separate the two."
+          >
+            <PanelLedger snapshots={history} />
+          </Exhibit>
         </div>
       </section>
 
