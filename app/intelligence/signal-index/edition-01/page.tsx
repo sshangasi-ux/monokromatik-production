@@ -193,7 +193,7 @@ export default function EditionOnePage() {
             title="How a score is built"
             subtitle="Each axis occupies a slot as wide as its weight, filled to the level awarded. Shown here at the corpus mean."
             source="Mean level per axis across all scored works"
-            note="Slot width is the axis weight; fill is the level. Levels are 1–5 editorial judgements against a published standard, not measurements — a 3 is a defined level, not 60%. A radar chart is not used here: its spokes are equal by construction, which would render AUTHORSHIP (35%) and EXECUTION (15%) as the same size."
+            note="A radar chart is deliberately not used here. Its spokes are equal by construction, so it would render AUTHORSHIP (35%) and EXECUTION (15%) as the same size, and its enclosed area is not proportional to the composite. Length is the honest encoding for weighted components."
           >
             <ContributionBar
               levels={Object.fromEntries(axes.map((a) => [a.axis, a.mean])) as Record<string, number>}
@@ -234,7 +234,7 @@ export default function EditionOnePage() {
             title="A worked scorecard"
             subtitle={`${lead.brand} — the highest-rated work in Edition ${EDITION.number}.`}
             source={`${lead.brand} · scored work`}
-            note="The card shows a band, not a rank. With 34 distinct scores across 70 works, rank between tied works is arithmetic noise; the band is the honest position."
+            note={`The card shows a band, not a rank. With only ${lim.ties.distinctScores} distinct scores across ${stats.works} works, rank between tied works is arithmetic noise; the band is the honest position.`}
           >
             <WorkScorecard
               brand={lead.brand}
