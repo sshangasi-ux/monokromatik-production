@@ -6378,7 +6378,7 @@
       {
         "label": "AUTHORSHIP",
         "level": 2,
-        "note": "Corrected from 1 (20 July 2026). Our earlier note said the remembered canon is \"explicitly non-African\". That was wrong: AB InBev states the pack runs 11 designs covering the past ten World Cups plus 2026 from Mexico 1986, which necessarily includes South Africa 2010. The level also moves to 2 because real African cultural input exists at the activation layer — SOLIBRA’s Bud FC Fan Festival in Abidjan programmed a named roster of Ivorian artists in Ivorian genres (Coupé-Décalé, Zouglou, Rap Ivoire), commissioned and paid. It is not a 3 because none of that is authorship of the work: the global platform is written elsewhere. Note for fact-checkers: the agency credited on the hero film as \"Africa Creative\" is Africa Creative DDB of São Paulo, Brazil — not an African agency."
+        "note": "Corrected from 1 (20 July 2026). Our earlier note said the remembered canon is \"explicitly non-African\". We cannot stand that up: AB InBev states the pack runs eleven designs covering the past ten World Cups plus 2026 from Mexico 1986, a scope that entails South Africa 2010 — though no published source shows that design, so we claim the entailment, not the artwork. The level moves to 2 on African cultural input at the activation layer: SOLIBRA’s Bud FC Fan Festival in Abidjan programmed a named roster of Ivorian artists in Ivorian genres. It is not a 3 — those artists were booked into a global template they did not write, and the sourcing is brand-supplied. The sharper structural fact is that AB InBev substituted Budweiser out of Africa entirely: every African operating company ran the World Cup under a local brand (Carling Black Label, Nile Special, Safari Lager, 2M, CLUB), with Budweiser as the rights vehicle and the local brand as the face. Fact-checkers note: the agency credited on the hero film as \"Africa Creative\" is Africa Creative DDB of São Paulo."
       },
       {
         "label": "EXECUTION",
@@ -6404,22 +6404,25 @@
       "The instinct is right and ahead of most sponsors: an object people keep beats an ad people skip. The limit is whose history the canon contains."
     ],
     "africanRead": [
-      "A nostalgia canon running from Mexico 1986 to 2026 does include South Africa 2010 — AB InBev’s own stated scope of eleven designs across the past ten tournaments plus this one puts it there, as a host nation. What is not evidenced either way is whether African players and moments — Roger Milla and Cameroon 1990, Senegal 2002, Ghana 2010, Morocco 2022 — appear in the QR-unlocked content behind the pack. So the honest charge is not that African football is missing from the memory. It is that the memory is organised by host tournament, authored entirely outside the continent, and sold into African markets that had no hand in composing it.",
+      "A nostalgia canon running from Mexico 1986 to 2026 spans eleven tournaments, which by AB InBev’s own stated scope must include South Africa 2010 — though no published source shows that design, and nothing indicates whether Roger Milla, Senegal 2002, Ghana 2010 or Morocco 2022 appear in the QR-unlocked content behind it. So the honest charge is not that African football is missing from the memory. It is that the memory is authored entirely outside the continent, and that Budweiser itself was substituted out of Africa: every AB InBev operating company on the continent ran this World Cup under a local brand instead. The inversion is stark next to FIFA’s own tournament music, which leans heavily on African artists while Budweiser reached for a 1969 Joe Cocker record.",
       "There is a sharper opportunity for any brand — including a publication building its own collectibles: author a collectible whose remembered history includes African football's milestones, and whose objects are designed with African creators, not only distributed into African markets through AB InBev's breweries."
     ],
     "evidence": {
       "confirmed": [
         "The Let It Pour platform, the Budstalgia 40th-anniversary campaign, the 11-piece collectible Anniversary Pack and Bud FC events across 40+ countries — reported by AB InBev.",
-        "AB InBev states the Budstalgia pack comprises eleven designs covering the past ten World Cups plus 2026, beginning at Mexico 1986 — a scope that necessarily includes South Africa 2010.",
-        "SOLIBRA, AB InBev’s Ivorian partner, ran the Bud FC Fan Festival in Abidjan (11 June – 19 July 2026) programming named Ivorian artists in Ivorian genres."
+        "SOLIBRA, AB InBev’s Ivorian partner, ran the Bud FC Fan Festival in Abidjan (11 June – 19 July 2026) programming named Ivorian artists in Ivorian genres.",
+        "AB InBev states the Budstalgia pack comprises eleven designs covering the past ten World Cups plus 2026, beginning at Mexico 1986 — a scope that entails a South Africa 2010 design, though no published source depicts it.",
+        "AB InBev’s African operating companies ran the 2026 World Cup under local brands — Carling Black Label (South Africa), Nile Special (Uganda), Safari Lager (Tanzania), 2M (Mozambique), CLUB (Ghana) — with the rights flowing through the global Budweiser partnership."
       ],
       "reported": [
-        "The Haaland/Klopp creative and the Mexico-1986-to-2026 pack composition are documented in AB InBev releases and trade coverage."
+        "The Haaland/Klopp creative and the Mexico-1986-to-2026 pack composition are documented in AB InBev releases and trade coverage.",
+        "The Nigeria and Côte d’Ivoire activations are documented in branded content and publi-reportage — brand-supplied rather than independently reported. The named Ivorian line-up is corroborated by the festival’s own programme site."
       ],
       "notClaimed": [
         "Commercial outcomes; any African-authored edition or African-market-specific collectible.",
         "Whether African players or moments appear in the QR-unlocked content behind the collectible pack. Per-design contents are not published and we could not verify them in either direction.",
-        "That no African crew worked on \"Let It Pour\". Full crew credits for that film are not published anywhere we could reach, so their absence is unverified rather than established."
+        "That no African crew worked on \"Let It Pour\". Full crew credits for that film are not published anywhere we could reach, so their absence is unverified rather than established.",
+        "That the Budstalgia pack was distributed in any African market. Announced distribution is Brazil, China and select European countries; we could not verify African availability either way."
       ]
     },
     "lessons": [
@@ -6475,6 +6478,12 @@
         "label": "Budweiser — Let It Pour ft. Erling Haaland & Jürgen Klopp",
         "href": "https://www.adsoftheworld.com/campaigns/let-it-pour-ft-erling-haaland-amp-jurgen-klopp",
         "use": "Global platform credits — agency Grey Global, director Steve Ayson (MJZ); no African involvement."
+      },
+      {
+        "publisher": "Nile Breweries",
+        "label": "Nile Special unveils limited-edition FIFA World Cup 2026 bottle label",
+        "href": "https://www.nilebreweries.com/nile-special-unveils-limited-edition-fifa-world-cup-2026-bottle-label-and-launches-gwe-kafulu-consumer-campaign",
+        "use": "Shows rights flowing through AB InBev’s global Budweiser partnership while a local brand fronts the African market."
       }
     ],
     "media": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T06:57:14.876Z",
+  "generatedAt": "2026-07-16T23:01:18.401Z",
   "plan": {
     "gaps": [
       {
@@ -163,28 +163,12 @@
         "sourced": true
       },
       {
-        "region": "Pan-African",
-        "category": "sports",
+        "region": "Diaspora",
+        "category": "culture",
         "score": 0,
         "ageDays": null,
         "count": 0,
         "sourced": true
-      },
-      {
-        "region": "Pan-African",
-        "category": "music",
-        "score": 0,
-        "ageDays": null,
-        "count": 0,
-        "sourced": false
-      },
-      {
-        "region": "Pan-African",
-        "category": "entertainment",
-        "score": 0,
-        "ageDays": null,
-        "count": 0,
-        "sourced": false
       },
       {
         "region": "Diaspora",
@@ -217,18 +201,26 @@
         "ageDays": null,
         "count": 0,
         "sourced": true
+      },
+      {
+        "region": "Pan-African",
+        "category": "news",
+        "score": 0.29,
+        "ageDays": 18,
+        "count": 1,
+        "sourced": true
       }
     ]
   },
   "franchisePlan": {
     "scores": {
       "The Work": 0.99,
-      "Will It Land?": 0.99,
-      "Brand Weather": 0.99,
-      "The Boardroom": 0.99,
-      "Roots": 0.99,
-      "Arena": 0.8,
-      "Waves": 0
+      "Will It Land?": 0.67,
+      "Brand Weather": 0.97,
+      "The Boardroom": 0.67,
+      "Roots": 0.86,
+      "Arena": 0.74,
+      "Waves": 0.74
     },
     "weights": {
       "The Work": 1,
@@ -237,166 +229,57 @@
       "The Boardroom": 1,
       "Roots": 1,
       "Arena": 1,
-      "Waves": 1.61
+      "Waves": 1
     },
-    "gaps": [
-      {
-        "franchise": "Waves",
-        "score": 0,
-        "count": 0,
-        "ageDays": null
-      }
-    ],
+    "gaps": [],
     "windowDays": 42,
-    "generatedAt": "2026-06-25T06:55:07.070Z"
+    "generatedAt": "2026-07-16T23:00:50.841Z"
   },
   "results": [
     {
-      "region": "West Africa",
-      "category": "news",
+      "region": "Diaspora",
+      "category": "culture",
       "sourced": true,
       "leads": [
         {
-          "title": "Brand Africa 100: Africa's Best Brands 2026 — Dangote Leads Industrial Podium, African Brands Rebound to 15%",
-          "summary": "African Business magazine published the full 2026 Brand Africa 100 rankings in June 2026. Dangote (Nigeria) tops the most-admired industrial brand category, while African brands collectively recover to 15% of the Top 100 — up from a historic low of 11% in 2025. MTN holds at #11. The report frames West Africa's industrial and telecom giants as anchors of pan-African brand resurgence.",
-          "url": "https://african.business/2026/06/trade-investment/brand-africa-100-africas-best-brands-2026",
-          "source": "African Business",
-          "why": "Nigerian/West African brands (Dangote, MTN) are central benchmarks in the continent's most authoritative annual brand-power study, published June 2026."
+          "title": "The Best Style Moments From The 2026 ESPY Awards",
+          "summary": "From Ayesha Curry and Jordyn Woods dripping in jewels to Simone Biles' flirtatious lashes, here are all the best style moments from the ESPYs red carpet.",
+          "url": "https://www.essence.com/beauty/the-best-style-moments-from-the-2026-espy-awards/",
+          "source": "Essence",
+          "why": "Fresh culture from Essence — fills Diaspora × culture."
         },
         {
-          "title": "How Lagos Is Driving Africa's Circular Fashion Agenda — Woven Threads 2026",
-          "summary": "Business of Fashion (BoF) covered the April 2026 Woven Threads event in Lagos — an annual showcase focused on responsible production and sustainable design across Africa, featuring brands Nakoi (The Or Foundation), Wote Ki, and Mitimeth. The piece frames Lagos as the continent's operational hub for circular-fashion infrastructure.",
-          "url": "https://www.businessoffashion.com/articles/global-markets/worldview-how-lagos-is-driving-africas-circular-fashion-agenda/",
-          "source": "Business of Fashion",
-          "why": "Puts Lagos/West Africa at the centre of a concrete, brand-led circular-fashion movement covered by the industry's most authoritative global trade publication in 2026."
+          "title": "All The Black Couples On The Red Carpet At The 2026 ESPY Awards",
+          "summary": "Athletes ditched their uniforms to put on their finest threads with their partners by their side. See which Black couples made ESPY night date night this year.",
+          "url": "https://www.essence.com/celebrity/black-couples-at-the-2026-espy-awards/",
+          "source": "Essence",
+          "why": "Fresh culture from Essence — fills Diaspora × culture."
         },
         {
-          "title": "What Will It Take for African Fashion to Reach Its Global Potential? West Africa Cited as Continental Blueprint",
-          "summary": "Fashionista's January 2026 deep-dive on scaling African fashion globally singles out West Africa as having created a replicable ecosystem model. The piece examines logistical barriers (tariffs, IP, cross-border shipping) facing designers expanding internationally, and quotes industry voices on the urgency of 'cultural ownership' as African textiles attract Western and luxury brand attention.",
-          "url": "https://fashionista.com/2026/01/african-fashion-global-expansion-strategy-obstacles",
-          "source": "Fashionista",
-          "why": "West Africa is explicitly named as the benchmark fashion-ecosystem model in a major 2026 trade-press analysis of African designer brand globalisation."
+          "title": "Every Jaw-Dropping Look from Zendaya’s ‘The Odyssey’ Press Tour",
+          "summary": "As Zendaya prepares to portray Athena in the highly anticipated Christopher Nolan film, she and Law Roach have elevated method dressing once again.",
+          "url": "https://www.essence.com/fashion/every-jaw-dropping-look-from-zendayas-the-odyssey-press-tour-2/",
+          "source": "Essence",
+          "why": "Fresh culture from Essence — fills Diaspora × culture."
         }
       ],
-      "searches": 3
+      "searches": 0
     },
     {
-      "region": "East Africa",
-      "category": "culture",
-      "sourced": false,
+      "region": "Diaspora",
+      "category": "entertainment",
+      "sourced": true,
       "leads": [
         {
-          "title": "Why Uganda Is East Africa's Next Fashion Frontier",
-          "summary": "Business of Fashion (BoF) reports that while Adidas and Puma are early movers gaining ground in Uganda, most Western retailers have left the market open to Asian competitors — even as a rapidly growing middle class and style-conscious youth drive demand. Ethiopian manufacturers are also highlighted as increasingly competitive sourcing alternatives.",
-          "url": "https://www.businessoffashion.com/articles/global-markets/why-uganda-is-east-africas-next-fashion-frontier/",
-          "source": "The Business of Fashion",
-          "why": "Direct BoF market analysis of Uganda's fashion retail gap and brand opportunity — squarely East Africa × culture-commerce."
-        },
-        {
-          "title": "OkayAfrica Speaks With the Head of Sony Music East Africa on Building Artists and Defining Regional Culture",
-          "summary": "OkayAfrica interviews the Head of Sony Music East Africa on the label's strategy for developing artists, shaping the region's cultural identity, and helping East Africa claim a larger share of the global music conversation — a rare on-record statement from a major label executive about the region's creative economy.",
-          "url": "https://www.okayafrica.com/music/latest",
-          "source": "OkayAfrica",
-          "why": "A major-label executive speaking on record about East Africa's music culture and global positioning makes this a high-value brand-culture lead."
-        },
-        {
-          "title": "DanceAfrica 2026 at BAM Celebrates Uganda — East African Culture on America's Biggest African Diaspora Stage",
-          "summary": "Brooklyn Academy of Music's DanceAfrica 2026 — now in its 49th year and billed as the nation's largest festival dedicated to African diasporic dance and music — centres Uganda as its featured culture. The festival is anchored by Uganda's Ndere Troupe, with a full weekend of dance, music, film, visual art, and a 150-vendor bazaar featuring African fashion and crafts.",
-          "url": "https://www.bam.org/danceafrica",
-          "source": "Brooklyn Academy of Music (BAM)",
-          "why": "Uganda's culture is the headline at America's premier African diaspora festival, creating a significant diaspora-facing brand and cultural moment for East Africa in 2026."
+          "title": "‘It Was the Magic Itself’: Brandy Reveals the Whitney Houston Moment She’ll Never Forget Nearly 30 Years After Disney’s ‘Cinderella’",
+          "summary": "Brandy came into the entertainment industry with a bang, courtesy of a classic debut album and an iconic television show that quickly followed. Her celebrity […] ‘It Was the Magic ",
+          "url": "https://atlantablackstar.com/2026/07/16/brandy-reveals-the-whitney-houston-moment-shell-never-forget-nearly-30-years-after-disneys-cinderella/",
+          "source": "Atlanta Black Star",
+          "why": "Fresh entertainment from Atlanta Black Star — fills Diaspora × entertainment."
         }
       ],
-      "searches": 3
-    },
-    {
-      "region": "Southern Africa",
-      "category": "culture",
-      "sourced": false,
-      "leads": [
-        {
-          "title": "South African Streetwear Brands GALXBOY, MaXhosa & Bathu Break Into Brand Africa's Continental Top 100 on Organic Recall",
-          "summary": "The 2026 Brand Africa 100 survey — covering 30 countries and 85 %+ of Africa's GDP — confirms that GALXBOY (#71), MaXhosa (#76) and Redbat (#86) have joined Bathu in the pan-African Top 100 through organic consumer recall alone, with zero pan-African media spend. MaXhosa holds #3 across Gen Z, Millennials and Gen X cohorts. The findings were reported by African Business magazine (June 2026) and corroborated by IT-Online and Africa.com.",
-          "url": "https://african.business/2026/06/trade-investment/brand-africa-100-africas-best-brands-2026",
-          "source": "African Business",
-          "why": "Direct Southern Africa brand-culture signal: SA-origin streetwear and fashion labels are now charting pan-continentally on cultural pull alone, with no marketing budget — a defining moment for Johannesburg's creative economy."
-        },
-        {
-          "title": "GALXBOY Launches Its First Sneaker Collection — the GBX 012 — in Cross-Continental Collaboration with UK Designer",
-          "summary": "South African streetwear label GALXBOY has entered footwear for the first time with the GBX 012 Trainer and GBX 012 Runner, co-designed with UK-based footwear creative Andrew Turner. Founder Thatiso Dube frames the drop as a strategic expansion beyond apparel, with the brand's 2026 roadmap including new collaborations and global-positioning cultural moments. Reported by InboundSA (February 2026).",
-          "url": "https://inboundsa.com/featured/galxboy-gbx-012-sneaker-launch/",
-          "source": "InboundSA",
-          "why": "Concrete product-launch story anchored in Southern Africa's streetwear scene, illustrating how Joburg-born youth brands are scaling category and geography in 2026."
-        },
-        {
-          "title": "Standard Bank Inducted Into Brand Africa Hall of Fame Class of 2026 as Southern Africa's Financial-Culture Anchor",
-          "summary": "Brand Africa's 2026 Hall of Fame class — spanning Southern, East and North Africa — inducted Standard Bank (South Africa) in the financial services category. The citation recognises the bank's 160-year role financing Africa's economic story, from the Kimberley diamond fields to today's 20-country pan-African corporate-banking footprint. The Brand Africa 100 launch took place on Africa Day in Addis Ababa and was widely covered, including by African Business and GNN Liberia (June 2026).",
-          "url": "https://african.business/2026/06/long-reads/building-african-mega-brands-is-one-thing-keeping-them-is-another",
-          "source": "African Business",
-          "why": "Southern Africa-rooted institution receiving a continent-wide cultural-brand honour signals the region's outsized weight in shaping African commercial identity narratives in 2026."
-        }
-      ],
-      "searches": 3
-    },
-    {
-      "region": "North Africa",
-      "category": "culture",
-      "sourced": false,
-      "leads": [
-        {
-          "title": "Hamoud Boualem × LG Electronics Algeria Launch 'Partners of DZ Vibes' Co-Branding Campaign",
-          "summary": "Algeria's oldest soft-drink brand (founded 1878) and LG Electronics Algeria announced a co-branding activation called 'Partners of DZ Vibes' on 21 June 2026. Consumers buying limited-edition Hamoud Cola bottles scan a QR code for a chance to win LG UHD TVs. The campaign frames Hamoud Cola's 'Certified DZ Vibes' universe as a vehicle for contemporary Algerian cultural identity, pairing local heritage with global tech in a first-of-its-kind partnership for both brands.",
-          "url": "https://algerie-eco.com/2026/06/22/lg-electronics-algerie-et-hamoud-boualem-unissent-innovation-et-patrimoine-a-travers-partners-of-dz-vibes/",
-          "source": "Algerie Eco",
-          "why": "A live North African brand-culture activation merging Algeria's most iconic consumer heritage brand with a global tech player — directly relevant to Maghreb brand strategy and youth identity."
-        },
-        {
-          "title": "Brand Africa 100 (2026): Algeria's Hamoud Boualem & Ifri Enter Sustainability Top 10 — Morocco Commands 23% Local Brand Share",
-          "summary": "The 16th edition of Brand Africa 100, unveiled in Casablanca on 19 June 2026, showed two Algerian consumer brands — soft-drink icon Hamoud Boualem and mineral water leader Ifri — breaking into the continent's sustainability Top 10. Separately, Morocco's national rankings revealed that 23% of its Top 100 are 'Made in Morocco' brands, outpacing the pan-African average of 15%, with Brand Africa North Africa VP Siham Malek noting that nearly 75% of the value of Morocco's major companies is now made up of intangible assets.",
-          "url": "https://african.business/2026/06/trade-investment/brand-africa-100-africas-best-brands-2026",
-          "source": "African Business Magazine",
-          "why": "Provides hard 2026 data on North African brand equity and sustainability signalling across Algeria and Morocco — core MonoKromatik brand-culture territory."
-        },
-        {
-          "title": "Grand Egyptian Museum Anchors a New North Africa Cultural Tourism Circuit in 2026",
-          "summary": "The fully operational Grand Egyptian Museum (GEM) near Giza has become a catalyst for what Travel and Tour World calls a 'connected cultural circuit' spanning Cairo, Marrakech, Tunis, Casablanca and Algiers. Egypt is tracking a 12% increase in arrivals year-on-year in 2026 and is projected to exceed 17 million visitors by year-end, while Morocco recorded an 18% rise in international tourist arrivals and a 24% surge in tourism receipts in Q1 2026 alone. The GEM's launch is repositioning the entire Maghreb + Egypt corridor as a premium, experience-driven destination.",
-          "url": "https://www.travelandtourworld.com/news/article/egypt-joins-morocco-tunisia-libya-and-algeria-as-grand-egyptian-museum-drives-cultural-travel-across-cairo-giza-marrakech-tunis-casablanca-algiers-and-beyond-in-2026-here-is-the-latest-big-to/",
-          "source": "Travel and Tour World",
-          "why": "The GEM's cultural-tourism halo effect is reshaping destination branding and hospitality investment across the entire North Africa region in 2026."
-        }
-      ],
-      "searches": 3
+      "searches": 0
     }
   ],
-  "franchiseResults": [
-    {
-      "region": "Waves",
-      "category": "franchise",
-      "sourced": true,
-      "leads": [
-        {
-          "title": "Wizkid Becomes First African Artist to Hit 10 Billion Spotify Streams — As African Music Outpaces Platform Growth 4x",
-          "summary": "In January 2026, Wizkid surpassed 10 billion streams on Spotify, becoming the first African artist to reach that milestone. Simultaneously, Apple Music reports African music growing four times faster than the platform's overall stream count. YouTube data shows over 70% of watch time for its Top 100 African artists now comes from outside Africa — cementing Afrobeats' shift from regional genre to a fully global commercial force.",
-          "url": "https://www.cnn.com/world/africa/african-music-grammy-moment-spc",
-          "source": "CNN",
-          "why": "Hard streaming data (10B Spotify streams, 4x Apple Music growth) gives the Waves franchise a concrete, dateable commercial tide-mark to anchor a cover story or data-led feature."
-        },
-        {
-          "title": "Aya Nakamura × Ayra Starr's 'Hypé' Certified Diamond in France — Africa-Diaspora Collab Hits French Pop's Highest Bar",
-          "summary": "OkayAfrica (February 2026) reports that 'Hypé' — the collaboration between French-Malian superstar Aya Nakamura and Nigerian-Beninese artist Ayra Starr — has been certified diamond in France, the country's highest music certification. The track exemplifies a new tier of Africa-to-diaspora crossover that bypasses English-language gatekeeping and lands directly at the top of a major European market.",
-          "url": "https://www.okayafrica.com/the-10-greatest-africa-diaspora-music-collaborations/1423686",
-          "source": "OkayAfrica",
-          "why": "A diamond certification in France for a wholly African-origin collab is a wave with clear commercial proof — perfect for a Waves story on Francophone Africa's route into global pop."
-        },
-        {
-          "title": "Afro Nation Portugal 2026 (July 3–5): Sponsors & Streaming Giants Pile In as the World's Biggest Afrobeats Festival Sets Its Flagship Edition",
-          "summary": "Rio Times Online (June 2026) reports that Afro Nation 2026 — billed as the world's biggest Afrobeats and Amapiano festival — runs July 3–5 at Praia da Rocha, Portimão, headlined by Wizkid, Burna Boy, Tyla, and Asake. Sponsors and streaming platforms have piled in, sensing one of music's fastest-growing markets, and the event now draws tens of thousands of visitors, generating significant tourism revenue for Portugal.",
-          "url": "https://www.riotimesonline.com/afro-nation-2026-portugal-afrobeats-festival/",
-          "source": "Rio Times Online",
-          "why": "A festival that turned a quiet Algarve beach into a global industry summit is the definitive live-event proof point for the Waves franchise — culture, commerce, and diaspora convening in one frame."
-        }
-      ],
-      "searches": 3
-    }
-  ]
+  "franchiseResults": []
 }
