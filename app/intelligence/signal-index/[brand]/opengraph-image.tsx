@@ -8,7 +8,7 @@
  */
 import { renderIndexCard } from '../../../../lib/og-card';
 import { getAllCaseStudies } from '../../../../lib/case-studies';
-import { rankIndex, brandSlug, AXIS_LABELS } from '../../../../lib/signal-index';
+import { rankWorks, brandSlug, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement } from '../../../../lib/index-history';
 import { brandEvidence } from '../../../../lib/evidence-strength';
 
@@ -23,8 +23,8 @@ export default async function Image({ params }: { params: Promise<{ brand: strin
   const { brand } = await params;
   // Rank over ALL scored works — must match the Index page and the brand page,
   // or a shared card reports a different rank than the page it links to.
-  const ranked = rankIndex(getAllCaseStudies());
-  const entry = ranked.find((e) => brandSlug(e.brand) === brand);
+  const ranked = rankWorks(getAllCaseStudies());
+  const entry = ranked.find((e) => e.brandSlug === brand);
 
   if (!entry) {
     // Fallback for stale slugs — never 500 the unfurl. Render a neutral house
@@ -45,10 +45,10 @@ export default async function Image({ params }: { params: Promise<{ brand: strin
   return renderIndexCard({
     brand: entry.brand,
     score: entry.score,
-    rank: entry.rank!,
+    rank: entry.rank,
     total: ranked.length,
     scoreDelta: movement?.scoreDelta ?? null,
-    axes: AXIS_LABELS.map((label) => ({ label, level: entry.axisAverages[label] ?? 0 })),
+    axes: AXIS_LABELS.map((label) => ({ label, level: entry.levels[label] ?? 0 })),
     evidence: { score: evidence.score, tier: evidence.tier },
   });
 }

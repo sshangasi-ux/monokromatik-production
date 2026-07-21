@@ -17,17 +17,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { getAllCaseStudies, getPublicCaseStudies } from './case-studies';
-import { rankIndex, brandSlug } from './signal-index';
+import { rankIndex, rankWorks, brandSlug } from './signal-index';
 
-// The canonical ranking — what /intelligence/signal-index publishes.
-const canonical = rankIndex(getAllCaseStudies());
+// The canonical ranking — what /intelligence/signal-index publishes. THE INDEX
+// RANKS WORK, so this is the work-level ranking. The brand roll-up still exists
+// for the per-brand pages but it is not the Index.
+const canonical = rankWorks(getAllCaseStudies());
+const brandRollup = rankIndex(getAllCaseStudies());
 
-test('the canonical Index ranks every brand that has a scored work', () => {
-  const scored = new Set(
-    getAllCaseStudies().filter((c) => (c.decode?.length ?? 0) > 0).map((c) => brandSlug(c.brand)),
-  );
-  const ranked = new Set(canonical.map((e) => brandSlug(e.brand)));
-  for (const slug of scored) assert.ok(ranked.has(slug), `${slug} has a scored work but is not ranked`);
+test('the canonical Index ranks every scored work, and only scored works', () => {
+  const scored = getAllCaseStudies().filter((c) => (c.decode?.length ?? 0) > 0).map((c) => c.slug);
+  const ranked = new Set(canonical.map((e) => e.slug));
+  for (const slug of scored) assert.ok(ranked.has(slug), `${slug} is scored but not ranked`);
+  assert.equal(canonical.length, scored.length, 'ranked count must equal scored-work count');
+  // A withheld work (decode: []) must never appear — it has no score to rank.
+  const withheld = getAllCaseStudies().filter((c) => (c.decode?.length ?? 0) === 0).map((c) => c.slug);
+  for (const slug of withheld) assert.ok(!ranked.has(slug), `${slug} is withheld but was ranked`);
+});
+
+test('every brand in the roll-up is represented by at least one ranked work', () => {
+  const workBrands = new Set(canonical.map((e) => e.brandSlug));
+  for (const b of brandRollup) {
+    assert.ok(workBrands.has(brandSlug(b.brand)), `${b.brand} is in the roll-up but has no ranked work`);
+  }
 });
 
 test('a public-only ranking is NOT the Index — badges must not use it', () => {
@@ -41,22 +53,25 @@ test('a public-only ranking is NOT the Index — badges must not use it', () => 
   );
 });
 
-test('every ranked brand resolves a real badge, at the rank the site shows', async () => {
+test('every brand resolves a badge showing its BEST work at the site rank', async () => {
   // Calls the ACTUAL route handler — not a re-implementation of it. A test that
   // recomputes the ranking itself would pass no matter what the route does,
   // which is exactly how this bug survived.
   const { GET } = await import('../app/api/badge/[brand]/route');
 
+  // One badge per brand, reporting that brand's highest-ranked work.
+  const seen = new Set<string>();
   for (const e of canonical) {
-    const slug = brandSlug(e.brand);
-    const res = await GET(new Request(`https://x/api/badge/${slug}.svg`), {
-      params: Promise.resolve({ brand: `${slug}.svg` }),
+    if (seen.has(e.brandSlug)) continue; // canonical is score-sorted, so first = best
+    seen.add(e.brandSlug);
+    const res = await GET(new Request(`https://x/api/badge/${e.brandSlug}.svg`), {
+      params: Promise.resolve({ brand: `${e.brandSlug}.svg` }),
     });
-    assert.equal(res.status, 200, `badge 404s for ranked brand ${slug} (#${e.rank})`);
+    assert.equal(res.status, 200, `badge 404s for ${e.brandSlug} (best work #${e.rank})`);
     const svg = await res.text();
     // The badge prints "RANK #n OF total" and the score — both must match the site.
-    assert.match(svg, new RegExp(`RANK #${e.rank} OF ${canonical.length}\\b`), `badge rank/total wrong for ${slug}`);
-    assert.match(svg, new RegExp(`>${e.score}</text>`), `badge score wrong for ${slug}`);
+    assert.match(svg, new RegExp(`RANK #${e.rank} OF ${canonical.length}\\b`), `badge rank/total wrong for ${e.brandSlug}`);
+    assert.match(svg, new RegExp(`>${e.score}</text>`), `badge score wrong for ${e.brandSlug}`);
   }
 });
 
@@ -77,12 +92,10 @@ test('ranks are a dense 1..N sequence with no gaps or duplicates', () => {
   );
 });
 
-test('brand slugs are unique — two brands must not share a badge URL', () => {
-  const seen = new Map<string, string>();
+test('work slugs are unique — two works must not share an Index row', () => {
+  const seen = new Set<string>();
   for (const e of canonical) {
-    const slug = brandSlug(e.brand);
-    const prior = seen.get(slug);
-    assert.equal(prior, undefined, `slug collision: "${e.brand}" and "${prior}" both → /api/badge/${slug}.svg`);
-    seen.set(slug, e.brand);
+    assert.ok(!seen.has(e.slug), `duplicate work slug in the Index: ${e.slug}`);
+    seen.add(e.slug);
   }
 });

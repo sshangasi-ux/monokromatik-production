@@ -7,7 +7,7 @@
 //   GET /api/index?format=csv → CSV (one row per ranked brand)
 
 import { getAllCaseStudies } from '../../../lib/case-studies';
-import { rankIndex, brandSlug, AXIS_WEIGHTS, AXIS_LABELS } from '../../../lib/signal-index';
+import { rankWorks, AXIS_WEIGHTS, AXIS_LABELS } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince } from '../../../lib/index-history';
 import { evidenceByBrand } from '../../../lib/evidence-strength';
 
@@ -17,29 +17,32 @@ const SITE = 'https://www.monokromatik.com';
 const CACHE = 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400';
 
 function buildRows() {
-  // Ratings are public — rank all scored works (premium decodes stay gated on
-  // their own pages). See app/intelligence/signal-index/page.tsx.
+  // The Index ranks WORK. Ratings are public — every scored work is listed here,
+  // premium or not (full decodes stay gated on their own pages).
+  // See app/intelligence/signal-index/page.tsx.
   const studies = getAllCaseStudies();
-  const ranked = rankIndex(studies);
+  const ranked = rankWorks(studies);
   const evidence = evidenceByBrand(studies);
   return ranked.map((e) => {
-    const slug = brandSlug(e.brand);
-    const movement = getMovement(slug);
-    const ev = evidence.get(slug);
+    const movement = getMovement(e.slug);
+    const ev = evidence.get(e.brandSlug);
     const axes: Record<string, number> = {};
-    for (const ax of AXIS_LABELS) axes[ax] = e.axisAverages[ax] ?? 0;
+    for (const ax of AXIS_LABELS) axes[ax] = e.levels[ax] ?? 0;
     return {
-      rank: e.rank!,
+      rank: e.rank,
       brand: e.brand,
-      slug,
+      title: e.title,
+      slug: e.slug,
+      brandSlug: e.brandSlug,
       score: e.score,
-      works: e.works,
       axes,
       // The measured anchor beside the editorial score.
       evidence: ev ? { score: ev.score, tier: ev.tier, confirmed: ev.confirmed, reported: ev.reported, sources: ev.sources, verifiedWorks: ev.verifiedWorks } : null,
       movement,
-      newlyRanked: isNewlyRanked(slug),
-      url: `${SITE}/intelligence/signal-index/${slug}`,
+      newlyRanked: isNewlyRanked(e.slug),
+      // The work itself is the citable object; the brand roll-up is secondary.
+      url: `${SITE}/intelligence/case-studies/${e.slug}`,
+      brandUrl: `${SITE}/intelligence/signal-index/${e.brandSlug}`,
     };
   });
 }
@@ -54,11 +57,11 @@ export async function GET(req: Request) {
   const format = new URL(req.url).searchParams.get('format');
 
   if (format === 'csv') {
-    const header = ['rank', 'brand', 'slug', 'score', 'evidence_score', 'evidence_tier', 'confirmed_facts', 'sources', 'verified_works', 'works', 'idea', 'authorship', 'execution', 'consequence', 'score_delta', 'rank_delta', 'url'];
+    const header = ['rank', 'brand', 'work', 'slug', 'score', 'evidence_score', 'evidence_tier', 'confirmed_facts', 'sources', 'verified_works', 'idea', 'authorship', 'execution', 'consequence', 'score_delta', 'rank_delta', 'url'];
     const lines = rows.map((r) =>
       [
-        r.rank, r.brand, r.slug, r.score,
-        r.evidence?.score ?? '', r.evidence?.tier ?? '', r.evidence?.confirmed ?? '', r.evidence?.sources ?? '', r.evidence?.verifiedWorks ?? '', r.works,
+        r.rank, r.brand, r.title, r.slug, r.score,
+        r.evidence?.score ?? '', r.evidence?.tier ?? '', r.evidence?.confirmed ?? '', r.evidence?.sources ?? '', r.evidence?.verifiedWorks ?? '',
         r.axes.IDEA, r.axes.AUTHORSHIP, r.axes.EXECUTION, r.axes.CONSEQUENCE,
         r.movement?.scoreDelta ?? '', r.movement?.rankDelta ?? '', r.url,
       ].map(csvEscape).join(',')

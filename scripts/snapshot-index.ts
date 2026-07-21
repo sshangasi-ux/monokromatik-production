@@ -12,16 +12,16 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { getAllCaseStudies } from '../lib/case-studies';
-import { rankIndex, brandSlug, RUBRIC_VERSION } from '../lib/signal-index';
+import { rankWorks, RUBRIC_VERSION } from '../lib/signal-index';
 
 const PATH = join(process.cwd(), 'data', 'index-history.json');
 const dateArg = process.argv.find((a) => a.startsWith('--date='))?.split('=')[1];
 const DATE = dateArg || new Date().toISOString().slice(0, 10);
 
-// Snapshot ALL ranked works — the movement history must match the public Index
-// (ratings are public; premium decodes stay gated). Public-only would leave the
-// top premium works out of the trajectory moat.
-const ranked = rankIndex(getAllCaseStudies());
+// Snapshot the WORK-level Index — the unit the public Index ranks. Ratings are
+// public even where the analysis is gated, so this covers premium works too;
+// public-only would leave the top-scored works out of the trajectory entirely.
+const ranked = rankWorks(getAllCaseStudies());
 // Stamp the rubric in force. Movement is only computed between snapshots sharing
 // a rubric — without this, a re-scoring would render as every brand collapsing
 // overnight, which is our ruler changing, not the work getting worse.
@@ -29,7 +29,11 @@ const snapshot = {
   date: DATE,
   generatedAt: new Date().toISOString(),
   rubricVersion: RUBRIC_VERSION,
-  entries: ranked.map((e) => ({ brand: e.brand, slug: brandSlug(e.brand), score: e.score, rank: e.rank!, works: e.works })),
+  // The Index ranks work. Snapshots stamp the unit so a future change of unit
+  // suppresses movement the same way a rubric change does — the rows would stop
+  // being the same kind of thing, and a delta across that is meaningless.
+  unit: 'work' as const,
+  entries: ranked.map((e) => ({ brand: e.brand, slug: e.slug, title: e.title, score: e.score, rank: e.rank, works: 1 })),
 };
 
 let history: { date: string }[] = [];
@@ -40,4 +44,4 @@ else history.push(snapshot);
 history.sort((a, b) => a.date.localeCompare(b.date));
 
 writeFileSync(PATH, JSON.stringify(history, null, 2) + '\n');
-console.log(`Snapshot ${DATE}: ${ranked.length} brands; history now ${history.length} snapshot(s).`);
+console.log(`Snapshot ${DATE}: ${ranked.length} works; history now ${history.length} snapshot(s).`);

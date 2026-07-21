@@ -134,9 +134,56 @@ export function brandIndex(caseStudies: Pick<CaseStudy, 'brand' | 'decode'>[]): 
   return entries.sort((a, b) => b.score - a.score);
 }
 
-/** Ranked brand leaderboard — the Index. */
+/** Ranked brand leaderboard — the brand roll-up. */
 export function rankIndex(caseStudies: Pick<CaseStudy, 'brand' | 'decode'>[]): BrandIndexEntry[] {
   return brandIndex(caseStudies).map((e, i) => ({ ...e, rank: i + 1 }));
+}
+
+/**
+ * THE INDEX RANKS WORK, NOT BRANDS.
+ *
+ * The unit of the Index is a single scored work, because that is the unit we
+ * actually assess and the unit the evidence attaches to. A brand-level ranking
+ * would imply a body of evidence that does not exist: almost every brand in the
+ * corpus carries exactly one scored work, so a "brand score" is one judgement
+ * wearing a company's name.
+ *
+ * `rankIndex` (brand roll-up) is retained for the per-brand pages, where it is
+ * correctly framed as the mean of that brand's works. It is NOT the Index.
+ *
+ * See docs/EDITION-01-PLAN.md §1.
+ */
+export interface WorkIndexEntry {
+  slug: string;
+  title: string;
+  brand: string;
+  brandSlug: string;
+  score: number;
+  rank: number;
+  levels: Record<string, number>;
+}
+
+export function rankWorks(
+  caseStudies: Pick<CaseStudy, 'slug' | 'title' | 'brand' | 'decode'>[],
+): WorkIndexEntry[] {
+  return caseStudies
+    .map((c) => {
+      const score = compositeScore(c.decode);
+      if (score === null) return null; // unscored / withheld — never ranked
+      const levels: Record<string, number> = {};
+      for (const ax of c.decode ?? []) levels[up(ax.label)] = ax.level;
+      return {
+        slug: c.slug,
+        title: c.title,
+        brand: c.brand,
+        brandSlug: brandSlug(c.brand),
+        score,
+        levels,
+      };
+    })
+    .filter((w): w is Omit<WorkIndexEntry, 'rank'> => w !== null)
+    .sort((a, b) => b.score - a.score || a.brand.localeCompare(b.brand))
+    .map((w, i) => ({ ...w, rank: i + 1 }));
 }
 
 /** URL-safe slug for a brand name (handles ×, /, & and punctuation). */

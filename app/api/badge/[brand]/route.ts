@@ -7,7 +7,7 @@
 //   </a>
 
 import { getAllCaseStudies } from '../../../../lib/case-studies';
-import { rankIndex, brandSlug } from '../../../../lib/signal-index';
+import { rankWorks, brandSlug } from '../../../../lib/signal-index';
 
 export const revalidate = 3600;
 
@@ -37,20 +37,22 @@ function badgeSvg(brand: string, score: number, rank: number, total: number): st
 export async function GET(_req: Request, { params }: { params: Promise<{ brand: string }> }) {
   const { brand: raw } = await params;
   const slug = raw.replace(/\.svg$/i, '');
-  // Rank over ALL scored works — the same universe the Index page uses. The
-  // RATINGS are public even where the analysis is gated, so a public-only
-  // ranking is a different, smaller Index: it 404'd the badge for every
-  // premium-only brand (25 of 69, including ranks #1–#4) and gave every
-  // remaining brand a rank computed out of 44 instead of 69. A badge that
-  // contradicts the site is worse than no badge — the brand publishes it.
-  const ranked = rankIndex(getAllCaseStudies());
-  const entry = ranked.find((e) => brandSlug(e.brand) === slug);
+  // Rank over ALL scored works — the same universe, and now the same UNIT, as
+  // the Index page. The RATINGS are public even where the analysis is gated, so
+  // a public-only ranking would be a different, smaller Index (it once 404'd the
+  // badge for 25 of 69 brands, including ranks #1–#4).
+  //
+  // The Index ranks work, so a brand's badge reports its BEST-RANKED work. A
+  // badge that contradicts the site is worse than no badge — the brand publishes
+  // it on its own domain, under our name.
+  const ranked = rankWorks(getAllCaseStudies());
+  const entry = ranked.find((e) => e.brandSlug === slug);
 
   if (!entry) {
     return new Response('Not found', { status: 404 });
   }
 
-  const svg = badgeSvg(entry.brand, entry.score, entry.rank!, ranked.length);
+  const svg = badgeSvg(entry.brand, entry.score, entry.rank, ranked.length);
   return new Response(svg, {
     headers: {
       'Content-Type': 'image/svg+xml; charset=utf-8',
