@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-07-21T11:58:19.266Z",
+  "updatedAt": "2026-07-21T14:18:32.585Z",
   "breaks": [
+    {
+      "title": "Commonwealth Games 2026: Ashe’s BFTAA Open Win Ignites Team Nigeria’s Gold Medal Ambition In Men’s 4x100m Relay",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/commonwealth-games-2026-ashe-bftaa-open-win-ignites-team-nigerias-gold-medal-ambition-in-mens-4x100m-relay/",
+      "pubDate": "Tue, 21 Jul 2026 12:37:39 +0000",
+      "importance": 4,
+      "why": "Signal: win · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-07-21T14:18:32.585Z"
+    },
     {
       "title": "Ghana, World Gold Council sign $250,000 deal to clean up artisanal mining sector",
       "source": "MyJoyOnline",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Unilever, Guinness, FanMilk, Kasapreko—major African/diaspora brands beating competitors in business/market story",
       "detectedAt": "2026-06-25T20:31:51.087Z"
-    },
-    {
-      "title": "ESSENCE Black Women In Music Returns To Honor Brandy, Missy Elliott, Kandi Burruss, And Mona Scott-Young",
-      "source": "Essence",
-      "category": "culture",
-      "link": "https://www.essence.com/entertainment/essence-black-women-in-music-honorees/",
-      "pubDate": "Thu, 25 Jun 2026 17:45:38 +0000",
-      "importance": 4,
-      "why": "ESSENCE honours major Black women artists (Brandy, Missy Elliott, Kandi); African-diaspora culture economy",
-      "detectedAt": "2026-06-25T18:24:09.073Z"
     }
   ]
 }
