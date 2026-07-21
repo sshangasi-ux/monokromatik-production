@@ -6,6 +6,8 @@ import { Search, ArrowUpRight, ArrowDownRight, GitCompare, X, Star, Bell } from 
 import { SIGNAL_BANDS, signalBand } from '../../../lib/signal-index';
 import { useFollowedBrands } from '../../components/useFollowedBrands';
 import FollowButton from '../../components/FollowButton';
+import OutlookChip from '../../components/dataviz/OutlookChip';
+import type { Outlook } from '../../../lib/outlook';
 
 const AXES = ['IDEA', 'AUTHORSHIP', 'EXECUTION', 'CONSEQUENCE'] as const;
 
@@ -22,6 +24,8 @@ export interface LeaderEntry {
   works: number;
   axisAverages: Record<string, number>;
   market?: string;
+  /** Forward-looking view; null means Stable. */
+  outlook?: Outlook | null;
   movement: { scoreDelta: number; rankDelta: number; rebased?: boolean; rubricFrom?: string; rubricTo?: string } | null;
   isNew: boolean;
   /** The measured corroboration anchor (0–100) + tier. */
@@ -241,6 +245,11 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
                   AUTHORSHIP {e.axisAverages.AUTHORSHIP ?? '—'}/5
                   {e.evidenceTier && <> · <span className={tierClass(e.evidenceTier)}>EVIDENCE {e.evidenceTier.toUpperCase()}</span></>}
                 </p>
+                {/* Only surface a non-Stable outlook — printing "STABLE" on 63 of
+                    70 rows would bury the seven that actually say something. */}
+                {e.outlook && e.outlook.direction !== 'stable' && (
+                  <span className="inline-block mt-2"><OutlookChip outlook={e.outlook} /></span>
+                )}
               </div>
               {/* Follow star — omitted in compare mode to avoid nested buttons. */}
               {!compareMode && <FollowButton slug={e.brandSlug} variant="icon" />}

@@ -66,6 +66,21 @@ caseStudies.forEach((c, i) => {
   if (nonEmpty(c.scoreWithheld) && isArr(c.decode) && (c.decode as unknown[]).length > 0)
     at('scoreWithheld is set but decode is populated — a work is scored or withheld, not both');
 
+  // An outlook without a date cannot be scored later, and an unscoreable forecast
+  // is decoration. Without a rationale naming a checkable trigger it is a mood,
+  // which is exactly what a stated-probability outlook is supposed to replace.
+  const ol = c.outlook as Record<string, unknown> | undefined;
+  if (ol) {
+    const DIRS = ['positive', 'negative', 'stable', 'developing'];
+    if (!DIRS.includes(ol.direction as string)) at(`outlook.direction invalid ('${ol.direction}') — use ${DIRS.join('|')}`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(ol.assignedOn ?? ''))) at('outlook.assignedOn must be an ISO date — an undated outlook can never be marked');
+    if (!nonEmpty(ol.rationale)) at('outlook.rationale required — name the trigger that would move the score');
+    else if (String(ol.rationale).trim().length < 40) at('outlook.rationale too thin — state what would have to happen, not a sentiment');
+    if (ol.watch !== undefined && typeof ol.watch !== 'boolean') at('outlook.watch must be a boolean');
+    if (ol.watch === true && ol.direction === 'stable') at('a Stable outlook cannot be on watch — watch asserts a >=1-in-2 chance of change in 90 days');
+    if (!isArr(c.decode) || (c.decode as unknown[]).length === 0) at('outlook set on a work with no score — nothing to move');
+  }
+
   for (const k of ['context', 'strategicBet', 'creativeMove', 'africanRead']) {
     if (!isArr(c[k])) at(`${k} must be an array (renders with .map)`);
   }

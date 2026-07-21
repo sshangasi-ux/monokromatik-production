@@ -43,7 +43,11 @@ export default function SignalIndexPage() {
   const totalBrands = new Set(ranked.map((e) => e.brandSlug)).size;
 
   const marketBySlug = new Map<string, string>();
-  for (const cs of studies) if (cs.market) marketBySlug.set(cs.slug, cs.market);
+  const outlookBySlug = new Map<string, (typeof studies)[number]['outlook']>();
+  for (const cs of studies) {
+    if (cs.market) marketBySlug.set(cs.slug, cs.market);
+    if (cs.outlook) outlookBySlug.set(cs.slug, cs.outlook);
+  }
 
   // Evidence strength is computed per brand; a work inherits its brand's reading.
   const evidence = evidenceByBrand(studies);
@@ -59,6 +63,7 @@ export default function SignalIndexPage() {
       works: 1,
       axisAverages: e.levels,
       market: marketBySlug.get(e.slug) ?? '',
+      outlook: outlookBySlug.get(e.slug) ?? null,
       movement: getMovement(e.slug),
       isNew: isNewlyRanked(e.slug),
       evidenceScore: ev?.score ?? null,
