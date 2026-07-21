@@ -1,0 +1,114 @@
+name: Edition 01 delivery
+
+# Lands the Cultural-Signal Index Edition 01 on its 30 September 2026 baseline.
+#
+# This is a WATCHDOG, not a progress bar. It answers one question on a schedule:
+# if we shipped today, what would be wrong? Blockers fail the run, so a problem
+# surfaces as a red build and a notification rather than a green tick with the
+# trouble buried in a log nobody opens.
+#
+# Cadence is deliberately quiet far out and loud near the date: weekly on Mondays
+# until three weeks before the baseline, then every day. A daily nag 71 days out
+# trains you to ignore it.
+
+on:
+  schedule:
+    - cron: '20 6 * * *' # daily 06:20 UTC (08:20 SAST) — gated below
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Run the full report regardless of cadence'
+        required: false
+        default: 'true'
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: edition-01
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # Quiet far out, daily close in. Monday = weekly heartbeat; inside 21 days
+      # every run counts because the operator actions start landing.
+      - name: Decide whether to run today
+        id: gate
+        run: |
+          BASELINE=2026-09-30
+          DAYS=$(( ( $(date -u -d "$BASELINE" +%s) - $(date -u +%s) ) / 86400 ))
+          DOW=$(date -u +%u)   # 1 = Monday
+          echo "days=$DAYS" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          elif [ "$DAYS" -le 21 ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          elif [ "$DOW" = "1" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=no" >> "$GITHUB_OUTPUT"
+            echo "Not a Monday and more than 21 days out — skipping." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'yes'
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install
+        if: steps.gate.outputs.run == 'yes'
+        run: npm install --no-fund --no-audit
+
+      # The data guards run first: a readiness report computed from invalid data
+      # would be confidently wrong, which is worse than no report.
+      - name: Validate data
+        if: steps.gate.outputs.run == 'yes'
+        run: npm run validate:data
+
+      - name: Edition readiness
+        if: steps.gate.outputs.run == 'yes'
+        id: readiness
+        env:
+          EDITION_STRICT: 'false' # report everything, then decide below
+        run: npm run edition:readiness
+
+      # Blockers open (or update) a single tracking issue, so the detail lands
+      # somewhere durable rather than only in a run log.
+      - name: Raise blockers
+        if: steps.gate.outputs.run == 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          BLOCKERS=$(node -p "require('./output/edition-readiness.json').blockers")
+          DAYS=$(node -p "require('./output/edition-readiness.json').daysLeft")
+          if [ "$BLOCKERS" = "0" ]; then
+            echo "No blockers with $DAYS days to baseline." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          TITLE="Edition 01 blockers ($BLOCKERS) — $DAYS days to baseline"
+          BODY=$(node -e "
+            const r=require('./output/edition-readiness.json');
+            const b=r.checks.filter(c=>c.level==='blocker');
+            console.log('Edition 01 is **not publishable** as at '+r.generatedAt.slice(0,10)+' ('+r.daysLeft+' days to baseline).\n');
+            for(const c of b) console.log('### '+c.title+'\n'+c.detail+'\n\n_If unresolved: '+(c.consequence||'')+'_\n');
+            console.log('\nRun \`npm run edition:readiness\` locally for the full report.');
+          ")
+          EXISTING=$(gh issue list --label edition-01 --state open --json number -q '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --title "$TITLE" --body "$BODY"
+            echo "Updated blocker issue #$EXISTING" >> "$GITHUB_STEP_SUMMARY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label edition-01 || \
+              gh issue create --title "$TITLE" --body "$BODY"
+            echo "Opened a blocker issue" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit 1
