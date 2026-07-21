@@ -7,6 +7,7 @@ import { SignalStrength } from './dataviz/Charts';
 import ReadingProgress from './ReadingProgress';
 import TrackView from './TrackView';
 import SignalScore from './SignalScore';
+import OutlookChip from './dataviz/OutlookChip';
 import { isLocked, type CaseStudy } from '../../lib/case-studies';
 import { isMember } from '../../lib/entitlements';
 import { membershipsLive } from '../../lib/commerce';
@@ -98,6 +99,26 @@ export default async function CaseStudyFeature({
                   authorship-weighted Cultural-Signal Score, reflecting judgement, not a measured metric.
                 </p>
                 <SignalScore score={signalScore} size="lg" />
+              </div>
+            )}
+            {signalScore !== null && (
+              <div className="not-prose mb-6 border border-mono-gray/25 bg-mono-soft-white p-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-[10px] tracking-[0.22em] font-display font-bold text-mono-amber-strong">
+                    OUTLOOK
+                  </span>
+                  <OutlookChip outlook={c.outlook} size="lg" />
+                </div>
+                <p className="mt-3 text-sm font-body text-mono-charcoal leading-relaxed">
+                  {c.outlook?.rationale ?? 'No one-in-three likelihood of movement identified in the next twelve months.'}
+                </p>
+                <p className="mt-2 text-[11px] font-body text-mono-gray">
+                  {c.outlook?.assignedOn ? <>Assigned {c.outlook.assignedOn}. </> : null}
+                  An outlook states at least a one-in-three likelihood of a change over the next twelve months.{' '}
+                  <Link href="/intelligence/signal-index/methodology#outlook" className="text-mono-amber-strong hover:underline">
+                    How outlooks work
+                  </Link>
+                </p>
               </div>
             )}
             {/* A work we have deliberately not scored — say so, in place of the

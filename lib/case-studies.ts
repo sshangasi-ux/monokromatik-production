@@ -75,6 +75,9 @@ export interface CaseStudy {
   rubricVersion?: string;
   /** ISO date the decode was last set/reviewed. */
   scoredOn?: string;
+  /** Forward-looking view: which way the score is likely to move, at a stated
+   *  probability and clock. See lib/outlook.ts. Absent means Stable. */
+  outlook?: import('./outlook').Outlook;
   /** Why this work carries no score. Set ONLY with an empty `decode` — the work
    *  is not scoreable yet (typically: the event has not happened). Publishing a
    *  number for something that hasn't occurred rates a forecast, not work, and

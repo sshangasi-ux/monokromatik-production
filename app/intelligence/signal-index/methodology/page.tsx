@@ -4,6 +4,8 @@ import { ArrowRight, ArrowLeft, ShieldCheck, Scale, GitBranch, Database, PenLine
 import Navigation from '../../../components/Navigation';
 import SignalScore from '../../../components/SignalScore';
 import { AXIS_WEIGHTS, SIGNAL_BANDS, compositeScore } from '../../../../lib/signal-index';
+import { OUTLOOK_DEFINITIONS, OUTLOOK_THRESHOLD, WATCH_THRESHOLD } from '../../../../lib/outlook';
+import { getAllCaseStudies as allStudies } from '../../../../lib/case-studies';
 import { getCaseStudyBySlug } from '../../../../lib/case-studies';
 
 export const revalidate = 3600;
@@ -50,6 +52,13 @@ const AXES: { label: string; what: string; raises: string; lowers: string }[] = 
 ];
 
 export default function MethodologyPage() {
+  // Outlook coverage, read live so the page can never claim a count it doesn't
+  // have. Stable is the default, so "assigned" means non-Stable.
+  const scored = allStudies().filter((c) => (c.decode?.length ?? 0) > 0);
+  const scoredCount = scored.length;
+  const outlookAssigned = scored.filter((c) => c.outlook && c.outlook.direction !== 'stable').length;
+  const watchCount = scored.filter((c) => c.outlook?.watch).length;
+
   // JSON-LD: a definedTermSet so the scoring rubric is citable/structured.
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -215,6 +224,44 @@ export default function MethodologyPage() {
               );
             })}
           </div>
+        </section>
+
+        {/* Outlooks. Published with their probabilities, because a watchlist
+            without a stated likelihood and a clock is just a mood. */}
+        <section id="outlook" className="scroll-mt-28">
+          <div className="flex items-center gap-3 mb-5">
+            <Scale className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">THE OUTLOOK</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">
+            Which way the score is likely to move.
+          </h2>
+          <p className="mt-6 font-body text-lg text-mono-charcoal leading-relaxed">
+            A score says what a work is worth now. An <strong>outlook</strong> says which way it is likely to
+            move next. We publish the probability each one stands for — a watchlist without a stated
+            likelihood and a clock is just a mood.
+          </p>
+          <div className="mt-8 border border-mono-gray/25 bg-mono-white">
+            {OUTLOOK_DEFINITIONS.map((d) => (
+              <div key={d.direction} className="px-5 py-4 border-b border-mono-gray/15 last:border-b-0">
+                <span className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-black">
+                  {d.label.toUpperCase()}
+                </span>
+                <p className="mt-1.5 font-body text-sm text-mono-charcoal leading-relaxed">{d.meaning}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 font-body text-sm text-mono-gray leading-relaxed">
+            An outlook is assigned at <strong>{OUTLOOK_THRESHOLD}</strong>. A work moves to{' '}
+            <strong>Watch</strong> only at <strong>{WATCH_THRESHOLD}</strong>. Every outlook carries the date it
+            was assigned and the specific trigger that would move the score — so a later edition can mark our
+            own calls. <strong>{outlookAssigned} of {scoredCount} works</strong> currently carry a non-Stable
+            outlook, and <strong>{watchCount === 0 ? 'none are on watch' : `${watchCount} are on watch`}</strong>.
+          </p>
+          <p className="mt-3 font-body text-sm text-mono-gray leading-relaxed">
+            Stable is the default and the majority. That is a finding, not an absence of one: most work is not
+            about to move, and saying so is the only way the exceptions mean anything.
+          </p>
           <p className="mt-6 font-body text-sm text-mono-gray leading-relaxed">
             The gap between them is the whole point. Both are competent, well-resourced products built for the same
             continent. What separates a 95 from a 43 is not craft — it is who ended up owning the thing that was

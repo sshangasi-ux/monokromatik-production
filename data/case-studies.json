@@ -3783,7 +3783,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "positive",
+      "rationale": "Consequence rests on a banking licence granted in April 2026 and the Mono acquisition in January 2026 — both grants rather than results at the time of scoring. Within twelve months these become operating facts, and published operating evidence would lift consequence above the announcement cap.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "springboks-national-brand",
@@ -4504,7 +4509,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "developing",
+      "rationale": "Jumia is NYSE-listed and reports audited results, and has stated profitability as a 2027 target. Consequence is capped at 3 on a confirmed record of a $60.1m pre-tax loss and four abandoned markets. Audited results inside twelve months will either evidence a real turn — moving consequence up — or confirm the loss-making record, and the direction is genuinely open.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "billiato-celebrity-spirits",
@@ -4703,7 +4713,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "developing",
+      "rationale": "Every claim of scale — 8th best-selling, top 3, fastest-growing, R5-7m profit — is self-reported and unaudited, and a public ownership dispute is on the record. Independent market-share data or a resolution of the dispute would move authorship or consequence, and we cannot predict which way.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "trace-african-music-media",
@@ -5049,7 +5064,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "positive",
+      "rationale": "The league runs an annual season and the NBA publishes attendance and broadcast metrics against it. Consequence is capped at 3 because the league is not shown to be self-sustaining; a further season of published figures is a scheduled disclosure point that could evidence one.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "puma-owns-the-look-who-owns-the-value",
@@ -7419,7 +7439,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "developing",
+      "rationale": "Consequence is held at 4 rather than 5 partly because the AFCON 2025 title sits under an unresolved CAS appeal, which we do not adjudicate. A ruling either way is a checkable event that changes what can be claimed, in either direction.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "letsile-tebogo-de-beers-value-at-source",
@@ -8439,7 +8464,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "negative",
+      "rationale": "The consequence score rests on two round-number streaming figures reported through a single outlet chain, with no chart position, certification or revenue disclosed. If independent chart or certification data fails to corroborate them within twelve months, the evidence supporting the current level weakens and the score falls.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "afroplus-fest-2026-diaspora-live-economy",
@@ -9510,7 +9540,12 @@
       }
     ],
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "positive",
+      "rationale": "The score is capped at 3 by the announcement rule: what is confirmed is a raise, a regulatory approval to acquire, and a product launch. Completion of the bank acquisition, or publication of audited inclusion metrics, would convert announcements into a documented outcome and lift consequence to 4.",
+      "assignedOn": "2026-07-21"
+    }
   },
   {
     "slug": "uncover-k-beauty-science-african-skin-kenyan-ownership",
