@@ -139,7 +139,41 @@ was on the launch plan for exactly that reason.
 
 ---
 
-## 🔴 BLOCKER — fix before any of this is sent
+## ✅ BLOCKER RESOLVED — 20 July 2026
+
+The four thin-sourced advertisers were re-researched before notification. **Three of the four
+were wrong, and one of them was wrong on a fact, not a judgement.** Outcome:
+
+| Brand | Was | Now | What changed |
+|---|---|---|---|
+| **Visa** | 54 · AUTH 1 | **68 · AUTH 3** | Our claim was false. Visa commissioned and credited three African illustrators — Karabo Poppy Moletsane (SA), Ahmed El Azazy (Egypt), Wiam Azhar (Morocco) — inside Tap In Studio, plus Kenyan muralist Chelwek Chela. Published on Visa's own site. |
+| **Budweiser** | 49 · AUTH 1 | **56 · AUTH 2** | Our claim that the canon was "explicitly non-African" was false — AB InBev's stated eleven-design scope necessarily includes South Africa 2010. Plus commissioned Ivorian artists at the Abidjan festival. |
+| **Adidas** | 56 · AUTH 2 | **56 · AUTH 2** | Level holds; reasoning corrected. "Opening-match framing" understated a full SAFA technical partnership, and we had missed Wanda Lephoto and Kabelo Kungwane directing the SA kit launch. |
+| **Coca-Cola** | 49 · AUTH 1 | **49 · AUTH 1** | Level holds, now *positively* evidenced: a complete named crew with no African name, and regional authorship funded for the Middle East and India but not Africa. Charge restated as **omission, not extraction**. |
+
+**Works scoring AUTHORSHIP 1 fell from three to one.** The remaining one is the best-evidenced
+of the four.
+
+Two traps caught that would have embarrassed us either way:
+- The agency credited on Budweiser's hero film is **"Africa Creative" — a São Paulo agency**, not
+  an African one. Anyone fact-checking hits it within one search. The piece now names and
+  disposes of it.
+- **Burna Boy's "Dai Dai" is FIFA's anthem, not Coca-Cola's.** Coca-Cola's is a Van Halen cover.
+  Now an explicit `notClaimed`.
+
+**This is the vindication of the pre-notification check.** We had published a universal negative
+about three named companies on two sources each, and two of those negatives were falsifiable in
+under an hour. Had we sent the notification first, the correction would have arrived as a reply
+from a rated brand's comms team — two weeks before launch.
+
+**A rubric weakness to log:** level 1 reads *"African culture referenced or extracted with no
+African authorship."* Coca-Cola doesn't extract; it **omits** — African markets are treated as
+distribution territory. The rubric has no cell for that, and it is a distinct failure mode worth
+naming in v2.1.
+
+---
+
+## 🔴 ORIGINAL BLOCKER (retained for the record)
 
 Running the pack surfaced a problem that notification would have walked us straight into.
 
