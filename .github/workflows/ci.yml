@@ -43,6 +43,12 @@ jobs:
       - name: Validate content data
         run: npm run validate:data
 
+      # Blocks a merge that would ship generic stock imagery, an untraceable
+      # image, or the same picture reused across unrelated stories. Media must be
+      # specific and true to the topic — this is the gate that keeps it so.
+      - name: Media relevance
+        run: npm run media:relevance
+
       - name: Unit tests
         run: npm test
 
