@@ -50,6 +50,21 @@ And one advisory:
 that is precisely what we want. The check only fails reuse across pieces that
 share no meaningful topic token.
 
+### Reports have no photography — the exhibit is the artefact
+
+Reports are data products: no photos, only exhibits and key-stats. So the same
+principle applies to a different object. The **exhibit** is the standalone visual
+a report produces — designed to be screenshotted into someone else's deck — so it
+must state where its numbers came from on its own face:
+
+| **SOURCELESS** | A report exhibit whose note names no source | An exhibit with no source is an unsupported claim, and it travels without the report around it |
+
+The check accepts any real attribution, not a magic word: "Source:…", "as reported
+by…", a named citation with a year ("TechCabal (2025)"), or a provider chain
+("Spotify Loud & Clear / TechCabal"). Key-stat chips are *not* gated — they are
+summaries of figures the report body already sources; requiring inline attribution
+on each would cry wolf.
+
 Run it locally before adding media:
 
 ```bash

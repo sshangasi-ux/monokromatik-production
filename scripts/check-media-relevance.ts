@@ -140,6 +140,36 @@ for (const c of caseStudies) {
   });
 }
 
+// ---- Reports ----
+// Reports carry no photography — they are data products. Their standalone visual
+// artefact is the EXHIBIT, and an exhibit is designed to be lifted into someone
+// else's deck, so it must say where its numbers came from on its own face. The
+// key-stat chips are summaries of figures the report body sources, so they are not
+// checked here; the exhibit is the object that travels.
+const ATTRIBUTED = [
+  /source/i,
+  /reported by|as reported|according to|\bper\b/i,
+  // A named citation with a year: "TechCabal (2025)", "Billboard Boxscore".
+  /[A-Z][A-Za-z&.\- ]{2,}\((?:19|20)\d\d\)/,
+  // A slash-joined provider chain: "Spotify Loud & Clear / TechCabal".
+  /[A-Z][A-Za-z&.\- ]{2,}\s*\/\s*[A-Z][A-Za-z&.\- ]{2,}/,
+];
+const isAttributed = (note: string) => ATTRIBUTED.some((re) => re.test(note));
+
+let exhibitsChecked = 0;
+const reports = load('reports.json') as Record<string, unknown>[];
+for (const r of reports) {
+  const ex = r.exhibit as { title?: string; note?: string } | undefined;
+  if (!ex) continue;
+  exhibitsChecked++;
+  const note = (ex.note ?? '').trim();
+  if (!note) {
+    failures.push(`SOURCELESS report:${r.slug} — exhibit "${(ex.title ?? '').slice(0, 50)}" has no note at all. An exhibit with no source is an unsupported claim.`);
+  } else if (!isAttributed(note)) {
+    failures.push(`SOURCELESS report:${r.slug} — exhibit "${(ex.title ?? '').slice(0, 50)}" note names no source. State where the figures came from.`);
+  }
+}
+
 // ---- Reuse across pieces ----
 // Reuse is only a problem when the sharing pieces are about DIFFERENT subjects.
 // An article and its companion case study on the same event sharing the
@@ -159,8 +189,8 @@ for (const [src, users] of bySrc) {
 }
 
 // ---- Report ----
-const total = articles.filter((a) => a.imageUrl).length + caseStudies.reduce((n, c) => n + ((c.media as unknown[]) ?? []).length, 0);
-console.log(`Media relevance — ${total} images checked.\n`);
+const imgTotal = articles.filter((a) => a.imageUrl).length + caseStudies.reduce((n, c) => n + ((c.media as unknown[]) ?? []).length, 0);
+console.log(`Media relevance — ${imgTotal} images and ${exhibitsChecked} report exhibits checked.\n`);
 
 if (failures.length) {
   console.log(`🔴 ${failures.length} failure(s) — generic or untraceable imagery:`);
@@ -178,7 +208,7 @@ else if (!failures.length) console.log('✅ No generic or untraceable imagery. W
 mkdirSync(join(process.cwd(), 'output'), { recursive: true });
 writeFileSync(
   join(process.cwd(), 'output/media-relevance.json'),
-  JSON.stringify({ generatedAt: new Date().toISOString(), checked: total, failures, warnings }, null, 2),
+  JSON.stringify({ generatedAt: new Date().toISOString(), checked: imgTotal, exhibitsChecked, failures, warnings }, null, 2),
 );
 
 if (failures.length && process.env.MEDIA_STRICT !== 'false') process.exit(1);
