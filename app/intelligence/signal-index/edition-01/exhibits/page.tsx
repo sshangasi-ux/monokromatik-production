@@ -4,10 +4,11 @@ import { ArrowLeft } from 'lucide-react';
 import Navigation from '../../../../components/Navigation';
 import EditionExhibit, { EXHIBIT_ORDER, EXHIBIT_TITLES, exhibitNumber } from '../../../../components/dataviz/EditionExhibit';
 import { CHAPTERS } from '../../../../../lib/edition-01-chapters';
-import { EDITION } from '../../../../../lib/edition-01';
+import { EDITION, editionStats, scoredWorks } from '../../../../../lib/edition-01';
 
 export const revalidate = 3600;
 const SITE = 'https://www.monokromatik.com';
+const EDITION_URL = `${SITE}/intelligence/signal-index/edition-01`;
 
 export const metadata: Metadata = {
   title: `Exhibits — Edition ${EDITION.number} | MonoKromatik`,
@@ -33,8 +34,41 @@ export default function ExhibitsPage() {
   const chapterFor = (key: string) =>
     CHAPTERS.find((c) => c.sections.some((s) => s.exhibit === key));
 
+  const stats = editionStats(scoredWorks());
+
+  // schema.org Dataset — the markup that makes the edition discoverable in Google
+  // Dataset Search and citable by AI engines. Each exhibit's CSV is a
+  // DataDownload; isAccessibleForFree is true because the numbers never gate.
+  // These are also the five fields a DataCite DOI needs, so the day a DOI is
+  // minted the metadata is already assembled.
+  const datasetLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: `The Cultural-Signal Index — Edition ${EDITION.number}`,
+    description:
+      'A transparent, rubric-based expert rating of African and diaspora brand-culture work, scored across idea, authorship, execution and consequence. Not a survey, not a valuation.',
+    url: EDITION_URL,
+    creator: { '@type': 'Organization', name: 'MonoKromatik', url: SITE },
+    author: { '@type': 'Person', name: 'Sibu Shangase', jobTitle: 'Founder & Lead Analyst' },
+    datePublished: EDITION.baseline,
+    version: EDITION.rubric,
+    isAccessibleForFree: true,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    temporalCoverage: `../${EDITION.baseline}`,
+    spatialCoverage: 'Africa and the African diaspora',
+    variableMeasured: ['Cultural-Signal Score', 'Idea', 'Authorship', 'Execution', 'Consequence', 'Band', 'Evidence Strength'],
+    measurementTechnique: 'Expert rating against a published rubric (docs/SCORING-RUBRIC.md)',
+    distribution: EXHIBIT_ORDER.map((key) => ({
+      '@type': 'DataDownload',
+      name: EXHIBIT_TITLES[key],
+      encodingFormat: 'text/csv',
+      contentUrl: `${SITE}/api/exhibit/${key}`,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-mono-paper">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }} />
       <Navigation />
 
       <header className="bg-mono-black text-mono-white py-14 md:py-20 border-b border-mono-white/15">
@@ -67,15 +101,22 @@ export default function ExhibitsPage() {
           <p className="text-[10px] tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-5">CONTENTS</p>
           <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
             {EXHIBIT_ORDER.map((key) => (
-              <li key={key}>
+              <li key={key} className="flex items-baseline justify-between gap-3">
                 <a
                   href={`#e${String(exhibitNumber(key)).padStart(2, '0')}`}
-                  className="font-body text-mono-charcoal hover:text-mono-amber-strong transition-colors"
+                  className="font-body text-mono-charcoal hover:text-mono-amber-strong transition-colors min-w-0"
                 >
                   <span className="tabular-nums text-mono-gray text-sm">
                     {String(exhibitNumber(key)).padStart(2, '0')}
                   </span>{' '}
                   {EXHIBIT_TITLES[key]}
+                </a>
+                <a
+                  href={`/api/exhibit/${key}`}
+                  download
+                  className="shrink-0 text-[10px] font-display font-bold tracking-[0.1em] text-mono-gray hover:text-mono-amber-strong"
+                >
+                  CSV ↓
                 </a>
               </li>
             ))}
@@ -127,6 +168,14 @@ export default function ExhibitsPage() {
           <p className="mt-6 font-body text-sm text-mono-gray leading-relaxed">
             Scores are versioned. Quote the rubric version and the baseline date alongside any figure, because a
             later edition will re-score against new evidence — and a number without its rubric cannot be checked.
+          </p>
+          <p className="mt-3 font-body text-sm text-mono-gray leading-relaxed">
+            Data is published under{' '}
+            <a href="https://creativecommons.org/licenses/by/4.0/" className="text-mono-amber-strong hover:underline">
+              CC BY 4.0
+            </a>
+            . A persistent identifier (DOI) is assigned at the {EDITION.baseline} baseline; until then, cite the
+            edition URL, the rubric version and the date.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

@@ -70,6 +70,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle={`All ${stats.works} scored works on the 0–100 Cultural-Signal scale, grouped by published band. Works that tie are stacked.`}
           source={`${stats.works} scored works · ${stats.brands} brands`}
@@ -83,6 +84,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle={`Scored works by published band, in rating order. ${stats.works} works.`}
           source={`${stats.works} scored works`}
@@ -96,6 +98,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle="Each axis occupies a slot as wide as its weight, filled to the level awarded. Shown here at the corpus mean."
           source="Mean level per axis across all scored works"
@@ -109,6 +112,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle="How many scored works sit behind the rating, and how much corroboration."
           source={`${lead.brand} · evidence tier from cited sources and confirmed facts`}
@@ -122,6 +126,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle={`${lead.brand} — the highest-rated work in Edition ${EDITION.number}.`}
           source={`${lead.brand} · scored work`}
@@ -145,6 +150,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle={`All five levels of the highest-weighted axis, with the level awarded to ${lead.brand} marked.`}
           source={`docs/SCORING-RUBRIC.md ${EDITION.rubric}`}
@@ -159,6 +165,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle={`Band distribution under the previous rubric (${lastV1.date}) beside the first reading under ${EDITION.rubric} (${firstV2.date}).`}
           source="Index snapshots · brand basis, before the Index moved to ranking works"
@@ -176,6 +183,7 @@ export default function EditionExhibit({ exhibit }: { exhibit: ExhibitKey }) {
       return (
         <Exhibit
           n={n}
+          dataKey={exhibit}
           title={title}
           subtitle="Entries per snapshot, with the comparability basis beneath each."
           source="Index snapshot history"
