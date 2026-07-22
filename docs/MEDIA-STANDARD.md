@@ -50,6 +50,18 @@ And one advisory:
 that is precisely what we want. The check only fails reuse across pieces that
 share no meaningful topic token.
 
+### Issue covers — original art, still checked
+
+An issue cover is not a photo pulled from a story; it is original, thematic cover
+art for the whole issue. So the topic-anchor rule is waived (a cover named
+`cover.webp` is a convention, not a fault), but the two non-negotiables hold: a
+cover must **not be a stock image**, and it must be **credited** — stating whether
+it is original or where it was licensed from. Only live issues are checked.
+
+Note the check reads the cover's `src` URL, not its credit text — so a credit that
+discloses the *tool* used ("MonoKromatik original — AI-assisted (Canva)") is fine.
+Naming a design tool is honesty; sourcing a stock file would be caught by the URL.
+
 ### Reports have no photography — the exhibit is the artefact
 
 Reports are data products: no photos, only exhibits and key-stats. So the same
