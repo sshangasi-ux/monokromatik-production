@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-07-22T12:01:36.147Z",
+  "updatedAt": "2026-07-22T22:14:59.348Z",
   "breaks": [
+    {
+      "title": "WHO warns Africa risks losing decades of health gains as external funding declines",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/who-warns-africa-risks-losing-decades-of-health-gains-as-external-funding-declines/",
+      "pubDate": "Wed, 22 Jul 2026 20:33:17 +0000",
+      "importance": 4,
+      "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-07-22T22:14:59.348Z"
+    },
     {
       "title": "Ghana becomes first African country to sign accelerated patent grant deal with US",
       "source": "MyJoyOnline",
@@ -589,16 +599,6 @@
       "pubDate": "Thu, 25 Jun 2026 22:35:06 +0000",
       "importance": 4,
       "why": "Pepe's goal sends Côte d'Ivoire to World Cup knockout rounds for first time — major African national team sports milestone",
-      "detectedAt": "2026-06-25T22:43:32.148Z"
-    },
-    {
-      "title": "India and South Africa take semi-final fight to final day",
-      "source": "BBC Sport Africa",
-      "category": "sports",
-      "link": "https://www.bbc.co.uk/sport/cricket/articles/cgev5g980n3o?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Thu, 25 Jun 2026 20:59:47 GMT",
-      "importance": 4,
-      "why": "South Africa in World Cup semi-final — major African national team sports result",
       "detectedAt": "2026-06-25T22:43:32.148Z"
     }
   ]
