@@ -56,7 +56,8 @@
     "brief:daily": "tsx scripts/daily-brief.ts",
     "feature:author": "tsx scripts/author-feature.ts",
     "notify:brands": "tsx scripts/notify-rated-brands.ts",
-    "edition:readiness": "tsx scripts/edition-readiness.ts"
+    "edition:readiness": "tsx scripts/edition-readiness.ts",
+    "media:relevance": "tsx scripts/check-media-relevance.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
