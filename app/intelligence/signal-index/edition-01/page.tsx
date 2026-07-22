@@ -2,20 +2,13 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
-import Exhibit from '../../../components/dataviz/Exhibit';
-import UniverseStrip from '../../../components/dataviz/UniverseStrip';
-import { BandLedger, RebaseExhibit, PanelLedger } from '../../../components/dataviz/CorpusExhibits';
-import { ContributionBar, EvidenceRow, AxisLadder, WorkScorecard } from '../../../components/dataviz/WorkExhibits';
-import { getHistory } from '../../../../lib/index-history';
-import { brandEvidence } from '../../../../lib/evidence-strength';
-import { getAllCaseStudies, getCaseStudyBySlug } from '../../../../lib/case-studies';
-import { AXIS_WEIGHTS } from '../../../../lib/signal-index';
+import EditionExhibit from '../../../components/dataviz/EditionExhibit';
+import { CHAPTERS } from '../../../../lib/edition-01-chapters';
 import {
   EDITION,
   scoredWorks,
   axisSummary,
   craftCaptureGap,
-  bandCounts,
   editionStats,
   limitations,
 } from '../../../../lib/edition-01';
@@ -45,17 +38,7 @@ export default function EditionOnePage() {
   const stats = editionStats(works);
   const axes = axisSummary(works);
   const gap = craftCaptureGap(works);
-  const bands = bandCounts(works);
   const lim = limitations(works);
-
-  // Exhibit 05 uses the top-ranked work as the worked scorecard; exhibits 06 and
-  // 08 read the snapshot history.
-  const lead = works[0];
-  const leadStudy = getCaseStudyBySlug(lead.slug);
-  const leadEvidence = brandEvidence(getAllCaseStudies().filter((c) => c.brand === lead.brand));
-  const history = getHistory();
-  const lastV1 = [...history].reverse().find((h) => (h.rubricVersion ?? 'v1') === 'v1');
-  const firstV2 = history.find((h) => h.rubricVersion === 'v2.0');
 
   // The press number: how few works can show an outcome a third party could check.
   // CONSEQUENCE 4+ is "a real, documented outcome"; 3 and below cannot demonstrate one.
@@ -147,17 +130,7 @@ export default function EditionOnePage() {
             Every work we rated, on one scale.
           </h2>
 
-          <Exhibit
-            n={1}
-            title="The rated universe"
-            subtitle={`All ${stats.works} scored works on the 0–100 Cultural-Signal scale, grouped by published band. Works that tie are stacked.`}
-            /* Deliberately not "n=…" — that is survey language and we have no fieldwork.
-               See docs/EDITION-01-PLAN.md §4. */
-            source={`${stats.works} scored works · ${stats.brands} brands`}
-            note={`Each tick is one work, not a brand's record — ${lim.singleWorkShare}% of brands here have exactly one scored work. Ties are real and shown as ties: ${lim.ties.tiedWorks} of ${lim.ties.total} works share a score with something else, across only ${lim.ties.distinctScores} distinct values. Rank positions between tied works would be arithmetic noise, so this edition does not publish a 1–${stats.works} league table.`}
-          >
-            <UniverseStrip works={works} />
-          </Exhibit>
+          <EditionExhibit exhibit="universe" />
 
           {/* Buffer's mechanic: make the chart the citable unit and pre-clear it. */}
           <p className="mt-2 font-body text-sm text-mono-gray max-w-2xl leading-relaxed">
@@ -178,27 +151,9 @@ export default function EditionOnePage() {
             Where the work sits.
           </h2>
 
-          <Exhibit
-            n={2}
-            title="The band ledger"
-            subtitle={`Scored works by published band, in rating order. ${stats.works} works.`}
-            source={`${stats.works} scored works`}
-            note="Bands are absolute cut-offs published in advance, not forced percentiles — the shape of this distribution was not designed, it is what the rubric produced. Band order is the scale and is never re-sorted by count."
-          >
-            <BandLedger bands={bands} />
-          </Exhibit>
+          <EditionExhibit exhibit="bandLedger" />
 
-          <Exhibit
-            n={3}
-            title="How a score is built"
-            subtitle="Each axis occupies a slot as wide as its weight, filled to the level awarded. Shown here at the corpus mean."
-            source="Mean level per axis across all scored works"
-            note="A radar chart is deliberately not used here. Its spokes are equal by construction, so it would render AUTHORSHIP (35%) and EXECUTION (15%) as the same size, and its enclosed area is not proportional to the composite. Length is the honest encoding for weighted components."
-          >
-            <ContributionBar
-              levels={Object.fromEntries(axes.map((a) => [a.axis, a.mean])) as Record<string, number>}
-            />
-          </Exhibit>
+          <EditionExhibit exhibit="contribution" />
 
           <p className="mt-4 font-body text-mono-charcoal leading-relaxed max-w-2xl">
             Authorship carries the heaviest weight because it is the question this publication exists to ask:
@@ -219,45 +174,11 @@ export default function EditionOnePage() {
             band, the weighted contribution of each axis, and the evidence behind it.
           </p>
 
-          <Exhibit
-            n={4}
-            title="The evidence behind a reading"
-            subtitle="How many scored works sit behind the rating, and how much corroboration."
-            source={`${lead.brand} · evidence tier from cited sources and confirmed facts`}
-            note="We publish no confidence interval because we have no sampling and could not honestly compute one. What is shown is what can be counted: works behind the reading, and a qualitative corroboration tier. With one scored work behind almost every brand, that count is the most important number on the card."
-          >
-            <EvidenceRow works={leadEvidence.works} tier={leadEvidence.tier} score={leadEvidence.score} />
-          </Exhibit>
+          <EditionExhibit exhibit="evidence" />
 
-          <Exhibit
-            n={5}
-            title="A worked scorecard"
-            subtitle={`${lead.brand} — the highest-rated work in Edition ${EDITION.number}.`}
-            source={`${lead.brand} · scored work`}
-            note={`The card shows a band, not a rank. With only ${lim.ties.distinctScores} distinct scores across ${stats.works} works, rank between tied works is arithmetic noise; the band is the honest position.`}
-          >
-            <WorkScorecard
-              brand={lead.brand}
-              title={lead.title}
-              score={lead.score}
-              levels={lead.levels}
-              works={leadEvidence.works}
-              tier={leadEvidence.tier}
-              evidenceScore={leadEvidence.score}
-              scoredOn={leadStudy?.scoredOn}
-              rubric={EDITION.rubric}
-            />
-          </Exhibit>
+          <EditionExhibit exhibit="scorecard" />
 
-          <Exhibit
-            n={6}
-            title="The rubric, made visible"
-            subtitle={`All five levels of the highest-weighted axis, with the level awarded to ${lead.brand} marked.`}
-            source={`docs/SCORING-RUBRIC.md ${EDITION.rubric}`}
-            note="Levels are not equal intervals and should not be read as a percentage scale. They are named standards; the distance between a 3 and a 4 is a difference in kind, not in degree."
-          >
-            <AxisLadder axis="AUTHORSHIP" level={lead.levels.AUTHORSHIP} />
-          </Exhibit>
+          <EditionExhibit exhibit="axisLadder" />
         </div>
       </section>
 
@@ -273,31 +194,46 @@ export default function EditionOnePage() {
             after it, and we do not present them as though they were.
           </p>
 
-          {lastV1 && firstV2 && (
-            <Exhibit
-              n={7}
-              title="Before and after the rescoring"
-              subtitle={`Band distribution under the previous rubric (${lastV1.date}) beside the first reading under ${EDITION.rubric} (${firstV2.date}).`}
-              source="Index snapshots · brand basis, before the Index moved to ranking works"
-              note="There is deliberately no arrow, slope or connector between these two distributions. A connector would assert that entries moved. They did not — the ruler did. A Sankey or slope chart across this boundary would render our own methodology change as roughly sixty downgrades, and it is the one chart we will not build."
-            >
-              <RebaseExhibit
-                unit="brands"
-                before={{ label: `Previous rubric · ${lastV1.date}`, scores: lastV1.entries.map((e) => e.score) }}
-                after={{ label: `Rubric ${EDITION.rubric} · ${firstV2.date}`, scores: firstV2.entries.map((e) => e.score) }}
-              />
-            </Exhibit>
-          )}
+          <EditionExhibit exhibit="rebase" />
 
-          <Exhibit
-            n={8}
-            title="How the rated universe was built"
-            subtitle="Entries per snapshot, with the comparability basis beneath each."
-            source="Index snapshot history"
-            note="This plots count, never mean. The panel is not a fixed cohort — it nearly tripled — so a line of means across these snapshots would not be a time series of the same thing. It is shown beside the rescoring for a reason: the mean also fell while the rubric was unchanged, purely because the panel grew, and any honest reading has to separate the two."
+          <EditionExhibit exhibit="panelLedger" />
+        </div>
+      </section>
+
+      {/* ---------- CONTENTS ---------- */}
+      <section className="py-14 border-t border-mono-gray/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className={kicker}>THE EDITION</p>
+          <h2 className="mt-4 font-feature text-3xl md:text-4xl text-mono-black leading-tight max-w-2xl">
+            Seven chapters.
+          </h2>
+          <ol className="mt-8 border border-mono-gray/25 bg-mono-white">
+            {CHAPTERS.map((c) => (
+              <li key={c.slug} className="border-b border-mono-gray/15 last:border-b-0">
+                <Link
+                  href={`/intelligence/signal-index/edition-01/${c.slug}`}
+                  className="flex items-baseline gap-4 px-5 py-4 hover:bg-mono-soft-white transition-colors group"
+                >
+                  <span className="w-7 shrink-0 text-sm font-display font-bold text-mono-gray tabular-nums">
+                    {String(c.n).padStart(2, '0')}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block font-display font-bold text-mono-black group-hover:text-mono-amber-strong transition-colors">
+                      {c.title}
+                    </span>
+                    <span className="mt-1 block font-body text-sm text-mono-gray leading-relaxed">{c.standfirst}</span>
+                  </span>
+                  <ArrowRight size={15} className="ml-auto shrink-0 self-center text-mono-gray group-hover:text-mono-amber-strong transition-colors" />
+                </Link>
+              </li>
+            ))}
+          </ol>
+          <Link
+            href="/intelligence/signal-index/edition-01/exhibits"
+            className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.18em] font-display font-bold text-mono-amber-strong hover:underline"
           >
-            <PanelLedger snapshots={history} />
-          </Exhibit>
+            ALL EXHIBITS, WITHOUT THE ARGUMENT <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
