@@ -140,6 +140,28 @@ for (const c of caseStudies) {
   });
 }
 
+// ---- Issue covers ----
+// An issue cover is not photojournalism sourced from a story — it is original,
+// thematic cover art for the whole issue. So the topic-anchor rule does not apply
+// (a cover legitimately has no per-story token in its filename), but the two
+// non-negotiables still do: it must not be a stock image, and it must be credited.
+// Only live issues render a cover.
+let coversChecked = 0;
+const issues = load('issues.json') as Record<string, unknown>[];
+for (const iss of issues) {
+  if (iss.status !== 'live') continue;
+  const cover = (iss.cover as { image?: string; imageCredit?: string }) ?? {};
+  const src = cover.image;
+  if (!src) continue;
+  coversChecked++;
+  const where = `issue:#${iss.number}`;
+  if (isStock(src)) {
+    failures.push(`STOCK   ${where} — cover ${filenameOf(src)} is a stock image. An issue cover must be original or specifically licensed art.`);
+  } else if (!cover.imageCredit?.trim()) {
+    failures.push(`ORPHAN  ${where} — cover ${filenameOf(src)} has no credit. State whether it is original or where it came from.`);
+  }
+}
+
 // ---- Reports ----
 // Reports carry no photography — they are data products. Their standalone visual
 // artefact is the EXHIBIT, and an exhibit is designed to be lifted into someone
@@ -190,7 +212,7 @@ for (const [src, users] of bySrc) {
 
 // ---- Report ----
 const imgTotal = articles.filter((a) => a.imageUrl).length + caseStudies.reduce((n, c) => n + ((c.media as unknown[]) ?? []).length, 0);
-console.log(`Media relevance — ${imgTotal} images and ${exhibitsChecked} report exhibits checked.\n`);
+console.log(`Media relevance — ${imgTotal} images, ${coversChecked} issue covers and ${exhibitsChecked} report exhibits checked.\n`);
 
 if (failures.length) {
   console.log(`🔴 ${failures.length} failure(s) — generic or untraceable imagery:`);
@@ -208,7 +230,7 @@ else if (!failures.length) console.log('✅ No generic or untraceable imagery. W
 mkdirSync(join(process.cwd(), 'output'), { recursive: true });
 writeFileSync(
   join(process.cwd(), 'output/media-relevance.json'),
-  JSON.stringify({ generatedAt: new Date().toISOString(), checked: imgTotal, exhibitsChecked, failures, warnings }, null, 2),
+  JSON.stringify({ generatedAt: new Date().toISOString(), checked: imgTotal, coversChecked, exhibitsChecked, failures, warnings }, null, 2),
 );
 
 if (failures.length && process.env.MEDIA_STRICT !== 'false') process.exit(1);
