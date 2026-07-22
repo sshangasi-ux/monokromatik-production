@@ -25,10 +25,13 @@ export interface ExhibitProps {
   note?: string;
   /** Stable anchor id; defaults to e{nn}. */
   id?: string;
+  /** Exhibit registry key. When set, the footer offers the underlying data as CSV
+   *  — the download that turns a screenshot into a citation. */
+  dataKey?: string;
   children: ReactNode;
 }
 
-export default function Exhibit({ n, title, subtitle, source, note, id, children }: ExhibitProps) {
+export default function Exhibit({ n, title, subtitle, source, note, id, dataKey, children }: ExhibitProps) {
   const anchor = id ?? `e${String(n).padStart(2, '0')}`;
   const num = String(n).padStart(2, '0');
   const credit = `MONOKROMATIK CULTURAL-SIGNAL INDEX · RUBRIC ${EDITION.rubric.toUpperCase()} · EDITION ${EDITION.number}`;
@@ -66,11 +69,20 @@ export default function Exhibit({ n, title, subtitle, source, note, id, children
         )}
       </div>
 
-      <div className="border-t border-mono-gray/20 px-5 md:px-7 py-3">
-        <p className="font-body text-[11px] leading-relaxed text-mono-gray/90">
+      <div className="border-t border-mono-gray/20 px-5 md:px-7 py-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <p className="font-body text-[11px] leading-relaxed text-mono-gray/90 min-w-0">
           {source && <>{source} · </>}
           {credit}
         </p>
+        {dataKey && (
+          <a
+            href={`/api/exhibit/${dataKey}`}
+            className="shrink-0 text-[11px] font-display font-bold tracking-[0.1em] text-mono-amber-strong hover:underline"
+            download
+          >
+            DATA (CSV) ↓
+          </a>
+        )}
       </div>
     </figure>
   );
