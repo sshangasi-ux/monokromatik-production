@@ -2566,7 +2566,7 @@
     "readingTime": "9 MIN READ",
     "access": "public",
     "verification": "partial",
-    "verificationNote": "Founding (1981), the $1,000 Waco recipe (1972), the 1982 KFC trademark suit, the 259-outlet / R1.3bn 2013 figures, the Soweto/Alexandra township franchises, the 2018 'Legend of Big John' ARB ban, and Chicken Licken's run of Loerie 'Brand of the Year' wins are all reported by named outlets and cited below. Exact current outlet count and revenue are not independently re-verified for 2026; older published figures are dated in-text. Interpretations of authorship and strategy are MonoKromatik's, distinguished from the reported facts.",
+    "verificationNote": "REFRESHED 23 July 2026. The 2013 scale figures are retained as the last audited reference; secondary 2025–26 estimates (~268–287 SA outlets) are added as reported-and-disputed, not disclosed. The Loeries 2025 Brand of the Year win is added as confirmed third-party recognition of the craft. Score HELD at the composite: an award measures craft, not the market consequence this axis scores, and current scale remains estimated rather than disclosed. A Developing outlook is added for the checkable event that would move it — a company-disclosed 2026 figure.",
     "publishedAt": "2026-07-07T13:37:00.000Z",
     "tags": [
       "fast-food",
@@ -2597,7 +2597,7 @@
       {
         "label": "CONSEQUENCE",
         "level": 3,
-        "note": "Downgraded. The 'parity-adjacent scale against KFC' claim is not evidenced: the only market-share figure is a reported ~5% around 2010 and a 2007 survey ranking, and the entry explicitly notClaims any current outlet count, revenue figure or category leadership — the latest firm figures are from 2013. Cultural fixture status is plausible but has no published measure. Plausible impact with no current published evidence = 3."
+        "note": "Held at 3 on refreshed evidence (23 July 2026). The re-score flagged this as the work most likely to rise if current scale data emerged. It has not, in a form that clears the bar. Current outlet estimates (~268–287 SA stores, 2025–26) exist but are secondary and disagree, with no company-disclosed 2026 total; the last real market-share figure remains ~5% from around 2010. What IS newly confirmed is craft, not capture: Chicken Licken was Loeries 2025 Brand of the Year (20 awards; a Grand Prix for a performance), a checkable third-party recognition of the WORK. But an award measures craft, not market consequence, and consequence is what this axis scores. Plausible impact, current figures still estimated not disclosed = 3."
       }
     ],
     "context": [
@@ -2632,16 +2632,18 @@
         "By 2013 the chain reported 259 outlets (247 SA, 12 Botswana), ~R1.3bn revenue, and sales of 400,000+ chickens and ~5 million hot wings a month (Wikipedia; BusinessTech).",
         "Early franchises were seeded in Soweto and Alexandra (1982), reportedly given away with no royalties in the opening months (BusinessTech).",
         "The 2018 'Legend of Big John' ad, by Joe Public, was banned by the Advertising Regulatory Board on 18 December 2018 for trivialising colonialism (OkayAfrica; Quartz Africa).",
-        "Chicken Licken has been a repeat Loerie 'Brand of the Year', reported at seven consecutive wins with Joe Public (Bizcommunity / Joe Public)."
+        "Chicken Licken has been a repeat Loerie 'Brand of the Year', reported at seven consecutive wins with Joe Public (Bizcommunity / Joe Public).",
+        "Chicken Licken was named Loerie Awards 2025 Brand of the Year, winning 20 Loeries, with agency Joe Public named Agency of the Year; the Grand Prix for Performance Craft went to actor Phila Mazibuko for the \"Piki Piki Mabelane\" campaign (The Media Online; Bizcommunity; LBBOnline, October 2025)."
       ],
       "reported": [
         "Described by industry sources as the largest non-American-owned fried-chicken franchise in the world (Wikipedia, citing Henny Penny, 2011).",
         "Ranked second after KFC in the 2007 Sunday Times Markinor Top Brands survey; ~5% market share around 2010 (Wikipedia).",
         "The company remains family-owned under Chantal Sombonos-Van Tonder (Wikipedia; BusinessTech).",
-        "Critic Duane Jethro found the Big John burger 'a salty, soggy mess' while valuing the ad's 'postcolonial imaginary space' (Africa Is A Country, 2019)."
+        "Critic Duane Jethro found the Big John burger 'a salty, soggy mess' while valuing the ad's 'postcolonial imaginary space' (Africa Is A Country, 2019).",
+        "Chicken Licken is reported to run roughly 268 to 287 outlets in South Africa as at 2025–26 — a secondary estimate that varies by source, with no company-disclosed 2026 total. KFC runs about 1,200 South African outlets and announced plans to add 100 more in 2026 (Daily Investor; Business Day, 2026)."
       ],
       "notClaimed": [
-        "We do not claim a current (2026) outlet count or revenue figure; the latest firmly-sourced figures are from 2013 and are dated as such.",
+        "We do not claim a current, company-disclosed outlet count, revenue figure or category leadership. Secondary 2025–26 estimates put the chain around 268 to 287 South African outlets, but they disagree and none is company-disclosed; the last firm market-share figure is ~5% from around 2010. The 2013 figures are retained as the last audited-scale reference and dated as such.",
         "We do not claim Chicken Licken outspends KFC or leads the total South African fast-food market — the argument is about authorship and cultural standing, not category leadership.",
         "We do not claim the Big John narrative is literal history; it is a deliberate work of counter-mythology.",
         "We do not endorse the brand's trademark litigation over the word 'soul'; we report it as a documented downside."
@@ -2723,6 +2725,18 @@
         "label": "The man behind Chicken Licken",
         "href": "https://dailyinvestor.com/business/59253/the-man-behind-chicken-licken/",
         "use": "The 1982 KFC trademark lawsuit and Sombonos's founding story."
+      },
+      {
+        "publisher": "The Media Online",
+        "label": "Joe Public named Agency of the Year at 2025 Loerie Awards",
+        "href": "https://themediaonline.co.za/2025/10/joe-public-named-agency-of-the-year-at-2025-loerie-awards/",
+        "use": "The Loeries 2025 result — Chicken Licken Brand of the Year, the Grand Prix for a performance. Third-party recognition of the work."
+      },
+      {
+        "publisher": "Daily Investor",
+        "label": "KFC South Africa expansion 2026",
+        "href": "https://dailyinvestor.com/business/134018/",
+        "use": "KFC ~1,200 SA outlets plus 100 more in 2026 — the current scale contrast, keeping the David/Goliath framing from going stale."
       }
     ],
     "media": [
@@ -2739,7 +2753,12 @@
     "videoCredit": "Chicken Licken / Joe Public — 'The Legend of Big John' (2018)",
     "videoSourceUrl": "https://www.adsoftheworld.com/campaigns/legend-of-big-john",
     "rubricVersion": "v2.0",
-    "scoredOn": "2026-07-20"
+    "scoredOn": "2026-07-20",
+    "outlook": {
+      "direction": "developing",
+      "assignedOn": "2026-07-23",
+      "rationale": "Consequence is held at 3 because current scale is a disputed secondary estimate, not a disclosure. If Chicken Licken (or a credible third party) publishes a company-disclosed 2026 outlet count, revenue or market-share figure, it would either evidence real consequence and lift the score, or confirm the plateau — and the direction is genuinely open."
+    }
   },
   {
     "slug": "kenneth-ize-aso-oke-global-house",
