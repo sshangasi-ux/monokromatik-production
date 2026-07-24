@@ -84,9 +84,12 @@ function check(m: Media) {
   if (!src) return;
   bySrc.set(src, [...(bySrc.get(src) ?? []), { where, topic: new Set(toks(m.topic)) }]);
 
-  // STOCK — hard fail.
-  if (isStock(src)) {
-    failures.push(`STOCK   ${where} — ${filenameOf(src)} is from a stock library. Generic by definition; re-source from the story's own reporting.`);
+  // STOCK — hard fail. Check the credit as well as the URL: an automated re-source
+  // can save a stock image under a slug filename, so the URL passes the host check
+  // while the credit still reads "Photo: Pexels". That is the exact hole a media
+  // watchdog fell through — a slug-named Pexels file on the Canal+/screen story.
+  if (isStock(src) || isStock(m.credit ?? '') || isStock(m.sourceUrl ?? '')) {
+    failures.push(`STOCK   ${where} — ${filenameOf(src)} is from a stock library (credit: ${m.credit || 'n/a'}). Generic by definition; re-source from the story's own reporting.`);
     return;
   }
 

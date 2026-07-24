@@ -67,7 +67,10 @@
         "The counterfactual is grounded, not a fantasy: Thebe Magugu (first African LVMH Prize winner) designed an Orlando Pirates kit with adidas in 2023 — the same adidas that is now SA's national sponsor. The model was already on the record."
       ]
     },
-    "linkedinHook": "Ten African teams landed at the 2026 World Cup. The best-dressed ones brought their own designers — DR Congo in La Sape, Côte d’Ivoire in Dida cloth. South Africa, home to an LVMH Prize winner and MaXhosa, didn’t make the fashion story at all."
+    "linkedinHook": "Ten African teams landed at the 2026 World Cup. The best-dressed ones brought their own designers — DR Congo in La Sape, Côte d’Ivoire in Dida cloth. South Africa, home to an LVMH Prize winner and MaXhosa, didn’t make the fashion story at all.",
+    "imageUrl": "/article-media/world-cup-2026-arrival-fashion-african-authorship-ffdf502c.webp",
+    "imageCredit": "Via africasoccer",
+    "imageSourceUrl": "https://africasoccer.com/world-cup-2026-african-squads-steal-spotlight-with-bold-cultural-fashion-at-arrivals/"
   },
   {
     "title": "The Incubator Opened as the Export Channel Closed",
@@ -205,10 +208,7 @@
         "African talent supplies the culture while Ralph Lauren, Miu Miu and New Balance bank the halo — no African house has yet claimed a defining piece of tennis fashion.",
         "Jabeur's 2025 break is a reminder that representation carries a private cost; her 2026 competitive return remains unconfirmed, so treat comeback claims as speculative."
       ]
-    },
-    "imageUrl": "/article-media/wimbledon-fashion-celebrity-african-diaspora-8e7f0db4.webp",
-    "imageCredit": "Photo: Sebastian Angarita (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/man-playing-tennis-on-court-in-tropical-landscape-16639181/"
+    }
   },
   {
     "title": "The Mask That Built a Brand: How Victor Osimhen Turned a Fracture Into Iconography",
@@ -271,10 +271,7 @@
         "Treat the viral 'N7.2bn from votes' figure with skepticism — the N30 charge applied to SMS only, while most of the 240 million votes came through free app and web channels. The voting story is real; the number is inflated.",
         "For African founders the lesson is to own the rails, not the format: MultiChoice won by controlling the channel, the app and the billing relationship — not by making the best show."
       ]
-    },
-    "imageUrl": "/article-media/big-brother-naija-entertainment-machine-439fadb7.webp",
-    "imageCredit": "Photo: SHAHBAZ ZAMAN (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/photo-of-a-studio-set-up-7865064/"
+    }
   },
   {
     "title": "The Jersey Renaissance: How African Football Kits Became Fashion",
@@ -374,10 +371,7 @@
         "Heineken's April 2023 takeover of NBL separated authorship from ownership: still brewed and run in Namibia, now ultimately controlled from Amsterdam via HEINEKEN Beverages.",
         "The Distell-NBL consolidation is the template for African drinks: multinationals buy brand equity rather than build it, capturing upside the local makers created."
       ]
-    },
-    "imageUrl": "/article-media/windhoek-lager-namibia-beer-205624a4.webp",
-    "imageCredit": "Photo: Andrew Patrick Photo (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/pouring-beer-to-glass-15852347/"
+    }
   },
   {
     "title": "Palm Wine: West Africa's Oldest Drink Becomes Nigeria's Newest Craft Category",
@@ -407,10 +401,7 @@
         "The winning move is Pamii's — reframe heritage as premium youth lifestyle rather than selling tradition to elders who already have it.",
         "Perishability is the strategic constraint: solve stabilisation without killing the taste and you unlock hotels, exports and the diaspora; get it wrong and you preserve the logistics while losing the product."
       ]
-    },
-    "imageUrl": "/article-media/palm-wine-west-africa-revival-80701479.webp",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com"
+    }
   },
   {
     "title": "Chibuku Shake Shake: How Southern Africa's Sorghum Beer Became a Multinational Asset",
@@ -584,10 +575,7 @@
     "videoUrl": "https://www.youtube.com/watch?v=_8I9bQm6E28",
     "videoType": "embed",
     "videoCredit": "Video via Wikipedia / Walt Disney Animation Studios",
-    "videoSourceUrl": "https://en.wikipedia.org/wiki/Iw%C3%A1j%C3%BA",
-    "imageUrl": "/article-media/iwaju-kugali-african-animation-7ff4a895.webp",
-    "imageCredit": "Photo: Jakub Zerdzicki (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/digital-artist-using-graphic-tablet-with-stylus-29940157/"
+    "videoSourceUrl": "https://en.wikipedia.org/wiki/Iw%C3%A1j%C3%BA"
   },
   {
     "title": "Savanna Premium Cider: How a Dry South African Cider Built an Empire on Wit — and What Heineken Now Owns",
@@ -617,10 +605,7 @@
       ],
       "attribution": "Sibu Shangase",
       "attributionRole": "Founder & Lead Analyst"
-    },
-    "imageUrl": "/article-media/savanna-premium-cider-south-africa-0444d451.webp",
-    "imageCredit": "Photo: Jenny Tran (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/assortment-of-bottled-apple-juice-in-wooden-crate-34425143/"
+    }
   },
   {
     "title": "Castle Lager: How a South African Beer Became a Global Powerhouse — and Who Owns It Now",
@@ -933,10 +918,7 @@
         }
       ],
       "confidence": "interpretive"
-    },
-    "imageUrl": "/article-media/the-statuette-economy-how-african-award-shows-became-brand-infrastructure-f98ffdc8.webp",
-    "imageCredit": "Photo: Grzegorz  Lewandowski (Pexels)",
-    "imageSourceUrl": "https://www.pexels.com/photo/golden-trophy-collection-displayed-in-a-row-29707905/"
+    }
   },
   {
     "title": "The Economics of Coming Home: Inside Detty December 2025",
@@ -1863,9 +1845,6 @@
     "sourceLink": "https://www.graphic.com.gh/international/international-news/ghana-news-ghana-hosts-landmark-global-event-on-reparatory-justice.html",
     "sourceName": "Graphic Online",
     "publishedAt": "2026-06-29T08:33:45.594Z",
-    "imageUrl": "/article-media/the-accra-accord-from-un-resolution-to-a-global-framework-06340350.webp",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com",
     "videoUrl": "https://www.youtube.com/watch?v=xPS43galRo4",
     "videoType": "embed",
     "videoCredit": "Video: NBC Digital News / YouTube",
@@ -1887,10 +1866,7 @@
     ],
     "sourceLink": "https://rolltide.com/news/2026/6/13/track-field-cross-country-ogazis-collegiate-record-highlights-a-trio-of-podium-finishes-on-third-day-of-ncaa-championships",
     "sourceName": "Alabama Athletics",
-    "publishedAt": "2026-06-29T08:33:45.594Z",
-    "imageUrl": "/article-media/samuel-ogazi-4338-the-nigerian-who-rewrote-the-rulebook-of-n-06fcce00.webp",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com"
+    "publishedAt": "2026-06-29T08:33:45.594Z"
   },
   {
     "title": "Ziyech and Morocco Built This. Now They Face the Country That Thought It Owned Them.",
@@ -2075,10 +2051,7 @@
     ],
     "sourceName": "ESPN",
     "sourceLink": "https://www.espn.com/soccer/story/_/id/49192570/cape-verde-w2026-world-cup-knockout-stage-smallest-nation",
-    "publishedAt": "2026-06-29T09:06:00.000Z",
-    "imageUrl": "/article-media/cape-verde-world-cup-diaspora-blue-sharks-a3a0bc40.webp",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com"
+    "publishedAt": "2026-06-29T09:06:00.000Z"
   },
   {
     "title": "Afrobeats Didn't Win the World Cup Song. It Became Infrastructure.",
@@ -3115,14 +3088,11 @@
     "sourceLink": "https://sahiphopmag.co.za/2026/05/maraza-drops-much-anticipated-30-track-album-uno/",
     "sourceName": "SA Hip Hop Mag",
     "publishedAt": "2026-05-30T06:45:42.664Z",
-    "imageUrl": "/article-media/maraza-just-dropped-30-tracks-and-sa-hip-hop-will-never-be-t-42d98613.webp",
     "voiceRefreshedAt": "2026-05-30T06:46:36.781Z",
     "stylistNote": "Opened with a reframe — thirty tracks as refusal, not excess. Stripped all vague modifiers and academic throat-clearing. Modulated between longer explanatory sentences and short landing lines for rhythm. Used first-person plural 'we' to speak from inside the diaspora community. Ended on a line that could be quoted, not summarized. Cut all forbidden phrases and tightened the prose throughout.",
     "eicScore": 6.8,
     "eicNotes": "Strong diaspora framing and excellent tone — no poverty porn, no 'Africa rising,' celebrates on its own terms. The '30 tracks as refusal' angle is sharp. But the piece is bloated: 1000+ words for an album drop that could've been told in 700. Middle sections drift into track-by-track recitation. Lede doesn't reframe hard enough — the opening graf states the premise but doesn't land a punch. The 'What This Matters to Us' section carries the voice best, but it arrives too late. Trim 25%, move the diaspora lens higher, tighten the collaborator list to three examples max, and this becomes an 8.",
     "eicReviewedAt": "2026-05-30T06:46:36.781Z",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com",
     "brandRead": {
       "attribution": "The MonoKromatik Team",
       "attributionRole": "Brand Intelligence",
@@ -3579,14 +3549,11 @@
     "sourceLink": "https://sahiphopmag.co.za/2026/05/cassper-ushers-in-a-new-sonic-chapter-with-phunyuka-bamphethe/",
     "sourceName": "SA Hip Hop Mag",
     "publishedAt": "2026-05-22T07:42:02.624Z",
-    "imageUrl": "/article-media/cassper-nyovest-just-unlocked-a-new-character-with-phunyuka--b9ff5707.webp",
     "voiceRefreshedAt": "2026-05-22T07:42:53.363Z",
     "stylistNote": "Opened with reframe (\"isn't rapping at you anymore... he's singing to you\"), tightened sentence rhythm throughout (long explanatory sentences followed by short landing lines like \"Homage without imitation. Respect without repetition.\"), used specific place names (Mahikeng, Peckham, Johannesburg), stripped vague modifiers (\"arguably,\" \"many would say\"), shifted to first-plural \"we\" in diaspora sections to claim shared experience, ended on tattoo line (\"That's a permission slip for everyone watching\") instead of summary. Removed \"exactly the point\" hedge and \"That's bold\" filler. Changed headline to claim-first structure.",
     "eicScore": 8.2,
     "eicNotes": "Strong diaspora frame throughout—permission to evolve, the Peckham/Toronto moment, the WhatsApp debate reference. Voice carries the reframe (it's not a pivot, it's permission) and intentional POV modulation (second-person 'you' to pull diaspora readers in). Lede is punchy but could land harder. Minor voice lapses: 'That resonates when you're continents away' feels slightly generic; 'This isn't an artist coasting' is borderline summary. Overall, this earns approval—celebration on its own terms, no poverty frame, delivers on title's promise.",
     "eicReviewedAt": "2026-05-22T07:42:53.363Z",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com",
     "brandRead": {
       "attribution": "The MonoKromatik Team",
       "attributionRole": "Brand Intelligence",
@@ -3625,14 +3592,11 @@
     "sourceLink": "https://sahiphopmag.co.za/2026/05/maglera-doe-boy-brings-black-italia-to-life-in-bold-rossimoda-campaign/",
     "sourceName": "SA Hip Hop Mag",
     "publishedAt": "2026-05-21T07:46:44.728Z",
-    "imageUrl": "/article-media/maglera-doe-boy-just-redefined-what-african-luxury-looks-lik-92903e0d.webp",
     "voiceRefreshedAt": "2026-05-21T07:48:13.035Z",
     "stylistNote": "Opened with a reframe: this isn't about African talent in European fashion, it's about an African creative rewriting the terms. Stripped every 'you know that feeling' and 'let's talk about'—generic connective tissue that weakens the prose. Varied sentence length deliberately: long when building the argument about creative control, short when landing the point about ownership. Changed POV from heavy second-person 'you' to balanced third-person observational with strategic first-plural 'we' when speaking from inside the diaspora. Cut the closing 'Because it does' to its own line—tattoo energy. Removed all forbidden phrases and tightened every claim to one per paragraph.",
     "eicScore": 8.7,
     "eicNotes": "Strong piece. The reframe lands immediately ('Milan didn't call. Klerksdorp did'), the capital-language signatures are deployed precisely ('talent becomes authorship'), and the diaspora address is earned—not performative. The 'Ntariana' framing is sharp cultural analysis dressed as fashion coverage. Two minor notes: (1) The middle section addressing diaspora readers directly ('you know the code-switching game') breaks the third-person observational mode established earlier—intentional POV shift works here but could feel smoother with transition. (2) 'Watch this space' in penultimate section is slightly generic; could be sharper. Otherwise this is publication-ready MonoKromatik voice—celebrates excellence on its own terms, refuses poverty frame, makes the cultural argument without academic throat-clearing.",
     "eicReviewedAt": "2026-05-21T07:48:13.035Z",
-    "imageCredit": "Photo: Pexels",
-    "imageSourceUrl": "https://www.pexels.com",
     "brandRead": {
       "attribution": "The MonoKromatik Team",
       "attributionRole": "Brand Intelligence",
