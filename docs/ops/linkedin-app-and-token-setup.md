@@ -70,3 +70,39 @@ GitHub → repo → **Settings → Secrets and variables → Actions**:
 | `LINKEDIN_AUTOPOST` | `on` | GH variable |
 
 Once these are in, the poster runs itself daily, publishing your branded cards to the Page — a free, automated distribution channel.
+
+---
+
+## Known issue — the link comment 403s (fix: re-auth the token with the comment scope)
+
+*Logged 24 Jul 2026, on the first live post (the World Cup arrival-fashion piece, `urn:li:share:7486425489662824448`).*
+
+**Symptom.** The post body publishes fine, but the run log ends with:
+
+```
+Published to LinkedIn (urn:li:share:…).
+⚠️ First comment failed: comment failed (403): "Not enough permissions to access: partnerApiSocialActions.CREATE.20260601"
+```
+
+**Why it matters.** By design the article link rides in the **first comment**, not the post body — LinkedIn throttles the reach of posts that carry an outbound link inline (see `scripts/linkedin-publish.ts`). So when the comment call fails, the post goes up with **no clickable path to the article**, and the link has to be added to the post by hand every time.
+
+**Cause.** The current `LINKEDIN_ACCESS_TOKEN` can *post* but was not granted the **social-actions write** entitlement, so the `socialActions.CREATE` (comment) call is rejected. This is a token/product scope gap, not a code bug — the body post and the comment use the same token but different permissions.
+
+**The fix — regenerate the token with the comment scope:**
+1. **developer.linkedin.com → your app → Products.** Confirm **Community Management API** is *approved* (not merely requested). The comment (`socialActions`) permission comes with it; "Share on LinkedIn" alone does **not** grant it.
+2. **Auth tab → Create token.** Tick **every** Community Management scope offered — at minimum `w_organization_social` **and** the social-actions / comment scope if it is listed separately. Do not tick only the posting scope.
+3. Click through consent, copy the new token.
+4. **Verify it can comment** before trusting it (replace `TOKEN`; the org URN is `urn:li:organization:135245970`):
+   ```
+   curl -s -X POST "https://api.linkedin.com/v2/socialActions/urn:li:share:7486425489662824448/comments" \
+     -H "Authorization: Bearer TOKEN" -H "X-Restli-Protocol-Version: 2.0.0" \
+     -H "Content-Type: application/json" \
+     -d '{"actor":"urn:li:organization:135245970","message":{"text":"test"}}'
+   ```
+   A `201`/created (not a `403`) = the scope is now present. Delete the test comment.
+5. **GitHub → Settings → Secrets and variables → Actions →** update the `LINKEDIN_ACCESS_TOKEN` secret with the new token.
+6. Re-run the workflow with `publish=false` on a fresh item to confirm, then `publish=true`.
+
+**Note on API version.** The failing run used `LINKEDIN_VERSION=202606` (the error names `…20260601`). The setup steps above default to `202405`; either works for the body post, but keep the version consistent between the post and comment calls — the poster already does.
+
+**Interim workaround** (until the token is re-authed): after each auto-post, open the post and add the first comment by hand — `Full piece → https://www.monokromatik.com/article/<slug>` — which is exactly what the workflow intends to post.
