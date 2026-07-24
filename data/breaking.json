@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-07-24T17:47:55.379Z",
+  "updatedAt": "2026-07-24T21:18:55.951Z",
   "breaks": [
+    {
+      "title": "Glasgow 2026: Powerlifter Idris Wins Team Nigeria’s Third Gold Medal",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/glasgow-2026-powerlifter-idris-wins-team-nigerias-third-gold-medal/",
+      "pubDate": "Fri, 24 Jul 2026 21:17:20 +0000",
+      "importance": 4,
+      "why": "Signal: wins · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-07-24T21:18:55.951Z"
+    },
+    {
+      "title": "Done Deal: Danish Club FC Midtylland Sign Nigerian Youngster",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/done-deal-danish-club-fc-midtylland-sign-nigerian-youngster/",
+      "pubDate": "Fri, 24 Jul 2026 20:11:51 +0000",
+      "importance": 4,
+      "why": "Signal: deal · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-07-24T21:18:55.951Z"
+    },
+    {
+      "title": "Glasgow 2026: Oluwafemiayo Smashes World Record, Extends Team Nigeria’s Medal Haul",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/glasgow-2026-oluwafemiayo-smashes-world-record-extends-team-nigerias-medal-haul/",
+      "pubDate": "Fri, 24 Jul 2026 19:54:21 +0000",
+      "importance": 4,
+      "why": "Signal: record · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-07-24T21:18:55.951Z"
+    },
     {
       "title": "Ghana Armed Forces ready to deal with Nkwanta South security threats — Army Chief",
       "source": "MyJoyOnline",
@@ -570,36 +600,6 @@
       "importance": 4,
       "why": "Zlatan (Nigerian Afrobeats artist) announces major free concert 2026—music/cultural moment",
       "detectedAt": "2026-06-26T21:01:56.901Z"
-    },
-    {
-      "title": "Pharrell Brought Virginia Beach To Paris For His Latest Louis Vuitton Collection",
-      "source": "Essence",
-      "category": "culture",
-      "link": "https://www.essence.com/fashion/pharrel-beach-paris-latest-louis-vuitton-collection/",
-      "pubDate": "Fri, 26 Jun 2026 17:03:14 +0000",
-      "importance": 4,
-      "why": "Pharrell Williams (African-American diaspora creator) launches major Louis Vuitton collection inspired by Virginia Beach culture—significant fashion/brand moment.",
-      "detectedAt": "2026-06-26T17:13:22.419Z"
-    },
-    {
-      "title": "7 Brands Crafting A New Visual Language For Black Queer Fashion",
-      "source": "Essence",
-      "category": "culture",
-      "link": "https://www.essence.com/fashion/black-lgbtq-fashion-designer/",
-      "pubDate": "Fri, 26 Jun 2026 16:12:15 +0000",
-      "importance": 4,
-      "why": "Seven Black/African-diaspora brands launching new visual language for queer fashion—significant fashion/culture economy story.",
-      "detectedAt": "2026-06-26T17:13:22.419Z"
-    },
-    {
-      "title": "World Cup 2026: Pepe Targets More Goals After Helping Côte d’Ivoire Beat Curaçao",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/world-cup-2026-pepe-targets-more-goals-after-helping-cote-divoire-beat-curacao/",
-      "pubDate": "Fri, 26 Jun 2026 14:06:37 +0000",
-      "importance": 4,
-      "why": "Ivory Coast footballer Pepe scores in World Cup qualifier—major African athlete result",
-      "detectedAt": "2026-06-26T15:08:12.823Z"
     }
   ]
 }
