@@ -378,21 +378,31 @@ export async function sourceImage(args: {
     console.log(`   🛑 No valid image candidates on source page`);
   }
 
-  // Step 3: stock photo fallback
-  const query = await buildImageQuery(args.title, args.excerpt, args.category);
-  console.log(`   🖼️  Stock fallback search: "${query}"`);
+  // Step 3: stock photo fallback — RETIRED by default.
+  // A Pexels/Unsplash photo is generic by construction, and the media standard
+  // (docs/MEDIA-STANDARD.md) is unambiguous: a generic image is worse than none.
+  // This stage is exactly what put slug-renamed stock heroes onto live articles
+  // that the credit-blind guard used to miss. It stays off unless someone
+  // explicitly opts back in, mirroring the retired stock-VIDEO gate in
+  // source-media.ts. When off, an unsourced piece goes to the branded fallback,
+  // which heal-media.ts reads as "no usable image" and leaves the piece imageless.
+  const STOCK_IMAGE_ENABLED = (process.env.MONO_STOCK_IMAGE ?? 'off').toLowerCase() === 'on';
+  if (STOCK_IMAGE_ENABLED) {
+    const query = await buildImageQuery(args.title, args.excerpt, args.category);
+    console.log(`   🖼️  Stock fallback search (opt-in): "${query}"`);
 
-  const pexelsHit = await tryPexels(query);
-  if (pexelsHit) return { url: pexelsHit, source: 'pexels' };
+    const pexelsHit = await tryPexels(query);
+    if (pexelsHit) return { url: pexelsHit, source: 'pexels' };
 
-  const unsplashHit = await tryUnsplash(query);
-  if (unsplashHit) return { url: unsplashHit, source: 'unsplash' };
+    const unsplashHit = await tryUnsplash(query);
+    if (unsplashHit) return { url: unsplashHit, source: 'unsplash' };
 
-  const pexelsCat = await tryPexels(args.category);
-  if (pexelsCat) return { url: pexelsCat, source: 'pexels' };
+    const pexelsCat = await tryPexels(args.category);
+    if (pexelsCat) return { url: pexelsCat, source: 'pexels' };
 
-  const unsplashCat = await tryUnsplash(args.category);
-  if (unsplashCat) return { url: unsplashCat, source: 'unsplash' };
+    const unsplashCat = await tryUnsplash(args.category);
+    if (unsplashCat) return { url: unsplashCat, source: 'unsplash' };
+  }
 
   return { url: FALLBACK, source: 'fallback' };
 }
