@@ -38,6 +38,8 @@ export interface Article {
    * under EDITORIAL_GOVERNANCE.md before publication today; designed so the
    * pipeline can populate it autonomously within the same gate later.
    */
+  /** LinkedIn-specific opening line for the social caption; see social-caption.ts. */
+  linkedinHook?: string;
   brandRead?: BrandRead;
 }
 

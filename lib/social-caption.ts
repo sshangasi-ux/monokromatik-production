@@ -58,6 +58,10 @@ export interface ArticleLike {
   excerpt?: string;
   category?: string;
   tags?: string[];
+  /** A LinkedIn-specific opening line. When set, it replaces the excerpt as the
+   *  hook under the title — a punchier, scroll-stopping line for the feed, without
+   *  touching the site-facing excerpt or pull-quote. */
+  linkedinHook?: string;
   brandRead?: { pullQuote?: string } | null;
 }
 
@@ -110,7 +114,7 @@ function linkedinTags(cat: string): string {
 export function linkedinArticleCaption(a: ArticleLike): string {
   const cat = (a.category || '').toLowerCase();
   const hook = a.title.trim();
-  const context = trim(a.brandRead?.pullQuote || a.excerpt || '', 260);
+  const context = trim(a.linkedinHook || a.brandRead?.pullQuote || a.excerpt || '', 260);
   // Prefer the piece's OWN tag for the topical hashtag. A category tag misfires:
   // "entertainment" maps to #Nollywood, which is plain wrong on a hip-hop
   // catalog-ownership story. Fall back to the category only if tags are absent.
