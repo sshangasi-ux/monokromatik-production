@@ -7996,7 +7996,15 @@
         "use": "Effiong on access, platforms and holding African films to the same standard as Hollywood."
       }
     ],
-    "media": [],
+    "media": [
+      {
+        "src": "/article-media/cs-the-black-book-nollywood-netflix-breakthrough-7434a948.webp",
+        "alt": "The Black Book (Editi Effiong) / Nollywood on Netflix — The Black Book: A Nigerian Thriller Tops the World, On Someone Else's Platform",
+        "credit": "Via Netflix (Tudum)",
+        "sourceLabel": "Netflix (Tudum)",
+        "sourceHref": "https://www.netflix.com/tudum/top10/films-english/2023-10-01"
+      }
+    ],
     "rubricVersion": "v2.0",
     "scoredOn": "2026-07-20"
   },
