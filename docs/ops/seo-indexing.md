@@ -2,6 +2,22 @@
 
 *Diagnosis run 27 July 2026. Owner actions are marked 🔴 (do these — they're the unlock).*
 
+> **UPDATE (same day, after seeing the live GSC data — corrects the first read below).**
+> The initial "essentially not indexed" conclusion was too strong. GSC shows the URL-prefix
+> property `https://www.monokromatik.com/` is **already verified** (the HTML tag is live in
+> `app/layout.tsx`), the sitemap is **submitted and read successfully (Success, 327 pages)**,
+> and **33 pages are already indexed** (39 not-indexed, ~255 still queued for crawl). So:
+> - **Skip the "Domain property / DNS TXT" route in Fix 1** — the URL-prefix property is already
+>   verified and `GSC_SITE_URL` already matches it. Just submit-sitemap (done) + Request-Indexing.
+> - The real bottleneck is **authority (no backlinks)**, which throttles crawl and drives the 29
+>   "Crawled – currently not indexed" pages. The action plan is **`docs/ops/seo-backlink-plan.md`**.
+> - The "39 not indexed" breakdown was benign: 1 noindex + 1 robots (both **intentional**), 8×404
+>   (stale/removed URLs — `/membership` & `/shop` already self-healed to 200; the rest are old
+>   numeric-ID URLs and pruned drafts that correctly 404 — **no redirects needed**).
+>
+> Everything below is still useful for the backlink strategy and cornerstone list; only the
+> "add a Domain property" step and the "not indexed at all" framing are superseded.
+
 ## The finding
 
 The site is **technically clean and fully indexable — and essentially not indexed by Google.**
