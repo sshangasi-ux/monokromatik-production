@@ -82,9 +82,18 @@ async function main() {
       log('First comment posted with the link.');
       summary(`> 💬 Link posted as the first comment.`);
     } else if (res.commentError) {
-      // Non-fatal: the post is live, the link just needs adding by hand.
+      // Non-fatal: the post is live; the link just needs adding by hand until the
+      // token carries the social-actions (comment) scope. Make that a 15-second
+      // fix by surfacing the exact post URL + a paste-ready comment, and point at
+      // the permanent fix. See docs/ops/linkedin-app-and-token-setup.md
+      // ("Known issue — the link comment 403s").
+      const postUrl = res.id ? `https://www.linkedin.com/feed/update/${res.id}` : 'your Page';
       log(`⚠️ First comment failed: ${res.commentError}`);
-      summary(`> ⚠️ **Post is live but the link comment failed** — add it manually: ${c.link}\n> \`${res.commentError}\``);
+      summary(`> ⚠️ **Post is live, but the link comment failed** — the token is missing the comment (social-actions) scope.`);
+      summary(`> **Add it by hand (15s):** open ${postUrl} and paste this as the first comment:`);
+      summary(`>\n> \`Full piece → ${c.link}\``);
+      summary(`> **Permanent fix:** re-auth the token with the social-actions scope — see \`docs/ops/linkedin-app-and-token-setup.md\`.`);
+      summary(`> \`${res.commentError}\``);
     }
     posted.add(c.id);
     mkdirSync(join(__dirname, '../output'), { recursive: true });
