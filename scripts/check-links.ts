@@ -60,7 +60,7 @@ async function checkVideo(u: string): Promise<{ verdict: Verdict; detail: string
     ? `https://www.youtube.com/oembed?url=${encodeURIComponent(u)}&format=json`
     : `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(u)}`;
   try {
-    const res = await fetch(endpoint, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(12_000) });
+    const res = await fetch(endpoint, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
     if (res.ok) return { verdict: 'ok', detail: `oembed ${res.status}` };
     if (res.status === 401 || res.status === 403 || res.status === 429) return { verdict: 'blocked', detail: `oembed ${res.status}` };
     return { verdict: 'dead', detail: `oembed ${res.status} (video removed/private)` };
@@ -77,7 +77,7 @@ async function checkUrl(u: string): Promise<{ verdict: Verdict; detail: string }
         method,
         headers: { 'User-Agent': UA, Accept: 'text/html,*/*', Range: 'bytes=0-2048' },
         redirect: 'follow',
-        signal: AbortSignal.timeout(12_000),
+        signal: AbortSignal.timeout(20_000),
       });
       if (res.ok || res.status === 206) return { verdict: 'ok', detail: `${res.status}` };
       if (res.status === 401 || res.status === 403 || res.status === 429)
@@ -86,12 +86,24 @@ async function checkUrl(u: string): Promise<{ verdict: Verdict; detail: string }
     } catch (e) {
       if (method === 'GET') {
         // fetch() throws a bare "fetch failed"; the useful reason is on .cause.
+        const name = e instanceof Error ? e.name : '';
         const cause = e instanceof Error ? (e.cause as Error | undefined)?.message : undefined;
         const reason = [e instanceof Error ? e.message : 'unreachable', cause].filter(Boolean).join(': ');
         // A redirect loop is a consent/geo/bot wall bouncing non-browser clients
         // (Statista et al) — the page is fine in a browser, so it's blocked, not dead.
         if (cause && /redirect count exceeded|too many redirects/i.test(cause))
           return { verdict: 'blocked', detail: 'redirect loop (bot protection)' };
+        // A timeout or transient connection reset does NOT prove a link is dead —
+        // slow sites (esp. African news outlets) stall under automated load yet
+        // load fine in a browser. On 2026-07-27 six of eight "dead" links were
+        // exactly this: live 200s the checker had timed out on. Only a definitive
+        // HTTP 404/410 (handled above) or a DNS/TLS failure means dead; everything
+        // ambiguous is reported as blocked (unverified) so it never manufactures
+        // phantom repair work.
+        const transient =
+          name === 'TimeoutError' ||
+          /timed out|timeout|aborted|ECONNRESET|ECONNREFUSED|ETIMEDOUT|EPIPE|socket hang up|other side closed|terminated/i.test(reason);
+        if (transient) return { verdict: 'blocked', detail: `unverified — ${reason}` };
         return { verdict: 'dead', detail: reason };
       }
     }
