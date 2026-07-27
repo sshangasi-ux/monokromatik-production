@@ -17,6 +17,7 @@
 
 import { writeFileSync, mkdirSync, appendFileSync } from 'fs';
 import { join } from 'path';
+import { brandSlug } from '../lib/signal-index';
 
 const BASE = (process.env.HEALTH_BASE_URL || 'https://www.monokromatik.com').replace(/\/$/, '');
 const REPO = process.env.GITHUB_REPOSITORY || 'sshangasi-ux/monokromatik-production';
@@ -132,7 +133,12 @@ async function checkBrandAssets(): Promise<RouteDown[]> {
   // edges first (the old bug 404'd precisely the top-ranked brands).
   const picks = [ranked[0], ranked[Math.floor(ranked.length / 2)], ranked[ranked.length - 1]].filter(Boolean);
   for (const b of picks) {
-    for (const path of [`/api/badge/${b.slug}.svg`, `/intelligence/signal-index/${b.slug}`]) {
+    // The badge and detail routes are keyed on the BRAND slug (brandSlug(brand)),
+    // not the case-study slug that /api/index returns as `slug`. Building the URL
+    // from b.slug 404'd every run on healthy assets — crying wolf and masking any
+    // real regression. Derive the brand slug the routes actually use.
+    const bSlug = brandSlug(b.brand);
+    for (const path of [`/api/badge/${bSlug}.svg`, `/intelligence/signal-index/${bSlug}`]) {
       try {
         const r = await fetch(`${BASE}${path}`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
         if (r.ok) log(`- ✅ ${path} (${r.status})`);
