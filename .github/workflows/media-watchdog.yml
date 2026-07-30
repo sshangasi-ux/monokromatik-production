@@ -1,17 +1,22 @@
 name: Media Watchdog
 
-# Twice-daily self-healing pass over all media + content. It CHECKS every article
-# and case-study hero against the live health bar (file exists on disk AND is
-# photo-shaped, not a logo/icon/ad-banner), AUTO-CORRECTS the unhealthy ones by
-# re-sourcing a credited, self-hosted hero through the shared sourceMedia pipeline,
-# and REPORTS the content/data issues a human should look at. Healthy media is
-# never touched, so a clean run produces no PR.
+# Twice-daily pass over all media + content. It CHECKS every article and
+# case-study hero against the live health bar (file exists on disk AND is
+# photo-shaped, not a logo/icon/ad-banner) and REPORTS what fails, so a human
+# can see the state of the media at a glance.
 #
-# Like every content path, main is PR-protected: corrections land via a review PR
-# (merging it is the publish step), never a direct push.
+# REPORT-ONLY BY DEFAULT. The auto-heal step re-sources heroes through the
+# sourceMedia pipeline, which hotlinks images from each piece's source page —
+# and those are press/studio photos whose *rights* we can't machine-verify (a
+# credit is not a licence). The media:relevance gate catches stock hosts and
+# missing provenance, not rights, so an auto-heal PR repeatedly shipped images
+# we couldn't publish. So the scheduled run now only REPORTS (dry) and opens no
+# PR. To actually re-source + open a review PR, dispatch manually with
+# apply=true — and only after a human is happy the sourced images are usable.
+# Preferred path for real covers: generate our own rights-clear art, not hotlink.
 #
 # Needs repo secrets: PEXELS_API_KEY, ANTHROPIC_API_KEY (optional UNSPLASH_ACCESS_KEY,
-# YOUTUBE_API_KEY). Set GH_PAT (+ "Allow auto-merge") for the PR to clear CI hands-free.
+# YOUTUBE_API_KEY). Set GH_PAT (+ "Allow auto-merge") for an apply PR to clear CI.
 
 on:
   schedule:
@@ -19,8 +24,8 @@ on:
     - cron: '30 5,17 * * *'
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: 'Dry run — report only, no re-source, no commit'
+      apply:
+        description: 'Actually re-source images and open a review PR. Default = report-only (no changes, no PR). Auto-sourced press/studio images are NOT rights-cleared, so applying needs a human.'
         type: boolean
         default: false
 
@@ -53,7 +58,8 @@ jobs:
       - name: Install dependencies
         run: npm install --no-fund --no-audit
 
-      - name: Check + heal media
+      # Report-only unless this is a manual dispatch that explicitly opted into apply.
+      - name: Check media (report-only unless apply=true)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -62,14 +68,17 @@ jobs:
           MONO_STOCK_VIDEO: 'off'
           NODE_ENV: production
         run: |
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            npm run media:heal:dry
-          else
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" = "true" ]; then
+            echo "APPLY mode — re-sourcing and will open a review PR." >> "$GITHUB_STEP_SUMMARY"
             npm run media:heal
+          else
+            echo "REPORT-ONLY — checking media, no changes, no PR. Dispatch with apply=true to re-source." >> "$GITHUB_STEP_SUMMARY"
+            npm run media:heal:dry
           fi
 
+      # Only ever opens a PR on an explicit manual apply. Scheduled runs never push.
       - name: Open a review PR with the corrections
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.apply == true }}
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
@@ -83,11 +92,11 @@ jobs:
           git config user.email "agents@monokromatik.com"
           git checkout -b "$BRANCH"
           git add data/articles.json data/case-studies.json public/article-media
-          git commit -m "chore(media): watchdog auto-corrected unhealthy media"
+          git commit -m "chore(media): watchdog auto-corrected unhealthy media (manual apply)"
           git push origin "$BRANCH"
 
-          BODY="Automated media watchdog run. Re-sourced credited, self-hosted heroes for media that failed the health bar (missing file, logo/banner dimensions, or undecodable) and/or loaded media for image-less items. Healthy media was left untouched. **Merging this PR is the publish step.** See the run's job summary for the per-item report."
-          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Media watchdog — $(date -u +%Y-%m-%d) corrections" --body "$BODY") || true
+          BODY="Manual apply run of the media watchdog. Re-sourced credited, self-hosted heroes for media that failed the health bar. NOTE: auto-sourced images are hotlinked from source pages and are NOT rights-cleared — verify each is usable before merging. **Merging this PR is the publish step.** See the job summary for the per-item report."
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "Media watchdog — $(date -u +%Y-%m-%d) corrections (manual apply)" --body "$BODY") || true
           if [ -n "$PR_URL" ]; then
             echo "Opened PR: $PR_URL" >> "$GITHUB_STEP_SUMMARY"
           else
