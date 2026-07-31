@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CONTACT_EMAIL } from '../../lib/commerce';
+import NewsletterSignup from './NewsletterSignup';
 
 const YEAR = new Date().getFullYear();
 
@@ -31,6 +32,14 @@ export default function SiteFooter() {
   return (
     <footer className="bg-mono-black text-mono-white border-t border-mono-white/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+        {/* The Weekly Signal — sitewide newsletter capture. In the footer it is the
+            front door on EVERY page (incl. case studies, reports and the Index),
+            so the newsletter is the retention surface the strategy calls for, not a
+            per-page afterthought. Captures gracefully with no key set. */}
+        <div className="mb-12 pb-12 border-b border-mono-white/10 max-w-2xl">
+          <NewsletterSignup variant="footer" source="site-footer" />
+        </div>
+
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex font-display font-bold text-2xl tracking-[0.02em]">
