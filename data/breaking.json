@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-07-31T13:04:58.889Z",
+  "updatedAt": "2026-07-31T21:18:13.454Z",
   "breaks": [
+    {
+      "title": "Unique by Design project launched to promote disability inclusion in Ghana’s fashion industry",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/unique-by-design-project-launched-to-promote-disability-inclusion-in-ghanas-fashion-industry/",
+      "pubDate": "Fri, 31 Jul 2026 20:42:51 +0000",
+      "importance": 4,
+      "why": "Signal: launched · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-07-31T21:18:13.454Z"
+    },
     {
       "title": "Ghana: MOLIY releases debut mixtape BADDIES MOLIY",
       "source": "Music In Africa",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "DR Congo World Cup bid is major African sports/culture story",
       "detectedAt": "2026-06-30T19:06:39.658Z"
-    },
-    {
-      "title": "WAFCON 2026: Madugu Eyes Successful Title Defence With Super Falcons",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/wafcon-2026-madugu-eyes-successful-title-defence-with-super-falcons/",
-      "pubDate": "Tue, 30 Jun 2026 16:10:20 +0000",
-      "importance": 4,
-      "why": "Madugu leading Super Falcons (Nigeria women's football) title defence at WAFCON 2026 — major African sports story",
-      "detectedAt": "2026-06-30T16:50:56.951Z"
     }
   ]
 }
