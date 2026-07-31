@@ -24,6 +24,10 @@ export interface LeaderEntry {
   works: number;
   axisAverages: Record<string, number>;
   market?: string;
+  /** Canonical primary region (derived from market) — the Region filter facet. */
+  region?: string;
+  /** Editorial collection the work sits in — the Sector filter facet. */
+  collection?: string;
   /** Forward-looking view; null means Stable. */
   outlook?: Outlook | null;
   movement: { scoreDelta: number; rankDelta: number; rebased?: boolean; rubricFrom?: string; rubricTo?: string } | null;
@@ -73,12 +77,17 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
   const [compareMode, setCompareMode] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [followingOnly, setFollowingOnly] = useState(false);
-  const [market, setMarket] = useState('');
+  const [region, setRegion] = useState('');
+  const [sector, setSector] = useState('');
   const [band, setBand] = useState<Band>('all');
   const { followed, count } = useFollowedBrands();
 
-  const markets = useMemo(
-    () => [...new Set(entries.map((e) => e.market).filter(Boolean) as string[])].sort(),
+  const regions = useMemo(
+    () => [...new Set(entries.map((e) => e.region).filter(Boolean) as string[])].sort(),
+    [entries]
+  );
+  const sectors = useMemo(
+    () => [...new Set(entries.map((e) => e.collection).filter(Boolean) as string[])].sort(),
     [entries]
   );
 
@@ -88,7 +97,8 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
       (e) =>
         (!q || e.brand.toLowerCase().includes(q) || e.title.toLowerCase().includes(q)) &&
         (!followingOnly || followed.includes(e.brandSlug)) &&
-        (!market || e.market === market) &&
+        (!region || e.region === region) &&
+        (!sector || e.collection === sector) &&
         inBand(e.score, band)
     );
     return [...list].sort((a, b) =>
@@ -98,7 +108,7 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
           ? (b.evidenceScore ?? 0) - (a.evidenceScore ?? 0)
           : b.score - a.score
     );
-  }, [entries, query, lens, followingOnly, followed, market, band]);
+  }, [entries, query, lens, followingOnly, followed, region, sector, band]);
 
   // On-site score-change alert: followed brands that moved in the latest update.
   const movedFollowed = entries.filter((e) => followed.includes(e.brandSlug) && e.movement && e.movement.scoreDelta !== 0);
@@ -140,18 +150,31 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
         )}
       </div>
 
-      {/* Filters — market/region + score band. Turns the ranking into a cut-able tool. */}
+      {/* Filters — sector + region + score band. Turns the ranking into a cut-able
+          league table: the sector is the editorial collection; the region is a
+          canonical primary market derived from the free-text market string. */}
       <div className="flex flex-wrap items-center gap-3 mb-5">
         <span className="text-[10px] tracking-[0.18em] font-display font-bold text-mono-gray">FILTER</span>
-        {markets.length > 1 && (
+        {sectors.length > 1 && (
           <select
-            value={market}
-            onChange={(e) => setMarket(e.target.value)}
-            aria-label="Filter by market"
-            className="text-[11px] font-display font-bold tracking-[0.06em] px-3 py-2 bg-mono-paper border border-mono-gray/30 text-mono-charcoal focus:outline-none focus:border-mono-amber max-w-[200px]"
+            value={sector}
+            onChange={(e) => setSector(e.target.value)}
+            aria-label="Filter by sector"
+            className="text-[11px] font-display font-bold tracking-[0.06em] px-3 py-2 bg-mono-paper border border-mono-gray/30 text-mono-charcoal focus:outline-none focus:border-mono-amber max-w-[240px]"
           >
-            <option value="">All markets</option>
-            {markets.map((m) => <option key={m} value={m}>{m}</option>)}
+            <option value="">All sectors</option>
+            {sectors.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
+        )}
+        {regions.length > 1 && (
+          <select
+            value={region}
+            onChange={(e) => setRegion(e.target.value)}
+            aria-label="Filter by region"
+            className="text-[11px] font-display font-bold tracking-[0.06em] px-3 py-2 bg-mono-paper border border-mono-gray/30 text-mono-charcoal focus:outline-none focus:border-mono-amber max-w-[180px]"
+          >
+            <option value="">All regions</option>
+            {regions.map((r) => <option key={r} value={r}>{r}</option>)}
           </select>
         )}
         {/* Only offer bands that actually contain a brand — an empty filter pill
@@ -166,8 +189,8 @@ export default function IndexLeaderboard({ entries, trackingSince }: { entries: 
             {b.band}
           </button>
         ))}
-        {(market || band !== 'all') && (
-          <button onClick={() => { setMarket(''); setBand('all'); }} className="text-[11px] font-display font-bold tracking-[0.12em] text-mono-amber-strong hover:underline">CLEAR</button>
+        {(sector || region || band !== 'all') && (
+          <button onClick={() => { setSector(''); setRegion(''); setBand('all'); }} className="text-[11px] font-display font-bold tracking-[0.12em] text-mono-amber-strong hover:underline">CLEAR</button>
         )}
         <span className="ml-auto text-[11px] font-body text-mono-gray tabular-nums">{view.length} shown</span>
       </div>

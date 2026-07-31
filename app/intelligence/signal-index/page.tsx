@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import TrackView from '../../components/TrackView';
 import { StatStrip } from '../../components/dataviz/Charts';
 import { getAllCaseStudies } from '../../../lib/case-studies';
-import { rankWorks, brandSlug, AXIS_WEIGHTS } from '../../../lib/signal-index';
+import { rankWorks, brandSlug, AXIS_WEIGHTS, primaryRegion } from '../../../lib/signal-index';
 import { getMovement, isNewlyRanked, trackingSince, getMovers } from '../../../lib/index-history';
 import { evidenceByBrand } from '../../../lib/evidence-strength';
 import IndexLeaderboard, { type LeaderEntry } from './IndexLeaderboard';
@@ -43,9 +43,11 @@ export default function SignalIndexPage() {
   const totalBrands = new Set(ranked.map((e) => e.brandSlug)).size;
 
   const marketBySlug = new Map<string, string>();
+  const collectionBySlug = new Map<string, string>();
   const outlookBySlug = new Map<string, (typeof studies)[number]['outlook']>();
   for (const cs of studies) {
     if (cs.market) marketBySlug.set(cs.slug, cs.market);
+    if (cs.collection) collectionBySlug.set(cs.slug, cs.collection);
     if (cs.outlook) outlookBySlug.set(cs.slug, cs.outlook);
   }
 
@@ -63,6 +65,8 @@ export default function SignalIndexPage() {
       works: 1,
       axisAverages: e.levels,
       market: marketBySlug.get(e.slug) ?? '',
+      region: primaryRegion(marketBySlug.get(e.slug)) ?? '',
+      collection: collectionBySlug.get(e.slug) ?? '',
       outlook: outlookBySlug.get(e.slug) ?? null,
       movement: getMovement(e.slug),
       isNew: isNewlyRanked(e.slug),
