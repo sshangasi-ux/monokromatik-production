@@ -1,29 +1,28 @@
 {
   "categoryWeights": {
-    "culture": 1.3437506600208917,
-    "sports": 0.9003299771343458,
-    "entertainment": 1.2164187239435764,
-    "technology": 0.8389544934030371,
-    "business": 0.8486778939507095,
-    "drinks": 1.1068093934113352,
-    "music": 0.8730339805825242,
-    "fashion": 0.9388349514563107
+    "culture": 1.3617125808864845,
+    "sports": 0.8901979862806075,
+    "entertainment": 1.2853134192400955,
+    "technology": 0.8176584103275365,
+    "business": 0.8306353077989972,
+    "drinks": 1.049799921761087,
+    "music": 0.931593497593212,
+    "fashion": 0.8990152565880721
   },
   "sourceTrust": {
     "(direct)": 1.5,
-    "vercel.com": 1.4674551634202313,
-    "default": 0.9237290694231506,
-    "bing": 0.8574636703142439,
-    "(not set)": 0.7909770887954106,
-    "footer": 0.8029955686664259,
-    "teams.public.onecdn.static.microsoft": 0.8307777501775313,
-    "chatgpt.com": 0.9192922102794606,
-    "cn.bing.com": 0.9495529411764705,
-    "scholar.google.com.br": 0.8151061230590032,
-    "scholar.google.com": 0.8118225500407312,
-    "linkedin.com": 0.9153406588229752,
-    "copilot.com": 0.9073313782991203
+    "vercel.com": 1.4917187727926233,
+    "default": 0.8649326288196657,
+    "bing": 0.8394336389086889,
+    "(not set)": 0.7799338468601341,
+    "footer": 0.7907099971713349,
+    "teams.public.onecdn.static.microsoft": 0.8646222001420251,
+    "chatgpt.com": 0.9354337682235685,
+    "cn.bing.com": 0.9596423529411764,
+    "scholar.google.com.br": 0.7961937986125855,
+    "scholar.google.com": 0.7924411236073265,
+    "copilot.com": 0.8586590765338393
   },
-  "updatedAt": "2026-07-27T10:18:03.265Z",
-  "runs": 5
+  "updatedAt": "2026-07-31T10:16:25.906Z",
+  "runs": 6
 }
