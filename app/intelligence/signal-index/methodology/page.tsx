@@ -7,6 +7,7 @@ import { AXIS_WEIGHTS, SIGNAL_BANDS, compositeScore } from '../../../../lib/sign
 import { OUTLOOK_DEFINITIONS, OUTLOOK_THRESHOLD, WATCH_THRESHOLD } from '../../../../lib/outlook';
 import { getAllCaseStudies as allStudies } from '../../../../lib/case-studies';
 import { getCaseStudyBySlug } from '../../../../lib/case-studies';
+import { getHistory } from '../../../../lib/index-history';
 
 export const revalidate = 3600;
 
@@ -58,6 +59,17 @@ export default function MethodologyPage() {
   const scoredCount = scored.length;
   const outlookAssigned = scored.filter((c) => c.outlook && c.outlook.direction !== 'stable').length;
   const watchCount = scored.filter((c) => c.outlook?.watch).length;
+
+  // The dated, stamped snapshot record — the visible proof that the Index
+  // re-grades in public. Each row carries the rubric + ranking unit in force;
+  // a change in either is a comparability BREAK we mark rather than paper over.
+  const history = getHistory();
+  const basisOf = (s: (typeof history)[number]) => `${s.rubricVersion ?? 'v1'}/${s.unit ?? 'brand'}`;
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const fmtDate = (d: string) => {
+    const [y, m, day] = d.split('-').map(Number);
+    return `${day} ${MONTHS[m - 1]} ${y}`;
+  };
 
   // JSON-LD: a definedTermSet so the scoring rubric is citable/structured.
   const jsonLd = {
@@ -427,6 +439,62 @@ export default function MethodologyPage() {
               FLAG AN ERROR / RIGHT OF REPLY <ArrowRight size={17} />
             </a>
           </div>
+        </section>
+
+        {/* Version history — the dated, stamped record of every snapshot, with the
+            two documented methodology breaks marked. The visible "we re-grade in
+            public" proof: an index that hides its own revisions is an opinion
+            wearing a date. This is the page an analyst or journalist cites. */}
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <GitBranch className="text-mono-amber" size={22} />
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">VERSION HISTORY</p>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">We re-grade in public.</h2>
+          <div className="mt-6 space-y-4 font-body text-lg text-mono-charcoal leading-relaxed">
+            <p>
+              Every snapshot of the Index is dated and stamped with two things: the <strong>rubric</strong> it was
+              scored under, and the <strong>unit</strong> it ranks. When either changes, that is a comparability{' '}
+              <strong>break</strong> — earlier readings are not the same kind of measurement, so we mark the break and
+              never silently compare across it. An index that hides its own revisions is an opinion wearing a date.
+            </p>
+            <p>
+              Two breaks are on the record. On <strong>20 July 2026</strong> the whole corpus was rescored under{' '}
+              <strong>rubric v2.0</strong> and scores fell, particularly on consequence — the correction of an
+              early-days generosity. On <strong>21 July</strong> the ranking unit changed from a brand roll-up to a{' '}
+              <strong>single scored work</strong>, because that is the unit the evidence actually attaches to.
+            </p>
+          </div>
+          <div className="mt-7 border border-mono-gray/25 bg-mono-white">
+            <div className="grid grid-cols-[5.5rem_1fr_auto] gap-4 px-5 py-3 border-b border-mono-gray/20 text-[10px] tracking-[0.18em] font-display font-bold text-mono-gray">
+              <span>DATE</span><span>BASIS</span><span className="text-right">ENTRIES</span>
+            </div>
+            {history.map((s, i) => {
+              const isBreak = i > 0 && basisOf(history[i - 1]) !== basisOf(s);
+              return (
+                <div
+                  key={s.date}
+                  className={`grid grid-cols-[5.5rem_1fr_auto] gap-4 px-5 py-3 border-b border-mono-gray/15 last:border-b-0 ${isBreak ? 'bg-mono-amber/10' : ''}`}
+                >
+                  <span className="font-display font-bold text-mono-black tabular-nums text-sm">{fmtDate(s.date)}</span>
+                  <span className="text-sm font-body text-mono-charcoal">
+                    rubric {s.rubricVersion ?? 'v1'} · ranks {(s.unit ?? 'brand') === 'work' ? 'works' : 'brands'}
+                    {isBreak && (
+                      <span className="ml-2 text-[10px] font-display font-bold tracking-[0.12em] text-mono-amber-strong">
+                        BREAK
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-right font-display font-bold tabular-nums text-mono-black text-sm">{s.entries.length}</span>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-4 text-sm font-body text-mono-gray">
+            Tracked since {fmtDate(history[0].date)}. Live movement between snapshots is on the{' '}
+            <Link href="/intelligence/signal-index/movers" className="text-mono-amber-strong font-bold hover:underline">movers</Link>{' '}
+            page; the {' '}<strong>30 September 2026</strong> snapshot is the Edition 01 baseline.
+          </p>
         </section>
 
         <section className="border-t border-mono-gray/20 pt-12">
