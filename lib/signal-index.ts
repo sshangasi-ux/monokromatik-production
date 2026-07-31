@@ -200,3 +200,26 @@ export function brandSlug(brand: string): string {
 
 /** The authorship axis weight, exposed for the methodology surface. */
 export const AXIS_LABELS = ['IDEA', 'AUTHORSHIP', 'EXECUTION', 'CONSEQUENCE'] as const;
+
+/**
+ * Canonical primary region for a work, derived from its free-text `market`.
+ * The raw markets are high-cardinality and inconsistently cased ("SOUTH AFRICA /
+ * GLOBAL", "Nigeria · Diaspora"), so a raw market filter offers 60+ near-unusable
+ * options. This maps each to a fixed facet — real countries first, then the
+ * meta-regions — so the Index league table gets a clean, cut-able Region filter.
+ */
+export const REGION_FACETS = [
+  'South Africa', 'Nigeria', 'Ghana', 'Kenya', 'Senegal', 'Morocco', 'Botswana',
+  'Ethiopia', 'Rwanda', 'Côte d’Ivoire', 'DR Congo', 'Eswatini',
+  'Pan-African', 'Diaspora', 'Global',
+] as const;
+
+export function primaryRegion(market?: string | null): string | undefined {
+  if (!market) return undefined;
+  const m = market.toLowerCase().replace(/[’']/g, "'");
+  for (const r of REGION_FACETS) {
+    if (m.includes(r.toLowerCase().replace(/[’']/g, "'"))) return r;
+  }
+  const first = market.split(/[·/,]/)[0]?.trim();
+  return first ? first.replace(/\b\w/g, (c) => c.toUpperCase()) : undefined;
+}
