@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Navigation from '../../../components/Navigation';
+import CountdownTimer from '../../../components/CountdownTimer';
 import EditionExhibit from '../../../components/dataviz/EditionExhibit';
 import { CHAPTERS } from '../../../../lib/edition-01-chapters';
 import {
@@ -87,6 +88,18 @@ export default function EditionOnePage() {
               written — figures update as works are added and re-scored. Scores shown are current as
               at build, not final.
             </p>
+          </div>
+
+          {/* Turn the date into a moment: a live countdown + a route to the launch
+              page (notify capture + press pack). The launch is the awareness event. */}
+          <div className="mt-9 flex flex-wrap items-center gap-5">
+            <CountdownTimer target={`${EDITION.baseline}T06:00:00Z`} liveLabel={`EDITION ${EDITION.number} IS LIVE`} tone="dark" />
+            <Link
+              href="/intelligence/signal-index/edition-01/launch"
+              className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-5 py-3 text-xs tracking-[0.18em] font-display font-bold hover:bg-mono-amber-bright transition-colors"
+            >
+              GET NOTIFIED <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </header>
