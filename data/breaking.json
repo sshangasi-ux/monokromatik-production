@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-07-31T21:18:13.454Z",
+  "updatedAt": "2026-08-02T00:09:00.190Z",
   "breaks": [
+    {
+      "title": "WAFCON 2026: Alozie Wins Player Of The Match Award In Nigeria’s Win Against Zambia",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/wafcon-2026-alozie-wins-player-of-the-match-award-in-nigerias-win-against-zambia/",
+      "pubDate": "Sat, 01 Aug 2026 23:17:51 +0000",
+      "importance": 4,
+      "why": "Signal: wins · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-02T00:09:00.190Z"
+    },
     {
       "title": "Unique by Design project launched to promote disability inclusion in Ghana’s fashion industry",
       "source": "MyJoyOnline",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Yemi Alade (Nigerian Afrobeats star) releases cross-continental collaboration & music video",
       "detectedAt": "2026-07-01T10:10:17.622Z"
-    },
-    {
-      "title": "Bigger than Rumble in the Jungle? DR Congo bid for World Cup history",
-      "source": "BBC Sport Africa",
-      "category": "sports",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cn8k75j9epzo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Tue, 30 Jun 2026 18:26:34 GMT",
-      "importance": 4,
-      "why": "DR Congo World Cup bid is major African sports/culture story",
-      "detectedAt": "2026-06-30T19:06:39.658Z"
     }
   ]
 }
