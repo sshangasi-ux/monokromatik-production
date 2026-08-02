@@ -147,10 +147,9 @@ export default function EditionLaunchPage() {
               <p className="flex items-start gap-3">
                 <CalendarClock className="text-mono-amber shrink-0 mt-1" size={20} />
                 <span>
-                  <strong className="text-mono-black">Embargo lifts {LAUNCH_HUMAN}</strong> (07:00 WAT), one fixed clock time,
-                  no exclusives. The full Index, the methodology note, a CSV and pre-cut charts go to a named shortlist
-                  <strong> seven days ahead</strong>. Coverage credits &ldquo;MonoKromatik Cultural-Signal Index, Edition {EDITION.number}&rdquo;
-                  and links the edition.
+                  <strong className="text-mono-black">The full edition publishes {LAUNCH_HUMAN}</strong> — the ranking, the
+                  methodology and the underlying data, together. Journalists can request the press pack ahead of publication,
+                  under embargo. Coverage credits &ldquo;MonoKromatik Cultural-Signal Index, Edition {EDITION.number}&rdquo; and links the edition.
                 </span>
               </p>
               <p className="flex items-start gap-3">
