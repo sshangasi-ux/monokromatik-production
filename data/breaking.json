@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-03T00:09:12.082Z",
+  "updatedAt": "2026-08-03T21:18:28.560Z",
   "breaks": [
+    {
+      "title": "WAFU B U-20 Championship: Burkina Faso Defeat Won’t Derail Flying Eagles Ahead Côte d’Ivoire Test — Maikaba",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/wafu-b-u-20-championship-burkina-faso-defeat-wont-derail-flying-eagles-ahead-cote-divoire-test-maikaba/",
+      "pubDate": "Mon, 03 Aug 2026 19:55:48 +0000",
+      "importance": 4,
+      "why": "Signal: won · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-03T21:18:28.560Z"
+    },
     {
       "title": "Sam Jonah calls for Africa’s first degree-awarding vocational faculty at UCC",
       "source": "MyJoyOnline",
@@ -589,16 +599,6 @@
       "pubDate": "Wed, 01 Jul 2026 11:25:13 +0000",
       "importance": 4,
       "why": "Davido announces new album Oriadé; major Afrobeats artist album release",
-      "detectedAt": "2026-07-01T12:46:49.453Z"
-    },
-    {
-      "title": "Emenalo Leaves Role As Chief Football Executive Of Saudi Pro League",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/emenalo-leaves-role-as-chief-football-executive-of-saudi-pro-league/",
-      "pubDate": "Wed, 01 Jul 2026 10:55:46 +0000",
-      "importance": 4,
-      "why": "Emenalo exits Saudi Pro League chief role; major African sports executive departure from major league",
       "detectedAt": "2026-07-01T12:46:49.453Z"
     }
   ]
