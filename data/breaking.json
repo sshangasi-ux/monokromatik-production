@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-05T06:39:46.572Z",
+  "updatedAt": "2026-08-05T18:46:31.612Z",
   "breaks": [
+    {
+      "title": "Rema announces release date of his first song of 2026",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/rema-announces-release-date-of-his-first-song-of-2026/",
+      "pubDate": "Wed, 05 Aug 2026 18:04:24 +0000",
+      "importance": 4,
+      "why": "Signal: announces · NotJustOk (music) · auto-curated",
+      "detectedAt": "2026-08-05T18:46:31.612Z"
+    },
+    {
+      "title": "Guinness Ghana DJ Awards unveils ‘All Out’ as theme for 2026",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/guinness-ghana-dj-awards-unveils-all-out-as-theme-for-2026/",
+      "pubDate": "Wed, 05 Aug 2026 16:55:27 +0000",
+      "importance": 4,
+      "why": "Signal: unveils · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-05T18:46:31.612Z"
+    },
     {
       "title": "Done Deal: Super Eagles Goalkeeper Completes Move to Tanzanian Club Gold Geita FC",
       "source": "Complete Sports",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "FLVME (South African hip-hop artist) drops music video for new project rollout",
       "detectedAt": "2026-07-02T08:23:48.549Z"
-    },
-    {
-      "title": "Riky Rick To Be Honoured With Memorial Forest In Free State",
-      "source": "SA Hip Hop Mag",
-      "category": "music",
-      "link": "https://sahiphopmag.co.za/2026/07/riky-rick-to-be-honoured-with-memorial-forest-in-free-state/",
-      "pubDate": "Thu, 02 Jul 2026 07:02:01 +0000",
-      "importance": 4,
-      "why": "Riky Rick (South African hip-hop icon) honoured with memorial forest",
-      "detectedAt": "2026-07-02T08:23:48.549Z"
-    },
-    {
-      "title": "Balogun scores and is sent off as US reach last 16",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/balogun-scores-and-is-sent-off-as-us-reach-last-16/",
-      "pubDate": "Thu, 02 Jul 2026 03:51:00 +0000",
-      "importance": 4,
-      "why": "US player Balogun (African diaspora athlete) scores and sent off in major tournament match",
-      "detectedAt": "2026-07-02T05:09:22.209Z"
     }
   ]
 }
