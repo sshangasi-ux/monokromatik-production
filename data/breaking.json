@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-06T09:49:01.533Z",
+  "updatedAt": "2026-08-06T12:15:53.998Z",
   "breaks": [
+    {
+      "title": "Highlife to the World campaign for Black Star Experience 2027 launched in Barcelona",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/highlife-to-the-world-campaign-for-black-star-experience-2027-launched-in-barcelona/",
+      "pubDate": "Thu, 06 Aug 2026 11:23:17 +0000",
+      "importance": 4,
+      "why": "Signal: launched · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-06T12:15:53.998Z"
+    },
     {
       "title": "22Bet Unveils Football Legend Daniel Amokachi As Pan-African Brand Ambassador",
       "source": "Complete Sports",
@@ -589,16 +599,6 @@
       "pubDate": "Fri, 03 Jul 2026 07:35:32 +0000",
       "importance": 4,
       "why": "Wizkid (Nigerian Afrobeats superstar) featured on new track with Frenna and Odeal",
-      "detectedAt": "2026-07-03T08:25:39.739Z"
-    },
-    {
-      "title": "treat u right Lyrics by FOLA & Ayra Starr",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/lyrics/treat-u-right-lyrics-by-fola-ayra-starr/",
-      "pubDate": "Fri, 03 Jul 2026 07:12:01 +0000",
-      "importance": 4,
-      "why": "Ayra Starr (Nigerian Afrobeats artist) releases new music",
       "detectedAt": "2026-07-03T08:25:39.739Z"
     }
   ]
