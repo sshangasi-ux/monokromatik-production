@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-06T12:15:53.998Z",
+  "updatedAt": "2026-08-08T14:46:48.255Z",
   "breaks": [
+    {
+      "title": "Done Deal: Nigerian Forward Joins Scottish Club Dunfermline Athletic",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/done-deal-nigerian-forward-joins-scottish-club-dunfermline-athletic/",
+      "pubDate": "Sat, 08 Aug 2026 11:48:52 +0000",
+      "importance": 4,
+      "why": "Signal: deal · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-08T14:46:48.255Z"
+    },
     {
       "title": "Highlife to the World campaign for Black Star Experience 2027 launched in Barcelona",
       "source": "MyJoyOnline",
@@ -589,16 +599,6 @@
       "pubDate": "Fri, 03 Jul 2026 07:44:00 +0000",
       "importance": 4,
       "why": "Tekno (Nigerian Afrobeats) releases new single",
-      "detectedAt": "2026-07-03T08:25:39.739Z"
-    },
-    {
-      "title": "COCA BODY Lyrics by Frenna Feat. Odeal & Wizkid",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/lyrics/coca-body-lyrics-by-frenna-ft-odeal-wizkid/",
-      "pubDate": "Fri, 03 Jul 2026 07:35:32 +0000",
-      "importance": 4,
-      "why": "Wizkid (Nigerian Afrobeats superstar) featured on new track with Frenna and Odeal",
       "detectedAt": "2026-07-03T08:25:39.739Z"
     }
   ]
