@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-08T14:46:48.255Z",
+  "updatedAt": "2026-08-09T22:46:44.169Z",
   "breaks": [
+    {
+      "title": "WAFCON 2026: Malawi Stun Ghana 2-1 To Reach Semifinal, Qualify For First Ever World Cup",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/wafcon-2026-malawi-stun-ghana-2-1-to-reach-semifinal-qualify-for-first-ever-world-cup/",
+      "pubDate": "Sun, 09 Aug 2026 22:06:01 +0000",
+      "importance": 4,
+      "why": "Signal: first · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-09T22:46:44.169Z"
+    },
     {
       "title": "Done Deal: Nigerian Forward Joins Scottish Club Dunfermline Athletic",
       "source": "Complete Sports",
@@ -589,16 +599,6 @@
       "pubDate": "Fri, 03 Jul 2026 07:55:02 +0000",
       "importance": 4,
       "why": "Mr Eazi (Nigerian Afrobeats) collaboration with international artists on new track",
-      "detectedAt": "2026-07-03T08:25:39.739Z"
-    },
-    {
-      "title": "Adaeze Lyrics by Tekno",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/lyrics/adaeze-lyrics-by-tekno/",
-      "pubDate": "Fri, 03 Jul 2026 07:44:00 +0000",
-      "importance": 4,
-      "why": "Tekno (Nigerian Afrobeats) releases new single",
       "detectedAt": "2026-07-03T08:25:39.739Z"
     }
   ]
