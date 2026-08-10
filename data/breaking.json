@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-09T22:46:44.169Z",
+  "updatedAt": "2026-08-10T10:34:46.549Z",
   "breaks": [
+    {
+      "title": "It’s A Shame Nigeria Won’t Go To U-20 AFCON, May Miss 2027 Women World Cup — Bonfrere",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/its-a-shame-nigeria-wont-go-to-u-20-afcon-may-miss-2027-women-world-cup-bonfrere/",
+      "pubDate": "Mon, 10 Aug 2026 09:08:01 +0000",
+      "importance": 4,
+      "why": "Signal: won · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-10T10:34:46.549Z"
+    },
     {
       "title": "WAFCON 2026: Malawi Stun Ghana 2-1 To Reach Semifinal, Qualify For First Ever World Cup",
       "source": "Complete Sports",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Nigerian conservationist Rachel Ikemeh wins prestigious Rolex Award",
       "detectedAt": "2026-07-03T14:29:57.837Z"
-    },
-    {
-      "title": "Lambo Lyrics by Mr Eazi, Dre Skull & Vybz Kartel",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/lyrics/lambo-lyrics-by-mr-eazi-dre-skull-vybz-kartel/",
-      "pubDate": "Fri, 03 Jul 2026 07:55:02 +0000",
-      "importance": 4,
-      "why": "Mr Eazi (Nigerian Afrobeats) collaboration with international artists on new track",
-      "detectedAt": "2026-07-03T08:25:39.739Z"
     }
   ]
 }
