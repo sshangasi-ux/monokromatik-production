@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-11T22:59:14.708Z",
+  "updatedAt": "2026-08-12T20:59:34.176Z",
   "breaks": [
+    {
+      "title": "Egypt's Hassan joins Celtic on initial four-year deal",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c980kg4xnxeo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 12 Aug 2026 19:57:57 GMT",
+      "importance": 4,
+      "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
+      "detectedAt": "2026-08-12T20:59:34.176Z"
+    },
+    {
+      "title": "Abeiku Santana launches Tourism Destination Africa podcast to promote African tourism",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/abeiku-santana-launches-tourism-destination-africa-podcast-to-promote-african-tourism/",
+      "pubDate": "Wed, 12 Aug 2026 18:52:26 +0000",
+      "importance": 4,
+      "why": "Signal: launches · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-12T20:59:34.176Z"
+    },
     {
       "title": "10 Super Eagles Stars Who Won Trophies In The 2025/26 Season | Nigerian Football Success Stories",
       "source": "Complete Sports",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Morocco's World Cup performance is a major African sports story",
       "detectedAt": "2026-07-05T10:28:16.928Z"
-    },
-    {
-      "title": "Nigeria’s Young Mathematicians Just Made History at the 2026 Pan-African Mathematics Olympiad",
-      "source": "BellaNaija",
-      "category": "culture",
-      "link": "https://www.bellanaija.com/2026/07/nigeria-pan-african-mathematics-olympiad-2026/",
-      "pubDate": "Sat, 04 Jul 2026 22:03:36 +0000",
-      "importance": 4,
-      "why": "Nigerian youth achievement at Pan-African competition; education/culture beat with clear African institutional link",
-      "detectedAt": "2026-07-04T22:11:07.220Z"
-    },
-    {
-      "title": "World Cup 2026: Morocco Secures Quarterfinal Spot After Comfortable 3-0 Win Against Canada",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/world-cup-2026-morocco-secures-quarterfinal-spot-after-comfortable-3-0-win-against-canada/",
-      "pubDate": "Sat, 04 Jul 2026 19:27:31 +0000",
-      "importance": 4,
-      "why": "Morocco reaches World Cup 2026 quarterfinal—major African nation sports result",
-      "detectedAt": "2026-07-04T21:12:57.627Z"
     }
   ]
 }
