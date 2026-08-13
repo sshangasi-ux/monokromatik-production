@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-12T20:59:34.176Z",
+  "updatedAt": "2026-08-13T15:11:59.007Z",
   "breaks": [
+    {
+      "title": "IERPP questions US$18bn Bank of Ghana forex interventions and 24-Hour Economy funding",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/ierpp-questions-us18bn-bank-of-ghana-forex-interventions-and-24-hour-economy-funding/",
+      "pubDate": "Thu, 13 Aug 2026 14:57:43 +0000",
+      "importance": 5,
+      "why": "Signal: funding, $ · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-13T15:11:59.007Z"
+    },
+    {
+      "title": "Accra Brewery warns higher beer taxes could hurt jobs, investment",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/accra-brewery-warns-higher-beer-taxes-could-hurt-jobs-investment/",
+      "pubDate": "Thu, 13 Aug 2026 15:06:29 +0000",
+      "importance": 4,
+      "why": "Signal: investment · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-13T15:11:59.007Z"
+    },
     {
       "title": "Egypt's Hassan joins Celtic on initial four-year deal",
       "source": "BBC Sport Africa",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Ghana Black Stars head coach departure after World Cup – major African sports institution leadership change",
       "detectedAt": "2026-07-05T20:21:20.703Z"
-    },
-    {
-      "title": "Carlos Queiroz leaves Ghana job, calls for stronger off-field structures for Black Stars",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/carlos-queiroz-leaves-ghana-job-calls-for-stronger-off-field-structures-for-black-stars/",
-      "pubDate": "Sun, 05 Jul 2026 19:44:43 +0000",
-      "importance": 4,
-      "why": "Ghana Black Stars coach exits with structural critique – significant African football story",
-      "detectedAt": "2026-07-05T20:21:20.703Z"
-    },
-    {
-      "title": "Unbeaten in 34 matches – why Morocco are World Cup contenders",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/unbeaten-in-34-matches-why-morocco-are-world-cup-contenders/",
-      "pubDate": "Sun, 05 Jul 2026 10:11:00 +0000",
-      "importance": 4,
-      "why": "Morocco's World Cup performance is a major African sports story",
-      "detectedAt": "2026-07-05T10:28:16.928Z"
     }
   ]
 }
