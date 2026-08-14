@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-13T15:11:59.007Z",
+  "updatedAt": "2026-08-13T23:54:45.189Z",
   "breaks": [
+    {
+      "title": "Nigeria to miss Women's World Cup after South Africa and Ghana win play-offs",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cgk46yrk2pjo?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Thu, 13 Aug 2026 22:49:29 GMT",
+      "importance": 4,
+      "why": "Signal: win · BBC Sport Africa (sports) · auto-curated",
+      "detectedAt": "2026-08-13T23:54:45.189Z"
+    },
+    {
+      "title": "2027 WWCQ: South Africa End Super Falcons World Cup Qualification Hopes After 2-1 Win",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/2027-wwcq-south-africa-end-super-falcons-world-cup-qualification-hopes-after-2-1-win/",
+      "pubDate": "Thu, 13 Aug 2026 22:21:04 +0000",
+      "importance": 4,
+      "why": "Signal: win · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-13T23:54:45.189Z"
+    },
     {
       "title": "IERPP questions US$18bn Bank of Ghana forex interventions and 24-Hour Economy funding",
       "source": "MyJoyOnline",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: unveils · NotJustOk (music) · auto-curated",
       "detectedAt": "2026-07-10T11:16:50.705Z"
-    },
-    {
-      "title": "Africa Rising Music Conference announces 2026 Searching for Paradise project",
-      "source": "Music In Africa",
-      "category": "music",
-      "link": "https://musicinafrica.net/magazine/africa-rising-music-conference-announces-2026-searching-for-paradise-project/",
-      "pubDate": "Thu, 09 Jul 2026 12:52:57 +0000",
-      "importance": 5,
-      "why": "Signal: announces · Music In Africa (music) · auto-curated",
-      "detectedAt": "2026-07-09T14:26:07.799Z"
-    },
-    {
-      "title": "Carlos Quieroz leaves Black Stars head coach role after World Cup exit",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/carlos-quieroz-leaves-black-stars-head-coach-role-after-world-cup-exit/",
-      "pubDate": "Sun, 05 Jul 2026 19:47:26 +0000",
-      "importance": 4,
-      "why": "Ghana Black Stars head coach departure after World Cup – major African sports institution leadership change",
-      "detectedAt": "2026-07-05T20:21:20.703Z"
     }
   ]
 }
