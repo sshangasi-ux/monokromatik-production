@@ -7,6 +7,7 @@ import { SignalStrength } from '../../../components/dataviz/Charts';
 import { getAllCaseStudies } from '../../../../lib/case-studies';
 import { rankIndex, rankWorks, brandSlug, workSignal, AXIS_LABELS } from '../../../../lib/signal-index';
 import { getMovement, getBrandHistory } from '../../../../lib/index-history';
+import { getArticlesForBrand } from '../../../../lib/entities';
 import { brandEvidence, describeEvidence } from '../../../../lib/evidence-strength';
 import Sparkline from '../Sparkline';
 import BadgeEmbed from '../BadgeEmbed';
@@ -56,6 +57,9 @@ export default async function BrandIndexPage({ params }: PageProps) {
   // The Index ranks works, so this brand's standing IS its best-ranked work.
   const allWorks = rankWorks(studies);
   const bestWork = allWorks.find((w) => w.brandSlug === brand) ?? null;
+  // Entity flywheel (reverse lookup): editorial coverage that references this
+  // brand — so the scored work and the running commentary sit on one page.
+  const coverage = getArticlesForBrand(brand, entry.brand);
 
   // JSON-LD: this brand's score as a structured, citable PropertyValue inside the
   // Cultural-Signal Index Dataset (per-brand discoverability for search + AI engines).
@@ -252,6 +256,23 @@ export default async function BrandIndexPage({ params }: PageProps) {
             );
           })}
         </div>
+
+        {coverage.length > 0 && (
+          <>
+            <h2 className="mt-14 text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-6">LATEST COVERAGE</h2>
+            <div className="space-y-3">
+              {coverage.map((a) => (
+                <Link key={a.slug} href={`/article/${a.slug}`} className="group flex items-center justify-between gap-5 bg-mono-white border border-mono-gray/25 p-5 hover:border-mono-amber transition-colors">
+                  <div className="min-w-0">
+                    <p className="font-display font-bold text-mono-black text-lg truncate group-hover:text-mono-amber transition-colors">{a.title}</p>
+                    <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray mt-1 uppercase">{a.category}</p>
+                  </div>
+                  <ArrowRight size={18} className="shrink-0 text-mono-gray group-hover:text-mono-amber-strong transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
 
         <section className="mt-14 border-t border-mono-gray/20 pt-12">
           <BadgeEmbed slug={brand} brand={entry.brand} score={entry.score} />

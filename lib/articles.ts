@@ -41,6 +41,108 @@ export interface Article {
   /** LinkedIn-specific opening line for the social caption; see social-caption.ts. */
   linkedinHook?: string;
   brandRead?: BrandRead;
+  /**
+   * The reference list backing the piece. Inline `[n]` markers in `content`
+   * (1-indexed) link to the matching entry, rendered as a numbered References
+   * block. Purely additive: articles without it fall back to the single
+   * legacy `sourceLink`/`sourceName` as reference [1] (see getReferences).
+   */
+  sources?: ArticleSource[];
+  /**
+   * Structured evidence modules rendered between the prose and the Brand Read —
+   * the "bake-in" layer that adds sourced depth without padding. Each module is
+   * self-citing (its `source` fields index into `sources`).
+   */
+  modules?: ArticleModule[];
+  /**
+   * The brands / people / campaigns this piece is about. Powers the entity
+   * flywheel: inline Index scores + "more coverage" rails, and reverse-lookup
+   * from brand profile pages. Additive; absent means no entity rail.
+   */
+  entities?: ArticleEntity[];
+}
+
+/** A cited source backing claims in the article. Mirrors CaseStudySource. */
+export interface ArticleSource {
+  /** Publisher / outlet, e.g. "Billboard". */
+  publisher: string;
+  /** Short label for the specific piece, e.g. "A*Pop world tour dates". */
+  label: string;
+  /** Canonical URL. */
+  url: string;
+  /** What this source establishes — the citeable "why it's here" note. */
+  use?: string;
+}
+
+/** One headline figure in a "By the Numbers" module. */
+export interface NumberStat {
+  value: string;
+  label: string;
+  /** 1-indexed reference into `sources`. */
+  source?: number;
+}
+/** One dated step in a Timeline module. */
+export interface TimelineEntry {
+  date: string;
+  event: string;
+  /** 1-indexed reference into `sources`. */
+  source?: number;
+}
+export interface ArticleModuleNumbers {
+  type: 'numbers';
+  title?: string;
+  items: NumberStat[];
+}
+export interface ArticleModuleTimeline {
+  type: 'timeline';
+  title?: string;
+  items: TimelineEntry[];
+}
+/** The confirmed / reported / not-claimed ledger, ported from case studies. */
+export interface ArticleModuleEvidence {
+  type: 'evidence';
+  title?: string;
+  confirmed: string[];
+  reported: string[];
+  notClaimed: string[];
+}
+/** Comparable scored works from our own corpus. If `works` is omitted, the
+ *  renderer auto-resolves precedents from the Index by shared entity/topic. */
+export interface ArticleModulePrecedents {
+  type: 'precedents';
+  title?: string;
+  /** Explicit case-study slugs; omit to auto-resolve from the corpus. */
+  works?: string[];
+}
+export type ArticleModule =
+  | ArticleModuleNumbers
+  | ArticleModuleTimeline
+  | ArticleModuleEvidence
+  | ArticleModulePrecedents;
+
+/** A brand / person / campaign the article is about. */
+export interface ArticleEntity {
+  kind: 'brand' | 'person' | 'campaign';
+  name: string;
+  /** Optional explicit brand slug to bind to an Index score/profile page. */
+  brand?: string;
+}
+
+/**
+ * The reference list for an article, always non-empty: uses `sources` when
+ * present, else synthesises a single reference from the legacy
+ * `sourceName`/`sourceLink` so every piece has a citeable [1].
+ */
+export function getReferences(article: Article): ArticleSource[] {
+  if (article.sources && article.sources.length > 0) return article.sources;
+  if (article.sourceLink) {
+    return [{
+      publisher: article.sourceName || 'Source',
+      label: article.sourceName || article.sourceLink,
+      url: article.sourceLink,
+    }];
+  }
+  return [];
 }
 
 export interface BrandRead {
