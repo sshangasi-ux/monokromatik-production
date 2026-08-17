@@ -3943,5 +3943,581 @@
         "works": 1
       }
     ]
+  },
+  {
+    "date": "2026-08-17",
+    "generatedAt": "2026-08-17T17:27:42.897Z",
+    "rubricVersion": "v2.0",
+    "unit": "work",
+    "entries": [
+      {
+        "brand": "Capitec Bank",
+        "slug": "capitec-bank-for-the-unbankable",
+        "title": "Capitec: The Bank That Out-Understood the Big Four",
+        "score": 95,
+        "rank": 1,
+        "works": 1
+      },
+      {
+        "brand": "Checkers Sixty60 (Shoprite Holdings)",
+        "slug": "checkers-sixty60-retail-moat",
+        "title": "Sixty60: How a Grocery App Became South Africa's Most Feared Retail Weapon",
+        "score": 95,
+        "rank": 2,
+        "works": 1
+      },
+      {
+        "brand": "Ethiopian Airlines",
+        "slug": "ethiopian-airlines-pan-african-brand",
+        "title": "Ethiopian Airlines: The State-Owned Company That Beat the Extraction Thesis",
+        "score": 95,
+        "rank": 3,
+        "works": 1
+      },
+      {
+        "brand": "Nando's",
+        "slug": "nandos-conquered-the-world",
+        "title": "Nando's: The African Brand That Exported Its Own Culture — and Kept the Upside",
+        "score": 90,
+        "rank": 4,
+        "works": 1
+      },
+      {
+        "brand": "Thebe Magugu",
+        "slug": "thebe-magugu-building-a-house-he-owns",
+        "title": "Thebe Magugu: Building a House He Owns",
+        "score": 90,
+        "rank": 5,
+        "works": 1
+      },
+      {
+        "brand": "Dangote Petroleum Refinery",
+        "slug": "dangote-refinery-industrial-bet",
+        "title": "Dangote Refinery: Building the Brand of African Capital",
+        "score": 87,
+        "rank": 6,
+        "works": 1
+      },
+      {
+        "brand": "Iamisigo (Bubu Ogisi)",
+        "slug": "iamisigo-s-dual-mandate-african-craft-takes-the-zalando-visionary-award",
+        "title": "Iamisigo's 'Dual Mandate': African Craft Takes the Zalando Visionary Award",
+        "score": 87,
+        "rank": 7,
+        "works": 1
+      },
+      {
+        "brand": "The Black Book (Editi Effiong) / Nollywood on Netflix",
+        "slug": "the-black-book-nollywood-netflix-breakthrough",
+        "title": "The Black Book: A Nigerian Thriller Tops the World, On Someone Else's Platform",
+        "score": 87,
+        "rank": 8,
+        "works": 1
+      },
+      {
+        "brand": "Paystack",
+        "slug": "paystack-african-fintech-stripe-exit",
+        "title": "Paystack: The Rails Under Nigeria's Internet — and the Exit That Split the Room",
+        "score": 83,
+        "rank": 9,
+        "works": 1
+      },
+      {
+        "brand": "Tems",
+        "slug": "tems-nigerian-global-crossover",
+        "title": "Tems: The Feature That Refused to Be a Cameo",
+        "score": 83,
+        "rank": 10,
+        "works": 1
+      },
+      {
+        "brand": "TymeBank",
+        "slug": "tymebank-south-africa-digital-bank",
+        "title": "TymeBank: The African Bank That Put Its Branch Inside a Supermarket — and Then Exported It",
+        "score": 83,
+        "rank": 11,
+        "works": 1
+      },
+      {
+        "brand": "Chicken Licken",
+        "slug": "chicken-licken-out-advertised-the-giants",
+        "title": "Chicken Licken: How a Township Chicken Brand Out-Authored the Global Giants",
+        "score": 82,
+        "rank": 12,
+        "works": 1
+      },
+      {
+        "brand": "Chicken Licken (agency: Joe Public)",
+        "slug": "chicken-licken-soul-food-to-the-world",
+        "title": "Chicken Licken’s #SoulFood2TheWorld: What Full African Authorship Looks Like",
+        "score": 82,
+        "rank": 13,
+        "works": 1
+      },
+      {
+        "brand": "Maison Château Rouge",
+        "slug": "maison-chateau-rouge-diaspora-fashion",
+        "title": "Maison Château Rouge: When a Métro Stop Becomes a Fashion Language",
+        "score": 82,
+        "rank": 14,
+        "works": 1
+      },
+      {
+        "brand": "Moniepoint",
+        "slug": "moniepoint-africa-s-profitable-unicorn-builds-the-rails-then-buys-the-bank",
+        "title": "Moniepoint: Africa's Profitable Unicorn Builds the Rails, Then Buys the Bank",
+        "score": 82,
+        "rank": 15,
+        "works": 1
+      },
+      {
+        "brand": "Tongoro",
+        "slug": "tongoro-made-in-africa-fashion",
+        "title": "Tongoro: When the World Wanted Africa Made In Africa",
+        "score": 82,
+        "rank": 16,
+        "works": 1
+      },
+      {
+        "brand": "Achraf Hakimi / Morocco national team",
+        "slug": "achraf-hakimi-morocco-reference-generation",
+        "title": "Achraf Hakimi and the Morocco Model: African Football as National Brand",
+        "score": 80,
+        "rank": 17,
+        "works": 1
+      },
+      {
+        "brand": "Bathu",
+        "slug": "bathu-south-african-sneaker-brand",
+        "title": "Bathu: The Township Sneaker That Chose Ownership Over Scale",
+        "score": 79,
+        "rank": 18,
+        "works": 1
+      },
+      {
+        "brand": "Boyedoe (David Kusi Boye-Doe)",
+        "slug": "boyedoe-waste-to-wear-from-accra-to-the-lvmh-prize",
+        "title": "Boyedoe: Waste-to-Wear from Accra to the LVMH Prize",
+        "score": 79,
+        "rank": 19,
+        "works": 1
+      },
+      {
+        "brand": "eMedia (e.tv) & Tshedza Pictures",
+        "slug": "emedia-netflix-licensed-reach-kept-the-ip",
+        "title": "eMedia Licensed the Reach and Kept the Show: The Broadcaster Who Sold Netflix a Window, Not the Rights",
+        "score": 79,
+        "rank": 20,
+        "works": 1
+      },
+      {
+        "brand": "Kava (Inkblot Studios + Filmhouse Group)",
+        "slug": "kava-african-owned-nollywood-streaming",
+        "title": "Kava: Nollywood Builds the Rails, Not Just the Films",
+        "score": 79,
+        "rank": 21,
+        "works": 1
+      },
+      {
+        "brand": "MaXhosa Africa",
+        "slug": "maxhosa-africa-owned-house",
+        "title": "MaXhosa Africa: Owning the Loom, Not Just the Logo",
+        "score": 79,
+        "rank": 22,
+        "works": 1
+      },
+      {
+        "brand": "Burna Boy × FIFA ('Dai Dai', with Shakira)",
+        "slug": "burna-boy-dai-dai-world-cup-anthem",
+        "title": "Dai Dai: Afrobeats Becomes the Official Sound of the World Cup",
+        "score": 78,
+        "rank": 23,
+        "works": 1
+      },
+      {
+        "brand": "Mamelodi Sundowns",
+        "slug": "mamelodi-sundowns-club-brand",
+        "title": "The Brazilians: Can an African Club Own African Attention?",
+        "score": 78,
+        "rank": 24,
+        "works": 1
+      },
+      {
+        "brand": "The Met Gala 2025 — “Superfine: Tailoring Black Style”",
+        "slug": "met-gala-2025-tailoring-black-style",
+        "title": "Tailoring Black Style: The Met Gala Centres the Diaspora — and Africa Dresses the Part",
+        "score": 76,
+        "rank": 25,
+        "works": 1
+      },
+      {
+        "brand": "Tyla",
+        "slug": "tyla-global-pop-brand",
+        "title": "Tyla: Engineering a Global African Pop Brand",
+        "score": 76,
+        "rank": 26,
+        "works": 1
+      },
+      {
+        "brand": "Carry1st",
+        "slug": "carry1st-african-gaming-rails",
+        "title": "Carry1st: Owning the Rails, Not the Players",
+        "score": 75,
+        "rank": 27,
+        "works": 1
+      },
+      {
+        "brand": "NBA Africa / Basketball Africa League",
+        "slug": "nba-africa-maluach-pipeline",
+        "title": "NBA Africa and the Maluach Pipeline: Building the Market by Building the Talent",
+        "score": 73,
+        "rank": 28,
+        "works": 1
+      },
+      {
+        "brand": "Flutterwave",
+        "slug": "flutterwave-comeback-and-ipo",
+        "title": "Flutterwave's Long Walk Back: Owning the Rails, Rebuilding the Trust, and the IPO That Won't Be Rushed",
+        "score": 72,
+        "rank": 29,
+        "works": 1
+      },
+      {
+        "brand": "Letsile Tebogo × De Beers / Botswana",
+        "slug": "letsile-tebogo-de-beers-value-at-source",
+        "title": "Tebogo, De Beers and Botswana: Owning the Value at the Source",
+        "score": 72,
+        "rank": 30,
+        "works": 1
+      },
+      {
+        "brand": "South African Rugby Union (Springboks)",
+        "slug": "springboks-national-brand",
+        "title": "The Springboks: back-to-back champions, sixth-most-valuable brand",
+        "score": 72,
+        "rank": 31,
+        "works": 1
+      },
+      {
+        "brand": "Three Ships Whisky (James Sedgwick Distillery)",
+        "slug": "three-ships-a-wellington-whisky-beats-scotland-and-japan",
+        "title": "Three Ships: A Wellington Whisky Beats Scotland and Japan",
+        "score": 71,
+        "rank": 32,
+        "works": 1
+      },
+      {
+        "brand": "DR Congo (Léopards) × JMAKxPARIS",
+        "slug": "dr-congo-jmakxparis-world-cup-arrival",
+        "title": "DR Congo × JMAKxPARIS: When the Arrival Becomes the Statement",
+        "score": 70,
+        "rank": 33,
+        "works": 1
+      },
+      {
+        "brand": "Uncle Waffles",
+        "slug": "uncle-waffles-taking-amapiano-to-the-arena-on-her-own-terms",
+        "title": "Uncle Waffles: Taking Amapiano to the Arena, on Her Own Terms",
+        "score": 70,
+        "rank": 34,
+        "works": 1
+      },
+      {
+        "brand": "Visit Rwanda",
+        "slug": "visit-rwanda-aston-villa-nation-brand",
+        "title": "Visit Rwanda Bought the Shirt: Inside the World's Most Aggressive Nation-Branding Play",
+        "score": 70,
+        "rank": 35,
+        "works": 1
+      },
+      {
+        "brand": "Kenneth Ize",
+        "slug": "kenneth-ize-aso-oke-global-house",
+        "title": "Kenneth Ize: Owning the Loom, Not Just the Label",
+        "score": 69,
+        "rank": 36,
+        "works": 1
+      },
+      {
+        "brand": "FIFA World Cup Stage × Rema",
+        "slug": "rema-world-cup-closing-slot",
+        "title": "Rema × the World Cup Stage: The Closing Slot as a Market Signal",
+        "score": 68,
+        "rank": 37,
+        "works": 1
+      },
+      {
+        "brand": "Inverroche × Pernod Ricard",
+        "slug": "inverroche-a-fynbos-gin-goes-global-under-french-ownership",
+        "title": "Inverroche: A Fynbos Gin Goes Global — Under French Ownership",
+        "score": 68,
+        "rank": 38,
+        "works": 1
+      },
+      {
+        "brand": "Mavin Global",
+        "slug": "universal-mavin-afrobeats-ownership",
+        "title": "Mavin sells the majority, keeps the mic: Don Jazzy's exit to Universal",
+        "score": 68,
+        "rank": 39,
+        "works": 1
+      },
+      {
+        "brand": "Nike × Air Afrique",
+        "slug": "nike-air-afrique-air-max-rk61",
+        "title": "Nike × Air Afrique: When the Launch Point Becomes the Point",
+        "score": 68,
+        "rank": 40,
+        "works": 1
+      },
+      {
+        "brand": "Spiro",
+        "slug": "spiro-s-215m-bet-african-roads-global-capital",
+        "title": "Spiro's $215M Bet: African Roads, Global Capital",
+        "score": 68,
+        "rank": 41,
+        "works": 1
+      },
+      {
+        "brand": "The Polygamist (Stained Glass TV / Netflix)",
+        "slug": "the-polygamist-a-south-african-telenovela-tops-netflix-in-16-countries",
+        "title": "The Polygamist: A South African Telenovela Tops Netflix in 16 Countries",
+        "score": 68,
+        "rank": 42,
+        "works": 1
+      },
+      {
+        "brand": "Trace",
+        "slug": "trace-african-music-media",
+        "title": "Trace: Who Owns the Pipes of Afro-Urban Culture?",
+        "score": 68,
+        "rank": 43,
+        "works": 1
+      },
+      {
+        "brand": "Visa",
+        "slug": "visa-2026-world-cup-tap-in-access",
+        "title": "Visa’s Tap In: The Right Word — “Access” — Aimed at the Wrong Continent",
+        "score": 68,
+        "rank": 44,
+        "works": 1
+      },
+      {
+        "brand": "Flutterwave",
+        "slug": "flutterwave-creative-economy-capital",
+        "title": "Flutterwave at Ten: African Fintech Turns Toward the Creative Economy",
+        "score": 67,
+        "rank": 45,
+        "works": 1
+      },
+      {
+        "brand": "Uncover",
+        "slug": "uncover-k-beauty-science-african-skin-kenyan-ownership",
+        "title": "Uncover: K-Beauty Science, African Skin, Kenyan Ownership",
+        "score": 67,
+        "rank": 46,
+        "works": 1
+      },
+      {
+        "brand": "Wizkid × Asake — REAL, Vol. 1",
+        "slug": "wizkid-asake-real-vol-1-collaboration-strategy",
+        "title": "REAL, Vol. 1: Afrobeats Treats Collaboration as a Growth Strategy",
+        "score": 67,
+        "rank": 47,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × Pandora (and Nike, Chanel, H&M)",
+        "slug": "tyla-pandora-styled-authorship",
+        "title": "Pandora Styled by Tyla: The Endorsement That Became Authorship",
+        "score": 65,
+        "rank": 48,
+        "works": 1
+      },
+      {
+        "brand": "Nigeria — 'Detty December' / Naija Season",
+        "slug": "nationalising-the-vibe-detty-december-state-brand-policy",
+        "title": "Nationalising the Vibe: Nigeria Turns 'Detty December' Into State Brand Policy",
+        "score": 64,
+        "rank": 49,
+        "works": 1
+      },
+      {
+        "brand": "Faith Kipyegon / Kenyan distance running",
+        "slug": "faith-kipyegon-african-dominance-as-product",
+        "title": "Faith Kipyegon: African Dominance as the Product — and Who Sells It",
+        "score": 63,
+        "rank": 50,
+        "works": 1
+      },
+      {
+        "brand": "The Hollywoodbets Durban July 2026",
+        "slug": "the-durban-july-2026-who-won-and-lost-from-a-brand-s-point-of-view",
+        "title": "The Durban July 2026: Who Actually Won, From a Brand's Point of View",
+        "score": 63,
+        "rank": 51,
+        "works": 1
+      },
+      {
+        "brand": "Sarkodie × Shatta Wale (EVERLASTING)",
+        "slug": "sarkodie-shatta-wale-everlasting",
+        "title": "Sarkodie × Shatta Wale: When Reconciliation Is the Campaign",
+        "score": 62,
+        "rank": 52,
+        "works": 1
+      },
+      {
+        "brand": "Basketball Africa League",
+        "slug": "the-league-africa-plays-but-does-not-yet-own",
+        "title": "The League Africa Plays, But Does Not Yet Own",
+        "score": 61,
+        "rank": 53,
+        "works": 1
+      },
+      {
+        "brand": "OPay",
+        "slug": "opay-nigeria-payments-war",
+        "title": "OPay Owns the Everyday Naira — But Not the Upside",
+        "score": 61,
+        "rank": 54,
+        "works": 1
+      },
+      {
+        "brand": "Puma",
+        "slug": "puma-owns-the-look-who-owns-the-value",
+        "title": "Puma Owns the Look of African Football. Who Owns the Value?",
+        "score": 61,
+        "rank": 55,
+        "works": 1
+      },
+      {
+        "brand": "Ayra Starr (× Maybelline / New Balance / Pepsi)",
+        "slug": "ayra-starr-global-brand-ambassador",
+        "title": "Ayra Starr, Inc.: When the African Pop Star Becomes the Global Brand",
+        "score": 60,
+        "rank": 56,
+        "works": 1
+      },
+      {
+        "brand": "Billiato (Family Tree / Cassper Nyovest)",
+        "slug": "billiato-celebrity-spirits",
+        "title": "Billiato: The Artist Who Refused to Be an Ambassador",
+        "score": 60,
+        "rank": 57,
+        "works": 1
+      },
+      {
+        "brand": "Kaizer Chiefs × Carling Black Label",
+        "slug": "one-voice-kaizer-chiefs-carling-black-label-and-the-business-of-belonging",
+        "title": "One Voice: Kaizer Chiefs, Carling Black Label and the Business of Belonging",
+        "score": 60,
+        "rank": 58,
+        "works": 1
+      },
+      {
+        "brand": "Indomie",
+        "slug": "indomie-nigeria-cultural-icon",
+        "title": "Indomie: The Foreign Brand Nigeria Adopted as Its Own",
+        "score": 59,
+        "rank": 59,
+        "works": 1
+      },
+      {
+        "brand": "Tyla × the World Cup Stage",
+        "slug": "tyla-sofi-world-cup-claim",
+        "title": "Tyla at SoFi: Claiming the Stage, Not Asking for It",
+        "score": 58,
+        "rank": 60,
+        "works": 1
+      },
+      {
+        "brand": "Adidas",
+        "slug": "adidas-2026-world-cup-backyard-legends",
+        "title": "Adidas at the 2026 World Cup: Home of Soccer, Far From Home of the Game",
+        "score": 56,
+        "rank": 61,
+        "works": 1
+      },
+      {
+        "brand": "AXA",
+        "slug": "axa-keep-caring-first-pan-african-campaign",
+        "title": "The French Insurer That Bought Ubuntu: Decoding AXA's First Pan-African Campaign",
+        "score": 56,
+        "rank": 62,
+        "works": 1
+      },
+      {
+        "brand": "Budweiser (AB InBev)",
+        "slug": "budweiser-2026-world-cup-budstalgia-collectibles",
+        "title": "Budweiser’s Budstalgia: Forty Years of Memory, Sold as an Object",
+        "score": 56,
+        "rank": 63,
+        "works": 1
+      },
+      {
+        "brand": "Spotify x Afro Nation (The Malachite Group)",
+        "slug": "spotify-x-afro-nation-who-captures-the-value-when-afrobeats-goes-to-portugal",
+        "title": "Spotify x Afro Nation: Who Captures the Value When Afrobeats Goes to Portugal",
+        "score": 56,
+        "rank": 64,
+        "works": 1
+      },
+      {
+        "brand": "MTN Group",
+        "slug": "mtn-connectivity-to-content",
+        "title": "The Pipe Wants to Own the Story: MTN's Third Run at African Streaming",
+        "score": 55,
+        "rank": 65,
+        "works": 1
+      },
+      {
+        "brand": "Jumia Technologies AG",
+        "slug": "jumia-african-ecommerce-thesis",
+        "title": "Jumia: The Long Turnaround and the Question of Who Owns African E-Commerce",
+        "score": 53,
+        "rank": 66,
+        "works": 1
+      },
+      {
+        "brand": "Rema × Diesel",
+        "slug": "rema-diesel-aw26-afrobeats-runway",
+        "title": "Rema × Diesel AW26: When the Afrobeats Body Owns the Runway",
+        "score": 51,
+        "rank": 67,
+        "works": 1
+      },
+      {
+        "brand": "Coca-Cola",
+        "slug": "coca-cola-2026-world-cup-uncanned-emotions",
+        "title": "Coca-Cola’s Uncanned Emotions: Universal Feeling, Whose Specifics?",
+        "score": 49,
+        "rank": 68,
+        "works": 1
+      },
+      {
+        "brand": "Ikoyi Chapmans",
+        "slug": "ikoyi-chapmans-who-owns-a-communal-recipe",
+        "title": "Ikoyi Chapmans: who owns a communal Nigerian recipe once it becomes a brand?",
+        "score": 48,
+        "rank": 69,
+        "works": 1
+      },
+      {
+        "brand": "Canal+ × MultiChoice (the end of Showmax)",
+        "slug": "canal-and-the-death-of-showmax-who-owns-african-screens",
+        "title": "Canal+ and the Death of Showmax: Who Owns African Screens",
+        "score": 46,
+        "rank": 70,
+        "works": 1
+      },
+      {
+        "brand": "Showmax",
+        "slug": "showmax-relaunch-under-canal",
+        "title": "Whose Second Act? Showmax, the Rented Platform, and the Death of an African Streamer",
+        "score": 43,
+        "rank": 71,
+        "works": 1
+      }
+    ]
   }
 ]
