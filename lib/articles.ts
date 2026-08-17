@@ -98,13 +98,17 @@ export interface ArticleModuleTimeline {
   title?: string;
   items: TimelineEntry[];
 }
+/** A single evidence line — either plain text, or text with a 1-indexed
+ *  citation into `sources` (renders a [n] superscript on the line). */
+export type EvidenceItem = string | { text: string; source?: number };
+
 /** The confirmed / reported / not-claimed ledger, ported from case studies. */
 export interface ArticleModuleEvidence {
   type: 'evidence';
   title?: string;
-  confirmed: string[];
-  reported: string[];
-  notClaimed: string[];
+  confirmed: EvidenceItem[];
+  reported: EvidenceItem[];
+  notClaimed: EvidenceItem[];
 }
 /** Comparable scored works from our own corpus. If `works` is omitted, the
  *  renderer auto-resolves precedents from the Index by shared entity/topic. */

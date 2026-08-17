@@ -34,7 +34,7 @@ and the Brand Read (`app/components/article/ArticleModules.tsx`). Types:
 |---|---|---|
 | `numbers` | `{ type, title?, items: [{ value, label, source? }] }` | headline figures as stat cards |
 | `timeline` | `{ type, title?, items: [{ date, event, source? }] }` | a dated, sourced sequence |
-| `evidence` | `{ type, title?, confirmed[], reported[], notClaimed[] }` | the confirmed / reported / not-claimed ledger |
+| `evidence` | `{ type, title?, confirmed[], reported[], notClaimed[] }` | the confirmed / reported / not-claimed ledger. Each entry is a string **or** `{ text, source? }` where `source` is a 1-indexed citation (renders a `[n]` on the line) |
 | `precedents` | `{ type, title?, works?: string[] }` | comparable scored works from our corpus |
 
 - Each stat/timeline item may carry a `source` (1-indexed into `sources`) — it

@@ -7,6 +7,7 @@ import type {
   ArticleModulePrecedents,
   NumberStat,
   TimelineEntry,
+  EvidenceItem,
 } from './articles';
 import { getPublicCaseStudies } from './case-studies';
 import { rankWorks, brandSlug } from './signal-index';
@@ -23,7 +24,7 @@ export interface Precedent {
 export type ModuleVM =
   | { type: 'numbers'; title?: string; items: NumberStat[] }
   | { type: 'timeline'; title?: string; items: TimelineEntry[] }
-  | { type: 'evidence'; title?: string; confirmed: string[]; reported: string[]; notClaimed: string[] }
+  | { type: 'evidence'; title?: string; confirmed: EvidenceItem[]; reported: EvidenceItem[]; notClaimed: EvidenceItem[] }
   | { type: 'precedents'; title?: string; items: Precedent[] };
 
 /** Resolve every module on an article into a render-ready view model. Precedents

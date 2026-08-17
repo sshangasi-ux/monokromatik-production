@@ -60,14 +60,18 @@ export default function ArticleModules({ modules }: { modules: ModuleVM[] }) {
           );
         }
         if (m.type === 'evidence') {
-          const col = (heading: string, items: string[], Icon: typeof Check, tone: string) =>
+          const col = (heading: string, items: typeof m.confirmed, Icon: typeof Check, tone: string) =>
             items.length > 0 && (
               <div>
                 <h4 className={`flex items-center gap-1.5 font-display font-bold uppercase tracking-[0.1em] text-xs mb-2 ${tone}`}>
                   <Icon size={14} /> {heading}
                 </h4>
                 <ul className="space-y-1.5 font-body text-sm text-mono-charcoal">
-                  {items.map((t, j) => <li key={j} className="leading-snug">{t}</li>)}
+                  {items.map((it, j) => {
+                    const text = typeof it === 'string' ? it : it.text;
+                    const src = typeof it === 'string' ? undefined : it.source;
+                    return <li key={j} className="leading-snug">{text}<Cite n={src} /></li>;
+                  })}
                 </ul>
               </div>
             );
