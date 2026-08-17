@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getAllArticles, getArticleBySlug } from '../../../lib/articles';
+import { getAllArticles, getArticleBySlug, getReferences } from '../../../lib/articles';
+import { resolveModules } from '../../../lib/article-modules';
+import { resolveEntities } from '../../../lib/entities';
 import ArticleClient from './ArticleClient';
 import RelatedIntelligence from '../../components/RelatedIntelligence';
 
@@ -57,6 +59,12 @@ export default async function ArticlePage({ params }: PageProps) {
   const article = getArticleBySlug(id);
   if (!article) notFound();
 
+  // Resolve the deep-content layers server-side (keeps the corpus JSON off the
+  // client bundle): references, evidence modules, and the entity flywheel.
+  const references = getReferences(article);
+  const modules = resolveModules(article);
+  const entities = resolveEntities(article);
+
   // JSON-LD structured data so Google understands this is an article
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -85,6 +93,14 @@ export default async function ArticlePage({ params }: PageProps) {
     },
     articleSection: article.category,
     keywords: article.tags?.join(', '),
+    // Machine-readable citations — every reference exposed so search engines and
+    // AI crawlers can see the piece is sourced (a real citeability signal).
+    citation: references.map((r) => ({
+      '@type': 'CreativeWork',
+      name: r.label,
+      publisher: r.publisher,
+      url: r.url,
+    })),
   };
 
   return (
@@ -93,7 +109,12 @@ export default async function ArticlePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ArticleClient article={article} />
+      <ArticleClient
+        article={article}
+        references={references}
+        modules={modules}
+        entities={entities}
+      />
       <RelatedIntelligence article={article} />
     </>
   );

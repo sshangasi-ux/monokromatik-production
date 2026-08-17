@@ -39,6 +39,52 @@ articles.forEach((a, i) => {
     if (!nonEmpty(b.attribution)) at('brandRead.attribution missing (crashes /signal)');
     if (b.takeaways !== undefined && !isArr(b.takeaways)) at('brandRead.takeaways must be an array');
   }
+
+  // ---- Citeable-depth layers (docs/DEEP_CONTENT.md) — additive, but if present
+  //      the citation invariants must hold or a [n] would dangle. ----
+  const srcCount = isArr(a.sources) ? (a.sources as unknown[]).length : 0;
+  if (isArr(a.sources)) {
+    (a.sources as Record<string, unknown>[]).forEach((s, j) => {
+      if (!nonEmpty(s.publisher)) at(`sources[${j}].publisher missing`);
+      if (!nonEmpty(s.label)) at(`sources[${j}].label missing`);
+      if (!nonEmpty(s.url)) at(`sources[${j}].url missing`);
+    });
+    // Every inline [n] marker in content must resolve to a source.
+    const refBound = srcCount || (nonEmpty(a.sourceLink) ? 1 : 0);
+    for (const m of String(a.content).matchAll(/\[(\d+)\]/g)) {
+      const n = Number(m[1]);
+      if (n < 1 || n > refBound) at(`inline citation [${n}] has no matching source (have ${refBound})`);
+    }
+  }
+  if (a.modules !== undefined) {
+    if (!isArr(a.modules)) at('modules must be an array');
+    else (a.modules as Record<string, unknown>[]).forEach((m, j) => {
+      const t = m.type;
+      if (t !== 'numbers' && t !== 'timeline' && t !== 'evidence' && t !== 'precedents')
+        at(`modules[${j}].type invalid (${String(t)})`);
+      // source indices on stat/timeline items must point into sources
+      const items = isArr(m.items) ? (m.items as Record<string, unknown>[]) : [];
+      for (const it of items) {
+        if (it.source !== undefined) {
+          const n = Number(it.source);
+          if (!Number.isInteger(n) || n < 1 || n > srcCount)
+            at(`modules[${j}] item source [${String(it.source)}] out of range (have ${srcCount})`);
+        }
+      }
+      if (t === 'evidence') {
+        for (const k of ['confirmed', 'reported', 'notClaimed'])
+          if (m[k] !== undefined && !isArr(m[k])) at(`modules[${j}].${k} must be an array`);
+      }
+    });
+  }
+  if (a.entities !== undefined) {
+    if (!isArr(a.entities)) at('entities must be an array');
+    else (a.entities as Record<string, unknown>[]).forEach((e, j) => {
+      if (e.kind !== 'brand' && e.kind !== 'person' && e.kind !== 'campaign')
+        at(`entities[${j}].kind invalid (${String(e.kind)})`);
+      if (!nonEmpty(e.name)) at(`entities[${j}].name missing`);
+    });
+  }
 });
 
 // ---- Case studies (the array fields here have crashed pages before) ----

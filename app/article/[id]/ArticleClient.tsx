@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { track } from '../../../lib/analytics';
 import Link from 'next/link';
-import { ArrowLeft, Clock, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Clock } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import MediaImage from '../../components/MediaImage';
 import SocialShare from '../../components/SocialShare';
@@ -15,10 +15,50 @@ import {
   getReadingTime,
   formatDate,
   type Article,
+  type ArticleSource,
 } from '../../../lib/articles';
+import type { ModuleVM } from '../../../lib/article-modules';
+import type { ResolvedEntity } from '../../../lib/entities';
+import ArticleModules from '../../components/article/ArticleModules';
+import References from '../../components/article/References';
+import EntityRail from '../../components/article/EntityRail';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { remarkCitations } from '../../../lib/remark-citations';
 
-export default function ArticleClient({ article }: { article: Article }) {
+interface ArticleClientProps {
+  article: Article;
+  references?: ArticleSource[];
+  modules?: ModuleVM[];
+  entities?: ResolvedEntity[];
+}
+
+// react-markdown component overrides: render inline `[n]` citation marks (links
+// to #ref-n produced by remarkCitations) as superscript references; keep normal
+// links opening safely in a new tab.
+const mdComponents = {
+  a({ href, children, ...props }: React.ComponentProps<'a'>) {
+    if (typeof href === 'string' && href.startsWith('#ref-')) {
+      return (
+        <a href={href} className="citation-ref" aria-label={`Reference ${children}`}>
+          {children}
+        </a>
+      );
+    }
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {children}
+      </a>
+    );
+  },
+};
+
+export default function ArticleClient({
+  article,
+  references = [],
+  modules = [],
+  entities = [],
+}: ArticleClientProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [reaction, setReaction] = useState<string | null>(null);
 
@@ -157,25 +197,26 @@ export default function ArticleClient({ article }: { article: Article }) {
         )}
 
         <div className="prose prose-lg max-w-none font-body text-mono-charcoal mb-12 article-content">
-          <ReactMarkdown>{article.content}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkCitations]}
+            components={mdComponents}
+          >
+            {article.content}
+          </ReactMarkdown>
         </div>
+
+        {/* Layer 2 — structured evidence modules (By the Numbers, Timeline,
+            Evidence ledger, Precedents), each self-citing into References. */}
+        <ArticleModules modules={modules} />
 
         <BrandRead data={article.brandRead} />
 
-        <div className="my-8 p-4 border-2 border-mono-charcoal bg-mono-soft-white rounded-lg">
-          <p className="font-body text-sm text-mono-gray">
-            Story source:{' '}
-            <a
-              href={article.sourceLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => track('source_click', { slug: article.slug, source: article.sourceName })}
-              className="text-mono-amber-strong hover:text-mono-amber-hover hover:underline inline-flex items-center gap-1"
-            >
-              {article.sourceName} <ExternalLink size={14} />
-            </a>
-          </p>
-        </div>
+        {/* Layer 1 — the numbered References block (inline [n] marks link here).
+            Always non-empty: the legacy source is synthesised as [1]. */}
+        <References sources={references} />
+
+        {/* Layer 3 — the entity flywheel: Index scores + related coverage. */}
+        <EntityRail entities={entities} />
 
         <div className="flex flex-wrap gap-2 mb-12">
           {article.tags.map((tag) => (
@@ -283,6 +324,45 @@ export default function ArticleClient({ article }: { article: Article }) {
         }
         .article-content a:hover {
           color: var(--mono-black);
+        }
+        /* Inline [n] citation marks → superscript reference links. */
+        .article-content a.citation-ref {
+          font-size: 0.7em;
+          vertical-align: super;
+          line-height: 0;
+          font-weight: 700;
+          text-decoration: none;
+          color: var(--mono-amber-strong, var(--mono-amber));
+          padding: 0 0.1em;
+        }
+        .article-content a.citation-ref::before { content: '['; }
+        .article-content a.citation-ref::after { content: ']'; }
+        .article-content a.citation-ref:hover { text-decoration: underline; }
+        /* GitHub-flavoured markdown tables (enabled via remark-gfm) — a real
+           depth surface for structured comparison inside prose. */
+        .article-content table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5rem 0;
+          font-size: 0.95rem;
+        }
+        .article-content th,
+        .article-content td {
+          border: 1px solid var(--mono-charcoal);
+          padding: 0.6rem 0.8rem;
+          text-align: left;
+          vertical-align: top;
+        }
+        .article-content thead th {
+          background: var(--mono-black);
+          color: var(--mono-amber);
+          font-family: var(--font-display);
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-size: 0.75rem;
+        }
+        .article-content tbody tr:nth-child(even) {
+          background: var(--mono-soft-white);
         }
       `}</style>
     </div>

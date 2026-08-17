@@ -5,7 +5,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { MODELS } from './ai-models';
 import { Story } from './rss-feeds';
 import { fetchArticleBody } from './fetch-article-body';
-import type { BrandRead } from './articles';
+import type { BrandRead, ArticleSource, ArticleModule, ArticleEntity } from './articles';
 
 export interface GeneratedArticle {
   title: string;
@@ -32,6 +32,11 @@ export interface GeneratedArticle {
    * lib/brand-read-editor.ts.
    */
   brandRead?: BrandRead;
+  /** Citeable-depth layers (see docs/DEEP_CONTENT.md). Additive: features may
+   *  emit them; briefs and legacy generations leave them undefined. */
+  sources?: ArticleSource[];
+  modules?: ArticleModule[];
+  entities?: ArticleEntity[];
 }
 
 /**
@@ -76,9 +81,26 @@ STRUCTURE (use ## headings, write real analysis under each):
 - What it means for brands, creators and the culture — the "so what", concrete.
 - A close that lands the argument, not just the vibe.
 
-RIGOUR: cite every factual beat with an inline markdown link to a real source
-you were given or can stand behind — [publisher](https://url). Separate what is
-confirmed from what is reported. Never fabricate a quote, stat or source.`;
+RIGOUR: cite every factual beat. Use the STRUCTURED citation system — build a
+"sources" array of the real sources you were given or can stand behind, and put
+inline [n] markers (1-indexed into that array) right after each claim they
+support. Separate what is confirmed from what is reported. Never fabricate a
+quote, stat or source.
+
+DEPTH MODULES: add a "modules" array with 1–3 structured blocks that carry the
+evidence out of the prose (each self-citing via a "source" index into "sources"):
+- {"type":"numbers","title":"...","items":[{"value":"₦2.26bn","label":"H1 top-ten box office","source":1}]}
+- {"type":"evidence","confirmed":["..."],"reported":["..."],"notClaimed":["..."]}
+- {"type":"timeline","items":[{"date":"Jul 2026","event":"...","source":2}]}   (only if a clean dated sequence exists)
+Also add an "entities" array of the brands/people/campaigns this is about:
+[{"kind":"brand","name":"Netflix"},{"kind":"person","name":"..."}].
+
+FEATURE OUTPUT FORMAT (JSON only) — extend the base object with:
+  "sources": [{"publisher":"","label":"","url":"https://...","use":"what it establishes"}],
+  "modules": [ ... as above ... ],
+  "entities": [ ... as above ... ]
+Every "source" index in modules and every inline [n] must be a valid 1-based
+index into "sources". If you only have one credible source, still emit it as [1].`;
 
 /**
  * Word-floor enforcement: if the draft undershoots the tier's minimum, do ONE
@@ -300,6 +322,9 @@ OUTPUT FORMAT (JSON only, no markdown formatting):
       sourceName: story.source,
       publishedAt: new Date().toISOString(),
       format: depth,
+      sources: result.sources,
+      modules: result.modules,
+      entities: result.entities,
     };
 
     console.log(`   ✅ Generated: "${article.title}"`);
@@ -344,6 +369,11 @@ interface WriterResult {
   content: string;
   excerpt: string;
   tags: string[];
+  /** Citeable-depth layers — captured on the strict-parse path only; the
+   *  lenient regex fallback leaves them undefined (graceful degradation). */
+  sources?: ArticleSource[];
+  modules?: ArticleModule[];
+  entities?: ArticleEntity[];
 }
 
 /**
@@ -388,6 +418,9 @@ function parseWriterResponseSafely(responseText: string): WriterResult | null {
         content: strict.content,
         excerpt: strict.excerpt ?? '',
         tags: Array.isArray(strict.tags) ? strict.tags : [],
+        sources: Array.isArray(strict.sources) ? strict.sources : undefined,
+        modules: Array.isArray(strict.modules) ? strict.modules : undefined,
+        entities: Array.isArray(strict.entities) ? strict.entities : undefined,
       };
     }
   } catch {
