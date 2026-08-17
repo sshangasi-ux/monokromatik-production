@@ -72,8 +72,21 @@ articles.forEach((a, i) => {
         }
       }
       if (t === 'evidence') {
-        for (const k of ['confirmed', 'reported', 'notClaimed'])
-          if (m[k] !== undefined && !isArr(m[k])) at(`modules[${j}].${k} must be an array`);
+        for (const k of ['confirmed', 'reported', 'notClaimed']) {
+          if (m[k] === undefined) continue;
+          if (!isArr(m[k])) { at(`modules[${j}].${k} must be an array`); continue; }
+          for (const it of m[k] as unknown[]) {
+            // each item is a string, or { text, source? } with an in-range source
+            if (isStr(it)) continue;
+            const o = it as Record<string, unknown>;
+            if (!nonEmpty(o.text)) at(`modules[${j}].${k} item missing text`);
+            if (o.source !== undefined) {
+              const n = Number(o.source);
+              if (!Number.isInteger(n) || n < 1 || n > srcCount)
+                at(`modules[${j}].${k} item source [${String(o.source)}] out of range (have ${srcCount})`);
+            }
+          }
+        }
       }
     });
   }
