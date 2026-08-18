@@ -4,20 +4,44 @@ The video pipeline (Higgsfield + Remotion, see [[video-pipeline]] / `video/`) re
 
 Uploading needs a one-time Google OAuth (like the LinkedIn token). Videos are large and local, so the uploader runs **locally**, not in CI.
 
-## ⚡ One-time OAuth setup (~15 min)
+## ⚡ One-time OAuth setup — exact click-path (~15 min)
 
-1. **console.cloud.google.com → create/select a project** (e.g. "MonoKromatik").
-2. **APIs & Services → Library → enable "YouTube Data API v3".**
-3. **OAuth consent screen** → External → add your Google account (the channel owner) as a **Test user** (keeps it in testing mode, no verification needed for your own uploads). Scope needed: `https://www.googleapis.com/auth/youtube.upload`.
-4. **Credentials → Create credentials → OAuth client ID → Desktop app.** Copy the **Client ID** and **Client secret**.
-5. **Get a refresh token** (one-time): run `node build/youtube-auth.mjs` from `video/` — it opens a consent URL, you approve as the channel owner, paste the code back, and it prints a **refresh token**. (Do this on a machine with a browser.)
-6. **Export the three secrets** (a local `.env` in `video/`, or your shell) — never commit them:
-   ```
-   YT_CLIENT_ID=...
-   YT_CLIENT_SECRET=...
-   YT_REFRESH_TOKEN=...
-   ```
-7. `cd video && npm i googleapis` (one-time dep for the uploader).
+Do this signed in as the **YouTube channel owner's** Google account.
+
+**A. Project + API**
+1. Go to **console.cloud.google.com**.
+2. Top bar → **project dropdown** (left of the search box) → **New Project** → Name `MonoKromatik` → **Create** → select it once created.
+3. Top search box → type **YouTube Data API v3** → open it → **Enable**.
+
+**B. Consent screen** (☰ left nav → **APIs & Services → OAuth consent screen**; may open as "Google Auth Platform")
+4. **Get started** → **App name** `MonoKromatik`, **User support email** = your email → Next.
+5. **Audience** → **External** → Next → add your **contact email** → agree → **Create**.
+6. Left nav → **Audience** → **Test users → + Add users** → add the channel owner's Google email → **Save**. (Leave Publishing status = **Testing** — correct for your own uploads.)
+
+**C. OAuth client** (left nav → **Clients**, or **APIs & Services → Credentials**)
+7. **+ Create client** (or **+ Create Credentials → OAuth client ID**).
+8. **Application type: Desktop app** → Name `MonoKromatik uploader` → **Create**.
+9. Copy the **Client ID** and **Client secret** from the dialog.
+
+**D. Refresh token**
+10. In `video/`:
+    ```bash
+    cd video
+    npm i googleapis
+    export YT_CLIENT_ID="<client id>"
+    export YT_CLIENT_SECRET="<client secret>"
+    node build/youtube-auth.mjs
+    ```
+11. Open the URL it prints → sign in as the channel owner → **"Google hasn't verified this app" → Continue** (it's your own testing app) → **Allow** the YouTube permission.
+12. The terminal prints **`YT_REFRESH_TOKEN=...`**.
+
+**E. Save the 3 secrets** in `video/.env` (never commit):
+```
+YT_CLIENT_ID=...
+YT_CLIENT_SECRET=...
+YT_REFRESH_TOKEN=...
+```
+Then tell me — I'll upload the EPL video and loop the URL into the article.
 
 ## Publish a video for an article
 
