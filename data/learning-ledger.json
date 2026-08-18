@@ -1,30 +1,33 @@
 {
   "categoryWeights": {
-    "culture": 1.3907439781806734,
-    "sports": 0.8697945164060457,
-    "entertainment": 1.2440038778745897,
-    "technology": 0.8049547770453832,
-    "business": 0.8640610412702536,
-    "fashion": 0.8753084810749965
+    "culture": 1.455136042080818,
+    "sports": 0.8839456753608688,
+    "entertainment": 1.1730372851076314,
+    "technology": 0.8036625213996438,
+    "business": 0.828781452348359,
+    "fashion": 0.8769092265760324,
+    "music": 1.072294887039239,
+    "drinks": 0.9620689655172414,
+    "spirits": 0.9103448275862069
   },
   "sourceTrust": {
     "(direct)": 1.5,
-    "vercel.com": 1.2870215056556356,
-    "default": 0.8904198303002652,
-    "bing": 0.8318001784290665,
-    "(not set)": 0.8662253368290628,
-    "footer": 0.7795054516280358,
-    "teams.public.onecdn.static.microsoft": 0.89169776011362,
-    "chatgpt.com": 0.9483470145788548,
-    "cn.bing.com": 0.8254708599577312,
-    "scholar.google.com.br": 0.8368748406500439,
-    "scholar.google.com": 0.8338927502058426,
-    "copilot.com": 0.8563122619623287,
-    "linkedin.com": 1.1032513877874703,
-    "google": 0.9051546391752577,
-    "in.search.yahoo.com": 0.9051546391752577,
-    "duckduckgo": 0.9025773195876289
+    "vercel.com": 1.1312016674383252,
+    "default": 0.9123358642402122,
+    "bing": 0.8271699946978893,
+    "(not set)": 0.8506340785019321,
+    "footer": 0.7733212485049112,
+    "teams.public.onecdn.static.microsoft": 0.913358208090896,
+    "chatgpt.com": 0.9586776116630839,
+    "cn.bing.com": 0.7980915047386836,
+    "scholar.google.com.br": 0.8694998725200351,
+    "scholar.google.com": 0.8671142001646741,
+    "copilot.com": 0.8587311774021164,
+    "linkedin.com": 1.1468791550281583,
+    "google": 0.8487107610332445,
+    "in.search.yahoo.com": 0.9241237113402062,
+    "duckduckgo": 0.8443553805166224
   },
-  "updatedAt": "2026-08-17T05:20:22.377Z",
-  "runs": 7
+  "updatedAt": "2026-08-18T09:33:16.265Z",
+  "runs": 8
 }
