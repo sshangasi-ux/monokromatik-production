@@ -114,7 +114,9 @@ function linkedinTags(cat: string): string {
 export function linkedinArticleCaption(a: ArticleLike): string {
   const cat = (a.category || '').toLowerCase();
   const hook = a.title.trim();
-  const context = trim(a.linkedinHook || a.brandRead?.pullQuote || a.excerpt || '', 260);
+  // LinkedIn allows ~3,000 chars; a 260 cap truncated lead-piece hooks mid-word.
+  // Give the whole linkedinHook room to breathe (it is authored to length).
+  const context = trim(a.linkedinHook || a.brandRead?.pullQuote || a.excerpt || '', 1300);
   // Prefer the piece's OWN tag for the topical hashtag. A category tag misfires:
   // "entertainment" maps to #Nollywood, which is plain wrong on a hip-hop
   // catalog-ownership story. Fall back to the category only if tags are absent.
