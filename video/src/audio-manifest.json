@@ -1,0 +1,52 @@
+[
+  {
+    "id": "intro",
+    "file": "audio/intro.m4a",
+    "durationSec": 5.186213
+  },
+  {
+    "id": "hook",
+    "file": "audio/hook.m4a",
+    "durationSec": 9.358367
+  },
+  {
+    "id": "machine",
+    "file": "audio/machine.m4a",
+    "durationSec": 6.923719
+  },
+  {
+    "id": "players",
+    "file": "audio/players.m4a",
+    "durationSec": 3.872336
+  },
+  {
+    "id": "audience",
+    "file": "audio/audience.m4a",
+    "durationSec": 8.558005
+  },
+  {
+    "id": "rwanda",
+    "file": "audio/rwanda.m4a",
+    "durationSec": 11.026757
+  },
+  {
+    "id": "tension",
+    "file": "audio/tension.m4a",
+    "durationSec": 11.327256
+  },
+  {
+    "id": "take",
+    "file": "audio/take.m4a",
+    "durationSec": 10.619683
+  },
+  {
+    "id": "sources",
+    "file": "audio/sources.m4a",
+    "durationSec": 6.436644
+  },
+  {
+    "id": "cta",
+    "file": "audio/cta.m4a",
+    "durationSec": 5.360544
+  }
+]
