@@ -6,3 +6,4 @@ public/*.jpg
 public/*.png
 audio/*.aiff
 build/generated/
+.env
