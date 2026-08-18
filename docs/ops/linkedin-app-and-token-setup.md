@@ -75,6 +75,33 @@ Once these are in, the poster runs itself daily, publishing your branded cards t
 
 ## Known issue — the link comment 403s (fix: re-auth the token with the comment scope)
 
+*Logged 24 Jul 2026; still current as of 18 Aug 2026 (recurred on the EPL 2026/27 lead, `urn:li:share:7495460204751495168`). The post publishes; only the link comment fails.*
+
+### ⚡ Re-auth checklist (current — do this once, ~10 min)
+
+The post publishes fine; only the **link comment** 403s (`partnerApiSocialActions.CREATE` — the token lacks social-actions write). To make the link auto-attach on the next post:
+
+1. **developer.linkedin.com → your app → Products** — confirm **Community Management API** shows **Approved** (not "Requested"/"Add"). The comment (`socialActions`) permission only ships with it; "Share on LinkedIn" alone does **not** grant it. If it's not approved, request it (Step 2 above) and wait for approval before continuing.
+2. **Auth tab → OAuth 2.0 tools → "Create token"** — tick **all** Community Management scopes offered: `w_member_social` **and** `w_organization_social` (+ `r_organization_social` if shown). Ticking only a posting scope is exactly what causes this bug.
+3. Click through the consent screen → **copy the new token**.
+4. **Prove it can comment before trusting it** — replace `TOKEN` and `YOUR_AUTHOR_URN` (the `LINKEDIN_AUTHOR_URN` secret value); version `202606` to match the poster:
+   ```bash
+   curl -s -o /dev/null -w "%{http_code}\n" -X POST \
+     "https://api.linkedin.com/rest/socialActions/urn:li:share:7495460204751495168/comments" \
+     -H "Authorization: Bearer TOKEN" \
+     -H "LinkedIn-Version: 202606" \
+     -H "X-Restli-Protocol-Version: 2.0.0" \
+     -H "Content-Type: application/json" \
+     -d '{"actor":"YOUR_AUTHOR_URN","message":{"text":"scope test — delete me"}}'
+   ```
+   **`201` = fixed** (delete the test comment on LinkedIn). **`403` = still missing** → recheck Step 1 (product not actually approved).
+5. **GitHub → repo → Settings → Secrets and variables → Actions →** update the **`LINKEDIN_ACCESS_TOKEN`** secret with the new token. Leave `LINKEDIN_AUTHOR_URN` and the `LINKEDIN_VERSION` variable (`202606`) as they are.
+6. **Confirm end-to-end** — `gh workflow run linkedin-publish.yml -f verify=true` (should say token valid), then post any article; the run log should now read **"First comment posted with the link"** instead of the 403.
+
+**Reminders:** tokens expire ~**60 days** — set a calendar note to regenerate (same steps). If Community Management approval turns out to be the blocker and can't be granted, tell me — there's a small code-side fallback (switch the comment call from the versioned `/rest/socialActions` to the legacy `/v2/socialActions` endpoint, which accepts `w_member_social`). Until re-authed, keep adding `Full piece → <article URL>` as the first comment by hand.
+
+---
+
 *Logged 24 Jul 2026, on the first live post (the World Cup arrival-fashion piece, `urn:li:share:7486425489662824448`).*
 
 **Symptom.** The post body publishes fine, but the run log ends with:
