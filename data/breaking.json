@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-19T13:54:41.123Z",
+  "updatedAt": "2026-08-19T16:44:19.871Z",
   "breaks": [
+    {
+      "title": "Questions remain over Vieira deal amid Senegal uncertainty",
+      "source": "BBC Sport Africa",
+      "category": "sports",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cddjvjqd5mro?at_medium=RSS&at_campaign=rss",
+      "pubDate": "Wed, 19 Aug 2026 16:26:06 GMT",
+      "importance": 4,
+      "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
+      "detectedAt": "2026-08-19T16:44:19.871Z"
+    },
+    {
+      "title": "Tourism Society of Ghana to launch Youth in Tourism Festival 2026",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/tourism-society-of-ghana-to-launch-youth-in-tourism-festival-2026/",
+      "pubDate": "Wed, 19 Aug 2026 15:40:58 +0000",
+      "importance": 4,
+      "why": "Signal: launch · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-19T16:44:19.871Z"
+    },
     {
       "title": "Stalled reforms, funding gaps weakening Ghana’s anti-corruption fight – GACC",
       "source": "MyJoyOnline",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-07-14T22:12:47.597Z"
-    },
-    {
-      "title": "Ghana’s infrastructure scores 2.83 out of 5 as engineers highlight funding and maintenance gaps",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghanas-infrastructure-scores-2-83-out-of-5-as-engineers-highlight-funding-and-maintenance-gaps/",
-      "pubDate": "Tue, 14 Jul 2026 18:42:41 +0000",
-      "importance": 4,
-      "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-14T19:41:08.191Z"
-    },
-    {
-      "title": "Ghana plans tougher crackdown on TV and movie piracy after Nollywood filmmakers raise alarm",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghana-plans-tougher-crackdown-on-tv-and-movie-piracy-after-nollywood-filmmakers-raise-alarm/",
-      "pubDate": "Tue, 14 Jul 2026 16:46:01 +0000",
-      "importance": 4,
-      "why": "Signal: raise · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-14T17:33:25.525Z"
     }
   ]
 }
