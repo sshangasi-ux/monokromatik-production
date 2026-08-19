@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-19T09:46:14.781Z",
+  "updatedAt": "2026-08-19T13:54:41.123Z",
   "breaks": [
+    {
+      "title": "Stalled reforms, funding gaps weakening Ghana’s anti-corruption fight – GACC",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/stalled-reforms-funding-gaps-weakening-ghanas-anti-corruption-fight-gacc/",
+      "pubDate": "Wed, 19 Aug 2026 12:59:46 +0000",
+      "importance": 4,
+      "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-19T13:54:41.123Z"
+    },
+    {
+      "title": "Ghana’s anti-corruption gains threatened by weak enforcement, funding gaps – GACC",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/ghanas-anti-corruption-gains-threatened-by-weak-enforcement-funding-gaps-gacc/",
+      "pubDate": "Wed, 19 Aug 2026 12:28:21 +0000",
+      "importance": 4,
+      "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-19T13:54:41.123Z"
+    },
     {
       "title": "Official: Sevilla unveil Ghanaian winger Emmanuel Abrokwa on long-term deal",
       "source": "MyJoyOnline",
@@ -579,26 +599,6 @@
       "pubDate": "Tue, 14 Jul 2026 16:46:01 +0000",
       "importance": 4,
       "why": "Signal: raise · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-14T17:33:25.525Z"
-    },
-    {
-      "title": "Guinness Ghana DJ Awards 2026 to officially launch on August 1",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/guinness-ghana-dj-awards-2026-to-officially-launch-on-august-1/",
-      "pubDate": "Tue, 14 Jul 2026 15:42:40 +0000",
-      "importance": 4,
-      "why": "Signal: launch · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-14T17:33:25.525Z"
-    },
-    {
-      "title": "Visit Rwanda strikes Aston Villa sponsorship deal",
-      "source": "BBC Sport Africa",
-      "category": "sports",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c3dydped4gmo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Tue, 14 Jul 2026 14:48:01 GMT",
-      "importance": 4,
-      "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
       "detectedAt": "2026-07-14T17:33:25.525Z"
     }
   ]
