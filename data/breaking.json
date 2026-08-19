@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-19T07:50:48.650Z",
+  "updatedAt": "2026-08-19T09:46:14.781Z",
   "breaks": [
+    {
+      "title": "Official: Sevilla unveil Ghanaian winger Emmanuel Abrokwa on long-term deal",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/official-sevilla-unveil-ghanaian-winger-emmanuel-abrokwa-on-long-term-deal/",
+      "pubDate": "Wed, 19 Aug 2026 09:03:01 +0000",
+      "importance": 4,
+      "why": "Signal: unveil · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-19T09:46:14.781Z"
+    },
     {
       "title": "Done Deal: Belgian Club Zulte Waregem Sign Nigerian Youngster",
       "source": "Complete Sports",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
       "detectedAt": "2026-07-14T17:33:25.525Z"
-    },
-    {
-      "title": "Ghana’s Diamond Rackets stun Kenya with 2026 Billie Jean Cup opening win",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghanas-diamond-rackets-stun-kenya-with-2026-billie-jean-cup-opening-win/",
-      "pubDate": "Tue, 14 Jul 2026 10:45:02 +0000",
-      "importance": 4,
-      "why": "Signal: win · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-14T11:43:02.510Z"
     }
   ]
 }
