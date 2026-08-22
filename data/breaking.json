@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-21T16:49:02.729Z",
+  "updatedAt": "2026-08-22T18:46:41.033Z",
   "breaks": [
+    {
+      "title": "NSMQ 2026: Kumasi Academy secures one-eighth spot after commanding win over Bueman SHS, Hohoe EP SHS",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/nsmq-2026-kumasi-academy-secures-one-eighth-spot-after-commanding-win-over-bueman-shs-hohoe-ep-shs/",
+      "pubDate": "Sat, 22 Aug 2026 18:43:32 +0000",
+      "importance": 4,
+      "why": "Signal: win · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-22T18:46:41.033Z"
+    },
     {
       "title": "Ghana secures €163m debt restructuring deal with Belgium – Ato Forson",
       "source": "MyJoyOnline",
@@ -589,16 +599,6 @@
       "pubDate": "Tue, 21 Jul 2026 10:33:00 +0000",
       "importance": 5,
       "why": "Signal: sign, $ · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-21T11:58:19.266Z"
-    },
-    {
-      "title": "PACE Coaches Clinic 2026 Returns To Raise The Standard Of Basketball Coaching In Nigeria",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/pace-coaches-clinic-2026-returns-to-raise-the-standard-of-basketball-coaching-in-nigeria/",
-      "pubDate": "Tue, 21 Jul 2026 10:58:53 +0000",
-      "importance": 4,
-      "why": "Signal: raise · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-07-21T11:58:19.266Z"
     }
   ]
