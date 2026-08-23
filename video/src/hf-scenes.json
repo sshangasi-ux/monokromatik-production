@@ -1,0 +1,18 @@
+[
+  { "id": 1, "kind": "title",
+    "overlay": { "kicker": "MONOKROMATIK · BRAND INTELLIGENCE", "title": "The Premier League’s most African season ever" } },
+  { "id": 2, "kind": "stat",
+    "overlay": { "value": "£6.7bn", "label": "UK live TV rights, 2025–2029", "source": "Sky Sports" } },
+  { "id": 3, "kind": "stat",
+    "overlay": { "value": "78", "label": "African players in the Premier League, 2025/26", "source": "ESPN" } },
+  { "id": 4, "kind": "stat",
+    "overlay": { "value": "~300M", "label": "African viewers — more than in the UK · 96% of Kenyan fans follow the PL", "source": "GeoPoll · Hudson Sandler" } },
+  { "id": 5, "kind": "stat", "accent": true,
+    "overlay": { "value": "£20m", "label": "Visit Rwanda × Aston Villa — the one prominent African name on a shirt", "source": "SportsPro" } },
+  { "id": 6, "kind": "statement",
+    "overlay": { "line": "Africa supplies the talent and the audience. The value flows out.", "source": "SuperSport now French-owned (Canal+)" } },
+  { "id": 7, "kind": "pull",
+    "overlay": { "line": "Passion is not a stake. Audience is not equity." } },
+  { "id": 8, "kind": "sources",
+    "overlay": { "line": "Every figure, sourced.", "items": ["Premier League", "Sky Sports", "SportsPro", "ESPN", "GeoPoll"], "url": "monokromatik.com" } }
+]

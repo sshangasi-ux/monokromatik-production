@@ -1,0 +1,50 @@
+[
+  {
+    "i": 1,
+    "clip": "hf/clip1.mp4",
+    "audio": "hf/vo1.wav",
+    "voDur": 9.97
+  },
+  {
+    "i": 2,
+    "clip": "hf/clip2.mp4",
+    "audio": "hf/vo2.wav",
+    "voDur": 9.530042
+  },
+  {
+    "i": 3,
+    "clip": "hf/clip3.mp4",
+    "audio": "hf/vo3.wav",
+    "voDur": 9.991042
+  },
+  {
+    "i": 4,
+    "clip": "hf/clip4.mp4",
+    "audio": "hf/vo4.wav",
+    "voDur": 9.640083
+  },
+  {
+    "i": 5,
+    "clip": "hf/clip5.mp4",
+    "audio": "hf/vo5.wav",
+    "voDur": 9.560083
+  },
+  {
+    "i": 6,
+    "clip": "hf/clip6.mp4",
+    "audio": "hf/vo6.wav",
+    "voDur": 10
+  },
+  {
+    "i": 7,
+    "clip": "hf/clip7.mp4",
+    "audio": "hf/vo7.wav",
+    "voDur": 10.534625
+  },
+  {
+    "i": 8,
+    "clip": "hf/clip8.mp4",
+    "audio": "hf/vo8.wav",
+    "voDur": 9.995
+  }
+]
