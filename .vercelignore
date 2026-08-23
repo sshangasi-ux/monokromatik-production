@@ -1,0 +1,3 @@
+# The Remotion video pipeline is a standalone sub-project (its own package.json).
+# It is not part of the Next.js site build — keep it out of Vercel deployments.
+video
