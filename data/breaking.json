@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-22T18:46:41.033Z",
+  "updatedAt": "2026-08-24T05:50:41.450Z",
   "breaks": [
+    {
+      "title": "Invest in the craft, not hype: Ghanaian creator Adnan Saani on why social media alone will not pay",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/invest-in-the-craft-not-hype-ghanaian-creator-adnan-saani-on-why-social-media-alone-will-not-pay/",
+      "pubDate": "Mon, 24 Aug 2026 05:15:50 +0000",
+      "importance": 4,
+      "why": "Signal: invest · MyJoyOnline (entertainment) · auto-curated",
+      "detectedAt": "2026-08-24T05:50:41.450Z"
+    },
     {
       "title": "NSMQ 2026: Kumasi Academy secures one-eighth spot after commanding win over Bueman SHS, Hohoe EP SHS",
       "source": "MyJoyOnline",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: win · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-07-21T14:18:32.585Z"
-    },
-    {
-      "title": "Ghana, World Gold Council sign $250,000 deal to clean up artisanal mining sector",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghana-world-gold-council-sign-250000-deal-to-clean-up-artisanal-mining-sector/",
-      "pubDate": "Tue, 21 Jul 2026 10:33:00 +0000",
-      "importance": 5,
-      "why": "Signal: sign, $ · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-21T11:58:19.266Z"
     }
   ]
 }
