@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-08-24T05:50:41.450Z",
+  "updatedAt": "2026-08-24T10:50:31.374Z",
   "breaks": [
+    {
+      "title": "Blue Pappi Unveils Star-Studded Lineup For Joburg Leg Of “Ehlane Tour”",
+      "source": "SA Hip Hop Mag",
+      "category": "music",
+      "link": "https://sahiphopmag.co.za/2026/08/blue-pappi-unveils-star-studded-lineup-for-joburg-leg-of-ehlane-tour/",
+      "pubDate": "Mon, 24 Aug 2026 10:47:01 +0000",
+      "importance": 4,
+      "why": "Signal: unveils · SA Hip Hop Mag (music) · auto-curated",
+      "detectedAt": "2026-08-24T10:50:31.374Z"
+    },
+    {
+      "title": "Burna Boy extends record with fifth No. 1 on Afrobeats Power Ranking",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/burna-boy-extends-record-with-fifth-no-1-on-afrobeats-power-ranking/",
+      "pubDate": "Mon, 24 Aug 2026 10:06:35 +0000",
+      "importance": 4,
+      "why": "Signal: record · NotJustOk (music) · auto-curated",
+      "detectedAt": "2026-08-24T10:50:31.374Z"
+    },
     {
       "title": "Invest in the craft, not hype: Ghanaian creator Adnan Saani on why social media alone will not pay",
       "source": "MyJoyOnline",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-07-22T22:14:59.348Z"
-    },
-    {
-      "title": "Ghana becomes first African country to sign accelerated patent grant deal with US",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghana-becomes-first-african-country-to-sign-accelerated-patent-grant-deal-with-us/",
-      "pubDate": "Wed, 22 Jul 2026 10:40:34 +0000",
-      "importance": 4,
-      "why": "Signal: first · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-22T12:01:36.147Z"
-    },
-    {
-      "title": "Commonwealth Games 2026: Ashe’s BFTAA Open Win Ignites Team Nigeria’s Gold Medal Ambition In Men’s 4x100m Relay",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/commonwealth-games-2026-ashe-bftaa-open-win-ignites-team-nigerias-gold-medal-ambition-in-mens-4x100m-relay/",
-      "pubDate": "Tue, 21 Jul 2026 12:37:39 +0000",
-      "importance": 4,
-      "why": "Signal: win · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-07-21T14:18:32.585Z"
     }
   ]
 }
