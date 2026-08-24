@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter, Fraunces } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 import RegistrationGate from './components/RegistrationGate';
 import SiteFooter from './components/SiteFooter';
 import './globals.css';
@@ -115,6 +116,10 @@ export default function RootLayout({
         <SiteFooter />
         <RegistrationGate />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
+        {/* Vercel Web Analytics — first-party, cookie-free, route-level.
+            Complements GA4; powers the Vercel dashboard Analytics tab.
+            Requires Web Analytics enabled for the project in Vercel. */}
+        <Analytics />
       </body>
     </html>
   );
