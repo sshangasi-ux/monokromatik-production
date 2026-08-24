@@ -70,3 +70,11 @@ node build/youtube-upload.mjs --file ... --slug ... --privacy unlisted --set-vid
 - **Quota:** a YouTube upload costs ~1,600 units of the default 10,000/day quota — ~6 uploads/day. Fine for a rollout; batch over days if backfilling many.
 - Start videos **unlisted**, review on the channel, then set public (`--privacy public` re-run updates, or flip in YouTube Studio).
 - The refresh token is long-lived but can be revoked; if uploads start 401ing, redo step 5.
+
+## Setting privacy programmatically (manage scope)
+
+The original upload token only had `youtube.upload` + `youtube.readonly`, which can create videos but **cannot change an existing video's privacy** (`videos.update` → 403 "insufficient scopes"). Re-authed 24 Aug 2026 to add the broad **`youtube` (manage)** scope.
+
+- **Re-auth (one-time, when the token lacks manage):** `video/build/youtube-reauth.mjs` runs a loopback OAuth catcher on `localhost:53682`, requests `youtube.upload` + `youtube` + `youtube.readonly`, and writes the new `YT_REFRESH_TOKEN` into `video/.env`. Launch it **detached** (`nohup node build/youtube-reauth.mjs &`) — the harness background runner gets torn down at session boundaries and the loopback dies before the redirect lands. Open the printed `AUTH_URL`, approve as the channel owner (accept the "unverified app" warning — it's your own client), done.
+- **Set privacy:** `node build/yt-set-privacy.mjs --id <videoId> --privacy public|unlisted|private`. Reads current status, flips `privacyStatus`, preserves the other status fields.
+- **Implementation note:** these scripts use **pure Node `https` built-ins**, not the `googleapis` package — `googleapis` loads pathologically slowly / hangs in this repo's environment.
