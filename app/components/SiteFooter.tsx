@@ -4,11 +4,31 @@ import NewsletterSignup from './NewsletterSignup';
 
 const YEAR = new Date().getFullYear();
 
+function YoutubeIcon({ size = 17 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.5 15.5v-7l6.5 3.5-6.5 3.5Z" />
+    </svg>
+  );
+}
+function LinkedinIcon({ size = 17 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.5 22 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H9V9Z" />
+    </svg>
+  );
+}
+
 const EXPLORE = [
   { label: 'The Cultural-Signal Index', href: '/intelligence/signal-index' },
   { label: 'Intelligence', href: '/intelligence' },
+  { label: 'Watch', href: '/watch' },
   { label: 'The Wire', href: '/breaking' },
   { label: 'Pulse', href: '/pulse' },
+];
+const SOCIALS = [
+  { label: 'YouTube', href: 'https://www.youtube.com/@MonoKromatikNetwork', Icon: YoutubeIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/135245970', Icon: LinkedinIcon },
 ];
 const COMPANY = [
   { label: 'Pricing', href: '/pricing' },
@@ -52,6 +72,20 @@ export default function SiteFooter() {
             <a href={`mailto:${CONTACT_EMAIL}`} className="mt-5 inline-block text-sm font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
               {CONTACT_EMAIL}
             </a>
+            <div className="mt-5 flex items-center gap-3">
+              {SOCIALS.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="inline-flex h-9 w-9 items-center justify-center border border-mono-white/25 text-mono-gray-bright hover:border-mono-amber hover:text-mono-amber transition-colors"
+                >
+                  <Icon size={17} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Each column is its own navigation landmark, named by the heading

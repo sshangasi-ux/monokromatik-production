@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 const primaryLinks = [
   { href: '/breaking', label: 'THE WIRE', description: 'Breaking, the moment it breaks', priority: true },
   { href: '/signal', label: 'SIGNAL', description: 'Ideas, work and brand consequence', priority: true },
+  { href: '/watch', label: 'WATCH', description: 'Explainers — who owns the upside', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
   { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
   { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
