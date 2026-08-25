@@ -77,4 +77,24 @@ The original upload token only had `youtube.upload` + `youtube.readonly`, which 
 
 - **Re-auth (one-time, when the token lacks manage):** `video/build/youtube-reauth.mjs` runs a loopback OAuth catcher on `localhost:53682`, requests `youtube.upload` + `youtube` + `youtube.readonly`, and writes the new `YT_REFRESH_TOKEN` into `video/.env`. Launch it **detached** (`nohup node build/youtube-reauth.mjs &`) — the harness background runner gets torn down at session boundaries and the loopback dies before the redirect lands. Open the printed `AUTH_URL`, approve as the channel owner (accept the "unverified app" warning — it's your own client), done.
 - **Set privacy:** `node build/yt-set-privacy.mjs --id <videoId> --privacy public|unlisted|private`. Reads current status, flips `privacyStatus`, preserves the other status fields.
-- **Implementation note:** these scripts use **pure Node `https` built-ins**, not the `googleapis` package — `googleapis` loads pathologically slowly / hangs in this repo's environment.
+- **Implementation note:** the re-auth + privacy scripts use **pure Node `https` built-ins**, not `googleapis`. That was a workaround for the old `~/Documents` (iCloud-synced) checkout where `googleapis` loaded pathologically slowly. On the current `~/dev/monokromatik-production` checkout `googleapis` loads in ~1s, so the newer tools below use it freely.
+
+## Pipeline scripts (`video/build/`)
+
+The full toolkit that turns an article into a published, cross-linked video. Run from `video/` with `set -a; . ./.env; set +a` first (loads YT creds).
+
+| Script | What it does |
+|---|---|
+| `scene-data-from-article.mjs <slug>` | Generate scene data (title/stats/pull/sources + image prompts + VO) from a `data/articles.json` article → `build/generated/<slug>.scenes.json`. Hand-polish the 5 stat scenes (they share one generic prompt) before generating. |
+| *(Higgsfield MCP)* | seedream frames → seedance clips (16:9, `start_image`) → seed_audio (Bram voice `549ff70a-…`). Download to `public/hf/hclipN.mp4` + `voN.wav`. |
+| *(Remotion)* | `npx remotion render src/index.ts HiggsfieldExplainerH out/<slug>-h.mp4` (horizontal) / `HiggsfieldExplainer` (vertical). Reads `src/hf-manifest-h.json` / `hf-manifest.json` + `hf-scenes.json`. |
+| `youtube-upload.mjs --file --slug [--privacy] [--set-video-url]` | Upload a finished MP4 with article-derived metadata; `--set-video-url` writes `videoUrl` into the article. |
+| `yt-set-privacy.mjs --id --privacy` | Flip an existing video public/unlisted/private (needs the `youtube` manage scope). |
+| `youtube-reauth.mjs` | Loopback OAuth to (re)issue a refresh token with the manage scope. |
+| `make-short.sh <slug> <c1 c2 c7 a1 a2 a7>` | Cut a vertical Short (scenes 1/2/7 = hook → stat → thesis) from an explainer's Higgsfield clip/audio URLs, render it (`HiggsfieldExplainer`). |
+| `upload-short.mjs --file --title --slug --tags` | Upload a vertical Short public with a Shorts description + article/site links. |
+| `make-banner.mjs` | Render the 2560×1440 channel banner (SVG → PNG via `sharp`) → `build/banner.png`. |
+| `channel-setup.mjs` | One-shot channel identity: About, keywords, country, trailer, enriched video metadata, and the series-playlist architecture. |
+| `update-descriptions.mjs` | Rewrite the long-video + trailer descriptions with the funnel CTA stack (article → The Weekly Signal → Membership), UTM-tagged, preserving title/tags/category. |
+
+Outputs (`out/`, `build/generated/`, `build/frames/`, `build/banner.png`, `public/hf/`) and `.env` are gitignored.
