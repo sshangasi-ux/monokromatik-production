@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-26T09:54:18.579Z",
+  "updatedAt": "2026-08-26T23:28:11.226Z",
   "breaks": [
+    {
+      "title": "Chelsea In Advance Talks Over €40m Deal For Italy-Born Nigerian Defender Ahanor",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/chelsea-in-advance-talks-over-e40m-deal-for-italy-born-nigerian-defender-ahanor/",
+      "pubDate": "Wed, 26 Aug 2026 21:59:05 +0000",
+      "importance": 5,
+      "why": "Signal: deal, $ · Complete Sports (sports) · auto-curated",
+      "detectedAt": "2026-08-26T23:28:11.226Z"
+    },
     {
       "title": "Styrofoam Ban: EPA launches second public awareness campaign in Kumasi",
       "source": "MyJoyOnline",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: record · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-07-24T21:18:55.951Z"
-    },
-    {
-      "title": "Ghana Armed Forces ready to deal with Nkwanta South security threats — Army Chief",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghana-armed-forces-ready-to-deal-with-nkwanta-south-security-threats-army-chief/",
-      "pubDate": "Fri, 24 Jul 2026 16:33:45 +0000",
-      "importance": 4,
-      "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-07-24T17:47:55.379Z"
     }
   ]
 }
