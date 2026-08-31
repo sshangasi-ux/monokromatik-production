@@ -1,30 +1,35 @@
 {
   "categoryWeights": {
-    "culture": 1.3907439781806734,
-    "sports": 0.8697945164060457,
-    "entertainment": 1.2440038778745897,
-    "technology": 0.8049547770453832,
-    "business": 0.8640610412702536,
-    "fashion": 0.8753084810749965
+    "culture": 1.2740702113598146,
+    "sports": 1.139807744326386,
+    "entertainment": 1.0554932358156628,
+    "technology": 0.801154684409048,
+    "business": 1.0571200103420897,
+    "fashion": 0.834275997735907,
+    "music": 0.9636363636363636,
+    "spirits": 0.9090909090909091
   },
   "sourceTrust": {
     "(direct)": 1.5,
-    "vercel.com": 1.2870215056556356,
-    "default": 0.8904198303002652,
-    "bing": 0.8318001784290665,
-    "(not set)": 0.8662253368290628,
-    "footer": 0.7795054516280358,
-    "teams.public.onecdn.static.microsoft": 0.89169776011362,
-    "chatgpt.com": 0.9483470145788548,
-    "cn.bing.com": 0.8254708599577312,
-    "scholar.google.com.br": 0.8368748406500439,
-    "scholar.google.com": 0.8338927502058426,
-    "copilot.com": 0.8563122619623287,
-    "linkedin.com": 1.1032513877874703,
-    "google": 0.9051546391752577,
-    "in.search.yahoo.com": 0.9051546391752577,
-    "duckduckgo": 0.9025773195876289
+    "vercel.com": 1.2296172045245084,
+    "default": 0.9123358642402122,
+    "bing": 0.8115489349876145,
+    "(not set)": 0.8929802694632503,
+    "footer": 0.8236043613024286,
+    "teams.public.onecdn.static.microsoft": 0.913358208090896,
+    "chatgpt.com": 0.9586776116630839,
+    "cn.bing.com": 0.7977762815606736,
+    "scholar.google.com.br": 0.8694998725200351,
+    "scholar.google.com": 0.8053231812955755,
+    "copilot.com": 0.851193840967921,
+    "linkedin.com": 1.1133086450381198,
+    "google": 0.8505740802632594,
+    "in.search.yahoo.com": 0.9241237113402062,
+    "duckduckgo": 0.9220618556701031,
+    "youtube": 1.083965947200963,
+    "yahoo": 0.9074812967581047,
+    "perplexity.ai": 0.9049875311720699
   },
-  "updatedAt": "2026-08-17T05:20:22.377Z",
-  "runs": 7
+  "updatedAt": "2026-08-31T11:08:16.278Z",
+  "runs": 8
 }
