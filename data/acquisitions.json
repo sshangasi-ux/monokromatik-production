@@ -53,7 +53,7 @@
     "status": "reported",
     "verdict": "retained",
     "read": "The counter-example: an African champion buying an African open-banking firm. Ownership and the upside stay on the continent — consolidation that keeps the value home.",
-    "sources": [{ "publisher": "WeeTracker", "url": "", "label": "Flutterwave–Mono all-stock deal (reported)" }],
+    "sources": [{ "publisher": "WeeTracker", "url": "https://weetracker.com/2026/01/05/flutterwave-acquires-mono-open-banking-africa/", "label": "Flutterwave acquires Mono in all-stock deal" }],
     "relatedArticle": "flutterwave-buying-a-bank-fintech-conglomerate-era"
   },
   {
@@ -100,7 +100,7 @@
     "status": "completed",
     "verdict": "exported",
     "read": "A historic exit for a Black-founded natural-hair brand — and a clean illustration of the thesis: Black women authored the category, a multinational owns the margin.",
-    "sources": [{ "publisher": "CNBC", "url": "", "label": "Mielle Organics sold to Procter & Gamble" }],
+    "sources": [{ "publisher": "CNBC", "url": "https://www.cnbc.com/2023/01/21/black-founder-mielle-organics-sold-her-company-to-pandg-why-she-says-shes-selling-up.html", "label": "Mielle's founder on 'selling up, not selling out'" }],
     "relatedArticle": "the-coil-economy-who-authors-black-hair-and-who-cashes-the-cheque"
   },
   {
@@ -115,7 +115,7 @@
     "status": "completed",
     "verdict": "exported",
     "read": "The landmark Black-hair-economy deal. A West-African-rooted brand built on shea butter, absorbed by a European FMCG giant — the value line moved off-continent.",
-    "sources": [{ "publisher": "OkayAfrica", "url": "", "label": "Unilever acquires Sundial Brands / SheaMoisture" }],
+    "sources": [{ "publisher": "Black Enterprise", "url": "https://www.blackenterprise.com/unilever-acquires-sundial-brands-owner-of-sheamoisture-in-for-undisclosed-amount/", "label": "Unilever acquires Sundial Brands (SheaMoisture)" }],
     "relatedArticle": "the-coil-economy-who-authors-black-hair-and-who-cashes-the-cheque"
   }
 ]
