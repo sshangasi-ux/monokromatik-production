@@ -5,6 +5,11 @@ import articlesData from '../data/articles.json';
 
 export interface Article {
   title: string;
+  /** Optional search-optimised <title> and meta description — lead with the
+      searchable entity for SERP click-through. Both fall back to title/excerpt;
+      the editorial title still renders on-page and on social cards. */
+  seoTitle?: string;
+  metaDescription?: string;
   slug: string;
   content: string;
   excerpt: string;
