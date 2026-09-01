@@ -1,5 +1,284 @@
 [
   {
+    "title": "The Detty December Index: Who Authors the Season, and Who Rents It",
+    "seoTitle": "The Detty December Index: Who Wins the Season",
+    "metaDescription": "A ranked read of who wins Detty December — festivals, airlines, spirits, hospitality — scored on one axis: who authors the season, and who merely rents it.",
+    "slug": "the-detty-december-index-who-authors-the-season-and-who-rents-it",
+    "content": "## Scoring a party\n\nDetty December is a scramble of people cashing in — festivals, airlines, hotels, spirits houses, banks, luxury brands. Ranking them by revenue would just reward whoever is biggest. The Cultural-Signal question is sharper, and it is the one this desk is built on: not who made the most money, but who *authored* the thing people flew in for — and who merely rented proximity to it.\n\nSo here is the season, ranked by that axis rather than by size. It is an authorship-weighted editorial read in the spirit of our [Cultural-Signal Index](/intelligence/signal-index), not a computed score — and players move tiers year to year. What follows is a map of where the season's value is durable, and where it is just passing through.\n\n## The Authors — they built what people fly in for\n\nAt the top sit the players who own the reason the season exists. Flytime, the Nigerian promoter behind [Flytime Fest — Davido, Asake and Olamide across late December at Lagos's Eko Convention Centre](https://en.wikipedia.org/wiki/Flytime_Fest) [1] — owns the tentpole, not a slot on someone else's stage. That is homegrown intellectual property the diaspora organises entire trips around. In Accra, [AfroFuture, the Ghanaian-founded festival once called Afrochella](https://en.wikipedia.org/wiki/AfroFuture) [2], did the same job for \"December in GH\": a locally created event that became an international destination.\n\nAnd above the festivals, the artists themselves. Afrobeats and amapiano acts are the literal reason the season happens. The ones who own their masters and their brands — not just the ones who perform — capture the most durable value of all.\n\n## The Hybrids — capturing value, contesting ownership\n\nThe middle tier captures real money while its ownership is still being fought over. Air Peace is the clearest case: an African carrier trying to claw back the airfare the season otherwise leaks offshore, as we set out in [the airfare-tax piece](/article/the-airfare-tax-on-going-home-who-captures-detty-december). Retained if it holds the route; contested because the economics are brutal.\n\nLocal hospitality belongs here too, and it is the season's most reliable local capture. Of Lagos's [US$71.6m December 2024 tourism-and-entertainment revenue, hotels took US$44m and short-lets US$13m](https://businessday.ng/life-arts/article/detty-december-showcases-lagos-tourism-potential/) [3]. You cannot offshore a hotel room in Lekki — which is precisely why this value stays.\n\n## The Renters — buying proximity to a culture they didn't make\n\nThen come the brands that pay to stand next to the season without having built any of it. The global spirits and luxury houses that fly in December activations to rent Afrobeats cool, then repatriate the margin, are the archetype — the exact pattern we've traced from [Kate Spade's global-ambassador trade](/article/tyla-kate-spade-global-ambassador-who-rents-culture) to [Macallan renting Afrobeats cool](/article/macallan-adekunle-gold-scotch-buys-afrobeats-cool). Real spend, borrowed authorship. Alongside them, the international ticketing platforms and card networks that take a clip of every transaction and author none of it.\n\n## The Extractors — value that leaves before it lands\n\nAt the bottom of the ownership ladder, though often the top of the revenue one, sit the foreign airlines. Theirs is the single biggest line of the whole season, and it is captured almost entirely off-continent — the structural leak the whole homecoming is built on top of [4].\n\n## The read\n\nRank Detty December this way and a clean pattern appears: the season's value is most durable exactly where ownership is local — festival IP, artists who own, hospitality you cannot move — and least durable where it is rented or in transit. Everyone in the list gets paid. Only the top of it gets to own what the paying is *for*.\n\nThat is the whole strategic game for African operators: climb the ladder. Move from renting proximity to owning the tentpole, from performing the season to holding the IP the season revolves around. The cities and founders who win the next decade of Detty December will not be the ones who throw the best month. They will be the ones who own the most of it.",
+    "excerpt": "Festivals, airlines, spirits houses, short-let hosts and luxury brands all cash in on Detty December. Our ranked read scores them on the only axis that matters: who authors the season, and who merely rents it.",
+    "category": "business",
+    "tags": [
+      "detty december",
+      "cultural-signal index",
+      "festivals",
+      "flytime",
+      "value capture",
+      "diaspora",
+      "nigeria",
+      "ghana"
+    ],
+    "format": "feature",
+    "sourceLink": "https://en.wikipedia.org/wiki/Flytime_Fest",
+    "sourceName": "Wikipedia",
+    "publishedAt": "2026-09-01T15:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Flytime Fest",
+        "url": "https://en.wikipedia.org/wiki/Flytime_Fest",
+        "use": "Flytime Fest as a Nigerian-owned festival at Lagos's Eko Convention Centre, headlined by Davido, Asake and Olamide."
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "AfroFuture (formerly Afrochella)",
+        "url": "https://en.wikipedia.org/wiki/AfroFuture",
+        "use": "AfroFuture / Afrochella as the Ghanaian-founded Accra December festival."
+      },
+      {
+        "publisher": "BusinessDay",
+        "label": "Detty December showcases Lagos' tourism potential",
+        "url": "https://businessday.ng/life-arts/article/detty-december-showcases-lagos-tourism-potential/",
+        "use": "Lagos's US$71.6m December 2024 tourism-and-entertainment revenue; hotels US$44m and short-lets US$13m."
+      },
+      {
+        "publisher": "CNN",
+        "label": "Detty December is one of the world's biggest parties. And that's a big problem for some",
+        "url": "https://www.cnn.com/2025/12/19/travel/detty-december-nigeria-party-problems",
+        "use": "The scale of the season and the pressures created by the value that leaves the continent."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The season, by who keeps it",
+        "items": [
+          {
+            "value": "$71.6m",
+            "label": "Lagos December 2024 tourism & entertainment revenue — the pool everyone competes for",
+            "source": 3
+          },
+          {
+            "value": "$44m / $13m",
+            "label": "Hotels and short-lets' share — the value that structurally stays local",
+            "source": 3
+          },
+          {
+            "value": "Nigerian-owned",
+            "label": "Flytime Fest, the season's Lagos tentpole — authored, not rented",
+            "source": 1
+          }
+        ]
+      },
+      {
+        "type": "evidence",
+        "title": "What's confirmed, reported and not claimed",
+        "confirmed": [
+          {
+            "text": "Flytime Fest is a Nigerian-owned festival at Lagos's Eko Convention Centre, headlined by Davido, Asake and Olamide; AfroFuture (formerly Afrochella) is the Ghanaian-founded Accra December festival.",
+            "source": 1
+          },
+          {
+            "text": "Lagos's December 2024 tourism and entertainment revenue was US$71.6m, with hotels at US$44m and short-lets at US$13m.",
+            "source": 3
+          }
+        ],
+        "reported": [
+          {
+            "text": "The season draws a large diaspora crowd and has grown big enough to strain host cities on pricing and capacity.",
+            "source": 4
+          }
+        ],
+        "notClaimed": [
+          "This is an authorship-weighted editorial ranking, not a computed Cultural-Signal score.",
+          "Tier placements are directional and can shift year to year as ownership and activations change."
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Flytime Fest"
+      },
+      {
+        "kind": "brand",
+        "name": "Air Peace"
+      },
+      {
+        "kind": "brand",
+        "name": "AfroFuture"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "The Detty December Index is one question applied to a party: authored, or rented? Sort the season that way and the hierarchy of durability is obvious. Festival IP, artists who own their catalogue, hospitality you cannot offshore — that value compounds and comes back next year with the same owner. The renters and extractors take cash but no equity in the culture; their position resets every December.\n\nThe strategic instruction for African operators writes itself: climb the ladder. It is better to own a smaller tentpole than to headline someone else's, better to hold the IP than to be booked to perform inside it. The season is not short of money. It is short of local owners at the top of the stack.",
+      "pullQuote": "Everyone gets paid in December. Only some get to own what December is for.",
+      "takeaways": [
+        {
+          "insight": "Durable Detty December value tracks ownership, not revenue — festival IP and hospitality retain it; renters and airlines capture cash but reset each year.",
+          "move": "Prioritise owning or co-owning the season's tentpoles (festivals, venues, catalogues) over one-off activations and sponsorships that buy only proximity."
+        },
+        {
+          "insight": "The same authorship-vs-rent axis that ranks brands in the Cultural-Signal Index maps cleanly onto a seasonal economy.",
+          "move": "Use the tier map as a diligence lens: before spending on the season, ask whether the spend buys equity in the culture or just a season's worth of borrowed cool."
+        }
+      ]
+    }
+  },
+  {
+    "title": "The Airfare Tax on Going Home",
+    "seoTitle": "Why Are December Flights to Lagos So Expensive?",
+    "metaDescription": "The most valuable transaction of Detty December happens before anyone lands — the airfare — and most of it leaves the continent. Inside the homecoming's hidden tax.",
+    "slug": "the-airfare-tax-on-going-home-who-captures-detty-december",
+    "content": "## The season's biggest cheque clears before you land\n\nDetty December's spending is usually counted in hotels booked, tickets sold and short-lets cleared. But for most people coming home, the single largest line of the trip is the flight — and that money is booked, and largely captured, before anyone touches down in Lagos or Accra. Nigeria now has the [most expensive skies in Africa: a Lagos passenger to London pays nearly three times what a traveller in Nairobi does](https://www.thisdaylive.com/2025/09/13/how-foreign-airlines-fleece-nigerian-travellers/) [3]. The homecoming has a tax, and it is levied at the departure gate.\n\nThat tax is why a season that generates real local wealth still leaks its biggest transaction offshore. The party happens in Lagos; the most valuable receipt is written by an airline that isn't Nigerian.\n\n## Who collects the tax\n\nFor years the lucrative Lagos–London corridor ran as a near-duopoly of British Airways and Virgin Atlantic, with Gulf carriers picking up connections — all of them foreign. Before real competition arrived, a one-way Lagos–London economy seat on BA cost around [US$2,500, and business class US$8,827](https://www.thisdaylive.com/2024/04/14/understanding-foreign-airlines-price-war-with-air-peace/) [1]. Every one of those fares is revenue that leaves the continent.\n\nAnd even the naira that foreign airlines do earn in Nigeria struggles to get home: their [trapped funds in the country reached about US$812 million](https://www.thisdaylive.com/2025/09/13/how-foreign-airlines-fleece-nigerian-travellers/) [3] at one point, money stuck behind FX scarcity. It is a strange, telling picture — a market so lucrative that carriers fight to serve it, and so strained that they cannot always repatriate what they make.\n\n## The one airline trying to claw it back\n\nThen a Nigerian carrier broke the pattern. Air Peace launched Lagos–London in March 2024, selling [return economy at about ₦1.2 million](https://www.legit.ng/business-economy/industry/1671233-air-peace-slashes-london-fares-british-airways-nigerian-airlines-battle-uk-market/) [2] — a fraction of the incumbents' fares. The response was immediate and revealing: within days [BA's one-way economy fell from US$2,500 to US$1,364, and business from US$8,827 to US$4,814](https://www.thisdaylive.com/2024/04/14/understanding-foreign-airlines-price-war-with-air-peace/) [1]. Prices that had looked like the cost of the route turned out to be margin all along.\n\nWhether Air Peace can actually hold that corridor against carriers with deeper pockets is a separate question — one we examined in [the Air Peace aviation dossier](/reports/will-it-land-african-aviation). But the significance is plain: it is the clearest attempt yet to move the airfare from the *exported* column into the *retained* one.\n\n## The tax keeps coming back\n\nOne competitor dented the fares. It did not repeal the tax. Nigerian [air fares have risen more than 300% in two years](https://dailytrust.com/air-fares-rise-by-over-300-in-2-years/) [4], and by the 2025 festive season the pressure was severe enough that the [Senate summoned airlines over an \"exploitative\" airfare surge](https://allafrica.com/stories/202512100149.html) [5]. December's demand is inelastic by design — a diaspora that has decided it is going home, whatever the price — and inelastic demand is exactly what makes a route so easy to tax.\n\nThat is the structural trap. As long as the metal, the routes and the slots are mostly owned by foreign carriers, the season's biggest cheque will keep clearing offshore, and the December spike will keep returning no matter how good the party gets [6].\n\n## The value-capture read\n\nOur [Detty December briefing](/reports/who-owns-detty-december-homecoming-economy) showed the encouraging half of the story: the hospitality core — hotels, short-lets, promoters — is structurally hard to export and stays largely in local hands. The airfare is the mirror image. It is the biggest single spend of the whole homecoming, and it is captured mostly off-continent, before the local economy even opens for business.\n\nClosing that gap is not a marketing problem; it is an ownership problem. Air Peace proved the premium was contestable. The trapped funds and the annual December surge prove that one airline cannot carry the whole homecoming. The season will only keep its largest cheque when the aircraft flying it home are owned by the continent it is flying to.",
+    "excerpt": "The most valuable transaction of the whole season happens before a single visitor lands — the international airfare — and most of it accrues to foreign carriers. Detty December's hidden tax, and the one African airline trying to claw it back.",
+    "category": "business",
+    "tags": [
+      "detty december",
+      "aviation",
+      "air peace",
+      "diaspora",
+      "value capture",
+      "nigeria",
+      "airfare"
+    ],
+    "format": "feature",
+    "sourceLink": "https://www.thisdaylive.com/2024/04/14/understanding-foreign-airlines-price-war-with-air-peace/",
+    "sourceName": "ThisDay",
+    "publishedAt": "2026-09-01T14:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "ThisDay",
+        "label": "Understanding Foreign Airlines' Price War with Air Peace",
+        "url": "https://www.thisdaylive.com/2024/04/14/understanding-foreign-airlines-price-war-with-air-peace/",
+        "use": "BA one-way Lagos–London economy US$2,500 and business US$8,827 before Air Peace; fell to US$1,364 and US$4,814 after entry."
+      },
+      {
+        "publisher": "Legit.ng",
+        "label": "Air Peace slashes London fares below British Airways as Nigerian airlines battle for UK market",
+        "url": "https://www.legit.ng/business-economy/industry/1671233-air-peace-slashes-london-fares-british-airways-nigerian-airlines-battle-uk-market/",
+        "use": "Air Peace's March 2024 Lagos–London launch at ~₦1.2m return economy and the resulting price war."
+      },
+      {
+        "publisher": "ThisDay",
+        "label": "How Foreign Airlines Fleece Nigerian Travellers",
+        "url": "https://www.thisdaylive.com/2025/09/13/how-foreign-airlines-fleece-nigerian-travellers/",
+        "use": "Nigeria as Africa's most expensive aviation market (~3x Nairobi for Lagos–London); foreign airlines' trapped funds ~US$812m."
+      },
+      {
+        "publisher": "Daily Trust",
+        "label": "Air fares rise by over 300% in 2 years",
+        "url": "https://dailytrust.com/air-fares-rise-by-over-300-in-2-years/",
+        "use": "Nigerian air fares up more than 300% over two years."
+      },
+      {
+        "publisher": "allAfrica",
+        "label": "Nigeria: Senate Moves to Halt 'Exploitative' Airfare Surge, Summons Keyamo, Airlines",
+        "url": "https://allafrica.com/stories/202512100149.html",
+        "use": "December 2025 festive-season airfare surge and the Senate summoning airlines over 'exploitative' pricing."
+      },
+      {
+        "publisher": "CNN",
+        "label": "Detty December is one of the world's biggest parties. And that's a big problem for some",
+        "url": "https://www.cnn.com/2025/12/19/travel/detty-december-nigeria-party-problems",
+        "use": "Scale of the December homecoming, diaspora demand and the pricing pressures around the season."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The tax, itemised",
+        "items": [
+          {
+            "value": "$2,500 → $1,364",
+            "label": "BA one-way Lagos–London economy, before and after Air Peace entered",
+            "source": 1
+          },
+          {
+            "value": "₦1.2m",
+            "label": "Air Peace return-economy launch fare, Lagos–London, March 2024",
+            "source": 2
+          },
+          {
+            "value": "~3×",
+            "label": "What a Lagos–London flyer pays vs a Nairobi traveller — Africa's priciest skies",
+            "source": 3
+          },
+          {
+            "value": "$812m",
+            "label": "Foreign airlines' funds trapped in Nigeria by FX scarcity",
+            "source": 3
+          },
+          {
+            "value": "+300%",
+            "label": "Rise in Nigerian air fares over two years",
+            "source": 4
+          }
+        ]
+      },
+      {
+        "type": "evidence",
+        "title": "What's confirmed, reported and not claimed",
+        "confirmed": [
+          {
+            "text": "Air Peace launched Lagos–London in March 2024 at ~₦1.2m return economy; BA then cut one-way economy from US$2,500 to US$1,364 and business from US$8,827 to US$4,814.",
+            "source": 1
+          },
+          {
+            "text": "By the 2025 festive season, Nigeria's Senate summoned airlines over an 'exploitative' airfare surge.",
+            "source": 5
+          }
+        ],
+        "reported": [
+          {
+            "text": "Nigeria is Africa's most expensive aviation market, roughly 3x a Nairobi fare for Lagos–London; foreign airlines' trapped funds reached ~US$812m.",
+            "source": 3
+          },
+          {
+            "text": "Nigerian air fares rose more than 300% over two years.",
+            "source": 4
+          }
+        ],
+        "notClaimed": [
+          "No official figure isolates total December diaspora airfare spend; it is inferred from route pricing and demand.",
+          "How much of each ticket ultimately leaves versus stays depends on carrier ownership and the trapped-funds backlog."
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Air Peace"
+      },
+      {
+        "kind": "brand",
+        "name": "British Airways"
+      },
+      {
+        "kind": "brand",
+        "name": "Virgin Atlantic"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "Detty December's value-capture story is won or lost before it starts, in a transaction almost nobody counts as part of the season: the flight. The hospitality economy that gets celebrated is real, but it is the second-biggest cheque. The biggest one is the airfare, and it clears mostly offshore.\n\nAir Peace matters less as an airline than as a proof of concept — it showed the premium foreign carriers charged the diaspora was margin, not cost, and that an African operator can contest it. But one carrier against a structural tax is not a strategy. The fix is ownership of the hard assets: routes, slots and aircraft in African hands. Until then, the homecoming will keep paying its biggest bill to someone else.",
+      "pullQuote": "Detty December's biggest transaction is the one nobody counts — the flight — and it clears offshore before the party begins.",
+      "takeaways": [
+        {
+          "insight": "The season's single largest spend is the international airfare, and it is captured mostly off-continent — the hospitality wins can't offset a leak that big.",
+          "move": "Treat aviation ownership (routes, slots, fleet) as cultural-economy infrastructure, not a separate transport file; it is where the most December value is won or lost."
+        },
+        {
+          "insight": "Air Peace's entry collapsing fares proved the premium was contestable — but trapped funds and the annual surge show a single competitor can't repeal the tax.",
+          "move": "Back African long-haul capacity on diaspora corridors with policy and patient capital; competition, not appeals, is what actually moved the price."
+        }
+      ]
+    }
+  },
+  {
     "title": "The Great Convergence: 84 Deals, and Who Owns Africa's Rails Now",
     "seoTitle": "Who Owns Africa's Fintech Now? The 2026 M&A Wave",
     "metaDescription": "84 deals, $11.4bn, M&A up 91%. As Africa's tech consolidates and the banks buy the fintechs, who ends up owning the rails — and does the value stay home?",
