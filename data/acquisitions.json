@@ -11,7 +11,13 @@
     "status": "completed",
     "verdict": "exported",
     "read": "Paystack's third Nigerian-fintech tuck-in in 18 months (after Ladder MFB and Brass). The card-issuer Allawee folds into a Stripe subsidiary — another homegrown brand absorbed into a foreign-owned rail.",
-    "sources": [{ "publisher": "TechCabal", "url": "https://techcabal.com/2026/08/31/paystack-acquires-allawee/", "label": "Paystack acquires Allawee" }]
+    "sources": [
+      {
+        "publisher": "TechCabal",
+        "url": "https://techcabal.com/2026/08/31/paystack-acquires-allawee/",
+        "label": "Paystack acquires Allawee"
+      }
+    ]
   },
   {
     "id": "nedbank-ncba-2026",
@@ -25,7 +31,14 @@
     "status": "completed",
     "verdict": "mixed",
     "read": "The marquee cross-border bank deal of 2026 — and a rare intra-African one. Value moves from Kenyan to South African hands: consolidation on the continent, but not local ownership retained.",
-    "sources": [{ "publisher": "BusinessDay", "url": "https://businessday.ng/africa/article/nedbank-wins-approval-to-take-majority-stake-in-kenyas-ncba/", "label": "Nedbank wins approval for majority stake in NCBA" }]
+    "sources": [
+      {
+        "publisher": "BusinessDay",
+        "url": "https://businessday.ng/africa/article/nedbank-wins-approval-to-take-majority-stake-in-kenyas-ncba/",
+        "label": "Nedbank wins approval for majority stake in NCBA"
+      }
+    ],
+    "relatedArticle": "nedbank-bought-kenya-855m-ncba-and-the-intra-african-acquirer"
   },
   {
     "id": "paystack-ladder-mfb-2026",
@@ -39,7 +52,13 @@
     "status": "completed",
     "verdict": "exported",
     "read": "A licence play: Paystack absorbs a microfinance bank to move into banking. The Ladder brand disappears into the acquirer.",
-    "sources": [{ "publisher": "TechCabal", "url": "https://techcabal.com/2026/08/24/84-ma-deals-worth-11-4-billion-in-disclosed-value-recorded-so-far-in-2026/", "label": "African tech M&A 2026: 84 deals, $11.4bn" }]
+    "sources": [
+      {
+        "publisher": "TechCabal",
+        "url": "https://techcabal.com/2026/08/24/84-ma-deals-worth-11-4-billion-in-disclosed-value-recorded-so-far-in-2026/",
+        "label": "African tech M&A 2026: 84 deals, $11.4bn"
+      }
+    ]
   },
   {
     "id": "flutterwave-mono-2026",
@@ -53,7 +72,13 @@
     "status": "reported",
     "verdict": "retained",
     "read": "The counter-example: an African champion buying an African open-banking firm. Ownership and the upside stay on the continent — consolidation that keeps the value home.",
-    "sources": [{ "publisher": "WeeTracker", "url": "https://weetracker.com/2026/01/05/flutterwave-acquires-mono-open-banking-africa/", "label": "Flutterwave acquires Mono in all-stock deal" }],
+    "sources": [
+      {
+        "publisher": "WeeTracker",
+        "url": "https://weetracker.com/2026/01/05/flutterwave-acquires-mono-open-banking-africa/",
+        "label": "Flutterwave acquires Mono in all-stock deal"
+      }
+    ],
     "relatedArticle": "flutterwave-buying-a-bank-fintech-conglomerate-era"
   },
   {
@@ -68,7 +93,13 @@
     "status": "completed",
     "verdict": "exported",
     "read": "Warner invested from 2020, took a majority in 2022, and completed the full buyout in 2025 — Africa's biggest music distributor now sits inside a global major.",
-    "sources": [{ "publisher": "Music Business Worldwide", "url": "https://www.musicbusinessworldwide.com/warner-music-group-completes-full-acquisition-of-africa-based-music-distributor-africori/", "label": "Warner completes full acquisition of Africori" }]
+    "sources": [
+      {
+        "publisher": "Music Business Worldwide",
+        "url": "https://www.musicbusinessworldwide.com/warner-music-group-completes-full-acquisition-of-africa-based-music-distributor-africori/",
+        "label": "Warner completes full acquisition of Africori"
+      }
+    ]
   },
   {
     "id": "universal-mavin-2024",
@@ -83,8 +114,16 @@
     "verdict": "exported",
     "read": "A majority buy of Afrobeats' crown-jewel label (Rema, Ayra Starr). The founders kept operating control, but the masters and equity now route through a global major.",
     "sources": [
-      { "publisher": "Music Business Worldwide", "url": "https://www.musicbusinessworldwide.com/universal-music-group-buys-majority-stake-in-afrobeats-label-mavin/", "label": "UMG buys majority stake in Mavin" },
-      { "publisher": "Billboard", "url": "https://www.billboard.com/business/record-labels/mavin-global-sale-umg-buys-majority-stake-rema-afrobeats-label-1235614824/", "label": "Reported $150–200m valuation" }
+      {
+        "publisher": "Music Business Worldwide",
+        "url": "https://www.musicbusinessworldwide.com/universal-music-group-buys-majority-stake-in-afrobeats-label-mavin/",
+        "label": "UMG buys majority stake in Mavin"
+      },
+      {
+        "publisher": "Billboard",
+        "url": "https://www.billboard.com/business/record-labels/mavin-global-sale-umg-buys-majority-stake-rema-afrobeats-label-1235614824/",
+        "label": "Reported $150–200m valuation"
+      }
     ],
     "relatedArticle": "ayra-starr-starrgirl-universal-owns-mavin-afrobeats"
   },
@@ -100,7 +139,13 @@
     "status": "completed",
     "verdict": "exported",
     "read": "A historic exit for a Black-founded natural-hair brand — and a clean illustration of the thesis: Black women authored the category, a multinational owns the margin.",
-    "sources": [{ "publisher": "CNBC", "url": "https://www.cnbc.com/2023/01/21/black-founder-mielle-organics-sold-her-company-to-pandg-why-she-says-shes-selling-up.html", "label": "Mielle's founder on 'selling up, not selling out'" }],
+    "sources": [
+      {
+        "publisher": "CNBC",
+        "url": "https://www.cnbc.com/2023/01/21/black-founder-mielle-organics-sold-her-company-to-pandg-why-she-says-shes-selling-up.html",
+        "label": "Mielle's founder on 'selling up, not selling out'"
+      }
+    ],
     "relatedArticle": "the-coil-economy-who-authors-black-hair-and-who-cashes-the-cheque"
   },
   {
@@ -115,7 +160,13 @@
     "status": "completed",
     "verdict": "exported",
     "read": "The landmark Black-hair-economy deal. A West-African-rooted brand built on shea butter, absorbed by a European FMCG giant — the value line moved off-continent.",
-    "sources": [{ "publisher": "Black Enterprise", "url": "https://www.blackenterprise.com/unilever-acquires-sundial-brands-owner-of-sheamoisture-in-for-undisclosed-amount/", "label": "Unilever acquires Sundial Brands (SheaMoisture)" }],
+    "sources": [
+      {
+        "publisher": "Black Enterprise",
+        "url": "https://www.blackenterprise.com/unilever-acquires-sundial-brands-owner-of-sheamoisture-in-for-undisclosed-amount/",
+        "label": "Unilever acquires Sundial Brands (SheaMoisture)"
+      }
+    ],
     "relatedArticle": "the-coil-economy-who-authors-black-hair-and-who-cashes-the-cheque"
   }
 ]
