@@ -1,5 +1,339 @@
 [
   {
+    "title": "Who Owns Flutterwave?",
+    "seoTitle": "Who Owns Flutterwave? Still African-Founded",
+    "metaDescription": "Unlike Paystack or OPay, Flutterwave has no corporate owner — it's a private, African-founded fintech, co-founded in 2016 by Olugbenga Agboola and Iyinoluwa Aboyeji.",
+    "slug": "who-owns-flutterwave",
+    "excerpt": "Short answer: no one bought it. Flutterwave is the rare African fintech at scale that's still founder-led and independent — the counter-example to the export pattern.",
+    "content": "Unlike Paystack or OPay, **Flutterwave has not been acquired — it remains a private, African-founded company** with no single corporate owner.\n\nIt was [co-founded in 2016 by Olugbenga \"GB\" Agboola and Iyinoluwa Aboyeji](https://en.wikipedia.org/wiki/Flutterwave) [1], and is headquartered across San Francisco and Lagos. It is venture-backed rather than owned outright by any one investor, and its long-planned [IPO is tied to the company first turning a profit](https://www.bloomberg.com/news/articles/2025-02-04/africa-unicorn-flutterwave-ties-ipo-to-startup-turning-a-profit) [2].\n\nThat independence makes Flutterwave the counter-example in African fintech. It is not being bought — it is doing the buying, most notably acquiring the open-banking firm Mono to keep African rails in African hands, as we set out in [Flutterwave Is Buying a Bank](/article/flutterwave-buying-a-bank-fintech-conglomerate-era) and log in [Who's Buying Africa](/whos-buying-africa).\n\nSee Flutterwave in [the Cultural-Signal Index](/intelligence/signal-index/flutterwave).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "flutterwave",
+      "fintech",
+      "ownership",
+      "nigeria",
+      "african-owned"
+    ],
+    "format": "brief",
+    "sourceLink": "https://en.wikipedia.org/wiki/Flutterwave",
+    "sourceName": "Wikipedia",
+    "publishedAt": "2026-09-01T17:40:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Flutterwave",
+        "url": "https://en.wikipedia.org/wiki/Flutterwave",
+        "use": "Flutterwave co-founded 2016 by Olugbenga Agboola and Iyinoluwa Aboyeji; private, African-founded, HQ in San Francisco and Lagos."
+      },
+      {
+        "publisher": "Bloomberg",
+        "label": "Africa Unicorn Flutterwave Ties IPO to Startup Turning a Profit",
+        "url": "https://www.bloomberg.com/news/articles/2025-02-04/africa-unicorn-flutterwave-ties-ipo-to-startup-turning-a-profit",
+        "use": "Flutterwave remains private and independent; IPO tied to reaching profitability."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "2016",
+            "label": "Year Flutterwave was founded, by Agboola & Aboyeji",
+            "source": 1
+          },
+          {
+            "value": "Independent",
+            "label": "No acquirer — African-founded, venture-backed, IPO pending profitability",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Flutterwave",
+        "brand": "flutterwave"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Flutterwave is what 'owned at home' looks like at scale: African-founded, still independent, and itself an acquirer of African companies. In a sector where the default outcome is a foreign buyout, staying unbought is the strategy.",
+      "pullQuote": "In African fintech, the default is to get bought. Flutterwave's edge is that it hasn't."
+    }
+  },
+  {
+    "title": "Who Owns OPay?",
+    "seoTitle": "Who Owns OPay? Opera, SoftBank and Its Founder",
+    "metaDescription": "OPay, one of Nigeria's most-used fintechs, is largely offshore-owned — tied to Opera and founder Zhou Yahui, and backed by SoftBank Vision Fund 2 and Sequoia China.",
+    "slug": "who-owns-opay",
+    "excerpt": "Short answer: mostly not Nigeria. OPay traces to Opera and its Chinese founder, with SoftBank and Sequoia China among its biggest backers.",
+    "content": "OPay is one of Nigeria's most-used fintech apps — and, like several of its peers, it is **largely offshore-owned.**\n\nOPay was launched out of Opera, the browser company, and founded by the Chinese entrepreneur Zhou Yahui. Its 2021 Series C — [led by SoftBank's Vision Fund 2, with Sequoia China participating — valued OPay at about US$2 billion](https://techcrunch.com/2021/08/23/african-fintech-opay-valued-at-2b-in-softbank-vision-fund-2-led-400m-funding) [1]. It is now [reportedly targeting a valuation of around US$4 billion for a US IPO](https://www.pymnts.com/news/ipo/2026/softbank-backed-opay-eyes-4-billion-valuation-in-us-ipo/) [2].\n\nThe customers and the transactions are overwhelmingly Nigerian; the ownership sits with Opera, its founder and a roster of international funds. It is the same shape as Paystack — Nigerian-used, foreign-owned — with a different set of names on the cap table.\n\nSee OPay in [the Cultural-Signal Index](/intelligence/signal-index/opay), and the wider consolidation in [The Great Convergence](/article/the-great-convergence-84-deals-and-who-owns-africas-rails-now).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "opay",
+      "opera",
+      "softbank",
+      "fintech",
+      "ownership",
+      "nigeria"
+    ],
+    "format": "brief",
+    "sourceLink": "https://techcrunch.com/2021/08/23/african-fintech-opay-valued-at-2b-in-softbank-vision-fund-2-led-400m-funding",
+    "sourceName": "TechCrunch",
+    "publishedAt": "2026-09-01T17:30:00.000Z",
+    "sources": [
+      {
+        "publisher": "TechCrunch",
+        "label": "African fintech OPay valued at $2B in SoftBank Vision Fund 2-led $400M funding",
+        "url": "https://techcrunch.com/2021/08/23/african-fintech-opay-valued-at-2b-in-softbank-vision-fund-2-led-400m-funding",
+        "use": "OPay's 2021 Series C led by SoftBank Vision Fund 2 with Sequoia China; ~US$2bn valuation; OPera/founder lineage."
+      },
+      {
+        "publisher": "PYMNTS",
+        "label": "SoftBank-Backed OPay Eyes $4 Billion Valuation for US IPO",
+        "url": "https://www.pymnts.com/news/ipo/2026/softbank-backed-opay-eyes-4-billion-valuation-in-us-ipo/",
+        "use": "OPay reportedly targeting ~US$4bn valuation for a US IPO."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "$2bn",
+            "label": "OPay's 2021 valuation, in a SoftBank Vision Fund 2-led round",
+            "source": 1
+          },
+          {
+            "value": "$4bn",
+            "label": "Valuation OPay is reportedly targeting for a US IPO",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "OPay",
+        "brand": "opay"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "partial",
+      "take": "OPay banks millions of Nigerians and answers, ultimately, to Opera, its founder and a set of international funds. A US listing would formalise what is already true: one of Nigeria's most important financial rails is an offshore-owned asset.",
+      "pullQuote": "Nigerian by usage, foreign by ownership — and heading for a US listing to prove it."
+    }
+  },
+  {
+    "title": "Who Owns Indomie?",
+    "seoTitle": "Who Owns Indomie? Tolaram & Salim, Not Nigeria",
+    "metaDescription": "Nigerians treat Indomie as a national brand, but it's foreign-owned: made by Dufil Prima Foods, a Tolaram (Singapore) and Salim/Indofood (Indonesia) venture.",
+    "slug": "who-owns-indomie",
+    "excerpt": "Short answer: not Nigeria. Indomie in Nigeria is made by Dufil Prima Foods — a Singapore–Indonesia joint venture — while the brand itself belongs to Indonesia's Indofood.",
+    "content": "Indomie is one of Nigeria's most beloved everyday brands — and it is **not Nigerian-owned.**\n\nIn Nigeria, Indomie is manufactured by Dufil Prima Foods, [originally a joint venture between Singapore's Tolaram Group and Indonesia's Salim Group](https://en.wikipedia.org/wiki/Indomie) [1]. The Indomie brand and trademark themselves are owned globally by Indonesia's Indofood, part of the Salim Group [1]. And in 2018, [Kellogg's of the United States took a stake in Tolaram's African foods business](https://en.wikipedia.org/wiki/Tolaram_Group) [2].\n\nSo the ownership map runs Singapore, Indonesia and, increasingly, the US — even as the product became so woven into Nigerian kitchens that many assume it was invented there. It is the definitive case of a foreign brand a country adopts as its own, and a reminder that cultural ownership and corporate ownership are two different things.\n\nSee Indomie in [the Cultural-Signal Index](/intelligence/signal-index/indomie), and the broader pattern in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "indomie",
+      "tolaram",
+      "fmcg",
+      "ownership",
+      "nigeria"
+    ],
+    "format": "brief",
+    "sourceLink": "https://en.wikipedia.org/wiki/Indomie",
+    "sourceName": "Wikipedia",
+    "publishedAt": "2026-09-01T17:20:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Indomie",
+        "url": "https://en.wikipedia.org/wiki/Indomie",
+        "use": "Indomie in Nigeria made by Dufil Prima Foods (Tolaram–Salim venture); brand/trademark owned globally by Indonesia's Indofood (Salim Group)."
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "Tolaram Group",
+        "url": "https://en.wikipedia.org/wiki/Tolaram_Group",
+        "use": "Tolaram Group (Singapore) as the operator of the West African Indomie business; Kellogg's 2018 stake in Tolaram Africa Foods."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "Singapore + Indonesia",
+            "label": "Where Indomie's Nigerian ownership actually sits — Tolaram and Salim/Indofood",
+            "source": 1
+          },
+          {
+            "value": "2018",
+            "label": "Year Kellogg's (US) took a stake in Tolaram's Africa foods business",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Indomie",
+        "brand": "indomie"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Indomie is proof that a brand can be culturally naturalised without ever being locally owned. Nigeria authored the loyalty; Singapore, Indonesia and now the US own the company that banks it.",
+      "pullQuote": "Nigeria adopted Indomie as its own. The cap table never left Singapore and Jakarta."
+    }
+  },
+  {
+    "title": "Who Owns Mavin Records?",
+    "seoTitle": "Who Owns Mavin Records? Universal Music Owns It",
+    "metaDescription": "Mavin Global — the Afrobeats label behind Rema and Ayra Starr — is majority-owned by Universal Music Group, which bought control in 2024. Don Jazzy still runs it.",
+    "slug": "who-owns-mavin-records",
+    "excerpt": "Short answer: Universal Music Group. The global major bought a majority stake in the Rema/Ayra Starr label in 2024 — but Don Jazzy kept the controls.",
+    "content": "**Mavin Global is majority-owned by Universal Music Group.** The world's largest music company [bought a controlling stake in the Afrobeats label in early 2024](https://www.musicbusinessworldwide.com/universal-music-group-buys-majority-stake-in-afrobeats-label-mavin/) [1], in a deal [reported at around US$150–200 million](https://www.billboard.com/business/record-labels/mavin-global-sale-umg-buys-majority-stake-rema-afrobeats-label-1235614824/) [2].\n\nMavin — the home of Rema, Ayra Starr and Ladipoe, founded by Don Jazzy — kept operational control: the founders still run the label day to day [1]. But the masters and the equity now route through a global major, which is where the long-term value accrues.\n\nIt is a textbook \"authorship retained, ownership exported\" story — the artists and the sound stay Nigerian, the cap table moves offshore. We unpacked what UMG is really buying in [Ayra Starr's Starrgirl Is Universal's Return on Buying Mavin](/article/ayra-starr-starrgirl-universal-owns-mavin-afrobeats), and log the deal in [Who's Buying Africa](/whos-buying-africa).\n\nSee Mavin's placement in [the Cultural-Signal Index](/intelligence/signal-index/mavin-global).",
+    "category": "music",
+    "tags": [
+      "who owns",
+      "mavin",
+      "universal music",
+      "afrobeats",
+      "ownership",
+      "nigeria"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.musicbusinessworldwide.com/universal-music-group-buys-majority-stake-in-afrobeats-label-mavin/",
+    "sourceName": "Music Business Worldwide",
+    "publishedAt": "2026-09-01T17:10:00.000Z",
+    "sources": [
+      {
+        "publisher": "Music Business Worldwide",
+        "label": "Universal Music Group buys majority stake in Afrobeats label Mavin",
+        "url": "https://www.musicbusinessworldwide.com/universal-music-group-buys-majority-stake-in-afrobeats-label-mavin/",
+        "use": "UMG's early-2024 majority-stake acquisition of Mavin Global; founders retain operating control."
+      },
+      {
+        "publisher": "Billboard",
+        "label": "Mavin Global sale: UMG buys majority stake in Rema's Afrobeats label",
+        "url": "https://www.billboard.com/business/record-labels/mavin-global-sale-umg-buys-majority-stake-rema-afrobeats-label-1235614824/",
+        "use": "Reported ~US$150–200m valuation of the Mavin deal."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "Feb 2024",
+            "label": "Universal Music Group's majority-stake purchase of Mavin Global",
+            "source": 1
+          },
+          {
+            "value": "$150–200m",
+            "label": "Reported valuation of the deal",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Mavin Global",
+        "brand": "mavin-global"
+      },
+      {
+        "kind": "person",
+        "name": "Don Jazzy"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Mavin is the music version of the whole thesis: the culture is authored and performed by Nigerians, and the equity that culture generates is owned by a European-American major. The founders kept the mic; the majority went abroad.",
+      "pullQuote": "Nigeria still holds the mic. Universal holds the masters."
+    }
+  },
+  {
+    "title": "Who Owns Paystack?",
+    "seoTitle": "Who Owns Paystack? Stripe Owns the Nigerian Fintech",
+    "metaDescription": "Paystack is owned by Stripe, the US payments company, which acquired the Nigerian fintech in 2020 for a reported $200m. Here's the ownership, in brief.",
+    "slug": "who-owns-paystack",
+    "excerpt": "Short answer: Stripe. The US payments giant bought the Nigerian fintech in 2020 — and Paystack has since become an acquirer in its own right.",
+    "content": "**Paystack is owned by Stripe**, the US payments company, which acquired it in October 2020 for a [reported US$200 million — the biggest startup acquisition in Nigeria's history at the time](https://techcabal.com/2020/10/15/stripe-acquires-paystack/) [1].\n\nFounded in Lagos in 2016 by Shola Akinlade and Ezra Olubi, Paystack processes a large share of Nigeria's online payments and still trades under its own name — but the equity, and the ultimate ownership, now sit with a San Francisco company [1].\n\nThe twist is what has happened since. Paystack has become an acquirer itself, absorbing Nigerian fintechs like Allawee and a microfinance bank — folding more homegrown brands onto a US-owned rail. We track that pattern deal by deal in [Who's Buying Africa](/whos-buying-africa), and set out what it means for the continent's payment infrastructure in [The Great Convergence](/article/the-great-convergence-84-deals-and-who-owns-africas-rails-now).\n\nSee where Paystack sits in [the Cultural-Signal Index](/intelligence/signal-index/paystack).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "paystack",
+      "stripe",
+      "fintech",
+      "ownership",
+      "nigeria"
+    ],
+    "format": "brief",
+    "sourceLink": "https://techcabal.com/2020/10/15/stripe-acquires-paystack/",
+    "sourceName": "TechCabal",
+    "publishedAt": "2026-09-01T17:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "TechCabal",
+        "label": "Stripe acquires Nigerian fintech startup, Paystack for over $200 million",
+        "url": "https://techcabal.com/2020/10/15/stripe-acquires-paystack/",
+        "use": "Stripe's Oct 2020 acquisition of Paystack for a reported ~$200m; Paystack founded 2016 by Akinlade and Olubi; then Nigeria's biggest startup deal."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~$200m",
+            "label": "Stripe's reported 2020 price for Paystack — then Nigeria's biggest startup deal",
+            "source": 1
+          },
+          {
+            "value": "2016",
+            "label": "Year Paystack was founded, in Lagos, by Shola Akinlade & Ezra Olubi",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Paystack",
+        "brand": "paystack"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Paystack is the cleanest illustration of the export pattern: authored in Lagos, owned in San Francisco. That it now buys other Nigerian fintechs — moving them onto a foreign-owned rail — is the pattern compounding, not reversing.",
+      "pullQuote": "Built in Lagos, owned in San Francisco — and now buying the rest of Lagos's fintechs onto a US rail."
+    }
+  },
+  {
     "title": "Nedbank Bought Kenya: The $855m NCBA Deal and the Rise of the Intra-African Acquirer",
     "seoTitle": "Who Owns NCBA Now? Nedbank's $855m Kenya Deal",
     "metaDescription": "Nedbank is buying 66% of Kenya's NCBA for $855m — 2026's marquee cross-border bank deal. Intra-African, yes, but the control still moves south. A mixed verdict.",
