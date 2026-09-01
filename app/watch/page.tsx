@@ -39,9 +39,21 @@ export const metadata: Metadata = {
 export const revalidate = 300;
 
 export default function WatchPage() {
-  const articles = getAllArticles()
-    .filter((a) => !!a.videoUrl)
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  // One card per unique video: a video may be embedded on more than one article
+  // (an explainer and the feature it extends can share the same cut). Keep the
+  // earliest — the piece it was made for — so re-using a video elsewhere enriches
+  // that page without duplicating the Watch grid.
+  const byVideo = new Map<string, ReturnType<typeof getAllArticles>[number]>();
+  for (const a of getAllArticles()) {
+    if (!a.videoUrl) continue;
+    const prev = byVideo.get(a.videoUrl);
+    if (!prev || new Date(a.publishedAt).getTime() < new Date(prev.publishedAt).getTime()) {
+      byVideo.set(a.videoUrl, a);
+    }
+  }
+  const articles = [...byVideo.values()].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 
   return (
     <div className="min-h-screen bg-mono-white">

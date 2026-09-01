@@ -160,6 +160,30 @@ export default function CoilEconomyPage() {
         </section>
       )}
 
+      {/* Watch — the explainer */}
+      <section className="py-14 md:py-16 bg-mono-soft-white border-t border-mono-gray/15">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-2 uppercase">
+            Watch
+          </h2>
+          <p className="text-2xl md:text-3xl font-display font-bold text-mono-black mb-6">
+            The Coil Economy, in ninety seconds.
+          </p>
+          <div className="aspect-video overflow-hidden bg-mono-charcoal">
+            <iframe
+              src="https://www.youtube.com/embed/j7B4nHH94HM"
+              title="The Coil Economy — MonoKromatik explainer"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <Link href="/watch" className="mt-5 inline-flex items-center gap-2 text-mono-black font-display font-bold text-sm hover:text-mono-amber-strong transition-colors">
+            More explainers on Watch <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
       {/* Cross-link to the Index */}
       <section className="bg-mono-black py-14 md:py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
