@@ -22,8 +22,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!article) return { title: 'Article Not Found | MonoKromatik Network' };
 
   const url = `https://www.monokromatik.com/article/${article.slug}`;
-  const title = `${article.title} | MonoKromatik Network`;
-  const desc = article.excerpt || article.content.slice(0, 155);
+  // Search <title> leads with the SEO-optimised entity when set; the editorial
+  // title still shows on-page and on social (OG/Twitter below use article.title).
+  const title = `${article.seoTitle || article.title} | MonoKromatik Network`;
+  const desc = article.metaDescription || article.excerpt || article.content.slice(0, 155);
 
   return {
     title,
