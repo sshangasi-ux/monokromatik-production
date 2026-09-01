@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/pulse`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE}/signal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/intelligence`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE}/whos-buying-africa`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE}/intelligence/case-studies`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     // The Cultural-Signal Index — a primary SEO asset (Dataset + per-brand pages).
     { url: `${SITE}/intelligence/signal-index`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
