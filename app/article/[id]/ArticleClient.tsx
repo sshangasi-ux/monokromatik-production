@@ -211,6 +211,13 @@ export default function ArticleClient({
 
         <BrandRead data={article.brandRead} />
 
+        {/* Earlier email capture — the reader has just finished the argument and the
+            founder's take, the warmest point to convert, and well before the footer
+            form most readers never scroll to. */}
+        <div className="my-12">
+          <NewsletterSignup variant="sidebar" source="article-mid" />
+        </div>
+
         {/* Layer 1 — the numbered References block (inline [n] marks link here).
             Always non-empty: the legacy source is synthesised as [1]. */}
         <References sources={references} />
