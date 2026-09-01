@@ -98,3 +98,11 @@ The full toolkit that turns an article into a published, cross-linked video. Run
 | `update-descriptions.mjs` | Rewrite the long-video + trailer descriptions with the funnel CTA stack (article → The Weekly Signal → Membership), UTM-tagged, preserving title/tags/category. |
 
 Outputs (`out/`, `build/generated/`, `build/frames/`, `build/banner.png`, `public/hf/`) and `.env` are gitignored.
+
+## Analytics read — GA4 + Search Console (`video/build/ga-*.mjs`)
+
+Reuses the **same Google OAuth client** as the YouTube tooling (in the GCP project `gen-lang-client-0210831932`), so no new app is needed — just two read-only scopes.
+
+- **Prereq:** enable **Google Analytics Data API** + **Search Console API** (and **Analytics Admin API** if you want property auto-discovery) in that GCP project.
+- **`ga-auth.mjs`** — loopback OAuth (localhost:53682, same detached-`nohup` launch as `youtube-reauth.mjs`) requesting `analytics.readonly` + `webmasters.readonly`; writes `GA_REFRESH_TOKEN` into `video/.env`.
+- **`ga-report.mjs [propertyId]`** — pulls a 28-day read: GA4 overview, top pages, sources (source/medium), UTM campaigns, countries + GSC total clicks/impressions/CTR, top queries and top pages. Pass the numeric GA4 **Property ID** (from GA4 → Admin → Property details) as the arg, or set `GA_PROPERTY_ID`, if the Admin API isn't enabled. Current property: `534321100`.

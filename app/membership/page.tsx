@@ -149,22 +149,27 @@ export default async function MembershipPage() {
             })}
           </div>
 
-          {!membershipCheckoutUrl('individual') && (
-            <div className="mt-10 max-w-md mx-auto">
-              <NewsletterSignup source="membership-waitlist" />
-            </div>
-          )}
-
           <p className="mt-10 flex items-center justify-center gap-2 text-[12px] font-body text-mono-gray">
             <ShieldCheck size={15} className="text-mono-amber-strong shrink-0" />
             Billing via Paystack — secure, cancel anytime. We never see your card details.
           </p>
-          <p className="mt-4 text-center font-body text-mono-charcoal">
-            Not ready?{' '}
-            <Link href="/intelligence/signal-index" className="text-mono-amber-strong hover:text-mono-amber-hover font-display font-bold">
-              Read the live Index, free →
-            </Link>
-          </p>
+
+          {/* Not-ready fallback — capture the warm visitor's email even when they
+              aren't ready to pay today (most of them are not), so they still enter
+              the funnel instead of leaving. Shown regardless of checkout config. */}
+          <div className="mt-12 pt-10 border-t border-mono-gray/15 max-w-md mx-auto text-center">
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">NOT READY TO SUBSCRIBE?</p>
+            <p className="font-body text-mono-charcoal mb-5">
+              Get <span className="font-bold">The Weekly Signal</span> free — the week in African brand intelligence, in five minutes — then upgrade when the moment&rsquo;s right.
+            </p>
+            <NewsletterSignup source="membership-not-ready" />
+            <p className="mt-5 font-body text-mono-charcoal">
+              Or{' '}
+              <Link href="/intelligence/signal-index" className="text-mono-amber-strong hover:text-mono-amber-hover font-display font-bold">
+                read the live Index, free →
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </div>
