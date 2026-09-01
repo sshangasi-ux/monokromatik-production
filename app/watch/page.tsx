@@ -42,13 +42,19 @@ export default function WatchPage() {
   // One card per unique video: a video may be embedded on more than one article
   // (an explainer and the feature it extends can share the same cut). Keep the
   // earliest — the piece it was made for — so re-using a video elsewhere enriches
-  // that page without duplicating the Watch grid.
+  // that page without duplicating the Watch grid. Key on the YouTube id, not the
+  // URL string, so the `watch?v=` and `embed/` forms of the same cut collapse.
+  const videoKey = (url: string): string => {
+    const m = url.match(/(?:v=|embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    return m ? `yt:${m[1]}` : url;
+  };
   const byVideo = new Map<string, ReturnType<typeof getAllArticles>[number]>();
   for (const a of getAllArticles()) {
     if (!a.videoUrl) continue;
-    const prev = byVideo.get(a.videoUrl);
+    const key = videoKey(a.videoUrl);
+    const prev = byVideo.get(key);
     if (!prev || new Date(a.publishedAt).getTime() < new Date(prev.publishedAt).getTime()) {
-      byVideo.set(a.videoUrl, a);
+      byVideo.set(key, a);
     }
   }
   const articles = [...byVideo.values()].sort(
