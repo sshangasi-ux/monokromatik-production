@@ -97,6 +97,10 @@ export default function Home() {
   const articles = getAllArticles();
   const featured = articles[0];
   const dispatches = articles.slice(0, 4);
+  // Latest stories, surfaced high on the page — the homepage→article hand-off
+  // was the biggest on-site drop-off, and readable stories were buried below
+  // the brand/marketing sections. This puts them right after the hero + Wire.
+  const latest = articles.slice(0, 8);
 
   // Daily hero carousel: the day's leading content across articles, case studies
   // and reports — each in the article-hero format. Refreshes as new content ships.
@@ -121,6 +125,33 @@ export default function Home() {
       </section>
 
       <BreakingStrip />
+
+      {/* LATEST — readable stories at the TOP of the funnel, right after the hero
+          and Wire. Homepage→article was the biggest on-site drop-off; the brand
+          sections below sell the network, this surfaces the stories to read now. */}
+      <section className="bg-mono-white pt-14 pb-16 md:pt-16 md:pb-20 border-b border-mono-gray/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-2">LATEST</p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black leading-tight">The stories, now.</h2>
+            </div>
+            <Link href="/archive" className="hidden sm:inline-flex items-center gap-2 text-sm font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+              All stories <ArrowRight size={16} />
+            </Link>
+          </div>
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {latest.map((a) => (
+              <StaggerItem key={a.slug}><DispatchCard article={a} /></StaggerItem>
+            ))}
+          </Stagger>
+          <div className="mt-8 sm:hidden">
+            <Link href="/archive" className="inline-flex items-center gap-2 text-sm font-display font-bold text-mono-amber-strong">
+              All stories <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
