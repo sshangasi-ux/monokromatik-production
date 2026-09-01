@@ -30,8 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { brand } = await params;
   const entry = rankIndex(getAllCaseStudies()).find((e) => brandSlug(e.brand) === brand);
   if (!entry) return { title: 'Brand not found | MonoKromatik' };
-  const title = `${entry.brand} — Cultural-Signal Index | MonoKromatik`;
-  const description = `${entry.brand} averages ${entry.score}/100 across ${entry.works} scored ${entry.works === 1 ? 'work' : 'works'} on the MonoKromatik Cultural-Signal Index.`;
+  // SEO: lead with the brand name (the actual query) + the rating/ownership
+  // intent searchers have — not the internal product name. Applies to every
+  // ranked-brand page programmatically, targeting "[brand] rating / who owns".
+  const title = `${entry.brand} — Brand Rating & Ownership | Cultural-Signal Index`;
+  const description = `Where does ${entry.brand} rank on the Cultural-Signal Index? A ${entry.score}/100 authorship-weighted rating from MonoKromatik — who owns the influence, and who captures the value.`;
   // og:image is supplied by the co-located opengraph-image route (the share-card).
   return {
     title,
@@ -134,6 +137,10 @@ export default async function BrandIndexPage({ params }: PageProps) {
               </span>
             </div>
           </div>
+          <p className="mt-8 max-w-2xl text-lg font-body text-mono-soft-white leading-relaxed">
+            Where {entry.brand} ranks on the Cultural-Signal Index — MonoKromatik&rsquo;s
+            authorship-weighted read on who owns the influence, and who captures the value.
+          </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <FollowButton slug={brand} variant="chip" />
             <span className="text-[11px] font-body text-mono-gray max-w-xs">Follow to track this brand&rsquo;s movement on the Index — alerts surface here when the score changes.</span>
