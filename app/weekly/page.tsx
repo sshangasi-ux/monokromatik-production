@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import SponsorSlot from '../components/SponsorSlot';
 import WeeklyDispatchSample from '../components/WeeklyDispatchSample';
+import { getAcquisitions, VERDICT_LABEL, type Verdict } from '../../lib/acquisitions';
 
 export const metadata: Metadata = {
   title: 'The Weekly Signal — MonoKromatik',
@@ -16,8 +17,22 @@ const inside = [
   'Brand Weather — the four signals shaping African influence this week',
   'The Work — one campaign or cultural move, decoded',
   'Will It Land? — a quick verdict on a global play in African reality',
+  'The Ownership Ledger — every deal that moved ownership of an African brand, with its value-capture verdict',
   'Index movers — who climbed or slipped on the Cultural-Signal Index',
 ];
+
+const VERDICT_TAG: Record<Verdict, string> = {
+  exported: 'border-mono-amber/60 text-mono-amber-strong bg-mono-amber/10',
+  retained: 'border-emerald-500/50 text-emerald-600 bg-emerald-500/10',
+  mixed: 'border-mono-gray/40 text-mono-charcoal bg-mono-gray/10',
+};
+
+function fmtLedgerDate(d: string): string {
+  const [y, m] = d.split('-');
+  if (!m) return y;
+  const mon = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(m)] || '';
+  return `${mon} ${y}`;
+}
 
 export default function WeeklyPage() {
   return (
@@ -70,6 +85,47 @@ export default function WeeklyPage() {
               <NewsletterSignup source="weekly-page" />
               <p className="mt-4 text-[12px] font-body text-mono-gray">Free, weekly, unsubscribe anytime.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Ownership Ledger — a recurring franchise, drawn live from the tracker. */}
+      <section className="py-16 md:py-20 bg-mono-soft-white border-y border-mono-gray/20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-3">A WEEKLY FRANCHISE</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black">The Ownership Ledger</h2>
+          <p className="mt-4 font-body text-mono-charcoal leading-relaxed">
+            Every deal that moves ownership of an African brand — with the one thing the deal-count reports leave
+            out: a verdict on whether the value stays on the continent or gets exported. Subscribers get it every
+            month. Here are the latest entries.
+          </p>
+
+          <ul className="mt-8 divide-y divide-mono-gray/20 border-y border-mono-gray/20">
+            {getAcquisitions().slice(0, 5).map((d) => (
+              <li key={d.id} className="py-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span className="text-[11px] tracking-[0.12em] font-display font-bold text-mono-gray uppercase w-16 shrink-0">
+                  {fmtLedgerDate(d.date)}
+                </span>
+                <span className="font-body text-mono-black flex-1 min-w-[12rem]">
+                  <span className="font-bold">{d.target}</span>
+                  <span className="text-mono-gray"> → </span>
+                  {d.acquirer}
+                  <span className="text-mono-gray text-sm"> ({d.acquirerParent})</span>
+                </span>
+                <span className={`text-[10px] tracking-[0.08em] font-display font-bold uppercase px-2.5 py-1 border ${VERDICT_TAG[d.verdict]}`}>
+                  {VERDICT_LABEL[d.verdict]}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href="/whos-buying-africa" className="inline-flex items-center gap-1 text-mono-black font-display font-bold text-sm hover:text-mono-amber-strong transition-colors">
+              See the full tracker <ArrowRight size={14} />
+            </Link>
+            <Link href="/reports/value-capture-scorecard-2026" className="inline-flex items-center gap-1 text-mono-amber-strong font-display font-bold text-sm hover:text-mono-amber-hover transition-colors">
+              The Value-Capture Scorecard <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>

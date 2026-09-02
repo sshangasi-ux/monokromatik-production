@@ -3227,5 +3227,109 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "value-capture-scorecard-2026",
+    "title": "The Value-Capture Scorecard: Who Keeps the Value in African M&A",
+    "series": "THE SCORECARD",
+    "status": "live",
+    "access": "premium",
+    "summary": "The deal-count reports tell you an African company was bought. This one tells you who ended up owning the value. The inaugural scorecard verdicts every ownership-moving deal we track on a single axis — exported, retained, or mixed — and the early read is stark: value is leaving the continent far more often than it stays.",
+    "tags": [
+      "m&a",
+      "value capture",
+      "ownership",
+      "africa",
+      "fintech",
+      "beauty",
+      "music",
+      "licensing"
+    ],
+    "publishedAt": "2026-09-02T09:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "8",
+        "label": "Ownership-moving deals verdicted so far — the inaugural scorecard, expanding quarterly"
+      },
+      {
+        "value": "6 / 8",
+        "label": "Deals where the value was exported off the continent"
+      },
+      {
+        "value": "1 / 8",
+        "label": "Deals where value stayed in African hands — Flutterwave's buy of Mono"
+      },
+      {
+        "value": "1 / 8",
+        "label": "Mixed — intra-African, but control still crossed a border (Nedbank–NCBA)"
+      },
+      {
+        "value": "4",
+        "label": "Sectors scored to date: banking, beauty, fintech, music"
+      }
+    ],
+    "exhibit": {
+      "title": "The value-capture verdict — 2026 tracked deals",
+      "note": "Source: MonoKromatik 'Who's Buying Africa' tracker — the ownership-moving deals verdicted to date. Each is scored on where ownership and the upside land (exported / retained / mixed) from its sourced terms. A living scorecard; the verdict is an editorial judgement about value capture, not a view on the deal's financial merits for either side.",
+      "data": [
+        {
+          "label": "Value exported",
+          "value": 6,
+          "display": "6 deals"
+        },
+        {
+          "label": "Mixed",
+          "value": 1,
+          "display": "1 deal"
+        },
+        {
+          "label": "Value retained",
+          "value": 1,
+          "display": "1 deal"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "The score, and the number that should worry you",
+        "paragraphs": [
+          "Every tracker in African tech counts the same thing: how many deals closed, and for how much. TechCabal's headline — 84 deals, US$11.4bn in 2026 — is real and useful. But a deal count measures activity, not ownership. It tells you an African company changed hands; it says nothing about whether the value changed continents.",
+          "That is the question this scorecard exists to answer, and the early read is blunt. Of the ownership-moving deals we have verdicted so far, six of eight exported the value off the continent. Exactly one — Flutterwave's all-stock buy of Mono — kept it home. One more, Nedbank's US$855m move on Kenya's NCBA, we score as mixed: intra-African, but with control moving south.",
+          "Six exported, one retained, one mixed. That ratio is the story the celebration around record M&A volumes leaves out — and it is the number every founder, acquirer and policymaker on the continent should be watching."
+        ]
+      },
+      {
+        "heading": "How we score it: exported, retained, mixed",
+        "paragraphs": [
+          "The scorecard turns on one distinction the financial press rarely makes: the difference between where a company operates and where its ownership sits. A deal earns one of three verdicts.",
+          "Value exported — control and the equity upside move off the continent, even if the brand keeps operating locally. Paystack absorbing Nigerian fintechs while itself a Stripe subsidiary; Universal Music taking the majority of Mavin; Unilever buying SheaMoisture's parent. Value retained — an African-owned acquirer buys an African company, keeping ownership and the upside on the continent (Flutterwave–Mono). Mixed — the value stays broadly African but crosses a border, or the structure splits the outcome, as when Nedbank's share-heavy NCBA deal turns Kenyan sellers into shareholders of a South African bank.",
+          "Each verdict is drawn from the deal's sourced terms — the cap table, the acquirer's ownership, the consideration structure — not from sentiment. It is an editorial judgement about value capture, and we publish the reasoning, deal by deal, in the underlying tracker."
+        ]
+      },
+      {
+        "heading": "Where the value leaks: fintech, music, beauty",
+        "paragraphs": [
+          "The exports cluster in the three sectors where African authorship is strongest — which is precisely the pattern. Fintech is the clearest case: Paystack, a Stripe subsidiary, has spent eighteen months rolling up Nigerian fintechs, moving each homegrown rail onto a foreign-owned platform. The more of Nigeria's payments Paystack owns, the more of it Stripe owns.",
+          "Music repeats it at the level of culture. Universal Music's majority stake in Mavin (Rema, Ayra Starr) and Warner's full buyout of Africori route the masters and the equity of Afrobeats' commercial engine through global majors, even as the artists stay Nigerian and South African. Beauty is the oldest version of the story — the 'coil economy', where Black women authored the categories and Unilever (SheaMoisture) and Procter & Gamble (Mielle) own the margin.",
+          "In each sector the pattern is identical: the continent supplies the authorship and the demand; the ownership, and therefore the compounding value, ends up elsewhere."
+        ]
+      },
+      {
+        "heading": "The exceptions that prove the model: Flutterwave, and the Nedbank question",
+        "paragraphs": [
+          "The retained column has one name, and it is instructive. Flutterwave — African-founded, still independent — bought the open-banking firm Mono in an all-stock deal, keeping the rail and its upside on the continent. What separates it from the export cases is not scale or sector; it is that the acquirer itself is African-owned. Ownership retention is decided at the top of the cap table, not the bottom.",
+          "Nedbank–NCBA is the harder, more interesting case, and why the 'mixed' verdict exists. It is intra-African — a South African champion consolidating rather than a foreign multinational extracting — and its 80%-shares structure converts Kenyan sellers into owners of the larger group rather than cashed-out ex-owners. Yet control of a Kenyan institution, and its stake in the M-Pesa-era M-Shwari rail, now answers to Johannesburg. 'On the continent' is not the same as 'in local hands', and the scorecard refuses to collapse the two.",
+          "Read together, the exceptions define the model: value is retained where the acquirer is locally owned, and only partially where consolidation is pan-African but cross-border."
+        ]
+      },
+      {
+        "heading": "How to use this scorecard",
+        "paragraphs": [
+          "For founders, the lesson sits at entry, not exit: the terms of the first partnership decide who holds leverage in the last one. Structures that keep the cap table and control — Flutterwave's independence, the share-swap that kept NCBA's sellers invested — are the difference between a founder captured and a founder capturing. For acquirers and their advisers, the scorecard is a positioning tool: in a market watching value leave, being the African-owned consolidator is a story worth telling.",
+          "For policymakers and local capital, the six-of-eight ratio is a mandate. If pan-African champions do not have the balance sheet to buy, foreign acquirers will — and the continent will end its record M&A year more consolidated and more foreign-owned than it began.",
+          "This scorecard is the verdict layer on top of the raw deal data — the analysis competitors don't publish, updated each quarter as new deals are verdicted. For licensing, a full data cut, or a briefing built for your desk, reach the intelligence desk via the Cultural-Signal Index licence page."
+        ]
+      }
+    ]
   }
 ]
