@@ -86,7 +86,7 @@ The full toolkit that turns an article into a published, cross-linked video. Run
 | Script | What it does |
 |---|---|
 | `scene-data-from-article.mjs <slug>` | Generate scene data (title/stats/pull/sources + image prompts + VO) from a `data/articles.json` article → `build/generated/<slug>.scenes.json`. Hand-polish the 5 stat scenes (they share one generic prompt) before generating. |
-| *(Higgsfield MCP)* | seedream frames → seedance clips (16:9, `start_image`) → seed_audio (Bram voice `549ff70a-…`). Download to `public/hf/hclipN.mp4` + `voN.wav`. |
+| *(Higgsfield MCP)* | seedance clips (16:9) → seed_audio VO in the **Braam voice** — the established brand narrator, a cloned **voice _element_** `43ab15f2-0fc2-40ad-a11f-8cc5b59f690d` (`voice_type: element`, `speech_rate: ~15` for flagship pace). NB: the Higgsfield *preset* named "Bram" (`549ff70a-…`) is a different voice and is **not** the brand voice. Download to `public/hf/hclipN.mp4` + `voN.wav`. |
 | *(Remotion)* | `npx remotion render src/index.ts HiggsfieldExplainerH out/<slug>-h.mp4` (horizontal) / `HiggsfieldExplainer` (vertical). Reads `src/hf-manifest-h.json` / `hf-manifest.json` + `hf-scenes.json`. |
 | `youtube-upload.mjs --file --slug [--privacy] [--set-video-url]` | Upload a finished MP4 with article-derived metadata; `--set-video-url` writes `videoUrl` into the article. |
 | `yt-set-privacy.mjs --id --privacy` | Flip an existing video public/unlisted/private (needs the `youtube` manage scope). |
