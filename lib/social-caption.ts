@@ -53,6 +53,22 @@ function trim(s: string, n: number): string {
   return body.replace(/[\s,;:—-]+$/, '') + '…';
 }
 
+/** Like trim(), but PRESERVES paragraph breaks — for LinkedIn long-form hooks,
+ *  where line spacing carries the read. Collapses only intra-line whitespace and
+ *  runs of more than one blank line; truncates on a word or line boundary. */
+function trimMultiline(s: string, n: number): string {
+  const clean = (s || '')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/[ \t]*\n[ \t]*/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  if (clean.length <= n) return clean;
+  const cut = clean.slice(0, n - 1);
+  const brk = Math.max(cut.lastIndexOf(' '), cut.lastIndexOf('\n'));
+  const body = brk > n * 0.6 ? cut.slice(0, brk) : cut;
+  return body.replace(/[\s,;:—-]+$/, '') + '…';
+}
+
 export interface ArticleLike {
   title: string;
   excerpt?: string;
@@ -116,7 +132,7 @@ export function linkedinArticleCaption(a: ArticleLike): string {
   const hook = a.title.trim();
   // LinkedIn allows ~3,000 chars; a 260 cap truncated lead-piece hooks mid-word.
   // Give the whole linkedinHook room to breathe (it is authored to length).
-  const context = trim(a.linkedinHook || a.brandRead?.pullQuote || a.excerpt || '', 1300);
+  const context = trimMultiline(a.linkedinHook || a.brandRead?.pullQuote || a.excerpt || '', 1300);
   // Prefer the piece's OWN tag for the topical hashtag. A category tag misfires:
   // "entertainment" maps to #Nollywood, which is plain wrong on a hip-hop
   // catalog-ownership story. Fall back to the category only if tags are absent.
