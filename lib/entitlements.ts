@@ -15,10 +15,12 @@ export async function getEntitlement(): Promise<Entitlement | null> {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user?.email) return null;
+    // Match the webhook, which stores email lowercased — otherwise a member whose
+    // auth email carries any uppercase silently fails to match and stays locked out.
     const { data } = await supabase
       .from('entitlements')
       .select('status,tier,current_period_end')
-      .eq('email', user.email)
+      .eq('email', user.email.toLowerCase())
       .maybeSingle();
     return (data as Entitlement) ?? null;
   } catch {
