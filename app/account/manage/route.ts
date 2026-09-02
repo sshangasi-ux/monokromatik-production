@@ -25,7 +25,7 @@ export async function GET(request: Request) {
   const { data } = await supabase
     .from('entitlements')
     .select('paystack_subscription_code')
-    .eq('email', user.email)
+    .eq('email', user.email.toLowerCase())
     .maybeSingle();
   const code = (data as { paystack_subscription_code?: string | null } | null)?.paystack_subscription_code;
   if (!code) return fail('nocode');
