@@ -246,5 +246,83 @@
       }
     ],
     "relatedArticle": "who-owns-amarula"
+  },
+  {
+    "id": "asahi-eabl-2025",
+    "acquirer": "Asahi Group",
+    "acquirerParent": "Japan",
+    "target": "East African Breweries (Tusker), 65%",
+    "targetCountry": "Kenya",
+    "sector": "Drinks",
+    "value": "~$2.3bn (Diageo's 65% stake)",
+    "date": "2025-12",
+    "status": "pending",
+    "verdict": "exported",
+    "read": "Diageo agreed to sell its 65% of East African Breweries — maker of Tusker — to Japan's Asahi for ~$2.3bn (implying ~$4.8bn for 100%), pending Kenyan regulatory approval. East Africa's beer icon moves from British to Japanese hands; the value was already off-continent, and stays there.",
+    "sources": [
+      {
+        "publisher": "Diageo",
+        "url": "https://www.diageo.com/en/news-and-media/press-releases/2025/diageo-enters-into-agreement-to-sell-its-shareholding-in-eabl-to-asahi-group-holdings-ltd",
+        "label": "Diageo to sell its EABL shareholding to Asahi"
+      },
+      {
+        "publisher": "Beverage Daily",
+        "url": "https://www.beveragedaily.com/Article/2025/12/18/diageo-sells-east-african-breweries-to-asahi-in-23bn-deal/",
+        "label": "Diageo sells EABL to Asahi in $2.3bn deal"
+      }
+    ],
+    "relatedArticle": "who-owns-tusker"
+  },
+  {
+    "id": "uac-chi-chivita-2025",
+    "acquirer": "UAC of Nigeria",
+    "acquirerParent": "Nigeria",
+    "target": "CHI Limited (Chivita, Hollandia)",
+    "targetCountry": "Nigeria",
+    "sector": "Drinks",
+    "value": "Undisclosed",
+    "date": "2025",
+    "status": "reported",
+    "verdict": "retained",
+    "read": "The rare reversal: Coca-Cola fully bought CHI — maker of Chivita juices and Hollandia dairy — in 2019, then agreed in 2025 to sell it to Nigeria's UAC, returning a homegrown champion to Nigerian ownership. Value coming home, not leaving.",
+    "sources": [
+      {
+        "publisher": "Beverage Daily",
+        "url": "https://www.beveragedaily.com/Article/2019/02/04/Coca-Cola-completes-acquisition-of-Chi-Ltd-in-Nigeria/",
+        "label": "Coca-Cola completes acquisition of Chi Ltd in Nigeria"
+      },
+      {
+        "publisher": "Premium Times",
+        "url": "https://www.premiumtimesng.com/news/top-news/810881-uac-strikes-deal-to-acquire-chivita-hollandia-from-coca-cola.html",
+        "label": "UAC strikes deal to acquire Chivita, Hollandia from Coca-Cola"
+      }
+    ],
+    "relatedArticle": "who-owns-chivita"
+  },
+  {
+    "id": "tolaram-guinness-nigeria-2025",
+    "acquirer": "Tolaram",
+    "acquirerParent": "Singapore",
+    "target": "Guinness Nigeria, 58.02%",
+    "targetCountry": "Nigeria",
+    "sector": "Drinks",
+    "value": "~$69m (58.02% stake)",
+    "date": "2025-03",
+    "status": "completed",
+    "verdict": "exported",
+    "read": "Diageo sold its 58% majority of Guinness Nigeria to Tolaram — the Singapore-based owner of Indomie — completing in March 2025, while keeping the Guinness brand on a long-term licence. A Nigerian institution passes from one foreign owner to another.",
+    "sources": [
+      {
+        "publisher": "Diageo",
+        "url": "https://www.diageo.com/en/news-and-media/press-releases/2024/diageo-completes-sale-of-its-shareholding-in-guinness-nigeria-plc-to-tolaram",
+        "label": "Diageo completes sale of Guinness Nigeria shareholding to Tolaram"
+      },
+      {
+        "publisher": "Guinness Nigeria",
+        "url": "https://guinness-nigeria.com/en/news-and-media/press-releases/2024/guinness-nigeria-plc-announces-tolaram-to-acquire-diageos-shareholding-in-guinness-nigeria-plc",
+        "label": "Tolaram to acquire Diageo's shareholding in Guinness Nigeria"
+      }
+    ],
+    "relatedArticle": "who-owns-guinness-nigeria"
   }
 ]

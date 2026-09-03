@@ -3248,19 +3248,19 @@
     "publishedAt": "2026-09-02T09:00:00.000Z",
     "keyStats": [
       {
-        "value": "11",
-        "label": "Ownership-moving deals verdicted so far — the inaugural scorecard, expanding quarterly"
+        "value": "14",
+        "label": "Ownership-moving deals verdicted so far — the scorecard, expanding quarterly"
       },
       {
-        "value": "8 / 11",
+        "value": "10 / 14",
         "label": "Deals where the value was exported off the continent"
       },
       {
-        "value": "1 / 11",
-        "label": "Deals where value stayed in African hands — Flutterwave's buy of Mono"
+        "value": "2 / 14",
+        "label": "Deals where value stayed in African hands — Flutterwave's Mono buy and Chivita's return to UAC"
       },
       {
-        "value": "2 / 11",
+        "value": "2 / 14",
         "label": "Mixed — value broadly African, but majority control still crossed a border"
       },
       {
@@ -3274,8 +3274,8 @@
       "data": [
         {
           "label": "Value exported",
-          "value": 8,
-          "display": "8 deals"
+          "value": 10,
+          "display": "10 deals"
         },
         {
           "label": "Mixed",
@@ -3284,8 +3284,8 @@
         },
         {
           "label": "Value retained",
-          "value": 1,
-          "display": "1 deal"
+          "value": 2,
+          "display": "2 deals"
         }
       ]
     },
@@ -3294,8 +3294,8 @@
         "heading": "The score, and the number that should worry you",
         "paragraphs": [
           "Every tracker in African tech counts the same thing: how many deals closed, and for how much. TechCabal's headline — 84 deals, US$11.4bn in 2026 — is real and useful. But a deal count measures activity, not ownership. It tells you an African company changed hands; it says nothing about whether the value changed continents.",
-          "That is the question this scorecard exists to answer, and the early read is blunt. Of the ownership-moving deals we have verdicted so far, eight of eleven exported the value off the continent. Exactly one — Flutterwave's all-stock buy of Mono — kept it home. Two more — Nedbank's US$855m move on NCBA and Vodacom's rise to majority control of Safaricom — we score as mixed: intra-African, but with control crossing borders.",
-          "Eight exported, one retained, two mixed. That ratio is the story the celebration around record M&A volumes leaves out — and it is the number every founder, acquirer and policymaker on the continent should be watching."
+          "That is the question this scorecard exists to answer, and the early read is blunt. Of the ownership-moving deals we have verdicted so far, ten of fourteen exported the value off the continent. Two kept it home — Flutterwave's all-stock buy of Mono, and Coca-Cola's Chivita and Hollandia returning to Nigeria's UAC. Two more — Nedbank's US$855m move on NCBA and Vodacom's rise to majority control of Safaricom — we score as mixed: intra-African, but with control crossing borders.",
+          "Ten exported, two retained, two mixed. That ratio is the story the celebration around record M&A volumes leaves out — and it is the number every founder, acquirer and policymaker on the continent should be watching."
         ]
       },
       {
