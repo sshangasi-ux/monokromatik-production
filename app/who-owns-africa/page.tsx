@@ -35,6 +35,9 @@ const VERDICT: Record<string, 'african' | 'foreign'> = {
   'who-owns-mtn': 'african',
   'who-owns-nandos': 'african',
   'who-owns-shoprite': 'african',
+  'who-owns-access-bank': 'african',
+  'who-owns-glo': 'african',
+  'who-owns-chivita': 'african',
   'who-owns-amarula': 'foreign',
   'who-owns-indomie': 'foreign',
   'who-owns-jumia': 'foreign',
@@ -45,6 +48,8 @@ const VERDICT: Record<string, 'african' | 'foreign'> = {
   'who-owns-paystack': 'foreign',
   'who-owns-safaricom': 'foreign',
   'who-owns-tecno': 'foreign',
+  'who-owns-tusker': 'foreign',
+  'who-owns-guinness-nigeria': 'foreign',
 };
 
 interface Card {
