@@ -287,10 +287,10 @@
   {
     "title": "Who Owns Nando's?",
     "seoTitle": "Who Owns Nando's? The Enthoven Family, Privately",
-    "metaDescription": "Nando's is privately owned by South Africa's Enthoven family — not a chain or a fund. A rare African brand that went global and stayed African-owned.",
+    "metaDescription": "Nando's is privately owned by South Africa's Enthoven family — not a chain or a fund. The rare African brand that went global, grew revenues to £1.48bn, and stayed African-owned.",
     "slug": "who-owns-nandos",
     "excerpt": "Short answer: the Enthoven family of South Africa — privately. One of the few African brands that went global and kept its ownership at home.",
-    "content": "**Nando's is privately owned by the Enthoven family of South Africa.** The peri-peri chain was wholly owned by the late [Dick Enthoven until his death in December 2022, and remains a private family business run by his family](https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205) [1] — the same family behind the Hollard insurance group and Spier wine estate [2].\n\nThere is no listing, no private-equity owner, no foreign conglomerate on the cap table. Nando's grew from a single Johannesburg outlet into a chain across the UK, US, Australia and beyond while staying [a privately held, family-owned business](https://en.wikipedia.org/wiki/Nando's) [2].\n\nThat makes it a rare thing on this desk: an African brand that went genuinely global and kept its ownership — and its upside — African. Set against the [cognac economy](/article/who-owns-the-luxury-pour-of-detty-december) or [the beauty brands that sold to multinationals](/coil-economy), Nando's is the counter-example — authorship and ownership held together, for decades. See where the value goes across African brands in [Who's Buying Africa](/whos-buying-africa).",
+    "content": "**Nando's is privately owned by the Enthoven family of South Africa.** The peri-peri chain was wholly owned by the late [Dick Enthoven until his death in December 2022, and remains a private family business run by his family](https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205) [1] — the same family behind the Hollard insurance group and Spier wine estate [2].\n\nThere is no listing, no private-equity owner, no foreign conglomerate on the cap table. Nando's grew from a single Johannesburg outlet into a chain across the UK, US, Australia and beyond while staying [a privately held, family-owned business](https://en.wikipedia.org/wiki/Nando's) [2]. And the family business is thriving: Nando's [grew group revenues 8% to £1.48bn in the year to February 2025, with operating profit more than doubling to £146.6m](https://www.mca-insight.com/finance/nandos-grows-revenues-to-148bn/712193.article) [3] — the value of that growth accruing to a South African family, not a foreign shareholder.\n\nThat makes it a rare thing on this desk: an African brand that went genuinely global and kept its ownership — and its upside — African. Set against the [cognac economy](/article/who-owns-the-luxury-pour-of-detty-december) or [the beauty brands that sold to multinationals](/coil-economy), Nando's is the counter-example — authorship and ownership held together, for decades. See where the value goes across African brands in [Who's Buying Africa](/whos-buying-africa).",
     "category": "business",
     "tags": [
       "who owns",
@@ -298,7 +298,10 @@
       "enthoven",
       "south africa",
       "private",
-      "african-owned"
+      "african-owned",
+      "revenue",
+      "peri-peri",
+      "uk"
     ],
     "format": "brief",
     "sourceLink": "https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205",
@@ -316,6 +319,12 @@
         "label": "Nando's",
         "url": "https://en.wikipedia.org/wiki/Nando's",
         "use": "Nando's as a privately held, Enthoven-family-owned business that expanded globally from South Africa."
+      },
+      {
+        "publisher": "MCA Insight",
+        "label": "Nando's grows revenues to £1.48bn",
+        "url": "https://www.mca-insight.com/finance/nandos-grows-revenues-to-148bn/712193.article",
+        "use": "Nando's group revenue up 8% to £1.48bn (year to 23 Feb 2025); operating profit more than doubled to £146.6m."
       }
     ],
     "modules": [
@@ -332,6 +341,11 @@
             "value": "Since 1987",
             "label": "Nando's grew globally from one Johannesburg outlet, ownership kept at home",
             "source": 2
+          },
+          {
+            "value": "£1.48bn",
+            "label": "Group revenue, year to Feb 2025 (+8%); operating profit £146.6m",
+            "source": 3
           }
         ]
       }
@@ -13998,5 +14012,349 @@
         "name": "Maxime Saada"
       }
     ]
+  },
+  {
+    "title": "Who Owns MTN?",
+    "seoTitle": "Who Owns MTN? Publicly Listed, No Single Owner",
+    "metaDescription": "MTN Group, Africa's biggest mobile operator, is a JSE-listed public company with a large free float and no controlling shareholder — its largest single holder is South Africa's state-owned PIC. African-owned, and widely held.",
+    "slug": "who-owns-mtn",
+    "excerpt": "Short answer: no one, and everyone. MTN Group is a JSE-listed public company with no controlling shareholder — its biggest single holder is South Africa's state pension manager, the PIC.",
+    "content": "**MTN Group — Africa's largest mobile operator by subscribers — has no single owner.** It is a public company [listed on the Johannesburg Stock Exchange, with a large free float and no controlling shareholder](https://www.mtn.com/investors/) [1]. The biggest single holder is the [Public Investment Corporation (PIC), the state-owned manager of South Africa's government pension fund](https://www.moneyweb.co.za/tools-and-data/click-a-company/MTN/) [2], alongside South African and global institutions and index funds.\n\nThat makes MTN one of the continent's rare mega-brands that stayed African-owned as it scaled — present across roughly 19 markets in Africa and the Middle East, from Nigeria (its biggest market) to South Africa [1]. Ownership sits with South African institutions and the millions of pensioners the PIC represents, not a foreign parent.\n\nThe contrast with the deals on this desk is the point: where [Vodacom moved to majority control of Kenya's Safaricom](/article/who-owns-safaricom) and [Canal+ took MultiChoice](/article/who-owns-multichoice-dstv), MTN is the counter-pattern — an African champion whose upside is still held on the continent. Tracked against the field in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "mtn",
+      "telecoms",
+      "south africa",
+      "nigeria",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.mtn.com/investors/",
+    "sourceName": "MTN Group",
+    "publishedAt": "2026-09-03T09:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "MTN Group",
+        "label": "MTN Group — Investors",
+        "url": "https://www.mtn.com/investors/",
+        "use": "MTN as a JSE-listed public company; footprint across ~19 African and Middle Eastern markets; no controlling shareholder."
+      },
+      {
+        "publisher": "Moneyweb",
+        "label": "MTN Group Ltd (JSE:MTN) company profile",
+        "url": "https://www.moneyweb.co.za/tools-and-data/click-a-company/MTN/",
+        "use": "The Public Investment Corporation (PIC) as MTN's largest single shareholder; institutional ownership."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "JSE-listed",
+            "label": "Public company; large free float, no controlling shareholder",
+            "source": 1
+          },
+          {
+            "value": "PIC",
+            "label": "Largest single shareholder — South Africa's state pension manager",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "MTN"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "MTN is the exception that proves the desk's rule: an African brand big enough to be a takeover target that instead stayed public, African and widely held. When people ask 'who owns MTN?', the honest answer — no one controls it — is itself the story.",
+      "pullQuote": "No foreign parent, no controlling family. MTN's upside is still held on the continent."
+    }
+  },
+  {
+    "title": "Who Owns Dangote?",
+    "seoTitle": "Who Owns Dangote? Aliko Dangote, Overwhelmingly",
+    "metaDescription": "The Dangote Group is controlled by Aliko Dangote, Africa's richest man. Dangote Industries owns about 86% of NGX-listed Dangote Cement, and Dangote plans to keep 65–70% of the refinery — a rare African-owned, African-controlled industrial giant.",
+    "slug": "who-owns-dangote",
+    "excerpt": "Short answer: Aliko Dangote. Africa's richest man controls the Dangote Group — Dangote Industries owns about 86% of the listed cement business, and he plans to keep 65–70% of the refinery.",
+    "content": "**The Dangote Group is owned and controlled by Aliko Dangote** — Africa's richest man — through his holding company, Dangote Industries Limited. Dangote Industries [holds roughly 86% of the issued share capital of Dangote Cement](https://en.wikipedia.org/wiki/Dangote_Cement) [1], the largest company listed on the Nigerian Exchange (NGX).\n\nEven as the group opens up to public markets, control stays home. Announcing plans to [list a 10% stake in the ~$20bn Dangote Refinery on the NGX in 2026, Dangote said the family doesn't want to keep more than 65–70%](https://nairametrics.com/2025/12/12/dangote-to-list-10-refinery-stake-on-ngx-pay-dividends-in-us-dollars/) [2] — i.e. it retains a controlling majority.\n\nThat is the value-capture story in reverse: cement, sugar, fertiliser and now refined fuel — heavy, strategic industry — built and owned by a Nigerian, listed in Lagos, with the upside retained on the continent. It is the mirror image of the [foreign takeovers this desk tracks](/whos-buying-africa), and a template few African brands have matched — see [MTN](/article/who-owns-mtn) and [Shoprite](/article/who-owns-shoprite) for the others that stayed home.",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "dangote",
+      "aliko dangote",
+      "nigeria",
+      "cement",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://nairametrics.com/2025/12/12/dangote-to-list-10-refinery-stake-on-ngx-pay-dividends-in-us-dollars/",
+    "sourceName": "Nairametrics",
+    "publishedAt": "2026-09-03T09:15:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Dangote Cement",
+        "url": "https://en.wikipedia.org/wiki/Dangote_Cement",
+        "use": "Dangote Industries holds ~86% of Dangote Cement, the largest company on the NGX."
+      },
+      {
+        "publisher": "Nairametrics",
+        "label": "Dangote to list 10% refinery stake on NGX",
+        "url": "https://nairametrics.com/2025/12/12/dangote-to-list-10-refinery-stake-on-ngx-pay-dividends-in-us-dollars/",
+        "use": "Plan to list a 10% refinery stake on the NGX in 2026; Dangote's stated intent to keep 65–70%."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~86%",
+            "label": "Dangote Industries' stake in NGX-listed Dangote Cement",
+            "source": 1
+          },
+          {
+            "value": "65–70%",
+            "label": "Stake Dangote plans to keep in the refinery after a 2026 NGX listing",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Dangote"
+      },
+      {
+        "kind": "person",
+        "name": "Aliko Dangote"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Dangote is the counter-example the whole desk needs: proof that an African founder can build strategic, heavy industry at continental scale and still own the majority of it. Most 'who owns' answers on this desk point offshore. This one points to Lagos.",
+      "pullQuote": "Cement, sugar, fuel — built by a Nigerian, listed in Lagos, still majority-owned at home."
+    }
+  },
+  {
+    "title": "Who Owns Nigerian Breweries?",
+    "seoTitle": "Who Owns Nigerian Breweries? Heineken, at ~73%",
+    "metaDescription": "Nigerian Breweries — maker of Star, Gulder and Legend — is majority-owned by Heineken, which holds about 72.9% through three Dutch entities. Nigeria's biggest brewer, controlled from the Netherlands.",
+    "slug": "who-owns-nigerian-breweries",
+    "excerpt": "Short answer: Heineken. The Dutch brewer holds about 72.9% of NGX-listed Nigerian Breweries — maker of Star and Gulder — through three subsidiaries.",
+    "content": "**Nigerian Breweries — the country's largest brewer, maker of Star, Gulder and Legend — is majority-owned by Heineken.** The Dutch group [holds about 72.9% of the NGX-listed company through three entities](https://businessday.ng/markets/article/nigerian-breweries-why-81-equity-concentration-matters-to-investors-2/) [1]: Heineken Brouwerijen B.V., Heineken International B.V. and Distilled Trading International B.V.\n\nHeineken has been consolidating its Nigerian position for years — including having [Nigerian Breweries take full ownership of the local Distell business](https://drinks-intel.com/cross-category/heineken-led-nigerian-breweries-buys-remaining-stake-in-distells-nigeria-business/) [2], part of the same wave of dealmaking as the €2.2bn Distell takeover that also handed Heineken South Africa's Amarula.\n\nSo the beer in Nigerian hands is brewed by a Nigerian institution — but the balance sheet is Dutch. It is the same pattern as [Amarula](/article/who-owns-amarula) and the [wider drinks land-grab](/article/who-owns-african-premium-spirits-going-global): African brands, foreign owners. Tracked in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "drinks",
+    "tags": [
+      "who owns",
+      "nigerian breweries",
+      "heineken",
+      "nigeria",
+      "drinks",
+      "star lager",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://businessday.ng/markets/article/nigerian-breweries-why-81-equity-concentration-matters-to-investors-2/",
+    "sourceName": "BusinessDay",
+    "publishedAt": "2026-09-03T09:30:00.000Z",
+    "sources": [
+      {
+        "publisher": "BusinessDay",
+        "label": "Nigerian Breweries: why 81% equity concentration matters",
+        "url": "https://businessday.ng/markets/article/nigerian-breweries-why-81-equity-concentration-matters-to-investors-2/",
+        "use": "Heineken's ~72.9% holding in Nigerian Breweries through three named entities; NGX listing."
+      },
+      {
+        "publisher": "Global Drinks Intel",
+        "label": "Heineken-led Nigerian Breweries buys remaining stake in Distell's Nigeria business",
+        "url": "https://drinks-intel.com/cross-category/heineken-led-nigerian-breweries-buys-remaining-stake-in-distells-nigeria-business/",
+        "use": "Nigerian Breweries taking full ownership of the local Distell business under Heineken."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~72.9%",
+            "label": "Heineken's stake in Nigerian Breweries (via three subsidiaries)",
+            "source": 1
+          },
+          {
+            "value": "Star · Gulder",
+            "label": "Flagship brands owned through the Dutch-controlled brewer",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Nigerian Breweries"
+      },
+      {
+        "kind": "brand",
+        "name": "Heineken"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Nigerian Breweries is a national institution — and it's controlled from Amsterdam. It sits inside the same Heineken portfolio as Amarula, which is the tell: African drinks brands are being assembled into a handful of European balance sheets, one flagship at a time.",
+      "pullQuote": "The beer is Nigerian. The owner, at ~73%, is Dutch."
+    }
+  },
+  {
+    "title": "Who Owns Tecno?",
+    "seoTitle": "Who Owns Tecno? Transsion, a Chinese Firm",
+    "metaDescription": "Tecno is a brand of Transsion Holdings, a Shenzhen-based Chinese company listed on Shanghai's STAR Market. Transsion's brands (Tecno, itel, Infinix) lead the African smartphone market — the phone in African hands is Chinese-owned.",
+    "slug": "who-owns-tecno",
+    "excerpt": "Short answer: Transsion Holdings, a Chinese company. The Shenzhen-based, Shanghai-listed group behind Tecno, itel and Infinix leads Africa's smartphone market.",
+    "content": "**Tecno — the phone brand you see everywhere in African markets — is owned by Transsion Holdings, a Chinese company.** [Shenzhen-based Transsion, listed on Shanghai's STAR Market since 2019, owns Tecno, itel and Infinix](https://en.wikipedia.org/wiki/Transsion) [1], plus fintech (PalmPay), audio (Oraimo) and music streaming (Boomplay).\n\nTranssion built its dominance by [designing specifically for African users](https://restofworld.org/2020/transsion-from-china-to-africa/) [2] — multi-SIM handsets, longer battery life, low prices, and camera software tuned for darker skin tones. Its three phone brands together have led the continent's smartphone market, at times above 45% share [1].\n\nSo the device most Africans use to get online is designed for Africa but owned in China. Unlike an acquired local brand, Tecno was never African-owned — but it occupies the single most important consumer surface on the continent, and the value routes to Shenzhen. It is the hardware chapter of the same ownership question this desk runs across [music](/article/who-owns-mavin-records), [payments](/article/who-owns-paystack) and [media](/article/who-owns-multichoice-dstv).",
+    "category": "technology",
+    "tags": [
+      "who owns",
+      "tecno",
+      "transsion",
+      "china",
+      "smartphones",
+      "technology",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://en.wikipedia.org/wiki/Transsion",
+    "sourceName": "Wikipedia",
+    "publishedAt": "2026-09-03T09:45:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Transsion",
+        "url": "https://en.wikipedia.org/wiki/Transsion",
+        "use": "Transsion as a Shenzhen-based company listed on Shanghai's STAR Market (2019); owner of Tecno, itel, Infinix; African market share above 45%."
+      },
+      {
+        "publisher": "Rest of World",
+        "label": "Your guide to Transsion, Africa's biggest mobile phone supplier",
+        "url": "https://restofworld.org/2020/transsion-from-china-to-africa/",
+        "use": "How Transsion built African dominance by designing handsets for African users."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "STAR Market, 2019",
+            "label": "Transsion (Tecno's owner) listed in Shanghai — a Chinese public company",
+            "source": 1
+          },
+          {
+            "value": ">45%",
+            "label": "Peak combined African smartphone share for Transsion's brands",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Tecno"
+      },
+      {
+        "kind": "brand",
+        "name": "Transsion"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Tecno is the most-used consumer-tech brand across Africa, and it's Chinese-owned. That's not a takeover story — it's a build story in reverse: a foreign firm authored the category Africans use daily, and owns all of it. The most important screen on the continent routes its value to Shenzhen.",
+      "pullQuote": "Designed for Africa, owned in China: Tecno is the continent's default phone."
+    }
+  },
+  {
+    "title": "Who Owns Shoprite?",
+    "seoTitle": "Who Owns Shoprite? Publicly Listed in South Africa",
+    "metaDescription": "Shoprite Holdings, Africa's largest food retailer, is a JSE-listed South African public company. Its biggest shareholders are the state-owned PIC (Government Employees Pension Fund) and long-time backer Christo Wiese — African-owned, and widely held.",
+    "slug": "who-owns-shoprite",
+    "excerpt": "Short answer: it's public, and South African. Shoprite Holdings — Africa's biggest grocer — is listed on the JSE, with the state pension fund and Christo Wiese among its largest holders.",
+    "content": "**Shoprite Holdings — Africa's largest food retailer, with thousands of stores across the continent — is a South African public company.** It is [listed on the Johannesburg Stock Exchange](https://www.shopriteholdings.co.za/shareholders-investors.html) [1], and [its largest shareholders include South Africa's Government Employees Pension Fund (via the state-owned PIC) and long-time backer Christo Wiese](https://en.wikipedia.org/wiki/Shoprite_Holdings) [2], alongside global index funds.\n\nWith more than 3,000 stores across a spread of African countries [2], Shoprite is the continent's grocery backbone — and, unlike so many brands on this desk, its ownership sits with South African institutions and pensioners rather than a foreign parent.\n\nIt is the retail entry in the same ledger as [MTN](/article/who-owns-mtn) and [Dangote](/article/who-owns-dangote): proof that some of Africa's biggest consumer brands stayed African-owned as they scaled. The [foreign takeovers are the exception worth tracking](/whos-buying-africa) — but so is the ownership that stayed home.",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "shoprite",
+      "checkers",
+      "south africa",
+      "retail",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.shopriteholdings.co.za/shareholders-investors.html",
+    "sourceName": "Shoprite Holdings",
+    "publishedAt": "2026-09-03T10:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "Shoprite Holdings",
+        "label": "Shareholders and Investors Information",
+        "url": "https://www.shopriteholdings.co.za/shareholders-investors.html",
+        "use": "Shoprite Holdings as a JSE-listed South African public company; Africa's largest food retailer."
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "Shoprite Holdings",
+        "url": "https://en.wikipedia.org/wiki/Shoprite_Holdings",
+        "use": "Largest shareholders (Government Employees Pension Fund via PIC, Christo Wiese); 3,000+ stores across African countries."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "JSE-listed",
+            "label": "South African public company — Africa's largest food retailer",
+            "source": 1
+          },
+          {
+            "value": "3,000+ stores",
+            "label": "Across multiple African countries; African-owned",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Shoprite"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Shoprite is the grocery backbone of the continent, and it's still South African-owned — held by the state pension fund and public markets, not an offshore acquirer. On a desk built to track value leaving Africa, it's a reminder that the continent's biggest retailer kept its own.",
+      "pullQuote": "Africa's biggest grocer, still owned where it was built."
+    }
   }
 ]
