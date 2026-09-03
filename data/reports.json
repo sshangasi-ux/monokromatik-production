@@ -3248,39 +3248,39 @@
     "publishedAt": "2026-09-02T09:00:00.000Z",
     "keyStats": [
       {
-        "value": "8",
+        "value": "11",
         "label": "Ownership-moving deals verdicted so far — the inaugural scorecard, expanding quarterly"
       },
       {
-        "value": "6 / 8",
+        "value": "8 / 11",
         "label": "Deals where the value was exported off the continent"
       },
       {
-        "value": "1 / 8",
+        "value": "1 / 11",
         "label": "Deals where value stayed in African hands — Flutterwave's buy of Mono"
       },
       {
-        "value": "1 / 8",
-        "label": "Mixed — intra-African, but control still crossed a border (Nedbank–NCBA)"
+        "value": "2 / 11",
+        "label": "Mixed — value broadly African, but majority control still crossed a border"
       },
       {
-        "value": "4",
-        "label": "Sectors scored to date: banking, beauty, fintech, music"
+        "value": "7",
+        "label": "Sectors scored to date: banking, beauty, drinks, fintech, media, music, telecoms"
       }
     ],
     "exhibit": {
-      "title": "The value-capture verdict — 2026 tracked deals",
+      "title": "The value-capture verdict — the deals we've scored",
       "note": "Source: MonoKromatik 'Who's Buying Africa' tracker — the ownership-moving deals verdicted to date. Each is scored on where ownership and the upside land (exported / retained / mixed) from its sourced terms. A living scorecard; the verdict is an editorial judgement about value capture, not a view on the deal's financial merits for either side.",
       "data": [
         {
           "label": "Value exported",
-          "value": 6,
-          "display": "6 deals"
+          "value": 8,
+          "display": "8 deals"
         },
         {
           "label": "Mixed",
-          "value": 1,
-          "display": "1 deal"
+          "value": 2,
+          "display": "2 deals"
         },
         {
           "label": "Value retained",
@@ -3294,8 +3294,8 @@
         "heading": "The score, and the number that should worry you",
         "paragraphs": [
           "Every tracker in African tech counts the same thing: how many deals closed, and for how much. TechCabal's headline — 84 deals, US$11.4bn in 2026 — is real and useful. But a deal count measures activity, not ownership. It tells you an African company changed hands; it says nothing about whether the value changed continents.",
-          "That is the question this scorecard exists to answer, and the early read is blunt. Of the ownership-moving deals we have verdicted so far, six of eight exported the value off the continent. Exactly one — Flutterwave's all-stock buy of Mono — kept it home. One more, Nedbank's US$855m move on Kenya's NCBA, we score as mixed: intra-African, but with control moving south.",
-          "Six exported, one retained, one mixed. That ratio is the story the celebration around record M&A volumes leaves out — and it is the number every founder, acquirer and policymaker on the continent should be watching."
+          "That is the question this scorecard exists to answer, and the early read is blunt. Of the ownership-moving deals we have verdicted so far, eight of eleven exported the value off the continent. Exactly one — Flutterwave's all-stock buy of Mono — kept it home. Two more — Nedbank's US$855m move on NCBA and Vodacom's rise to majority control of Safaricom — we score as mixed: intra-African, but with control crossing borders.",
+          "Eight exported, one retained, two mixed. That ratio is the story the celebration around record M&A volumes leaves out — and it is the number every founder, acquirer and policymaker on the continent should be watching."
         ]
       },
       {
@@ -3326,7 +3326,7 @@
         "heading": "How to use this scorecard",
         "paragraphs": [
           "For founders, the lesson sits at entry, not exit: the terms of the first partnership decide who holds leverage in the last one. Structures that keep the cap table and control — Flutterwave's independence, the share-swap that kept NCBA's sellers invested — are the difference between a founder captured and a founder capturing. For acquirers and their advisers, the scorecard is a positioning tool: in a market watching value leave, being the African-owned consolidator is a story worth telling.",
-          "For policymakers and local capital, the six-of-eight ratio is a mandate. If pan-African champions do not have the balance sheet to buy, foreign acquirers will — and the continent will end its record M&A year more consolidated and more foreign-owned than it began.",
+          "For policymakers and local capital, the eight-of-eleven ratio is a mandate. If pan-African champions do not have the balance sheet to buy, foreign acquirers will — and the continent will end its record M&A year more consolidated and more foreign-owned than it began.",
           "This scorecard is the verdict layer on top of the raw deal data — the analysis competitors don't publish, updated each quarter as new deals are verdicted. For licensing, a full data cut, or a briefing built for your desk, reach the intelligence desk via the Cultural-Signal Index licence page."
         ]
       }
