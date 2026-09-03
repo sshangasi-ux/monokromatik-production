@@ -145,6 +145,7 @@ export default function WhosBuyingAfricaPage() {
           <div>
             <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-2">GO DEEPER</p>
             <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-black">Who authored the influence? See the ranked Index.</h2>
+            <p className="mt-3 text-sm font-body text-mono-charcoal">Tracking this for work? <Link href="/intelligence/ownership" className="text-mono-amber-strong font-bold hover:text-mono-amber-hover">License the ownership data →</Link></p>
           </div>
           <Link href="/intelligence/signal-index" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold shrink-0 hover:bg-mono-charcoal transition-colors">
             EXPLORE THE INDEX <ArrowRight size={18} />
