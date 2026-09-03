@@ -49,7 +49,7 @@ Our signature lens: who authors African culture and business, and who captures t
 - [Who's Buying Africa](${SITE}/whos-buying-africa): a sourced, running tracker of deals that move ownership of African & diaspora brands, each with a value-capture verdict — value exported, retained, or mixed.
 - [The Value-Capture Scorecard](${SITE}/reports/value-capture-scorecard-2026): the quarterly verdict layer on African M&A — who keeps the value in each deal.
 - [The Coil Economy](${SITE}/coil-economy): the Black-beauty ownership desk — who authors the categories (SheaMoisture, Mielle, Fenty) and who owns the margin.
-- "Who Owns ___?" explainers — short, sourced ownership answers: [Paystack](${SITE}/article/who-owns-paystack), [Flutterwave](${SITE}/article/who-owns-flutterwave), [Mavin Records](${SITE}/article/who-owns-mavin-records), [Indomie](${SITE}/article/who-owns-indomie), [OPay](${SITE}/article/who-owns-opay).
+- "Who Owns ___?" explainers — short, sourced ownership answers: [Paystack](${SITE}/article/who-owns-paystack), [Flutterwave](${SITE}/article/who-owns-flutterwave), [Mavin Records](${SITE}/article/who-owns-mavin-records), [Indomie](${SITE}/article/who-owns-indomie), [OPay](${SITE}/article/who-owns-opay), [Nando's](${SITE}/article/who-owns-nandos), [MultiChoice/DStv](${SITE}/article/who-owns-multichoice-dstv), [Safaricom](${SITE}/article/who-owns-safaricom), [Amarula](${SITE}/article/who-owns-amarula), [Jumia](${SITE}/article/who-owns-jumia).
 
 ## Machine-readable data
 - [Cultural-Signal Index API — JSON](${SITE}/api/index): the full ranking with per-axis scores, movement and methodology metadata.

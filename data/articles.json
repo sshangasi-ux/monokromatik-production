@@ -1,5 +1,356 @@
 [
   {
+    "title": "Who Owns Jumia?",
+    "seoTitle": "Who Owns Jumia? NYSE-Listed, Rocket-Internet-Born",
+    "metaDescription": "Jumia, the 'Amazon of Africa', is a public company (NYSE: JMIA) founded in 2012 with German Rocket Internet backing and non-African founders. African-operating, foreign-born.",
+    "slug": "who-owns-jumia",
+    "excerpt": "Short answer: public shareholders (NYSE: JMIA). Jumia was founded in 2012 with German Rocket Internet backing and non-African founders — African-operating, foreign-born.",
+    "content": "**Jumia — the \"Amazon of Africa\" — is a publicly traded company listed on the New York Stock Exchange (ticker JMIA).** It was [founded in Lagos in 2012 with backing from the German venture builder Rocket Internet, and its founders were the French pair Jérémy Hodara and Sacha Poignonnec alongside Nigerians Tunde Kehinde and Raphael Afaedor](https://en.wikipedia.org/wiki/Jumia) [1]. It [listed on the NYSE in April 2019](https://techcrunch.com/2019/04/12/african-e-commerce-startup-jumias-shares-open-at-14-50-in-nyse-ipo/) [2], and Rocket Internet later sold down its stake.\n\nToday ownership sits with public shareholders through the New York listing — institutional and retail investors worldwide — not with an African parent [1].\n\nJumia is a useful case because it complicates the question. It operates across a dozen-plus African markets and is African in every operational sense, but it was foreign-conceived, foreign-financed at birth and is foreign-listed. \"African tech champion\" and \"African-owned\" are not the same thing — a distinction our [ownership tracker](/whos-buying-africa) exists to hold.",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "jumia",
+      "rocket internet",
+      "e-commerce",
+      "nyse",
+      "value capture",
+      "african tech"
+    ],
+    "format": "brief",
+    "sourceLink": "https://en.wikipedia.org/wiki/Jumia",
+    "sourceName": "Wikipedia",
+    "publishedAt": "2026-09-02T23:40:00.000Z",
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "label": "Jumia",
+        "url": "https://en.wikipedia.org/wiki/Jumia",
+        "use": "Jumia founded in Lagos in 2012 with Rocket Internet backing; founders Hodara, Poignonnec, Kehinde, Afaedor; NYSE-listed; Rocket Internet's later exit."
+      },
+      {
+        "publisher": "TechCrunch",
+        "label": "African e-commerce startup Jumia's shares open at $14.50 in NYSE IPO",
+        "url": "https://techcrunch.com/2019/04/12/african-e-commerce-startup-jumias-shares-open-at-14-50-in-nyse-ipo/",
+        "use": "Jumia's April 2019 NYSE listing."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "NYSE: JMIA",
+            "label": "Public company — owned by global shareholders, not an African parent",
+            "source": 1
+          },
+          {
+            "value": "2012",
+            "label": "Founded in Lagos with German Rocket Internet backing",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Jumia"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Jumia is the cleanest test of what 'African' means. It is African-operating and often called the continent's e-commerce champion, but it was German-incubated, largely foreign-founded and is New-York-listed. Operational Africanness and ownership are different things — and the value flows to whoever holds the shares, which is a global public market, not the continent.",
+      "pullQuote": "The 'Amazon of Africa' was built by Germany's Rocket Internet and trades in New York. African by operation, not by ownership."
+    }
+  },
+  {
+    "title": "Who Owns Amarula?",
+    "seoTitle": "Who Owns Amarula? Heineken, via Distell",
+    "metaDescription": "Amarula, the South African marula cream liqueur, is owned by Heineken — which acquired Distell (Amarula's maker) for €2.2bn in 2023, folding an African icon into a Dutch brewer.",
+    "slug": "who-owns-amarula",
+    "excerpt": "Short answer: Heineken. The Dutch brewer bought Amarula's maker, Distell, for €2.2bn in 2023 — putting an iconic South African liqueur on a European balance sheet.",
+    "content": "**Amarula, the South African marula-fruit cream liqueur, is owned by Heineken.** The Dutch brewing giant [completed its acquisition of Distell — Amarula's maker — in April 2023, buying a 65% stake in a deal worth about €2.2 billion (US$2.5bn)](https://www.thedrinksbusiness.com/2023/04/heineken-completes-distell-and-namibia-breweries-acquisition/) [1], and folded it, with Namibia Breweries, into a new \"Heineken Beverages\" unit.\n\nThe deal took [more than a year and a South African Competition Tribunal approval](https://www.dailymaverick.co.za/article/2023-03-10-heineken-finally-gets-the-green-light-from-tribunal-to-buy-distell-making-progress-as-a-prime-africa-beverage-hub/) [2] to clear, and it handed Heineken not just Amarula but Distell's wider portfolio — 4th Street, Nederburg, Klipdrift [1].\n\nSo one of Africa's most recognisable drinks exports — the elephant on the bottle, made from a fruit that grows across Southern Africa — now sits inside a European brewer. African provenance, Dutch ownership: the [same value-capture story as the cognac economy](/article/who-owns-the-luxury-pour-of-detty-december), in reverse of the [African-owned houses trying to keep theirs](/article/who-owns-african-premium-spirits-going-global). Tracked in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "spirits",
+    "tags": [
+      "who owns",
+      "amarula",
+      "distell",
+      "heineken",
+      "south africa",
+      "spirits",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.thedrinksbusiness.com/2023/04/heineken-completes-distell-and-namibia-breweries-acquisition/",
+    "sourceName": "The Drinks Business",
+    "publishedAt": "2026-09-02T23:30:00.000Z",
+    "sources": [
+      {
+        "publisher": "The Drinks Business",
+        "label": "Heineken completes Distell and Namibia Breweries acquisition",
+        "url": "https://www.thedrinksbusiness.com/2023/04/heineken-completes-distell-and-namibia-breweries-acquisition/",
+        "use": "Heineken's April 2023 completion of the Distell acquisition (65% stake, ~€2.2bn); Amarula among the brands; new Heineken Beverages unit."
+      },
+      {
+        "publisher": "Daily Maverick",
+        "label": "Heineken gets green light from tribunal to buy Distell",
+        "url": "https://www.dailymaverick.co.za/article/2023-03-10-heineken-finally-gets-the-green-light-from-tribunal-to-buy-distell-making-progress-as-a-prime-africa-beverage-hub/",
+        "use": "The South African Competition Tribunal approval clearing Heineken's Distell takeover."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "€2.2bn",
+            "label": "Heineken's 2023 deal for 65% of Distell — Amarula's maker",
+            "source": 1
+          },
+          {
+            "value": "Apr 2023",
+            "label": "Acquisition completed; Distell folded into Heineken Beverages",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Amarula"
+      },
+      {
+        "kind": "brand",
+        "name": "Heineken"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Amarula is a marula-fruit liqueur that could only have come from Southern Africa — and it now sits inside a Dutch brewer. The provenance is unexportable; the ownership wasn't. It's the beverage version of the pattern that runs through this whole desk.",
+      "pullQuote": "The elephant on the bottle is African. The balance sheet behind it is Dutch."
+    }
+  },
+  {
+    "title": "Who Owns Safaricom?",
+    "seoTitle": "Who Owns Safaricom? Vodacom's 55% Majority",
+    "metaDescription": "Safaricom — Kenya's telecom giant and M-Pesa's parent — is majority-owned by Vodacom (55%), with the Kenyan government down to 20% and free float at 25% after a $2.1bn stake sale.",
+    "slug": "who-owns-safaricom",
+    "excerpt": "Short answer: Vodacom, now the 55% majority owner. The Kenyan government has cut its stake to 20%, selling 15% to Vodacom for ~$2.1bn.",
+    "content": "**Safaricom — Kenya's dominant telecom and the parent of M-Pesa — is majority-owned by Vodacom.** After [Vodacom moved to a 55% controlling stake by buying an additional 15% from the Government of Kenya for about US$2.1 billion (Ksh204 billion)](https://allafrica.com/stories/202512100389.html) [1], the ownership now runs [Vodacom ~55%, the Government of Kenya ~20% (down from 35%), and public investors ~25%](https://www.african-markets.com/en/stock-markets/nse/vodacom-moves-to-majority-control-of-safaricom-with-new-20-stake-purchase) [2].\n\nVodacom is itself majority-owned by the UK's Vodafone — so control of Kenya's most valuable company, and of the M-Pesa rail that moves money for tens of millions, now sits with a South African operator ultimately answering to London [2].\n\nThe Kenyan state retains an important role (including a hand in appointing the chairman [2]), which is why we'd score this **mixed** rather than a clean export: value stays partly public and on the continent, but majority control has moved. Track deals like it in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "safaricom",
+      "vodacom",
+      "vodafone",
+      "kenya",
+      "m-pesa",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.african-markets.com/en/stock-markets/nse/vodacom-moves-to-majority-control-of-safaricom-with-new-20-stake-purchase",
+    "sourceName": "African Markets",
+    "publishedAt": "2026-09-02T23:20:00.000Z",
+    "sources": [
+      {
+        "publisher": "allAfrica",
+        "label": "Vodacom Snaps Up 20 Percent More of Safaricom in $2.1bn Deal",
+        "url": "https://allafrica.com/stories/202512100389.html",
+        "use": "Vodacom's move to 55% control by buying the Kenyan government's 15% stake for ~US$2.1bn (Ksh204bn)."
+      },
+      {
+        "publisher": "African Markets",
+        "label": "Vodacom moves to majority control of Safaricom with new 20% stake purchase",
+        "url": "https://www.african-markets.com/en/stock-markets/nse/vodacom-moves-to-majority-control-of-safaricom-with-new-20-stake-purchase",
+        "use": "Post-deal ownership: Vodacom ~55%, Government of Kenya ~20%, free float ~25%; Vodacom's board and chairman-appointment dynamics."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "55%",
+            "label": "Vodacom's controlling stake in Safaricom (Vodacom is majority Vodafone-owned)",
+            "source": 2
+          },
+          {
+            "value": "20% / 25%",
+            "label": "Government of Kenya (down from 35%) and public free float",
+            "source": 2
+          },
+          {
+            "value": "~$2.1bn",
+            "label": "What Vodacom paid Kenya for the 15% that took it to majority",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Safaricom"
+      },
+      {
+        "kind": "brand",
+        "name": "Vodacom"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Kenya just sold down its stake in its own crown jewel. Safaricom and M-Pesa are the country's most strategic assets, and majority control now sits with Vodacom — and, above it, Vodafone in London. The state kept a fifth and a say over the chair, which softens it, but the direction of travel is clear: the upside is consolidating offshore.",
+      "pullQuote": "Kenya's most valuable company — and the M-Pesa rail — is now majority-controlled from South Africa, and above that, London."
+    }
+  },
+  {
+    "title": "Who Owns MultiChoice and DStv?",
+    "seoTitle": "Who Owns DStv? Canal+ Owns MultiChoice Now",
+    "metaDescription": "MultiChoice — the parent of DStv — is now owned by France's Canal+, which completed a ~$3bn takeover in 2025 and delisted it from the JSE. Africa's biggest pay-TV, French-owned.",
+    "slug": "who-owns-multichoice-dstv",
+    "excerpt": "Short answer: Canal+ of France. The €-backed media giant completed a ~$3bn takeover of MultiChoice (DStv's parent) in 2025 and delisted it from the JSE.",
+    "content": "**MultiChoice — the South African broadcaster behind DStv — is now owned by Canal+, the French media giant.** Canal+ [completed its takeover in September 2025, reaching a 94.39% stake in a deal valuing MultiChoice at about US$3 billion](https://senalnews.com/en/content/canal-completed-the-3-billion-multichoice-takeover) [1], and MultiChoice was [delisted from the Johannesburg Stock Exchange in late 2025](https://techcabal.com/2025/10/21/how-canal-quietly-won-africas-tv-crown/) [2].\n\nIt was a 20-month campaign: Canal+ built its stake steadily, then cleared the regulatory hurdles to take full control [2]. The combined group now serves [tens of millions of subscribers across dozens of countries](https://senalnews.com/en/content/canal-completed-the-3-billion-multichoice-takeover) [1].\n\nSo the platform that carries African football, Nollywood and the continent's biggest pay-TV audience answers to Paris. It is one of the largest media ownership shifts in African history — African-built distribution, French-owned. Logged in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "multichoice",
+      "dstv",
+      "canal+",
+      "south africa",
+      "media",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://techcabal.com/2025/10/21/how-canal-quietly-won-africas-tv-crown/",
+    "sourceName": "TechCabal",
+    "publishedAt": "2026-09-02T23:10:00.000Z",
+    "sources": [
+      {
+        "publisher": "Señal News",
+        "label": "Canal+ Completed the $3 Billion MultiChoice Takeover",
+        "url": "https://senalnews.com/en/content/canal-completed-the-3-billion-multichoice-takeover",
+        "use": "Canal+'s completed takeover of MultiChoice — ~94.39% stake, ~US$3bn valuation, combined subscriber scale."
+      },
+      {
+        "publisher": "TechCabal",
+        "label": "From first buy to final buyout: how Canal+ took over MultiChoice",
+        "url": "https://techcabal.com/2025/10/21/how-canal-quietly-won-africas-tv-crown/",
+        "use": "The 20-month acquisition timeline and the JSE delisting of MultiChoice."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~$3bn",
+            "label": "Canal+ (France) valuation of MultiChoice in the completed 2025 takeover",
+            "source": 1
+          },
+          {
+            "value": "94.39%",
+            "label": "Canal+ stake — full control; MultiChoice delisted from the JSE",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "MultiChoice"
+      },
+      {
+        "kind": "brand",
+        "name": "Canal+"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "MultiChoice going to Canal+ is the single biggest ownership shift in African media in a generation. The infrastructure that distributes African football and Nollywood to the continent is now controlled from Paris — the culture stays African, the platform's equity doesn't.",
+      "pullQuote": "Africa's biggest pay-TV network now answers to Paris. The audience is African; the owner is French."
+    }
+  },
+  {
+    "title": "Who Owns Nando's?",
+    "seoTitle": "Who Owns Nando's? The Enthoven Family, Privately",
+    "metaDescription": "Nando's is privately owned by South Africa's Enthoven family — not a chain or a fund. A rare African brand that went global and stayed African-owned.",
+    "slug": "who-owns-nandos",
+    "excerpt": "Short answer: the Enthoven family of South Africa — privately. One of the few African brands that went global and kept its ownership at home.",
+    "content": "**Nando's is privately owned by the Enthoven family of South Africa.** The peri-peri chain was wholly owned by the late [Dick Enthoven until his death in December 2022, and remains a private family business run by his family](https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205) [1] — the same family behind the Hollard insurance group and Spier wine estate [2].\n\nThere is no listing, no private-equity owner, no foreign conglomerate on the cap table. Nando's grew from a single Johannesburg outlet into a chain across the UK, US, Australia and beyond while staying [a privately held, family-owned business](https://en.wikipedia.org/wiki/Nando's) [2].\n\nThat makes it a rare thing on this desk: an African brand that went genuinely global and kept its ownership — and its upside — African. Set against the [cognac economy](/article/who-owns-the-luxury-pour-of-detty-december) or [the beauty brands that sold to multinationals](/coil-economy), Nando's is the counter-example — authorship and ownership held together, for decades. See where the value goes across African brands in [Who's Buying Africa](/whos-buying-africa).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "nandos",
+      "enthoven",
+      "south africa",
+      "private",
+      "african-owned"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205",
+    "sourceName": "News24",
+    "publishedAt": "2026-09-02T23:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "News24",
+        "label": "SA insurance tycoon and Nando's backer Dick Enthoven passes away",
+        "url": "https://www.news24.com/business/companies/sa-insurance-tycoon-and-nandos-backer-dick-enthoven-passes-away-20221205",
+        "use": "Dick Enthoven's ownership of Nando's until his 2022 death; the family's Hollard and Spier holdings."
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "Nando's",
+        "url": "https://en.wikipedia.org/wiki/Nando's",
+        "use": "Nando's as a privately held, Enthoven-family-owned business that expanded globally from South Africa."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "Enthoven family",
+            "label": "Private South African owners — no listing, no fund, no foreign parent",
+            "source": 2
+          },
+          {
+            "value": "Since 1987",
+            "label": "Nando's grew globally from one Johannesburg outlet, ownership kept at home",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Nando's"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Nando's is the proof that the export pattern isn't inevitable. A South African brand built global scale across dozens of countries and never sold the cap table — the value compounds for an African family, not a foreign acquirer. It's the model the rest of the continent's brands keep not following.",
+      "pullQuote": "African-authored, globally famous, and still African-owned. Nando's is the exception that proves the rule."
+    }
+  },
+  {
     "title": "Can AFCON 2027 Turn Football Fans Into Tourists?",
     "seoTitle": "Can AFCON 2027 Turn Football Fans Into Tourists?",
     "metaDescription": "East Africa is spending billions on AFCON 2027 — a single regional visa, fee waivers and safari packages are the machine to convert fans into tourists. The Visit Rwanda bet, but with the visitor already on the ground.",
