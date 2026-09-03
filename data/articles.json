@@ -1,5 +1,392 @@
 [
   {
+    "title": "Who Pays for AFCON 2027 — and Who Owns the Upside?",
+    "seoTitle": "Who Pays for AFCON 2027? East Africa's Hosting Bet",
+    "metaDescription": "Kenya, Uganda and Tanzania are spending billions to co-host AFCON 2027 — even paying CAF a ~$30m hosting fee. The hosts carry the cost; CAF and its sponsors own the upside.",
+    "slug": "who-pays-for-afcon-2027-east-africa-hosting-economics",
+    "content": "## The most expensive month East Africa has ever bought\n\nIn June 2027, Kenya, Uganda and Tanzania will co-host the Africa Cup of Nations — the first time the tournament has been staged jointly by three East African nations, under a shared bid branded \"Pamoja\". [The tournament runs from 19 June to 18 July](https://eastleighvoice.co.ke/football/328026/afcon-2027-dates-confirmed-as-kenya-uganda-and-tanzania-prepare-for-historic-co-hosting) [1], and it has become one of the region's largest infrastructure projects in recent memory.\n\nThe bill is enormous and it falls on the hosts. From [stadiums and airports to roads, hotels and hospitals, the three governments are investing billions of dollars](https://www.zawya.com/en/economy/africa/afcon-2027-east-africa-races-against-time-to-get-stadiums-and-infrastructure-ready-409467) [2] in the hope that a month of football leaves a lasting legacy.\n\n## The cost of a seat at the table\n\nStart with the venues, because that is where the money is most visible. Each host must field at least two CAF-standard stadiums, and [none of the proposed venues across the three countries currently meet the standard — most are under refurbishment or new construction](https://www.pulsesports.co.ke/story/afcon-2027-cost-design-and-completion-status-of-3-new-stadiums-under-construction-in-east-africa-2026021312334393208) [3]. Kenya alone allocated [about Sh4 billion for venue upgrades](https://www.pulsesports.co.ke/story/afcon-2027-cost-design-and-completion-status-of-3-new-stadiums-under-construction-in-east-africa-2026021312334393208) [3], and even the *right to host* carries a price: Kenya faced [a deadline to pay a hosting fee of roughly US$30 million (about Ksh3.9 billion), with Uganda and Tanzania having already paid theirs](https://www.flashscore.com/news/soccer-africa-cup-of-nations-kenyan-government-pledges-to-beat-caf-deadline-on-hosting-2027-afcon/AwUl3sKt) [4].\n\nRead that again: the host nation pays CAF for the privilege of spending billions more to stage CAF's tournament.\n\n## Who owns the upside\n\nThis is the value-capture question at the heart of every major tournament. The hosts carry the capital cost and the risk; the durable commercial upside — the broadcast rights, the tournament title, the global sponsorships — belongs to the confederation and its partners. The name of the competition itself is sold: as we set out in [the TotalEnergies dossier](/reports/will-it-land-totalenergies-afcon), a French energy major owns the naming rights to African football's showpiece.\n\nSo the East African bet is not really about the month of football. It is that the stadiums, airports and roads become a legacy that pays back long after the final — tourism, conferences, a stronger regional economy. That is the same wager [Rwanda is making with its shirt sponsorships](/article/the-visit-rwanda-playbook-who-captures-african-sports-marketing): spend now on global visibility, and trust that the value returns as inbound revenue.\n\n## The read\n\nAFCON 2027 is a legacy gamble with a hard deadline. If the infrastructure lands on time and gets used afterwards, the Pamoja bid could be a genuine engine for East African integration and tourism. If it becomes three sets of underused stadiums and a hosting fee paid to CAF, it is prestige spending the region could not afford. The tournament's commercial value is already owned — by CAF and its sponsors. What Kenya, Uganda and Tanzania are actually buying is the bet that hosting pays for itself. The next twelve months of concrete will decide which it is.",
+    "excerpt": "Kenya, Uganda and Tanzania will spend billions to co-host AFCON 2027 — and pay CAF a ~$30m fee for the privilege. The hosts carry the capital and the risk; the commercial upside is already owned elsewhere.",
+    "category": "sports",
+    "tags": [
+      "sports marketing",
+      "afcon 2027",
+      "kenya",
+      "uganda",
+      "tanzania",
+      "value capture",
+      "hosting",
+      "caf"
+    ],
+    "format": "feature",
+    "sourceLink": "https://www.pulsesports.co.ke/story/afcon-2027-cost-design-and-completion-status-of-3-new-stadiums-under-construction-in-east-africa-2026021312334393208",
+    "sourceName": "Pulse Sports",
+    "publishedAt": "2026-09-02T20:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "Eastleigh Voice",
+        "label": "AFCON 2027 dates confirmed as Kenya, Uganda and Tanzania prepare for historic co-hosting",
+        "url": "https://eastleighvoice.co.ke/football/328026/afcon-2027-dates-confirmed-as-kenya-uganda-and-tanzania-prepare-for-historic-co-hosting",
+        "use": "AFCON 2027 as the first joint East African hosting under the 'Pamoja' bid; 19 June–18 July dates."
+      },
+      {
+        "publisher": "Zawya",
+        "label": "AFCON 2027: East Africa races against time to get stadiums and infrastructure ready",
+        "url": "https://www.zawya.com/en/economy/africa/afcon-2027-east-africa-races-against-time-to-get-stadiums-and-infrastructure-ready-409467",
+        "use": "Billions in stadiums, airports, roads, hotels and hospitals across the three hosts; legacy framing."
+      },
+      {
+        "publisher": "Pulse Sports",
+        "label": "AFCON 2027: cost, design and status of new East African stadiums",
+        "url": "https://www.pulsesports.co.ke/story/afcon-2027-cost-design-and-completion-status-of-3-new-stadiums-under-construction-in-east-africa-2026021312334393208",
+        "use": "Each host must field 2+ CAF-standard stadiums; none currently meet standard; Kenya's ~Sh4bn venue-upgrade allocation."
+      },
+      {
+        "publisher": "Flashscore",
+        "label": "Kenyan government pledges to beat CAF deadline on hosting 2027 AFCON",
+        "url": "https://www.flashscore.com/news/soccer-africa-cup-of-nations-kenyan-government-pledges-to-beat-caf-deadline-on-hosting-2027-afcon/AwUl3sKt",
+        "use": "Kenya's ~US$30m (Ksh3.9bn) hosting-fee deadline, with Uganda and Tanzania having paid theirs."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The hosting bill, by the numbers",
+        "items": [
+          {
+            "value": "3 nations",
+            "label": "Kenya, Uganda & Tanzania — AFCON's first joint East African host, under 'Pamoja'",
+            "source": 1
+          },
+          {
+            "value": "~$30m",
+            "label": "Hosting fee Kenya owes CAF (Ksh3.9bn) — before a cent on stadiums",
+            "source": 4
+          },
+          {
+            "value": "Sh4bn",
+            "label": "Kenya's allocation for venue upgrades alone",
+            "source": 3
+          },
+          {
+            "value": "0 of many",
+            "label": "Proposed stadiums currently meeting CAF standard — all under refurbishment/build",
+            "source": 3
+          }
+        ]
+      },
+      {
+        "type": "evidence",
+        "title": "What's confirmed, reported and not claimed",
+        "confirmed": [
+          {
+            "text": "Kenya, Uganda and Tanzania will co-host AFCON 2027 (19 Jun–18 Jul) under the joint 'Pamoja' bid.",
+            "source": 1
+          },
+          {
+            "text": "Each host must field 2+ CAF-standard stadiums; none of the proposed venues currently meet the standard; Kenya allocated ~Sh4bn for venue upgrades.",
+            "source": 3
+          }
+        ],
+        "reported": [
+          {
+            "text": "The three governments are investing billions across stadiums, airports, roads, hotels and hospitals.",
+            "source": 2
+          },
+          {
+            "text": "Kenya faced a ~US$30m (Ksh3.9bn) CAF hosting-fee deadline; Uganda and Tanzania had paid theirs.",
+            "source": 4
+          }
+        ],
+        "notClaimed": [
+          "Total combined hosting cost and the eventual legacy return are not yet knowable; the value-capture verdict is our interpretation.",
+          "No claim that hosting cannot pay off — only that the commercial rights sit with CAF and sponsors while the capital risk sits with the hosts."
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "AFCON"
+      },
+      {
+        "kind": "brand",
+        "name": "CAF"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "AFCON 2027 is the purest value-capture question in African sport: the hosts pay to build and pay to host, while the tournament's commercial value — broadcast, title, global sponsors — is owned by CAF and partners like TotalEnergies. That is not a scandal; it is how every major tournament works. The question is whether East Africa's spend converts into a legacy it keeps, or evaporates into a month of prestige and a set of stadiums no one fills afterward.\n\nThe Pamoja bid's real prize isn't the football; it's the airports, roads and regional integration the deadline forces into existence. If those get used, hosting pays for itself many times over. If they don't, it is the most expensive month the region ever bought. The concrete poured in the next year — not the results on the pitch — will decide it.",
+      "pullQuote": "The host pays CAF for the right to spend billions staging CAF's tournament. The upside is already owned; the bet is that the legacy pays it back.",
+      "takeaways": [
+        {
+          "insight": "Host nations carry the capital cost and risk of AFCON while CAF and its sponsors own the durable commercial upside.",
+          "move": "Judge the bid on legacy use, not the month itself — every stadium and airport needs a funded post-tournament purpose baked in now."
+        },
+        {
+          "insight": "The Pamoja bet mirrors Visit Rwanda's: spend on global visibility, trust the value returns — attribution is the weak link.",
+          "move": "Instrument the tourism/investment return from day one so the hosting case rests on measured legacy, not prestige."
+        }
+      ]
+    },
+    "imageUrl": "https://sportal365images.com/process/smp-images-production/ringier.africa/04022026/18c7ff27-aa63-4932-abf5-4dc07952bcd6.jpg?operations=autocrop(1200:630)",
+    "imageRefreshedAt": "2026-09-03T14:10:29.012Z",
+    "imageSource": "sourceLink-og:image",
+    "imageCredit": "Via Pulse Sports",
+    "imageSourceUrl": "https://www.pulsesports.co.ke/story/afcon-2027-cost-design-and-completion-status-of-3-new-stadiums-under-construction-in-east-africa-2026021312334393208"
+  },
+  {
+    "title": "Who Owns the Betting Economy of African Football?",
+    "seoTitle": "Who Owns African Football's Betting Economy?",
+    "metaDescription": "As the Premier League bans gambling shirt sponsors, betting money floods African football — Betway, Bet9ja and offshore operators. Who captures the value from African fans?",
+    "slug": "who-owns-the-betting-economy-of-african-football",
+    "content": "## As the West tightens, the money floods in\n\nThere is a telling split opening up in world football. In England, [Premier League clubs are withdrawing front-of-shirt gambling sponsorships from 2026-27](https://www.cnbc.com/2026/08/21/premier-league-gambling-shirt-sponsors.html) [1] under regulatory and public pressure. In Africa, the betting money is flooding in the other direction — into shirts, leagues and stadiums, faster than anywhere else on earth.\n\nThe scale is already large. [Nigeria (around US$1.2bn) and South Africa (around US$800m) are the continent's biggest sports-betting markets by gross gaming revenue, and Africa has the highest betting growth rate in the world, an estimated 17% a year](https://businessfront.com/sports/insights/rise-sports-betting-africa/) [2]. The sponsorships follow the money: bookmakers now sit on the front of African football, from league title deals to club shirts.\n\n## Who's on the shirt\n\nThe pattern is everywhere once you look. Betway holds the title sponsorship of South Africa's top flight — the league literally trades as the Betway Premiership — and Nigerian champions carry bookmaker branding of their own [2]. Globally, football has become [structurally reliant on betting and crypto sponsors, a reliance that includes many operators bypassing domestic laws](https://www.playthegame.org/news/play-the-game-reveals-the-extent-of-footballs-reliance/) [3].\n\nThat last point is the sharp one for Africa. The continent's betting boom is not only fast; it is loosely regulated, and a meaningful share of the operators monetising African fandom are offshore or operating around the rules [3].\n\n## Who captures the value\n\nHere is the value-capture read. Betting sponsorship hands African clubs and leagues something they badly need — reliable revenue, in a football economy where [almost none of the upside from African talent and audiences stays on the continent](/article/premier-league-2026-27-brand-reset-who-owns-african-footballs-upside). That is real, and it is why the deals get signed.\n\nBut the deeper economics run the other way. A bookmaker's business is to take more from punters than it pays out. When that operator is offshore, the arrangement becomes an extraction machine: African fans supply the stakes and the attention, a foreign-owned betting company keeps the margin, and the club receives a sponsorship fee that is a fraction of the gross. It is the airfare and the cognac in another form — the value authored by African passion, captured somewhere else.\n\n## The read\n\nThe West's retreat from gambling sponsorship and Africa's rush toward it are the same market finding its next, softer frontier. Betting money will keep flowing into African football because the clubs need it and the regulation is thin. The question is whether the continent's leagues negotiate as owners of a scarce asset — hundreds of millions of engaged fans — or as grateful recipients of whatever a foreign bookmaker offers. Right now, too often, it is the latter.",
+    "excerpt": "As England bans gambling shirt sponsors, betting money is flooding African football — into leagues, clubs and shirts. African fans supply the stakes and the attention; a foreign-owned industry keeps the margin.",
+    "category": "sports",
+    "tags": [
+      "sports marketing",
+      "betting",
+      "sponsorship",
+      "african football",
+      "value capture",
+      "nigeria",
+      "south africa"
+    ],
+    "format": "feature",
+    "sourceLink": "https://businessfront.com/sports/insights/rise-sports-betting-africa/",
+    "sourceName": "Businessfront",
+    "publishedAt": "2026-09-02T19:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "CNBC",
+        "label": "Premier League gambling shirt sponsors",
+        "url": "https://www.cnbc.com/2026/08/21/premier-league-gambling-shirt-sponsors.html",
+        "use": "Premier League clubs withdrawing front-of-shirt gambling sponsorships from 2026-27 under regulatory pressure."
+      },
+      {
+        "publisher": "Businessfront",
+        "label": "Inside the lucrative rise of sports betting in Africa",
+        "url": "https://businessfront.com/sports/insights/rise-sports-betting-africa/",
+        "use": "Nigeria (~$1.2bn) and South Africa (~$800m) as the biggest African betting markets; ~17% CAGR; Betway's SA Premiership title sponsorship; bookmaker shirt deals."
+      },
+      {
+        "publisher": "Play the Game",
+        "label": "Football's reliance on betting and crypto sponsorships",
+        "url": "https://www.playthegame.org/news/play-the-game-reveals-the-extent-of-footballs-reliance/",
+        "use": "Football's structural reliance on betting/crypto sponsors, including operators bypassing domestic laws."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The betting boom, by the numbers",
+        "items": [
+          {
+            "value": "$1.2bn / $800m",
+            "label": "Nigeria and South Africa betting markets by gross gaming revenue — the continent's biggest",
+            "source": 2
+          },
+          {
+            "value": "~17%",
+            "label": "Africa's betting growth rate — the highest in the world",
+            "source": 2
+          },
+          {
+            "value": "2026-27",
+            "label": "Season the Premier League withdraws front-of-shirt gambling sponsors — as Africa leans in",
+            "source": 1
+          }
+        ]
+      },
+      {
+        "type": "evidence",
+        "title": "What's confirmed, reported and not claimed",
+        "confirmed": [
+          {
+            "text": "Premier League clubs are withdrawing front-of-shirt gambling sponsorships from 2026-27.",
+            "source": 1
+          },
+          {
+            "text": "Nigeria (~$1.2bn) and South Africa (~$800m) are Africa's biggest betting markets; the continent has the world's highest betting CAGR (~17%); Betway title-sponsors the SA Premiership.",
+            "source": 2
+          }
+        ],
+        "reported": [
+          {
+            "text": "Global football is structurally reliant on betting/crypto sponsors, including operators that bypass domestic laws.",
+            "source": 3
+          }
+        ],
+        "notClaimed": [
+          "Exact club-level sponsorship values and the offshore/onshore split of operators are not fully disclosed; the extraction framing is our interpretation.",
+          "No claim that betting sponsorship is illegal per se — the concern is loose regulation and where the margin lands."
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Betway"
+      },
+      {
+        "kind": "brand",
+        "name": "Bet9ja"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "Betting is becoming African football's default sponsor for the same reason cognac is its default flex: the demand is enormous, the regulation is thin, and a foreign-owned industry is very good at monetising both. The clubs' need is real — African football is starved of the revenue its talent and audiences generate — so the deals are rational at the club level and corrosive at the system level.\n\nThe uncomfortable truth is that a bookmaker sponsorship is a fan-funded subsidy: supporters lose more than the club is paid. As the West regulates gambling out of football, Africa is the frontier the industry moves to. The leverage the continent is not using is scarcity — hundreds of millions of the most engaged fans in world sport. Negotiated as an owned asset, that is worth far more than a shirt fee from an offshore operator.",
+      "pullQuote": "As England bans the bookmakers off its shirts, Africa is where the betting industry goes next. African fans fund it; a foreign-owned industry banks it.",
+      "takeaways": [
+        {
+          "insight": "Betting sponsorship is short-term revenue for African clubs but a fan-funded transfer to a largely foreign-owned, lightly-regulated industry.",
+          "move": "Leagues should negotiate betting deals as scarce-asset owners (hundreds of millions of fans) and ring-fence a share for grassroots, not accept flat shirt fees."
+        },
+        {
+          "insight": "The West's gambling-sponsorship retreat is pushing the industry toward Africa's softer regulatory frontier.",
+          "move": "Get ahead of the regulation now — advertising limits, local-licensing requirements, and player/fan protections — before the boom sets the terms."
+        }
+      ]
+    },
+    "imageUrl": "https://businessfront.com/wp-content/uploads/2025/06/Online-betting.jpg",
+    "imageRefreshedAt": "2026-09-03T14:10:27.671Z",
+    "imageSource": "sourceLink-og:image",
+    "imageCredit": "Via Businessfront",
+    "imageSourceUrl": "https://businessfront.com/sports/insights/rise-sports-betting-africa/"
+  },
+  {
+    "title": "Who Owns Africa's Premium Spirits — as They Finally Go Global?",
+    "seoTitle": "Who Owns Africa's Premium Spirits Going Global?",
+    "metaDescription": "African-owned houses like Spearhead (Vusa vodka, Bayab gin) are taking African premium spirits global — while Pernod Ricard buys up craft brands like Inverroche. Build-and-keep, or build-and-sell?",
+    "slug": "who-owns-african-premium-spirits-going-global",
+    "content": "## The counter-pour\n\nWe've argued that Africa's luxury-spirits status economy is French-owned top to bottom — cognac authored by African taste, banked in Cognac, France. This is the story of the other direction: the African-owned houses trying to build a premium spirit the continent actually keeps.\n\nThe clearest bet is Spearhead Spirits, a Black-owned African group whose stated mission is to put African spirits \"in every bar around the world\". Its portfolio is deliberately of-the-continent — [Vusa Vodka, made from African sugar cane, and Bayab Gin, flavoured with baobab fruit](https://www.bizcommunity.africa/Article/410/162/229623.html) [1] — and it has [raised US$3 million from the investor Pendulum to power its entry into the United States](https://www.bizcommunity.africa/Article/410/162/229623.html) [1]. That is the whole thesis running forward: authorship *and* ownership, held together, heading global.\n\n## Why now\n\nThe timing is not an accident. African spirits are [becoming genuinely global, with local heritage and identity now a selling point in international markets](https://www.thespiritsbusiness.com/2026/07/why-africa-remains-a-growth-market-for-spirits/) [2], and the continent is one of the fastest-rising spirits markets on earth [3]. South Africa in particular has [a large craft-gin culture](https://www.thespiritsbusiness.com/2026/07/why-africa-remains-a-growth-market-for-spirits/) [2] — exactly the kind of premium, provenance-led category that travels.\n\n## The fork in the road\n\nBut watch what happens as these brands succeed, because the same report contains the warning. In 2025, the French conglomerate [Pernod Ricard acquired the South African craft-gin brand Inverroche](https://www.thespiritsbusiness.com/2026/07/why-africa-remains-a-growth-market-for-spirits/) [2]. That is the fork every African premium spirit will reach: build the brand and *keep* it — the Spearhead path — or build it and sell the cap table to a global house at the first strong offer, the Inverroche path.\n\nBoth are rational. A foreign buyout is capital, distribution and validation. But it is also the exact mechanism by which the cognac story wrote itself a century ago: local authorship, foreign ownership, the margin routed abroad. The question our [African Spirits Report](/reports/african-spirits-report-2026-who-owns-the-pour) keeps asking is simply *which fork* the continent's premium spirits take.\n\n## The read\n\nThe luxury-pour problem and this one are two ends of the same bottle. On one end, Africa drinks French-owned cognac it will never own [read: [Who Owns the Luxury Pour of Detty December?](/article/who-owns-the-luxury-pour-of-detty-december)]. On the other, African-owned houses like Spearhead are finally building premium spirits with the authorship the French have to rent. Whether that becomes durable African ownership or just the next acquisition pipeline for Pernod Ricard and Diageo is the decade's open question — and, unlike the cognac economy, it is one the continent still gets to answer.",
+    "excerpt": "African-owned houses are finally building premium spirits with the authorship the French have to rent — but the foreign buyout (Pernod Ricard just bought Inverroche) is the fork in the road. Build and keep, or build and sell?",
+    "category": "spirits",
+    "tags": [
+      "luxury spirits",
+      "african-owned",
+      "spearhead",
+      "gin",
+      "vodka",
+      "value capture",
+      "export"
+    ],
+    "format": "feature",
+    "sourceLink": "https://www.bizcommunity.africa/Article/410/162/229623.html",
+    "sourceName": "Bizcommunity",
+    "publishedAt": "2026-09-02T18:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "Bizcommunity",
+        "label": "$3m investment to power expansion of African spirits maker Spearhead",
+        "url": "https://www.bizcommunity.africa/Article/410/162/229623.html",
+        "use": "Spearhead Spirits (Black-owned) — Vusa Vodka (African sugar cane), Bayab Gin (baobab); $3m raise from Pendulum for US entry; mission to globalise African spirits."
+      },
+      {
+        "publisher": "The Spirits Business",
+        "label": "Why Africa remains a growth market for spirits",
+        "url": "https://www.thespiritsbusiness.com/2026/07/why-africa-remains-a-growth-market-for-spirits/",
+        "use": "African spirits going global with heritage as a selling point; SA craft-gin culture; Pernod Ricard's 2025 acquisition of Inverroche."
+      },
+      {
+        "publisher": "Anuga",
+        "label": "The African spirits market",
+        "url": "https://www.anuga.com/blog/african-spirits-market.php",
+        "use": "Africa as one of the fastest-rising spirits markets and the premiumisation trend."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The counter-pour, by the numbers",
+        "items": [
+          {
+            "value": "$3m",
+            "label": "Raised by Black-owned Spearhead Spirits (Vusa, Bayab) to enter the US",
+            "source": 1
+          },
+          {
+            "value": "2 brands",
+            "label": "Vusa Vodka (African sugar cane) + Bayab Gin (baobab) — provenance-led by design",
+            "source": 1
+          },
+          {
+            "value": "2025",
+            "label": "Year Pernod Ricard acquired SA craft-gin brand Inverroche — the buyout fork",
+            "source": 2
+          }
+        ]
+      },
+      {
+        "type": "evidence",
+        "title": "What's confirmed, reported and not claimed",
+        "confirmed": [
+          {
+            "text": "Spearhead Spirits raised $3m from Pendulum to enter the US, with Vusa Vodka and Bayab Gin.",
+            "source": 1
+          },
+          {
+            "text": "Pernod Ricard acquired the South African craft-gin brand Inverroche in 2025.",
+            "source": 2
+          }
+        ],
+        "reported": [
+          {
+            "text": "African spirits are increasingly global, with heritage a selling point; SA has a large craft-gin culture.",
+            "source": 2
+          },
+          {
+            "text": "Africa is one of the fastest-rising spirits markets, with premiumisation accelerating.",
+            "source": 3
+          }
+        ],
+        "notClaimed": [
+          "No claim that a foreign buyout is inherently wrong — the point is the ownership fork; the value-capture verdict is our interpretation.",
+          "Brand-level financials beyond the disclosed Spearhead raise are not published."
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Spearhead Spirits"
+      },
+      {
+        "kind": "brand",
+        "name": "Inverroche"
+      },
+      {
+        "kind": "brand",
+        "name": "Pernod Ricard"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "This is the hopeful mirror of the cognac story, and the fragile one. African-owned houses are finally building premium spirits with genuine provenance and taking them global — holding authorship and equity together, which the French model never lets African talent do. The danger is the exit ramp: the moment one of these brands proves the category, a Pernod Ricard or Diageo will offer to buy it, and the Inverroche precedent shows they will say yes.\n\nThe strategic task is to make African ownership the durable outcome, not the pre-acquisition phase. That means patient, locally-anchored capital and a founder discipline that treats a buyout as one option, not the goal — so the continent ends the decade owning a premium spirits house, not having sold three.",
+      "pullQuote": "Africa drinks cognac it will never own. The question for its own premium spirits is whether it keeps them — or just builds Pernod Ricard's next acquisition.",
+      "takeaways": [
+        {
+          "insight": "African-owned premium spirits can hold authorship and ownership together — the thing the cognac economy never allowed.",
+          "move": "Back these houses with patient local capital early, so global scale doesn't force a foreign buyout as the only liquidity path."
+        },
+        {
+          "insight": "The Inverroche buyout shows the default exit is a foreign conglomerate — success becomes an acquisition pipeline.",
+          "move": "Structure for durable local ownership (founder control, local co-investors) and treat a sale as optional, not the finish line."
+        }
+      ]
+    },
+    "imageUrl": "https://biz-file.com/c/2207/662287-1200x624.jpg?1",
+    "imageRefreshedAt": "2026-09-03T14:10:26.585Z",
+    "imageSource": "sourceLink-og:image",
+    "imageCredit": "Via Bizcommunity",
+    "imageSourceUrl": "https://www.bizcommunity.africa/Article/410/162/229623.html"
+  },
+  {
     "title": "The Visit Rwanda Playbook: Who Captures African Sports Marketing",
     "seoTitle": "Visit Rwanda's Football Deals: Do They Actually Pay Off?",
     "metaDescription": "Visit Rwanda pays European clubs — Arsenal, PSG, now Aston Villa (£20m/yr) — to wear its name. It's African money buying attention abroad. Does the tourism return justify it?",
