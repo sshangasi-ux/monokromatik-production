@@ -168,5 +168,83 @@
       }
     ],
     "relatedArticle": "the-coil-economy-who-authors-black-hair-and-who-cashes-the-cheque"
+  },
+  {
+    "id": "canal-multichoice-2025",
+    "acquirer": "Canal+",
+    "acquirerParent": "France",
+    "target": "MultiChoice (DStv)",
+    "targetCountry": "South Africa",
+    "sector": "Media",
+    "value": "~$3bn (94.39% stake)",
+    "date": "2025-09",
+    "status": "completed",
+    "verdict": "exported",
+    "read": "Canal+ completed a ~$3bn takeover of MultiChoice, DStv's parent — reaching 94.39% and delisting it from the JSE. Africa's biggest pay-TV network, French-controlled.",
+    "sources": [
+      {
+        "publisher": "Señal News",
+        "url": "https://senalnews.com/en/content/canal-completed-the-3-billion-multichoice-takeover",
+        "label": "Canal+ completed the $3bn MultiChoice takeover"
+      },
+      {
+        "publisher": "TechCabal",
+        "url": "https://techcabal.com/2025/10/21/how-canal-quietly-won-africas-tv-crown/",
+        "label": "How Canal+ took over MultiChoice"
+      }
+    ],
+    "relatedArticle": "who-owns-multichoice-dstv"
+  },
+  {
+    "id": "vodacom-safaricom-2026",
+    "acquirer": "Vodacom",
+    "acquirerParent": "South Africa / Vodafone (UK)",
+    "target": "Safaricom (15%, to 55% control)",
+    "targetCountry": "Kenya",
+    "sector": "Telecoms",
+    "value": "~$2.1bn",
+    "date": "2026-06",
+    "status": "completed",
+    "verdict": "mixed",
+    "read": "Vodacom bought 15% of Safaricom from the Kenyan government for ~$2.1bn to reach 55% control. Kenya's crown jewel and the M-Pesa rail now sit under Vodacom (ultimately Vodafone) — though the state keeps 20% and a hand on the chair.",
+    "sources": [
+      {
+        "publisher": "allAfrica",
+        "url": "https://allafrica.com/stories/202512100389.html",
+        "label": "Vodacom snaps up 20% more of Safaricom in $2.1bn deal"
+      },
+      {
+        "publisher": "African Markets",
+        "url": "https://www.african-markets.com/en/stock-markets/nse/vodacom-moves-to-majority-control-of-safaricom-with-new-20-stake-purchase",
+        "label": "Vodacom moves to majority control of Safaricom"
+      }
+    ],
+    "relatedArticle": "who-owns-safaricom"
+  },
+  {
+    "id": "heineken-distell-2023",
+    "acquirer": "Heineken",
+    "acquirerParent": "Netherlands",
+    "target": "Distell (Amarula)",
+    "targetCountry": "South Africa",
+    "sector": "Drinks",
+    "value": "~€2.2bn (65%)",
+    "date": "2023-04",
+    "status": "completed",
+    "verdict": "exported",
+    "read": "Heineken bought 65% of Distell — maker of Amarula, Nederburg and Klipdrift — for ~€2.2bn, folding South Africa's biggest drinks group into a Dutch brewer.",
+    "sources": [
+      {
+        "publisher": "The Drinks Business",
+        "url": "https://www.thedrinksbusiness.com/2023/04/heineken-completes-distell-and-namibia-breweries-acquisition/",
+        "label": "Heineken completes Distell acquisition"
+      },
+      {
+        "publisher": "Daily Maverick",
+        "url": "https://www.dailymaverick.co.za/article/2023-03-10-heineken-finally-gets-the-green-light-from-tribunal-to-buy-distell-making-progress-as-a-prime-africa-beverage-hub/",
+        "label": "Heineken gets tribunal green light for Distell"
+      }
+    ],
+    "relatedArticle": "who-owns-amarula"
   }
 ]
