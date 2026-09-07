@@ -54,6 +54,13 @@ export interface Report {
     note?: string;
     data: { label: string; value: number; display: string }[];
   };
+  /** Additional exhibits — same shape as `exhibit` — for flagship pieces that
+   *  carry more than one designed, sourced data cut. */
+  exhibits?: {
+    title: string;
+    note?: string;
+    data: { label: string; value: number; display: string }[];
+  }[];
 }
 
 const reports = reportsData as Report[];
