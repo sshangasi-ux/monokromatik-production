@@ -23,6 +23,7 @@ const EXPLORE = [
   { label: 'The Cultural-Signal Index', href: '/intelligence/signal-index' },
   { label: "Who's Buying Africa", href: '/whos-buying-africa' },
   { label: 'Who Owns Africa?', href: '/who-owns-africa' },
+  { label: 'Who Owns It? (checker)', href: '/who-owns' },
   { label: 'The Coil Economy', href: '/coil-economy' },
   { label: 'Intelligence', href: '/intelligence' },
   { label: 'Watch', href: '/watch' },
