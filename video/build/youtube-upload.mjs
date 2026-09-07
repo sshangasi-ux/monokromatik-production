@@ -44,7 +44,7 @@ const res = await youtube.videos.insert({
   part: ['snippet', 'status'],
   requestBody: {
     snippet: {
-      title: a.title.slice(0, 100),
+      title: (typeof args.title === 'string' ? args.title : a.title).slice(0, 100),
       description: description.slice(0, 5000),
       tags: (a.tags || []).slice(0, 15),
       categoryId: a.category === 'sports' ? '17' : '22',

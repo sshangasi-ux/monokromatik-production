@@ -11,6 +11,7 @@ interface Article {
   imageUrl?: string;
   readingTime?: number;
   publishedAt: string;
+  tags?: string[];
 }
 
 interface RelatedArticlesProps {
@@ -20,11 +21,29 @@ interface RelatedArticlesProps {
 }
 
 export default function RelatedArticles({ currentSlug, category, articles }: RelatedArticlesProps) {
-  // Filter articles: same category, exclude current, get 3 most recent
-  const relatedArticles = articles
-    .filter(article => article.slug !== currentSlug && article.category === category)
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, 3);
+  // Depth module: keep readers inside the cluster. Score candidates by shared
+  // tags (a who-owns piece surfaces its siblings, not just any recent same-category
+  // article), with a small same-category bonus, breaking ties by recency. Backfill
+  // with same-category-recent so it never shows fewer than before.
+  const curTags = new Set((articles.find(a => a.slug === currentSlug)?.tags || []).map(t => t.toLowerCase()));
+  const scored = articles
+    .filter(a => a.slug !== currentSlug)
+    .map(a => {
+      const shared = (a.tags || []).filter(t => curTags.has(t.toLowerCase())).length;
+      return { a, score: shared * 3 + (a.category === category ? 1 : 0), ts: new Date(a.publishedAt).getTime() };
+    })
+    .filter(x => x.score > 0)
+    .sort((x, y) => y.score - x.score || y.ts - x.ts)
+    .map(x => x.a);
+
+  const relatedArticles = scored.slice(0, 3);
+  if (relatedArticles.length < 3) {
+    const have = new Set([currentSlug, ...relatedArticles.map(a => a.slug)]);
+    const fill = articles
+      .filter(a => !have.has(a.slug) && a.category === category)
+      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+    relatedArticles.push(...fill.slice(0, 3 - relatedArticles.length));
+  }
 
   if (relatedArticles.length === 0) {
     return null;
