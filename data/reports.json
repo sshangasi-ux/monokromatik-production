@@ -3450,7 +3450,40 @@
         ]
       }
     ],
-    "statusNote": "Inaugural edition · v1 · expands quarterly with the tracker"
+    "statusNote": "Inaugural edition · v1 · expands quarterly with the tracker",
+    "exhibits": [
+      {
+        "title": "Where the value leaks — exported deals by sector",
+        "note": "Source: MonoKromatik 'Who's Buying Africa' tracker. Count of ownership-moving deals scored 'exported' in each sector to date. Drinks, music and beauty concentrate the leaks; fintech is the only sector with a retained deal against its exports.",
+        "data": [
+          {
+            "label": "Drinks",
+            "value": 3,
+            "display": "3"
+          },
+          {
+            "label": "Fintech",
+            "value": 2,
+            "display": "2"
+          },
+          {
+            "label": "Music",
+            "value": 2,
+            "display": "2"
+          },
+          {
+            "label": "Beauty",
+            "value": 2,
+            "display": "2"
+          },
+          {
+            "label": "Media",
+            "value": 1,
+            "display": "1"
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "brand-study-the-springbok-world-champion-under-owned",
@@ -3573,6 +3606,24 @@
         "paragraphs": [
           "This is an exemplar of the MonoKromatik brand-study format: a strategic read of a single brand through asset, value gap, ownership, category and cultural ledger, closing in segmented recommendations. It is built to the same paid-deliverable standard as our reports — framework, evidence, cultural read, segmented so-what, methodology — and demonstrates the commissioned-work we build for brands, agencies and their leadership.",
           "Sources and provenance: brand value and Brand Strength Index figures are Brand Finance's rugby brand rankings; the MTN exit and FNB's ~R160m main-sponsorship are reported by SA Rugby's own announcement and Bloomberg / Moneyweb / TechCentral; the US$75m Ackerley bid, the unions' rejection and the Rupert–Motsepe–MVM alternative by Sportico and News24; SA Rugby's characterisation of a private-equity deal as essential by the Irish Times; and the All Blacks / Silver Lake benchmark (~NZ$200m minority; ~US$2.4bn valuation) by Sportico. Figures reported rather than officially disclosed are labelled as such; the interpretation and the strategy are MonoKromatik's, and the underlying facts are cross-linked to the Who's Buying Africa desk so the read can be checked."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "title": "The value gap, made visible — the jersey re-rated",
+        "note": "Source: SA Rugby and Bloomberg / Moneyweb / TechCentral. MTN's reported ~R40–50m/yr front-of-shirt deal (2017–2025) versus FNB's ~R160m main sponsorship of all national teams from 2025 — the market pricing the brand nearer its strength in a single cycle. Illustrative of the under-monetisation, not a like-for-like scope comparison.",
+        "data": [
+          {
+            "label": "MTN (per year, 2017–25)",
+            "value": 45,
+            "display": "~R45m"
+          },
+          {
+            "label": "FNB (new main sponsorship)",
+            "value": 160,
+            "display": "R160m"
+          }
         ]
       }
     ]

@@ -63,6 +63,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
             {r.keyStats && r.keyStats.length > 0 && <StatStrip items={r.keyStats} tone="light" />}
             {r.index && <IndexScorecard scores={r.index} />}
             {r.exhibit && <BarChart title={r.exhibit.title} note={r.exhibit.note} data={r.exhibit.data} />}
+            {r.exhibits?.map((ex, i) => <BarChart key={i} title={ex.title} note={ex.note} data={ex.data} />)}
           </div>
         )}
         {live && r.sections && r.sections.length > 0 ? (
