@@ -5,7 +5,7 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, BarChart } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive } from '../../lib/commerce';
+import { membershipsLive, reportCheckoutUrl, INDEX_REPORT } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -81,21 +81,38 @@ export default async function ReportFeature({ report }: { report: Report }) {
                 </div>
               </section>
             ))}
-            {locked && (
+            {locked && (() => {
+              // Two ways past the gate: the recurring membership (best value, all
+              // reports) or a one-off purchase of just this report (pay-per-report).
+              // The one-off CTA appears only once the Paystack link is configured.
+              const oneOff = reportCheckoutUrl();
+              const price = INDEX_REPORT.priceLabel;
+              return (
               <div className="border border-mono-amber bg-mono-soft-white p-8 text-center">
                 <Lock className="mx-auto text-mono-amber mb-4" size={24} />
                 <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">
                   {ACCESS_LABEL[r.access].toUpperCase()}
                 </p>
                 <p className="font-body text-mono-charcoal max-w-md mx-auto">
-                  The full report is part of the Intelligence membership.
+                  {oneOff
+                    ? 'Read every report with the Intelligence membership — or buy just this one.'
+                    : 'The full report is part of the Intelligence membership.'}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3 justify-center">
                   <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                  {oneOff && (
+                    <a href={oneOff} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+                      BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={16} />
+                    </a>
+                  )}
                   <Link href="/account?next=/reports" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
                 </div>
+                {oneOff && (
+                  <p className="mt-4 text-[11px] tracking-[0.04em] text-mono-gray font-body">One-time purchase · secure checkout via Paystack</p>
+                )}
               </div>
-            )}
+              );
+            })()}
           </article>
         ) : (
           // Not yet published: an honest commissioning state, not a dead end.
