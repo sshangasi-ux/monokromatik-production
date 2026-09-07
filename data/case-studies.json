@@ -11323,5 +11323,634 @@
     "media": [],
     "rubricVersion": "v2.0",
     "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "multichoice-dstv-africas-tv-crown-goes-french",
+    "title": "Decode: MultiChoice Built Africa's TV Crown — Then France Took It",
+    "standfirst": "DStv is the pay-TV platform that authored African broadcasting for a generation. In 2025 Canal+ completed a ~$3bn takeover of parent MultiChoice, reaching 94%+ and delisting it from the JSE. We score the brand: African-authored screen infrastructure, now French-controlled.",
+    "brand": "MultiChoice",
+    "collection": "African-Authored Brand Moves",
+    "market": "South Africa / Africa",
+    "readingTime": "5 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Canal+ completing a ~$3bn takeover of MultiChoice, reaching 94.39% and delisting it from the JSE, is reported by Señal News and TechCabal. Subscriber figures move and are treated as background.",
+    "publishedAt": "2026-09-07T11:00:00.000Z",
+    "tags": [
+      "multichoice",
+      "dstv",
+      "canal+",
+      "south africa",
+      "media",
+      "pay-tv",
+      "ownership",
+      "value capture"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "MultiChoice built the definitive African pay-TV ecosystem — DStv, SuperSport, local-language content and Showmax — a genuinely category-defining piece of screen infrastructure."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 3,
+        "note": "The platform and its content are unmistakably African-authored, but control now sits with France's Canal+ (94%+), and the company has been delisted from the JSE. Authorship African; ownership exported."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Decades of continental scale and sports-rights dominance. Marked down for the streaming-era subscriber pressure that made it a takeover target in the first place."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "Shaped African broadcasting and sport for a generation. Hugely consequential — but the ownership consequence is that the value now routes to Paris."
+      }
+    ],
+    "context": [
+      "MultiChoice, through DStv and SuperSport, built the platform on which African pay-TV, live sport and local-language content scaled for three decades — the closest thing the continent had to a home-owned screen champion.",
+      "In 2025, France's Canal+ completed a takeover worth about $3bn, reaching 94.39% of MultiChoice and delisting it from the Johannesburg Stock Exchange. Africa's biggest pay-TV network became French-controlled."
+    ],
+    "strategicBet": [
+      "For Canal+, the bet is scale and content: fold Africa's largest pay-TV subscriber base and sports-rights portfolio into a global media group facing the same streaming pressures everywhere.",
+      "For MultiChoice, the takeover is the endgame of a defensive decade — a home champion that authored the category but, squeezed by global streamers, chose (or was pushed toward) a foreign parent with deeper pockets."
+    ],
+    "creativeMove": [
+      "The decode-worthy move is the reframing of an African media institution as an acquisition target rather than an acquirer. MultiChoice authored the infrastructure; it did not end up owning it.",
+      "That is the screen-economy version of the pattern this desk tracks: the content, the audience and the cultural authorship are African; the controlling equity is not."
+    ],
+    "africanRead": [
+      "The African read should credit what was built: MultiChoice's authorship of African broadcasting is real and durable, and Canal+'s capital may sustain it against streamers that would otherwise hollow it out.",
+      "But the ownership answer is blunt. The continent's definitive screen platform is now controlled from France and off the JSE. Africa authored the crown; it no longer owns it."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Canal+ completed a ~$3bn takeover of MultiChoice, reaching 94.39% of the company.",
+        "MultiChoice was delisted from the Johannesburg Stock Exchange following the takeover.",
+        "MultiChoice is the parent of DStv, Africa's largest pay-TV network."
+      ],
+      "reported": [
+        "Subscriber counts across MultiChoice's markets move constantly and are treated as background."
+      ],
+      "notClaimed": [
+        "We do not assert current subscriber numbers or post-deal financials."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Authoring the category is not owning it.",
+        "body": "MultiChoice built African pay-TV and still became the target, not the buyer. Cultural authorship without a defensible ownership structure is an exit waiting to happen."
+      },
+      {
+        "title": "Streaming pressure is an ownership event.",
+        "body": "The global-streaming squeeze is what turned a home champion into an acquisition. Defending the balance sheet is defending the ownership."
+      }
+    ],
+    "pullQuotes": [
+      "Africa authored the crown. It no longer owns it.",
+      "MultiChoice built the infrastructure — and did not end up owning it."
+    ],
+    "sources": [
+      {
+        "publisher": "Señal News",
+        "label": "Canal+ Completed the $3 Billion MultiChoice Takeover",
+        "href": "https://senalnews.com/en/content/canal-completed-the-3-billion-multichoice-takeover",
+        "use": "Canal+ completing the ~$3bn MultiChoice takeover; 94.39%; JSE delisting."
+      },
+      {
+        "publisher": "TechCabal",
+        "label": "How Canal+ quietly won Africa's TV crown",
+        "href": "https://techcabal.com/2025/10/21/how-canal-quietly-won-africas-tv-crown/",
+        "use": "Canal+'s multi-year path to full control of MultiChoice."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "access-bank-the-african-acquirer",
+    "title": "Decode: Access Bank, the African That Does the Buying",
+    "standfirst": "On a desk full of African brands being bought, Access is the one doing the buying. A Nigerian, NGX-listed bank that grew into Africa's largest by customers through some 20 acquisitions — African capital consolidating the continent, not ceding it.",
+    "brand": "Access Bank",
+    "collection": "African-Authored Brand Moves",
+    "market": "Nigeria / Africa",
+    "readingTime": "4 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Access Holdings as an NGX-listed Nigerian group that became Africa's largest bank by customer base after the 2019 Diamond Bank merger, expanding via roughly 20 acquisitions, is reported by BusinessDay and corroborated by Access Bank's public record. Financial figures move and are treated as background.",
+    "publishedAt": "2026-09-07T11:10:00.000Z",
+    "tags": [
+      "access bank",
+      "access holdings",
+      "nigeria",
+      "banking",
+      "pan-african",
+      "ownership",
+      "value capture"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Deciding to be the consolidator rather than the consolidated — an African bank buying its way across the continent — is a genuinely non-obvious strategic posture."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "Nigerian-owned and NGX-listed, and the acquirer rather than the acquired. African capital doing the buying is exactly the authorship this desk exists to find."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Africa's largest bank by customer base after ~20 acquisitions. Marked down for the integration risk that scaling by acquisition always carries."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "A pan-African banking champion whose upside stays on the continent — proof that consolidation can run African-to-African."
+      }
+    ],
+    "context": [
+      "Access Bank, owned by NGX-listed Access Holdings, became the largest bank in Africa by customer base after its 2019 merger with Diamond Bank, and has since built a pan-African footprint through roughly 20 acquisitions across the continent.",
+      "What makes it a decode is the direction of travel. Where most African brands on this desk are bought by foreign giants, Access is the buyer — Nigerian capital consolidating banking assets across African markets."
+    ],
+    "strategicBet": [
+      "The bet is that scale in African banking should be built by an African acquirer, not surrendered to one. Rather than sell control to a global bank, Access uses its own listed equity to roll up assets and build continental reach.",
+      "It is a wager that pan-African consolidation — long talked about, rarely executed — can be led from Lagos rather than London or Paris."
+    ],
+    "creativeMove": [
+      "The move worth scoring is the inversion of the pattern. Access took the acquirer's seat that African brands almost never occupy, turning a mid-size Nigerian bank into a continental group by buying rather than being bought.",
+      "That posture is itself the brand: 'the African bank that consolidates Africa' is a claim that reframes what African capital can do at scale."
+    ],
+    "africanRead": [
+      "The African read should not romanticise it — scaling by acquisition carries real integration, governance and concentration risk, and being big is not the same as being sound.",
+      "But on the desk's core question, Access answers cleanly: the value stays home, and the consolidation runs African-to-African. It belongs in the same column as Dangote and Flutterwave — champions that build and hold, rather than build and sell."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Access Holdings is a Nigerian group listed on the Nigerian Exchange (NGX).",
+        "After its 2019 merger with Diamond Bank, Access became the largest bank in Africa by customer base.",
+        "Access expanded across the continent through roughly 20 acquisitions to build a pan-African group."
+      ],
+      "reported": [
+        "Gross-earnings, asset and profit figures move and are treated as reported background."
+      ],
+      "notClaimed": [
+        "We do not assert current financial metrics, which change each reporting period."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Take the acquirer's seat.",
+        "body": "Access proves African capital can consolidate African assets instead of selling to a foreign buyer. The seat at the table is a choice — most African brands never take it."
+      },
+      {
+        "title": "Scale is a risk, not just a trophy.",
+        "body": "Twenty acquisitions is twenty integrations. The lesson is that pan-African ambition has to be matched by governance, or the scale becomes the exposure."
+      }
+    ],
+    "pullQuotes": [
+      "On a desk full of African brands being bought, Access is the one doing the buying.",
+      "Pan-African consolidation, led from Lagos rather than London."
+    ],
+    "sources": [
+      {
+        "publisher": "BusinessDay",
+        "label": "Access's pan-African bet delivers Africa's biggest banking capital growth",
+        "href": "https://businessday.ng/africa/article/accesss-pan-african-bet-delivers-africas-biggest-banking-capital-growth/",
+        "use": "Access Holdings as an NGX-listed Nigerian group; ~20 acquisitions; pan-African expansion."
+      },
+      {
+        "publisher": "Wikipedia",
+        "label": "Access Bank plc",
+        "href": "https://en.wikipedia.org/wiki/Access_Bank_plc",
+        "use": "Access as Africa's largest bank by customers after the 2019 Diamond Bank merger."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "tusker-kenyas-icon-on-a-foreign-balance-sheet",
+    "title": "Decode: Tusker, Kenya's Icon on a Foreign Balance Sheet",
+    "standfirst": "'Tusker, my beer, my country' is as Kenyan as a brand gets. But its maker, EABL, is ~65% Diageo-controlled — and in December 2025 Diageo agreed to sell that majority to Japan's Asahi. We score the brand: powerful national authorship, foreign ownership passed between multinationals.",
+    "brand": "Tusker",
+    "collection": "African-Authored Brand Moves",
+    "market": "Kenya / East Africa",
+    "readingTime": "4 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Diageo's ~65% stake in NSE-listed EABL (Tusker's maker) and its December 2025 agreement to sell that stake to Asahi for ~$2.3bn are reported by Diageo's own release and Beverage Daily. The deal was pending regulatory approval at time of writing.",
+    "publishedAt": "2026-09-07T11:20:00.000Z",
+    "tags": [
+      "tusker",
+      "eabl",
+      "diageo",
+      "asahi",
+      "kenya",
+      "drinks",
+      "ownership",
+      "value capture"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 3,
+        "note": "Tusker's brand-building — welding a lager to Kenyan national identity — is strong and enduring, if not category-inventing."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 3,
+        "note": "As a cultural brand Tusker is deeply Kenyan-authored. But maker EABL is Diageo-controlled and now headed for Japan's Asahi; the ownership authorship is firmly foreign."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Dominant East African brewer with a beloved flagship — execution is not the weakness here."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "A genuine cultural icon; but the ownership consequence is value that has sat off-continent for years and is now trading between multinationals."
+      }
+    ],
+    "context": [
+      "Tusker is the beer synonymous with Kenya — a national-identity brand in a bottle. It is made by East African Breweries plc (EABL), listed in Nairobi, and EABL is controlled by the British drinks giant Diageo, which holds about 65%.",
+      "In December 2025, Diageo agreed to sell its entire 65% EABL stake to Japan's Asahi Group for about $2.3bn, pending Kenyan regulatory approval — moving East Africa's beer crown from British to Japanese hands."
+    ],
+    "strategicBet": [
+      "For the multinationals, EABL is a prized emerging-market asset: a dominant brewer with an iconic flagship and pricing power across East Africa, worth trading at a premium.",
+      "For Tusker the brand, none of this changes the label — but all of it changes the balance sheet. The cultural authorship stays Kenyan; the ownership keeps moving further away."
+    ],
+    "creativeMove": [
+      "The decode-worthy tension is between the strength of the national-identity branding and the complete detachment of that identity from ownership. Few brands wear their country as openly as Tusker; few are as foreign-owned.",
+      "It is the clearest East African example of the desk's rule: national identity on the label, foreign ownership on the balance sheet — and the balance sheet is what changes hands."
+    ],
+    "africanRead": [
+      "The African read should hold both truths: Tusker's authorship as a Kenyan cultural icon is real and unexportable, and foreign capital has run the brewery competently for years.",
+      "But 'my beer, my country' has been British-owned and is about to be Japanese-owned. The pride is authentic; the ownership is not Kenyan, and the value has long since left."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Tusker is made by East African Breweries plc (EABL), listed on the Nairobi Securities Exchange.",
+        "Diageo holds about 65% of EABL.",
+        "In December 2025 Diageo agreed to sell its 65% EABL stake to Japan's Asahi for about $2.3bn, pending Kenyan approval."
+      ],
+      "reported": [
+        "The deal's implied ~$4.8bn value for all of EABL is treated as reported background."
+      ],
+      "notClaimed": [
+        "We do not assert the deal has closed; it was pending regulatory approval at time of writing."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "National branding is not national ownership.",
+        "body": "Tusker wears Kenya on the bottle and is foreign-owned. Wrapping a brand in a flag does nothing for where the value lands."
+      },
+      {
+        "title": "Foreign-owned assets trade between foreigners.",
+        "body": "Once ownership leaves, the brand becomes an asset passed from one multinational to the next — the country it represents is not in the room."
+      }
+    ],
+    "pullQuotes": [
+      "'My beer, my country' — British-owned, and about to be Japanese.",
+      "The pride is authentic. The ownership is not Kenyan."
+    ],
+    "sources": [
+      {
+        "publisher": "Diageo",
+        "label": "Diageo to sell its EABL shareholding to Asahi",
+        "href": "https://www.diageo.com/en/news-and-media/press-releases/2025/diageo-enters-into-agreement-to-sell-its-shareholding-in-eabl-to-asahi-group-holdings-ltd",
+        "use": "Diageo's ~65% EABL stake; agreement to sell to Asahi."
+      },
+      {
+        "publisher": "Beverage Daily",
+        "label": "Diageo sells East African Breweries to Asahi in $2.3bn deal",
+        "href": "https://www.beveragedaily.com/Article/2025/12/18/diageo-sells-east-african-breweries-to-asahi-in-23bn-deal/",
+        "use": "December 2025 deal terms; ~$2.3bn for the 65% stake; pending Kenyan approval."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "amarula-the-most-african-liqueur-with-a-dutch-owner",
+    "title": "Decode: Amarula, the Most African Liqueur With a Dutch Owner",
+    "standfirst": "A cream liqueur made from the marula fruit that grows across Southern Africa — Amarula could not be from anywhere else. Its maker, Distell, was bought by Heineken for ~€2.2bn in 2023. We score the brand: unexportable African provenance, exported ownership.",
+    "brand": "Amarula",
+    "collection": "African-Authored Brand Moves",
+    "market": "South Africa / Global",
+    "readingTime": "4 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Heineken's 2023 acquisition of a 65% stake in Distell (Amarula's maker) for about €2.2bn, cleared by the South African Competition Tribunal, is reported by The Drinks Business and Daily Maverick.",
+    "publishedAt": "2026-09-07T11:30:00.000Z",
+    "tags": [
+      "amarula",
+      "distell",
+      "heineken",
+      "south africa",
+      "drinks",
+      "spirits",
+      "ownership",
+      "value capture"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "A cream liqueur built on the marula fruit — an unexportable Southern African provenance turned into a globally distributed brand — is a genuinely original product idea."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 3,
+        "note": "The product's origin is unmistakably Southern African. But ownership sits with Heineken via Distell; the authorship of the thing is African, the authorship of the balance sheet Dutch."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 4,
+        "note": "Global distribution and durable brand recognition — the elephant on the bottle travels. Execution is a strength."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "A recognisable African export, but the margin now accrues to a European brewer — provenance African, value exported."
+      }
+    ],
+    "context": [
+      "Amarula is a cream liqueur made from marula fruit that grows across Southern Africa — a product whose origin story cannot be relocated. It is one of Africa's most recognisable drinks exports.",
+      "Its maker, Distell, was acquired by Heineken in 2023 — a 65% stake worth about €2.2bn, cleared by the South African Competition Tribunal — folding Amarula, Nederburg and Klipdrift into a Dutch-owned beverages unit."
+    ],
+    "strategicBet": [
+      "For Heineken, the bet is a portfolio of African drinks brands with export potential and unexportable provenance — exactly the kind of authored specificity a multinational cannot manufacture in-house.",
+      "For Amarula, foreign ownership buys global distribution muscle. The trade is reach in exchange for the margin, which now sits in the Netherlands."
+    ],
+    "creativeMove": [
+      "The decode-worthy point is the gap between how African the product is and how foreign the ownership is. You cannot make Amarula anywhere but Southern Africa; you can, and Heineken did, own it from Amsterdam.",
+      "It is the beverage version of the desk's pattern — and part of a wider pattern of African drinks brands being assembled onto a handful of European balance sheets."
+    ],
+    "africanRead": [
+      "The African read should credit the product: Amarula is a genuine, original, Southern African creation with real global standing, and Heineken's distribution extends its reach.",
+      "But the elephant on the bottle is African and the balance sheet behind it is Dutch. The provenance was unexportable; the ownership was not."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Heineken completed its acquisition of a 65% stake in Distell — Amarula's maker — in April 2023, in a deal worth about €2.2bn.",
+        "The transaction was cleared by the South African Competition Tribunal.",
+        "Amarula was folded, with other Distell brands, into a Heineken-owned beverages unit."
+      ],
+      "reported": [
+        "Amarula's global sales volumes are treated as reported background."
+      ],
+      "notClaimed": [
+        "We do not assert current Amarula-specific revenue, which Heineken does not break out."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Unexportable provenance, exportable ownership.",
+        "body": "You can protect where a product must be made and still lose who owns it. Amarula proves provenance and ownership are separate fights — and Africa keeps winning the first, losing the second."
+      },
+      {
+        "title": "Distribution is the price of the margin.",
+        "body": "Foreign ownership buys global reach, but the margin goes with it. The question is always whether the reach was worth the cap table."
+      }
+    ],
+    "pullQuotes": [
+      "The elephant on the bottle is African. The balance sheet behind it is Dutch.",
+      "You cannot make Amarula anywhere but Southern Africa. You can own it from Amsterdam."
+    ],
+    "sources": [
+      {
+        "publisher": "The Drinks Business",
+        "label": "Heineken completes Distell and Namibia Breweries acquisition",
+        "href": "https://www.thedrinksbusiness.com/2023/04/heineken-completes-distell-and-namibia-breweries-acquisition/",
+        "use": "Heineken's April 2023 completion of the Distell acquisition (65%, ~€2.2bn); Amarula among the brands."
+      },
+      {
+        "publisher": "Daily Maverick",
+        "label": "Heineken gets tribunal green light to buy Distell",
+        "href": "https://www.dailymaverick.co.za/article/2023-03-10-heineken-finally-gets-the-green-light-from-tribunal-to-buy-distell-making-progress-as-a-prime-africa-beverage-hub/",
+        "use": "South African Competition Tribunal approval of Heineken's Distell takeover."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "nedbank-the-intra-african-acquirer",
+    "title": "Decode: Nedbank Buys Kenya — the Intra-African Acquirer",
+    "standfirst": "In 2026 South Africa's Nedbank moved to take a majority stake in Kenya's NCBA Group for ~$855m. It's the rarer kind of African deal — African-buys-African — but the value still crosses a border. We score the move: African capital consolidating, with a mixed ownership verdict.",
+    "brand": "Nedbank",
+    "collection": "African-Authored Brand Moves",
+    "market": "South Africa / East Africa",
+    "readingTime": "4 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Nedbank's ~$855m bid for a majority (66%) of Kenya's NCBA Group, and its regulatory approval, are reported by Ecofin Agency, Global Finance and Nedbank Group's own announcement.",
+    "publishedAt": "2026-09-07T11:40:00.000Z",
+    "tags": [
+      "nedbank",
+      "ncba",
+      "kenya",
+      "south africa",
+      "banking",
+      "intra-african",
+      "ownership",
+      "value capture"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Expanding into East Africa by taking majority control of an established Kenyan bank is a clear, well-aimed intra-African growth move."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 4,
+        "note": "Nedbank is a South-African, JSE-listed bank — African capital doing the acquiring. On a desk of foreign buyers, an African acquirer scores well on authorship."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 3,
+        "note": "The NCBA acquisition is recent and integrating; the execution case is promising but unproven, so it earns a middle mark."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 3,
+        "note": "Consolidation on the continent — but the value moves from Kenyan to South African hands. Intra-African, yet still a border crossed: a genuinely mixed verdict."
+      }
+    ],
+    "context": [
+      "In 2026, South Africa's Nedbank moved to acquire a majority stake — reported at 66% — in Kenya's NCBA Group for about $855m, one of the year's marquee cross-border African bank deals, and won regulatory approval to do so.",
+      "It is the rarer kind of deal on this desk: not a foreign multinational buying African, but one African bank buying another — consolidation that stays on the continent, even as ownership crosses from Nairobi to Johannesburg."
+    ],
+    "strategicBet": [
+      "The bet is East African growth: Nedbank buys an established Kenyan franchise and a foothold in one of the continent's most dynamic banking markets, rather than building from scratch.",
+      "It is also a statement about who gets to consolidate African banking — a South African champion taking the acquirer's role that foreign banks have often played on the continent."
+    ],
+    "creativeMove": [
+      "The decode-worthy nuance is that this is African-buys-African, and yet the value still moves. Nedbank keeps the upside on the continent — but not in Kenya; ownership shifts to South Africa.",
+      "That makes Nedbank a genuinely mixed case: the consolidation is intra-African, a clear positive against the export pattern, but it is not local ownership retained."
+    ],
+    "africanRead": [
+      "The African read should welcome the direction: capital and control staying on the continent is materially better than another Canal+ or Heineken deal, and Nedbank is an African acquirer doing what African champions rarely do.",
+      "But it is not an unqualified win for Kenya. The majority of a Kenyan institution now sits in South African hands. Intra-African consolidation is progress; it is not the same as local ownership retained."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Nedbank moved to acquire a majority stake (reported at 66%) in Kenya's NCBA Group for about $855m.",
+        "Nedbank won regulatory approval to take the majority stake.",
+        "Nedbank is a South African bank listed on the Johannesburg Stock Exchange."
+      ],
+      "reported": [
+        "The precise post-deal shareholding and integration timeline are treated as reported background."
+      ],
+      "notClaimed": [
+        "We do not assert the deal's final completion terms, which were still progressing at time of writing."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "African-buys-African is better — and still crosses a border.",
+        "body": "Nedbank keeps the value on the continent, which beats a foreign takeover. But Kenyan ownership still moved to South Africa: 'mixed', not 'retained'."
+      },
+      {
+        "title": "Someone will consolidate African banking — pick who.",
+        "body": "Consolidation is coming either way. The only question is whether an African acquirer or a foreign one takes the seat. Nedbank took it."
+      }
+    ],
+    "pullQuotes": [
+      "The rarer kind of African deal: African-buys-African — and the value still crosses a border.",
+      "Intra-African consolidation is progress. It is not the same as local ownership retained."
+    ],
+    "sources": [
+      {
+        "publisher": "Ecofin Agency",
+        "label": "Nedbank Launches $855 Million Bid for 66% of Kenya's NCBA Group",
+        "href": "https://www.ecofinagency.com/news/2201-52145-nedbank-launches-855-million-bid-for-66-of-kenya-s-ncba-group",
+        "use": "Nedbank's ~$855m bid for 66% of NCBA."
+      },
+      {
+        "publisher": "Nedbank Group",
+        "label": "Nedbank announces intention to acquire majority stake in NCBA Group",
+        "href": "https://group.nedbank.co.za/news-and-insights/press/2026/nedbank-announces-intention-to-acquire-majority-stake-in-ncba-group-to-accelerate-east-african-growth.html",
+        "use": "Nedbank's own announcement of the NCBA majority-stake acquisition for East African growth."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
+  },
+  {
+    "slug": "air-peace-the-nigerian-airline-that-broke-a-duopoly",
+    "title": "Decode: Air Peace, the Nigerian Airline That Broke a Duopoly",
+    "standfirst": "A wholly Nigerian-owned airline launched Lagos–London in 2024 and forced a fare war on a route foreign carriers had priced as they pleased. We score the move: rare full African ownership meeting a direct, measurable consumer win.",
+    "brand": "Air Peace",
+    "collection": "African-Authored Brand Moves",
+    "market": "Nigeria / UK",
+    "readingTime": "4 min read",
+    "access": "public",
+    "verification": "partial",
+    "verificationNote": "Air Peace's March 2024 launch of Lagos–London Gatwick, and the subsequent fare 'price war' that cut foreign carriers' round-trip economy fares, are reported by Aerotime and ThisDay. Air Peace is chaired/owned by Allen Onyema; specific fare figures are treated as reported.",
+    "publishedAt": "2026-09-07T11:50:00.000Z",
+    "tags": [
+      "air peace",
+      "allen onyema",
+      "nigeria",
+      "aviation",
+      "lagos-london",
+      "ownership",
+      "value capture",
+      "consumer"
+    ],
+    "decode": [
+      {
+        "label": "IDEA",
+        "level": 4,
+        "note": "Entering the lucrative Lagos–London route to break a long-standing foreign-carrier duopoly is a bold, non-obvious bet for a Nigerian airline."
+      },
+      {
+        "label": "AUTHORSHIP",
+        "level": 5,
+        "note": "Wholly Nigerian-owned, founder-led. A homegrown challenger taking on BA and Virgin on their most profitable African route — the purest African ownership on this batch."
+      },
+      {
+        "label": "EXECUTION",
+        "level": 3,
+        "note": "Launched and sustained the route past a year, but constrained — Gatwick rather than Heathrow (slots were refused), and the operational strain of a widebody long-haul on a single carrier."
+      },
+      {
+        "label": "CONSEQUENCE",
+        "level": 4,
+        "note": "Directly triggered a fare war that cut round-trip economy prices for Nigerian travellers — a measurable consumer win and a cracked duopoly, not just a symbolic entry."
+      }
+    ],
+    "context": [
+      "On 30 March 2024, Air Peace — a wholly Nigerian-owned carrier chaired by Allen Onyema — flew its first Lagos–London service, using Gatwick after UK authorities declined to make Heathrow slots available.",
+      "Its round-trip economy fare, pegged well below what foreign carriers had charged on the route, immediately triggered a price war: incumbent airlines cut their fares in response, handing Nigerian travellers a direct benefit."
+    ],
+    "strategicBet": [
+      "The bet is that a Nigerian carrier can profitably contest a route foreign airlines had treated as a captive, high-margin market — using price as the wedge and national ownership as the story.",
+      "It is aviation as economic sovereignty: keeping some of the value of Nigeria's most valuable air corridor in Nigerian hands, and passing part of it to Nigerian passengers."
+    ],
+    "creativeMove": [
+      "The decode-worthy move is pairing full African ownership with an immediate, measurable consumer outcome. Air Peace did not just enter a route — it reset its price, and the incumbents had to follow.",
+      "That combination — homegrown ownership plus a visible win for ordinary travellers — is rarer and more powerful than either alone."
+    ],
+    "africanRead": [
+      "The African read should be clear about the constraints: Gatwick is not Heathrow, long-haul economics are unforgiving, and sustaining the route is a harder test than launching it.",
+      "But the answer to the desk's question is emphatic. Fully Nigerian-owned, it broke a foreign duopoly and cut fares for its own people. On authorship and consumer consequence, few moves on the continent score higher."
+    ],
+    "evidence": {
+      "confirmed": [
+        "Air Peace launched Lagos–London Gatwick service on 30 March 2024.",
+        "It used Gatwick because Heathrow slots were not made available to it.",
+        "Its entry triggered a fare 'price war' that cut foreign carriers' round-trip economy fares on the route."
+      ],
+      "reported": [
+        "Specific fare figures (e.g. round-trip economy pricing) are treated as reported and move over time."
+      ],
+      "notClaimed": [
+        "We do not assert the route's current profitability or load factors."
+      ]
+    },
+    "lessons": [
+      {
+        "title": "Ownership plus a consumer win beats either alone.",
+        "body": "Air Peace is African-owned AND cut prices for African travellers. The rare double — sovereignty and a tangible benefit — is what makes it score."
+      },
+      {
+        "title": "Launching is not sustaining.",
+        "body": "Breaking a duopoly is the easy headline; holding a long-haul route against incumbents with Heathrow slots and deeper fleets is the real test."
+      }
+    ],
+    "pullQuotes": [
+      "Fully Nigerian-owned, it broke a foreign duopoly and cut fares for its own people.",
+      "Air Peace didn't just enter the route — it reset the price, and the incumbents had to follow."
+    ],
+    "sources": [
+      {
+        "publisher": "Aerotime",
+        "label": "Price war erupts on London–Lagos flights",
+        "href": "https://www.aerotime.aero/articles/air-peace-london-lagos-price-war",
+        "use": "Air Peace's entry triggering a fare price war on the Lagos–London route."
+      },
+      {
+        "publisher": "ThisDay",
+        "label": "Air Peace's London Flights: One Year After",
+        "href": "https://www.thisdaylive.com/2025/08/01/air-peaces-london-flights-one-year-after/",
+        "use": "The Lagos–London route one year on; Gatwick launch; sustained operation."
+      }
+    ],
+    "media": [],
+    "rubricVersion": "v2.0",
+    "scoredOn": "2026-09-07"
   }
 ]
