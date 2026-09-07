@@ -73,6 +73,34 @@ const filenameOf = (url: string) => (url.split('/').pop() || '').split('?')[0];
 const isOwned = (url: string) => url.startsWith('/');
 const isStock = (url: string) => STOCK.some((h) => url.toLowerCase().includes(h));
 
+// THUMBNAIL — a remote image pinned to a thumbnail size renders as a pixelated
+// hero. This is URL-pattern only (no network calls — the guard must stay fast and
+// offline), and deliberately narrow: it fires on unambiguous sizing tokens where a
+// real pixel dimension is below the floor, never on percentage crops (cropw=100)
+// or full-size renders (width=1200). This is the class the AFCON-2027 piece shipped
+// — a .../ratio1x1/150/150/... crop that passed every provenance check. Owned local
+// assets are exempt: they are full-size originals whose filenames often carry
+// unrelated numbers.
+const THUMB_MIN = 400;
+function thumbnailReason(url: string): string | null {
+  if (isOwned(url)) return null;
+  const u = url.toLowerCase();
+  // news-CDN sizing path, e.g. .../landscape_ratio3x2/1200/800/... (width/height)
+  const ratio = u.match(/ratio\d+x\d+\/(\d{2,4})\/(\d{2,4})(?:\/|$)/);
+  if (ratio && (+ratio[1] < THUMB_MIN || +ratio[2] < THUMB_MIN)) return `${ratio[1]}x${ratio[2]} render`;
+  // WordPress-style crop suffix, e.g. name-150x150.jpg
+  const wp = u.match(/[-_](\d{2,4})x(\d{2,4})\.(?:jpe?g|png|webp|gif)(?:[?#]|$)/);
+  if (wp && (+wp[1] < THUMB_MIN || +wp[2] < THUMB_MIN)) return `${wp[1]}x${wp[2]} crop`;
+  // explicit pixel width/height query below the floor — NOT percentage crops
+  for (const m of u.matchAll(/[?&](?:width|height|w|h)=(\d{1,4})(?:&|$)/g)) {
+    if (+m[1] > 0 && +m[1] < THUMB_MIN) return `${m[0].replace(/[?&]/, '')} render`;
+  }
+  // Google/CDN size token, e.g. =s150, =w200
+  const s = u.match(/=(?:s|w|h)(\d{2,3})(?:-|$|&)/);
+  if (s && +s[1] < THUMB_MIN) return `=${s[0].slice(1)} render`;
+  return null;
+}
+
 // Reuse detection across every piece. We keep each user's topic tokens so we can
 // tell legitimate reuse (an article and its companion case study on the SAME
 // subject sharing the definitive image) from generic filler (the same image on
@@ -90,6 +118,13 @@ function check(m: Media) {
   // watchdog fell through — a slug-named Pexels file on the Canal+/screen story.
   if (isStock(src) || isStock(m.credit ?? '') || isStock(m.sourceUrl ?? '')) {
     failures.push(`STOCK   ${where} — ${filenameOf(src)} is from a stock library (credit: ${m.credit || 'n/a'}). Generic by definition; re-source from the story's own reporting.`);
+    return;
+  }
+
+  // THUMBNAIL — a remote image rendered below the size floor ships a pixelated hero.
+  const thumb = thumbnailReason(src);
+  if (thumb) {
+    failures.push(`THUMB   ${where} — ${filenameOf(src)} is a ${thumb} (thumbnail-sized). Re-source the full-size image (e.g. the source page's og:image).`);
     return;
   }
 
