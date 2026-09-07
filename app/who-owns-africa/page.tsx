@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import NewsletterSignup from '../components/NewsletterSignup';
 import { getAllArticles } from '../../lib/articles';
 
 const URL = 'https://www.monokromatik.com/who-owns-africa';
@@ -222,6 +223,22 @@ export default function WhoOwnsAfricaPage() {
           </div>
         </section>
       )}
+
+      {/* The Ownership Ledger — the free capture engine */}
+      <section className="py-14 md:py-18 bg-mono-amber/10 border-t border-mono-amber/30">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-3">THE OWNERSHIP LEDGER · FREE</p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-black max-w-2xl">
+            Every week: who bought which African brand — and who kept the value.
+          </h2>
+          <p className="mt-3 font-body text-mono-charcoal max-w-xl">
+            The deals that moved ownership of an African brand, each with its value-capture verdict. Free — and the fastest way to stay ahead of who owns Africa.
+          </p>
+          <div className="mt-6 max-w-md">
+            <NewsletterSignup variant="default" source="ownership-ledger" />
+          </div>
+        </div>
+      </section>
 
       {/* Franchise binding — the value-capture desk */}
       <section className="py-14 md:py-18 bg-mono-soft-white border-t border-mono-gray/15">
