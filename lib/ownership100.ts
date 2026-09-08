@@ -33,6 +33,8 @@ export interface Ownership100 {
   edition: string;
   cohortSize: number;
   target: number;
+  /** True once the edition reaches the full 100 — flips the "building out" copy. */
+  complete?: boolean;
   updatedAt: string;
   standfirst: string;
   methodology: string;
