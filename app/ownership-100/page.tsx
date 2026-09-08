@@ -101,6 +101,9 @@ export default function Ownership100Page() {
                     {href && <ArrowUpRight size={15} className="text-mono-gray group-hover:text-mono-amber transition-colors" />}
                   </div>
                   <p className="mt-1.5 text-sm text-mono-charcoal font-body leading-snug md:pr-6">{e.note}</p>
+                  {e.sourceLabel && !e.articleSlug && (
+                    <p className="mt-1 text-[11px] tracking-[0.04em] text-mono-gray font-body italic">Source: {e.sourceLabel}</p>
+                  )}
                   <p className="mt-1 text-[11px] tracking-[0.12em] font-display font-bold text-mono-gray md:hidden">{e.sector.toUpperCase()}</p>
                 </div>
                 <div className="hidden md:block">

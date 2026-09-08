@@ -108,6 +108,26 @@ export default async function ReportFeature({ report }: { report: Report }) {
                 </p>
               </section>
             )}
+            {locked && r.counterCase && (
+              // Ungated teaser of the counter-case: we show that the piece argues
+              // against itself — the heading and framing — but hold the actual
+              // counter-arguments behind the gate. It is a trust signal that
+              // entices rather than gives away the analysis.
+              <section className="border border-mono-black bg-mono-black text-mono-white p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <Scale size={18} className="text-mono-amber-bright" />
+                  <h2 className="text-[10px] tracking-[0.3em] text-mono-amber-bright font-display font-bold">
+                    {(r.counterCase.heading || 'THE BEAR CASE').toUpperCase()}
+                  </h2>
+                </div>
+                {r.counterCase.intro && (
+                  <p className="text-lg text-mono-soft-white font-feature italic leading-snug">{r.counterCase.intro}</p>
+                )}
+                <p className="mt-5 text-[13px] tracking-[0.04em] text-mono-gray font-body">
+                  This report makes {r.counterCase.points.length} arguments against its own read — in full, inside the membership. We publish the counter-case because a read you cannot argue against is a read you cannot trust.
+                </p>
+              </section>
+            )}
             {locked && (() => {
               // Two ways past the gate: the recurring membership (best value, all
               // reports) or a one-off purchase of just this report (pay-per-report).

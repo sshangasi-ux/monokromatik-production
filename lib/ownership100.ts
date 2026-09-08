@@ -19,6 +19,13 @@ export interface Ownership100Entry {
   note: string;
   articleSlug?: string;
   dealId?: string;
+  /**
+   * Provenance for a tracked entry that does not yet have a full on-site brief:
+   * the named basis for the ownership claim (e.g. "Company filings · Reuters").
+   * Entries carry a brief (articleSlug), a deal (dealId), or a sourceLabel — a
+   * ledger row is never an unsourced assertion.
+   */
+  sourceLabel?: string;
 }
 
 export interface Ownership100 {
