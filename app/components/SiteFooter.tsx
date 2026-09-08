@@ -20,6 +20,7 @@ function LinkedinIcon({ size = 17 }: { size?: number }) {
 }
 
 const EXPLORE = [
+  { label: 'The Ownership 100', href: '/ownership-100' },
   { label: 'The Cultural-Signal Index', href: '/intelligence/signal-index' },
   { label: "Who's Buying Africa", href: '/whos-buying-africa' },
   { label: 'Who Owns Africa?', href: '/who-owns-africa' },

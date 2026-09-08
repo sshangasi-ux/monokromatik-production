@@ -61,6 +61,21 @@ export interface Report {
     note?: string;
     data: { label: string; value: number; display: string }[];
   }[];
+  /**
+   * The counter-case — the "Bear Case / Room for Disagreement" module. A visible,
+   * first-class part of every paid piece: the strongest arguments against our own
+   * read, stated plainly. Borrowed from transparent-epistemics newsrooms — it is
+   * what makes a demanding reader trust the rest of the analysis, because we
+   * pre-empt their objection on the page rather than hiding it.
+   */
+  counterCase?: {
+    /** Defaults to "THE BEAR CASE" when omitted. */
+    heading?: string;
+    /** One short standfirst framing why the counter-case matters here. */
+    intro?: string;
+    /** The individual counter-arguments, each a full point. */
+    points: string[];
+  };
 }
 
 const reports = reportsData as Report[];
