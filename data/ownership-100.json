@@ -95,7 +95,7 @@
       "ownership": "foreign",
       "status": "Exported",
       "note": "South Africa's biggest mobile operator is JSE-listed but majority-controlled by the UK's Vodafone.",
-      "sourceLabel": "Vodacom Group filings · JSE"
+      "articleSlug": "who-owns-vodacom"
     },
     {
       "rank": 9,
@@ -105,8 +105,8 @@
       "ownerCountry": "India",
       "ownership": "foreign",
       "status": "Exported",
-      "note": "One of the continent's largest mobile networks, majority-owned by India's Bharti and dual-listed in London and Lagos.",
-      "sourceLabel": "Airtel Africa plc filings · LSE"
+      "note": "One of the continent's largest mobile networks; India's Bharti Airtel raised its stake to about 79% in 2026, dual-listed in London and Lagos.",
+      "articleSlug": "who-owns-airtel-africa"
     },
     {
       "rank": 10,
@@ -437,7 +437,7 @@
       "ownership": "foreign",
       "status": "Exported",
       "note": "Morocco's telecoms leader across North and West Africa is controlled by the UAE's Etisalat.",
-      "sourceLabel": "Maroc Telecom / e& filings"
+      "articleSlug": "who-owns-maroc-telecom"
     },
     {
       "rank": 40,
@@ -649,7 +649,7 @@
       "ownership": "foreign",
       "status": "Exported",
       "note": "A household Nigerian food brand majority-owned by the Swiss parent, with a domestic minority float.",
-      "sourceLabel": "Nestlé Nigeria filings · NGX"
+      "articleSlug": "who-owns-nestle-nigeria"
     },
     {
       "rank": 59,
@@ -701,10 +701,10 @@
       "sector": "Beauty",
       "owner": "Rihanna + LVMH (Kendo)",
       "ownerCountry": "Barbados / France",
-      "ownership": "foreign",
-      "status": "Exported",
-      "note": "The category-redefining diaspora beauty brand — authored by Rihanna, majority-controlled through France's LVMH.",
-      "sourceLabel": "LVMH / Kendo · widely reported"
+      "ownership": "mixed",
+      "status": "Contested",
+      "note": "The category-redefining diaspora beauty brand — a 50/50 joint venture between Rihanna and France's LVMH, which is now exploring a sale of its half.",
+      "articleSlug": "who-owns-fenty-beauty"
     },
     {
       "rank": 64,
