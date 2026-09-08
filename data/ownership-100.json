@@ -39,7 +39,7 @@
       "ownership": "foreign",
       "status": "Exported",
       "note": "Founded in Johannesburg by the Oppenheimers, the mining giant is now UK-incorporated and London-primary — South African heritage, foreign domicile.",
-      "sourceLabel": "Anglo American plc filings · LSE/JSE"
+      "articleSlug": "who-owns-anglo-american"
     },
     {
       "rank": 4,
@@ -62,7 +62,7 @@
       "ownership": "african",
       "status": "Retained",
       "note": "The world's largest phosphate exporter and one of Africa's biggest companies, ~95% owned by the Moroccan state.",
-      "sourceLabel": "OCP Group filings · Moroccan state ownership"
+      "articleSlug": "who-owns-ocp"
     },
     {
       "rank": 6,
@@ -73,7 +73,7 @@
       "ownership": "foreign",
       "status": "Exported",
       "note": "Castle, Carling and the rest of South Africa's beer heritage now sit inside the world's largest brewer, Belgian-owned since the SABMiller takeover.",
-      "sourceLabel": "AB InBev / former SABMiller filings"
+      "articleSlug": "who-owns-sab"
     },
     {
       "rank": 7,
