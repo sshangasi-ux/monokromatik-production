@@ -15199,5 +15199,386 @@
       "take": "SAB is South Africa's beer, and it is Belgian-owned. Castle and Carling are as South African as the Highveld, but since AB InBev bought SABMiller in 2016 the brands are authored in Johannesburg and owned in Leuven. The Johannesburg listing is heritage; the balance sheet is abroad.",
       "pullQuote": "Castle and Carling are South African to the last drop — and Belgian on the balance sheet."
     }
+  },
+  {
+    "title": "Who Owns Vodacom?",
+    "seoTitle": "Who Owns Vodacom? The UK's Vodafone",
+    "metaDescription": "Vodacom, South Africa's biggest mobile operator, is majority-owned by the UK's Vodafone, which holds about 65% of the JSE-listed group. The network most South Africans use is controlled from Britain.",
+    "slug": "who-owns-vodacom",
+    "excerpt": "Short answer: Vodafone, the UK telecoms group, which holds ~65% of the JSE-listed Vodacom.",
+    "content": "**Vodacom — South Africa's largest mobile network — is majority-owned by Vodafone, the British telecoms group.** [Vodafone's stake in Vodacom rose to about 65% after Vodacom bought Vodafone's Egypt business in 2022](https://mybroadband.co.za/news/business-telecoms/444694-here-is-who-really-owns-vodacom.html) [1], paid partly in new Vodacom shares. Vodacom is [listed on the Johannesburg Stock Exchange](https://www.vodafone.com/~/media/Files/V/vodafone/corp/results-and-presentations/vodafone-group-holding-structure-10-11-2025.pdf) [2], but control sits in the UK.\n\nThat is the tell this desk keeps finding in African telecoms: a national champion with a big local shareholder base, controlled from abroad — the same shape as [Safaricom](/article/who-owns-safaricom), which Vodacom itself now controls, and above it Vodafone again. The SIM in most South African phones connects, ultimately, to a London balance sheet. See the [full ledger](/ownership-100).",
+    "category": "technology",
+    "tags": [
+      "who owns",
+      "vodacom",
+      "vodafone",
+      "telecoms",
+      "south africa",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://mybroadband.co.za/news/business-telecoms/444694-here-is-who-really-owns-vodacom.html",
+    "sourceName": "MyBroadband",
+    "publishedAt": "2026-09-08T10:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "MyBroadband",
+        "label": "Here is who really owns Vodacom",
+        "url": "https://mybroadband.co.za/news/business-telecoms/444694-here-is-who-really-owns-vodacom.html",
+        "use": "Vodafone's stake in Vodacom rose to ~65% after the 2022 Vodafone Egypt deal; Vodacom is JSE-listed."
+      },
+      {
+        "publisher": "Vodafone Group",
+        "label": "Vodafone Group holding structure",
+        "url": "https://www.vodafone.com/~/media/Files/V/vodafone/corp/results-and-presentations/vodafone-group-holding-structure-10-11-2025.pdf",
+        "use": "Vodafone's majority shareholding in the JSE-listed Vodacom Group."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~65% Vodafone",
+            "label": "The UK group's stake in Vodacom after the 2022 Egypt deal",
+            "source": 1
+          },
+          {
+            "value": "JSE-listed",
+            "label": "Vodacom trades in Johannesburg; control sits in the UK",
+            "source": 1
+          },
+          {
+            "value": "controls Safaricom",
+            "label": "Vodacom itself now controls Kenya's Safaricom — Vodafone above it",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Vodacom"
+      },
+      {
+        "kind": "brand",
+        "name": "Vodafone"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Vodacom is South Africa's network and Britain's asset. Vodafone owns about two-thirds of it, and the local JSE listing is where the shares trade, not where the control sits. The most-used SIM in South Africa answers, in the end, to London.",
+      "pullQuote": "South Africa dials the numbers; Vodafone owns the network."
+    }
+  },
+  {
+    "title": "Who Owns Airtel Africa?",
+    "seoTitle": "Who Owns Airtel Africa? India's Bharti Airtel",
+    "metaDescription": "Airtel Africa, one of the continent's largest mobile and money networks, is controlled by India's Bharti Airtel, which raised its stake to about 79% in 2026. London- and Lagos-listed, Indian-owned — and getting more so.",
+    "slug": "who-owns-airtel-africa",
+    "excerpt": "Short answer: Bharti Airtel of India, which owns about 79% of the London- and Lagos-listed Airtel Africa.",
+    "content": "**Airtel Africa — one of the continent's largest mobile and mobile-money networks, across 14 countries — is controlled by Bharti Airtel, the Indian telecoms group.** Bharti floated Airtel Africa in London in 2019 holding about two-thirds of it, and in [2026 raised its stake to roughly 79%](https://technext24.com/2026/06/29/bharti-airtel-buys-airtel-africa-shares/) [1], tightening Indian control. Airtel Africa is [listed on the London Stock Exchange with a secondary listing in Lagos](https://nairametrics.com/2026/06/28/bharti-airtel-acquires-16-3-stake-in-airtel-africa-from-icil-in-share-for-share-deal/) [2] — but the free float shrinks as the parent buys in.\n\nSo the network hundreds of millions of Africans use to call and to pay is Indian-owned, and increasingly so. It's the same ownership question this desk runs from [Tecno](/article/who-owns-tecno) to [MTN](/article/who-owns-mtn) — read the [full ledger](/ownership-100).",
+    "category": "technology",
+    "tags": [
+      "who owns",
+      "airtel africa",
+      "bharti airtel",
+      "telecoms",
+      "india",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://technext24.com/2026/06/29/bharti-airtel-buys-airtel-africa-shares/",
+    "sourceName": "Technext24",
+    "publishedAt": "2026-09-08T10:05:00.000Z",
+    "sources": [
+      {
+        "publisher": "Technext24",
+        "label": "Bharti Airtel buys Airtel Africa shares, now owns 79.22%",
+        "url": "https://technext24.com/2026/06/29/bharti-airtel-buys-airtel-africa-shares/",
+        "use": "Bharti Airtel raised its Airtel Africa stake to ~79% in 2026."
+      },
+      {
+        "publisher": "Nairametrics",
+        "label": "Bharti Airtel acquires 16.3% stake in Airtel Africa from ICIL",
+        "url": "https://nairametrics.com/2026/06/28/bharti-airtel-acquires-16-3-stake-in-airtel-africa-from-icil-in-share-for-share-deal/",
+        "use": "Airtel Africa's London primary and Lagos secondary listings; Bharti's controlling stake since the 2019 IPO."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~79% Bharti (2026)",
+            "label": "Indian parent Bharti Airtel's stake in Airtel Africa, raised in 2026",
+            "source": 1
+          },
+          {
+            "value": "IPO 2019, London",
+            "label": "Airtel Africa floated in London; Bharti held ~two-thirds",
+            "source": 2
+          },
+          {
+            "value": "LSE + Lagos",
+            "label": "Primary London listing, secondary in Lagos — free float shrinking",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Airtel Africa"
+      },
+      {
+        "kind": "brand",
+        "name": "Bharti Airtel"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Airtel Africa is an African network with an Indian owner that keeps buying more of it. Bharti listed it in London in 2019 and pushed its stake to about 79% in 2026 — the free float shrinking as control concentrates in India. The call connects in Lagos or Nairobi; the equity compounds in Delhi.",
+      "pullQuote": "Dialled across Africa, owned in India: Airtel Africa's cap table keeps moving to Delhi."
+    }
+  },
+  {
+    "title": "Who Owns Maroc Telecom?",
+    "seoTitle": "Who Owns Maroc Telecom? The UAE's e& (Etisalat)",
+    "metaDescription": "Maroc Telecom, Morocco's telecoms leader and a major pan-African operator, is controlled by the UAE's Etisalat (e&), which holds about 53%; the Moroccan state keeps roughly 22%. North Africa's incumbent, Gulf-owned.",
+    "slug": "who-owns-maroc-telecom",
+    "excerpt": "Short answer: the UAE's Etisalat (now e&), which holds ~53%; the Moroccan state keeps ~22%.",
+    "content": "**Maroc Telecom — Morocco's dominant operator and a telecoms force across West and Central Africa — is controlled by Etisalat, the UAE group now branded e&.** Etisalat [bought a 53% controlling stake from Vivendi in 2014 for about €4.2bn](https://www.financierworldwide.com/etisalat-buys-controlling-stake-in-maroc-telecom-for-42bn) [1] and [holds around 53% today, with the Moroccan state keeping roughly 22%](https://telecomreview.com/articles/telecom-operators/5257-etisalat-increases-maroc-telecom-ownership-stake-to-53/) [2]. It is [listed in Casablanca and on Euronext Paris](https://telecomreview.com/articles/telecom-operators/5257-etisalat-increases-maroc-telecom-ownership-stake-to-53/) [2].\n\nThe former state monopoly that carries much of North and West Africa's connectivity now answers to Abu Dhabi. It's the Gulf-capital version of the pattern this desk tracks from [Safaricom](/article/who-owns-safaricom) onward — foreign control of the pipes. See the [full ledger](/ownership-100).",
+    "category": "technology",
+    "tags": [
+      "who owns",
+      "maroc telecom",
+      "etisalat",
+      "morocco",
+      "telecoms",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.financierworldwide.com/etisalat-buys-controlling-stake-in-maroc-telecom-for-42bn",
+    "sourceName": "Financier Worldwide",
+    "publishedAt": "2026-09-08T10:10:00.000Z",
+    "sources": [
+      {
+        "publisher": "Financier Worldwide",
+        "label": "Etisalat buys controlling stake in Maroc Telecom for €4.2bn",
+        "url": "https://www.financierworldwide.com/etisalat-buys-controlling-stake-in-maroc-telecom-for-42bn",
+        "use": "Etisalat bought a 53% controlling stake in Maroc Telecom from Vivendi in 2014 for ~€4.2bn."
+      },
+      {
+        "publisher": "Telecom Review",
+        "label": "Etisalat increases Maroc Telecom ownership stake to 53%",
+        "url": "https://telecomreview.com/articles/telecom-operators/5257-etisalat-increases-maroc-telecom-ownership-stake-to-53/",
+        "use": "Etisalat/e& holds ~53%, the Moroccan state ~22%; Casablanca and Euronext Paris listings."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~53% e&/Etisalat",
+            "label": "The UAE group's controlling stake in Maroc Telecom",
+            "source": 2
+          },
+          {
+            "value": "~22% Moroccan state",
+            "label": "The government's remaining holding",
+            "source": 2
+          },
+          {
+            "value": "€4.2bn, 2014",
+            "label": "Etisalat's purchase of control from Vivendi",
+            "source": 1
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Maroc Telecom"
+      },
+      {
+        "kind": "brand",
+        "name": "Etisalat (e&)"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Maroc Telecom is North Africa's incumbent and a pan-African heavyweight, and it's Gulf-controlled. Etisalat's 53% has run the company since 2014; the Moroccan state's 22% is a stake, not the wheel. The connectivity is Moroccan; the control is Emirati.",
+      "pullQuote": "Morocco's phone lines, owned from Abu Dhabi."
+    }
+  },
+  {
+    "title": "Who Owns Nestlé Nigeria?",
+    "seoTitle": "Who Owns Nestlé Nigeria? Switzerland's Nestlé S.A.",
+    "metaDescription": "Nestlé Nigeria, maker of Maggi, Milo and Golden Morn, is about 71% owned by its Swiss parent Nestlé S.A. Listed in Lagos, but the household Nigerian food brand is Swiss-controlled.",
+    "slug": "who-owns-nestle-nigeria",
+    "excerpt": "Short answer: Nestlé S.A. of Switzerland, which owns about 71% of the NGX-listed Nestlé Nigeria.",
+    "content": "**Nestlé Nigeria — the company behind Maggi, Milo and Golden Morn on Nigerian shelves — is majority-owned by its Swiss parent, Nestlé S.A.** As of [end-2025 the Swiss holding company owned about 71% of Nestlé Nigeria](https://africanfinancials.com/company/ng-nestle/) [1], a stake it has [steadily increased by buying shares in the Lagos-listed subsidiary](https://www.nipc.gov.ng/2021/03/06/nestle-s-a-acquires-additional-shares-in-nestle-nigeria-worth-n2-92-billion/) [2].\n\nNestlé Nigeria is a genuine local institution — Nigerian-staffed, partly Nigerian-sourced, NGX-listed — but the equity, and the dividends, route to Vevey. It's the everyday-food chapter of the ownership question this desk runs across [drinks](/article/who-owns-nigerian-breweries) and [noodles](/article/who-owns-indomie). See the [full ledger](/ownership-100).",
+    "category": "business",
+    "tags": [
+      "who owns",
+      "nestle nigeria",
+      "nestle",
+      "switzerland",
+      "food",
+      "nigeria",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://africanfinancials.com/company/ng-nestle/",
+    "sourceName": "AfricanFinancials",
+    "publishedAt": "2026-09-08T10:15:00.000Z",
+    "sources": [
+      {
+        "publisher": "AfricanFinancials",
+        "label": "Nestlé Nigeria Plc",
+        "url": "https://africanfinancials.com/company/ng-nestle/",
+        "use": "Nestlé S.A. of Switzerland owned ~71% of Nestlé Nigeria as of end-2025; NGX-listed."
+      },
+      {
+        "publisher": "NIPC",
+        "label": "Nestlé S.A. Acquires Additional Shares in Nestlé Nigeria",
+        "url": "https://www.nipc.gov.ng/2021/03/06/nestle-s-a-acquires-additional-shares-in-nestle-nigeria-worth-n2-92-billion/",
+        "use": "The Swiss parent has repeatedly increased its stake by buying Nestlé Nigeria shares."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "~71% Swiss",
+            "label": "Nestlé S.A.'s stake in Nestlé Nigeria at end-2025",
+            "source": 1
+          },
+          {
+            "value": "Vevey, Switzerland",
+            "label": "Where the parent — and the value — sits",
+            "source": 1
+          },
+          {
+            "value": "buying in",
+            "label": "The Swiss parent has kept raising its stake",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Nestlé Nigeria"
+      },
+      {
+        "kind": "brand",
+        "name": "Nestlé S.A."
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Nestlé Nigeria is a Nigerian household name and a Swiss-owned company. Maggi and Milo are cooked into Nigerian kitchens, but ~71% of the equity — and the dividend stream — belongs to Nestlé in Vevey, which keeps buying more. Local institution; foreign cap table.",
+      "pullQuote": "Maggi and Milo are Nigerian staples — and Swiss-owned to the tune of ~71%."
+    }
+  },
+  {
+    "title": "Who Owns Fenty Beauty?",
+    "seoTitle": "Who Owns Fenty Beauty? Rihanna and LVMH, 50/50",
+    "metaDescription": "Fenty Beauty is a 50/50 joint venture between Rihanna's Roraj Trade and LVMH's Kendo Brands. Rihanna kept real ownership, but the French luxury group holds half — and in 2025 began exploring a sale of its stake.",
+    "slug": "who-owns-fenty-beauty",
+    "excerpt": "Short answer: Rihanna and France's LVMH own it 50/50, through a joint venture with LVMH's Kendo Brands.",
+    "content": "**Fenty Beauty — the brand Rihanna built into a category-changer on radical shade inclusivity — is a 50/50 joint venture between the artist and the French luxury group LVMH.** Launched in 2017 with [LVMH's beauty incubator Kendo Brands, Rihanna (via Roraj Trade) and LVMH each hold half](https://www.cnbc.com/2025/10/21/lvmh-explores-sale-of-its-50percent-stake-in-rihanna-backed-fenty-beauty-sources-say.html) [1]. Unusually for a celebrity brand, she secured real equity and creative control — but LVMH runs the manufacturing, distribution and Sephora retail, and owns the other half.\n\nThat balance is now in play: in [2025 LVMH began exploring a sale of its 50% stake, with the brand valued at perhaps $1–2bn](https://www.blackenterprise.com/rihanna-lvmh-ownership-fenty-beauty-sale/) [2]. Diaspora-authored, half French-owned, and possibly about to change hands — Fenty is the [beauty chapter](/coil-economy) of the authorship-versus-ownership question. See the [full ledger](/ownership-100).",
+    "category": "culture",
+    "tags": [
+      "who owns",
+      "fenty beauty",
+      "rihanna",
+      "lvmh",
+      "beauty",
+      "diaspora",
+      "value capture"
+    ],
+    "format": "brief",
+    "sourceLink": "https://www.cnbc.com/2025/10/21/lvmh-explores-sale-of-its-50percent-stake-in-rihanna-backed-fenty-beauty-sources-say.html",
+    "sourceName": "CNBC",
+    "publishedAt": "2026-09-08T10:20:00.000Z",
+    "sources": [
+      {
+        "publisher": "CNBC",
+        "label": "LVMH explores sale of its 50% stake in Rihanna-backed Fenty Beauty",
+        "url": "https://www.cnbc.com/2025/10/21/lvmh-explores-sale-of-its-50percent-stake-in-rihanna-backed-fenty-beauty-sources-say.html",
+        "use": "Fenty Beauty is a 50/50 JV — Rihanna (Roraj Trade) and LVMH's Kendo Brands each own half; ~$450m 2024 net sales."
+      },
+      {
+        "publisher": "Black Enterprise",
+        "label": "Rihanna May Lose Partner Owner Of Fenty Beauty As LVMH Explores Sale",
+        "url": "https://www.blackenterprise.com/rihanna-lvmh-ownership-fenty-beauty-sale/",
+        "use": "LVMH exploring a sale of its 50% Fenty stake; valuation ~$1–2bn."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "Ownership at a glance",
+        "items": [
+          {
+            "value": "50 / 50",
+            "label": "Rihanna and LVMH each own half of Fenty Beauty",
+            "source": 1
+          },
+          {
+            "value": "2017 launch",
+            "label": "Founded with LVMH's Kendo Brands incubator",
+            "source": 1
+          },
+          {
+            "value": "$1–2bn (2025)",
+            "label": "Valuation as LVMH explores selling its half",
+            "source": 2
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Fenty Beauty"
+      },
+      {
+        "kind": "person",
+        "name": "Rihanna"
+      },
+      {
+        "kind": "brand",
+        "name": "LVMH"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "verified",
+      "take": "Fenty is the rare celebrity beauty brand where the star actually owns half — Rihanna's real equity is the story. But the other half, and the entire commercial engine, is LVMH's, and the French group is now looking to sell its stake. Authored by a Barbadian icon, half-owned in Paris, and in play.",
+      "pullQuote": "Rihanna owns half of Fenty. LVMH owns the other half — and is looking to sell it."
+    }
   }
 ]
