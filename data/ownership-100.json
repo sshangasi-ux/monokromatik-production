@@ -1,11 +1,11 @@
 {
   "title": "The Ownership 100",
   "edition": "2026 · Inaugural cohort",
-  "cohortSize": 25,
+  "cohortSize": 40,
   "target": 100,
   "updatedAt": "2026-09-08",
   "standfirst": "The definitive ranked ledger of who owns Africa's most valuable brands — the phone in your hand, the channel on your screen, the drink in your glass. Ranked by continental reach and value at stake; every entry links to its sourced file. The inaugural cohort maps the brands the desk has investigated; we are building it out to a full 100.",
-  "methodology": "Each entry is drawn from a published Who's Buying Africa file or a deal in the ownership tracker, with the owner and headquarters sourced to named reporting. 'Retained' means African-owned; 'Exported' means the controlling equity now sits offshore; 'Contested' marks a brand where ownership is live — being sold, or being brought home. Ranking is by continental reach, value at stake and cultural centrality, assessed by the desk; it is a considered editorial ordering, not a market-cap table. Authorship is treated separately from ownership on purpose: many of the highest-ranked brands are African-authored and foreign-owned — that gap is the story the ledger exists to make legible.",
+  "methodology": "Each entry is drawn from a published Who's Buying Africa file (linked), a deal in the ownership tracker, or named public-record reporting — a ledger row is never an unsourced assertion. 'Retained' means African-owned; 'Exported' means the controlling equity now sits offshore; 'Contested' marks a brand where ownership is live, mixed, or being brought home. Ranking is by continental reach, value at stake and cultural centrality, assessed by the desk; it is a considered editorial ordering, not a market-cap table. Authorship is treated separately from ownership on purpose: many of the highest-ranked brands are African-authored and foreign-owned — that gap is the story the ledger exists to make legible. The cohort grows each edition toward a full 100; brief-pending entries carry their source and are upgraded to a full file over time.",
   "entries": [
     {
       "rank": 1,
@@ -55,6 +55,17 @@
     },
     {
       "rank": 5,
+      "brand": "Airtel Africa",
+      "sector": "Telecoms",
+      "owner": "Bharti Airtel",
+      "ownerCountry": "India",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "One of the continent's largest mobile networks, majority-owned by India's Bharti and dual-listed in London and Lagos.",
+      "sourceLabel": "Airtel Africa plc filings · LSE"
+    },
+    {
+      "rank": 6,
       "brand": "Dangote",
       "sector": "Industrials",
       "owner": "Aliko Dangote",
@@ -65,7 +76,18 @@
       "articleSlug": "who-owns-dangote"
     },
     {
-      "rank": 6,
+      "rank": 7,
+      "brand": "Naspers / Prosus",
+      "sector": "Technology · Media",
+      "owner": "Naspers (public)",
+      "ownerCountry": "South Africa",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "Africa's most valuable technology group by far — South African-founded and JSE-controlled, even as it invests globally.",
+      "sourceLabel": "Naspers/Prosus annual filings · JSE"
+    },
+    {
+      "rank": 8,
       "brand": "Indomie",
       "sector": "Food",
       "owner": "Tolaram / Indofood",
@@ -76,7 +98,7 @@
       "articleSlug": "who-owns-indomie"
     },
     {
-      "rank": 7,
+      "rank": 9,
       "brand": "Shoprite",
       "sector": "Retail",
       "owner": "Public markets / PIC",
@@ -87,9 +109,20 @@
       "articleSlug": "who-owns-shoprite"
     },
     {
-      "rank": 8,
+      "rank": 10,
+      "brand": "Standard Bank",
+      "sector": "Banking",
+      "owner": "Public (ICBC ~20%)",
+      "ownerCountry": "South Africa / China",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "Africa's largest bank by assets — JSE-listed and majority South African-held, with China's ICBC the biggest single shareholder.",
+      "sourceLabel": "Standard Bank Group filings · JSE"
+    },
+    {
+      "rank": 11,
       "brand": "Nando's",
-      "sector": "Food / Hospitality",
+      "sector": "Food · Hospitality",
       "owner": "Enthoven family",
       "ownerCountry": "South Africa",
       "ownership": "african",
@@ -98,7 +131,7 @@
       "articleSlug": "who-owns-nandos"
     },
     {
-      "rank": 9,
+      "rank": 12,
       "brand": "Glo / Globacom",
       "sector": "Telecoms",
       "owner": "Mike Adenuga",
@@ -109,7 +142,18 @@
       "articleSlug": "who-owns-glo"
     },
     {
-      "rank": 10,
+      "rank": 13,
+      "brand": "Sasol",
+      "sector": "Energy · Chemicals",
+      "owner": "Public (JSE/NYSE)",
+      "ownerCountry": "South Africa",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "A South African energy-and-chemicals major, publicly held and JSE/NYSE-listed — capability and ownership both domestic.",
+      "sourceLabel": "Sasol Ltd filings · JSE/NYSE"
+    },
+    {
+      "rank": 14,
       "brand": "Amarula",
       "sector": "Spirits",
       "owner": "Heineken",
@@ -121,7 +165,7 @@
       "dealId": "heineken-distell-2023"
     },
     {
-      "rank": 11,
+      "rank": 15,
       "brand": "Flutterwave",
       "sector": "Fintech",
       "owner": "Founder + investors (independent)",
@@ -133,7 +177,7 @@
       "dealId": "flutterwave-mono-2026"
     },
     {
-      "rank": 12,
+      "rank": 16,
       "brand": "Paystack",
       "sector": "Fintech",
       "owner": "Stripe",
@@ -144,7 +188,18 @@
       "articleSlug": "who-owns-paystack"
     },
     {
-      "rank": 13,
+      "rank": 17,
+      "brand": "Tiger Brands",
+      "sector": "Food",
+      "owner": "Public (JSE)",
+      "ownerCountry": "South Africa",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "One of Africa's biggest packaged-food groups, JSE-listed and South African-controlled.",
+      "sourceLabel": "Tiger Brands Ltd filings · JSE"
+    },
+    {
+      "rank": 18,
       "brand": "Tusker",
       "sector": "Drinks",
       "owner": "EABL / Diageo → Asahi",
@@ -156,7 +211,7 @@
       "dealId": "asahi-eabl-2025"
     },
     {
-      "rank": 14,
+      "rank": 19,
       "brand": "Nigerian Breweries",
       "sector": "Drinks",
       "owner": "Heineken",
@@ -167,7 +222,7 @@
       "articleSlug": "who-owns-nigerian-breweries"
     },
     {
-      "rank": 15,
+      "rank": 20,
       "brand": "Access Bank",
       "sector": "Banking",
       "owner": "Access Holdings (public)",
@@ -179,7 +234,18 @@
       "dealId": "nedbank-ncba-2026"
     },
     {
-      "rank": 16,
+      "rank": 21,
+      "brand": "Ethiopian Airlines",
+      "sector": "Aviation",
+      "owner": "Government of Ethiopia",
+      "ownerCountry": "Ethiopia",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "Africa's largest and most profitable airline, wholly state-owned — a rare fully-retained continental champion.",
+      "sourceLabel": "Ethiopian Airlines · government ownership, widely reported"
+    },
+    {
+      "rank": 22,
       "brand": "OPay",
       "sector": "Fintech",
       "owner": "Opera + international funds",
@@ -190,7 +256,7 @@
       "articleSlug": "who-owns-opay"
     },
     {
-      "rank": 17,
+      "rank": 23,
       "brand": "Jumia",
       "sector": "E-commerce",
       "owner": "Public (NYSE); largely foreign",
@@ -201,7 +267,18 @@
       "articleSlug": "who-owns-jumia"
     },
     {
-      "rank": 18,
+      "rank": 24,
+      "brand": "Econet / Cassava",
+      "sector": "Telecoms · Tech",
+      "owner": "Strive Masiyiwa",
+      "ownerCountry": "Zimbabwe",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "A pan-African telecoms and digital group built and controlled by its Zimbabwean founder.",
+      "sourceLabel": "Econet Wireless / Cassava Technologies · founder control, widely reported"
+    },
+    {
+      "rank": 25,
       "brand": "Mavin Records",
       "sector": "Music",
       "owner": "Universal Music Group",
@@ -213,7 +290,7 @@
       "dealId": "universal-mavin-2024"
     },
     {
-      "rank": 19,
+      "rank": 26,
       "brand": "Guinness Nigeria",
       "sector": "Drinks",
       "owner": "Tolaram (Diageo keeps brand + royalty)",
@@ -225,7 +302,51 @@
       "dealId": "tolaram-guinness-nigeria-2025"
     },
     {
-      "rank": 20,
+      "rank": 27,
+      "brand": "Sonatel",
+      "sector": "Telecoms",
+      "owner": "Orange",
+      "ownerCountry": "France",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "Senegal's telecoms leader is controlled by France's Orange, with the state holding a minority.",
+      "sourceLabel": "Sonatel / Orange filings"
+    },
+    {
+      "rank": 28,
+      "brand": "Takealot",
+      "sector": "E-commerce",
+      "owner": "Naspers",
+      "ownerCountry": "South Africa",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "South Africa's leading online retailer, owned by Naspers — the value stays in South African hands.",
+      "sourceLabel": "Naspers filings · Takealot ownership, widely reported"
+    },
+    {
+      "rank": 29,
+      "brand": "Showmax",
+      "sector": "Media · Streaming",
+      "owner": "MultiChoice + NBCUniversal",
+      "ownerCountry": "France / US",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "Africa's home-grown streamer, now majority-owned through Canal+-controlled MultiChoice with US tech behind it.",
+      "sourceLabel": "MultiChoice / NBCUniversal announcements, widely reported"
+    },
+    {
+      "rank": 30,
+      "brand": "Boomplay",
+      "sector": "Music · Streaming",
+      "owner": "Transsion + NetEase",
+      "ownerCountry": "China",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "Africa's biggest music-streaming app by users — Chinese-owned, from the same house as Tecno.",
+      "sourceLabel": "Transsion / NetEase · Boomplay ownership, widely reported"
+    },
+    {
+      "rank": 31,
       "brand": "The Springboks",
       "sector": "Sport",
       "owner": "SA Rugby (equity sale live)",
@@ -236,7 +357,7 @@
       "articleSlug": "who-owns-the-springbok"
     },
     {
-      "rank": 21,
+      "rank": 32,
       "brand": "Chivita",
       "sector": "Drinks",
       "owner": "UAC of Nigeria",
@@ -248,7 +369,40 @@
       "dealId": "uac-chi-chivita-2025"
     },
     {
-      "rank": 22,
+      "rank": 33,
+      "brand": "Interswitch",
+      "sector": "Fintech",
+      "owner": "Founder + Helios / TA / Visa",
+      "ownerCountry": "Nigeria / global",
+      "ownership": "mixed",
+      "status": "Contested",
+      "note": "A Nigerian payments pioneer, still founder-associated but with global private equity and Visa holding significant stakes.",
+      "sourceLabel": "Interswitch · Visa/Helios stakes, widely reported"
+    },
+    {
+      "rank": 34,
+      "brand": "Java House",
+      "sector": "Food · Hospitality",
+      "owner": "Emerging Capital Partners",
+      "ownerCountry": "United States",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "East Africa's best-known coffee chain, controlled by a US-based private-equity firm.",
+      "sourceLabel": "ECP · Java House acquisition, widely reported"
+    },
+    {
+      "rank": 35,
+      "brand": "Andela",
+      "sector": "Technology",
+      "owner": "Foreign venture capital",
+      "ownerCountry": "United States",
+      "ownership": "foreign",
+      "status": "Exported",
+      "note": "Founded to place African engineers globally — now US-incorporated and foreign-VC-owned.",
+      "sourceLabel": "Andela · incorporation and investors, widely reported"
+    },
+    {
+      "rank": 36,
       "brand": "Mielle Organics",
       "sector": "Beauty",
       "owner": "Procter & Gamble",
@@ -259,7 +413,7 @@
       "dealId": "pg-mielle-2023"
     },
     {
-      "rank": 23,
+      "rank": 37,
       "brand": "SheaMoisture",
       "sector": "Beauty",
       "owner": "Unilever",
@@ -270,7 +424,7 @@
       "dealId": "unilever-sheamoisture-2017"
     },
     {
-      "rank": 24,
+      "rank": 38,
       "brand": "Africori",
       "sector": "Music",
       "owner": "Warner Music Group",
@@ -281,7 +435,18 @@
       "dealId": "warner-africori-2025"
     },
     {
-      "rank": 25,
+      "rank": 39,
+      "brand": "Food Concepts (Chicken Republic)",
+      "sector": "Food · QSR",
+      "owner": "Food Concepts + DPI",
+      "ownerCountry": "Nigeria",
+      "ownership": "african",
+      "status": "Retained",
+      "note": "West Africa's home-grown quick-service chain, African-controlled with pan-African private-equity backing.",
+      "sourceLabel": "Food Concepts / Development Partners International, widely reported"
+    },
+    {
+      "rank": 40,
       "brand": "Mono",
       "sector": "Fintech",
       "owner": "Flutterwave",

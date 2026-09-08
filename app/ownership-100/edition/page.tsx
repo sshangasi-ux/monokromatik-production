@@ -82,6 +82,9 @@ export default function Ownership100Edition() {
                   </span>
                 </div>
                 <p className="mt-1 text-sm text-mono-charcoal font-body leading-snug">{e.note}</p>
+                {e.sourceLabel && !e.articleSlug && (
+                  <p className="mt-0.5 text-[11px] text-mono-charcoal/70 font-body italic">Source: {e.sourceLabel}</p>
+                )}
               </div>
             </li>
           ))}
