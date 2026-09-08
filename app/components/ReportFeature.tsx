@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, FileText, Lock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, FileText, Lock, Scale } from 'lucide-react';
 import Navigation from './Navigation';
 import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, BarChart } from './dataviz/Charts';
@@ -82,6 +82,32 @@ export default async function ReportFeature({ report }: { report: Report }) {
                 </div>
               </section>
             ))}
+            {!locked && r.counterCase && r.counterCase.points.length > 0 && (
+              <section className="border border-mono-black bg-mono-black text-mono-white p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <Scale size={18} className="text-mono-amber-bright" />
+                  <h2 className="text-[10px] tracking-[0.3em] text-mono-amber-bright font-display font-bold">
+                    {(r.counterCase.heading || 'THE BEAR CASE').toUpperCase()}
+                  </h2>
+                </div>
+                {r.counterCase.intro && (
+                  <p className="text-lg text-mono-soft-white font-feature italic leading-snug mb-6">
+                    {r.counterCase.intro}
+                  </p>
+                )}
+                <ul className="space-y-4">
+                  {r.counterCase.points.map((p, i) => (
+                    <li key={i} className="flex gap-3 text-base text-mono-soft-white font-body leading-relaxed">
+                      <span className="text-mono-amber-bright font-display font-bold shrink-0">—</span>
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 pt-5 border-t border-mono-white/15 text-[11px] tracking-[0.14em] text-mono-gray font-body">
+                  We publish the counter-case because a read you cannot argue against is a read you cannot trust. Where the evidence moves, this section moves first.
+                </p>
+              </section>
+            )}
             {locked && (() => {
               // Two ways past the gate: the recurring membership (best value, all
               // reports) or a one-off purchase of just this report (pay-per-report).

@@ -2800,6 +2800,16 @@
           "display": "Vusa · Bayab · Equiano"
         }
       ]
+    },
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "The case that foreign ownership of African spirits is a feature, not a leak — and where our own read may be too pessimistic.",
+      "points": [
+        "Global distribution is the whole game in premium spirits, and it is precisely what African-owned brands cannot build alone. Amarula's reach exists because a global drinks group carries it; the counter-argument is that a smaller share of a global business beats full ownership of a brand that never leaves the continent.",
+        "The category's value is disproportionately created at the point of global marketing and duty-free retail, not at origin. A read anchored on production and ownership may understate how much of the margin genuinely depends on capabilities that sit offshore — meaning the 'leak' is partly a fair price for access.",
+        "Provenance premiums are fragile. The report's optimism about African-origin storytelling assumes consumers will keep paying for it; in a downturn, premium discretionary spirits are among the first to de-rate, and origin narratives have historically commanded a thinner premium than the report implies.",
+        "Several of the retained-ownership success stories are small and recent. Reading them as a template risks survivorship bias — the founder-owned brands that failed to scale without a global partner do not appear in the sample."
+      ]
     }
   },
   {
@@ -3315,7 +3325,17 @@
         ]
       }
     ],
-    "statusNote": "Seasonal economy report · v1 · refreshed each December"
+    "statusNote": "Seasonal economy report · v1 · refreshed each December",
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'homecoming economy' read is most contestable — and the case that the value is more retained than it looks.",
+      "points": [
+        "Detty December's spending lands overwhelmingly in local hands — the drivers, caterers, security, venue staff, short-let hosts and vendors are almost entirely domestic. A read that frets about who owns the headline brands can miss that the diaspora-fuelled cash largely circulates inside the local economy first.",
+        "The season's dependence on diaspora arrivals is also its resilience: it is demand that no foreign owner controls and no local operator has to manufacture. The counter-argument is that the most valuable asset here — the cultural pull that brings the diaspora home every December — is unambiguously African-owned and effectively unbuyable.",
+        "Rising foreign investment in hospitality and events infrastructure may raise the ceiling for everyone, funding the venues and platforms that local operators could not finance themselves. Not all outside capital is extraction; some is the capacity that lets the season scale.",
+        "The figures for the season are largely estimates assembled from partial reporting. The report is honest about this, but it means the 'leak' it identifies is directional, not measured, and a fuller dataset could show retention materially higher."
+      ]
+    }
   },
   {
     "slug": "value-capture-scorecard-2026",
@@ -3483,7 +3503,17 @@
           }
         ]
       }
-    ]
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "The strongest arguments against reading a low retention score as a failure — and why a rational founder might export value on purpose.",
+      "points": [
+        "Selling to a multinational is often the value-maximising move for the founder and the early backers, not a defeat. A global acquirer pays a control premium, de-risks the founder's personal balance sheet, and hands the brand distribution it could never build alone. Monique Rodriguez's 'selling up, not selling out' framing of the Mielle–P&G deal is the honest version of this: retention is a continental metric, not always a personal one, and the two can legitimately point in opposite directions.",
+        "A retention score measures where the cap table sits, not where the jobs, tax and capability stay. A foreign-owned brewer or telco can still employ thousands locally, pay domestic tax, train operators and deepen a supply chain — real value that a pure ownership read understates. The counter-argument is that 'who owns it' is the wrong denominator, and 'who builds capability here' is the right one.",
+        "The dataset is selection-biased toward the brands large enough to be investigated. The most retained value on the continent may sit in informal, unlisted and founder-held businesses that never appear in a deal database — which would mean the true retention rate is higher than a scorecard built from reported transactions can see.",
+        "Capital scarcity is the binding constraint, not owner nationality. If domestic capital markets cannot fund a scale-up, 'stay African-owned' is advice a founder cannot act on. On this reading the leak is a symptom of shallow local capital, and the fix is market depth, not a preference for domestic buyers — a point our own recommendations concede."
+      ]
+    }
   },
   {
     "slug": "brand-study-the-springbok-world-champion-under-owned",
@@ -3626,7 +3656,17 @@
           }
         ]
       }
-    ]
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'under-owned champion' thesis is weakest — and the case that the Springbok model is closer to right than we allow.",
+      "points": [
+        "A national federation is not a normal brand owner, and maybe it should not behave like one. SA Rugby's caution about commercialising a team that carries national symbolism is a defensible governance choice, not simply value left on the table. Over-monetising the emblem carries a reputational downside a private brand would never face.",
+        "The private-equity route the study implicitly favours has a mixed record. Selling a slice of the commercial rights — the All Blacks' Silver Lake deal is the reference — brought capital but also years of governance friction and fan backlash. 'Under-owned' can be the safer failure mode than 'over-financialised.'",
+        "Much of the Springbok's brand value is inseparable from the jersey, the anthem and the public-good status of the national team; it may not be cleanly ownable or transferable without destroying the very thing that makes it valuable. The study's estimate of latent commercial value should be read as a ceiling, not a forecast.",
+        "World Cup wins are a cyclical asset. A brand-value case built at the peak of a title cycle risks over-fitting to a moment; the bear case is that the commercial gap narrows on its own between tournaments, with or without a change in ownership strategy."
+      ]
+    }
   },
   {
     "slug": "the-founders-ledger-sell-up-or-open-out",
@@ -3739,6 +3779,16 @@
           "The quotes and the decisions are the founders'; the framework, the analysis and the strategic conclusions are MonoKromatik's. This edition draws on public statements rather than a commissioned interview, and says so; a full Practitioner Read adds a live, exclusive conversation with the operator. Where a figure is reported rather than officially disclosed, it is treated as such, and each case is cross-linked to the Who's Buying Africa desk so the underlying facts can be checked."
         ]
       }
-    ]
+    ],
+    "counterCase": {
+      "heading": "ROOM FOR DISAGREEMENT",
+      "intro": "This is a pilot built on public statements, and the strongest objections to its two-model framing deserve to be on the page.",
+      "points": [
+        "'Open out' is not obviously superior to 'sell up' — it is riskier for the people it claims to serve. A retail IPO 'for the people' is only pro-social if the shares perform; if they don't, ordinary shareholders bear a loss a multinational acquirer would have absorbed. Dangote's model widens ownership and widens downside at the same time.",
+        "Reading two founders' public statements is not the same as interviewing them, and the report says so — but the limitation is real. On-the-record quotes are chosen for the audience they were given to; the reasoning behind a deal is rarely the reasoning stated at its announcement. A commissioned interview could easily complicate both stories.",
+        "Retained control without retained equity — Rodriguez's outcome — may be the genuinely optimal structure for most founders, not a compromise. Keeping the operating seat while transferring the capital risk to a better-capitalised owner is a rational allocation of who-bears-what, and the framing of it as 'exporting the compounding' understates what the founder kept.",
+        "Two cases cannot carry a continental thesis. The Ledger's value is as a method, not a proof; the honest reading is that it demonstrates a lens, and the lens needs many more builders before 'open out' can be recommended as policy."
+      ]
+    }
   }
 ]

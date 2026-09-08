@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/whos-buying-africa`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE}/who-owns-africa`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE}/who-owns`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE}/ownership-100`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE}/coil-economy`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/intelligence/ownership`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE}/sponsor`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },

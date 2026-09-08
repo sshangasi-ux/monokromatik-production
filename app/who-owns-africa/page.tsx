@@ -156,9 +156,12 @@ export default function WhoOwnsAfricaPage() {
             <span><span className="text-3xl text-mono-amber tabular-nums">{african.length}</span> <span className="text-mono-soft-white">stayed African-owned</span></span>
             <span><span className="text-3xl text-mono-amber tabular-nums">{foreign.length}</span> <span className="text-mono-soft-white">owned abroad now</span></span>
           </div>
-          <div className="mt-8">
-            <Link href="/who-owns" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber/90 transition-colors">
-              CHECK A BRAND <ArrowRight size={18} />
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/ownership-100" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+              THE OWNERSHIP 100 <ArrowRight size={18} />
+            </Link>
+            <Link href="/who-owns" className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-white hover:text-mono-black transition-colors">
+              CHECK A BRAND
             </Link>
             <Link href="/whos-buying-africa" className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-white hover:text-mono-black transition-colors">
               THE DEAL TRACKER
