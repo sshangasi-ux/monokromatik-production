@@ -73,7 +73,7 @@ export default function Ownership100Page() {
             <span><span className="text-4xl text-emerald-400 tabular-nums">{tally.Retained}</span> <span className="text-mono-soft-white ml-1">retained</span></span>
             <span><span className="text-4xl text-mono-amber-bright tabular-nums">{tally.Exported}</span> <span className="text-mono-soft-white ml-1">exported</span></span>
             <span><span className="text-4xl text-mono-white tabular-nums">{tally.Contested}</span> <span className="text-mono-soft-white ml-1">contested</span></span>
-            <span className="text-mono-gray">{doc.cohortSize} of {doc.target} mapped · building out</span>
+            <span className="text-mono-gray">{doc.complete ? `The complete ${doc.edition} · ${doc.target} brands` : `${doc.cohortSize} of ${doc.target} mapped · building out`}</span>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href="/ownership-100/edition" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors">
@@ -132,11 +132,12 @@ export default function Ownership100Page() {
       {/* Nominate / capture */}
       <section className="bg-mono-soft-white border-y border-mono-black/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">BUILDING TO 100</p>
+          <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-4">{doc.complete ? `THE ${doc.edition.toUpperCase()}` : 'BUILDING TO 100'}</p>
           <h2 className="text-3xl md:text-4xl font-feature font-bold text-mono-black">Nominate a brand for the ledger.</h2>
           <p className="mt-4 text-mono-charcoal font-body max-w-xl mx-auto">
-            The cohort grows every edition. Tell us which African brand’s ownership we should decode next — and get the
-            ledger, and each new entry, in your inbox.
+            {doc.complete
+              ? 'The 100 is set for this edition. Tell us which African brand belongs in next year’s ranking — and get every ownership move, and the next edition, in your inbox.'
+              : 'The cohort grows every edition. Tell us which African brand’s ownership we should decode next — and get the ledger, and each new entry, in your inbox.'}
           </p>
           <div className="mt-8 text-left max-w-md mx-auto">
             <NewsletterSignup variant="default" source="ownership-100-nominate" />

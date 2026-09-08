@@ -63,7 +63,7 @@ export default function Ownership100Edition() {
             <span>{tally.Retained} RETAINED</span>
             <span>{tally.Exported} EXPORTED</span>
             <span>{tally.Contested} CONTESTED</span>
-            <span className="text-mono-charcoal">{doc.cohortSize} OF {doc.target} MAPPED</span>
+            <span className="text-mono-charcoal">{doc.complete ? `COMPLETE · ${doc.target} BRANDS` : `${doc.cohortSize} OF ${doc.target} MAPPED`}</span>
           </div>
         </div>
 
