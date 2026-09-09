@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Check, ArrowRight, Mail, Play, Newspaper, LineChart, Layers } from 'lucide-react';
+import { Check, ArrowRight, Mail, Play, Newspaper, LineChart, Layers, Award } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { CONTACT_EMAIL } from '../../lib/commerce';
 
@@ -9,7 +9,7 @@ const URL = 'https://www.monokromatik.com/sponsor';
 export const metadata: Metadata = {
   title: 'Sponsor MonoKromatik — Reach African Brand Decision-Makers',
   description:
-    'Native, clearly-disclosed sponsorship across MonoKromatik: the Watch explainers, the Who’s Buying Africa ownership tracker, the Ownership Ledger and The Weekly Signal. An engaged African & diaspora brand-and-culture audience.',
+    'Native, clearly-disclosed sponsorship across MonoKromatik: the flagship Ownership 100, the Watch explainers, the Who’s Buying Africa ownership tracker, the Ownership Ledger and The Weekly Signal. An engaged African & diaspora brand-and-culture audience.',
   keywords: ['sponsor African media', 'African brand advertising', 'Afrobeats audience sponsorship', 'African newsletter sponsorship', 'brand intelligence sponsorship'],
   alternates: { canonical: URL },
   openGraph: {
@@ -25,13 +25,25 @@ export const revalidate = 3600;
 interface Slot {
   id: string;
   name: string;
-  icon: 'video' | 'tracker' | 'ledger' | 'weekly';
+  icon: 'video' | 'tracker' | 'ledger' | 'weekly' | 'flagship';
   priceFrom: string;
   blurb: string;
   includes: string[];
 }
 
 const SLOTS: Slot[] = [
+  {
+    id: 'ownership100',
+    name: 'The Ownership 100',
+    icon: 'flagship',
+    priceFrom: 'from $6,000 / edition (annual)',
+    blurb: 'Present the flagship — the definitive ranked ledger of who owns Africa’s 100 most valuable brands. A dated, sourced, highly-shareable annual franchise with a print edition.',
+    includes: [
+      '“The Ownership 100, presented by…” on the ledger + print/PDF edition',
+      'Named credit across the launch push (LinkedIn + Shorts)',
+      'Category exclusivity for the edition',
+    ],
+  },
   {
     id: 'watch',
     name: 'The Watch Explainers',
@@ -82,7 +94,7 @@ const SLOTS: Slot[] = [
   },
 ];
 
-const ICON = { video: Play, tracker: LineChart, ledger: Layers, weekly: Newspaper };
+const ICON = { video: Play, tracker: LineChart, ledger: Layers, weekly: Newspaper, flagship: Award };
 
 const AUDIENCE = [
   'Brand, marketing and culture strategists across Africa & the diaspora',
@@ -104,8 +116,8 @@ export default function SponsorPage() {
             Put your brand next to the intelligence.
           </h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-mono-soft-white font-body leading-relaxed">
-            Native, clearly-disclosed sponsorship across MonoKromatik — the Watch explainers, the ownership
-            tracker, the Ownership Ledger and The Weekly Signal. An engaged African &amp; diaspora
+            Native, clearly-disclosed sponsorship across MonoKromatik — the flagship Ownership 100, the Watch
+            explainers, the ownership tracker, the Ownership Ledger and The Weekly Signal. An engaged African &amp; diaspora
             brand-and-culture audience, reached through authored research.
           </p>
           <div className="mt-8">
