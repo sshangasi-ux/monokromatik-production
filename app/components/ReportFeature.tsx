@@ -22,9 +22,13 @@ const STATUS_LABEL: Record<Report['status'], string> = {
 export default async function ReportFeature({ report }: { report: Report }) {
   const r = report;
   const live = r.status === 'live';
-  // Gate only once memberships are purchasable (safe to mark content premium
-  // before billing is live); free reports never read the session.
-  const premium = isLocked(r) && membershipsLive();
+  // Gate once a purchase path exists — EITHER a recurring membership OR a one-off
+  // pay-per-report link. This lets single reports be sold on their own (the cheap
+  // fast-track) without requiring memberships to be live first. Free reports
+  // never read the session.
+  const membersLive = membershipsLive();
+  const oneOffUrl = reportCheckoutUrl();
+  const premium = isLocked(r) && (membersLive || !!oneOffUrl);
   const locked = premium && !(await isMember());
 
   return (
@@ -132,23 +136,28 @@ export default async function ReportFeature({ report }: { report: Report }) {
               // Two ways past the gate: the recurring membership (best value, all
               // reports) or a one-off purchase of just this report (pay-per-report).
               // The one-off CTA appears only once the Paystack link is configured.
-              const oneOff = reportCheckoutUrl();
+              const oneOff = oneOffUrl;
               const price = INDEX_REPORT.priceLabel;
+              // Copy adapts to the purchase paths actually live: both, membership-
+              // only, or report-only (the pay-per-report fast-track).
+              const blurb = membersLive
+                ? (oneOff
+                    ? 'Read every report with the Intelligence membership — or buy just this one.'
+                    : 'The full report is part of the Intelligence membership.')
+                : 'Buy the full report — instant access, one-time purchase.';
               return (
               <div className="border border-mono-amber bg-mono-soft-white p-8 text-center">
                 <Lock className="mx-auto text-mono-amber mb-4" size={24} />
                 <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">
                   {ACCESS_LABEL[r.access].toUpperCase()}
                 </p>
-                <p className="font-body text-mono-charcoal max-w-md mx-auto">
-                  {oneOff
-                    ? 'Read every report with the Intelligence membership — or buy just this one.'
-                    : 'The full report is part of the Intelligence membership.'}
-                </p>
+                <p className="font-body text-mono-charcoal max-w-md mx-auto">{blurb}</p>
                 <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                  <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                  {membersLive && (
+                    <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                  )}
                   {oneOff && (
-                    <a href={oneOff} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+                    <a href={oneOff} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 px-6 py-3 font-display font-bold transition-colors ${membersLive ? 'bg-mono-amber text-mono-black hover:bg-mono-amber/90' : 'bg-mono-black text-mono-white hover:bg-mono-charcoal'}`}>
                       BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={16} />
                     </a>
                   )}

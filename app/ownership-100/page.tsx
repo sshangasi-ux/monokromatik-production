@@ -156,6 +156,9 @@ export default function Ownership100Page() {
           <Link href="/intelligence/ownership" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">
             LICENCE THE DATA
           </Link>
+          <Link href="/sponsor" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">
+            PRESENT THIS EDITION
+          </Link>
         </div>
       </section>
     </div>
