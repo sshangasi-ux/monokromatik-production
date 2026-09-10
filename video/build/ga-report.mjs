@@ -92,5 +92,26 @@ function ymd(d) { return d.toISOString().slice(0, 10); }
       if (pp?.rows) { console.log('\nTOP PAGES (search):'); pp.rows.forEach(r => console.log(`  ${String(r.clicks).padStart(4)} clk  ${String(r.impressions).padStart(6)} imp  ${r.keys[0]}`)); }
     }
   }
+  // ---- Newsletter (ConvertKit / Kit) — the funnel your #1 channel feeds ----
+  // Reading subscriber counts needs the API *secret* (the public CONVERTKIT_API_KEY
+  // used for form sign-ups cannot read data). Add CONVERTKIT_API_SECRET to video/.env
+  // (ConvertKit → Settings → Advanced → API Secret) to switch this on.
+  console.log('\n=== Newsletter (ConvertKit) ===');
+  const CK = process.env.CONVERTKIT_API_SECRET;
+  if (!CK) {
+    console.log('  (set CONVERTKIT_API_SECRET in video/.env to report list size — the public API key cannot read counts)');
+  } else {
+    const total = await req('GET', `https://api.convertkit.com/v3/subscribers?api_secret=${encodeURIComponent(CK)}`, {});
+    if (total.status === 200) {
+      const j = JSON.parse(total.body);
+      console.log(`  active subscribers: ${j.total_subscribers ?? '?'}`);
+      const since = new Date(); since.setDate(since.getDate() - 30);
+      const grown = await req('GET', `https://api.convertkit.com/v3/subscribers?api_secret=${encodeURIComponent(CK)}&from=${ymd(since)}`, {});
+      if (grown.status === 200) { const g = JSON.parse(grown.body); console.log(`  new in last 30 days: ${g.total_subscribers ?? '?'}`); }
+    } else {
+      console.log('  ! convertkit', total.status, total.body.slice(0, 140));
+    }
+  }
+
   console.log('\nDONE');
 })().catch(e => { console.error('ERR', e?.message || e); process.exit(1); });
