@@ -46,6 +46,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'Sibu Shangase' }],
   verification: {
     google: 'V25p3DOYTN6kChFRtlU0cL0V4vGdcUcfkKHfJuGJ1qY',
+    other: {
+      // Bing Webmaster Tools site verification
+      'msvalidate.01': 'A74ACBCB531D95509FA42A893D8298BA',
+    },
   },
   openGraph: {
     title: 'Monokromatik — The Intelligence Behind African Influence.',
