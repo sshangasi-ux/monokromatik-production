@@ -27,7 +27,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
   // fast-track) without requiring memberships to be live first. Free reports
   // never read the session.
   const membersLive = membershipsLive();
-  const oneOffUrl = reportCheckoutUrl();
+  const oneOffUrl = reportCheckoutUrl(r.slug);
   const premium = isLocked(r) && (membersLive || !!oneOffUrl);
   const locked = premium && !(await isMember());
 
