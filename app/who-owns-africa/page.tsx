@@ -32,6 +32,7 @@ export const revalidate = 3600;
  *  "More files" so nothing ever disappears as the cluster grows. */
 const VERDICT: Record<string, 'african' | 'foreign'> = {
   'who-owns-dangote': 'african',
+  'who-owns-africas-banks': 'african',
   'who-owns-ocp': 'african',
   'who-owns-anglo-american': 'foreign',
   'who-owns-sab': 'foreign',
