@@ -105,12 +105,37 @@ export default async function ArticlePage({ params }: PageProps) {
     })),
   };
 
+  // FAQ structured data for the "Who Owns X?" cluster — these pages literally
+  // answer a question, so exposing the Q&A helps search engines and (measurably,
+  // for us) AI assistants surface the answer for the exact query they rank for.
+  const isQuestion = /^who owns/i.test(article.title) || article.title.trim().endsWith('?');
+  const answer = (article.excerpt || article.metaDescription || '').trim();
+  const faqLd = isQuestion && answer
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: article.title,
+            acceptedAnswer: { '@type': 'Answer', text: answer },
+          },
+        ],
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
       <ArticleClient
         article={article}
         references={references}
