@@ -24,7 +24,7 @@ export const INDEX_REPORT: ReportOffer = {
   name: 'The Cultural-Signal Index — Full Report',
   tagline: 'The complete ranked read of who authors African influence — with the evidence.',
   cadence: 'One-time purchase · quarterly refresh',
-  priceLabel: process.env.NEXT_PUBLIC_INDEX_REPORT_PRICE || '',
+  priceLabel: process.env.NEXT_PUBLIC_INDEX_REPORT_PRICE || 'R220',
   includes: [
     'The complete ranked Index — every brand, every score',
     'Per-axis breakdowns: idea · authorship · execution · consequence',
@@ -34,9 +34,24 @@ export const INDEX_REPORT: ReportOffer = {
   ],
 };
 
-/** The Paystack hosted-checkout URL, or null until configured (→ lead-capture fallback). */
-export function reportCheckoutUrl(): string | null {
-  const url = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL;
+/**
+ * The single report the one-off Paystack page sells. The hosted page delivers
+ * that specific report's PDF on payment, so the BUY CTA must only appear on this
+ * report — never on other premium reports (which would charge for the wrong PDF).
+ * Overridable via env if the paid SKU changes.
+ */
+export const REPORT_CHECKOUT_SLUG = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_SLUG || 'value-capture-scorecard-2026';
+
+/**
+ * The Paystack hosted-checkout URL for the paid report, or null when the given
+ * report isn't the paid SKU. The live link is a public payment page, so it ships
+ * as the default and env still overrides it. Called with a report slug so the
+ * one-off CTA is scoped to REPORT_CHECKOUT_SLUG; called with no slug it returns
+ * the configured URL (back-compat).
+ */
+export function reportCheckoutUrl(slug?: string): string | null {
+  if (slug && slug !== REPORT_CHECKOUT_SLUG) return null;
+  const url = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/3lscb9xsn8';
   return url && /^https?:\/\//.test(url) ? url : null;
 }
 
