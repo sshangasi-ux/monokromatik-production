@@ -3790,5 +3790,163 @@
         "Two cases cannot carry a continental thesis. The Ledger's value is as a method, not a proof; the honest reading is that it demonstrates a lens, and the lens needs many more builders before 'open out' can be recommended as policy."
       ]
     }
+  },
+  {
+    "slug": "who-captures-amapiano-value-capture-report",
+    "title": "Who Captures Amapiano? The Value-Capture Report",
+    "series": "THE VALUE-CAPTURE REPORT",
+    "status": "live",
+    "access": "premium",
+    "summary": "South Africa authored amapiano and turned it into a global consumer brand — roughly five billion streams in 2024, a Grammy, and a majority of listening now happening abroad. But a genre can be owned in culture and rented in value. This report maps, layer by layer, where amapiano's money is actually captured — the streaming penalty, the platform margin, the broken domestic rights plumbing, and the retained-ownership model of the Scorpion Kings — and sets out the playbook for keeping more of a nine-figure economy at home, read against the Afrobeats and Black-music precedents.",
+    "statusNote": "The Value-Capture Report · culture edition · sourced to named reporting",
+    "tags": [
+      "amapiano",
+      "music business",
+      "value capture",
+      "south africa",
+      "streaming",
+      "ownership",
+      "kabza de small",
+      "tyla"
+    ],
+    "publishedAt": "2026-09-13T08:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "~5 billion",
+        "label": "Amapiano streams in 2024 — a township sound turned global brand"
+      },
+      {
+        "value": "55%",
+        "label": "Share of amapiano streams now coming from outside Africa"
+      },
+      {
+        "value": "3–4× less",
+        "label": "Spotify's per-stream payout in African markets vs Europe/US — the 'geographic penalty'"
+      },
+      {
+        "value": "63%",
+        "label": "South African musicians rating their streaming earnings 'poor' or 'very poor'"
+      },
+      {
+        "value": "Piano Hub",
+        "label": "Kabza De Small's own label — the retained-ownership model amapiano can scale"
+      }
+    ],
+    "exhibit": {
+      "title": "Where the listening happens — amapiano streams by origin (2024)",
+      "note": "Source: Music In Africa / Spotify (2024) and MonoKromatik analysis. In 2024 a majority of amapiano streams came from outside Africa — the reach is global, but the platforms that monetise it are not African. Illustrative of the origin split, not a revenue share.",
+      "data": [
+        {
+          "label": "Outside Africa",
+          "value": 55,
+          "display": "55%"
+        },
+        {
+          "label": "Inside Africa",
+          "value": 45,
+          "display": "45%"
+        }
+      ]
+    },
+    "exhibits": [
+      {
+        "title": "The geographic penalty — relative Spotify per-stream payout",
+        "note": "Source: Ecofin Agency and industry reporting; MonoKromatik analysis. Spotify's per-stream payout in many African markets runs roughly three to four times lower than in Europe or the US, so amapiano's foreign plays are worth far more per stream — and route their margin to non-African platforms. Indexed to the African rate (=1).",
+        "data": [
+          {
+            "label": "Europe / United States",
+            "value": 3.5,
+            "display": "≈3.5×"
+          },
+          {
+            "label": "African markets",
+            "value": 1.0,
+            "display": "1×"
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "The strongest arguments that amapiano captures more value at home than the leak narrative admits.",
+      "points": [
+        "The stream-centric read understates the domestic economy. Amapiano's largest and most locally-captured value is not recorded-music royalties at all — it is the live circuit, the DJ-as-brand bookings, merchandise, radio and the sponsorship economy, most of which pays South African rights-holders far more directly than a foreign stream. Measured on the full economy rather than Spotify alone, retention looks materially higher.",
+        "Kabza's Piano Hub is not a lone exception. Beneath the headline names sits a real layer of South African-owned labels, producers and a booming domestic live scene, which means the '55% foreign streams' figure describes reach, not ownership — and overstates how much of the economy has actually left.",
+        "A major-label deal like Tyla's is not pure leakage. It builds South Africa's global brand equity, opens doors and templates for the next wave, and — with retained creative control and a community-lifting halo — can be worth more to the scene than the equity share it trades away. 'Selling up' is a legitimate outcome, not a loss.",
+        "The platforms are not simply villains. Spotify, Apple, YouTube and TikTok created the global demand that turned amapiano into a nine-figure business in the first place; an imperfect payout on a global audience is vastly better than a perfect payout on no audience. The fix is better terms and African-owned rails, not the absence of platforms."
+      ]
+    },
+    "sections": [
+      {
+        "heading": "THE HEADLINE: OWNED IN CULTURE, RENTED IN VALUE",
+        "paragraphs": [
+          "Amapiano is the clearest case on this desk of a genre a nation unarguably authored yet may not own the economy of. Born in the townships around Pretoria and the East Rand, carried to the world largely by two producers — Kabza De Small and DJ Maphorisa, the Scorpion Kings — it crossed roughly five billion streams in 2024, won its first Grammy, and became one of the most valuable brands a young African scene has ever built. There is no foreign parent, no franchise, no borrowing. In culture, the ownership is total.",
+          "In value, it is contested. A majority of amapiano's listening now happens outside Africa, on platforms none of which are African, at payout rates that penalise African plays; the domestic rights machinery that should return the rest leaks; and the durable assets — masters and publishing — are split between artists who kept them and artists who traded them for global reach. The finding of this report is blunt: amapiano's cultural ownership is complete and its economic ownership is only partial, and the balance is being decided now, by ownership choices, not by the next hit.",
+          "What follows is a layer-by-layer map: the framework of where music value actually sits, the evidence of where amapiano's leaks, the artist-level ownership ledger, the brand economy beyond the song, the Afrobeats and Black-music precedents, and a segmented playbook for keeping more of a nine-figure and fast-growing economy at home."
+        ]
+      },
+      {
+        "heading": "THE FRAMEWORK: THE FOUR LAYERS OF MUSIC VALUE",
+        "paragraphs": [
+          "Music value is not one thing; it sits in four stackable layers, and who owns each decides who captures the money. First, the masters — ownership of the actual recording. Second, the publishing — ownership of the underlying song and composition. Third, platforms and distribution — the streaming, social and discovery rails where the music is consumed and monetised. Fourth, live and brand — performance, touring, merchandise, sponsorship and the intellectual property of the artist-as-brand.",
+          "Culture is authored across all four layers at once; ownership is decided layer by layer, and independently. This is why a genre can dominate globally in culture while the value in the first three layers accrues offshore. The masters and publishing are the compounding assets — they pay out for decades — so who holds them is the single most important determinant of long-run value capture. The platform layer is where the day-to-day margin is taken. The live-and-brand layer is the most physically rooted, and therefore the most locally capturable.",
+          "Scored against this framework, amapiano is mixed. Its masters and publishing are split — genuinely retained by figures like Kabza through his Piano Hub label, and partly traded by artists who signed to global majors. Its platform layer is almost entirely foreign. Its live-and-brand layer is the most promising and the most under-built. The rest of this report reads each layer in turn.",
+          "The point of the framework is that 'is amapiano owned by South Africa?' is the wrong question. The right one is: which layers has it kept, which has it lost, and which are still in play? On that reading the answer is actionable, not fatalistic."
+        ]
+      },
+      {
+        "heading": "THE EVIDENCE: WHERE AMAPIANO'S VALUE LEAKS",
+        "paragraphs": [
+          "The platform layer is the largest leak, and it leaks twice. First, by geography: a majority of amapiano's streams now come from outside Africa, and per-stream payouts in African markets run, by Ecofin Agency's reporting, roughly three to four times lower than in Europe or the US. So the foreign plays are worth more per stream — and the margin on all of them routes to Spotify, Apple, YouTube and TikTok, none of them African. The creator experience reflects it: in one South African survey reported by The Conversation, 63% of musicians rated their streaming earnings 'poor' or 'very poor'.",
+          "TikTok is the sharpest case. It is the single biggest engine of amapiano's global spread, and it is the least designed to pay its makers: as Songtrust and others document, TikTok compensates based on the number of videos that use a track, not per play, and creators whose works are not properly registered can receive nothing at all. A genre built on viral sounds and uncredited edits is therefore structurally underpaid on the very platform that made it global — and its rise, as legal commentators at Mondaq note, has been shadowed by real disputes over uncredited producers, remixes and ownership.",
+          "Even the value that should stay home often does not, because the domestic rights plumbing leaks. South Africa's collecting society, SAMRO, administers performance and publishing rights, but undocumented works, missing share-splits and weak metadata mean royalties get earned without being matched to the right owner; a 2025 Daily Maverick report revealed roughly R62 million in irregular royalty claims, with global publishing players implicated. When the pipes between a global hit and a township producer's account are this weak, even retained value can evaporate before it arrives.",
+          "The leaks compound. Foreign platforms take the discovery margin; the geographic penalty discounts African plays; TikTok underpays the viral layer; and the domestic society misroutes a slice of what remains. None of these is about the quality of the music or the ambition of the artists — they are about infrastructure and terms, which is precisely why they are fixable.",
+          "There is a structural asymmetry worth naming plainly. Because a majority of the streaming happens abroad and pays abroad, the streaming layer is arguably the worst layer for South Africa to be over-exposed to — and yet it is the layer the global narrative fixates on, because streams are the metric that travels. A scene that measures its success in stream counts is, in effect, keeping score on the one pitch where it is structurally disadvantaged. The corrective is not to chase fewer streams — reach is real and valuable — but to make sure the layers where value is more capturable, publishing, masters and live, grow at least as fast as the stream count does."
+        ]
+      },
+      {
+        "heading": "THE OWNERSHIP LEDGER: KABZA, TYLA, AND THE PLATFORMS",
+        "paragraphs": [
+          "At the artist level, three archetypes divide amapiano's value. The first is Kabza De Small: the genre's central architect runs his own label, Piano Hub, and has extended it into a TechHub imprint signing the next generation, keeping his masters, his publishing and his catalogue at home. With Maphorisa, the Scorpion Kings sit on a foundational amapiano catalogue that they, not a foreign parent, largely control — and that catalogue compounds for them, in South Africa, for decades. This is the retained-ownership model, and it proves that African ownership at scale is possible in this genre.",
+          "The second is Tyla: the Johannesburg 'popiano' breakout and Grammy winner signed to Epic Records, a division of Sony Music. Her path is the classic major-label trade — the marketing machine, global distribution and industry relationships that turn a regional star into a worldwide one, in exchange for a share of the ownership and the upside. It is not a bad deal; it is a trade of equity for reach, and it builds South Africa's global brand equity even as it exports a share of the economics.",
+          "The third archetype owns nothing of the culture and captures much of the money: the platforms. Spotify, TikTok and the rest take their distribution margin regardless of which of the first two roads an artist takes. That is the structural fact — the platform layer wins either way — which is why the strategic contest that matters is the balance between the Kabza model and the Tyla model, and how much African-owned infrastructure sits between the artist and the platform.",
+          "Read as a ledger, amapiano is not a story of loss; it is a story of a split still being decided. The more the scene tilts toward retained masters, publishing and African-owned labels — the Piano Hub end — the more of its compounding value stays home."
+        ]
+      },
+      {
+        "heading": "THE BRAND ECONOMY: WHAT AMAPIANO SELLS BEYOND THE SONG",
+        "paragraphs": [
+          "The recorded music is the tip of amapiano's economy, not the body of it. Through a brand-and-consumerism lens, the product is the experience and the identity around the sound: the DJ as brand, with bookings, residencies, merchandise and brand partnerships; the fashion the scene drives; the nightlife and night-economy it fills; and the alcohol, telecoms and sneaker sponsorships hungry for its young, aspirational, unapologetically African audience. The choreographed dances that spread on TikTok are, in effect, millions of consumers doing the marketing for free.",
+          "This layer matters disproportionately for value capture because it is the most locally capturable. A sponsorship, a festival headline, a brand ambassadorship or a ticket sale pays an African rights-holder far more directly than a foreign stream ever will — and it is physically rooted, so it is much harder to offshore. The live and experiential economy is, on this reading, the single highest-return ownership opportunity in amapiano, precisely because it cannot be captured by a platform on another continent.",
+          "The catch is infrastructure. Building an African-owned touring, festival and ticketing layer at global scale runs into expensive intra-African travel, uneven venue and ticketing systems, and visa and logistics friction. But the prize is a slice of amapiano's value that no foreign platform can take — and it is a slice South African and African capital can actually own.",
+          "There is also a compounding brand asset most balance sheets miss: 'amapiano' itself. The genre name, its aesthetic and its association with a particular kind of African cool are, collectively, one of the most valuable pieces of uncredited intellectual property on the continent — a brand that global companies, other genres and foreign scenes borrow from constantly without paying South Africa a cent. No single party can own a genre, and nor should they. But the country that authored it can build the labels, festivals, media and platforms that become the definitive, monetisable home of the brand — the way a handful of institutions became the commercial homes of hip-hop, or of K-pop. Owning the genre's infrastructure is the closest thing to owning the genre."
+        ]
+      },
+      {
+        "heading": "THE COMPARATIVES: AFROBEATS AND A CENTURY OF BLACK MUSIC",
+        "paragraphs": [
+          "South Africa does not have to guess how this ends, because Nigeria already screened it. Afrobeats went global a few years ahead of amapiano and became a genuine cultural export — and as it scaled, the ownership followed the familiar path offshore: Western majors moved on the labels and catalogues Nigerians built, most emblematically when Universal took a majority of Mavin Records. The culture stayed unmistakably African; a growing share of the copyright and platform margin did not. Afrobeats is a triumph of culture and a cautionary tale of ownership at the same time — and amapiano is early enough in its arc to read the lesson before it signs the deals.",
+          "Zoom out further and amapiano joins the century-long story of African-American music. Blues, jazz, rock and roll, soul, funk, disco, hip-hop: in each, Black artists authored the sound the world then consumed, and in each, who captured the value came down to one thing — who owned the masters, the publishing and the labels. Where Black creators or Black-owned houses held those rights, the wealth compounded in the community that made the music; where they signed them away, the culture went global while the ownership went elsewhere.",
+          "The pattern across all of it is unambiguous, and it is the thesis of this report: authorship never guarantees ownership. Culture globalises either way. Whether the economy it creates comes home is a structural choice about who owns which layer — made on purpose, or lost by default."
+        ]
+      },
+      {
+        "heading": "WHAT THIS MEANS FOR YOU",
+        "paragraphs": [
+          "For artists, producers and managers: the Scorpion Kings model is the template. Keep the masters and the publishing; build or sign to African-owned labels; register every work so a viral edit can pay its maker; and treat a major-label deal, if you take one, as a considered trade of equity for reach entered with eyes open — not a coronation. The single most valuable decision you will make is which layers you refuse to sell.",
+          "For the South African industry and investors: the highest-leverage work is the least glamorous. Fix the rights plumbing so global money reaches local accounts; build African-owned distribution, publishing and — above all — touring, festival and ticketing infrastructure, because the live layer is the highest-return ownership play in the genre. This is where domestic and diaspora capital can own a slice no platform can take.",
+          "For brands and sponsors: association with amapiano is genuinely valuable, and you will pay for it either way. Structure the deal so the value lands with African rights-holders and creators, not with the intermediaries between you and the culture — it is better economics and better brand safety, and it is the difference between partnering with a scene and extracting from it.",
+          "For policymakers: the long-stalled Copyright Amendment Bill and the transparency and governance of bodies like SAMRO are industrial policy for a nine-figure, fast-growing cultural export — not a footnote. The cheapest way to increase amapiano's value capture is to make sure the money it already earns actually reaches the people who made it.",
+          "And for the diaspora: move from amplifier to owner. The African and Black diaspora is amapiano's greatest distribution asset and, increasingly, where the capital, the managers and the platforms that could capture the value already sit. Investing in African-controlled catalogues, labels and platforms — not only consuming and reposting — is how the diaspora converts cultural love into retained ownership."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & SOURCES",
+        "paragraphs": [
+          "This report is a value-capture read of amapiano built to the MonoKromatik paid-deliverable standard: a framework (the four layers of music value), a sourced evidence base, an artist-level ownership ledger, a brand-economy read, and a segmented set of recommendations. The figures are drawn from named public reporting and are labelled as reported where they are estimates. Streaming scale and the 55% foreign-origin split are sourced to Music In Africa and Music Business Worldwide; the Grammy milestone to GRAMMY.com; Tyla's Epic/Sony deal to Billboard; the geographic payout penalty to Ecofin Agency; South African musicians' streaming earnings to The Conversation; TikTok's payment model to Songtrust; the appropriation and ownership disputes to Mondaq; and the SAMRO royalty irregularities to Daily Maverick.",
+          "The framework, the ledger and the strategic conclusions are MonoKromatik's; the facts are the sources'. This edition is a desk analysis, not a commissioned audit, and is cross-linked to the free feature [Who Captures Amapiano?] and the [Ownership 100] so every claim can be checked and traced. Where a figure is reported rather than officially disclosed, it is treated as such."
+        ]
+      }
+    ]
   }
 ]

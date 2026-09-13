@@ -5,7 +5,7 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, BarChart } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, reportCheckoutUrl, INDEX_REPORT } from '../../lib/commerce';
+import { membershipsLive, reportCheckoutUrl, reportPrice } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -137,7 +137,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
               // reports) or a one-off purchase of just this report (pay-per-report).
               // The one-off CTA appears only once the Paystack link is configured.
               const oneOff = oneOffUrl;
-              const price = INDEX_REPORT.priceLabel;
+              const price = reportPrice(r.slug);
               // Copy adapts to the purchase paths actually live: both, membership-
               // only, or report-only (the pay-per-report fast-track).
               const blurb = membersLive
