@@ -47,16 +47,42 @@ export const INDEX_REPORT: ReportOffer = {
 export const REPORT_CHECKOUT_SLUG = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_SLUG || 'value-capture-scorecard-2026';
 
 /**
- * The Paystack hosted-checkout URL for the paid report, or null when the given
- * report isn't the paid SKU. The live link is a public payment page, so it ships
- * as the default and env still overrides it. Called with a report slug so the
- * one-off CTA is scoped to REPORT_CHECKOUT_SLUG; called with no slug it returns
- * the configured URL (back-compat).
+ * Per-report one-off checkout, keyed by report slug. Each hosted Paystack page
+ * delivers that specific report's PDF on payment, so the BUY CTA is scoped to the
+ * report whose page it is — never shown on a report without its own page (which
+ * would charge for the wrong PDF). The Paystack links are public payment pages, so
+ * live ones ship as defaults; add a report here (with its page URL) to sell it,
+ * env overrides per SKU. A report with `url: null` is gated (membership CTA) until
+ * its page exists.
  */
+export interface PaidReportSku {
+  price: string;
+  url: string | null;
+}
+export const PAID_REPORTS: Record<string, PaidReportSku> = {
+  'value-capture-scorecard-2026': {
+    price: 'R220',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/3lscb9xsn8',
+  },
+  'who-captures-amapiano-value-capture-report': {
+    price: 'R220',
+    // Set NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL (a Paystack page that delivers this
+    // report's PDF) to turn on one-off sales; gated via membership until then.
+    url: process.env.NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL || null,
+  },
+};
+
+/** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
 export function reportCheckoutUrl(slug?: string): string | null {
-  if (slug && slug !== REPORT_CHECKOUT_SLUG) return null;
-  const url = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/3lscb9xsn8';
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  const url = PAID_REPORTS[key]?.url;
   return url && /^https?:\/\//.test(url) ? url : null;
+}
+
+/** Display price for a report's BUY CTA (falls back to the default SKU price). */
+export function reportPrice(slug?: string): string {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  return PAID_REPORTS[key]?.price || INDEX_REPORT.priceLabel;
 }
 
 /** Inbox for commission / partnership enquiries (public; overridable via env). */

@@ -13,13 +13,20 @@ import type { CoverSlide } from '../app/components/LivingCover';
  * newest case-study decode, the newest live report, then the founding cover as a
  * brand anchor. Order = freshest first; the carousel auto-advances through them.
  */
+// The pinned lead for the week — kept at the front of the carousel regardless of
+// newer content, so an editor can lead with a flagship. Clear it to '' to fall
+// back to purely newest-first.
+const FEATURED_SLUG = 'who-captures-amapiano';
+
 export function buildCoverSlides(opts?: { articleLeads?: number }): CoverSlide[] {
   const slides: CoverSlide[] = [];
 
-  // 1–2 leading articles that actually carry hero imagery (newest first).
-  const leadArticles = getAllArticles()
-    .filter((a) => Boolean(a.imageUrl))
-    .slice(0, opts?.articleLeads ?? 2);
+  // 1–2 leading articles that actually carry hero imagery. The pinned FEATURED
+  // article leads (if it has imagery); the rest are newest-first, de-duped.
+  const withImage = getAllArticles().filter((a) => Boolean(a.imageUrl));
+  const featured = FEATURED_SLUG ? withImage.find((a) => a.slug === FEATURED_SLUG) : undefined;
+  const rest = withImage.filter((a) => a.slug !== featured?.slug);
+  const leadArticles = [...(featured ? [featured] : []), ...rest].slice(0, opts?.articleLeads ?? 2);
   for (const a of leadArticles) {
     slides.push({
       kicker: `${(a.category || 'CULTURE').toUpperCase()} / TODAY’S LEAD`,
