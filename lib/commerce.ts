@@ -66,9 +66,11 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   },
   'who-captures-amapiano-value-capture-report': {
     price: 'R220',
-    // Set NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL (a Paystack page that delivers this
-    // report's PDF) to turn on one-off sales; gated via membership until then.
-    url: process.env.NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL || null,
+    // Live Paystack product checkout (Scorecard pattern — the URL is the code
+    // default, not a Vercel env var, so the price/link can't drift). Delivery of
+    // the PDF is handled off-site: manual from Paystack Orders for now, moving to
+    // an automated webhook → Resend email attachment (never a shareable link).
+    url: process.env.NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL || 'https://paystack.com/buy/who-captures-amapiano--the-value-capture-report-vzdldc',
   },
 };
 
