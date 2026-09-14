@@ -18,6 +18,51 @@ export type ReportStatus = 'live' | 'in-development' | 'planned';
 /** Access tier — maps to the product ladder. The gating hook. */
 export type ReportAccess = 'open' | 'premium' | 'partner';
 
+/** A single point in a data-driven exhibit. `tag` is an optional right-side
+ *  qualifier used by the value-stack ("foreign-mediated", "leaky", …). */
+export interface ExhibitDatum {
+  label: string;
+  value: number;
+  display: string;
+  tag?: string;
+}
+
+/**
+ * A designed, sourced exhibit. `type` selects the visual form; every type stays
+ * dependency-free (CSS/SVG) and reads its numbers from real, cited data. When
+ * `type` is omitted it renders as a horizontal bar chart (back-compat).
+ *   bar      — horizontal bars (default)                 → data[]
+ *   line     — a value-over-time growth curve            → data[] (label = x tick)
+ *   split    — one 100%-stacked share bar                → data[] (values are shares)
+ *   stack    — scaled magnitude bars with a landing tag  → data[] (+ datum.tag)
+ *   donut    — a single headline proportion              → value + valueLabel + sublabel
+ *   matrix   — a who-captures-value scorecard (0–4 balls)→ cols[] + rows[]
+ *   quadrant — a 2×2 positioning map                     → xAxis + yAxis + points[]
+ */
+export interface Exhibit {
+  title: string;
+  note?: string;
+  type?: 'bar' | 'line' | 'split' | 'stack' | 'donut' | 'matrix' | 'quadrant';
+  /** PDF-only placement hint: render this exhibit after the section at this
+   *  1-based index (the interleaved consultancy layout). The on-site report
+   *  ignores it and shows every exhibit in the visual block above the gate. */
+  after?: number;
+  data?: ExhibitDatum[];
+  /** line: unit shown on the axis caption, e.g. "streams (bn)". */
+  unit?: string;
+  /** donut: the headline proportion (0–100) and its labels. */
+  value?: number;
+  valueLabel?: string;
+  sublabel?: string;
+  /** matrix: column headers + scored rows (cells 0–4 = empty→full Harvey ball). */
+  cols?: string[];
+  rows?: { label: string; tag?: string; cells: number[] }[];
+  /** quadrant: axis end-labels [start, end] and plotted points (x,y in 0–100). */
+  xAxis?: [string, string];
+  yAxis?: [string, string];
+  points?: { label: string; x: number; y: number; highlight?: boolean }[];
+}
+
 export interface Report {
   slug: string;
   title: string;
@@ -48,19 +93,12 @@ export interface Report {
   };
   /** Key figures shown as a stat strip beneath the standfirst. */
   keyStats?: { value: string; label: string }[];
-  /** One optional bar-chart exhibit built strictly from real, sourced data. */
-  exhibit?: {
-    title: string;
-    note?: string;
-    data: { label: string; value: number; display: string }[];
-  };
+  /** The primary exhibit — a designed, sourced data cut. Defaults to a bar chart
+   *  when `type` is omitted (back-compat). */
+  exhibit?: Exhibit;
   /** Additional exhibits — same shape as `exhibit` — for flagship pieces that
    *  carry more than one designed, sourced data cut. */
-  exhibits?: {
-    title: string;
-    note?: string;
-    data: { label: string; value: number; display: string }[];
-  }[];
+  exhibits?: Exhibit[];
   /**
    * The counter-case — the "Bear Case / Room for Disagreement" module. A visible,
    * first-class part of every paid piece: the strongest arguments against our own

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, FileText, Lock, Scale } from 'lucide-react';
 import Navigation from './Navigation';
 import ReadingProgress from './ReadingProgress';
-import { StatStrip, IndexScorecard, BarChart } from './dataviz/Charts';
+import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
 import { membershipsLive, reportCheckoutUrl, reportPrice } from '../../lib/commerce';
@@ -66,8 +66,8 @@ export default async function ReportFeature({ report }: { report: Report }) {
           <div className="mb-14 space-y-10">
             {r.keyStats && r.keyStats.length > 0 && <StatStrip items={r.keyStats} tone="light" />}
             {r.index && <IndexScorecard scores={r.index} />}
-            {r.exhibit && <BarChart title={r.exhibit.title} note={r.exhibit.note} data={r.exhibit.data} />}
-            {r.exhibits?.map((ex, i) => <BarChart key={i} title={ex.title} note={ex.note} data={ex.data} />)}
+            {r.exhibit && <ReportExhibit exhibit={r.exhibit} />}
+            {r.exhibits?.map((ex, i) => <ReportExhibit key={i} exhibit={ex} />)}
           </div>
         )}
         {live && r.sections && r.sections.length > 0 ? (

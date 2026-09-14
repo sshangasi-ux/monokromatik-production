@@ -3837,63 +3837,200 @@
       }
     ],
     "exhibit": {
-      "title": "Where the listening happens — amapiano streams by origin (2024)",
-      "note": "Source: Music In Africa / Spotify (2024) and MonoKromatik analysis. In 2024 a majority of amapiano streams came from outside Africa — the reach is global, but the platforms that monetise it are not African. Illustrative of the origin split, not a revenue share.",
+      "type": "line",
+      "after": 1,
+      "title": "The explosion — steepest on the layer that pays back least",
+      "note": "Amapiano's Spotify streams grew roughly 5,668% between 2018 and 2023, per Music Business Worldwide; the sound reached about 5 billion streams in 2024, per Music In Africa. Index: 2018 = 100. The vertical climb sits on streaming — the layer where South Africa captures the least value per play.",
+      "unit": "index · 2018 = 100",
       "data": [
         {
-          "label": "Outside Africa",
-          "value": 55,
-          "display": "55%"
+          "label": "2018",
+          "value": 100,
+          "display": "100"
         },
         {
-          "label": "Inside Africa",
-          "value": 45,
-          "display": "45%"
+          "label": "2023",
+          "value": 5768,
+          "display": "+5,668%"
         }
       ]
     },
     "exhibits": [
       {
-        "title": "The geographic penalty — relative Spotify per-stream payout",
-        "note": "Source: Ecofin Agency and industry reporting; MonoKromatik analysis. Spotify's per-stream payout in many African markets runs roughly three to four times lower than in Europe or the US, so amapiano's foreign plays are worth far more per stream — and route their margin to non-African platforms. Indexed to the African rate (=1).",
+        "type": "stack",
+        "after": 2,
+        "title": "The four layers — size, and where the value lands",
+        "note": "Relative scale — this report's layered estimate, not audited totals. Sourced anchors: South Africa's recorded-music market ~$93m in 2025 (per IFPI) and amapiano's total economic contribution $120m+ in 2024 (per independent estimates). Masters and publishing are the compounding assets; live and brand are the largest and most locally held; streaming is the largest leak.",
         "data": [
           {
-            "label": "Europe / United States",
-            "value": 3.5,
-            "display": "≈3.5×"
+            "label": "Live & events",
+            "value": 100,
+            "display": "largest",
+            "tag": "mostly local"
           },
           {
-            "label": "African markets",
-            "value": 1.0,
-            "display": "1×"
+            "label": "Brand & sponsorship",
+            "value": 68,
+            "display": "large",
+            "tag": "mixed"
+          },
+          {
+            "label": "Recorded & streaming",
+            "value": 46,
+            "display": "~$93m SA market",
+            "tag": "foreign-mediated"
+          },
+          {
+            "label": "Publishing",
+            "value": 16,
+            "display": "smallest",
+            "tag": "under-collected"
           }
         ]
       },
       {
-        "title": "The four layers of amapiano's economy — size, and where the value lands",
-        "note": "Sources: IFPI / Music In Africa (recorded-music revenue ~$82m in 2024, ~$93m in 2025, ~78% of Sub-Saharan Africa); industry and Business Report estimates of amapiano's wider economic contribution ($120m+); Statista (SA music-events market). MonoKromatik analysis. Sizing is directional — illustrative of the relative value-and-ownership map, not audited shares. The layers where value is largest (live, brand) are the most locally captured; those where it compounds (recorded, publishing) are the most foreign-mediated and leakiest.",
+        "type": "bar",
+        "after": 3,
+        "title": "The metered flow — Spotify's payout to SA artists",
+        "note": "Spotify alone paid out about R504m to South African artists in 2025, up roughly 26% on ~R400m in 2024 (per Spotify Loud & Clear, as reported by Music In Africa). Real money, growing fast — but metered by a foreign platform, and only the recorded slice of the economy.",
         "data": [
           {
-            "label": "Live & events — largest, mostly local",
-            "value": 100,
-            "display": "largest · local"
+            "label": "2024",
+            "value": 400,
+            "display": "~R400m"
           },
           {
-            "label": "Brand & sponsorship — large, mixed",
-            "value": 68,
-            "display": "large · mixed"
-          },
-          {
-            "label": "Recorded & streaming (~$93m SA) — foreign-mediated",
-            "value": 46,
-            "display": "~$93m · foreign-mediated"
-          },
-          {
-            "label": "Publishing — smallest, under-collected",
-            "value": 16,
-            "display": "smallest · leaky"
+            "label": "2025",
+            "value": 504,
+            "display": "~R504m"
           }
         ]
+      },
+      {
+        "type": "split",
+        "after": 4,
+        "title": "Where the listening happens — streams by origin (2024)",
+        "note": "By 2024 a majority of amapiano's streams came from outside Africa — about 55% foreign to 45% African, per Music In Africa. The foreign plays are worth more per stream, and the margin on all of them routes to non-African platforms.",
+        "data": [
+          {
+            "label": "Africa",
+            "value": 45,
+            "display": "45%"
+          },
+          {
+            "label": "Outside Africa",
+            "value": 55,
+            "display": "55% foreign"
+          }
+        ]
+      },
+      {
+        "type": "donut",
+        "after": 4,
+        "title": "The creator's verdict on streaming pay",
+        "value": 63,
+        "valueLabel": "63%",
+        "sublabel": "of South African musicians rate their streaming earnings 'poor' or 'very poor' — the lived experience of a scene over-exposed to the leakiest layer.",
+        "note": "One South African survey reported by The Conversation. It is the human read on the value-capture gap: reach at record highs, pay at record lows."
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "The geographic penalty — relative per-stream payout",
+        "note": "Per-stream payouts in African markets run roughly three to four times lower than in Europe and the US (per Ecofin Agency). So amapiano's rising foreign share is worth more per play to the platform, and the home artist is paid least on the pitch the world watches.",
+        "data": [
+          {
+            "label": "Europe / US",
+            "value": 35,
+            "display": "≈3.5×"
+          },
+          {
+            "label": "African markets",
+            "value": 10,
+            "display": "1× (base)"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 5,
+        "title": "The ownership ledger — who captures value, by layer",
+        "cols": [
+          "Masters",
+          "Publishing",
+          "Distribution",
+          "Brand"
+        ],
+        "rows": [
+          {
+            "label": "Kabza De Small",
+            "tag": "Piano Hub · retained",
+            "cells": [
+              4,
+              3,
+              2,
+              3
+            ]
+          },
+          {
+            "label": "Tyla",
+            "tag": "Sony / Epic · exported",
+            "cells": [
+              1,
+              1,
+              1,
+              4
+            ]
+          },
+          {
+            "label": "The platforms",
+            "tag": "foreign · metered",
+            "cells": [
+              0,
+              0,
+              4,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik's assessment (0 = none, 4 = full capture) of how much of each layer stays with the maker. Kabza retains through his own label, Piano Hub; Tyla trades masters to a major for global scale and a Grammy; the platforms hold the distribution margin, and none are African. Judgement, not a measured metric."
+      },
+      {
+        "type": "quadrant",
+        "after": 8,
+        "title": "The fork — culture authored vs value captured",
+        "xAxis": [
+          "authored elsewhere",
+          "authored locally"
+        ],
+        "yAxis": [
+          "value captured offshore",
+          "value captured locally"
+        ],
+        "points": [
+          {
+            "label": "Amapiano (today)",
+            "x": 88,
+            "y": 38,
+            "highlight": true
+          },
+          {
+            "label": "Afrobeats",
+            "x": 85,
+            "y": 31
+          },
+          {
+            "label": "Black American music (C20)",
+            "x": 80,
+            "y": 20
+          },
+          {
+            "label": "The retained path",
+            "x": 90,
+            "y": 82
+          }
+        ],
+        "note": "A positioning read (MonoKromatik) of three waves of Black music: all authored locally, diverging on how much value stayed home. Amapiano sits at the same fork Afrobeats passed a decade ago and Black American music a century ago — the open question is whether it moves up the vertical axis before the copyright and platform margin settles offshore."
       }
     ],
     "counterCase": {
