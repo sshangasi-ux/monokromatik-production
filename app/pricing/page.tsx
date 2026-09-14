@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     'Own the full Cultural-Signal Index, or buy individual intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Secure one-time purchase via Paystack.',
 };
 
+// The three-tier ladder is HELD from customers until the full customer-facing
+// pricing display is reviewed and signed off. Off by default, so /pricing shows
+// only the (already-approved) Index offer; flip on with
+// NEXT_PUBLIC_SHOW_PRICING_LADDER=1 once the pricing call is made. Per-report BUY
+// CTAs in the reports/articles are independent of this flag.
+const SHOW_PRICING_LADDER = process.env.NEXT_PUBLIC_SHOW_PRICING_LADDER === '1';
+
 // CTA target per report tier. Study & report browse the report shelf; enterprise
 // routes to the commissioning desk (same enquiry the license/data products use).
 const TIER_CTA: Record<string, { href: string; label: string }> = {
@@ -104,7 +111,9 @@ export default function PricingPage() {
       {/* The report pricing ladder — three tiers, low → high commitment. The
           Index above is the whole dataset; individual intelligence reports sell
           on this ladder, so a deep institutional report is priced as its own
-          tier rather than at study money. */}
+          tier rather than at study money. Held behind SHOW_PRICING_LADDER until
+          the full pricing display is signed off. */}
+      {SHOW_PRICING_LADDER && (
       <section className="py-16 md:py-24 border-t border-mono-gray/15 bg-mono-soft-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">REPORTS & INTELLIGENCE</p>
@@ -171,6 +180,7 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+      )}
     </div>
   );
 }
