@@ -72,6 +72,12 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // an automated webhook → Resend email attachment (never a shareable link).
     url: process.env.NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL || 'https://paystack.com/buy/who-captures-amapiano--the-value-capture-report-vzdldc',
   },
+  'brand-study-the-springbok-world-champion-under-owned': {
+    price: 'R220',
+    // Live Paystack product checkout (same pattern as amapiano); PDF is
+    // auto-delivered by the webhook from private storage on purchase.
+    url: process.env.NEXT_PUBLIC_PAYSTACK_SPRINGBOK_URL || 'https://paystack.com/buy/the-springbok--world-champion-under-owned-brand-study-vusmva',
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */

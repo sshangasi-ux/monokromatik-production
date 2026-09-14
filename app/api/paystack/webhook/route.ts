@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
-import { deliverAmapianoReport } from '../../../../lib/report-delivery';
+import { matchReport, deliverReport } from '../../../../lib/report-delivery';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -50,26 +50,24 @@ export async function POST(req: Request) {
   // present we log the shape (to refine the match) and leave it to manual
   // fulfilment; we never guess and send the wrong report.
   if (type === 'charge.success' && !planCode) {
-    const blob = JSON.stringify(data).toLowerCase();
-    // Match on any amapiano signal in the payload — the product name ("Who
-    // Captures Amapiano?"), its slug, or the Paystack product id — but not amount
-    // (the Scorecard is also R220, and carries no "amapiano" token).
-    const isAmapiano = blob.includes('amapiano') || blob.includes('2723931');
+    // Match the paid report by a positive token in the payload (product
+    // name/slug or Paystack product id) — never by amount (reports share R220).
+    const matched = matchReport(JSON.stringify(data));
     const meta = (data.metadata ?? {}) as Record<string, unknown>;
     console.log('[paystack] one-off charge.success', {
       amount: data.amount,
       currency: data.currency,
       reference: data.reference,
       metaKeys: typeof meta === 'object' ? Object.keys(meta) : typeof meta,
-      matchedAmapiano: isAmapiano,
+      matched: matched?.slug ?? null,
     });
-    if (isAmapiano) {
+    if (matched) {
       try {
-        await deliverAmapianoReport(email, admin);
+        await deliverReport(email, admin, matched.slug);
       } catch (err) {
-        console.error('[paystack] amapiano delivery error', err);
+        console.error('[paystack] delivery error', err);
       }
-      return NextResponse.json({ ok: true, delivered: 'amapiano-report' });
+      return NextResponse.json({ ok: true, delivered: matched.slug });
     }
   }
 
