@@ -55,17 +55,87 @@ export const REPORT_CHECKOUT_SLUG = process.env.NEXT_PUBLIC_PAYSTACK_REPORT_SLUG
  * env overrides per SKU. A report with `url: null` is gated (membership CTA) until
  * its page exists.
  */
+// ── Tiered pricing ladder for paid reports ──────────────────────────────────
+// Three rungs, low → high commitment. A report's SKU names the rung it sits on;
+// the report page renders that rung's framing and, for `report`-tier SKUs,
+// surfaces the enterprise upsell (routed to the work-with-us enquiry). The ladder
+// resolves the internal inconsistency of a deep institutional report costing less
+// than a single-brand Scorecard (from $900) — the deep report is its own tier,
+// and the enterprise edition sits alongside the $900–$15,000 data products.
+export type ReportTierId = 'study' | 'report' | 'enterprise';
+
+export interface PricingTier {
+  id: ReportTierId;
+  name: string;
+  /** Display band for the tier. */
+  price: string;
+  audience: string;
+  purpose: string;
+  includes: string[];
+}
+
+export const PRICING_TIERS: PricingTier[] = [
+  {
+    id: 'study',
+    name: 'Signal Study',
+    price: 'R220',
+    audience: 'Individuals & curious professionals',
+    purpose: 'A single decoded study — the fast, low-commitment read that also feeds the funnel.',
+    includes: [
+      'One report, delivered as a designed PDF',
+      'Sourced exhibits + the value-capture read',
+      'Instant, one-time purchase',
+    ],
+  },
+  {
+    id: 'report',
+    name: 'Intelligence Report',
+    price: 'R3,500',
+    audience: 'Strategists, brand & rights teams, funds',
+    purpose: 'The deep, framework-led single report — the institutional read that stands on its own.',
+    includes: [
+      'The full flagship report (framework, model, deal ledger, scenarios)',
+      'Every quantified exhibit + the segmented playbook',
+      'Named-source methodology and the evidence behind each number',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise & License',
+    price: 'from $1,500',
+    audience: 'PE funds, federations, broadcasters, agencies',
+    purpose: 'The report plus the data behind it, a briefing, and citation & license rights.',
+    includes: [
+      'Everything in the Intelligence Report',
+      'The underlying dataset / model for your stack',
+      'A 60-minute briefing with the desk',
+      'Team citation, presentation & license rights',
+    ],
+  },
+];
+
 export interface PaidReportSku {
   price: string;
   url: string | null;
+  /** Which rung of the pricing ladder this SKU sits on. Defaults to 'study'. */
+  tier?: ReportTierId;
+  /** Optional introductory-price note shown under the price (e.g. a launch price
+   *  that will rise). Signals the R3,500 is a floor, not the ceiling. */
+  launchNote?: string;
+  /** For `report`-tier SKUs: the enterprise upsell shown beneath the buy CTA
+   *  (report + data + briefing + license), routed to the work-with-us enquiry —
+   *  this is where the real value on a flagship asset is captured. */
+  enterprise?: { priceFrom: string; blurb: string };
 }
 export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'value-capture-scorecard-2026': {
     price: 'R220',
+    tier: 'study',
     url: process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/3lscb9xsn8',
   },
   'who-captures-amapiano-value-capture-report': {
     price: 'R220',
+    tier: 'study',
     // Live Paystack product checkout (Scorecard pattern — the URL is the code
     // default, not a Vercel env var, so the price/link can't drift). Delivery of
     // the PDF is handled off-site: manual from Paystack Orders for now, moving to
@@ -74,9 +144,28 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   },
   'brand-study-the-springbok-world-champion-under-owned': {
     price: 'R220',
+    tier: 'study',
     // Live Paystack product checkout (same pattern as amapiano); PDF is
     // auto-delivered by the webhook from private storage on purchase.
     url: process.env.NEXT_PUBLIC_PAYSTACK_SPRINGBOK_URL || 'https://paystack.com/buy/the-springbok--world-champion-under-owned-brand-study-vusmva',
+  },
+  // The flagship institutional report (the `report` tier). Pre-registered ahead
+  // of its content PR so the pricing wiring is live the moment the report page
+  // and Paystack product exist. Gated (url:null) until the R3,500 Paystack
+  // product is created — until then the report page shows the membership CTA
+  // rather than a broken BUY link. To go live: create the R3,500 Paystack
+  // product, then set NEXT_PUBLIC_PAYSTACK_AFRICAN_SPORT_URL (or hardcode the
+  // product link here), upload the PDF to the private `reports` bucket, and add
+  // the SKU's match tokens to the REPORTS registry in lib/report-delivery.ts.
+  'whos-buying-african-sport-2026': {
+    price: 'R3,500',
+    tier: 'report',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_AFRICAN_SPORT_URL || null,
+    launchNote: 'Launch price — rising to R7,500',
+    enterprise: {
+      priceFrom: 'from $1,500',
+      blurb: 'Need the underlying data, a team briefing, or citation & license rights? The enterprise edition pairs the full report with the dataset and model behind it.',
+    },
   },
 };
 
@@ -91,6 +180,25 @@ export function reportCheckoutUrl(slug?: string): string | null {
 export function reportPrice(slug?: string): string {
   const key = slug || REPORT_CHECKOUT_SLUG;
   return PAID_REPORTS[key]?.price || INDEX_REPORT.priceLabel;
+}
+
+/** The pricing-ladder rung a report sits on (defaults to the study tier). */
+export function reportTier(slug?: string): ReportTierId {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  return PAID_REPORTS[key]?.tier || 'study';
+}
+
+/** Optional introductory-price note for a report's BUY CTA, or null. */
+export function reportLaunchNote(slug?: string): string | null {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  return PAID_REPORTS[key]?.launchNote || null;
+}
+
+/** The enterprise upsell for a `report`-tier SKU (report + data + briefing +
+ *  license), or null when the report has no enterprise edition. */
+export function reportEnterprise(slug?: string): PaidReportSku['enterprise'] | null {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  return PAID_REPORTS[key]?.enterprise || null;
 }
 
 /** Inbox for commission / partnership enquiries (public; overridable via env). */

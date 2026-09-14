@@ -5,7 +5,7 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, reportCheckoutUrl, reportPrice } from '../../lib/commerce';
+import { membershipsLive, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -138,6 +138,8 @@ export default async function ReportFeature({ report }: { report: Report }) {
               // The one-off CTA appears only once the Paystack link is configured.
               const oneOff = oneOffUrl;
               const price = reportPrice(r.slug);
+              const launchNote = reportLaunchNote(r.slug);
+              const enterprise = reportEnterprise(r.slug);
               // Copy adapts to the purchase paths actually live: both, membership-
               // only, or report-only (the pay-per-report fast-track).
               const blurb = membersLive
@@ -146,6 +148,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
                     : 'The full report is part of the Intelligence membership.')
                 : 'Buy the full report — instant access, one-time purchase.';
               return (
+              <>
               <div className="border border-mono-amber bg-mono-soft-white p-8 text-center">
                 <Lock className="mx-auto text-mono-amber mb-4" size={24} />
                 <p className="text-xs tracking-[0.24em] font-display font-bold text-mono-amber mb-3">
@@ -164,9 +167,31 @@ export default async function ReportFeature({ report }: { report: Report }) {
                   <Link href="/account?next=/reports" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
                 </div>
                 {oneOff && (
-                  <p className="mt-4 text-[11px] tracking-[0.04em] text-mono-gray font-body">One-time purchase · secure checkout via Paystack</p>
+                  <p className="mt-4 text-[11px] tracking-[0.04em] text-mono-gray font-body">
+                    One-time purchase · secure checkout via Paystack
+                    {launchNote ? ` · ${launchNote}` : ''}
+                  </p>
                 )}
               </div>
+              {/* Enterprise upsell — for flagship (report-tier) editions, the real
+                  value on the asset sits above a single-copy sale: the report plus
+                  the data, a briefing, and license rights. Routed to the desk. */}
+              {enterprise && (
+                <div className="mt-4 border border-mono-black bg-mono-black text-mono-white p-6 md:p-7">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright">ENTERPRISE &amp; LICENSE</p>
+                    <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-soft-white">{enterprise.priceFrom}</p>
+                  </div>
+                  <p className="mt-3 font-body text-[15px] text-mono-soft-white leading-relaxed">{enterprise.blurb}</p>
+                  <Link
+                    href="/work-with-us?interest=license"
+                    className="mt-5 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors"
+                  >
+                    TALK TO THE DESK <ArrowRight size={16} />
+                  </Link>
+                </div>
+              )}
+              </>
               );
             })()}
           </article>
