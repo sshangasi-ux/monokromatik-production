@@ -23,17 +23,29 @@ const INACTIVE = ['subscription.disable', 'subscription.not_renew', 'invoice.pay
 // back to the manual fulfilment path (Paystack Orders), never 500s the webhook.
 type Admin = NonNullable<ReturnType<typeof createAdminClient>>;
 async function deliverAmapianoReport(email: string, admin: Admin): Promise<void> {
+  const report = 'who-captures-amapiano-value-capture-report';
+  // Observability: record every attempt (Vercel Hobby doesn't reliably surface
+  // function logs). Best-effort — never let recording break delivery.
+  const record = async (status: string, detail: string) => {
+    try {
+      await admin.from('report_deliveries').insert({ email, report, status, detail });
+    } catch {
+      /* observability only */
+    }
+  };
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.REPORT_DELIVERY_FROM || 'MonoKromatik <onboarding@resend.dev>';
   const bucket = process.env.REPORT_ASSET_BUCKET || 'reports';
   const objectPath = process.env.AMAPIANO_REPORT_OBJECT || 'who-captures-amapiano-value-capture-report.pdf';
   if (!apiKey) {
     console.warn('[paystack] amapiano delivery not configured (RESEND_API_KEY)');
+    await record('skipped', 'RESEND_API_KEY not set');
     return;
   }
   const { data: file, error: dlErr } = await admin.storage.from(bucket).download(objectPath);
   if (dlErr || !file) {
     console.error(`[paystack] amapiano PDF not in storage (${bucket}/${objectPath}): ${dlErr?.message ?? 'missing'}`);
+    await record('failed', `pdf missing: ${dlErr?.message ?? 'not found'}`);
     return;
   }
   const base64 = Buffer.from(await file.arrayBuffer()).toString('base64');
@@ -59,8 +71,14 @@ async function deliverAmapianoReport(email: string, admin: Admin): Promise<void>
       ],
     }),
   });
-  if (!res.ok) console.error(`[paystack] Resend failed (${res.status}): ${await res.text()}`);
-  else console.log(`[paystack] amapiano report delivered to ${email}`);
+  if (!res.ok) {
+    const body = await res.text();
+    console.error(`[paystack] Resend failed (${res.status}): ${body}`);
+    await record('failed', `resend ${res.status}: ${body.slice(0, 300)}`);
+  } else {
+    console.log(`[paystack] amapiano report delivered to ${email}`);
+    await record('sent', `to ${email}`);
+  }
 }
 
 export async function POST(req: Request) {
@@ -97,7 +115,10 @@ export async function POST(req: Request) {
   // fulfilment; we never guess and send the wrong report.
   if (type === 'charge.success' && !planCode) {
     const blob = JSON.stringify(data).toLowerCase();
-    const isAmapiano = blob.includes('who-captures-amapiano') || blob.includes('2723931');
+    // Match on any amapiano signal in the payload — the product name ("Who
+    // Captures Amapiano?"), its slug, or the Paystack product id — but not amount
+    // (the Scorecard is also R220, and carries no "amapiano" token).
+    const isAmapiano = blob.includes('amapiano') || blob.includes('2723931');
     const meta = (data.metadata ?? {}) as Record<string, unknown>;
     console.log('[paystack] one-off charge.success', {
       amount: data.amount,
