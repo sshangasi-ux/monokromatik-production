@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
+import { deliverAmapianoReport } from '../../../../lib/report-delivery';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -15,71 +16,6 @@ const TIER_BY_PLAN: Record<string, string> = {
 
 const ACTIVE = ['subscription.create', 'subscription.enable', 'invoice.create', 'invoice.update'];
 const INACTIVE = ['subscription.disable', 'subscription.not_renew', 'invoice.payment_failed'];
-
-// One-off report fulfilment. The PDF is emailed as an ATTACHMENT (the file, never
-// a shareable link): the bytes are read from a PRIVATE Supabase Storage bucket
-// (service-role only — no public URL, nothing shareable) and delivered via Resend.
-// Bucket/object are overridable via env. Best-effort: any failure logs and falls
-// back to the manual fulfilment path (Paystack Orders), never 500s the webhook.
-type Admin = NonNullable<ReturnType<typeof createAdminClient>>;
-async function deliverAmapianoReport(email: string, admin: Admin): Promise<void> {
-  const report = 'who-captures-amapiano-value-capture-report';
-  // Observability: record every attempt (Vercel Hobby doesn't reliably surface
-  // function logs). Best-effort — never let recording break delivery.
-  const record = async (status: string, detail: string) => {
-    try {
-      await admin.from('report_deliveries').insert({ email, report, status, detail });
-    } catch {
-      /* observability only */
-    }
-  };
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.REPORT_DELIVERY_FROM || 'MonoKromatik <onboarding@resend.dev>';
-  const bucket = process.env.REPORT_ASSET_BUCKET || 'reports';
-  const objectPath = process.env.AMAPIANO_REPORT_OBJECT || 'who-captures-amapiano-value-capture-report.pdf';
-  if (!apiKey) {
-    console.warn('[paystack] amapiano delivery not configured (RESEND_API_KEY)');
-    await record('skipped', 'RESEND_API_KEY not set');
-    return;
-  }
-  const { data: file, error: dlErr } = await admin.storage.from(bucket).download(objectPath);
-  if (dlErr || !file) {
-    console.error(`[paystack] amapiano PDF not in storage (${bucket}/${objectPath}): ${dlErr?.message ?? 'missing'}`);
-    await record('failed', `pdf missing: ${dlErr?.message ?? 'not found'}`);
-    return;
-  }
-  const base64 = Buffer.from(await file.arrayBuffer()).toString('base64');
-  const html =
-    '<p>Thank you for your purchase.</p>' +
-    '<p>Your copy of <strong>Who Captures Amapiano? — The Value-Capture Report</strong> is attached as a PDF.</p>' +
-    "<p>It maps, layer by layer, where amapiano's economy is actually captured — with eight sourced exhibits and the playbook for keeping more of a nine-figure economy at home.</p>" +
-    '<p>Any issues, just reply to this email.</p>' +
-    '<p>— MonoKromatik · African &amp; diaspora brand intelligence</p>';
-  const text =
-    'Thank you for your purchase. Your copy of "Who Captures Amapiano? — The Value-Capture Report" is attached as a PDF. Any issues, reply to this email. — MonoKromatik';
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from,
-      to: [email],
-      subject: 'Your report — Who Captures Amapiano? (The Value-Capture Report)',
-      html,
-      text,
-      attachments: [
-        { filename: 'MonoKromatik-Who-Captures-Amapiano-Value-Capture-Report.pdf', content: base64 },
-      ],
-    }),
-  });
-  if (!res.ok) {
-    const body = await res.text();
-    console.error(`[paystack] Resend failed (${res.status}): ${body}`);
-    await record('failed', `resend ${res.status}: ${body.slice(0, 300)}`);
-  } else {
-    console.log(`[paystack] amapiano report delivered to ${email}`);
-    await record('sent', `to ${email}`);
-  }
-}
 
 export async function POST(req: Request) {
   const secret = process.env.PAYSTACK_SECRET_KEY;
