@@ -36,7 +36,9 @@ const SOCIALS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/135245970', Icon: LinkedinIcon },
 ];
 const COMPANY = [
-  { label: 'Pricing', href: '/pricing' },
+  // 'Pricing' link held from the footer until the full customer-facing pricing
+  // display (the three-tier ladder) is reviewed and signed off. Per-report BUY
+  // CTAs in the reports/articles are unaffected. Re-add to restore the link.
   { label: 'Membership', href: '/membership' },
   { label: 'Ownership Intelligence', href: '/intelligence/ownership' },
   { label: 'License the Index', href: '/intelligence/license' },
