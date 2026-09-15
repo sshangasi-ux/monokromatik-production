@@ -118,20 +118,32 @@ export function StatStrip({
   tone?: 'dark' | 'light';
 }) {
   const onDark = tone === 'dark';
-  const cols =
-    ({ 2: 'md:grid-cols-2', 3: 'md:grid-cols-3', 4: 'md:grid-cols-4' } as Record<number, string>)[
-      Math.min(items.length, 4)
-    ] || 'md:grid-cols-4';
+  const n = items.length;
+  // Pick a column count that divides the items evenly where possible, so no
+  // stranded empty cell is left in the last row (e.g. 6 → 3+3, not 4+2). A lone
+  // orphan (e.g. the 5th of 5) spans its whole row instead of leaving a gap.
+  const colCount = ([4, 3, 2].find((c) => c <= n && n % c === 0) ?? Math.min(n, 4)) as 2 | 3 | 4;
+  const colClass = ({ 2: 'md:grid-cols-2', 3: 'md:grid-cols-3', 4: 'md:grid-cols-4' } as const)[colCount];
+  const spanClass = ({ 2: 'md:col-span-2', 3: 'md:col-span-3', 4: 'md:col-span-4' } as const)[colCount];
   return (
-    <dl className={`grid grid-cols-2 ${cols} gap-px border ${onDark ? 'border-mono-white/15 bg-mono-white/15' : 'border-mono-gray/25 bg-mono-gray/25'}`}>
-      {items.map((it) => (
-        <div key={it.label} className={`${onDark ? 'bg-mono-black' : 'bg-mono-white'} p-6`}>
-          <dd className="font-display font-bold text-3xl md:text-4xl text-mono-amber tabular-nums">{it.value}</dd>
-          <dt className={`mt-2 text-[11px] tracking-[0.16em] font-display font-bold ${onDark ? 'text-mono-gray' : 'text-mono-charcoal'}`}>
-            {it.label.toUpperCase()}
-          </dt>
-        </div>
-      ))}
+    <dl className={`grid grid-cols-2 ${colClass} gap-px border ${onDark ? 'border-mono-white/15 bg-mono-white/15' : 'border-mono-gray/25 bg-mono-gray/25'}`}>
+      {items.map((it, i) => {
+        const isLast = i === n - 1;
+        const mobileOrphan = isLast && n % 2 === 1;
+        const deskOrphan = isLast && n % colCount === 1;
+        const span = `${mobileOrphan ? 'col-span-2' : ''} ${deskOrphan ? spanClass : mobileOrphan ? 'md:col-span-1' : ''}`;
+        // Long descriptive labels read poorly in wide-tracked all-caps — keep the
+        // uppercase eyebrow treatment for short labels only.
+        const long = it.label.length > 44;
+        return (
+          <div key={it.label} className={`${onDark ? 'bg-mono-black' : 'bg-mono-white'} p-6 ${span}`}>
+            <dd className="font-display font-bold text-3xl md:text-4xl text-mono-amber tabular-nums">{it.value}</dd>
+            <dt className={`mt-2 text-[11px] font-display font-bold leading-snug ${long ? 'tracking-[0.01em] normal-case' : 'tracking-[0.16em] uppercase'} ${onDark ? 'text-mono-gray' : 'text-mono-charcoal'}`}>
+              {it.label}
+            </dt>
+          </div>
+        );
+      })}
     </dl>
   );
 }
