@@ -4319,5 +4319,802 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "whos-buying-african-sport-2026",
+    "title": "Who's Buying African Sport? — The $20bn Asset the World Is Underpricing",
+    "series": "THE INTELLIGENCE REPORT",
+    "status": "live",
+    "access": "premium",
+    "summary": "African sport is a $12bn asset heading to $20bn — authored by African talent and fandom, and systematically bought on the cheap. The continent exports its best players for a fraction of the value they later generate; foreign private equity buys the commercial upside; football's broadcast rights are priced roughly 47× below the global rate; and the single largest money pool, betting, flows through largely foreign-owned platforms. This is the institutional read of that gap — through MonoKromatik's proprietary Authorship → Ownership → Capture (AOC) framework and the four ownership archetypes — with a bottom-up value-leakage model that puts the annual offshore capture at roughly $2.6bn, a named deal ledger of who is buying, scenarios to 2035, and a segmented playbook for rights holders, investors, brands, federations, policymakers and African capital.",
+    "statusNote": "The Intelligence Report tier — the institutional, framework-led flagship",
+    "tags": [
+      "african sport",
+      "value capture",
+      "private equity",
+      "football",
+      "rugby",
+      "basketball",
+      "sports betting",
+      "broadcast rights",
+      "talent economy",
+      "ownership",
+      "AOC framework",
+      "africa"
+    ],
+    "publishedAt": "2026-09-15T06:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "$12bn → $20bn",
+        "label": "The African sports market now, and by ~2035 — authored on the continent, monetised largely off it (Oliver Wyman, 2024)"
+      },
+      {
+        "value": "~$2.6bn / yr",
+        "label": "MonoKromatik's bottom-up estimate of the value created in African sport that is captured OFFSHORE each year — the annual leak"
+      },
+      {
+        "value": "~47×",
+        "label": "How far below the global rate African football's broadcast rights are priced — CAF ~$83m/yr vs UEFA ~$3.9bn/yr"
+      },
+      {
+        "value": "~$3bn",
+        "label": "Sports-betting stakes in 2025 (part of a ~$17.6bn gaming market), ~94% mobile, 440m bettors — the biggest pool, on largely foreign-owned platforms"
+      },
+      {
+        "value": "$375m vs $2.4bn",
+        "label": "Springbok commercial rights (implied, rejected Ackerley bid) vs the All Blacks' commercial arm — the ownership-gap benchmark"
+      }
+    ],
+    "exhibit": {
+      "type": "stack",
+      "after": 7,
+      "title": "The annual leak — value created in African sport, captured offshore (~$2.6bn/yr)",
+      "note": "MonoKromatik value-leakage model — an order-of-magnitude, bottom-up estimate, per SCCG / allAfrica (2025) betting data, Oliver Wyman (2024) market sizing, and the CAF–UEFA rights gap. Channels: net talent & transfer value exported; betting gross-win routed to foreign-owned platforms; the broadcast underpricing gap (African rate vs a fair global-comparable); and private-equity upside on minority stakes. Every assumption is stated in Section 07.",
+      "data": [
+        {
+          "label": "Talent & transfer value exported",
+          "value": 1000,
+          "display": "~$1.0bn",
+          "tag": "exported"
+        },
+        {
+          "label": "Betting margin routed offshore",
+          "value": 800,
+          "display": "~$0.8bn",
+          "tag": "hollowed"
+        },
+        {
+          "label": "Broadcast underpricing gap",
+          "value": 500,
+          "display": "~$0.5bn",
+          "tag": "contested"
+        },
+        {
+          "label": "PE / rights upside offshore",
+          "value": 300,
+          "display": "~$0.3bn",
+          "tag": "exported"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "EXECUTIVE SUMMARY",
+        "paragraphs": [
+          "African sport is one of the last great mispriced assets in global entertainment. On the field and in the stands it is authored entirely on the continent — the talent, the fandom, the cultural weight are African and inimitable. On the balance sheet, its value is captured somewhere else. This report sizes that gap, names who is capturing it, and sets out how more of it can be kept at home. The headline: a market Oliver Wyman puts at more than $12bn today and above $20bn by 2035, from which — on our bottom-up model — roughly $2.6bn of value leaks offshore every year.",
+          "The mechanism is consistent across every code. Africa develops elite talent cheaply and exports it, so the transfer fees and peak-career earnings are booked in Europe, not Lagos or Dakar. Foreign private equity buys the commercial rights to the continent's biggest properties. Football's broadcast rights are sold at roughly one-forty-seventh of the per-year rate UEFA commands. And the single largest money pool — sports betting, some $3bn of stakes inside a ~$17.6bn gaming market — runs mostly through platforms owned outside the continent. Owned in culture, bought on the cheap.",
+          "We read this through a proprietary lens built for exactly this problem: Authorship → Ownership → Capture (AOC). For every layer of the value chain we separate who authors the value, who owns the rights or the entity, and who captures the margin — then classify each with MonoKromatik's four ownership archetypes: RETAINED, EXPORTED, CONTESTED and HOLLOWED. The picture that emerges is a value chain whose authorship is almost uniformly African and whose capture is almost uniformly not — a structural export of value that no single deal explains and no single actor intends.",
+          "The strategic conclusion is not despair; it is timing. The capital is arriving regardless — Silver Lake, Ackerley, Helios, CVC, and a thin but growing line of African funds. The only open question is the ownership structure through which a $20bn market gets built, and whether Africa builds the vehicles to own the upside before foreign ones do. This report is the map for that decision: the sizing, the leakage model, the deal ledger, the scenarios to 2035, and a playbook segmented by who is reading it."
+        ]
+      },
+      {
+        "heading": "THE THESIS: OWNED IN CULTURE, BOUGHT ON THE CHEAP",
+        "paragraphs": [
+          "Start with the paradox. No region on earth authors more sporting value per dollar it captures than Africa. It produces a disproportionate share of the world's elite footballers, a rising cohort of NBA and Basketball Africa League talent, the fastest-growing and youngest fanbase in global sport, and cultural properties — AFCON, the Springboks, Afro-diaspora athletes — with genuine global pull. Yet the revenue that authorship generates is booked overwhelmingly offshore, in European leagues, foreign-owned platforms and international rights markets.",
+          "This is not an accident of underdevelopment that growth will quietly fix. It is a structural feature of how the value chain is owned. When a Senegalese teenager is developed in a Dakar academy and sold to a French club for a few million euros, then resold across Europe for forty, the value did not fail to materialise — it materialised somewhere else. When 440 million Africans place bets through apps whose holding companies sit in London, Malta or Nicosia, the engagement is African and the margin is not. When African football's continental rights sell for a fraction of Europe's, the audience is real and the price is set by who holds the leverage.",
+          "The MonoKromatik thesis, applied at continental, cross-code scale, is that authorship without ownership is a subsidy. Africa is subsidising the global sports economy with talent, attention and cultural authority, and receiving a fraction of the value back. The task of this report is to make that subsidy visible, quantify it, and show where the leverage to reverse it actually sits — because a gap you can measure is a gap you can close."
+        ]
+      },
+      {
+        "heading": "THE AOC FRAMEWORK: AUTHORSHIP → OWNERSHIP → CAPTURE",
+        "paragraphs": [
+          "The report's spine is a framework no consultancy has, because it is built from a cultural premise consultancies do not start with: that authorship and ownership are different things, and that the distance between them is where value leaks. Authorship → Ownership → Capture (AOC) forces three separate questions at every layer of the value chain. Who authors the value — whose talent, culture and fandom create it? Who owns the rights, the entity, the platform through which it is monetised? And who captures the margin — where does the money actually land?",
+          "Answered layer by layer, AOC turns a vague sense of unfairness into a diagnosis. Where authorship, ownership and capture all sit in African hands, value is RETAINED. Where Africa authors but a foreign entity owns and captures, value is EXPORTED. Where ownership is genuinely up for grabs — a live fight between domestic and foreign capital — it is CONTESTED. And where Africa authors and even nominally owns, but the economics are structured so the margin flows out anyway, value is HOLLOWED: the shell is local, the substance is not. These four archetypes are MonoKromatik's flagship ownership lens, the same one that structures the Ownership 100 ledger, applied here to sport.",
+          "The archetypes are not moral labels; they are strategic coordinates. HOLLOWED is the most dangerous state, because it looks like ownership and behaves like extraction — a betting licence held locally while the platform, the odds engine and the profit sit abroad. EXPORTED is the most common, and the most reversible with capital and structure. CONTESTED is the rarest and most valuable, because it is the only state in which the ownership question is still open — the Springbok is the continent's clearest live example. The whole report is, in effect, a campaign to move layers up the ladder: HOLLOWED to CONTESTED, EXPORTED to RETAINED."
+        ]
+      },
+      {
+        "heading": "SIZING THE PRIZE: $12BN TO $20BN",
+        "paragraphs": [
+          "The top line is Oliver Wyman's: the African sports market is worth more than $12bn today and is projected to exceed $20bn by around 2035, growing faster than almost any regional sports economy in the world. That growth is demographically guaranteed in a way few markets are — the youngest population on earth, the fastest smartphone adoption, and a fandom already at global scale for football and rising fast for basketball.",
+          "But a market total is not a capture total, and the two must never be confused. The $12bn is the value the market generates; the strategic figure is how much of it Africa keeps. Built bottom-up, the market resolves into layers of very different ownership character: domestic leagues and matchday (largely RETAINED but small), sponsorship (CONTESTED and re-rating), broadcast and media rights (CONTESTED and underpriced), the talent economy (heavily EXPORTED), and betting (largely HOLLOWED and the biggest single pool). The mix matters more than the total: a $20bn market that is 70% exported is a worse outcome for Africa than a $14bn market that is 70% retained.",
+          "This is the analytical move that separates this report from a conventional market-sizing deck. We are not forecasting the size of the pie; we are forecasting who eats it. The $12bn→$20bn trajectory is the backdrop. The foreground is the capture rate — and on current structures, the capture rate is falling even as the total rises, because the fastest-growing layers (betting, media, PE-owned commercial rights) are the least locally owned."
+        ]
+      },
+      {
+        "heading": "THE VALUE-CAPTURE STACK",
+        "paragraphs": [
+          "Read as a stack, African sport's value chain is a study in inverted ownership: the largest and fastest-growing layers are the least locally captured, and the most locally captured layers are the smallest. Betting sits at the top by money moved and near the bottom by local capture. Broadcast and media rights are large and contested. The talent economy is enormous but almost entirely realised offshore. Domestic leagues, ticketing and grassroots — the layers Africa fully owns — are precisely the layers starved of the capital that the other layers generate.",
+          "This inversion is the core pathology. In a healthy sports economy, the globally-monetised layers (media, talent, betting) recirculate capital into the domestically-owned base (leagues, academies, infrastructure), and the base compounds. In African sport, the globally-monetised layers export their margin, so the base cannot compound — which keeps the base cheap, which makes the talent cheaper to export, which deepens the leak. The stack does not just describe the problem; it explains why it is self-reinforcing.",
+          "Classified by archetype, the stack is a to-do list. Every HOLLOWED layer (betting) is a regulatory and ownership project. Every EXPORTED layer (talent) is a structuring project — academies, sell-on clauses, image-rights vehicles. Every CONTESTED layer (media, sponsorship, PE-owned rights) is a capital project, a race between domestic and foreign money. The RETAINED base is an investment project. Different problems, different owners, one map."
+        ]
+      },
+      {
+        "heading": "THE TALENT & ACADEMY ECONOMY: THE BIGGEST LEAK",
+        "paragraphs": [
+          "The largest and least-understood leak is human. Africa develops world-class footballers at a fraction of the cost European academies incur, then exports them young — and the value that talent creates over a career is captured almost entirely offshore. The pattern is legible in the biography of nearly every African star. Sadio Mané was developed at Génération Foot in Senegal, sold on to Metz for a modest fee, and only later traded across Europe for sums an African club never saw. The first sale out of Africa is small; the value crystallises in a market Africa does not own.",
+          "The academy layer makes the structure explicit. Right to Dream — founded in Ghana, now spanning Egypt, Denmark and the United States and backed by foreign capital including Mansour Group — is the model: identify and develop African talent, then own the pathway that monetises it in Europe and beyond. Génération Foot's partnership with Metz, ASEC Mimosas' long production line into European football, Aspire's Qatar-funded network — each is a pipe, and the question AOC asks of every pipe is the same: Africa authors the talent, but who owns the pipe, and where does the value land? Overwhelmingly, the answer is: not here.",
+          "The scale is easy to underestimate because it is distributed across hundreds of individual careers rather than concentrated in a few visible deals. Europe's top five leagues field a large and rising cohort of African-born and African-origin players; the AFCON squads that fill continental stadiums are, in employment terms, a European payroll on loan. Every one of those careers represents development cost borne in Africa and peak-career value — wages, image rights, resale — booked abroad. The transfer market only prices the visible tip; the wage and rights value captured offshore over a full career dwarfs the fees.",
+          "The mechanics of the leak are also the mechanics of the fix. A sell-on clause is a claim on downstream value; an African club that inserts and enforces one keeps a share of the forty-million-euro resale it would otherwise watch from a distance. An image-rights vehicle owned in the player's home market keeps a slice of the commercial value that today accrues entirely to European clubs and agencies. None of this requires stopping the export or matching European wages. It requires structuring the African end of the transaction to behave like an owner rather than a supplier.",
+          "Put real figures on the leak. Nicolas Pépé moved from Angers to Lille and then to Arsenal for a club-record €80m in 2019 — none of it recirculating to the African game that formed him. Sadio Mané left Génération Foot, the Dakar academy that feeds France's FC Metz, for a nominal academy fee, then was traded from Southampton to Liverpool for around £34m in 2016 and on to Bayern Munich in 2022; Mohammed Kudus travelled from Ghana's Right to Dream through Nordsjælland and Ajax to West Ham (£38m, 2023) and Tottenham (~£55m, 2025). In every case the headline fees were captured by European clubs, academies and agents, while the Senegalese, Ghanaian or Ivorian club that first developed the player banked a rounding error by comparison. That is the talent leak stated in numbers: Africa authors the asset, and Europe books the capital gain — repeatedly, and on the same players.",
+          "The strategic prize is not to stop the export — elite talent will and should reach the best leagues — but to own more of its economics. That means African-owned academies with genuine equity in the pathway, aggressive sell-on and image-rights clauses that keep a share of downstream value, and clubs structured to be the first monetiser rather than the cheapest seller. The talent economy is EXPORTED today; it is the single layer where structure, not capital, could move it fastest toward RETAINED."
+        ]
+      },
+      {
+        "heading": "THE ANNUAL LEAK: A VALUE-LEAKAGE MODEL",
+        "paragraphs": [
+          "Here is the report's signature number, built transparently so it can be argued with. We estimate that of the value created annually in and by African sport, roughly $2.6bn is captured offshore each year — an order-of-magnitude figure, deliberately conservative, summed across four channels. This is the McKinsey 'so what' of the report: not that value leaks, but how much, and where.",
+          "Channel one, talent and transfer value exported: roughly $1.0bn a year. This is the net value — transfer fees on African talent plus the share of wage and image-rights value created offshore that is attributable to African-developed players — that is realised in foreign leagues rather than African ones. Channel two, betting margin routed offshore: roughly $0.8bn a year. On ~$3bn of sports-betting stakes and a wider ~$17.6bn gaming market, the gross-win margin captured by foreign-owned platforms is the largest single recurring extraction. Channel three, the broadcast underpricing gap: roughly $0.5bn a year — the difference between what African football's rights fetch (CAF's ~$83m/yr) and a fair global-comparable rate, a gap that is pure foregone capture. Channel four, private-equity upside on minority stakes: roughly $0.3bn a year, the offshore share of the appreciation on commercial-rights deals.",
+          "Every assumption here is contestable, and that is the point — the model is a starting position, not a verdict, and we state the inputs so a rights holder, a regulator or an investor can re-run it with their own. Move the betting-ownership share, the transfer attribution or the fair-rights multiple, and the number moves. But the direction does not: on any reasonable set of assumptions, the annual offshore capture is measured in billions, not millions, and it is a meaningful fraction of the entire market. A market that leaks a fifth of its value every year is not a market with a problem at the edges; it is a market with a problem at its centre."
+        ]
+      },
+      {
+        "heading": "THE CAPITAL: WHO'S BUYING (THE DEAL LEDGER)",
+        "paragraphs": [
+          "Name the buyers. The capital moving into and around African and African-linked sport is overwhelmingly foreign, and increasingly institutional. Silver Lake set the template in rugby with its minority stake in New Zealand's commercial arm, valuing that business near $2.4bn. Ackerley Sports Group, out of Seattle, bid for 20% of the Springbok commercial rights at terms implying roughly $375m — rejected by SA Rugby's unions, but a clear read of what a US buyer thinks the asset is worth. CVC has moved through rugby's Six Nations and club competitions the way it moved through Formula 1. Helios Sports & Entertainment sits behind NBA Africa. Each is a rational actor buying a mispriced asset early.",
+          "The thinner, more important line in the ledger is African capital. Silverbacks Holdings — Ibrahim Sagna's Mauritius-based vehicle behind the Cape Town Tigers, African Warriors Fighting Championship and other properties — is the clearest sign that continental investors see the same mispricing the foreigners do. In rugby, the domestic response to Ackerley came from Johann Rupert's Remgro, Patrice Motsepe's African Rainbow Capital and Marco Masotti's MVM Holdings. These are still exceptions. But they are proof of concept: African capital can compete for these assets when it chooses to.",
+          "The ledger's lesson is about control, not just money. Minority stakes bring capital and expertise but permanently route a slice of the upside to wherever the investor sits. The strategic distinction is between capital that buys a share of the margin and capital that builds and keeps the machine. Foreign PE, so far, is doing the former at scale. Whether African capital does the latter is the difference between a $20bn market that recirculates and one that exports."
+        ]
+      },
+      {
+        "heading": "THE BETTING ELEPHANT",
+        "paragraphs": [
+          "No honest map of African sport's money can avoid betting, and most polite analyses do. It is the largest pool by far: some $3bn in sports-betting stakes within a ~$17.6bn gaming market in 2025, 440 million bettors, roughly 94% of it mobile, anchored on football. It is the layer where engagement is most intensely African and ownership most emphatically not — SportyBet, Betway, SportPesa and their peers are, in ownership terms, largely foreign holding companies operating African-facing brands. In AOC terms, betting is the archetype of HOLLOWED value: the licence and the users are local, the platform, the odds engine and the profit are abroad.",
+          "The downside is as important as the size, and this report states it plainly rather than celebrating the growth. Betting's economics rest on regulatory arbitrage and offshore profit routing, on data flows that test POPIA and its regional equivalents, and — most seriously — on the social harm of mass mobile gambling among the world's youngest population. A value pool built on youth exposure is not an unambiguous asset; it is a liability with a revenue line. Any strategy that treats betting purely as upside is misreading both the ethics and the regulatory risk.",
+          "The ownership structure is worth stating precisely, because it is where the value goes. A typical African-facing betting operation holds a local licence, employs local staff and markets a local brand — the visible, RETAINED-looking shell. Behind it, the platform technology, the odds-compilation and risk engine, the payment processing and the retained profit sit with a holding company incorporated offshore. The gross-win margin — the operator's cut of every stake — flows out along that spine. This is why betting is the archetypal HOLLOWED layer: it is not that Africa owns nothing, but that what Africa owns is the part with the least value, by design.",
+          "Name the platforms and the pattern is unmistakable. SportyBet, among the continent's largest operators, sits under Sporty Group International — registered in Malta. Betway's parent, Super Group, is listed on the New York Stock Exchange. SportPesa was assembled by a club of local and international investors spanning three continents. The betting licences are African; the holding companies, and the profits, are not. For all its scale and all its hundreds of millions of African users, betting is the clearest HOLLOWED layer in the market — the continent hosts the activity and exports the margin, and does so through the layer that also carries the heaviest social cost.",
+          "The strategic read, then, is dual. Betting is simultaneously the biggest capture opportunity — because the leak is so large and so foreign — and the layer where capture must be conditioned on protection. The prize is not more betting; it is African ownership and regulation of a pool that will exist regardless, with the margin recirculated domestically and the harm actively governed. That is a policy project as much as a commercial one, and it belongs to regulators and African operators together."
+        ]
+      },
+      {
+        "heading": "THE BROADCAST PENALTY: PRICED 45× LOW",
+        "paragraphs": [
+          "African football's broadcast rights are the clearest single number in the whole leakage story. CAF's landmark rights arrangement — the Lagardère deal, roughly $1bn over twelve years — priced continental football at about $83m a year. UEFA's club and national-team rights command on the order of $3.9bn a year. Same sport, comparable passion, and a per-year price roughly forty-seven times lower. Even adjusting for market maturity and purchasing power, a multiple that large is not a market clearing; it is a market failing to.",
+          "The penalty compounds through fragmentation. African rights are split across SuperSport, beIN, Canal+, Azam and a patchwork of others, so no single buyer bids against a unified, well-packaged product, and no seller has the leverage a consolidated rights position would confer. The MEA streaming market — worth about $1.28bn in 2024 and heading toward $2.38bn — is where the re-rating could happen, if the rights were packaged and owned to capture it rather than sold cheaply to clear.",
+          "There is a demand-side counter-argument, and it deserves an answer: African rights are cheaper partly because African advertising markets and pay-TV ARPUs are genuinely smaller, so a straight per-year comparison with UEFA overstates the gap. That is true, and it is why the fair-value multiple in our leakage model is set well below the raw 47×. But it does not dissolve the penalty. The African football audience is vast, young and increasingly reachable directly through mobile; a large share of the value it could generate is diaspora and global-neutral demand that the current fragmented, territory-by-territory packaging never captures. The gap that survives the ARPU adjustment is still one of the largest single foregone-capture lines in the market.",
+          "The broadcast layer is CONTESTED, not HOLLOWED, which makes it winnable. The rights exist, the audience is real and growing, and the underpricing is a function of packaging and leverage rather than fundamental value. A continental body or an African-owned rights vehicle that consolidated, packaged and sold African football to its actual audience — including the diaspora and the global neutral — would be closing one of the largest and most fixable gaps in the entire market."
+        ]
+      },
+      {
+        "heading": "THE FOOTBALL ENGINE: AFCON, CAF AND THE CLUBS",
+        "paragraphs": [
+          "Football is the engine, and AFCON is its flagship. The 2025 edition generated on the order of $192.6m — roughly $126.2m in sponsorship, $46.5m in television and $19m in ticketing — a real and rising number that nonetheless sits far below what a tournament of its cultural reach could command if its media and sponsorship were owned and packaged to their strength. CAF's club investment has grown from around $19m in 2021 toward roughly $48m by 2026, a doubling that signals intent but underlines how far below European scale the continental club game is capitalised.",
+          "The tell is in the tournament's own name. It is officially the TotalEnergies Africa Cup of Nations — its title sponsor a French energy major, whose CAF partnership was extended in 2025 to run across a dozen competitions through 2028. Its other marquee partners, from TECNO to APSONIC, are largely non-African brands buying access to an African audience. When even the naming rights to the continent's biggest sporting moment are held offshore, the sponsorship layer — the one most theoretically retainable — is already being captured at the very top. AFCON is not under-sponsored; it is under-owned.",
+          "The AFCON revenue split is itself an AOC diagnosis. Sponsorship — the layer where African and pan-African brands can most directly buy association with the continent's biggest cultural moment — is the largest slice, and the most RETAINABLE. Television, the layer most exposed to the broadcast penalty, is under-monetised. Ticketing is small and local. The tournament authors enormous value; the structure through which it captures that value is still weighted toward the layers where leverage is weakest.",
+          "The club layer is where the talent leak and the capital gap meet. African clubs are the first monetiser of the talent Europe ultimately captures, yet they are the least capitalised link in the chain — which is exactly why they sell early and cheap. Recapitalising African club football, and restructuring how it shares in the downstream value of the players it develops, is the most direct intervention available in the sport that matters most."
+        ]
+      },
+      {
+        "heading": "THE RUGBY TEST: THE SPRINGBOK CROSS-READ",
+        "paragraphs": [
+          "Rugby offers the continent's clearest CONTESTED case, and this report cross-references MonoKromatik's dedicated Springbok brand study for the detail. The Springbok is the best team in world rugby and one of its most under-monetised brands — first in the world on brand strength, sixth on brand value, at roughly $117m against the All Blacks' ~$282m. The commercial future is the live fight: SA Rugby's unions rejected Ackerley's ~$375m-implied bid for 20% and board control, keeping ownership South African and forgoing the capital, while domestic bidders — Rupert, Motsepe, MVM — circled as the alternative.",
+          "The 2026 figures show why the fight matters: SA Rugby group revenue passed R2bn (+33%), gross sponsorship rose 51% to R739m and overtook broadcast for the first time in the professional era, with the union targeting a further doubling by the 2027 World Cup. This is a CONTESTED asset re-rating in real time — the rare African sports property where the domestic-ownership option is live on the table rather than absent from it, and where the outcome is still being written.",
+          "The Springbok is the template the rest of the continent should study, because it is the one case where the ownership question was answered in favour of staying home — at the cost of the capital a foreign buyer would have brought. Whether SA Rugby can build the All Blacks' commercial machine without the All Blacks' cheque is the test that tells every other African property what RETAINED ownership actually costs, and whether it is worth it."
+        ]
+      },
+      {
+        "heading": "THE BASKETBALL PLAY: NBA AFRICA & THE BAL",
+        "paragraphs": [
+          "Basketball is the code built for export from birth, and that makes it the cleanest test of whether Africa can own a league designed for global monetisation. NBA Africa's digital audience is growing at around 40% year on year; the first NBA game on African soil is slated for 2027; and the Basketball Africa League, financed with Helios Sports & Entertainment, is a genuinely new continental property. The talent pipeline into the NBA and the BAL is already one of the fastest-growing in world sport.",
+          "The ownership structure is the whole question. The BAL is a joint venture in which the NBA's global machine is the senior partner and African capital (via Helios) is present but not controlling. That is a better outcome than pure export — Africa authors the talent and shares in the league — but it is not RETAINED, and the default trajectory routes the largest share of the upside to the global rights holder. Basketball will be monetised at global scale; the open question is whether the continent's stake in it grows or dilutes as it does.",
+          "Because basketball's properties are new, they are the most designable. Unlike football's entrenched rights structures or betting's incumbent platforms, the BAL and NBA Africa are still being built — which means the ownership terms are still being set. This is the layer where African capital has the clearest shot at buying in early, at the ground floor of a property engineered for the exact global monetisation the rest of the market only wishes it had."
+        ]
+      },
+      {
+        "heading": "THE AFRICAN-CAPITAL COUNTER-THESIS: IS AN AFRICAN PIF COMING?",
+        "paragraphs": [
+          "The counter-thesis to managed decline is African capital buying in — and there are early signs it is starting. Silverbacks Holdings is assembling a cross-code portfolio. Helios sits inside the BAL. South African corporates and family offices — Remgro, African Rainbow Capital — moved on the Springbok. The question the whole market keeps asking is why there is no African sovereign or pooled vehicle doing at continental scale what Saudi Arabia's PIF does globally: buying the assets, building the leagues, keeping the upside.",
+          "The obstacles are real: capital is scarcer and more risk-priced, sports is still seen as philanthropy or nation-branding rather than an asset class, and the continent lacks the pooled institutional vehicles — sovereign funds, pension aggregators, dedicated sports-PE — that turn intent into deals. But the mispricing this report documents is precisely the kind of asymmetry that patient, structured capital exists to exploit. The assets are cheap, the growth is demographically underwritten, and the foreign competition, while sophisticated, is thin.",
+          "The actionable version is not a fantasy PIF but a realistic ladder: African sports-investment vehicles that co-invest alongside foreign PE to keep a domestic stake; a continental rights body with the mandate to consolidate and own media; and academy and club structures that hold equity in the talent pathway. An African PIF for sport may or may not come. A coalition of African capital that treats sport as the mispriced asset class it is, is both possible now and the single highest-leverage response to everything else in this report."
+        ]
+      },
+      {
+        "heading": "THE FAN-MONETISATION GAP",
+        "paragraphs": [
+          "Africa has the world's youngest, largest and fastest-growing sports fanbase, and among its lowest monetisation per fan. The gap between attention and revenue-per-fan is enormous — order-of-magnitude, an African sports fan is monetised at a small fraction of a North American or European one. Conventionally that is read as a weakness. Read through AOC, it is unclaimed territory: the authorship (the fandom) is already there at global scale; the ownership of the direct-to-fan relationship is not yet built.",
+          "The unlock is mobile money and fan data. Africa leads the world in mobile-money penetration, which means the payment rail for direct-to-fan monetisation — memberships, micro-transactions, fan tokens, content, commerce — already exists where it does not in many richer markets. The strategic asset is the fan relationship and the data behind it: who owns it, the platform or the property? Today, largely the foreign platforms (including the betting apps, which own the richest behavioural data on African sports fans anywhere).",
+          "Closing the fan-monetisation gap is the most demographically-leveraged play in the market, because the fanbase only grows. A property — a league, a club, a federation — that owns its direct-to-fan relationship, prices it for African wallets via mobile money, and keeps the data, converts the continent's single greatest structural advantage (young, huge, mobile-first fandom) from a statistic other people monetise into an asset it owns."
+        ]
+      },
+      {
+        "heading": "THE COMPARATIVES: SAUDI, IPL AND MLS",
+        "paragraphs": [
+          "Three external benchmarks frame what deliberate ownership can do. Saudi Arabia's PIF has shown what sovereign capital, spent with intent, can buy in sport in a handful of years — leagues, clubs, events and global relevance — the model of ownership-by-capital that African sport conspicuously lacks. India's IPL demonstrates the opposite lever: not sovereign money but structural design — a domestically-owned, purpose-built league monetised at a valuation that dwarfs the underlying sport's global rights, because it was engineered to capture its own value from the start.",
+          "MLS sits between them as the patient-build case: a league that grew value over decades through disciplined ownership, expansion economics and a single-entity structure that kept control central. None of the three is a template to copy wholesale, but together they bracket the options. Africa can wait for sovereign capital (Saudi), design purpose-built domestically-owned properties (IPL), or patiently build and hold (MLS) — but the one thing all three share, and African sport lacks, is that the people who authored the value also own the vehicle that captures it.",
+          "The comparatives also price the prize. If a purpose-built, well-owned property can be worth a multiple of its sport's raw rights, then African sport's underpricing is not a ceiling — it is the entry point. The gap between what African sport is worth today and what a comparably-owned version would be worth is the return on closing the ownership gap."
+        ]
+      },
+      {
+        "heading": "SCENARIOS TO 2035",
+        "paragraphs": [
+          "Three scenarios bracket the decade. In the BASE case, the market reaches roughly $20bn on Oliver Wyman's trajectory, but the capture mix barely improves: foreign PE, foreign platforms and European leagues take the growth, African ownership stays thin, and the annual leak grows in absolute terms even as it holds as a share. This is the default — the outcome of doing nothing structurally different while the market rises.",
+          "In the BULL case, Africa closes the ownership gap on the winnable layers: broadcast rights are consolidated and re-rated toward global comparables, African capital co-invests to hold meaningful stakes in the marquee properties, academies and clubs restructure to keep more of the talent economy, and betting is domesticated and regulated. The market still reaches ~$20bn, but the capture rate rises sharply — the difference is several billion dollars a year staying on the continent, compounding into the domestic base.",
+          "In the BEAR case, the leak deepens: betting scales faster than regulation and remains foreign-owned, the talent export accelerates as European academies deepen their African pipelines, foreign PE buys the best remaining commercial rights before African capital organises, and the social harms of mass mobile gambling trigger a regulatory backlash that damages the legitimate market. The market may still grow, but Africa's share of it falls, and the $20bn asset becomes a $20bn extraction. The scenarios are not predictions; they are a choice about ownership, made or defaulted on over the next decade."
+        ]
+      },
+      {
+        "heading": "THE PLAYBOOK",
+        "paragraphs": [
+          "For rights holders and federations: consolidate and own your media. The broadcast penalty is the most fixable single number in this report. Package African football, rugby and the new basketball properties for their actual audience — continental, diaspora and global-neutral — and sell from a position of unified leverage rather than fragmented weakness. Own the direct-to-fan relationship and the data behind it; do not rent it to a platform.",
+          "For investors and African capital: this is a mispriced asset class with demographic tailwinds and thin competition. Build the vehicles — sports-PE funds, co-investment structures alongside foreign capital, academy and club equity — that keep a domestic stake in the upside. The marquee properties (Springbok commercial rights, BAL, consolidated football media) are the anchor assets; the talent pathway is the compounding one. Move before the foreign capital finishes buying.",
+          "For brands: African sport is the highest-authenticity, most under-priced association available to any brand serious about the continent's young consumers. AFCON sponsorship, club and athlete partnerships, and league-level positions can be bought today at a fraction of what equivalent global association costs — and activated with genuine cultural fluency, they buy a relationship with the fastest-growing fanbase in the world.",
+          "For policymakers and regulators: betting is the priority, on both sides of the ledger. Domesticate its ownership and recirculate its margin; govern its social harm actively, especially youth exposure. Beyond betting, the policy prize is the structural one — enabling the pooled capital vehicles, protecting the talent pathway's economics, and treating sport as strategic infrastructure and soft-power asset, not discretionary spend. The window to shape a $20bn market's ownership is this decade; it does not stay open."
+        ]
+      },
+      {
+        "heading": "APPENDIX: THE VALUE-LEAKAGE MODEL, LINE BY LINE",
+        "paragraphs": [
+          "The headline figure — roughly $2.6bn a year captured offshore — is built to be audited, not taken on trust. It is an order-of-magnitude estimate, not an audited account. We set out every channel, its inputs, its assumptions and a candid confidence rating below, so a rights holder, regulator or investor can substitute their own numbers and re-run it. The components, not the total, are where the argument lives.",
+          "Channel 1 — Talent and transfer value exported: approximately $1.0bn a year. Confidence: estimate (the softest and largest channel). Inputs: the annual flow of transfer fees on African and African-origin players moving into and within Europe's leagues, plus an attributed share of the wage and image-rights value those players generate offshore. Assumption: a conservative attribution of net career value to an African development system that does not capture it. A reviewer who attributes less to African development would lower this; one who counts full lifetime earnings would raise it several-fold.",
+          "Channel 2 — Betting margin routed offshore: approximately $0.8bn a year. Confidence: reported inputs, estimated share. Inputs: about $3bn of sports-betting stakes within a roughly $17.6bn gaming market (per allAfrica and SCCG, 2025), a typical gross-win margin, and the share of the largest operators whose holding companies are foreign-domiciled — SportyBet under Malta-registered Sporty Group, Betway under NYSE-listed Super Group among them. Assumption: the majority of gross win accrues to offshore parents. Change the foreign-ownership share and this figure moves with it.",
+          "Channel 3 — Broadcast underpricing gap: approximately $0.5bn a year. Confidence: reported anchors, modelled gap. Inputs: CAF football rights at about $83m a year against UEFA's roughly $3.9bn a year. Assumption: a fair African rate set far below the raw 47x multiple — adjusted heavily downward for smaller advertising markets and pay-TV ARPUs — still leaves a large foregone-capture gap, of which we count only a conservative slice as annual leakage.",
+          "Channel 4 — Private-equity upside offshore: approximately $0.3bn a year. Confidence: estimate (the smallest and most conservative channel). Inputs: the annualised appreciation on minority commercial-rights stakes bought by foreign private equity — the Silver Lake, Ackerley, CVC and Helios deals in the ledger. Assumption: the offshore investor's share of the upside on African and African-linked sports assets.",
+          "Summed, the four channels give roughly $2.6bn a year — about a fifth of the $12bn market. We publish the components rather than a single number precisely because the components are where a serious buyer will push back, and where the strategy to close the leak actually operates. Halve the assumptions and the leak is still north of a billion dollars a year; the direction of the finding is robust to any reasonable challenge."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY, SOURCES & ENDNOTES",
+        "paragraphs": [
+          "This is an Intelligence Report built to MonoKromatik's paid institutional standard: a proprietary framework (Authorship → Ownership → Capture and the four ownership archetypes), bottom-up sizing, a transparent value-leakage model, a named deal ledger, scenario analysis and a segmented playbook — declarative where the evidence allows, and carrying its own counter-case. The framework and the classifications are MonoKromatik's; the underlying figures are sourced and named in the prose.",
+          "Sources and provenance: market sizing ($12bn→$20bn by ~2035) is Oliver Wyman, reported via Oliver Wyman's own analysis and outlets including Forbes Africa and Business Report; betting figures (~$3bn sports-betting stakes, ~$17.6bn gaming, 440m bettors, ~94% mobile, 2025) are per allAfrica and SCCG Management; broadcast comparisons (CAF–Lagardère ~$1bn/12yr vs UEFA ~$3.9bn/yr) and streaming MEA ($1.28bn→$2.38bn) are as reported by SportBusiness and industry trackers; AFCON 2025 revenue, CAF club investment, NBA Africa and BAL figures are per CAF and NBA Africa disclosures and reporting; rugby comparatives (All Blacks/Silver Lake ~$2.4bn; Springbok/Ackerley ~$375m implied; SA Rugby 2025 accounts) are per Sportico, Bloomberg and SA Rugby via Daily Maverick, and cross-referenced to MonoKromatik's Springbok brand study. The value-leakage model is an explicitly-stated, order-of-magnitude estimate; its inputs are given in the Appendix so the figure can be re-run. Interpretation and strategy are MonoKromatik's own.",
+          "Endnotes and key sources (named in the prose per house standard; consolidated here for verification):",
+          "1 — Oliver Wyman (2024): Africa's sports market above $12bn today, projected above $20bn by ~2035; reported via Oliver Wyman and outlets including Forbes Africa and Business Report.",
+          "2 — allAfrica (2025): 440 million African sports bettors; wider gaming market ~$17.6bn.",
+          "3 — SCCG Management (2025): African sports-betting stakes reaching ~$3bn in 2025; football-anchored, ~94% mobile.",
+          "4 — Company filings and registries: SportyBet operated by Sporty Group International (Malta); Betway owned by Super Group (NYSE-listed); SportPesa held by a mix of local and international investors.",
+          "5 — SportBusiness and industry rights trackers: CAF–Lagardère rights ~$1bn/12yr (~$83m/yr, 2015) vs UEFA ~$3.9bn/yr (2024); MEA streaming ~$1.28bn (2024) → ~$2.38bn (5-yr horizon).",
+          "6 — CAF disclosures: AFCON 2025 revenue ~$192.6m (sponsorship ~$126.2m, TV ~$46.5m, ticketing ~$19m); CAF club investment ~$19m (2021) → ~$48m (2026); TotalEnergies title sponsorship of CAF competitions extended through 2028.",
+          "7 — Transfer records (Transfermarkt, club and league disclosures): Nicolas Pépé to Arsenal €80m (2019); Sadio Mané via Génération Foot and Metz, then Southampton to Liverpool ~£34m (2016); Mohammed Kudus via Right to Dream, Nordsjælland and Ajax to West Ham £38m (2023) and Tottenham (2025).",
+          "8 — Sportico, Bloomberg and SA Rugby via Daily Maverick (2026): All Blacks commercial arm ~$2.4bn (Silver Lake); Springbok commercial rights ~$375m implied (rejected Ackerley 20% bid); SA Rugby 2025 group revenue above R2bn (+33%), gross sponsorship R739m (+51%). Cross-referenced to MonoKromatik's Springbok brand study.",
+          "9 — NBA Africa and BAL disclosures: NBA Africa digital audience up ~40% year on year; first NBA game on African soil slated for 2027; the Basketball Africa League financed with Helios Sports & Entertainment.",
+          "10 — The value-leakage model (see Appendix) is MonoKromatik's own order-of-magnitude estimate; every input and assumption is stated so the figure can be independently re-run."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The AOC map — who authors, owns and captures African sport",
+        "cols": [
+          "Authored in Africa",
+          "Owned in Africa",
+          "Captured in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Talent (players)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Fandom & attention",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Broadcast & media rights",
+            "tag": "CONTESTED",
+            "cells": [
+              3,
+              2,
+              1
+            ]
+          },
+          {
+            "label": "Betting",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Sponsorship",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Domestic leagues & matchday",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Rugby (SA commercial rights)",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              3,
+              2
+            ]
+          }
+        ],
+        "note": "MonoKromatik's Authorship → Ownership → Capture read (0 = none, 4 = fully African). Where authorship is high but capture is low, value is EXPORTED or HOLLOWED; where ownership is genuinely in play, CONTESTED; where all three are African, RETAINED. Classifications are MonoKromatik's analysis."
+      },
+      {
+        "type": "line",
+        "after": 4,
+        "title": "Sizing the prize — the African sports market to 2035",
+        "unit": "US$bn market size",
+        "note": "More than $12bn today, projected above $20bn by ~2035 (per Oliver Wyman, 2024). Intermediate point interpolated on the stated trajectory; the strategic variable is not the total but the capture rate.",
+        "data": [
+          {
+            "label": "2025",
+            "value": 12,
+            "display": "$12bn"
+          },
+          {
+            "label": "2030",
+            "value": 16,
+            "display": "~$16bn"
+          },
+          {
+            "label": "2035",
+            "value": 20,
+            "display": "$20bn+"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 5,
+        "title": "The value-capture stack — biggest layers, least local capture",
+        "note": "Relative scale, MonoKromatik's layered read (not audited totals). The largest, fastest-growing layers (betting, talent, media) are the least locally owned; the fully-owned base (leagues, matchday) is the smallest. Archetype tags per the AOC framework.",
+        "data": [
+          {
+            "label": "Betting (stakes pool)",
+            "value": 100,
+            "display": "largest",
+            "tag": "hollowed"
+          },
+          {
+            "label": "Talent & transfer economy",
+            "value": 78,
+            "display": "exported offshore",
+            "tag": "exported"
+          },
+          {
+            "label": "Broadcast & media rights",
+            "value": 55,
+            "display": "underpriced",
+            "tag": "contested"
+          },
+          {
+            "label": "Sponsorship",
+            "value": 40,
+            "display": "re-rating",
+            "tag": "contested"
+          },
+          {
+            "label": "Domestic leagues & clubs",
+            "value": 28,
+            "display": "under-capitalised",
+            "tag": "retained"
+          },
+          {
+            "label": "Ticketing & matchday",
+            "value": 18,
+            "display": "local",
+            "tag": "retained"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "The talent leak — peak European transfer fees for African talent",
+        "note": "Landmark fees crystallised in Europe, per reported transfer values (Transfermarkt / club disclosures). The value lands in the European market; the first sale OUT of Africa — the fee an African club actually banks — is a small fraction of these numbers.",
+        "data": [
+          {
+            "label": "Nicolas Pépé (→ Arsenal)",
+            "value": 80,
+            "display": "€80m"
+          },
+          {
+            "label": "Victor Osimhen (peak)",
+            "value": 75,
+            "display": "~€75m"
+          },
+          {
+            "label": "Mohammed Kudus (→ WHU/Spurs)",
+            "value": 45,
+            "display": "~€45m"
+          },
+          {
+            "label": "Sadio Mané (→ Liverpool)",
+            "value": 41,
+            "display": "€41m"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The academy pipeline — Africa authors, who owns the pipe?",
+        "cols": [
+          "African talent in",
+          "Foreign ownership / stake",
+          "Value lands offshore"
+        ],
+        "rows": [
+          {
+            "label": "Right to Dream",
+            "tag": "Ghana/Egypt → Denmark/US; Mansour Group",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Génération Foot",
+            "tag": "Senegal → Metz; fed Mané",
+            "cells": [
+              4,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "ASEC Mimosas",
+            "tag": "Côte d'Ivoire → Europe",
+            "cells": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "label": "Aspire Academy",
+            "tag": "Qatar-funded network",
+            "cells": [
+              4,
+              4,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0–4). Each academy authors African talent; the pathway that monetises it is largely foreign-owned, so the value lands offshore. The prize is African equity in the pipe, not stopping the export."
+      },
+      {
+        "type": "bar",
+        "after": 10,
+        "title": "The broadcast penalty — African football priced ~47× low",
+        "note": "CAF's Lagardère rights (~$1bn/12yr = ~$83m/yr, 2015) vs UEFA's ~$3.9bn/yr (2024), per SportBusiness. Same sport, ~47× lower per year — a gap of packaging and leverage, not of underlying passion.",
+        "data": [
+          {
+            "label": "CAF (African football)",
+            "value": 83,
+            "display": "~$83m/yr"
+          },
+          {
+            "label": "UEFA (European football)",
+            "value": 3900,
+            "display": "~$3.9bn/yr"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 8,
+        "title": "The deal ledger — who's buying African & African-linked sport",
+        "cols": [
+          "Capital deployed",
+          "African-owned",
+          "Control taken",
+          "Upside routed offshore"
+        ],
+        "rows": [
+          {
+            "label": "Silver Lake",
+            "tag": "All Blacks commercial (~$2.4bn val.)",
+            "cells": [
+              4,
+              0,
+              2,
+              4
+            ]
+          },
+          {
+            "label": "Ackerley Sports Group",
+            "tag": "Springbok 20% bid (~$375m impl.) — rejected",
+            "cells": [
+              3,
+              0,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Helios / NBA (BAL)",
+            "tag": "Basketball Africa League JV",
+            "cells": [
+              3,
+              2,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "CVC",
+            "tag": "Rugby (Six Nations, clubs)",
+            "cells": [
+              4,
+              0,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "Silverbacks Holdings",
+            "tag": "Sagna — cross-code, Mauritius",
+            "cells": [
+              2,
+              4,
+              3,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0–4). The capital is overwhelmingly foreign and increasingly institutional; Silverbacks is the clearest African-owned counter-example. Minority stakes bring capital but route a slice of the upside offshore."
+      },
+      {
+        "type": "quadrant",
+        "after": 5,
+        "title": "Codes & layers — cultural authority vs local value capture",
+        "xAxis": [
+          "value captured offshore",
+          "value captured locally"
+        ],
+        "yAxis": [
+          "lower cultural authority",
+          "world-class authority"
+        ],
+        "points": [
+          {
+            "label": "Football (talent)",
+            "x": 15,
+            "y": 95,
+            "highlight": true
+          },
+          {
+            "label": "Betting",
+            "x": 12,
+            "y": 70
+          },
+          {
+            "label": "AFCON",
+            "x": 42,
+            "y": 88
+          },
+          {
+            "label": "Springbok rugby",
+            "x": 58,
+            "y": 90
+          },
+          {
+            "label": "BAL / NBA Africa",
+            "x": 30,
+            "y": 62
+          },
+          {
+            "label": "Domestic leagues",
+            "x": 72,
+            "y": 55
+          }
+        ],
+        "note": "MonoKromatik positioning read. Nearly every property sits high on authorship and low on local capture — the export pattern made visual. The Springbok is the furthest right (most locally captured) because its ownership fight was answered at home."
+      },
+      {
+        "type": "donut",
+        "after": 9,
+        "title": "The betting elephant — the biggest single pool",
+        "value": 25,
+        "valueLabel": "~25%",
+        "sublabel": "Sports betting (~$3bn stakes) as a share of the ~$12bn African sports market — the largest single money pool, ~94% mobile, on largely foreign-owned platforms.",
+        "note": "Per allAfrica / SCCG (2025): ~$3bn sports-betting stakes within a ~$17.6bn gaming market, 440m bettors. The engagement is African; the ownership, in AOC terms, is HOLLOWED."
+      },
+      {
+        "type": "matrix",
+        "after": 9,
+        "title": "Who owns the betting — platform vs jurisdiction",
+        "cols": [
+          "African market reach",
+          "African-owned",
+          "Profit routed offshore"
+        ],
+        "rows": [
+          {
+            "label": "SportyBet",
+            "tag": "pan-African reach",
+            "cells": [
+              4,
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Betway",
+            "tag": "Super Group (intl.)",
+            "cells": [
+              4,
+              1,
+              4
+            ]
+          },
+          {
+            "label": "SportPesa",
+            "tag": "East Africa",
+            "cells": [
+              3,
+              1,
+              3
+            ]
+          },
+          {
+            "label": "MSport / others",
+            "tag": "West Africa",
+            "cells": [
+              3,
+              1,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0–4). The users and the licences are local; the holding companies, odds engines and profit are largely foreign — the HOLLOWED archetype in its purest form. Ownership shares are indicative."
+      },
+      {
+        "type": "bar",
+        "after": 11,
+        "title": "AFCON 2025 — where the revenue comes from",
+        "note": "AFCON 2025 generated ~$192.6m, per CAF: sponsorship ~$126.2m, TV ~$46.5m, ticketing ~$19m. Sponsorship — the most locally retainable layer — is the largest; television, most exposed to the broadcast penalty, is under-monetised.",
+        "data": [
+          {
+            "label": "Sponsorship",
+            "value": 126.2,
+            "display": "$126.2m"
+          },
+          {
+            "label": "Television",
+            "value": 46.5,
+            "display": "$46.5m"
+          },
+          {
+            "label": "Ticketing",
+            "value": 19,
+            "display": "$19m"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 12,
+        "title": "The ownership-gap benchmark — All Blacks vs Springbok",
+        "note": "The All Blacks' commercial arm was valued near $2.4bn when Silver Lake invested; SA Rugby's rejected Ackerley bid implied ~$375m for the Springbok commercial rights, per Sportico / Bloomberg. Same sport, a different order of magnitude of captured value.",
+        "data": [
+          {
+            "label": "All Blacks (commercial)",
+            "value": 2400,
+            "display": "~$2.4bn"
+          },
+          {
+            "label": "Springbok (implied)",
+            "value": 375,
+            "display": "~$375m"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "after": 13,
+        "title": "The re-rating window — MEA streaming",
+        "unit": "US$m streaming (MEA)",
+        "note": "Middle East & Africa sports/entertainment streaming ~$1.28bn (2024) heading toward ~$2.38bn over five years, per industry trackers. The layer where African football's underpriced rights could re-rate — if packaged and owned to capture it.",
+        "data": [
+          {
+            "label": "2024",
+            "value": 1283,
+            "display": "$1.28bn"
+          },
+          {
+            "label": "2029",
+            "value": 2379,
+            "display": "~$2.38bn"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 15,
+        "title": "The fan-monetisation gap — revenue per sports fan (indicative)",
+        "note": "Order-of-magnitude illustration (not audited): an African sports fan is monetised at a fraction of a North American or European one, despite comparable passion. The gap is the unclaimed direct-to-fan opportunity, unlockable via mobile money. Directional, per MonoKromatik synthesis.",
+        "data": [
+          {
+            "label": "North America",
+            "value": 55,
+            "display": "~$55"
+          },
+          {
+            "label": "Europe",
+            "value": 32,
+            "display": "~$32"
+          },
+          {
+            "label": "Brazil",
+            "value": 14,
+            "display": "~$14"
+          },
+          {
+            "label": "Africa",
+            "value": 3,
+            "display": "~$3"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 17,
+        "title": "Scenarios to 2035 — value staying on the continent",
+        "note": "MonoKromatik scenario model. All three reach ~$20bn in market size; they differ on capture. Bars show illustrative annual value RETAINED on the continent under each — the difference between them is the return on closing the ownership gap.",
+        "data": [
+          {
+            "label": "Bull (gap closed)",
+            "value": 100,
+            "display": "high retention",
+            "tag": "retained"
+          },
+          {
+            "label": "Base (drift)",
+            "value": 62,
+            "display": "mix holds",
+            "tag": "contested"
+          },
+          {
+            "label": "Bear (leak deepens)",
+            "value": 38,
+            "display": "export accelerates",
+            "tag": "exported"
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'underpriced $20bn asset' thesis is weakest — and the case that the current structure is closer to rational than we allow.",
+      "points": [
+        "The leakage number is an order-of-magnitude estimate, not an audited figure. Its four channels rest on contestable assumptions — the offshore share of betting margin, the attribution of transfer value to African development, the 'fair' broadcast multiple. A hostile reviewer could halve it, and should be handed the model (Section 07) to try. The direction is robust; the precise figure is not.",
+        "Some of the 'leak' is the price of access, not extraction. European leagues, foreign platforms and global rights buyers bring capital, infrastructure and audiences African markets cannot yet supply themselves. A share of the value captured offshore is payment for services that genuinely add value — and a purely nationalist read of ownership can destroy value by refusing the capital that grows the pie.",
+        "The betting pool is the largest 'opportunity' in the report and also its most ethically fraught. Treating $3bn of youth-heavy mobile gambling as an asset to be domesticated and grown risks optimising a social harm. A serious bear case says the right strategic answer to betting may be to shrink and constrain it, not to capture more of it — which would lower, not raise, Africa's share of the market total.",
+        "Ownership is not free. The Springbok's rejection of Ackerley kept control at home and forwent the capital — and it is not yet proven that SA Rugby can build the commercial machine without it. 'Retained but under-capitalised' can be a worse outcome than 'contested but funded.' The report's preference for domestic ownership carries a real cost the bull case tends to skip.",
+        "The comparatives cut both ways. Saudi's PIF, the IPL and MLS are success stories selected in hindsight; for each, there are leagues and sovereign sports bets that destroyed value. The claim that African sport is 'underpriced' assumes the ownership gap can be closed profitably — but if the domestic capital, governance and rights-packaging capacity are not built first, buying the assets early is how you lose money early."
+      ]
+    }
   }
 ]
