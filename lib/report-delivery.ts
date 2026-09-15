@@ -1,3 +1,4 @@
+import { PDFDocument, StandardFonts, rgb, degrees } from 'pdf-lib';
 import type { createAdminClient } from './supabase/admin';
 
 // One-off paid-report fulfilment. On a Paystack product purchase the buyer is
@@ -49,6 +50,37 @@ const REPORTS: ReportAsset[] = [
   },
 ];
 
+/**
+ * Personalise each delivered copy to the buyer: a faint diagonal watermark on
+ * every page ("LICENSED TO <email>") plus a footer line. Makes the report's
+ * "licensed to the named purchaser" real and traceable, so a leaked copy points
+ * back to who leaked it. Best-effort — on any failure the original bytes are
+ * returned so delivery is never blocked.
+ */
+async function stampForBuyer(pdf: Buffer, email: string): Promise<Buffer> {
+  try {
+    const doc = await PDFDocument.load(pdf);
+    const font = await doc.embedFont(StandardFonts.Helvetica);
+    const date = new Date().toISOString().slice(0, 10);
+    const mark = `LICENSED TO ${email.toUpperCase()}`;
+    const footer = `Licensed to ${email}  ·  ${date}  ·  This copy is watermarked. Not for redistribution.`;
+    for (const page of doc.getPages()) {
+      const { width, height } = page.getSize();
+      // faint diagonal watermark
+      page.drawText(mark, {
+        x: width * 0.1, y: height * 0.32, size: 24, font,
+        color: rgb(0.5, 0.5, 0.5), opacity: 0.06, rotate: degrees(50),
+      });
+      // subtle traceable footer line, bottom-left
+      page.drawText(footer, { x: 34, y: 9, size: 5.5, font, color: rgb(0.55, 0.55, 0.55), opacity: 0.85 });
+    }
+    return Buffer.from(await doc.save());
+  } catch (e) {
+    console.error('[delivery] watermark failed, sending unstamped:', (e as Error)?.message);
+    return pdf;
+  }
+}
+
 /** Find the paid report a charge payload is buying, or null. */
 export function matchReport(payloadBlob: string): { slug: string } | null {
   const b = payloadBlob.toLowerCase();
@@ -80,7 +112,8 @@ export async function deliverReport(email: string, admin: Admin, slug: string): 
     console.error(`[delivery] PDF not in storage (${bucket}/${report.object}): ${dlErr?.message ?? 'missing'}`);
     return record({ status: 'failed', detail: `pdf missing ${report.object}: ${dlErr?.message ?? 'not found'}` });
   }
-  const base64 = Buffer.from(await file.arrayBuffer()).toString('base64');
+  const stamped = await stampForBuyer(Buffer.from(await file.arrayBuffer()), email);
+  const base64 = stamped.toString('base64');
   const html =
     '<p>Thank you for your purchase.</p>' +
     `<p>Your copy of <strong>${report.title}</strong> is attached as a PDF.</p>` +
