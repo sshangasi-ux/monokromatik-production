@@ -19,6 +19,14 @@ const STATUS_LABEL: Record<Report['status'], string> = {
   planned: 'PLANNED',
 };
 
+/** Human date for the report meta — never show a raw ISO timestamp. */
+function fmtDate(iso?: string): string {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 export default async function ReportFeature({ report }: { report: Report }) {
   const r = report;
   const live = r.status === 'live';
@@ -53,9 +61,27 @@ export default async function ReportFeature({ report }: { report: Report }) {
           <p className="max-w-3xl mt-8 text-2xl md:text-3xl text-mono-soft-white font-feature italic leading-snug">{r.summary}</p>
           <div className="mt-12 pt-6 border-t border-mono-white/20 flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-[0.19em] font-display font-bold text-mono-gray">
             <span className="text-mono-amber">{ACCESS_LABEL[r.access].toUpperCase()}</span>
+            {locked && oneOffUrl && <span className="text-mono-amber-bright">{reportPrice(r.slug)} · ONE-TIME</span>}
             {r.statusNote && <span>{r.statusNote.toUpperCase()}</span>}
-            {r.publishedAt && <span>{r.publishedAt}</span>}
+            {r.publishedAt && <span>{fmtDate(r.publishedAt).toUpperCase()}</span>}
           </div>
+          {/* Early value + price anchor — so a mobile reader sees the offer near
+              the top instead of scrolling the full standfirst first. */}
+          {locked && oneOffUrl && (
+            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <a
+                href={oneOffUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors"
+              >
+                BUY THIS REPORT — {reportPrice(r.slug)} <ArrowRight size={16} />
+              </a>
+              <span className="text-[11px] tracking-[0.06em] font-body text-mono-gray">
+                One-time · secure Paystack checkout · delivered as a PDF
+              </span>
+            </div>
+          )}
         </div>
       </header>
 
@@ -142,11 +168,11 @@ export default async function ReportFeature({ report }: { report: Report }) {
               const enterprise = reportEnterprise(r.slug);
               // Copy adapts to the purchase paths actually live: both, membership-
               // only, or report-only (the pay-per-report fast-track).
-              const blurb = membersLive
-                ? (oneOff
-                    ? 'Read every report with the Intelligence membership — or buy just this one.'
-                    : 'The full report is part of the Intelligence membership.')
-                : 'Buy the full report — instant access, one-time purchase.';
+              const blurb = oneOff
+                ? 'Buy this report for instant access — delivered as a PDF.'
+                : membersLive
+                  ? 'The full report is part of the Intelligence membership.'
+                  : 'Buy the full report — instant access, one-time purchase.';
               return (
               <>
               <div className="border border-mono-amber bg-mono-soft-white p-8 text-center">
@@ -155,16 +181,18 @@ export default async function ReportFeature({ report }: { report: Report }) {
                   {ACCESS_LABEL[r.access].toUpperCase()}
                 </p>
                 <p className="font-body text-mono-charcoal max-w-md mx-auto">{blurb}</p>
-                <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                  {membersLive && (
-                    <Link href="/membership" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-6 py-3 font-display font-bold hover:bg-mono-charcoal transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
-                  )}
+                <div className="mt-6 flex flex-col items-center gap-3">
                   {oneOff && (
-                    <a href={oneOff} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 px-6 py-3 font-display font-bold transition-colors ${membersLive ? 'bg-mono-amber text-mono-black hover:bg-mono-amber/90' : 'bg-mono-black text-mono-white hover:bg-mono-charcoal'}`}>
-                      BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={16} />
+                    <a href={oneOff} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-mono-amber text-mono-black px-8 py-4 font-display font-bold text-base hover:bg-mono-amber/90 transition-colors">
+                      BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={18} />
                     </a>
                   )}
-                  <Link href="/account?next=/reports" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    {membersLive && (
+                      <Link href="/membership" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
+                    )}
+                    <Link href="/account?next=/reports" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">SIGN IN</Link>
+                  </div>
                 </div>
                 {oneOff && (
                   <p className="mt-4 text-[11px] tracking-[0.04em] text-mono-gray font-body">
@@ -240,7 +268,28 @@ export default async function ReportFeature({ report }: { report: Report }) {
             </div>
           </div>
         )}
+        {locked && oneOffUrl && <div className="h-20 md:hidden" aria-hidden />}
       </div>
+      {/* Sticky mobile BUY bar — keeps the ask visible at any scroll depth, since
+          the gate otherwise sits well below the standfirst + exhibits on mobile. */}
+      {locked && oneOffUrl && (
+        <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-mono-black/95 backdrop-blur border-t border-mono-amber/40 px-4 py-3 flex items-center justify-between gap-3">
+          <div className="leading-tight min-w-0">
+            <div className="text-[9px] tracking-[0.18em] font-display font-bold text-mono-gray truncate">{r.series.toUpperCase()}</div>
+            <div className="text-sm font-display font-bold text-mono-white">
+              {reportPrice(r.slug)}<span className="text-mono-gray font-body font-normal text-xs"> · one-time</span>
+            </div>
+          </div>
+          <a
+            href={oneOffUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-1.5 bg-mono-amber text-mono-black px-5 py-2.5 font-display font-bold text-sm"
+          >
+            BUY <ArrowRight size={15} />
+          </a>
+        </div>
+      )}
     </div>
   );
 }
