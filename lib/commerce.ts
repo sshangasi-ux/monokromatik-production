@@ -149,18 +149,16 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // auto-delivered by the webhook from private storage on purchase.
     url: process.env.NEXT_PUBLIC_PAYSTACK_SPRINGBOK_URL || 'https://paystack.com/buy/the-springbok--world-champion-under-owned-brand-study-vusmva',
   },
-  // The flagship institutional report (the `report` tier). Pre-registered ahead
-  // of its content PR so the pricing wiring is live the moment the report page
-  // and Paystack product exist. Gated (url:null) until the R3,500 Paystack
-  // product is created — until then the report page shows the membership CTA
-  // rather than a broken BUY link. To go live: create the R3,500 Paystack
-  // product, then set NEXT_PUBLIC_PAYSTACK_AFRICAN_SPORT_URL (or hardcode the
-  // product link here), upload the PDF to the private `reports` bucket, and add
-  // the SKU's match tokens to the REPORTS registry in lib/report-delivery.ts.
+  // The flagship institutional report (the `report` tier). LIVE — the R3,500
+  // Paystack product (id 2725863) is created, its PDF is in the private `reports`
+  // bucket, and its match tokens are in the REPORTS registry (lib/report-delivery.ts).
+  // Same Scorecard pattern: the URL is the code default (not a Vercel env var) so
+  // the price/link can't drift; delivery is the webhook → Resend attachment,
+  // per-buyer watermarked, never a shareable link.
   'whos-buying-african-sport-2026': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_AFRICAN_SPORT_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_AFRICAN_SPORT_URL || 'https://paystack.com/buy/whos-buying-african-sport--the-intelligence-report-wlsljm',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',

@@ -11,12 +11,10 @@ export const metadata: Metadata = {
     'Own the full Cultural-Signal Index, or buy individual intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Secure one-time purchase via Paystack.',
 };
 
-// The three-tier ladder is HELD from customers until the full customer-facing
-// pricing display is reviewed and signed off. Off by default, so /pricing shows
-// only the (already-approved) Index offer; flip on with
-// NEXT_PUBLIC_SHOW_PRICING_LADDER=1 once the pricing call is made. Per-report BUY
-// CTAs in the reports/articles are independent of this flag.
-const SHOW_PRICING_LADDER = process.env.NEXT_PUBLIC_SHOW_PRICING_LADDER === '1';
+// The three-tier ladder is LIVE (pricing signed off). Shown by default; it can
+// still be hidden with NEXT_PUBLIC_SHOW_PRICING_LADDER=0 if it ever needs pulling
+// again. Per-report BUY CTAs in the reports/articles are independent of this flag.
+const SHOW_PRICING_LADDER = process.env.NEXT_PUBLIC_SHOW_PRICING_LADDER !== '0';
 
 // CTA target per report tier. Study & report browse the report shelf; enterprise
 // routes to the commissioning desk (same enquiry the license/data products use).
