@@ -48,6 +48,18 @@ const REPORTS: ReportAsset[] = [
     subject: 'Your report — The Springbok: World Champion, Under-Owned',
     blurb: "It reads the best team in world rugby as one of its most under-monetised brands — eight sourced exhibits, the value gap, the private-equity fork, and the strategy to capture more of the brand's value while keeping it South African.",
   },
+  {
+    slug: 'whos-buying-african-sport-2026',
+    // Paystack product 2725863; the checkout slug and product name both carry
+    // the 'whos-buying-african-sport' token. Never a price match (R3,500 is
+    // unique now, but tokens stay the safe signal).
+    match: ['whos-buying-african-sport', 'african-sport', '2725863'],
+    object: process.env.AFRICAN_SPORT_REPORT_OBJECT || 'whos-buying-african-sport-report.pdf',
+    filename: 'MonoKromatik-Whos-Buying-African-Sport-Intelligence-Report.pdf',
+    title: "Who's Buying African Sport? — The Intelligence Report",
+    subject: "Your report — Who's Buying African Sport? (The Intelligence Report)",
+    blurb: 'The institutional read on who owns African sport: the Authorship → Ownership → Capture framework, a bottom-up value-leakage model, a named deal ledger, scenarios to 2035 and a segmented playbook — sixteen sourced exhibits, chart-led.',
+  },
 ];
 
 /**
