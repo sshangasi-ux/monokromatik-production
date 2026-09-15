@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Check, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
-import { MEMBERSHIP, membershipCheckoutUrl } from '../../lib/commerce';
+import { MEMBERSHIP, membershipCheckoutUrl, membershipUnlocks } from '../../lib/commerce';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
 import { getEntitlement, entitlementActive } from '../../lib/entitlements';
 import { getAllCaseStudies, isLocked as isCaseStudyLocked } from '../../lib/case-studies';
@@ -32,7 +32,9 @@ export default async function MembershipPage() {
   // Proof-of-shelf: surface the actual members-only catalogue so the value is
   // shown, not just asserted. Each title links into the piece (free teaser → gate).
   const premiumStudies = getAllCaseStudies().filter(isCaseStudyLocked);
-  const premiumReports = getLiveReports().filter(isReportLocked);
+  // Institutional flagship (report-tier) reports are sold/licensed separately —
+  // membership doesn't include them, so keep them out of the "what you get" shelf.
+  const premiumReports = getLiveReports().filter((r) => isReportLocked(r) && membershipUnlocks(r.slug));
   const shelfCount = premiumStudies.length + premiumReports.length;
   const showcase = [
     ...premiumStudies.slice(0, 8).map((c) => ({ href: `/intelligence/case-studies/${c.slug}`, title: c.title, label: c.brand || 'Case study' })),
