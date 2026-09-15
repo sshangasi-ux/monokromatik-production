@@ -33,7 +33,7 @@ const EXPLORE = [
 ];
 const SOCIALS = [
   { label: 'YouTube', href: 'https://www.youtube.com/@MonoKromatikNetwork', Icon: YoutubeIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/135245970', Icon: LinkedinIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/monokromatik-network', Icon: LinkedinIcon },
 ];
 const COMPANY = [
   { label: 'Pricing', href: '/pricing' },
