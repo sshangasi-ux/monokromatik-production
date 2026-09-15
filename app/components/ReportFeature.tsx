@@ -5,7 +5,7 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise } from '../../lib/commerce';
+import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -34,10 +34,15 @@ export default async function ReportFeature({ report }: { report: Report }) {
   // pay-per-report link. This lets single reports be sold on their own (the cheap
   // fast-track) without requiring memberships to be live first. Free reports
   // never read the session.
-  const membersLive = membershipsLive();
+  // The institutional `report`-tier flagships (R3,500) are NOT part of the
+  // recurring membership — they're bought or licensed on their own. So for those,
+  // membership is neither an unlock path nor a CTA here (memberCanUnlock=false):
+  // they stay gated to the one-off BUY even for members.
+  const memberCanUnlock = membershipUnlocks(r.slug);
+  const membersLive = membershipsLive() && memberCanUnlock;
   const oneOffUrl = reportCheckoutUrl(r.slug);
   const premium = isLocked(r) && (membersLive || !!oneOffUrl);
-  const locked = premium && !(await isMember());
+  const locked = premium && !(memberCanUnlock && (await isMember()));
 
   return (
     <div className="min-h-screen bg-mono-paper">

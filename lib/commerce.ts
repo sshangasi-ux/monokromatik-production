@@ -186,6 +186,17 @@ export function reportTier(slug?: string): ReportTierId {
   return PAID_REPORTS[key]?.tier || 'study';
 }
 
+/**
+ * Whether the recurring Intelligence membership unlocks this report on-site.
+ * The institutional `report`-tier flagships (R3,500) are NOT included in the
+ * membership — they're bought or licensed on their own, so a member cannot get
+ * one for the R149 monthly price. Membership covers the study-tier reports,
+ * case studies and the archive; everything else defaults to unlockable.
+ */
+export function membershipUnlocks(slug?: string): boolean {
+  return reportTier(slug) !== 'report';
+}
+
 /** Optional introductory-price note for a report's BUY CTA, or null. */
 export function reportLaunchNote(slug?: string): string | null {
   const key = slug || REPORT_CHECKOUT_SLUG;
@@ -333,7 +344,7 @@ export const MEMBERSHIP: MembershipTier[] = [
     includes: [
       'The full Cultural-Signal Index — every brand, every score',
       'The premium “Will It Land?” dossier library',
-      'All intelligence reports, refreshed as the field moves',
+      'Every Signal Study, case study and dossier — refreshed as the field moves',
       'The full searchable archive',
     ],
   },
