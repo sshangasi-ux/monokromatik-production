@@ -43,26 +43,36 @@ function ymd(d) { return d.toISOString().slice(0, 10); }
 
   if (pid) {
     const P = `https://analyticsdata.googleapis.com/v1beta/properties/${pid}:runReport`;
-    const rr = async (dims, mets, limit = 12, orderMetric = mets[0]) => {
+    const rr = async (dims, mets, limit = 12, orderMetric = mets[0], filter = null) => {
       const body = JSON.stringify({ dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
         dimensions: dims.map(name => ({ name })), metrics: mets.map(name => ({ name })),
-        orderBys: [{ metric: { metricName: orderMetric }, desc: true }], limit });
+        orderBys: [{ metric: { metricName: orderMetric }, desc: true }],
+        ...(filter ? { dimensionFilter: filter } : {}), limit });
       const r = await req('POST', P, HJ, body);
       if (r.status !== 200) { console.log('  ! runReport', r.status, r.body.slice(0, 160)); return null; }
       return JSON.parse(r.body);
     };
+    // Geos that are almost entirely datacenter/bot traffic for a SA-focused brand
+    // (Singapore has repeatedly ranked #1 above South Africa — clearly not real
+    // readers). Excluded from the "real" view so we steer by human traffic. Adjust
+    // this list if a genuine audience emerges in one of these markets.
+    const EXCLUDE_GEOS = ['Singapore'];
+    const notGeo = { notExpression: { filter: { fieldName: 'country', inListFilter: { values: EXCLUDE_GEOS } } } };
     console.log(`\n=== GA4 property ${pid} — last 28 days ===`);
     const ov = await rr([], ['totalUsers', 'sessions', 'screenPageViews'], 1);
-    if (ov?.rows?.[0]) console.log('OVERVIEW: users=%s sessions=%s pageviews=%s',
+    if (ov?.rows?.[0]) console.log('OVERVIEW (raw): users=%s sessions=%s pageviews=%s',
       ov.rows[0].metricValues[0].value, ov.rows[0].metricValues[1].value, ov.rows[0].metricValues[2].value);
-    const pages = await rr(['pagePath'], ['screenPageViews', 'totalUsers'], 15);
-    if (pages?.rows) { console.log('\nTOP PAGES:'); pages.rows.forEach(r => console.log('  %s  %s views', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
-    const src = await rr(['sessionSourceMedium'], ['sessions', 'totalUsers'], 12);
-    if (src?.rows) { console.log('\nTOP SOURCES (source/medium):'); src.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
-    const camp = await rr(['sessionCampaignName'], ['sessions'], 12);
-    if (camp?.rows) { console.log('\nCAMPAIGNS (UTM):'); camp.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
+    const ovReal = await rr([], ['totalUsers', 'sessions', 'screenPageViews'], 1, 'totalUsers', notGeo);
+    if (ovReal?.rows?.[0]) console.log('OVERVIEW (real, excl. %s): users=%s sessions=%s pageviews=%s',
+      EXCLUDE_GEOS.join('/'), ovReal.rows[0].metricValues[0].value, ovReal.rows[0].metricValues[1].value, ovReal.rows[0].metricValues[2].value);
+    const pages = await rr(['pagePath'], ['screenPageViews', 'totalUsers'], 15, 'screenPageViews', notGeo);
+    if (pages?.rows) { console.log('\nTOP PAGES (real):'); pages.rows.forEach(r => console.log('  %s  %s views', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
+    const src = await rr(['sessionSourceMedium'], ['sessions', 'totalUsers'], 12, 'sessions', notGeo);
+    if (src?.rows) { console.log('\nTOP SOURCES (source/medium, real):'); src.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
+    const camp = await rr(['sessionCampaignName'], ['sessions'], 12, 'sessions', notGeo);
+    if (camp?.rows) { console.log('\nCAMPAIGNS (UTM, real):'); camp.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
     const ctry = await rr(['country'], ['totalUsers'], 8);
-    if (ctry?.rows) { console.log('\nTOP COUNTRIES:'); ctry.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
+    if (ctry?.rows) { console.log('\nTOP COUNTRIES (raw — includes bot geos):'); ctry.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
   } else {
     console.log('\n(No GA4 property id — enable the "Google Analytics Admin API" too, or give me the numeric Property ID from GA4 → Admin → Property details.)');
   }
