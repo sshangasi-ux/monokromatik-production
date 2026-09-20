@@ -59,11 +59,16 @@ nums.forEach((it, i) => {
 if (pull) scenes.push({ id: scenes.length + 1, kind: 'pull',
   vo: pull, imgPrompt: `A minimalist bold editorial composition, oversized amber quotation marks on a dark field. ${STYLE}`,
   overlay: { line: pull.length > 90 ? pull.slice(0, 88) + '…' : pull } });
-// sources + CTA
+// sources
 scenes.push({ id: scenes.length + 1, kind: 'sources',
   vo: 'Every figure here is sourced. The full breakdown is on MonoKromatik.',
   imgPrompt: `A clean editorial sources pinboard of blank cards with an amber accent bar. ${STYLE}`,
   overlay: { line: 'Every figure, sourced.', items: [...new Set(sources.map((s) => s.publisher))].slice(0, 6), url: 'monokromatik.com' } });
+// subscribe end-beat — verbal + on-screen ask (the only thing that lifts Shorts subs)
+scenes.push({ id: scenes.length + 1, kind: 'cta',
+  vo: 'Subscribe — for who owns the brands, culture and sport moving Africa.',
+  imgPrompt: `A bold minimal end-card on a near-black field with a single amber accent bar. ${STYLE}`,
+  overlay: { line: "Who owns Africa's brands, culture & sport — decoded every week.", url: 'Subscribe' } });
 
 mkdirSync(new URL('./generated/', import.meta.url).pathname, { recursive: true });
 const out = new URL(`./generated/${slug}.scenes.json`, import.meta.url).pathname;
