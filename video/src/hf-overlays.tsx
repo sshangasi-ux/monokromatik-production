@@ -98,5 +98,21 @@ export const SceneOverlay: React.FC<{ kind: string; overlay: Overlay; accent?: b
       </Card>
     );
   }
+  // Subscribe end-beat — the only lever that lifts Shorts sub-conversion is an
+  // explicit in-video ask (verbal VO + on-screen). Every Short closes on it.
+  if (kind === 'cta') {
+    return (
+      <Card align="center" horizontal={horizontal}>
+        <div style={{ textAlign: 'center', width: '100%' }}>
+          <div style={{ ...rise(a, 24), display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 30 }}>
+            <div style={{ width: 22, height: 22, background: C.amber, borderRadius: 3 }} />
+            <div style={{ fontFamily: ANTON, fontSize: 46, color: C.white, textTransform: 'uppercase', letterSpacing: 2 }}>MonoKromatik</div>
+          </div>
+          {overlay.line && <div style={{ ...rise(b, 26), fontFamily: INTER, fontWeight: 600, fontSize: 34, lineHeight: 1.25, color: C.white, maxWidth: wide, margin: '0 auto' }}>{overlay.line}</div>}
+          <div style={{ ...rise(c, 24), fontFamily: ANTON, fontSize: 92, color: C.amber, marginTop: 38, textTransform: 'uppercase', letterSpacing: 3 }}>{overlay.url ?? 'Subscribe'}</div>
+        </div>
+      </Card>
+    );
+  }
   return null;
 };
