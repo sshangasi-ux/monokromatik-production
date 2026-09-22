@@ -47,6 +47,12 @@ export default function ServicesPage() {
               SEE THE SERVICES
             </Link>
           </div>
+          <p className="mt-6 text-[14px] font-body text-mono-soft-white">
+            Not sure where you stand?{' '}
+            <Link href="/value-capture-checker" className="text-mono-amber font-display font-bold hover:text-mono-amber-bright">
+              Take the free 60-second Value-Capture Checker →
+            </Link>
+          </p>
         </div>
       </section>
 
