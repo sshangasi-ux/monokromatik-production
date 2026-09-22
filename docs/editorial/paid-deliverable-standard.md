@@ -21,6 +21,11 @@ Every paid piece is a fusion of two houses:
 The combination is the moat: no pure consultancy has the cultural authority, and
 no culture shop has the sourced-data rigour. We hold both.
 
+The house lenses for that cultural read are **Authorship → Ownership → Capture**
+and, as its "why" companion, the **signalling lens**
+([`signalling-lens.md`](./signalling-lens.md)) — apply it as a named, complementary
+lens that still carries a testable claim.
+
 ## The structural bar (a paid piece)
 - **Length:** 2,500–3,500 words. (Below ~2,000 it is a brief, and briefs are free.)
 - **Structure:** 7–8 named sections — typically: the headline/finding · the

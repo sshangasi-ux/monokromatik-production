@@ -17,7 +17,9 @@ that we didn't decide the ending in advance.
   it could also be the epilogue" is a legitimate landing.
 - **The lens, not the verdict.** The MonoKromatik value-capture / ownership angle is a
   *lens* we apply, explicitly flagged as such — "that is not an accusation, it is a
-  lens" — never the conclusion the piece is bent toward.
+  lens" — never the conclusion the piece is bent toward. The **signalling lens**
+  ([`signalling-lens.md`](./signalling-lens.md)) is available the same way: one lens
+  among several, flagged as such, never the ending.
 - **No strawmen.** The strongest version of each side. If we can't argue the other
   branch convincingly, we haven't understood the deal yet.
 

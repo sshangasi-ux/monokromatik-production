@@ -4393,7 +4393,7 @@
       "type": "stack",
       "after": 7,
       "title": "The annual leak — value created in African sport, captured offshore (~$2.6bn/yr)",
-      "note": "MonoKromatik value-leakage model — an order-of-magnitude, bottom-up estimate, per SCCG / allAfrica (2025) betting data, Oliver Wyman (2024) market sizing, and the CAF–UEFA rights gap. Channels: net talent & transfer value exported; betting gross-win routed to foreign-owned platforms; the broadcast underpricing gap (African rate vs a fair global-comparable); and private-equity upside on minority stakes. Every assumption is stated in Section 07.",
+      "note": "MonoKromatik value-leakage model — an order-of-magnitude, bottom-up estimate, per SCCG / allAfrica (2025) betting data, Oliver Wyman (2024) market sizing, and the CAF–UEFA rights gap. Channels: net talent & transfer value exported; betting gross-win routed to foreign-owned platforms; the broadcast underpricing gap (African rate vs a fair global-comparable); and private-equity upside on minority stakes. Every assumption is stated in Section 08.",
       "data": [
         {
           "label": "Talent & transfer value exported",
@@ -4445,6 +4445,15 @@
           "The report's spine is a framework no consultancy has, because it is built from a cultural premise consultancies do not start with: that authorship and ownership are different things, and that the distance between them is where value leaks. Authorship → Ownership → Capture (AOC) forces three separate questions at every layer of the value chain. Who authors the value — whose talent, culture and fandom create it? Who owns the rights, the entity, the platform through which it is monetised? And who captures the margin — where does the money actually land?",
           "Answered layer by layer, AOC turns a vague sense of unfairness into a diagnosis. Where authorship, ownership and capture all sit in African hands, value is RETAINED. Where Africa authors but a foreign entity owns and captures, value is EXPORTED. Where ownership is genuinely up for grabs — a live fight between domestic and foreign capital — it is CONTESTED. And where Africa authors and even nominally owns, but the economics are structured so the margin flows out anyway, value is HOLLOWED: the shell is local, the substance is not. These four archetypes are MonoKromatik's flagship ownership lens, the same one that structures the Ownership 100 ledger, applied here to sport.",
           "The archetypes are not moral labels; they are strategic coordinates. HOLLOWED is the most dangerous state, because it looks like ownership and behaves like extraction — a betting licence held locally while the platform, the odds engine and the profit sit abroad. EXPORTED is the most common, and the most reversible with capital and structure. CONTESTED is the rarest and most valuable, because it is the only state in which the ownership question is still open — the Springbok is the continent's clearest live example. The whole report is, in effect, a campaign to move layers up the ladder: HOLLOWED to CONTESTED, EXPORTED to RETAINED."
+        ]
+      },
+      {
+        "heading": "THE SIGNAL READ: WHY THE MISPRICING PERSISTS",
+        "paragraphs": [
+          "AOC locates where value leaks; signalling theory explains why the leak is structural rather than temporary. The lens comes from Rory Sutherland's work on how markets price the unconscious — set out in his BBC series Hacking the Unconscious — which builds on Michael Spence's economics of market signalling and Amotz Zahavi's handicap principle: the value of an action or an asset frequently lies not in its function but in what it credibly signals, and the only signals worth anything are the ones too costly to fake. African sporting authorship is the textbook hard-to-fake signal. You cannot cheaply manufacture a world-class talent pipeline, a genuinely global fandom, or authentic cultural weight; they are expensive, slow and impossible to counterfeit. That inimitability is not incidental to the value — it is the value. AOC establishes that the authorship is African; signalling explains why that authorship commands a premium at all: it is the one input in the entire chain that money cannot fake.",
+          "The mechanism of the leak, in signalling terms, is that the premium accrues to whoever wears and certifies the signal, not to whoever produces it. A European league is not merely a buyer of African talent; it is the certification market in which that talent's signal is validated, graded and priced — which is precisely why a player's value crystallises abroad rather than at home. A global brand buying an AFCON title or an African athlete's endorsement is renting a hard-to-fake authenticity it cannot generate internally. A betting platform is monetising the fandom signal at continental scale. In every case Africa emits the signal and someone else wears it in the market where it is priced. Stated as a testable claim: across African sport, the capture premium tracks proximity to the certification market, not proximity to production — which is the signalling statement of the very capture gap AOC maps.",
+          "This is why the mispricing sustains itself rather than correcting. Status is relational: a signal is worth only what the highest-status market that certifies it will pay, and Africa does not yet own a high-status certification market of its own. So the signal must travel offshore to be priced, and pricing — capture — happens wherever certification happens. The absence of a domestic status apparatus is not a branding shortfall to be fixed with better marketing; it is the structural reason authorship and capture sit in different places. And it compounds: an under-certified asset reads as low-status, which depresses its price, which starves the very domestic apparatus that could certify it — the signalling engine beneath the self-reinforcing leak the value-capture stack already describes.",
+          "The strategic implication sharpens the AOC playbook rather than replacing it. \"Own the pipe\" becomes: own the status-conferring apparatus — the certification market itself, not only the production behind it. Concretely, that means a premium, properly produced continental competition that confers status rather than merely staging fixtures; image-rights and endorsement vehicles that capture the signalling premium of African stars — the portion of their value that is pure inimitable authenticity, distinct from athletic output; and rights packaged and sold as a premium cultural signal to the diaspora and the global neutral, not cleared at a discount. The corollary for the buyers in our deal ledger is the arbitrage stated plainly: these assets are cheap because the signal is still under-certified, which is exactly why acquiring them now — before Africa builds the apparatus to price its own signal — is rational. Certifying the signal at home is, in the end, the same move as climbing the ladder: it is how EXPORTED talent and HOLLOWED attention become RETAINED value."
         ]
       },
       {
@@ -4589,7 +4598,7 @@
       {
         "heading": "METHODOLOGY, SOURCES & ENDNOTES",
         "paragraphs": [
-          "This is an Intelligence Report built to MonoKromatik's paid institutional standard: a proprietary framework (Authorship → Ownership → Capture and the four ownership archetypes), bottom-up sizing, a transparent value-leakage model, a named deal ledger, scenario analysis and a segmented playbook — declarative where the evidence allows, and carrying its own counter-case. The framework and the classifications are MonoKromatik's; the underlying figures are sourced and named in the prose.",
+          "This is an Intelligence Report built to MonoKromatik's paid institutional standard: a proprietary framework (Authorship → Ownership → Capture and the four ownership archetypes), complemented by a signalling read of why the mispricing persists (after Sutherland, Spence and Zahavi), bottom-up sizing, a transparent value-leakage model, a named deal ledger, scenario analysis and a segmented playbook — declarative where the evidence allows, and carrying its own counter-case. The framework and the classifications are MonoKromatik's; the underlying figures are sourced and named in the prose.",
           "Sources and provenance: market sizing ($12bn→$20bn by ~2035) is Oliver Wyman, reported via Oliver Wyman's own analysis and outlets including Forbes Africa and Business Report; betting figures (~$3bn sports-betting stakes, ~$17.6bn gaming, 440m bettors, ~94% mobile, 2025) are per allAfrica and SCCG Management; broadcast comparisons (CAF–Lagardère ~$1bn/12yr vs UEFA ~$3.9bn/yr) and streaming MEA ($1.28bn→$2.38bn) are as reported by SportBusiness and industry trackers; AFCON 2025 revenue, CAF club investment, NBA Africa and BAL figures are per CAF and NBA Africa disclosures and reporting; rugby comparatives (All Blacks/Silver Lake ~$2.4bn; Springbok/Ackerley ~$375m implied; SA Rugby 2025 accounts) are per Sportico, Bloomberg and SA Rugby via Daily Maverick, and cross-referenced to MonoKromatik's Springbok brand study. The value-leakage model is an explicitly-stated, order-of-magnitude estimate; its inputs are given in the Appendix so the figure can be re-run. Interpretation and strategy are MonoKromatik's own.",
           "Endnotes and key sources (named in the prose per house standard; consolidated here for verification):",
           "1 — Oliver Wyman (2024): Africa's sports market above $12bn today, projected above $20bn by ~2035; reported via Oliver Wyman and outlets including Forbes Africa and Business Report.",
@@ -4601,7 +4610,8 @@
           "7 — Transfer records (Transfermarkt, club and league disclosures): Nicolas Pépé to Arsenal €80m (2019); Sadio Mané via Génération Foot and Metz, then Southampton to Liverpool ~£34m (2016); Mohammed Kudus via Right to Dream, Nordsjælland and Ajax to West Ham £38m (2023) and Tottenham (2025).",
           "8 — Sportico, Bloomberg and SA Rugby via Daily Maverick (2026): All Blacks commercial arm ~$2.4bn (Silver Lake); Springbok commercial rights ~$375m implied (rejected Ackerley 20% bid); SA Rugby 2025 group revenue above R2bn (+33%), gross sponsorship R739m (+51%). Cross-referenced to MonoKromatik's Springbok brand study.",
           "9 — NBA Africa and BAL disclosures: NBA Africa digital audience up ~40% year on year; first NBA game on African soil slated for 2027; the Basketball Africa League financed with Helios Sports & Entertainment.",
-          "10 — The value-leakage model (see Appendix) is MonoKromatik's own order-of-magnitude estimate; every input and assumption is stated so the figure can be independently re-run."
+          "10 — The value-leakage model (see Appendix) is MonoKromatik's own order-of-magnitude estimate; every input and assumption is stated so the figure can be independently re-run.",
+          "11 — The signal read (Section 04) applies signalling theory to the value chain: Rory Sutherland, Hacking the Unconscious (BBC Radio 4 / BBC Audio, 2017–2018; Audible ed. 2021); building on Michael Spence's market-signalling economics and Amotz Zahavi's handicap principle. The application to African sport, and all classifications, are MonoKromatik's own."
         ]
       }
     ],
@@ -4683,8 +4693,66 @@
         "note": "MonoKromatik's Authorship → Ownership → Capture read (0 = none, 4 = fully African). Where authorship is high but capture is low, value is EXPORTED or HOLLOWED; where ownership is genuinely in play, CONTESTED; where all three are African, RETAINED. Classifications are MonoKromatik's analysis."
       },
       {
-        "type": "line",
+        "type": "matrix",
         "after": 4,
+        "title": "The signal read — who emits the signal, who certifies it, who keeps the premium",
+        "cols": [
+          "Signal authored in Africa",
+          "Certified in Africa",
+          "Premium captured in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Talent (the player as signal)",
+            "tag": "EXPORTED signal",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Cultural authenticity (AFCON, association)",
+            "tag": "CONTESTED signal",
+            "cells": [
+              4,
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Fandom & attention",
+            "tag": "HOLLOWED signal",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Broadcast product (status)",
+            "tag": "CONTESTED signal",
+            "cells": [
+              4,
+              2,
+              1
+            ]
+          },
+          {
+            "label": "Springbok badge",
+            "tag": "certified at home",
+            "cells": [
+              4,
+              3,
+              2
+            ]
+          }
+        ],
+        "note": "MonoKromatik's signalling read (0 = none, 4 = fully African), after Sutherland / Spence / Zahavi. The middle column is the insight the AOC map implies: 'certification' — the high-status market that prices a hard-to-fake signal — sits between authorship and capture. Africa authors the signal, but the market that certifies (and therefore prices) it is largely offshore, so the premium lands offshore. Owning the certification apparatus is how the premium comes home."
+      },
+      {
+        "type": "line",
+        "after": 5,
         "title": "Sizing the prize — the African sports market to 2035",
         "unit": "US$bn market size",
         "note": "More than $12bn today, projected above $20bn by ~2035 (per Oliver Wyman, 2024). Intermediate point interpolated on the stated trajectory; the strategic variable is not the total but the capture rate.",
@@ -5133,7 +5201,7 @@
       "heading": "THE BEAR CASE",
       "intro": "Where the 'underpriced $20bn asset' thesis is weakest — and the case that the current structure is closer to rational than we allow.",
       "points": [
-        "The leakage number is an order-of-magnitude estimate, not an audited figure. Its four channels rest on contestable assumptions — the offshore share of betting margin, the attribution of transfer value to African development, the 'fair' broadcast multiple. A hostile reviewer could halve it, and should be handed the model (Section 07) to try. The direction is robust; the precise figure is not.",
+        "The leakage number is an order-of-magnitude estimate, not an audited figure. Its four channels rest on contestable assumptions — the offshore share of betting margin, the attribution of transfer value to African development, the 'fair' broadcast multiple. A hostile reviewer could halve it, and should be handed the model (Section 08) to try. The direction is robust; the precise figure is not.",
         "Some of the 'leak' is the price of access, not extraction. European leagues, foreign platforms and global rights buyers bring capital, infrastructure and audiences African markets cannot yet supply themselves. A share of the value captured offshore is payment for services that genuinely add value — and a purely nationalist read of ownership can destroy value by refusing the capital that grows the pie.",
         "The betting pool is the largest 'opportunity' in the report and also its most ethically fraught. Treating $3bn of youth-heavy mobile gambling as an asset to be domesticated and grown risks optimising a social harm. A serious bear case says the right strategic answer to betting may be to shrink and constrain it, not to capture more of it — which would lower, not raise, Africa's share of the market total.",
         "Ownership is not free. The Springbok's rejection of Ackerley kept control at home and forwent the capital — and it is not yet proven that SA Rugby can build the commercial machine without it. 'Retained but under-capitalised' can be a worse outcome than 'contested but funded.' The report's preference for domestic ownership carries a real cost the bull case tends to skip.",
