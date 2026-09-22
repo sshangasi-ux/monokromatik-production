@@ -274,6 +274,21 @@ export const SERVICES: Service[] = [
     blurb: 'A commissioned intelligence brief on a market, category or cultural moment across Africa and the diaspora.',
   },
   {
+    id: 'signal-fit',
+    title: 'Signal Fit — partnership & talent fit',
+    blurb: 'Which culture property, talent or moment actually fits your brand — scored on authenticity and hard-to-fake signal, not reach.',
+  },
+  {
+    id: 'value-capture-advisory',
+    title: 'Value-Capture Advisory',
+    blurb: 'For rights holders, IP and catalogue owners: map where your value leaks and build the apparatus to keep the upside home.',
+  },
+  {
+    id: 'culture-dd',
+    title: 'Culture Due Diligence',
+    blurb: 'For investors buying into African brands, culture, sport, music or fintech: the value-capture, authorship and reputational read no bank provides.',
+  },
+  {
     id: 'sponsor',
     title: 'Sponsor a franchise or the weekly',
     blurb: 'Native, clearly-disclosed sponsorship of a signature franchise or the Weekly Signal — an engaged African brand-and-culture audience.',
@@ -287,6 +302,86 @@ export const SERVICES: Service[] = [
     id: 'partner',
     title: 'Partner & licensing',
     blurb: 'Multi-seat access, white-label intelligence, or licensing the Cultural-Signal dataset for your team.',
+  },
+];
+
+// ── The advisory ladder — productised intelligence services ─────────────────
+// The Analytics-FC move (see docs/INTELLIGENCE-SERVICES-MODEL.md): sell the
+// DECISION, not just the report. Each service names one buyer and one decision,
+// powered by the same engine (the Cultural-Signal Index + the AOC framework + the
+// signalling lens), and — unlike a football-only shop — applies across every
+// vertical (sport, music, spirits, beauty, retail, fintech). CTAs route to
+// /work-with-us?interest=<id>, so each id also exists in SERVICES (the enquiry
+// dropdown). Indicative price bands only; actual scope is quoted.
+export interface AdvisoryService {
+  /** Routes to /work-with-us?interest=<id>; must match a SERVICES id. */
+  id: string;
+  name: string;
+  /** Who the service is for. */
+  buyer: string;
+  /** The single decision it answers. */
+  decision: string;
+  deliverables: string[];
+  /** Indicative band. */
+  priceFrom: string;
+  /** The flagship advisory line (rendered featured). */
+  featured?: boolean;
+}
+
+export const ADVISORY_SERVICES: AdvisoryService[] = [
+  {
+    id: 'scorecard',
+    name: 'Signal Scorecard',
+    buyer: 'A brand, artist, franchise or property',
+    decision: 'What is our authorship worth, who is capturing it, and how do we keep more?',
+    deliverables: [
+      'Your composite /100 on the Cultural-Signal Index + the four-axis read',
+      'The authorship read — who shaped the value vs who captured it',
+      'Benchmarked against up to five named rivals',
+      'A prioritised roadmap to move each axis',
+    ],
+    priceFrom: 'from $900',
+  },
+  {
+    id: 'signal-fit',
+    name: 'Signal Fit',
+    buyer: 'Brands & agencies choosing a partnership',
+    decision: 'Which culture property, talent or moment actually fits us — on authenticity, not reach?',
+    deliverables: [
+      'A shortlist scored on signal fit, not follower count',
+      'The authenticity + reputational-risk read on each option',
+      'Where the hard-to-fake signal actually sits',
+      'The activation angle that earns the association',
+    ],
+    priceFrom: 'from $1,500',
+  },
+  {
+    id: 'value-capture-advisory',
+    name: 'Value-Capture Advisory',
+    buyer: 'Rights holders, IP & catalogue owners, founders',
+    decision: 'How do we own the certification apparatus and stop the value leaking offshore?',
+    deliverables: [
+      'Your value chain mapped through Authorship → Ownership → Capture',
+      'Where the value leaks — and how much',
+      'The retention playbook: structure, rights, licensing, direct-to-fan',
+      'Deal-structure guidance to keep the upside home',
+    ],
+    priceFrom: 'from $5,000',
+  },
+  {
+    id: 'culture-dd',
+    name: 'Culture Due Diligence',
+    buyer: 'PE, VC, corp-dev & sovereign capital',
+    decision: 'Should we buy in, at what value, and what is the authorship & reputational risk?',
+    deliverables: [
+      'Value-capture due diligence on the target and its category',
+      'The authorship & ownership map — what is real, what is HOLLOWED',
+      'The reputational, cultural and integrity read',
+      'A post-deal retention & value-creation plan',
+      'Delivered with a corporate-finance / legal partner',
+    ],
+    priceFrom: 'bespoke — on application',
+    featured: true,
   },
 ];
 
