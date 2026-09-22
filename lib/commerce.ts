@@ -126,6 +126,15 @@ export interface PaidReportSku {
    *  (report + data + briefing + license), routed to the work-with-us enquiry —
    *  this is where the real value on a flagship asset is captured. */
   enterprise?: { priceFrom: string; blurb: string };
+  /** The low-commitment step-DOWN: a study-tier report to offer as the cheaper
+   *  first rung on this (usually flagship) gate. Cold traffic rarely buys a
+   *  R3,500 report on first contact — the entry study is the smaller first yes,
+   *  same value-capture lens, one topic. Rendered as a step-down on the gate. */
+  entry?: { slug: string };
+  /** The step-UP: the flagship a study-tier report should point to as "go
+   *  deeper — the full institutional read." Turns the R220 study into the
+   *  bottom rung of the ladder rather than a dead end. */
+  deeper?: { slug: string };
 }
 export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'value-capture-scorecard-2026': {
@@ -141,6 +150,10 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // the PDF is handled off-site: manual from Paystack Orders for now, moving to
     // an automated webhook → Resend email attachment (never a shareable link).
     url: process.env.NEXT_PUBLIC_PAYSTACK_AMAPIANO_URL || 'https://paystack.com/buy/who-captures-amapiano--the-value-capture-report-vzdldc',
+    // The R220 amapiano study is the funnel's entry rung — our hero content and
+    // top seller. From here, step readers UP to the flagship institutional read
+    // (same value-capture method, at depth).
+    deeper: { slug: 'whos-buying-african-sport-2026' },
   },
   'brand-study-the-springbok-world-champion-under-owned': {
     price: 'R220',
@@ -148,6 +161,9 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // Live Paystack product checkout (same pattern as amapiano); PDF is
     // auto-delivered by the webhook from private storage on purchase.
     url: process.env.NEXT_PUBLIC_PAYSTACK_SPRINGBOK_URL || 'https://paystack.com/buy/the-springbok--world-champion-under-owned-brand-study-vusmva',
+    // Topically the closest study to the sport flagship — step Springbok buyers
+    // up to the full institutional African-sport read.
+    deeper: { slug: 'whos-buying-african-sport-2026' },
   },
   // The flagship institutional report (the `report` tier). LIVE — the R3,500
   // Paystack product (id 2725863) is created, its PDF is in the private `reports`
@@ -164,6 +180,10 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
       priceFrom: 'from $1,500',
       blurb: 'Need the underlying data, a team briefing, or citation & license rights? The enterprise edition pairs the full report with the dataset and model behind it.',
     },
+    // Step-DOWN entry rung — a R3,500 report is a big first ask for traffic
+    // arriving cold from social. The R220 amapiano study is the smaller first
+    // yes on the same value-capture lens; buyers ladder up from there.
+    entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
 };
 
@@ -208,6 +228,22 @@ export function reportLaunchNote(slug?: string): string | null {
 export function reportEnterprise(slug?: string): PaidReportSku['enterprise'] | null {
   const key = slug || REPORT_CHECKOUT_SLUG;
   return PAID_REPORTS[key]?.enterprise || null;
+}
+
+/** The step-DOWN entry study for a (flagship) report, or null. The cheaper first
+ *  rung shown on the gate — same lens, one topic — so cold traffic has a smaller
+ *  first yes than a R3,500 report. Returns the entry slug + its display price. */
+export function reportEntry(slug?: string): { slug: string; price: string } | null {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  const e = PAID_REPORTS[key]?.entry;
+  return e ? { slug: e.slug, price: reportPrice(e.slug) } : null;
+}
+
+/** The step-UP flagship a study-tier report points to ("go deeper"), or null. */
+export function reportDeeper(slug?: string): { slug: string; price: string } | null {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  const d = PAID_REPORTS[key]?.deeper;
+  return d ? { slug: d.slug, price: reportPrice(d.slug) } : null;
 }
 
 /** Inbox for commission / partnership enquiries (public; overridable via env). */
