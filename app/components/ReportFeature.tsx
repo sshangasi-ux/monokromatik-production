@@ -3,9 +3,9 @@ import { ArrowLeft, ArrowRight, FileText, Lock, Scale } from 'lucide-react';
 import Navigation from './Navigation';
 import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
-import { isLocked, type Report } from '../../lib/reports';
+import { isLocked, getReportBySlug, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise } from '../../lib/commerce';
+import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper } from '../../lib/commerce';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -171,6 +171,13 @@ export default async function ReportFeature({ report }: { report: Report }) {
               const price = reportPrice(r.slug);
               const launchNote = reportLaunchNote(r.slug);
               const enterprise = reportEnterprise(r.slug);
+              // The pricing ladder, rendered on the gate: a cheaper step-DOWN
+              // entry study (so cold traffic has a small first yes below a
+              // R3,500 report), and a step-UP flagship for study-tier reports.
+              const entry = reportEntry(r.slug);
+              const entryReport = entry ? getReportBySlug(entry.slug) : undefined;
+              const deeper = reportDeeper(r.slug);
+              const deeperReport = deeper ? getReportBySlug(deeper.slug) : undefined;
               // Copy adapts to the purchase paths actually live: both, membership-
               // only, or report-only (the pay-per-report fast-track).
               const blurb = oneOff
@@ -221,6 +228,42 @@ export default async function ReportFeature({ report }: { report: Report }) {
                     className="mt-5 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors"
                   >
                     TALK TO THE DESK <ArrowRight size={16} />
+                  </Link>
+                </div>
+              )}
+              {/* Step-DOWN entry rung — the cheaper first yes for cold traffic,
+                  so a R3,500 report is not the only door in. Same value-capture
+                  lens, one topic; buyers ladder up from here. */}
+              {entry && entryReport && (
+                <div className="mt-4 border border-mono-gray/40 bg-mono-soft-white p-6 text-center">
+                  <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-charcoal/60 mb-2">NEW TO MONOKROMATIK?</p>
+                  <p className="font-body text-[15px] text-mono-charcoal max-w-md mx-auto">
+                    Start with a {entry.price} Signal Study — the same value-capture lens, on one topic — then step up to the full report.
+                  </p>
+                  <Link
+                    href={`/reports/${entry.slug}`}
+                    className="mt-4 inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold text-sm hover:bg-mono-white transition-colors"
+                  >
+                    START WITH {entry.price} — {entryReport.title.toUpperCase()} <ArrowRight size={15} />
+                  </Link>
+                </div>
+              )}
+              {/* Step-UP — turn a R220 study into the bottom rung of the ladder
+                  by pointing to the flagship institutional read. */}
+              {deeper && deeperReport && (
+                <div className="mt-4 border border-mono-black bg-mono-black text-mono-white p-6 md:p-7">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright">GO DEEPER</p>
+                    <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-soft-white">{deeper.price}</p>
+                  </div>
+                  <p className="mt-3 font-body text-[15px] text-mono-soft-white leading-relaxed">
+                    Want the full institutional read? <span className="text-mono-white font-semibold">{deeperReport.title}</span> is the framework-led flagship — the same method, at depth.
+                  </p>
+                  <Link
+                    href={`/reports/${deeper.slug}`}
+                    className="mt-5 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors"
+                  >
+                    SEE THE INTELLIGENCE REPORT <ArrowRight size={16} />
                   </Link>
                 </div>
               )}
