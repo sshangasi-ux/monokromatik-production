@@ -25,6 +25,7 @@ const EXPLORE = [
   { label: "Who's Buying Africa", href: '/whos-buying-africa' },
   { label: 'Who Owns Africa?', href: '/who-owns-africa' },
   { label: 'Who Owns It? (checker)', href: '/who-owns' },
+  { label: 'Value-Capture Checker', href: '/value-capture-checker' },
   { label: 'The Coil Economy', href: '/coil-economy' },
   { label: 'Intelligence', href: '/intelligence' },
   { label: 'Watch', href: '/watch' },
@@ -36,6 +37,7 @@ const SOCIALS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/monokromatik-network', Icon: LinkedinIcon },
 ];
 const COMPANY = [
+  { label: 'Services', href: '/services' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Membership', href: '/membership' },
   { label: 'Ownership Intelligence', href: '/intelligence/ownership' },
