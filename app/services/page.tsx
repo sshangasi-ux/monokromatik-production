@@ -119,13 +119,18 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-7">
+                <div className="mt-auto pt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
                   <Link
                     href={`/work-with-us?interest=${s.id}`}
                     className={`inline-flex items-center gap-2 px-6 py-3.5 font-display font-bold transition-colors ${s.featured ? 'bg-mono-black text-mono-white hover:bg-mono-charcoal' : 'border border-mono-black text-mono-black hover:bg-mono-black hover:text-mono-white'}`}
                   >
                     ENQUIRE <ArrowRight size={16} />
                   </Link>
+                  {s.detailHref && (
+                    <Link href={s.detailHref} className="inline-flex items-center gap-1.5 text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                      SEE THE FULL BRIEF <ArrowRight size={13} />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
