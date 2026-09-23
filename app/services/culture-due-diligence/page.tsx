@@ -191,8 +191,11 @@ export default function CultureDueDiligencePage() {
             <p className="text-[11px] tracking-[0.2em] font-display font-bold text-mono-amber-strong uppercase mb-2">Engagement</p>
             <p className="font-body text-mono-charcoal leading-relaxed">
               Bespoke, scoped and quoted — start-to-finish, or at selected points: pre-transaction, completion,
-              or post-deal value creation.
+              or post-deal value creation. Fixed-fee, billed in stages.
             </p>
+            <Link href="/services/culture-due-diligence/estimate" className="mt-3 inline-flex items-center gap-1.5 text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+              SCOPE &amp; ESTIMATE <ArrowRight size={13} />
+            </Link>
           </div>
         </div>
       </section>
@@ -207,8 +210,8 @@ export default function CultureDueDiligencePage() {
             <Link href={enquire} className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
               START A CONVERSATION <ArrowRight size={18} />
             </Link>
-            <Link href="/value-capture-checker" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-4 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">
-              TRY THE FREE CHECKER
+            <Link href="/services/culture-due-diligence/estimate" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-4 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">
+              SCOPE &amp; ESTIMATE
             </Link>
           </div>
           <p className="mt-8 text-[12px] font-body text-mono-gray leading-relaxed max-w-xl mx-auto">
