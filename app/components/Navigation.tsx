@@ -12,6 +12,7 @@ const primaryLinks = [
   { href: '/watch', label: 'WATCH', description: 'Explainers — who owns the upside', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
   { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
+  { href: '/services', label: 'SERVICES', description: 'Advisory & licensing for partners', priority: true },
   { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
   { href: '/conversations', label: 'CONVERSATIONS', description: 'Leaders, creators and operators' },
   { href: '/culture', label: 'CULTURE', description: 'Roots, Arena and Waves' },
