@@ -326,6 +326,8 @@ export interface AdvisoryService {
   priceFrom: string;
   /** The flagship advisory line (rendered featured). */
   featured?: boolean;
+  /** Optional dedicated landing page for the service ("see the full brief"). */
+  detailHref?: string;
 }
 
 export const ADVISORY_SERVICES: AdvisoryService[] = [
@@ -382,6 +384,7 @@ export const ADVISORY_SERVICES: AdvisoryService[] = [
     ],
     priceFrom: 'bespoke — on application',
     featured: true,
+    detailHref: '/services/culture-due-diligence',
   },
 ];
 
