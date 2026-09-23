@@ -212,6 +212,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Free lead magnet — the Value-Capture Checker. A 60-second interactive
+          AOC read, placed right after the Index flagship: the top-of-funnel for
+          the intelligence-services offering, and a light band between two dark
+          sections. */}
+      <section className="bg-mono-soft-white py-16 md:py-20 border-b border-mono-gray/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 border-2 border-mono-black bg-mono-white p-8 md:p-11 shadow-[6px_6px_0_0_var(--mono-amber)]">
+            <div className="max-w-2xl">
+              <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">FREE TOOL · 60 SECONDS</p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black leading-[1.02] text-balance">
+                You can own it in culture and still be owned on the balance sheet.
+              </h2>
+              <p className="mt-4 font-body text-lg text-mono-charcoal leading-relaxed">
+                Five questions. See where your brand or property sits on the Authorship&nbsp;→&nbsp;Ownership&nbsp;→&nbsp;Capture
+                framework — Retained, Exported, Hollowed or Contested — and what to do about it.
+              </p>
+            </div>
+            <div className="shrink-0 flex flex-col gap-3">
+              <Link href="/value-capture-checker" className="inline-flex gap-2 items-center justify-center bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors whitespace-nowrap">
+                TAKE THE CHECKER <ArrowRight size={18} />
+              </Link>
+              <Link href="/services" className="inline-flex gap-1.5 items-center justify-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                SEE THE SERVICES <ArrowRight size={13} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-mono-black text-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-7 mb-12">
