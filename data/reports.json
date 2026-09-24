@@ -11579,5 +11579,1203 @@
         "Capture offshore is not value destroyed. A market growing toward $20bn, record AFCON revenue and rising transfer valuations mean the asset is being priced up. The honest question is Africa's share of a growing pie, not whether the value exists — and framing every foreign deal as extraction can deter the very capital the game needs."
       ]
     }
+  },
+  {
+    "slug": "culture-due-diligence-nollywood-streaming",
+    "title": "Culture Due Diligence — Who Owns Nollywood?",
+    "series": "CULTURE DUE DILIGENCE",
+    "status": "live",
+    "access": "open",
+    "summary": "Nollywood is the second-largest film industry in the world by volume and one of Africa's great cultural exports — and almost entirely African-authored. This investor-grade due diligence asks who owns and captures the value that screen culture generates, and it turns on one mechanism most coverage gets wrong: a commissioned streaming 'Original' transfers the intellectual property to the platform in perpetuity, while a licensed title keeps the IP African-owned and merely rents a time-boxed window. The volume of streamer money is the wrong metric; the structure of the deal is everything. The verdict is CONTESTED — more hopeful than our football-rights DD. Authorship is overwhelmingly retained; the studio layer still holds real African-owned catalogues (EbonyLife, FilmOne, Inkblot, Anthill) and is visibly shifting toward licensing to keep its IP; but the platform layer — the distribution chokepoint — is now almost entirely foreign, with the pan-African champion MultiChoice/Showmax passing into French (Canal+) hands. We correct the common errors: Netflix and Amazon scaled back African originals but did not leave, and every contested figure is graded.",
+    "statusNote": "A Culture Due Diligence sample — investor-grade, free to read",
+    "tags": [
+      "nollywood",
+      "african film",
+      "culture due diligence",
+      "streaming",
+      "netflix",
+      "intellectual property",
+      "ownership",
+      "value capture",
+      "AOC framework"
+    ],
+    "publishedAt": "2026-09-24T19:30:00.000Z",
+    "keyStats": [
+      {
+        "value": "CONTESTED",
+        "label": "The DD verdict: authorship overwhelmingly retained and the studio layer still holds African-owned catalogues, but the platform/distribution layer is now almost entirely foreign — a contested asset, self-correcting toward retention if the licensing shift holds"
+      },
+      {
+        "value": "~2,500 films/yr",
+        "label": "Nollywood's output — the second-largest film industry in the world by volume, overwhelmingly Nigerian- and African-authored (UNESCO)"
+      },
+      {
+        "value": "Commission vs license",
+        "label": "The mechanism the whole DD turns on: a commissioned streaming 'Original' transfers the IP to the platform in perpetuity; a licensed title keeps the IP African-owned and rents only a time-boxed window. Structure, not spend, decides capture"
+      },
+      {
+        "value": "→ French",
+        "label": "MultiChoice/DStv and its streamer Showmax — the pan-African distribution champion — passed into French ownership when Canal+ (Bolloré group) completed its ~$3bn takeover (2025–2026); the pipes are now foreign (Deadline; company statements)"
+      }
+    ],
+    "exhibit": {
+      "type": "matrix",
+      "after": 3,
+      "title": "The mechanism — commission versus license",
+      "cols": [
+        "IP stays African-owned",
+        "Creator keeps a re-sellable asset"
+      ],
+      "rows": [
+        {
+          "label": "Licensed title (windowed rights)",
+          "tag": "RETAINS IP",
+          "cells": [
+            4,
+            4
+          ]
+        },
+        {
+          "label": "Commissioned 'Original' (work-for-hire)",
+          "tag": "TRANSFERS IP",
+          "cells": [
+            0,
+            0
+          ]
+        }
+      ],
+      "note": "MonoKromatik DD read (0 = none, 4 = full). The single distinction the whole diligence turns on: a licensed title keeps the intellectual property on the African side and rents a window; a commissioned Original transfers the copyright to the platform in perpetuity. The volume of money is a weak signal; the structure is everything. Source: MonoKromatik analysis of standard industry practice."
+    },
+    "sections": [
+      {
+        "heading": "READ THIS FIRST — THE MECHANISM",
+        "paragraphs": [
+          "This due diligence turns on one distinction, and getting it wrong is where most coverage of 'African streaming' fails. When a global platform commissions an Original, it finances and owns the intellectual property — the copyright, worldwide, in perpetuity. The African creator is paid a production fee and margin, but does not keep the asset. When a platform licenses a title, the creator produced and owns the film and merely rents the platform a time-boxed streaming window; the IP stays African-owned and can be re-licensed again and again.",
+          "The implication for the diligence is decisive: the volume of streamer money flowing into Nollywood is a weak signal. The structure — commission versus license — determines whether the value is retained or exported. A commissioned Original is, in balance-sheet terms, work-for-hire capture dressed as investment; a licensing deal is the opposite, a way to monetise an asset you keep.",
+          "So the question 'is streamer money good for Nollywood?' has no single answer. It depends, title by title, on who ends up owning the copyright — and that is exactly what a due diligence, rather than a press release, is built to read."
+        ]
+      },
+      {
+        "heading": "THE ASSET",
+        "paragraphs": [
+          "Nollywood's authorship is overwhelming and genuinely world-scale. It produces around 2,500 films a year, per UNESCO — the second-largest film industry in the world by volume — written, cast, directed and performed by Nigerians and Africans. As a cultural asset, its authorship layer is unambiguously retained: this is African storytelling at industrial scale, and no one else authors it.",
+          "It is also economically material. Nigeria's arts, entertainment and recreation sector contributed around 2.3% of GDP and roughly a million jobs, per PwC — though that figure is the whole sector, not Nollywood alone, and we flag it as such rather than inflating it into a Nollywood-only number. A widely circulated multi-billion-dollar revenue figure for the industry is single-sourced and is treated here as reported, not banked as fact.",
+          "The authorship, then, is the strong, retained base of the asset. The diligence is about what happens to the value that authorship creates as it moves up the chain — into catalogues, distribution and platforms."
+        ]
+      },
+      {
+        "heading": "DD PART 1 — CHAIN OF TITLE",
+        "paragraphs": [
+          "The chain has three layers, and they resolve differently. The authorship layer is African. The ownership layer — the studios and catalogues — is genuinely mixed and includes strong African-owned holders: EbonyLife (Mo Abudu) retains its library while striking deals with Netflix, Sony and AMC; FilmOne is West Africa's largest African-owned distributor; Inkblot and Anthill own their productions. This layer has real retained value.",
+          "The platform layer — the distribution chokepoint where value is actually captured — is where the ownership has gone foreign. Netflix and Amazon Prime Video are American. Showmax, the African streamer, sits inside MultiChoice, which is now French-owned by Canal+. And ROK Studios, the catalogue built by the IROKO pioneers, was majority-acquired by Vivendi/Canal+ in 2019. The pipes that reach the African viewer are, almost entirely, not African-owned.",
+          "Read as a stack, the chain of title tells the whole story: authorship African, studios mixed-but-substantially-African, platforms foreign. The value leaks not at the point of creation or even ownership of the films, but at the point of distribution — and at the specific titles where a commission transferred the IP outright."
+        ]
+      },
+      {
+        "heading": "THE PLATFORM TAKEOVER",
+        "paragraphs": [
+          "The most consequential ownership shift is the consolidation of the distribution layer under foreign control. Canal+ (the Bolloré group) completed its roughly $3bn takeover of MultiChoice across 2025–2026, bringing DStv, SuperSport and the streamer Showmax under French ownership — and Showmax's 2024 relaunch had already brought in NBCUniversal (Comcast) at a reported 30%. The pan-African distribution champion, the platform best placed to be the African-owned answer to Netflix, is now foreign-owned.",
+          "This matters because distribution is where the leverage sits. The platform sets the economics, holds the subscriber relationship, and decides which titles get commissioned (IP transferred) versus licensed (IP retained). A foreign-owned platform layer means those structural decisions — the ones that determine whether Nollywood's value is captured or retained — are increasingly made off the continent.",
+          "It is the same pivot our Who Owns African Sport work traces in broadcast, playing out in screen: the African-built distribution business passing into French hands, with the local content and jobs staying African while the platform's economics move offshore."
+        ]
+      },
+      {
+        "heading": "DD PART 2 — VALUE FLOWS",
+        "paragraphs": [
+          "Trace the money three ways. Theatrical box office, handled by African-owned distributors like FilmOne, is the most retained flow — value that lands with African cinemas and distributors. Licensing fees are the healthy middle: an African-owned studio keeps its film and rents a window, so the platform's cash arrives without the asset leaving. Streaming commissions are the flow to watch: the production budget lands with the African creator, but for a commissioned Original the enduring asset — the copyright, and every future dollar it earns — lands with the platform.",
+          "The windowing logic makes the difference concrete. A licensed title earns across box office, then a theatrical window, then a streaming licence, then a re-licence years later — multiple bites, all for an owner who kept the asset. A commissioned Original earns the creator a one-time production margin, and then every future exploitation belongs to the platform. Same cash today, opposite ownership tomorrow.",
+          "So the value flows are not uniformly leaking. The retained flows (box office, licensing) are real and growing as African producers wise up; the exported flow (commissioned Originals) is the specific vector where the IP leaves."
+        ]
+      },
+      {
+        "heading": "DD PART 3 — THE LEAK",
+        "paragraphs": [
+          "The leak in Nollywood is narrower and more precise than in football, and naming it precisely is the point. It is not that African creators are shut out of the money — they are increasingly well-paid. It is that the commissioned-Original structure transfers the durable asset, the IP, to the platform, so the creator is paid once and the platform owns the upside forever. Multiply that across a slate of Originals and the continent authors a library it does not own.",
+          "The second leak is the platform layer: with distribution now foreign-owned, the subscription value African viewers pay ultimately serves offshore cap tables, and the structural choice between commissioning and licensing is made by foreign-owned platforms. The leak is at the IP-transfer point and at the distribution point — not, crucially, at the authorship or even the studio-ownership point, where Africa still holds real ground.",
+          "This is a more contained leak than music's masters problem or football's registration problem, because the retained counter-structure — licensing that keeps the IP — is available, understood, and being adopted. The value that leaks is the value that is commissioned away; the value that is licensed stays."
+        ]
+      },
+      {
+        "heading": "THE STREAMER ARC — STATED CAREFULLY",
+        "paragraphs": [
+          "The streamer story is widely misreported, and the diligence states it at its verified stage. Netflix pushed hard into African Originals from 2020 — Queen Sono, its first African Original, was renewed and then cancelled; Blood & Water followed — and has since narrowed its strategy, tilting toward licensing, while publicly denying that it is exiting Nigeria. Amazon Prime Video halted new African and Middle Eastern Originals in January 2024 as part of a rebalancing — but it did not exit Africa. The accurate reading is scale-back and re-strategy, not withdrawal, and we do not write 'Netflix left Africa' because it is false.",
+          "The pullback cuts two ways for the thesis. On one hand, it shows the commissioned-Original land grab was shallower and shorter than feared — the platforms did not lock up African IP at limitless scale. On the other, it leaves African producers who had reorganised around streamer commissions exposed, and it hands even more relative importance to the foreign-owned distribution layer that remains.",
+          "The honest read is that the streamer era's first phase is over, and its lesson is now visible: chase commissioned Originals and you export your IP; build a licensing model and you keep it. The market is learning the mechanism this DD leads with."
+        ]
+      },
+      {
+        "heading": "THE IROKO POST-MORTEM",
+        "paragraphs": [
+          "No case teaches the ownership lesson better than IROKO. Jason Njoku built IROKOtv as the 'Netflix of Africa', spent a reported ~$100m on streaming over the decade, and ultimately concluded that streaming was not the winning model for Nollywood — before its ROK Studios arm was majority-acquired by Vivendi/Canal+ in 2019 for a reported ~$25m, moving a pioneering African catalogue into foreign hands.",
+          "The post-mortem points to a leak the offshore-capture thesis can understate: the binding constraint on Nollywood's value is often domestic, not foreign. Njoku's experience suggests the deepest problem was Nigeria's own market — currency, broadband, willingness to pay — which made it desperately hard to monetise African screen IP at home. The value did not only leave; in large part it never monetised locally in the first place.",
+          "That is a crucial nuance for an investor. The fix for Nollywood's capture problem is not only defending against foreign ownership; it is building the domestic monetisation — distribution, payments, broadband, pricing — that would let African-owned IP actually pay. IROKO is the cautionary tale on both sides."
+        ]
+      },
+      {
+        "heading": "DD PART 4 — QUALITY OF CAPTURE",
+        "paragraphs": [
+          "The final test is developmental versus extractive, and Nollywood scores better on it than the other cultural DDs. Streamer commissioning is genuinely developmental in the ways that matter to craft: it injected budgets, training, production quality and global audiences that Nollywood could not self-finance, and much of that capacity persists after the pullback. Licensing deals are developmental and retentive at once — cash in, IP kept. These are not purely extractive arrangements.",
+          "The extractive edge is specific: the perpetual IP transfer of commissioned Originals, and the passing of the distribution layer into foreign ownership. Even there, the extraction is bounded — the streamers scaled back rather than locking up ever more IP, and the studio layer kept its catalogues. Applied deal by deal, the quality of capture is mixed and, unusually, tilts developmental — provided producers choose licensing over commissioning.",
+          "That is why the verdict lands at Contested rather than Hollowed. The capture that has happened is real but shallow, the retained counter-structure is available and spreading, and the money that came in built genuine African capacity. The question is whether the industry now chooses to keep its IP."
+        ]
+      },
+      {
+        "heading": "RETAINED COUNTER-NODES, COMPS & THE VERDICT",
+        "paragraphs": [
+          "The retained side is strong enough to name with confidence. EbonyLife holds its library while dealing with the majors; FilmOne owns African distribution at scale; Inkblot and Anthill own their productions and, like a growing number of producers, are shifting toward licensing deals that keep the IP. These are not survivals but genuine African-owned businesses in the ownership layer — the reason this DD is Contested and not Exported.",
+          "As comps, Nollywood sits between our other two Culture DDs. Music's masters problem and football's registration problem are deeper leaks, because the retained counter-structure is harder to reach. Nollywood's leak is more addressable: licensing keeps the IP, and the industry is visibly moving toward it. Same offshore pull, more available fix.",
+          "The verdict: CONTESTED, self-correcting toward retention if the licensing shift holds. Authorship is retained, the studio layer holds real African-owned catalogues, and the extraction has been shallow and is being learned away — but the platform layer is now foreign, and every commissioned Original still exports an asset. For an investor or a producer, the strategy writes itself: license, don't be commissioned; own the catalogue; and build the domestic distribution that would let African-owned IP finally pay at home."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & ENDNOTES",
+        "paragraphs": [
+          "The DD applies the AOC framework and grades every figure: verified (named, on-record), reported (single credible source), undisclosed (not public, marked so, never estimated). The commission-versus-license distinction is treated as the load-bearing mechanism and stated as standard industry practice. Per-title IP splits in studio–platform deals (for example EbonyLife's mix of first-look and commissioned titles) are genuinely undisclosed and are not asserted.",
+          "Corrected against common error: Netflix and Amazon scaled back African Originals (Amazon halted new African/MENA Originals in January 2024; Netflix narrowed and denied exiting Nigeria) but neither left Africa — the piece does not say otherwise. The Canal+/MultiChoice takeover is stated as complete (2025–2026) at ~$3bn, the figure used consistently across our sport and screen work; a lower figure appears in some coverage and the discrepancy is noted rather than averaged. The NBCUniversal 30% Showmax stake is dated to the 2024 relaunch.",
+          "Verified anchors: ~2,500 films/year (UNESCO); ~2.3% of GDP and ~1m jobs for the arts/entertainment sector (PwC, whole-sector); the ROK/Vivendi-Canal+ acquisition (2019); the Prime Video January 2024 Originals halt; the Canal+ MultiChoice completion. Reported/flagged: the multi-billion-dollar Nollywood revenue figure (single-source); exact ROK stake and deal values (undisclosed)."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — Output ~2,500 films/year; second-largest by volume: UNESCO. Verified/reported.",
+          "2 — Sector economics ~2.3% of GDP, ~1m jobs (arts, entertainment & recreation — whole sector, not Nollywood alone): PwC 'Spotlight: the Nigerian film industry'. Verified (with the whole-sector caveat).",
+          "3 — Commission vs license (Original = platform owns IP in perpetuity; licensed = creator keeps IP, windowed): standard industry practice; corroborated by Variety's 2024 reporting on producers shifting to licensing. Verified (structural).",
+          "4 — African-owned studios: EbonyLife (Mo Abudu; Netflix/Sony/AMC deals; Òlòtūré a commissioned Original); FilmOne; Inkblot (Prime licensing deal, Dec 2021); Anthill: Deadline; Variety; About Netflix; BusinessDay; company sources. Verified (deals); per-title IP splits undisclosed.",
+          "5 — Platforms: Netflix, Amazon Prime Video (US); Showmax under MultiChoice with NBCUniversal ~30% (2024 relaunch); MultiChoice now Canal+ (French): Variety; Deadline; BusinessDay. Verified.",
+          "6 — ROK Studios majority-acquired by Vivendi/Canal+ (~$25m, 2019); IROKO ~$100m streaming spend; Njoku's assessment: WeeTracker; Pulse Nigeria. Reported; exact stake undisclosed.",
+          "7 — Streamer arc: Netflix Queen Sono renewal then cancellation (2020); narrowing and denial of exiting Nigeria (2024); Amazon halts new African/MENA Originals (Jan 2024, did not exit): Deadline; Variety; Rest of World; TechCabal. Verified.",
+          "8 — Canal+/MultiChoice ~$3bn, completed 2025–2026 (figure consistent across our sport/screen work; a lower figure appears elsewhere and is noted): Deadline; company statements. Verified (completion); value reported.",
+          "9 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the CONTESTED verdict are MonoKromatik's own."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 4,
+        "title": "Chain of title — the three layers",
+        "cols": [
+          "African-authored",
+          "African-owned"
+        ],
+        "rows": [
+          {
+            "label": "Authorship (writers, cast, directors)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Studios & catalogues (EbonyLife, FilmOne)",
+            "tag": "MIXED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Distribution (theatrical)",
+            "tag": "CONTESTED",
+            "cells": [
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Platforms (Netflix, Prime, Showmax→Canal+)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none/foreign, 4 = fully African). Authorship and studios hold real African ground; the platform layer has gone foreign. The leak is at distribution and at the IP-transfer point, not at creation. Source: MonoKromatik analysis; holders per the endnotes."
+      },
+      {
+        "type": "matrix",
+        "after": 4,
+        "title": "Who owns the studios versus who owns the pipes",
+        "cols": [
+          "African-owned",
+          "Owns / keeps the IP"
+        ],
+        "rows": [
+          {
+            "label": "EbonyLife 🇳🇬 (studio)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "FilmOne 🇳🇬 (distributor)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Inkblot / Anthill 🇳🇬 (studios)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "ROK Studios → Canal+ 🇫🇷",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Showmax → Canal+ 🇫🇷 (platform)",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              0
+            ]
+          },
+          {
+            "label": "Netflix / Prime Video 🇺🇸 (platforms)",
+            "tag": "EXPORTED",
+            "cells": [
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). The studio layer holds African-owned catalogues; the platform layer is foreign. This split is why the verdict is Contested, not Exported. Per the endnotes."
+      },
+      {
+        "type": "quadrant",
+        "after": 3,
+        "title": "Authored versus captured — where the archetypes fall",
+        "xAxis": [
+          "Low African authorship",
+          "High African authorship"
+        ],
+        "yAxis": [
+          "Value captured offshore",
+          "Value captured in Africa"
+        ],
+        "points": [
+          {
+            "label": "Inkblot / Anthill (own IP, license)",
+            "x": 88,
+            "y": 82,
+            "highlight": true
+          },
+          {
+            "label": "EbonyLife / FilmOne",
+            "x": 86,
+            "y": 72,
+            "highlight": true
+          },
+          {
+            "label": "Licensed titles",
+            "x": 84,
+            "y": 68
+          },
+          {
+            "label": "Commissioned Originals",
+            "x": 82,
+            "y": 22
+          },
+          {
+            "label": "ROK / Showmax (→ Canal+)",
+            "x": 60,
+            "y": 14
+          }
+        ],
+        "note": "MonoKromatik read. African-owned studios that license their IP sit top-right (retained); commissioned Originals and the foreign-owned platforms sit lower (exported). The vertical position is set by the deal structure, not the authorship. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 9,
+        "title": "Quality of capture — developmental or extractive?",
+        "cols": [
+          "Developmental",
+          "Extractive"
+        ],
+        "rows": [
+          {
+            "label": "Licensing deals (IP kept)",
+            "tag": "DEVELOPMENTAL",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Commissioning: budgets, craft, reach",
+            "tag": "MIXED",
+            "cells": [
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Commissioned-Original IP transfer",
+            "tag": "EXTRACTIVE",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Foreign ownership of the platform layer",
+            "tag": "EXTRACTIVE",
+            "cells": [
+              2,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none, 4 = high). Better than the other cultural DDs: commissioning built real craft capacity, licensing keeps the IP, and the extraction (perpetual IP transfer, foreign platforms) is bounded. Tilts developmental if producers choose licensing. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 10,
+        "title": "The retained counter-nodes",
+        "cols": [
+          "African-owned",
+          "Keeps its IP"
+        ],
+        "rows": [
+          {
+            "label": "EbonyLife (library retained)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "FilmOne (distribution)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Inkblot / Anthill (license, not commission)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high). The reason Nollywood reads Contested, not Exported: real African-owned studios hold their catalogues, and the shift toward licensing keeps the IP on the African side. These are the templates. Per the endnotes.",
+        "unit": ""
+      },
+      {
+        "type": "donut",
+        "after": 10,
+        "title": "The verdict — contested, and self-correcting",
+        "value": 55,
+        "valueLabel": "CONTESTED",
+        "sublabel": "Authorship retained, studio catalogues substantially African-owned, extraction shallow and being learned away — but the platform layer is foreign and every commissioned Original exports an asset. The most hopeful of our three cultural DDs.",
+        "note": "The verdict in one mark. The available fix — license, don't be commissioned — is the reason this reads Contested rather than Hollowed or Exported. Source: MonoKromatik Culture Due Diligence.",
+        "unit": "DD verdict"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'authored here, captured there' read is weakest — and the case that the streamers built Nollywood rather than mining it.",
+      "points": [
+        "The money was developmental, not extractive. Streamer commissions injected budgets, training, craft and global audiences Nollywood could never self-finance; the IP transfer is the fair price of de-risked financing, and the capacity it built persists after the pullback. Queen Sono and Blood & Water raised the whole industry's ceiling.",
+        "Licensing keeps the IP — and it's winning. African producers are already shifting to licensing deals that retain their catalogues, so the capture is transitional, not structural. The market is self-correcting toward retention, which is the opposite of a one-way leak.",
+        "The pullback proves the capture was shallow. If Netflix and Amazon are scaling back African Originals, they cannot simultaneously be locking up African IP at limitless scale. The commissioned-Original land grab was brief and bounded, not a permanent enclosure.",
+        "Foreign platforms are not the same as lost value. Even under Netflix, Amazon or Canal+, the wages, the roughly one million jobs, and the on-screen authorship stay African. Distribution ownership is less economically decisive than the leak thesis implies, and foreign distribution reaches audiences African platforms could not.",
+        "The real leak is domestic, not offshore. IROKO's failure shows the binding constraint is Nigeria's own market — currency, broadband, willingness to pay — not offshore capture. The value doesn't so much leave as never monetise at home, which means the fix is domestic infrastructure, not resisting foreign capital."
+      ]
+    }
+  },
+  {
+    "slug": "signal-scorecard-mielle-organics",
+    "title": "Signal Scorecard — Mielle Organics",
+    "series": "THE SIGNAL SCORECARD",
+    "status": "live",
+    "access": "open",
+    "summary": "Mielle Organics is the coil economy in one brand: a Black-woman-founded, texture-first hair-care line built from a kitchen into 100,000-plus US retail doors, then sold to a global conglomerate. It scores 73 out of 100 on the Signal Scorecard and reads EXPORTED — authentically authored (Idea 21, Authorship 22), well executed (19), but with a Consequence axis (11) that carries an unusually heavy weight. Monique Rodriguez authored a genuine brand for the demographic the mass market underserved, and Procter & Gamble took majority control in January 2023 (deal value undisclosed). What makes Mielle the sharpest coil-economy case is not the corporate lineage — our Who Owns African Beauty table already maps that — but the community-ownership rupture around the deal: the 'hair-care gentrification' discourse when its hero oil went viral, and the later hair-loss allegations and litigation, both handled here strictly as reported allegation and open litigation, with the dermatologists' and the company's rebuttals in the same breath. The deal value stays undisclosed; nothing is asserted as proven harm.",
+    "statusNote": "A Signal Scorecard — 73/100, EXPORTED — free to read",
+    "tags": [
+      "mielle organics",
+      "signal scorecard",
+      "coil economy",
+      "textured hair",
+      "beauty",
+      "value capture",
+      "acquisitions",
+      "AOC framework",
+      "diaspora"
+    ],
+    "publishedAt": "2026-09-24T20:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "73 / 100",
+        "label": "Signal Scorecard total — Idea 21, Authorship 22, Execution 19, Consequence 11. Verdict: EXPORTED — an authentically authored coil brand whose ownership and control were exported to a multinational conglomerate"
+      },
+      {
+        "value": "P&G majority, Jan 2023",
+        "label": "Procter & Gamble took majority control of Mielle Organics in January 2023; Monique Rodriguez stayed CEO and it runs as an independent P&G Beauty subsidiary. The deal value was not disclosed (P&G; WWD; Reuters-tier coverage)"
+      },
+      {
+        "value": "~11% vs ~2.5%",
+        "label": "Black consumers' share of US beauty spend (~$6.6bn in 2021) versus Black-owned brands' share of industry revenue — the ~$2.6bn gap the coil economy exists inside, per McKinsey's 2022 analysis (reported)"
+      },
+      {
+        "value": "$20m",
+        "label": "Committed to the Mielle Cares non-profit at acquisition ($10m from Mielle, $10m from P&G) — reinvestment written into the deal terms (WWD; Ebony)"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 1,
+      "title": "The scorecard — 73 / 100, and the weight on Consequence",
+      "unit": "score (out of 25 per axis)",
+      "note": "Idea, Authorship and Execution are strong; Consequence (11) carries the community-ownership rupture around the acquisition — the 'gentrification' discourse and the later hair-loss allegations, both scored as reported, not adjudicated. Source: MonoKromatik Signal Scorecard; facts per the endnotes.",
+      "data": [
+        {
+          "label": "Idea",
+          "value": 21,
+          "display": "21 / 25"
+        },
+        {
+          "label": "Authorship",
+          "value": 22,
+          "display": "22 / 25"
+        },
+        {
+          "label": "Execution",
+          "value": 19,
+          "display": "19 / 25"
+        },
+        {
+          "label": "Consequence",
+          "value": 11,
+          "display": "11 / 25"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "THE VERDICT",
+        "paragraphs": [
+          "Mielle Organics scores 73 out of 100 and reads EXPORTED: an authentically authored, well-executed coil-economy brand whose ownership and control were exported to a global conglomerate. Idea (21/25) and Authorship (22/25) are among the strongest in the category; Execution (19/25) is real; and Consequence (11/25) carries an unusually heavy weight, because the value transfer here came with a rupture in the community-ownership contract that built the brand.",
+          "What makes Mielle the sharpest single coil-economy case — sharper than a league-table row — is not the corporate lineage. Our Who Owns African Beauty table already maps SheaMoisture, Carol's Daughter and Mielle as conglomerate-owned. It is the community reaction around the deal: the 'hair-care gentrification' discourse when Mielle's hero oil went viral beyond its core users, and the later hair-loss allegations and litigation. Those are the material a scorecard, not a lineage chart, is built to weigh.",
+          "The discipline throughout is strict. Procter & Gamble's January 2023 majority acquisition is verified but its value is undisclosed and not estimated. The backlash episodes are reported as consumer discourse and open litigation — never as proven product harm or founder wrongdoing — with the dermatologists' and the company's rebuttals stated in the same breath. The verdict is about ownership and its consequences, not a claim that anyone did anything wrong."
+        ]
+      },
+      {
+        "heading": "THE CATEGORY — THE COIL ECONOMY",
+        "paragraphs": [
+          "Mielle exists inside a well-documented structural gap. McKinsey's 2022 analysis found Black consumers accounted for roughly 11% of US beauty spending — about $6.6bn in 2021 — while Black-owned brands represented only around 2.5% of industry revenue, a mismatch McKinsey framed as a roughly $2.6bn unmet opportunity. The coil economy — texture-first, ingredient-forward hair care for thick, coily, afro-textured hair — is the category built by the underserved to close that gap.",
+          "The pattern of the category is the pattern of the gap: brands are authored by Black founders the mass market ignored, and then, once they prove the demand, acquired by the conglomerates that ignored it. SheaMoisture to Unilever, Carol's Daughter to L'Oréal, and Mielle to P&G are three iterations of the same arc. The demand is authored on one side of the ownership line and captured on the other.",
+          "Mielle is scored against that backdrop, which is why the Consequence axis matters so much: an acquisition in this category is not just a transaction, it is a moment when the community that built the brand asks who it belongs to now."
+        ]
+      },
+      {
+        "heading": "THE AUTHOR — 22/25",
+        "paragraphs": [
+          "Mielle's authorship is among the most genuine in the category, and the score reflects it. Monique Rodriguez is a certified nurse who launched Mielle in 2014 after the death of her infant son, Milan, in 2013 — a grief-to-purpose founding, bootstrapped from batches made at home and shared on Instagram. This is founder-formulator authorship: the lived-experience demographic, the Black-woman-led origin, the product made by the person who needed it. It is exactly the kind of hard-to-fake authorship the framework rewards.",
+          "Authorship remained founder-majority through the Berkshire Partners minority round of March 2021 — Rodriguez and her husband kept control while taking growth capital. The two-point deduction is what came next: since the 2023 P&G majority deal, authorship is contractually shared with conglomerate ownership. Rodriguez still authors the brand narrative and runs it as CEO, but she no longer controls the cap table.",
+          "Twenty-two out of twenty-five: authorship this authentic, marked down only because ownership of the asset it created has moved."
+        ]
+      },
+      {
+        "heading": "THE IDEA — 21/25",
+        "paragraphs": [
+          "The founding idea is precise and category-defining: clean-leaning, ingredient-forward products formulated first for coily, afro-textured hair — the demographic the mass market systematically under-served. It sits directly inside the McKinsey gap, and it found its proof-object in the Rosemary Mint Scalp & Strengthening Oil, the product that became Mielle's breakout. The idea is a real answer to a real, quantified market failure.",
+          "The deduction is that the core concept — texture-first hair care — is category-shared rather than singular. SheaMoisture, Carol's Daughter and others occupy adjacent ground, so Mielle's idea is an excellent entry in a defined category rather than the invention of the category itself. That is a distinction the scorecard makes consistently.",
+          "Twenty-one out of twenty-five: a precise, well-targeted, proof-carried idea, scored just below the top because it shares its ground with the other pioneers of the coil economy."
+        ]
+      },
+      {
+        "heading": "THE BUILD — 19/25",
+        "paragraphs": [
+          "Execution is real and institutionally validated. Mielle scaled from home batches to a reported 100,000-plus US retail doors — Walmart, Target, Ulta, CVS, Walgreens, Sally Beauty — with reported revenue growth of around 400% since January 2020 and a reported ~$15m annual-sales milestone on the way to the exit. That trajectory earned a two-stage institutional endorsement: a Berkshire Partners minority in 2021, then a P&G majority in 2023.",
+          "The deductions sit on the same success. The mass demand that proved the execution also triggered the supply-shortage and price episode of early 2023, and the brand's crisis communications during the later hair-loss backlash were contested. Execution built the scale; execution was also tested by what the scale produced. All the scale figures are reported rather than audited, and graded as such.",
+          "Nineteen out of twenty-five: genuine, validated executional scale, held below the top band by the operational and reputational strains that scale brought with it."
+        ]
+      },
+      {
+        "heading": "THE EXIT — CONTROL TRANSFERRED",
+        "paragraphs": [
+          "In January 2023, Procter & Gamble took majority control of Mielle Organics, buying out the Berkshire minority and the founders' majority; Monique Rodriguez remained CEO and Mielle now operates as an independent P&G Beauty subsidiary. The deal value was not disclosed by P&G, and this scorecard does not repeat the rumoured figures as fact — the widely circulated numbers are press speculation, not disclosed terms, and are marked undisclosed.",
+          "The deal carried a reinvestment term: Mielle and P&G each committed $10m — $20m in total — to the Mielle Cares non-profit, channelling capital back toward Black and Brown communities as part of the transaction. That is a genuine, contractual reinvestment, and it belongs in any fair reading of the exit alongside the control transfer.",
+          "What P&G bought is the coil economy's whole logic in one asset: a proven, authentically authored brand in the exact demographic the conglomerates had underserved. What the community felt it lost is the subject of the Consequence axis."
+        ]
+      },
+      {
+        "heading": "THE CONSEQUENCE — 11/25",
+        "paragraphs": [
+          "The Consequence axis carries the honest weight, and it does so through two documented episodes, both reported carefully. First, in January 2023 — the same week as the P&G deal — Mielle's Rosemary Mint oil went viral among non-textured-hair (largely white) TikTok users, and core consumers reported stock-outs and resale price hikes (reported jumps from around $9.99 toward $29). That sparked a widely covered 'hair-care gentrification' and gatekeeping debate. This was a consumer and community discourse, framed by consumers and outlets — not an action Mielle took — and it is attributed as such.",
+          "Second, from September 2023 into 2024, hundreds of TikTok creators alleged hair loss, and some consumers speculated about a post-P&G reformulation. Mielle stated its formulas were unchanged; dermatologists quoted in the coverage said the listed ingredients are not known to be harmful and that correlation is not causation. Multiple hair-loss class-action suits were consolidated in the US District Court for the Northern District of Illinois. These are allegations and open litigation, not findings of harm, and they are stated that way, with the company's and the dermatologists' rebuttals in the same breath. Rodriguez has also alleged that the hair-loss virality was fuelled by paid competitor misinformation.",
+          "Consequence scores 11 not as a verdict that Mielle did anything wrong — the piece asserts no such thing — but because the acquisition coincided with a rupture in community trust that the brand has not fully closed. The scorecard measures the consequence of the ownership event; here, that consequence was a contested relationship with the community that authored the demand."
+        ]
+      },
+      {
+        "heading": "THE CONTINENTAL ANGLE",
+        "paragraphs": [
+          "Mielle is a diaspora brand — US-founded, on a US market — but the exit has a direct African-market dimension. Post-deal, the brand targeted expansion into the UK, South Africa, Nigeria and Dubai, so a P&G-owned, diaspora-authored coil brand is now entering African markets from the outside. That is the coil economy's export pattern arriving on the continent: African-heritage beauty, authored in the diaspora, owned by a conglomerate, sold back into Africa.",
+          "For continental African beauty brands — the House of Taras and Zarons of our Who Owns African Beauty table — that is both a competitive threat and a strategic lesson. The threat is a conglomerate-backed brand with 100,000-door muscle entering their markets. The lesson is the ownership one: the brands that keep control keep the value, and the exits that build 100,000-door reach also transfer the equity offshore.",
+          "The continental angle is why an American coil brand belongs in a MonoKromatik scorecard: its ownership story is the same story the continent's own beauty brands are living, and its expansion makes that story literal on African shelves."
+        ]
+      },
+      {
+        "heading": "THE AOC & SIGNALLING READ",
+        "paragraphs": [
+          "Through the AOC lens, Mielle is authored by the underserved and captured by the conglomerate: a Black-woman-founded brand for coily hair, its equity now held by P&G. Authorship African-diaspora and genuine; ownership and value capture exported. It is the category's defining pattern in a single company, and the reason the verdict is EXPORTED rather than Contested — control genuinely moved, and the founders' majority is gone.",
+          "The signalling read explains why the acquisition was so charged. Mielle's signal — an authentic, community-built brand for hair the mainstream ignored — is precisely what made it valuable to P&G, and precisely what the community felt was compromised when the ownership moved. The hard-to-fake authenticity that built the brand is the thing an acquisition puts at risk, which is why coil-economy exits provoke a reaction that ordinary consumer-brand deals do not.",
+          "The signal was authored by a community; the premium was captured by a conglomerate. That gap is the whole scorecard."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & ENDNOTES",
+        "paragraphs": [
+          "The Signal Scorecard grades out of 100 across Idea, Authorship, Execution and Consequence (25 each), with the AOC verdict following from the profile. All scores are MonoKromatik's judgement. The single most important discipline here is the handling of two sensitive areas: the undisclosed deal value, which is never replaced with a rumoured figure, and the backlash, which is framed strictly as reported consumer discourse and open litigation, with counterpoints, never as adjudicated harm or founder wrongdoing.",
+          "Verified: the P&G majority acquisition (January 2023) and Rodriguez's continuing CEO role (P&G; WWD); the Berkshire Partners minority (March 2021); the founding story (Forbes; Beauty Independent); the McKinsey spend-versus-ownership figures (McKinsey, 2022, via WWD/Retail Brew); the $20m Mielle Cares commitment (WWD; Ebony). Reported (secondary, not audited): ~100,000 retail doors, ~400% revenue growth, ~$15m sales, the ~$9.99→$29 price episode, and the hair-loss allegations and their consolidation into litigation.",
+          "Deliberately not published: the deal value (undisclosed); any assertion that Mielle's products caused harm or were reformulated (the claims are allegations under litigation, and the company and dermatologists dispute them); and the 'gentrification' framing as a Mielle action rather than a consumer discourse. Named attribution throughout."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — P&G majority acquisition of Mielle Organics, January 2023; Rodriguez remained CEO; independent P&G Beauty subsidiary; deal value undisclosed: P&G; WWD; Reuters-tier coverage. Verified (fact); value undisclosed.",
+          "2 — Berkshire Partners minority stake, March 2021; founders remained majority; sold to P&G in 2023: Berkshire Partners; Essence; BusinessWire. Verified.",
+          "3 — Founding: Monique Rodriguez (nurse), launched 2014 after son Milan's death (2013), bootstrapped via Instagram: Forbes; Beauty Independent; Girlboss. Verified.",
+          "4 — McKinsey (2022): Black consumers ~11% of US beauty spend (~$6.6bn, 2021) vs Black-owned ~2.5% of revenue; ~$2.6bn opportunity: McKinsey via WWD; Retail Brew; Happi. Reported.",
+          "5 — Mielle Cares $20m commitment ($10m Mielle + $10m P&G): WWD; Ebony; Premium Beauty News. Verified.",
+          "6 — Distribution ~100,000 doors; ~400% growth since Jan 2020; ~$15m sales milestone; expansion to UK/SA/Nigeria/Dubai: Beauty Independent; Retail Brew; Ebony. Reported.",
+          "7 — 'Gentrification'/access episode (Jan 2023): Rosemary Mint oil virality, reported stock-outs and resale price hikes (~$9.99→~$29): Refinery29; NBC News; Marie Claire. Reported (consumer discourse, not a Mielle action).",
+          "8 — Hair-loss allegations (Sept 2023–2024) and class actions consolidated in the US District Court, Northern District of Illinois; Mielle stated formulas unchanged; dermatologists said ingredients not known harmful (correlation ≠ causation); Rodriguez alleged paid competitor misinformation: Marie Claire; TheGrio; ClassAction.org; TopClassActions. Reported as allegations / open litigation — not adjudicated harm.",
+          "9 — Scores, axis weightings and the EXPORTED verdict are MonoKromatik's own analysis."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "Control transferred — the ownership lineage",
+        "cols": [
+          "Founder majority",
+          "Conglomerate / outside control"
+        ],
+        "rows": [
+          {
+            "label": "2014–2020 — founder-built, bootstrapped",
+            "tag": "FOUNDER",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "2021 — Berkshire Partners minority",
+            "tag": "MINORITY",
+            "cells": [
+              3,
+              1
+            ]
+          },
+          {
+            "label": "2023 — P&G majority",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = full). The export in three steps: founder-built, then a minority growth partner, then majority control to P&G. Rodriguez stayed CEO, but the cap table left founder hands. Deal value undisclosed. Per the endnotes."
+      },
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "The gap the coil economy exists inside",
+        "unit": "% share, US beauty (reported; McKinsey 2022)",
+        "note": "Black consumers are ~11% of US beauty spend (~$6.6bn in 2021) but Black-owned brands only ~2.5% of industry revenue — a ~$2.6bn gap. Coil brands are built to close it; the conglomerates buy them once they do. Source: McKinsey (2022) via WWD/Retail Brew.",
+        "data": [
+          {
+            "label": "Black share of beauty spend",
+            "value": 11,
+            "display": "~11%"
+          },
+          {
+            "label": "Black-owned share of revenue",
+            "value": 2.5,
+            "display": "~2.5%"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 2,
+        "title": "The coil economy's ownership map",
+        "cols": [
+          "African/diaspora-authored",
+          "African/founder-owned"
+        ],
+        "rows": [
+          {
+            "label": "Continental cluster (House of Tara, Zaron…)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Mielle Organics (→ P&G, 2023)",
+            "tag": "EXPORTED",
+            "cells": [
+              3,
+              1
+            ]
+          },
+          {
+            "label": "SheaMoisture (→ Unilever, 2017)",
+            "tag": "EXPORTED",
+            "cells": [
+              3,
+              0
+            ]
+          },
+          {
+            "label": "Carol's Daughter (→ L'Oréal, 2014)",
+            "tag": "EXPORTED",
+            "cells": [
+              3,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). Mielle is the newest node in the diaspora acquisition wave — cross-referenced from our Who Owns African Beauty table, not reprinted. The continental founder-owned cluster is the retained counterweight. Per the endnotes."
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The two consequence episodes — reported, not adjudicated",
+        "cols": [
+          "Consumer / community reaction",
+          "Adjudicated against Mielle?"
+        ],
+        "rows": [
+          {
+            "label": "'Gentrification' / access discourse (Jan 2023)",
+            "tag": "DISCOURSE",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "Hair-loss allegations + class actions (2023–24)",
+            "tag": "IN LITIGATION",
+            "cells": [
+              4,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high). Both episodes were intense community reactions; neither is an adjudicated finding against Mielle. The company says formulas were unchanged and dermatologists found no evidence of harm (correlation ≠ causation). Framed as reported allegation and open litigation. Per the endnotes."
+      },
+      {
+        "type": "quadrant",
+        "after": 8,
+        "title": "The AOC read — authored by the underserved, captured by the conglomerate",
+        "xAxis": [
+          "Low African/diaspora authorship",
+          "High African/diaspora authorship"
+        ],
+        "yAxis": [
+          "Value exported",
+          "Value retained"
+        ],
+        "points": [
+          {
+            "label": "Continental founder-owned brands",
+            "x": 84,
+            "y": 84
+          },
+          {
+            "label": "Mielle Organics",
+            "x": 82,
+            "y": 18,
+            "highlight": true
+          },
+          {
+            "label": "SheaMoisture / Carol's Daughter",
+            "x": 78,
+            "y": 10
+          }
+        ],
+        "note": "MonoKromatik read. Mielle sits far right (authentically authored) and low (value exported to P&G) — the EXPORTED quadrant, alongside the other diaspora leaders. The continental founder-owned brands hold the retained corner. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "donut",
+        "after": 6,
+        "title": "The axis that carries the weight",
+        "value": 11,
+        "valueLabel": "11 / 25",
+        "sublabel": "Consequence — the lowest axis. Not a verdict of wrongdoing (the piece asserts none) but a measure of the community-trust rupture around the acquisition: the 'gentrification' discourse and the hair-loss allegations still in litigation.",
+        "note": "The scorecard measures the consequence of the ownership event. For Mielle, that consequence was a contested relationship with the community that authored the demand. Source: MonoKromatik Signal Scorecard.",
+        "unit": "Consequence axis"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the EXPORTED reading is weakest — and the case that the Mielle exit is a win, not a loss.",
+      "points": [
+        "The exit is a founder win, not a loss. A Black woman built a coil brand from her kitchen to a multinational-scale exit — generational wealth realised in a category that historically denied it. Treating that as extraction erases Rodriguez's own achievement and choice.",
+        "Acquisition means scale and access. P&G's supply chain and shelf power put coil-first products into 100,000-plus doors and onto new continents — including South Africa and Nigeria — reaching consumers the community itself said it wanted served. Ownership moved; availability expanded.",
+        "Reinvestment is contractual, not rhetorical. The $20m Mielle Cares commitment channels real capital back to Black and Brown communities as a written deal term — a concrete return of value that the 'exported' frame can understate.",
+        "Founder control was retained operationally. Rodriguez stayed CEO and Mielle runs as an independent subsidiary, so 'exported' overstates the loss of authorship and day-to-day control even as the cap table changed hands.",
+        "The backlash may be a reputational attack, not a product failure. Rodriguez alleges the hair-loss virality was fuelled by paid competitor misinformation, and dermatologists found no evidence the ingredients are harmful. If so, the Consequence axis penalises Mielle for an attack it did not cause rather than for anything it did — which is exactly why the piece scores the episode as allegation, not fact."
+      ]
+    }
+  },
+  {
+    "slug": "artist-value-capture-rema",
+    "title": "Artist Value-Capture — Rema, the Masters & the Major",
+    "series": "ATHLETE VALUE-CAPTURE",
+    "status": "live",
+    "access": "open",
+    "summary": "Rema authored the biggest Afrobeats export in history — 'Calm Down' hit No. 3 on the Billboard Hot 100 and became the first track led by an African artist to pass a billion Spotify streams. And the label that houses his catalogue, Mavin, sold a majority to Universal Music Group in February 2024. This is the companion to our Kolisi and Osimhen value-capture reads, pointed at an artist, and it turns on two things we can and cannot see. What we can see: Rema's recorded-music catalogue sits within Mavin Global, in which UMG now holds a majority — so the compounding value of his masters flows up a chain toward a major, and his latest album routed through Interscope. What we cannot see, and refuse to invent: the artist-level masters and royalty split, and whether Rema's contract gave him equity that participated in the Mavin payout — whose named beneficiaries are the founders. The signal is Afrobeats-to-the-world; the capture question is genuinely open, and we keep it open rather than assert an ownership we cannot source.",
+    "statusNote": "A value-capture read — framework plus a worked artist case, free to read",
+    "tags": [
+      "rema",
+      "afrobeats",
+      "value capture",
+      "masters",
+      "mavin",
+      "universal music",
+      "image rights",
+      "signalling",
+      "AOC framework",
+      "music ownership"
+    ],
+    "publishedAt": "2026-09-24T20:30:00.000Z",
+    "keyStats": [
+      {
+        "value": "No. 3 · 1bn+",
+        "label": "'Calm Down' (with Selena Gomez) peaked at No. 3 on the Billboard Hot 100 — the highest-charting Afrobeats lead artist in the chart's history — and was the first track led by an African artist to join Spotify's Billions Club (Sept 2023), later passing 2 billion streams (Billboard; Spotify)"
+      },
+      {
+        "value": "Majority → UMG",
+        "label": "Universal Music Group acquired a majority of Mavin Global — Rema's label home via Jonzing World — announced February 2024; founders Don Jazzy and Tega Oghenejobo retained leadership. Deal value and artist-level terms undisclosed (Billboard Business; Variety; UMG)"
+      },
+      {
+        "value": "Undisclosed",
+        "label": "Rema's masters and publishing split, and whether his contract gave him equity that participated in the Mavin sale. We state the chain (Jonzing → Mavin → UMG-majority) and refuse to assert an ownership the public record does not show"
+      },
+      {
+        "value": "Via Interscope",
+        "label": "Rema's 2024 album 'HEIS' routed through Interscope (a UMG label) — the post-acquisition flywheel made visible: the major's machine now carries his rollout (Universal Music; Official Charts UK)"
+      }
+    ],
+    "exhibit": {
+      "type": "matrix",
+      "after": 4,
+      "title": "Who owns the masters — the chain",
+      "cols": [
+        "African-owned / led",
+        "Where the compounding value flows"
+      ],
+      "rows": [
+        {
+          "label": "Jonzing World (D'Prince) — his signing label",
+          "tag": "AFRICAN",
+          "cells": [
+            4,
+            1
+          ]
+        },
+        {
+          "label": "Mavin Global — the parent (UMG majority, 2024)",
+          "tag": "NOW UMG-MAJORITY",
+          "cells": [
+            2,
+            3
+          ]
+        },
+        {
+          "label": "Universal Music Group — majority owner",
+          "tag": "MAJOR",
+          "cells": [
+            0,
+            4
+          ]
+        },
+        {
+          "label": "'HEIS' (2024) via Interscope (UMG)",
+          "tag": "MAJOR",
+          "cells": [
+            0,
+            3
+          ]
+        }
+      ],
+      "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). The centrepiece of the piece: Rema's catalogue value flows up a chain from an African label to a major. We show the chain — we do NOT assert who owns his masters, because the artist-level split is undisclosed. Source: MonoKromatik analysis; ownership per the endnotes."
+    },
+    "sections": [
+      {
+        "heading": "THE WIN, AND THE SALE, IN ONE BREATH",
+        "paragraphs": [
+          "Rema authored the biggest Afrobeats export in history. 'Calm Down', and its Selena Gomez remix, reached No. 3 on the Billboard Hot 100 — the highest-charting Afrobeats lead artist ever — and became the first track led by an African artist to join Spotify's Billions Club, later passing two billion streams. It is a hard-to-fake signal of the very first rank: proof that an Afrobeats artist can top the global mainstream.",
+          "And the label that houses his catalogue told the other half of the story. In February 2024, Mavin Global — Rema's label home, which he joined via Jonzing World — sold a majority stake to Universal Music Group. The biggest Afrobeats export and the sale of its label into a major arrived in the same window. That is the tension this piece, the companion to our Kolisi and Osimhen value-capture reads, exists to hold.",
+          "It turns on two things — one we can see, one we cannot. We can see the chain: Rema's catalogue sits within Mavin, in which UMG now holds a majority, and his latest album routed through Interscope. We cannot see, and will not invent, the artist-level masters split or whether Rema shared in the payout. The signal is Afrobeats-to-the-world; the capture is genuinely undisclosed, and we keep it that way."
+        ]
+      },
+      {
+        "heading": "THE SIGNAL",
+        "paragraphs": [
+          "The scale of the win is worth stating precisely, because it is both huge and often misstated. 'Calm Down' peaked at No. 3 on the Hot 100 — the highest-charting Afrobeats lead artist in the chart's history, a Billboard-verified record. It was the first track led by an African artist to pass a billion Spotify streams, in September 2023, and later crossed two billion. It set a Guinness World Record as the first song to top the Official MENA Chart — that specific record, not a generic streaming one. And it won Best Afrobeats at the 2023 MTV EMAs and Best Afrobeats Video at the 2023 VMAs.",
+          "One common claim we do not repeat: that it is the 'longest-charting African-artist Hot 100 song'. What is verified is the highest-charting Afrobeats lead artist record; the longevity superlative did not verify in that exact form, so we use the record that did. Precision about which record is real is part of the read.",
+          "By any measure, Rema authored a signal that redrew the ceiling for African pop. The rest of the piece is about who captures the value that signal creates."
+        ]
+      },
+      {
+        "heading": "THE LADDER",
+        "paragraphs": [
+          "Applied to Rema, the five-rung value-capture ladder shows strong capture at the top and a leak at the rung that compounds. Fees — touring, shows, features — are his strongest personally-captured rung: the HEIS world tour and arena-scale dates pay him directly, net of an undisclosed management commission. Endorsements are a real but modest rung, and a data-honesty problem we address below. Owned media — his 'Ravage' world, the bat and Benin iconography — is strong brand equity he controls creatively, though whether it is an owned, monetised vehicle is not established.",
+          "The fourth rung is where it changes: recorded-music masters. Rema's catalogue — 'Calm Down', 'Rave & Roses', 'HEIS' — sits within the Jonzing/Mavin structure, now UMG-majority-owned. The compounding value of the masters flows up and, increasingly, out toward the major. And the fifth rung, owned equity, is precisely where the biggest wealth event in his orbit happened — the Mavin sale — and precisely where his participation is undisclosed.",
+          "The shape is the artist's version of the inverted curve we found in football: strong capture on performance and brand, a leak on the masters that compound, and an unknown at the equity rung where the real transfer of wealth occurred."
+        ]
+      },
+      {
+        "heading": "THE MASTERS QUESTION",
+        "paragraphs": [
+          "This is the spine of the piece, and it must be stated exactly. Rema signed to Jonzing World, D'Prince's label, which operates under Mavin. His recorded-music catalogue therefore sits within Mavin Global — and in February 2024, UMG acquired a majority of Mavin Global. So the compounding value of Rema's masters now sits inside a structure a major controls. His 2024 album 'HEIS' routing through Interscope, a UMG label, is that flywheel made visible: the major's machine now carries his rollout.",
+          "Here is what we do not say, because it is not public. We do not say 'UMG owns Rema's masters', and we do not say 'Rema owns his masters'. The correct, sourced framing is narrower: Rema's catalogue sits within Mavin Global, in which UMG holds a majority stake on undisclosed terms, and the artist-level masters and royalty split is not public. The chain is verified; the split is dark. We report the chain and mark the split undisclosed.",
+          "That discipline is the point. The temptation is to resolve the masters question into a clean 'the major owns him now' headline. The honest read is that his catalogue value flows up a chain toward a major, and exactly how much reaches or is retained by Rema is something the public record does not show — so we do not pretend it does."
+        ]
+      },
+      {
+        "heading": "THE EQUITY BLIND SPOT",
+        "paragraphs": [
+          "The most important thing about the Mavin–UMG deal, for an artist value-capture read, is who got paid — and the answer is a blind spot worth naming. The named beneficiaries of the February 2024 sale are the founders: Don Jazzy, D'Prince (whose Jonzing World signed Rema), and the chief operating officer Tega Oghenejobo, who retained leadership. There is no public evidence that Rema's contract gave him equity in Mavin that participated in the payout.",
+          "That is the value-capture crux. The single largest transfer-of-wealth event in Rema's orbit — the capitalisation of the label his hits helped make valuable — is one whose upside, on the public record, accrued to the founders who owned the equity, not necessarily to the artist who generated much of the value. He may have created the value that others monetised. He may also have participated on terms we cannot see. Both are consistent with what is public.",
+          "We flag this as the single most important gap in the read, and we refuse to fill it. Asserting either that Rema shared in the sale or that he was cut out of it would be inventing a fact. What we can say is structural: the equity rung, where the real money moved, is the rung where an artist's participation is least visible and least assured — and Rema's is undisclosed."
+        ]
+      },
+      {
+        "heading": "ENDORSEMENTS & FEES — WITH HONESTY ABOUT THE DATA",
+        "paragraphs": [
+          "Fees are Rema's cleanest capture. Live performance — the HEIS world tour, arena and festival dates — pays the artist directly, and for a global-scale act that is substantial, subject to an undisclosed management cut. This rung he genuinely owns.",
+          "Endorsements are where the house standard bites hardest. Rema is associated in circulating coverage with a handful of brands, but those claims trace to weak aggregator sites, not to brand announcements or primary reporting, and the figures attached to them are estimates from the same weak sources. So we do not enumerate specific deals or values, and we explicitly drop names that did not surface in credible reporting at all. Naming an endorsement roster we cannot verify would fail the same test we apply to every subject.",
+          "The honest read on the brand rung is therefore limited by design: it is real but modest by global-superstar standards, and its specifics are not sourced well enough to publish. The structural point — that endorsements are a rung the artist captures — stands without inventing the roster."
+        ]
+      },
+      {
+        "heading": "OWNED MEDIA & THE 'RAVAGE' IP",
+        "paragraphs": [
+          "Rema's most distinctive owned asset is his aesthetic. The 'Ravage' world — the bat motif, the Queen Idia mask and Benin iconography, the whole visual identity — is a genuine piece of brand equity he authored and controls creatively. It is instantly his, tied to him rather than to any label, and it is the kind of owned signal that compounds an artist's brand independently of any single release.",
+          "The limit, for a value-capture read, is that creative control is not the same as an owned, monetised vehicle. Whether the 'Ravage' IP is structured as an asset Rema owns and licenses — a brand, a company, a merchandising and IP vehicle he holds — is not established on the public record. It is strong aesthetic equity; whether it is a balance-sheet asset is undisclosed.",
+          "This is the rung with the most upside and the least visibility. An artist who owns his iconography as a licensable estate captures a compounding asset the masters chain cannot touch — and it is precisely where Rema's ownership, like his masters split, is not public."
+        ]
+      },
+      {
+        "heading": "THE AOC & SIGNALLING READ",
+        "paragraphs": [
+          "Through the AOC lens, Rema is authored in Nigeria — a Benin City artist who redrew the ceiling for African pop — while the compounding value of his recorded music flows into a structure a major now controls. Authorship Nigerian and unmistakable; ownership and capture drifting, via the Mavin sale, toward UMG. It is the individual-artist version of the pattern our Who Owns African Music table found across the whole recorded-music business.",
+          "The signalling lens sharpens it. 'Rema' is a hard-to-fake signal — Afrobeats as global mainstream pop — and the party positioned to certify and monetise that signal at scale is increasingly the major that now controls his label. The signal is minted in Nigeria; the machine that compounds it, via Interscope and UMG, is a major's. Whoever certifies the signal captures its premium, and the certification has moved up the chain.",
+          "The one place the artist keeps the upside outright is the rung he authored himself — the live shows and the 'Ravage' brand. The masters and the equity, the rungs that compound the hardest, are the ones flowing toward the major or sitting undisclosed."
+        ]
+      },
+      {
+        "heading": "LEAGUE-TABLE PLACEMENT",
+        "paragraphs": [
+          "Rema's case is the human detail behind a row in our Who Owns African Music league table, where Mavin is classified EXPORTED — African-authored, majority-sold to a major. Rema is what that classification looks like from the artist's side: the biggest star on the roster, whose hits helped build the value that was capitalised, and whose own share of that capitalisation is not public.",
+          "The placement teaches the export pattern precisely. Exported does not mean the artist is poor or powerless — Rema captures strongly on fees and brand, and the UMG relationship gives him a global distribution machine most artists never touch. It means the compounding, ownable value — the masters, the label equity — sits, or increasingly sits, on the major's side of the line.",
+          "For an artist reading this, the lesson is the same one the music league table draws for labels: the rungs that compound are the ones to own, and the moment the label equity is capitalised is the moment the ownership question is answered — usually in the founders' and the major's favour, unless the artist negotiated otherwise."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & ENDNOTES",
+        "paragraphs": [
+          "The five-rung ladder, the AOC and signalling reads and all scores are MonoKromatik's framework. The defining discipline of this piece is the masters framing: we state the ownership chain (Jonzing → Mavin → UMG-majority; HEIS via Interscope) as verified, and we mark the artist-level masters and royalty split, and Rema's equity participation in the Mavin sale, as undisclosed — asserting neither that the major owns his masters nor that he retains them. Publishing and songwriter splits are likewise undisclosed and not claimed.",
+          "Verified: the 'Calm Down' Hot 100 No. 3 peak and highest-charting-Afrobeats-lead-artist record (Billboard); the Spotify Billions Club first (September 2023) and 2bn-plus streams (Spotify); the Guinness record as first No. 1 on the Official MENA Chart; the Jonzing World signing (2019); the UMG majority of Mavin (February 2024, Billboard Business/Variety/UMG); the HEIS/Interscope routing (Universal Music; Official Charts UK). Regraded: the 'longest-charting African-artist Hot 100 song' claim, which did not verify in that form and is replaced by the record that did.",
+          "Reported and not stated as fact: the ~$125m Mavin valuation estimate, and any endorsement deals or figures, which trace only to weak aggregator sources — so specific brand deals are not enumerated and unsourced names are dropped. Named beneficiaries of the Mavin sale (the founders) are reported; Rema's participation is undisclosed and left open."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — 'Calm Down' (with Selena Gomez) Hot 100 No. 3; highest-charting Afrobeats lead artist: Billboard. Verified.",
+          "2 — First track led by an African artist in Spotify's Billions Club (Sept 2023); later 2bn+ streams: Spotify Newsroom; Music Business Worldwide. Verified.",
+          "3 — Guinness World Record: 'Calm Down' first No. 1 on the Official MENA Chart (this specific record): Guinness World Records. Verified.",
+          "4 — Signed Jonzing World (D'Prince), 22 March 2019; Jonzing operates under Mavin: Vanguard; Leadership.ng. Verified.",
+          "5 — UMG acquired a majority of Mavin Global, announced 26 February 2024; Don Jazzy and Tega Oghenejobo retained leadership; deal value undisclosed (~$125m is a reported estimate): Billboard Business; Variety; UMG. Verified (deal); value/terms undisclosed.",
+          "6 — 'Rave & Roses' (2022) No. 81 Billboard 200; 'HEIS' (2024) via Interscope (UMG), UK No. 90: Billboard; Universal Music; Official Charts UK. Verified.",
+          "7 — Awards: Best Afrobeats, 2023 MTV EMAs; Best Afrobeats Video, 2023 VMAs ('Calm Down'): MTV; contemporaneous coverage. Verified.",
+          "8 — Masters/publishing split and Rema's equity participation in the Mavin sale: not public. Undisclosed — not asserted in either direction.",
+          "9 — Endorsement deals and figures: only weak aggregator sources surfaced; specific deals and values are not published, and unsourced names are dropped. Not used.",
+          "10 — The ladder, the AOC/signalling reads and all scores are MonoKromatik's own analysis; ties to the Who Owns African Music league table (Mavin = EXPORTED)."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The five rungs — where Rema captures",
+        "cols": [
+          "Does Rema capture it?",
+          "Does it compound for him?"
+        ],
+        "rows": [
+          {
+            "label": "Fees (touring, shows, features)",
+            "tag": "HE CAPTURES",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Endorsements (specifics unverified)",
+            "tag": "PARTIAL",
+            "cells": [
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Owned media / 'Ravage' aesthetic",
+            "tag": "BRAND EQUITY",
+            "cells": [
+              3,
+              3
+            ]
+          },
+          {
+            "label": "Recorded-music masters",
+            "tag": "FLOWS UP/OUT",
+            "cells": [
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Owned equity (in the label)",
+            "tag": "UNDISCLOSED",
+            "cells": [
+              1,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = none/unknown, 4 = high). Strong capture on fees and brand; a leak on the masters that compound; and an unknown at the equity rung — where the Mavin sale, the biggest wealth event, actually happened. Source: MonoKromatik; masters/equity terms undisclosed."
+      },
+      {
+        "type": "line",
+        "after": 2,
+        "title": "'Calm Down' — the streaming ascent",
+        "unit": "Spotify streams milestone (reported)",
+        "note": "From release (2022) to the first billion (September 2023) — the first track led by an African artist to join Spotify's Billions Club — to past two billion (2024). Milestone dates per Spotify; sources in the endnotes.",
+        "xAxis": [
+          "2022 (release)",
+          "Sep 2023",
+          "2024"
+        ],
+        "points": [
+          {
+            "label": "released",
+            "value": 0.1
+          },
+          {
+            "label": "1bn (Billions Club)",
+            "value": 1
+          },
+          {
+            "label": "2bn+",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 5,
+        "title": "The equity blind spot — who got paid in Feb 2024",
+        "cols": [
+          "Named beneficiary of the Mavin sale",
+          "Participation confirmed?"
+        ],
+        "rows": [
+          {
+            "label": "Don Jazzy (Mavin founder)",
+            "tag": "FOUNDER",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "D'Prince (Jonzing World founder)",
+            "tag": "FOUNDER",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Tega Oghenejobo (COO)",
+            "tag": "FOUNDER",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Rema (the artist)",
+            "tag": "UNDISCLOSED",
+            "cells": [
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none/unknown, 4 = confirmed). The named beneficiaries of the sale are the founders; there is no public evidence of Rema's equity participation. The biggest wealth event in his orbit is the rung where his share is least visible. We leave it open. Per the endnotes."
+      },
+      {
+        "type": "quadrant",
+        "after": 8,
+        "title": "The signalling read — minted here, compounded by the major",
+        "xAxis": [
+          "Artist owns / controls little",
+          "Artist owns / controls it"
+        ],
+        "yAxis": [
+          "Weak signal",
+          "Global signal"
+        ],
+        "points": [
+          {
+            "label": "Fees & 'Ravage' brand",
+            "x": 72,
+            "y": 78,
+            "highlight": true
+          },
+          {
+            "label": "The signal ('Calm Down')",
+            "x": 40,
+            "y": 92
+          },
+          {
+            "label": "Masters (via Mavin → UMG)",
+            "x": 24,
+            "y": 74
+          },
+          {
+            "label": "Label equity (Mavin sale)",
+            "x": 18,
+            "y": 60
+          }
+        ],
+        "note": "MonoKromatik framework. Rema's signal is maximally global (top). What he clearly owns — fees and his brand — sits right; the masters and label equity that compound hardest sit left, flowing toward the major. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 8,
+        "title": "Authored here, compounded there",
+        "cols": [
+          "African",
+          "The major / offshore"
+        ],
+        "rows": [
+          {
+            "label": "The signal (the music, the fame)",
+            "tag": "AUTHORED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "The masters (catalogue value)",
+            "tag": "FLOWS OUT",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "The label equity (Mavin sale)",
+            "tag": "CAPITALISED",
+            "cells": [
+              1,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high). The signal is authored in Nigeria; the masters and the label equity — the compounding, ownable value — flow toward the major. The gap is the export pattern at the level of a single artist. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The endorsement rung — honest about the data",
+        "cols": [
+          "Reported by credible primary source?",
+          "Figure publishable?"
+        ],
+        "rows": [
+          {
+            "label": "Brand associations in circulating coverage",
+            "tag": "AGGREGATOR-ONLY",
+            "cells": [
+              0,
+              0
+            ]
+          },
+          {
+            "label": "Reported deal values / net worth",
+            "tag": "ESTIMATES",
+            "cells": [
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = no, 4 = yes). The endorsement data traces only to weak aggregator sites, so we publish no specific deals or figures and drop unsourced names. The honesty of the blank row is the point — the same discipline we applied to Tyla. Per the endnotes."
+      },
+      {
+        "type": "donut",
+        "after": 2,
+        "title": "The signal, in one number",
+        "value": 2,
+        "valueLabel": "2bn+",
+        "sublabel": "Spotify streams for 'Calm Down' — the first track led by an African artist to join the Billions Club, and the highest-charting Afrobeats lead artist in Hot 100 history at No. 3. A maximal, hard-to-fake signal.",
+        "note": "The signal Rema authored is not in question. The piece is about who captures the value it compounds into — and how much of that is undisclosed. Source: Spotify; Billboard.",
+        "unit": "Spotify streams ('Calm Down')"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'the value flowed to the major' read is weakest — and the case that the UMG relationship serves Rema.",
+      "points": [
+        "A major is how an Afrobeats artist conquers the world. UMG's and Interscope's global distribution, playlisting and marketing muscle are part of how 'Calm Down' reached No. 3 on the Hot 100 and two billion streams. The relationship that captures some of the masters' value is also what globalised the signal in the first place.",
+        "He is early-career, and the terms may be favourable. Rema is a young artist at the start of his catalogue; masters and equity terms are typically renegotiated as leverage grows, and because the deal terms are undisclosed, a favourable structure is exactly as consistent with the evidence as an unfavourable one. We assert neither.",
+        "The equity blind spot cuts both ways. The absence of public evidence that Rema participated in the Mavin sale is not evidence that he did not; well-advised artists sometimes hold equity or renegotiated royalties that are simply private. The blind spot is a gap in the record, which the piece states rather than resolves against him.",
+        "He owns the rungs that matter to a live-era artist. Touring income and his 'Ravage' brand — the rungs he clearly controls — may already be a larger and more clearly retained share of his total value than recorded-music royalties, for a streaming-era star whose masters economics are thin per stream regardless of who owns them.",
+        "Capture is not the same as loss of the signal. The music, the fame and the cultural authorship stay Rema's whatever the cap table says; the compounding masters value flowing toward a major does not diminish that he authored the biggest Afrobeats export in history — and the ownership question, unlike the signal, is still being written."
+      ]
+    }
   }
 ]
