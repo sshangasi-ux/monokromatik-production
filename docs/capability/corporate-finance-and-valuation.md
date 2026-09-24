@@ -117,3 +117,98 @@ figures in a live engagement are always sourced to the target.
 bridge, quality-of-capture, capture-discount) is now documented and deliverable by the
 principal + engine, single-threaded. To reach 3: a comps library for African brand / sport /
 music / fintech transactions, and the corporate-finance partner signed.
+
+### 2026-09-24 — Sweep 03: comps library v0, the country-risk layer, and pricing control
+
+**Focus:** the two "to reach 3" items from Sweep 01 — a first **comps library** for African /
+culture-asset transactions, and making the capture-discount frame survive an investor's
+cost-of-capital scrutiny. Researched against Damodaran's country-risk data, Brand Finance's
+royalty-relief method, music-catalogue multiple reporting, and reported African culture deals.
+
+**1. The country-risk layer — and the rule that keeps our frame honest.**
+Damodaran's country table (5 Jan 2026 data) prices African equity risk on top of a **4.23%**
+mature-market ERP:
+
+| Market | Rating | Country risk premium | Total ERP |
+|---|---|---|---|
+| South Africa | Ba2 | 3.90% | 8.13% |
+| Nigeria | B3 | 8.41% | 12.64% |
+| Kenya / Ghana / Egypt | Caa1 | 9.71% | 13.94% |
+
+*(A July 2026 update exists — SA reported at 8.46% — always pull the live table on an
+engagement; these are method anchors, not engagement inputs.)*
+- **The no-double-count rule (our method):** the **capture haircut lives in the cash flows**;
+  **country risk lives in the discount rate**. A leak to an offshore platform is a *certain*
+  loss of economics, not a risk — so it reduces the numerator. Never also inflate the discount
+  rate "because it's Africa" to express the same leak. An investor who sees both will
+  (rightly) discount our whole read. Stating this separation explicitly is itself a
+  credibility signal.
+- **Exposure, not domicile:** apply country risk by where the *revenue* is earned (Damodaran's
+  operations-weighted approach), not where the entity is incorporated. A Lagos-authored asset
+  earning mostly in USD streaming royalties carries less Nigerian CRP than its address implies
+  — and a HOLLOWED asset (local licence, offshore owner) may carry local risk on local cash
+  flows while the upside is booked offshore. That asymmetry is a finding in itself.
+
+**2. Relief-from-royalty, made ours — the Index → royalty-rate bridge.**
+Brand Finance's method (ISO 10668-compliant; the firm states RfR is used in over 80% of brand
+valuations) runs seven steps: Brand Strength Index (0–100) → sector royalty *range* from
+comparable licences → BSI positions the rate inside the range (their example: BSI 80 in a
+0–5% sector ⇒ 4%) → brand-attributable revenue → forecast → royalty stream → post-tax PV.
+**Our adaptation (two changes, both defensible):**
+1. The **Cultural-Signal Index** positions the rate inside the sector range — same mechanics,
+   but our strength score is built on *hard-to-fake signals* (certification, authorship,
+   scarcity), which is exactly what a licensee pays for.
+2. The royalty is applied only to **captured** revenue — the brand-attributable revenue that
+   actually reaches the owner after the AOC leak. RfR on gross revenue over-values an EXPORTED
+   brand; RfR on captured revenue is the capture-discounted brand value, and the delta to
+   gross is the **re-ownership premium** in Sweep 01's frame. One method, two numbers, and the
+   spread is the thesis.
+
+**3. Comps library v0 (seed — each entry tagged by evidence quality).**
+Rule: a culture comp is only usable with its **evidence grade** — *Disclosed* (filed/official),
+*Reported* (credible press, terms undisclosed), *Benchmark* (aggregated survey). Never quote a
+Reported number as if Disclosed.
+
+| Asset / deal | Year | Headline | Grade | Why it's in the library |
+|---|---|---|---|---|
+| Music catalogues — older masters / masters+publishing | 2025 | >17× (avg multiple) | Benchmark (Citrin Cooperman, 566 catalogues, ~$13bn priced; avg deal ~$23m) | Upper anchor for durable, proven catalogues |
+| Music catalogues — publishing | 2025 | ~15× | Benchmark (Citrin Cooperman) | Publishing vs masters spread |
+| Music catalogues — younger masters | 2025 | 13.7× | Benchmark (Citrin Cooperman) | Decay/uncertainty discount for recent work |
+| Publishing, EV >$20m | 2024 | 16.1× NPS (2023: 16.7×) | Benchmark (Shot Tower Capital via Billboard) | Rate-sensitivity: multiples compress as discount rates rise |
+| Mavin Global → UMG (majority) | 2024 | reportedly shopped >$125m; price reported ~$150–200m | Reported (Billboard; terms undisclosed) | The African label control comp; founder management retained |
+| Springbok commercial rights — ASG 20% bid | 2024 | $75m for 20% (≈$375m implied) — **rejected** by member unions | Reported (Sportcal, Irish Times, Planet Rugby) | Price of economics vs control; see §4 |
+| Heineken ← Distell (control) | 2023 | ~R40bn | Reported (News24, Bizcommunity); Tribunal-approved with conditions | Spirits/brand control comp *with* regulatory ownership conditions attached |
+| European football clubs | ongoing | EV/revenue ~1–5× (rarely >5×) | Benchmark (Brand Finance club EV; sector analysis) | Sport-rights floor/ceiling |
+| New Zealand Rugby (Silver Lake) | 2022 | ~12.3× revenue (implied) | Reported (multiples.vc) | Rugby national-brand outlier — the Springbok ceiling argument |
+
+Gaps to fill next: African fintech rounds (as a *platform* comp for HOLLOWED patterns), beauty
+and spirits brand licences (for royalty ranges), and African catalogue deals (almost no
+disclosed multiples — itself a mispricing signal).
+
+**4. Pricing control separately from economics — the Springbok lesson.**
+The ASG proposal paired **20% of the economics** with **three of seven board seats and the
+right to appoint the chair** of the commercial-rights company. That is a minority price for a
+disproportionate share of the *certification apparatus* — who decides how the brand is
+licensed, sponsored and exploited. The member unions' rejection (7 of 13 against; 75% needed)
+is, in our language, the market refusing a control-for-economics trade at a minority price.
+**Method:** in any culture-asset deal, value the **economic stake** and the **governance/control
+rights** as two lines — a control premium (or, for the seller, a *control-transfer discount*
+they are accepting) — and map each control right to the AOC asset it governs. This is where our
+valuation and legal files meet (see `legal-and-transaction.md`, Sweep 03, sport checklist).
+
+**Emerging to watch:** catalogue multiples' sensitivity to rates (the same stable stream is
+worth "several turns less" at a higher discount rate — Billboard Italia/Signal, Shot Tower);
+institutional royalty vehicles (ABS/funds) making music a benchmarked asset class
+(Neuberger Berman) — which will make *un-benchmarked* African catalogues look cheap to them,
+and makes a defensible capture read our wedge.
+
+**Sources (this sweep):** Damodaran, *Country Default Spreads and Risk Premiums* (NYU Stern,
+Jan 2026 data) and the July 2026 update; Brand Finance, *How we value the brands in our annual
+rankings*; Citrin Cooperman 2025 catalogue valuations (via Billboard); Shot Tower Capital (via
+Billboard); Billboard, Music Business Worldwide, AVCA on UMG/Mavin; Sportcal, Irish Times,
+Planet Rugby, SportBusiness on SA Rugby/ASG; Competition Tribunal, News24, Bizcommunity on
+Heineken/Distell; multiples.vc and Brand Finance on sport EV/revenue. Deal figures are
+reported, not disclosed, unless marked; re-verify before any client use.
+
+**Maturity:** stays at **2** — method deepened (country-risk separation, Index→royalty bridge,
+comps library v0, control pricing), but 3 requires a delivered engagement and the partner.

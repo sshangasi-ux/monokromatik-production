@@ -115,3 +115,81 @@ and named local counsel.
 checklist, value-leak clause map, African data/regulatory notes) is now documented and
 deliverable by the principal + engine, single-threaded. To reach 3: per-vertical checklists
 deepened, and the legal / corporate-finance partner signed.
+
+### 2026-09-24 — Sweep 03: per-vertical certification-ownership checklists (sport, music, spirits/brand)
+
+**Focus:** Sweep 02's priority gap — turning the certification-ownership check into
+**per-vertical checklists** we can run on day one of a Culture DD. Researched against SA sport
+image-rights tax treatment, the SA Copyright Amendment Bill ConCourt ruling, Nigeria's
+Copyright Act 2022, and SA merger-control public-interest ownership rules.
+
+**The one question, per vertical:** *which instrument holds the thing that certifies the
+value, who controls it, and what can a regulator, court or counterparty do to it?*
+
+**A. Sport — commercial rights & image rights**
+- [ ] **Where do the commercial rights sit?** Federation, a commercial-rights company, or a
+  licensee — and on what term. Obtain the rights-company constitution and shareholders' deal.
+- [ ] **Control map vs economics map.** Board seats, chair-appointment rights, reserved
+  matters, and the member/union approval threshold. *Worked example:* the 2024 Ackerley
+  proposal for SA Rugby's commercial rights paired 20% economics with 3 of 7 board seats plus
+  the chair; it needed 75% of 13 member unions and failed (7 against). Governance thresholds
+  are a legal *veto on capture* — map who holds them before valuing anything.
+  *(Pair with `corporate-finance-and-valuation.md` Sweep 03 §4.)*
+- [ ] **Image rights are personal in SA.** SARS's draft guidance treats a sportsperson's image
+  rights as inseparable from the person, so payments are taxed as revenue, and s49B royalty
+  withholding can reach payments to **foreign image-rights companies**. ITC 1735 held such a
+  payment was ordinary income and *not* a royalty. **Implication:** an image-rights vehicle is
+  a contracting/structuring tool, not proof of owned IP — test tax exposure and don't value it
+  as a transferable asset.
+- [ ] Player/athlete contracts: name-and-likeness grants, sponsor conflicts, exclusivity,
+  change-of-control on key sponsorships and broadcast deals.
+
+**B. Music — masters, publishing and the collection layer**
+- [ ] Sweep 02 chain-of-title test on **both** masters and publishing, plus sample clearances.
+- [ ] **Nigeria (Copyright Act 2022):** s.15 grants performers and sound-recording producers
+  a right to **equitable remuneration** on broadcast/communication to the public — a revenue
+  line to test for. Royalty collection runs through **NCC-approved CMOs** (MCSN is the approved
+  CMO for musical works and sound recordings); confirm registrations and that the target's
+  CMO mandates are valid, or that income is simply uncollected — a capture leak with a fix.
+- [ ] **South Africa — a live legal-risk flag.** On **26 June 2026** the Constitutional Court
+  held s.12D(1)–(5) of the Copyright Amendment Bill unconstitutional; the CAB and Performers'
+  Protection Amendment Bill go back to Parliament. The **royalty-sharing provisions
+  (ss.6A/7A/8A)** were *not* decided (referral defects), so whether assigned works can later
+  carry mandatory royalty-sharing remains **unresolved**. For any SA catalogue acquisition:
+  model it, disclose it, and seek warranty/price protection. This is regulatory risk that sits
+  directly on the chain of title.
+- [ ] **Majority-label deals keep founders in the chair.** UMG's majority investment in Mavin
+  Global (2024) kept founder-CEO and COO running strategy and talent — check whether "control"
+  in the SPA is economic control while *certification* (A&R, artist relationships) stays with
+  the founder; that is where key-person and change-of-control risk concentrates.
+
+**C. Spirits / consumer brand — the regulatory ownership overlay (SA)**
+- [ ] **Merger control includes ownership, not just competition.** Since the 2019
+  amendments, Competition Act s.12A(3)(e) requires a merger to promote a **greater spread of
+  ownership**, in particular by historically disadvantaged persons (HDPs) and workers. Where a
+  deal dilutes HDP/worker ownership, typical remedies include **ESOPs of ~5–10%** or **sale of
+  5–25% of equity to HDPs** (Commission guidance, per CDH/Werksmans/Lexology analysis).
+- [ ] **Brands can be licensed out by the regulator.** Heineken–Distell (Tribunal, 9 March
+  2023): approved with an ESOP carrying shareholding, **voting rights and board representation**
+  for employees, and a remedy requiring Heineken to divest its local **Strongbow** business and
+  brand to a licensee that must be **majority-owned by HDPs**. *The lesson for our frame:* in SA
+  consumer-brand deals the certification apparatus (brand, board, ownership mix) can be
+  **re-allocated by merger conditions** — price it into the deal, and note the upside where a
+  remedy creates a new, locally-owned licensee.
+- [ ] Standard brand checks: TM registrations by class and territory, licence terms and
+  royalty rates (feeds the RfR royalty range), distribution exclusivity, and GI/origin claims.
+
+**Still to build:** fintech (licensing, data-as-asset, platform dependency), beauty/retail
+(formulation IP, private label), and non-SA ownership overlays (Nigeria, Kenya, Ghana, Egypt).
+
+**Sources (this sweep):** Spoor & Fisher, GoLegal, Centre on Knowledge Governance on the
+26 June 2026 ConCourt CAB/PPAB judgment; Nigerian Copyright Commission (Copyright Act 2022),
+Mondaq, MCSN on s.15 and CMO licensing; SARS draft guide and ITC 1735 as analysed by the SA
+Sports Law Association, Lexology and University of Pretoria/Wits research; Competition Tribunal
+and Competition Commission statements on Heineken–Distell; Werksmans, Cliffe Dekker Hofmeyr and
+Lexology on s.12A(3)(e) and the public-interest guidelines; Sportcal, Irish Times, Planet Rugby
+on SA Rugby/ASG; Billboard, MBW on UMG/Mavin. Method, not legal advice; every live engagement
+runs these checklists with named local counsel.
+
+**Maturity:** stays at **2** — per-vertical checklists now seeded for three verticals; 3
+requires a delivered engagement and the legal partner signed.
