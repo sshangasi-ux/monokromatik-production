@@ -9868,5 +9868,1716 @@
         "Consumer welfare improved. Better R&D, reliable supply, lower prices and wider availability from a conglomerate are real gains for the melanin-rich consumers these brands serve — a benefit the ownership frame, focused on who holds the equity, tends to understate."
       ]
     }
+  },
+  {
+    "slug": "athlete-value-capture-victor-osimhen",
+    "title": "Athlete Value-Capture — Victor Osimhen and the Inverted Curve",
+    "series": "ATHLETE VALUE-CAPTURE",
+    "status": "live",
+    "access": "open",
+    "summary": "A footballer is not paid for his signal — he is the traded asset, and someone else banks the trade. Victor Osimhen's talent has generated more than €150m of gross transfer value across his career, and he has personally captured none of it: when a footballer is sold, the selling club takes the fee. This is the companion to our Siya Kolisi value-capture read, and it inverts the curve. Where an owner-operator climbs a ladder toward owning more of their own value, the footballer's biggest number — the transfer fee — is the one he never touches. We trace the ledger (Lille to Napoli, ~€70m, 2020, the then-African record; Napoli to Galatasaray, €75m, 2025, a Turkish record), score the five rungs of the value ladder for a footballer, and read the one rung where Osimhen is genuinely climbing: image rights, which he asserts more aggressively than almost any African footballer. Every fee is cited to its reporting source, wages are graded reported, unverifiable endorsements are omitted, and one widespread factual error — that he was AFCON 2023 Player of the Tournament — is corrected on the record.",
+    "statusNote": "A value-capture read — framework plus a worked footballer case, free to read",
+    "tags": [
+      "victor osimhen",
+      "athlete brand",
+      "value capture",
+      "football",
+      "nigeria",
+      "transfer fees",
+      "image rights",
+      "signalling",
+      "AOC framework",
+      "sport agents"
+    ],
+    "publishedAt": "2026-09-24T17:30:00.000Z",
+    "keyStats": [
+      {
+        "value": "€0 of €150m+",
+        "label": "Victor Osimhen's personal share of the more than €150m of gross transfer fees his talent has generated across his career. When a footballer is sold, the selling club captures the fee — the player captures wages, bonuses and image rights instead"
+      },
+      {
+        "value": "~€70m → €75m",
+        "label": "Lille to Napoli (2020, ~€70m plus add-ons, the then-record fee for an African player, per Aurelio De Laurentiis) and Napoli to Galatasaray (2025, €75m net, a Turkish record, per Galatasaray) — both fees banked by the selling club, not the player (ESPN; Galatasaray SK)"
+      },
+      {
+        "value": "CAF POTY 2023",
+        "label": "Osimhen was named 2023 CAF (African) Player of the Year — the first Nigerian men's winner since Nwankwo Kanu in 1999, ahead of Achraf Hakimi and Mohamed Salah. This, not any AFCON award, is the signal (CAF)"
+      },
+      {
+        "value": "The mask",
+        "label": "Osimhen's protective face mask became a personal trademark-style icon, and his camp has publicly asserted control of his image rights — the one rung of the value ladder where he is genuinely climbing (reported; Sky Sports)"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 1,
+      "title": "The fees his talent generated — and who banked them",
+      "unit": "€m transfer fee (reported)",
+      "note": "Two record fees his talent generated; both captured by the selling club, not by Osimhen. His personal share of either fee was zero. Across his career the gross transfer value exceeds €150m, of which he captured none. Source: reported figures per the endnotes (De Laurentiis; Galatasaray SK).",
+      "data": [
+        {
+          "label": "Lille → Napoli (2020) — banked by Lille",
+          "value": 70,
+          "display": "~€70m"
+        },
+        {
+          "label": "Napoli → Galatasaray (2025) — banked by Napoli",
+          "value": 75,
+          "display": "€75m net"
+        },
+        {
+          "label": "Osimhen's share of the fees",
+          "value": 0,
+          "display": "€0"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "THE INVERTED CURVE",
+        "paragraphs": [
+          "Our Siya Kolisi read set out a value-capture ladder — fees, endorsement, owned media, licensed image-rights, owned equity — and argued that an athlete gets rich by climbing it, owning more of their own value at each rung. A footballer breaks the ladder in a way that makes the framework sharper, not weaker. Because a footballer is a traded asset, the single biggest pool of value his talent creates — the transfer fee — is one he is structurally barred from capturing. The curve is inverted: the largest number on the page is the one he never touches.",
+          "Victor Osimhen is the cleanest case in African football. His talent has generated more than €150m of gross transfer fees — Lille to Napoli, Napoli to Galatasaray, and the moves before them — and he has personally received none of it. Each time, the selling club banked the fee; Osimhen banked wages, a signing bonus and whatever image-rights and endorsement income he could structure around the move. 'Authored here, captured by the club' is not a metaphor for a footballer. It is the literal reading of the balance sheet.",
+          "That is what this piece traces: the ledger of fees his talent generated and who actually captured them, the five rungs re-scored for a footballer, and the one rung — image rights — where Osimhen is genuinely, unusually, climbing. Every fee is cited to its reporting source, wages are graded reported, unverifiable endorsements are left out, and one widely repeated error about his record is corrected."
+        ]
+      },
+      {
+        "heading": "THE LEDGER",
+        "paragraphs": [
+          "Follow the money and the pattern is absolute. In 2019 Charleroi and Lille moved him for a reported €12–22m (with a Wolfsburg sell-on) — Osimhen's cut of the fee: zero. In 2020, Lille sold him to Napoli for a reported ~€70m plus up to €10m in add-ons — described by Napoli president Aurelio De Laurentiis and widely reported as the record fee for an African player at the time. Osimhen's cut: zero. In 2025, Galatasaray activated a €75m net release clause to sign him permanently, a Turkish transfer record, structured as roughly €40m up front and the balance by 2026, with Napoli retaining a future sell-on. Osimhen's cut of that fee: zero.",
+          "There is a further twist even the clubs feel. When Lille sold Osimhen for that headline ~€70m, club president Olivier Létang later said Lille actually netted only around €7m after commissions, intermediaries and the cost of the players and cash that made up the deal. So the fee that the player captures none of is also a fee the selling club keeps far less of than the headline — the intermediaries take an enormous slice. The one certainty is that the person whose talent generated the number sees none of it.",
+          "Across the whole ledger, the gross transfer value his ability has created exceeds €150m, and his personal share of it is €0. That single line is the entire thesis of the footballer's value-capture problem."
+        ]
+      },
+      {
+        "heading": "RUNG 1 — THE FEE THE PLAYER NEVER SEES",
+        "paragraphs": [
+          "The bottom rung of the footballer's ladder is the biggest pool of value and the one he is designed never to capture. Under football's transfer system, when a club sells a player's registration, the fee is a transaction between the two clubs; the player is the asset being traded, not a party to the trade's proceeds. He may negotiate a signing bonus and higher wages at the new club, and his agent takes a commission on the deal — but the fee itself belongs to the selling club.",
+          "This is the deepest structural difference between a footballer and the owner-operators the value-capture ladder was built for. A musician can own their masters; an entrepreneur can own their equity; a rugby captain can build owned media and licensed image-rights. A footballer, at the peak of his powers, watches the largest financial event of his career — a nine-figure transfer — pay someone else entirely. The asset does not own the asset sale.",
+          "It is worth being fair about why: the selling club paid to develop, wage, insure and market him for years before the sale, and the fee is a return on that capital and risk. But the reading for value capture is unchanged — the rung where the most value sits is, for the player, permanently at zero."
+        ]
+      },
+      {
+        "heading": "RUNG 2 — WHERE HE ACTUALLY CAPTURES",
+        "paragraphs": [
+          "The footballer's real capture happens on the wage-and-endorsement rung, and here Osimhen does very well. His reported Galatasaray terms — around €15m net salary a year, a €1m annual loyalty bonus, and an image-rights line on top, on a deal to 2029 — would make him one of the best-paid players in the league. Every one of those figures is reported by Turkish and Italian media rather than disclosed by the club, and is graded accordingly; the direction, not the decimal, is what matters. This is generational wealth, and the rung he genuinely owns.",
+          "Endorsements should sit here too, and this is where the house standard bites. Osimhen is widely listed as endorsing a string of global and Nigerian brands, but those claims trace to aggregator and secondary sites, not to brand announcements or primary reporting. So we do not enumerate them. Naming specific endorsement deals we cannot verify to a primary source would fail the same test we apply everywhere — and the structural point does not need them: the wage-and-endorsement rung is where a footballer captures, and it is real, without inventing a roster.",
+          "The wage rung is why the 'he captures nothing' framing has to be stated carefully. He captures a great deal — just not on the rung where the most value, the transfer fee, actually sits."
+        ]
+      },
+      {
+        "heading": "RUNGS 3–4 — THE IMAGE-RIGHTS FRONT",
+        "paragraphs": [
+          "The most interesting thing about Osimhen, for this framework, is that he is actively fighting up the image-rights rung — the rung most footballers cede without a thought. After a head clash in 2021, he began wearing a protective face mask, and the mask became a personal icon: instantly recognisable, tied to him rather than to any club, a piece of image equity he authored himself. His camp has treated his image as an asset to control rather than lend.",
+          "That assertion has been tested publicly. In 2023, his agent Roberto Calenda threatened legal action over a Napoli social-media video that mocked the player, in a dispute reported by Sky Sports — a rare, visible instance of a footballer's side pushing back on a club's use of his image. His reported Galatasaray deal includes a distinct image-rights line, signalling that image rights are being priced and negotiated separately rather than bundled away. This is a footballer climbing the ladder in real time.",
+          "The honest limit is verification. That Osimhen structures his image rights through his own vehicle, or holds the mask as a registered trademark, is reported rather than evidenced by a primary filing, and we mark it so — we cite the Sky Sports-reported dispute as fact and treat the trademark-and-company specifics as reported. But even at the reported level, the image-rights front is the distinctive part of his story: it is where an African footballer is asserting ownership of his own signal."
+        ]
+      },
+      {
+        "heading": "RUNG 5 — EQUITY, AND THE FOUNDATION",
+        "paragraphs": [
+          "The top rung — owned equity, businesses, franchise value — is thin, and we will not inflate it. The Victor Osimhen Foundation is a charitable vehicle, and it should be read as philanthropy, not as an equity holding; conflating a foundation with a business empire is exactly the kind of overstatement the method exists to prevent. Reported claims of property portfolios and business interests trace to low-grade lifestyle press and are not published here as specifics.",
+          "So the equity rung, for now, is undocumented and best described as thin. That is not a criticism — it is a typical position for a footballer still in his peak playing years, whose energy and capital are in the game. It is also the rung with the most runway: the wage capture he is banking now is the raw material for owned assets later, exactly as the Kolisi read argued for athletes generally.",
+          "The picture that emerges is an inverted, front-loaded capture curve: zero on the biggest rung (the fee), strong on wages, genuinely contested and climbing on image rights, and thin but open on equity. It is the mirror image of an owner-operator's ladder."
+        ]
+      },
+      {
+        "heading": "THE SIGNAL — AND A CORRECTION",
+        "paragraphs": [
+          "Osimhen's signal is elite and worth stating precisely, because the market routinely states it wrongly. He was named 2023 CAF (African) Player of the Year — the continent's top individual honour — the first Nigerian men's winner since Nwankwo Kanu in 1999, ahead of Achraf Hakimi and Mohamed Salah. In the same era he won a Serie A title with Napoli and was the league's top scorer in 2022–23. That is a hard-to-fake signal of the first rank.",
+          "The correction: Osimhen was not the Player of the Tournament at AFCON 2023. That award went to Nigeria's William Troost-Ekong; Osimhen scored once in seven games and was not named in the Team of the Tournament, and Nigeria lost the final to Côte d'Ivoire. The claim is widely repeated and it is wrong, and the house standard is to correct the record rather than launder a convenient error. The real signal — the CAF annual award — is stronger and verified; it needs no embellishment.",
+          "Getting the signal right matters to the value-capture read, because the whole argument is that a hard-to-fake signal should let its author capture a premium. Osimhen's signal is genuine and large; the point of the piece is that the transfer system routes most of the premium it generates to his clubs."
+        ]
+      },
+      {
+        "heading": "THE AOC & SIGNALLING READ",
+        "paragraphs": [
+          "Through the AOC lens, Osimhen is authored in Nigeria — a Lagos academy player who became the best striker Africa has produced in a generation — and the enterprise value his talent creates is captured, overwhelmingly, by European and now Turkish clubs, and by the agents who intermediate his moves. Authorship is Nigerian; capture is offshore and clubside. It is the individual-level version of the same pattern our Who Owns African Sport table traces across the whole game.",
+          "The signalling lens explains the mechanism. Osimhen's performances mint a hard-to-fake signal; but the party positioned to certify and monetise that signal at the point of maximum value — the transfer — is the club that holds his registration, not the player. Whoever holds the registration captures the fee, exactly as, elsewhere, whoever holds the masters captures the catalogue. The player owns the talent; the club owns the tradeable claim on it.",
+          "The one place Osimhen bends this is image rights — the asset he can actually own and is fighting to. That is why the image-rights rung is the strategic core of a footballer's value-capture story: it is the rung where the signal's author can become the signal's owner."
+        ]
+      },
+      {
+        "heading": "THE AFRICAN OUTFLOW",
+        "paragraphs": [
+          "Osimhen is one data point in a continental pattern. His ~€70m Lille-to-Napoli fee sat alongside Nicolas Pépé's reported ~€80m Lille-to-Arsenal move a year earlier; Ghana's Mohammed Kudus went Ajax-to-West Ham for a reported ~£38m in 2023 and on again in 2025 for a reported ~£55m. In every case the fees — the capitalised value of African talent — were captured by the selling clubs in Europe, not by African clubs, academies or the players themselves.",
+          "This is the value-capture story of African football in one line: the continent authors the talent and captures almost none of the enterprise value the talent generates on the global market. The development clubs in Africa that first nurtured these players rarely share in the nine-figure fees their graduates later command; the value accrues at the European clubs that hold the registrations when the big sales happen.",
+          "For sport agents, clubs and policymakers, that is the opportunity hiding in the outflow: mechanisms — sell-on clauses, African development-club shares, player image-rights structures, owned-equity vehicles — that would let more of the value African football authors be captured by Africans. The talent is not the problem; the ownership of its value is."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & ENDNOTES",
+        "paragraphs": [
+          "The five-rung ladder, the inverted-curve reading and all scores are MonoKromatik's framework, applied to a footballer. Transfer fees are cited to their reporting source and treated as reported, because fees are almost always reported rather than officially disclosed; the ~€70m Lille-to-Napoli figure is attributed to De Laurentiis and varies across outlets (€70–77.5m), and the €75m Galatasaray figure to Galatasaray's own statement (with 'net' the club's characterisation). Wage and image-rights figures are reported by media, not audited, and are graded so throughout.",
+          "Verified: the 2023 CAF Player of the Year award (CAF); the Serie A title and 2022–23 top-scorer record; the fact and clubs of the major transfers (ESPN; Galatasaray SK); the Sky Sports-reported image-rights dispute involving agent Roberto Calenda. Corrected on the record: Osimhen was not AFCON 2023 Player of the Tournament (William Troost-Ekong won; CAF), a widely repeated error.",
+          "Deliberately omitted or flagged: specific endorsement deals, which trace only to aggregator sites and are not primary-sourced; specific property or business holdings, from low-grade lifestyle press; and the trademark-and-corporate-vehicle specifics of his image-rights structure, which are reported rather than documented and are labelled as such. The house standard is to make the structural point and leave the unverifiable figure out."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The five rungs, re-scored for a footballer",
+        "cols": [
+          "Does HE capture it?",
+          "Does it compound for him?"
+        ],
+        "rows": [
+          {
+            "label": "Transfer fees (the enterprise value)",
+            "tag": "CLUB TAKES IT",
+            "cells": [
+              0,
+              0
+            ]
+          },
+          {
+            "label": "Wages, bonuses & endorsements",
+            "tag": "HE CAPTURES",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Owned media & audience",
+            "tag": "CONTESTED",
+            "cells": [
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Licensed image-rights",
+            "tag": "ASSERTING",
+            "cells": [
+              3,
+              3
+            ]
+          },
+          {
+            "label": "Owned equity / businesses",
+            "tag": "THIN",
+            "cells": [
+              1,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = none, 4 = high). The inverted curve: zero on the biggest rung (the fee), strong on wages, climbing on image rights, thin on equity. The mirror image of an owner-operator's ladder. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "Who captures each stream — player, club, agent",
+        "cols": [
+          "The player",
+          "The club",
+          "The agent"
+        ],
+        "rows": [
+          {
+            "label": "Transfer fee",
+            "tag": "THE BIG ONE",
+            "cells": [
+              0,
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Wages & signing bonus",
+            "tag": "PLAYER",
+            "cells": [
+              4,
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Endorsements",
+            "tag": "PLAYER",
+            "cells": [
+              4,
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Image-rights use",
+            "tag": "CONTESTED",
+            "cells": [
+              2,
+              2,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = captures most). The transfer fee — the largest stream — is the one row where the player captures nothing. Agents take commission across the board; the club takes the fee. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "bar",
+        "after": 3,
+        "title": "€70m in, ~€7m out — even the club keeps less than the headline",
+        "unit": "€m (reported / club-stated)",
+        "note": "Napoli reportedly paid ~€70m+ for Osimhen, but Lille president Olivier Létang later said Lille netted only around €7m after commissions, intermediaries and the players and cash in the deal. The fee the player captures none of is also one the selling club keeps far less of than the headline — the intermediaries take the slice. Reported/club-stated per the endnotes.",
+        "data": [
+          {
+            "label": "Headline fee (De Laurentiis)",
+            "value": 70,
+            "display": "~€70m"
+          },
+          {
+            "label": "What Lille netted (Létang)",
+            "value": 7,
+            "display": "~€7m"
+          },
+          {
+            "label": "What Osimhen received",
+            "value": 0,
+            "display": "€0"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 8,
+        "title": "The African outflow — fees banked by selling clubs",
+        "unit": "€m transfer fee (reported)",
+        "note": "African talent capitalised on the global market, the fees captured by European selling clubs, not by African clubs or the players. Pépé and Kudus figures reported and converted approximately from sterling. Sources per the endnotes.",
+        "data": [
+          {
+            "label": "Pépé (Lille → Arsenal, 2019)",
+            "value": 80,
+            "display": "~€80m"
+          },
+          {
+            "label": "Osimhen (Lille → Napoli, 2020)",
+            "value": 70,
+            "display": "~€70m"
+          },
+          {
+            "label": "Kudus (West Ham → Spurs, 2025)",
+            "value": 64,
+            "display": "~£55m"
+          },
+          {
+            "label": "Kudus (Ajax → West Ham, 2023)",
+            "value": 44,
+            "display": "~£38m"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 5,
+        "title": "The image-rights front — the rung he's climbing",
+        "cols": [
+          "Player asserts ownership",
+          "Confirmed by primary source"
+        ],
+        "rows": [
+          {
+            "label": "The mask as personal icon (2022)",
+            "tag": "ASSERTED",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Napoli social-media dispute (2023)",
+            "tag": "SKY SPORTS",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Image-rights line in Galatasaray deal",
+            "tag": "REPORTED",
+            "cells": [
+              3,
+              1
+            ]
+          },
+          {
+            "label": "Own image-rights vehicle / trademark",
+            "tag": "REPORTED",
+            "cells": [
+              3,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high). Osimhen asserts image-rights ownership more than almost any African footballer — but primary-source confirmation thins out on the trademark and corporate specifics. The Sky Sports-reported dispute is fact; the vehicle/trademark claims are reported. Per the endnotes."
+      },
+      {
+        "type": "donut",
+        "after": 2,
+        "title": "His share of the fees his talent generated",
+        "value": 0,
+        "valueLabel": "€0",
+        "sublabel": "Of more than €150m in gross transfer fees generated by Victor Osimhen's talent across his career, his personal share is zero. The footballer is the asset that is traded, not a party to the trade.",
+        "note": "The single number behind the inverted curve: the biggest financial events of his career pay his clubs, not him. Source: MonoKromatik, from reported fees in the endnotes."
+      },
+      {
+        "type": "quadrant",
+        "after": 7,
+        "title": "The signalling read — authored here, captured by the club",
+        "xAxis": [
+          "Weak signal",
+          "Hard-to-fake signal"
+        ],
+        "yAxis": [
+          "Captured by others",
+          "Captured by the player"
+        ],
+        "points": [
+          {
+            "label": "The transfer fee",
+            "x": 88,
+            "y": 8
+          },
+          {
+            "label": "Wages & endorsements",
+            "x": 84,
+            "y": 74,
+            "highlight": true
+          },
+          {
+            "label": "Image rights",
+            "x": 80,
+            "y": 58,
+            "highlight": true
+          },
+          {
+            "label": "Owned equity (thin)",
+            "x": 40,
+            "y": 40
+          }
+        ],
+        "note": "MonoKromatik framework. Osimhen's signal is strongly hard-to-fake (far right). But its biggest monetisation — the transfer fee — is captured by others (bottom). He captures on wages and, increasingly, image rights (top). Strategy is to move his signal up the right-hand edge. Source: MonoKromatik analysis."
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'he captures nothing' read is weakest — and the case that the system serves the player well.",
+      "points": [
+        "The wages are generational, and 'only wages' is a loaded framing. A reported ~€15m net a year is wealth almost no African professional in any field reaches; capturing the wage-and-endorsement rung at that scale is an enormous outcome, not a consolation prize. The player is not poor because he did not bank the fee.",
+        "The club takes the fee because the club took the risk. Lille and Napoli paid to develop, wage, insure and market Osimhen for years before any sale, bearing the risk of injury and failure the player did not carry financially. The fee is a return on that capital — and Létang's ~€7m-net claim shows the club's real margin is far thinner than the headline suggests.",
+        "Image rights are being won, not just fought. The mask, the separate image-rights line, the agent pushing back on Napoli — this is a footballer moving up the ladder in real time, asserting ownership of his signal in a way that was rare a generation ago. The story is a player gaining ground, not only ceding it.",
+        "The system is the stage that made the signal. The same transfer machine that captures the fee is what took a Lagos academy player to a Serie A title, a CAF crown and global recognition. The platform has real, compounding value to the athlete's brand that a purely extractive reading understates.",
+        "The equity rung is early, not absent. Scoring owned equity as 'thin' reflects a player in his peak years, not a closed story. The wage capture he is banking now is precisely the capital for owned assets later — the runway on his highest rung is the longest, and the curve is not yet finished."
+      ]
+    }
+  },
+  {
+    "slug": "signal-scorecard-six-dogs",
+    "title": "Signal Scorecard — Six Dogs Distillery",
+    "series": "THE SIGNAL SCORECARD",
+    "status": "live",
+    "access": "open",
+    "summary": "Almost every African 'hero' spirit that scaled globally was sold to Europe. Inverroche went to Pernod Ricard, Amarula sits inside Heineken, KWV is controlled from London. Six Dogs — a Karoo grape-spirit gin founded in 2016 — is the counter-example that still holds its own keys, which is exactly why we score it. It takes 73 out of 100 across the four Signal Scorecard axes and reads RETAINED: African-founded, African-owned, distilled and bottled in South Africa. But the score is a considered 73, not an inflated one, and the verdict carries a caveat we argue in full — a second distillery and European base now sit in the Netherlands, so value is beginning to migrate at the edges, and the 'African authorship' here is terroir-based rather than heritage-based, a point we score honestly rather than smooth over. This is the positive, retained case in a series otherwise full of Hollowed and Exported verdicts — proof that keeping the keys is possible, and a clear-eyed account of what it costs and where it strains.",
+    "statusNote": "A Signal Scorecard — 73/100, RETAINED (with a value-migration caveat) — free to read",
+    "tags": [
+      "six dogs",
+      "signal scorecard",
+      "african spirits",
+      "gin",
+      "south africa",
+      "value capture",
+      "ownership",
+      "AOC framework",
+      "retained"
+    ],
+    "publishedAt": "2026-09-24T18:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "73 / 100",
+        "label": "Signal Scorecard total — Idea 19, Authorship 20, Execution 19, Consequence 15. Verdict: RETAINED — African-founded, African-owned, distilled in South Africa — with a value-migration caveat argued in full"
+      },
+      {
+        "value": "2016",
+        "label": "Founded on the Karoo fringe (Hex River valley), South Africa, by distiller Charles Bryant with Glenn Bryant and Luigi Marucchi — the origin story literally true to the name, from a shed and a converted copper geyser (company; Bizcommunity; Glamour SA)"
+      },
+      {
+        "value": "Sold to Europe",
+        "label": "The fate of most African hero spirits: Inverroche to Pernod Ricard (100% in 2025), Amarula inside Heineken, KWV controlled from London by Vasari. Six Dogs is the counter-example that stayed independent (Pernod Ricard; company histories)"
+      },
+      {
+        "value": "~$1.08bn",
+        "label": "The South African spirits market in 2025 (rising toward ~$1.16bn by 2029) — a crowded, consolidating category in which craft distilleries grew from about 20 in 2015 to around 110 by 2025 (Statista via The Spirits Business; reported)"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 1,
+      "title": "The scorecard — 73 / 100, and an honest Consequence",
+      "unit": "score (out of 25 per axis)",
+      "note": "Idea, Authorship and Execution are solid; Consequence is the weakest axis by design — the brand is retained but its global impact is bounded. A credible, non-inflated positive to balance the series' Hollowed and Exported verdicts. Source: MonoKromatik Signal Scorecard; facts per the endnotes.",
+      "data": [
+        {
+          "label": "Idea",
+          "value": 19,
+          "display": "19 / 25"
+        },
+        {
+          "label": "Authorship",
+          "value": 20,
+          "display": "20 / 25"
+        },
+        {
+          "label": "Execution",
+          "value": 19,
+          "display": "19 / 25"
+        },
+        {
+          "label": "Consequence",
+          "value": 15,
+          "display": "15 / 25"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "THE VERDICT",
+        "paragraphs": [
+          "Six Dogs scores 73 out of 100 and reads RETAINED — and the reason we chose to score it is that retention is so rare in its category. Almost every African hero spirit that reached global scale was sold to a European drinks giant. Six Dogs, a Karoo grape-spirit gin founded in 2016, is African-founded, African-owned, and distilled and bottled in South Africa. It is the counter-example that still holds its own keys.",
+          "The 73 is deliberate, not generous. Idea (19/25), Authorship (20/25) and Execution (19/25) are solid without being category-defining, and Consequence (15/25) is honestly low — the brand is retained but its global impact is bounded, nothing like the scale of the foreign-owned giants it stands apart from. A credible mid-70s keeps this a real positive rather than a cheerleading exercise, in a series otherwise full of Hollowed and Exported verdicts.",
+          "And the RETAINED verdict carries a caveat we argue in full: a second distillery and European base now sit in the Netherlands, so value is starting to migrate at the edges, and the 'African authorship' here is terroir-based rather than heritage-based — a point we score in the open. Retention is possible; this piece is a clear-eyed account of what it looks like, what it costs, and where it strains."
+        ]
+      },
+      {
+        "heading": "THE SUBJECT",
+        "paragraphs": [
+          "Six Dogs was founded in 2016 on the Karoo fringe of South Africa's Hex River valley by distiller Charles Bryant, with his brother Glenn Bryant and friend Luigi Marucchi. The origin is authentic and un-borrowed: the name comes from the shed that housed their six dogs, where they began distilling on a converted copper geyser before building custom copper stills. It is a maker's story, hands-on from the start.",
+          "The product is genuinely distinctive. Six Dogs builds its gin on a grape (wine) spirit base rather than grain, uses wild Karoo botanicals and mountain water, and employs vacuum and molecular distillation to protect delicate aromatics — plus a theatrical colour-changing Blue Gin. It is a deliberate 'taste of place', rooted in a specific South African terroir rather than a generic craft-gin template.",
+          "That combination — an authentic founder story, a place-rooted product, and a still-independent structure — is what makes Six Dogs the right subject for a retained scorecard. It is small, but it is genuinely its own."
+        ]
+      },
+      {
+        "heading": "THE CATEGORY — WHO OWNS AFRICAN SPIRITS",
+        "paragraphs": [
+          "To understand why Six Dogs matters, look at what happened to everyone who scaled. Inverroche, the celebrated Cape fynbos gin, was taken majority by Pernod Ricard in 2019 and fully acquired in 2025 — Pernod's first wholly owned African spirit brand. Amarula, the cream liqueur that is one of Africa's best-known drinks exports, sits inside Heineken via its acquisition of Distell. KWV, South Africa's globally decorated brandy champion, has been controlled since 2016 by the London-based investment firm Vasari. The pattern is almost a rule: build an African spirit to global relevance, and a European owner buys it.",
+          "This is the AOC pattern in a bottle. The brands are African-authored — the terroir, the botanicals, the founding creativity are of the continent — but ownership and value capture, once the brand proves itself, move offshore. The category's biggest successes are, by ownership, no longer African.",
+          "Six Dogs is scored against that backdrop. Its RETAINED verdict is not a claim to be the biggest or the best African spirit; it is a claim to be one of the few of genuine quality that still owns itself. In a category defined by the exits, the counter-example is the story."
+        ]
+      },
+      {
+        "heading": "THE IDEA — 19/25",
+        "paragraphs": [
+          "The idea is genuinely distinctive: a gin built on a grape-spirit base, wild single-terroir Karoo botanicals, vacuum and molecular distillation to preserve fragile aromatics, and a colour-changing Blue Gin that gives the range theatre. It is strongly place-rooted — a 'taste of the Karoo' that could not be made anywhere else, which is exactly the kind of hard-to-fake product signal the framework rewards.",
+          "The deduction is context. Six Dogs launched into the middle of a South African gin boom — craft distilleries grew from roughly 20 in 2015 to around 110 by 2025 — so it is a distinctive entrant in a crowded category rather than the brand that defined it. The idea is excellent; it is not singular.",
+          "Nineteen out of twenty-five reflects that balance: a real, place-rooted idea with a genuine point of difference, scored below the top band because it rode a wave rather than starting one."
+        ]
+      },
+      {
+        "heading": "THE AUTHORSHIP — 20/25",
+        "paragraphs": [
+          "Authorship is the highest axis, and earned. This is founder-authored, hands-on craft: the distiller is the maker, the stills were custom-built, and the origin story is authentic rather than a marketing construct. There is no borrowed heritage or licensed formula here — the people who own it are the people who make it, which is the essence of retained authorship.",
+          "The honest caveat, scored in the open, is what kind of African authorship this is. The founders are white South Africans working in a European-derived category (gin), and the brand's African claim is terroir-based — Karoo botanicals, South African place — rather than a claim on indigenous cultural heritage. A critic could read it as settler-craft entrepreneurship rather than African cultural reclamation, and that is a fair reading to put on the table.",
+          "We score it 20/25 because the authorship is real, local and owned — genuinely of South Africa — while marking that its 'Africanness' is of place and residence rather than of heritage. Naming that distinction is more honest than either inflating or dismissing the claim."
+        ]
+      },
+      {
+        "heading": "THE EXECUTION — 19/25",
+        "paragraphs": [
+          "Execution shows a real operational build: custom copper stills, a multi-SKU range (Karoo Gin, the Blue Gin and line extensions), and export to a self-reported 22-plus countries with a European base in the Netherlands. For an independent founded in a shed, that is competent, credible scaling.",
+          "The deductions are two. Scale and volumes are unaudited and self-reported, so the export footprint is taken as a company claim, not a verified figure. And the model still rests on a small founder team, which is both its authenticity and its constraint. This is well-run for its size, not an industrial operation.",
+          "Nineteen out of twenty-five reflects solid, real execution with the normal limits of a genuine independent — and with its figures graded as reported rather than banked as fact."
+        ]
+      },
+      {
+        "heading": "THE CONSEQUENCE — 15/25",
+        "paragraphs": [
+          "Consequence is the weakest axis, scored honestly. Six Dogs' footprint is niche, its awards are modest rather than the blue-chip, category-defining trophies held by the foreign-owned giants, and it has not — yet — moved the needle on who owns or defines African spirits globally. Its value is retained, but its impact is bounded.",
+          "This is the deliberate ceiling on the score. A retained brand that stays small has kept its ownership but not, so far, changed the category — and the scorecard will not pretend otherwise. Fifteen out of twenty-five says the consequence is real but limited, which is the truthful reading.",
+          "It also frames the strategic question Six Dogs embodies: whether a genuinely retained African spirit can scale to category-defining consequence without doing what all its scaled peers did — selling to Europe. That tension is the whole point of the piece."
+        ]
+      },
+      {
+        "heading": "THE VALUE-CAPTURE LEDGER — AND THE CAVEAT",
+        "paragraphs": [
+          "What 'retained' means here is concrete: the ownership, the intellectual property, the brand equity and the production all sit on the continent, and the revenue the brand earns flows back to a South African company rather than to a foreign parent's royalty line. Set against Inverroche, Amarula or KWV — whose profits and control now sit in France, the Netherlands and London — that is a materially different value-capture structure. The keys are still in Karoo hands.",
+          "The caveat is the Netherlands. A second distillery and a European base now sit in Kaag, which means part of the production and capture for the EU market is beginning to sit offshore. The RETAINED verdict is accurate today but eroding at the edges, and the history of the category — where scale ambition repeatedly led to foreign capital and then acquisition — is the warning. Retention is a snapshot, not a guarantee.",
+          "We state ownership precisely, and refuse to overclaim it: Six Dogs is independently owned and founder-led, with no acquisition on record, but the private shareholding is not publicly disclosed, so we do not assert a percentage or call it '100% founder-owned'. The verdict rests on where ownership and value demonstrably sit — on the continent — not on a filing we do not have."
+        ]
+      },
+      {
+        "heading": "THE SIGNAL READ — WHY RETENTION MATTERS",
+        "paragraphs": [
+          "Through the signalling lens, an African spirit's hard-to-fake signal is its terroir — the specific place and botanicals that cannot be replicated. The category's story is that, again and again, once that signal is proven, a European owner buys the vehicle that certifies and monetises it, and the premium is captured offshore. Six Dogs is the case where the author still owns the certification.",
+          "That is why a modest 73 is worth as much attention as a higher-scoring but Exported brand. The scorecard is not only measuring quality; it is measuring who keeps the value quality creates. On that measure, a retained 73 is a different and, for this publication's thesis, more valuable thing than an exported 85.",
+          "Six Dogs will not, on current trajectory, out-scale Pernod's or Heineken's African brands. But it demonstrates the proposition the whole series exists to test: that an African spirit can be authored, owned and captured on the continent — and it shows, in the Netherlands caveat, exactly where that proposition comes under pressure."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & ENDNOTES",
+        "paragraphs": [
+          "The Signal Scorecard grades out of 100 across Idea, Authorship, Execution and Consequence (25 each), with the AOC verdict following from the profile. All scores are MonoKromatik's judgement. Ownership is stated with deliberate precision: 'independently owned, founder-led, no acquisition on record; private shareholding not disclosed' — never a percentage or a '100% owned' claim the public record does not support. Scale figures ('22+ countries') are self-reported and attributed to the company, not banked as fact.",
+          "The category foils are graded and not miscalled: Inverroche (Pernod Ricard, 100% in 2025) and Amarula (Heineken, via Distell) and KWV (Vasari, London) are EXPORTED, not African-owned; Bayab/Spearhead Spirits is CONTESTED (diaspora-founded, UK-domiciled holding company, US capital, but distilled in South Africa) and is not called retained; Musgrave is described only as having a reported sales-and-distribution arrangement, not an acquisition, because its ownership change is unverified.",
+          "Verified: founding (2016), founders, location, the grape-spirit product and distillation method (company; Bizcommunity; Glamour SA). Reported: export footprint, market-size and category figures (Statista via The Spirits Business; trade press), and all award citations (named with competition and year). The Netherlands second-distillery caveat is stated because it materially qualifies the retained verdict."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — Six Dogs founding (2016), founders (Charles Bryant, Glenn Bryant, Luigi Marucchi), Karoo/Hex River origin, grape-spirit gin and distillation method: sixdogs.com; Bizcommunity; Glamour South Africa. Verified.",
+          "2 — Ownership: independently owned, founder-led, no acquisition on record; private shareholding not publicly disclosed: company and trade press. Reported (not from filings).",
+          "3 — Export footprint (22+ countries) and Netherlands (Kaag) second base: company website. Reported (self-reported).",
+          "4 — Category foils: Inverroche — Pernod Ricard majority 2019, 100% Feb 2025 (Pernod Ricard newsroom; The Spirits Business); Amarula — Heineken via Distell; KWV — Vasari (London) since 2016. Verified/reported.",
+          "5 — Bayab / Spearhead Spirits: founders Chris Frederick & Damola Timeyin (Nigerian descent), London-domiciled, ~$3m from US investor Pendulum, distilled in KwaZulu-Natal — classified CONTESTED: BusinessWire; Master of Malt; Harpers. Reported.",
+          "6 — Musgrave: reported sales-and-distribution arrangement with an unnamed international company; ownership change unverified — NOT described as an acquisition: Benchmark International. Flagged.",
+          "7 — Market context: SA spirits market ~$1.08bn (2025) → ~$1.16bn (2029); craft distilleries ~20 (2015) → ~110 (2025): Statista via The Spirits Business; trade press. Reported.",
+          "8 — Scores, axis weightings and the RETAINED verdict (with caveat) are MonoKromatik's own analysis."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "Who owns African spirits — the landscape",
+        "cols": [
+          "African-owned",
+          "Value retained on-continent"
+        ],
+        "rows": [
+          {
+            "label": "Six Dogs 🇿🇦",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Bayab / Spearhead ⚠️ UK-domiciled",
+            "tag": "CONTESTED",
+            "cells": [
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Musgrave (arrangement unverified)",
+            "tag": "UNVERIFIED",
+            "cells": [
+              2,
+              2
+            ]
+          },
+          {
+            "label": "KWV (→ Vasari, London)",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Amarula (→ Heineken)",
+            "tag": "EXPORTED",
+            "cells": [
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Inverroche (→ Pernod Ricard)",
+            "tag": "EXPORTED",
+            "cells": [
+              0,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). Most African hero spirits that scaled are now foreign-owned. Six Dogs is the retained counter-example; Bayab is diaspora-founded and UK-domiciled (Contested); Musgrave's ownership change is unverified. Per the endnotes."
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The exits — and the one that stayed",
+        "cols": [
+          "Acquired by a foreign owner",
+          "Still founder/African-owned"
+        ],
+        "rows": [
+          {
+            "label": "Inverroche → Pernod Ricard (100%, 2025)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "Amarula → Heineken (via Distell)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "KWV → Vasari (London, 2016)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "Six Dogs (no acquisition on record)",
+            "tag": "RETAINED",
+            "cells": [
+              0,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = full). Three scaled African spirits, three European owners — and one independent that stayed. Six Dogs' retained status is the exception the category proves. Per the endnotes."
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "The gin boom Six Dogs entered",
+        "unit": "SA craft-gin distilleries (reported)",
+        "note": "South African craft-gin distilleries grew from roughly 20 in 2015 to around 110 by 2025 — a crowded, now-consolidating category in which Six Dogs is a distinctive entrant rather than the brand that defined it. Source: trade press; reported.",
+        "data": [
+          {
+            "label": "2015",
+            "value": 20,
+            "display": "~20"
+          },
+          {
+            "label": "2025",
+            "value": 110,
+            "display": "~110"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 8,
+        "title": "The value-capture ledger — retained versus exported",
+        "cols": [
+          "Six Dogs (on-continent)",
+          "Foreign-owned peer (offshore)"
+        ],
+        "rows": [
+          {
+            "label": "Ownership / control",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              0
+            ]
+          },
+          {
+            "label": "Intellectual property / brand equity",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Production",
+            "tag": "MOSTLY LOCAL",
+            "cells": [
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Where the profit lands",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = fully offshore, 4 = fully on-continent). Six Dogs keeps ownership, IP and profit on the continent; the production row is a 3, not a 4, because of the Netherlands second distillery — the caveat that keeps the retained verdict from being pure. Per the endnotes."
+      },
+      {
+        "type": "quadrant",
+        "after": 9,
+        "title": "The AOC read — authored and retained",
+        "xAxis": [
+          "Low African authorship",
+          "High African authorship"
+        ],
+        "yAxis": [
+          "Value exported",
+          "Value retained"
+        ],
+        "points": [
+          {
+            "label": "Six Dogs",
+            "x": 78,
+            "y": 82,
+            "highlight": true
+          },
+          {
+            "label": "Bayab (Contested)",
+            "x": 66,
+            "y": 50
+          },
+          {
+            "label": "KWV / Inverroche / Amarula",
+            "x": 64,
+            "y": 12
+          }
+        ],
+        "note": "MonoKromatik read. Six Dogs sits top-right — authored and retained — where almost no scaled African spirit does. The exported giants cluster bottom-right: African-authored, value gone offshore. Bayab sits between. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "donut",
+        "after": 7,
+        "title": "The honest ceiling — the Consequence axis",
+        "value": 15,
+        "valueLabel": "15 / 25",
+        "sublabel": "The weakest axis. Six Dogs kept its ownership but not, yet, category-defining consequence — a niche footprint and modest awards against the foreign-owned giants. Retained value, bounded impact: the truthful reading of a small independent.",
+        "note": "The deliberate ceiling on the score. A retained brand that stays small has kept its keys but not changed the category — and the scorecard says so. Source: MonoKromatik Signal Scorecard.",
+        "unit": "Consequence axis"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the RETAINED verdict is weakest — argued at full strength.",
+      "points": [
+        "Ownership is asserted, not filed. 'Independent, founder-owned' rests on company statements and trade press, not on public filings — a silent minority investor could exist. We phrase the ownership carefully for exactly this reason, and the retained verdict should be read as best-available, not proven to the share.",
+        "Value is already migrating off-continent. A second distillery and European base in the Netherlands mean part of production and capture is now offshore for the EU market. The RETAINED verdict is eroding at the edges, and the category's history says scale ambition tends to lead South African brands toward foreign capital — and then acquisition.",
+        "The Consequence is thin. '22+ countries' is self-reported, there are no audited volumes and no blue-chip trophies. Six Dogs may be retained but marginal — kept its keys to a house that stayed small — while the foreign-owned giants define the category the world actually drinks.",
+        "The 'African authorship' is contestable. The founders are white South Africans working in a European-derived category, and the African claim is terroir-based, not heritage-based. A critic could read the brand as settler-craft entrepreneurship rather than African cultural authorship — a reading the score acknowledges rather than dismisses.",
+        "Retention is a snapshot, not a guarantee. Category headwinds and the post-Inverroche consolidation are a foreign-buyer feeding frenzy; a future acquisition would flip Six Dogs from RETAINED to EXPORTED overnight. The verdict describes today's ownership, not tomorrow's — and in this category, tomorrow has usually meant a European owner."
+      ]
+    }
+  },
+  {
+    "slug": "who-owns-african-sport-league-table",
+    "title": "Who Owns African Sport — The Ownership League Table",
+    "series": "THE OWNERSHIP LEAGUE TABLE",
+    "status": "live",
+    "access": "open",
+    "summary": "African sport is one of the continent's most valuable cultural assets — vast fan bases, a talent pipeline that stocks the world's biggest leagues, a marquee event in AFCON. This league table scores nine of the entities that own and monetise it across broadcast, competition rights, clubs and the player pipeline. The finding has a nuance the honest version has to carry: the rights are leaving, but the clubs are staying. The dominant broadcaster of African sport, MultiChoice/SuperSport, is now French-owned — Canal+ completed its takeover in 2026 and delisted it — and the international media and player-development value is largely captured offshore. But the top clubs remain African-owned (Motsepe's Sundowns, Dewji's Simba), an African broadcaster (New World TV, Togo) holds continental AFCON rights, and African capital (Egypt's Mansour Group) now owns clubs in Europe and the US. Authorship is overwhelmingly African; the rights and player-registration value is drifting offshore; the club layer is holding. A licensable Index data cut, published as a worked sample.",
+    "statusNote": "A licensable Index data cut — a worked sample, free to read",
+    "tags": [
+      "african sport",
+      "football",
+      "broadcast rights",
+      "ownership",
+      "league table",
+      "multichoice",
+      "canal plus",
+      "value capture",
+      "AOC framework"
+    ],
+    "publishedAt": "2026-09-24T18:30:00.000Z",
+    "keyStats": [
+      {
+        "value": "~$3bn · French",
+        "label": "The value at which Canal+ completed its takeover of MultiChoice/SuperSport — the dominant broadcaster of African sport — reaching ~94% then a compulsory squeeze-out in 2026, delisting it from the JSE. Canal+ (Bolloré group) is French (Daily Maverick; TechCabal; company statements)"
+      },
+      {
+        "value": "Rights leave, clubs stay",
+        "label": "The finding's nuance: broadcast and international-media value is going offshore, but the top African clubs remain African-owned (Motsepe's Sundowns; Dewji's Simba), and African capital (Mansour Group) now owns clubs abroad — the reverse flow"
+      },
+      {
+        "value": "First African rights-holder",
+        "label": "New World TV (Togo) held the CAF free-to-air and pay-TV rights across 46 sub-Saharan countries (2023–2025) — the first time an African company held exclusive AFCON broadcast rights (Sportcal; CAF)"
+      },
+      {
+        "value": "~$12bn → $20bn",
+        "label": "The African sports market today, projected to surpass $20bn by 2035 — the pie is real and growing even as ownership of its rights drifts offshore (Oliver Wyman; reported)"
+      }
+    ],
+    "exhibit": {
+      "type": "matrix",
+      "after": 2,
+      "title": "The league table — authorship, ownership, value capture",
+      "cols": [
+        "African-authored",
+        "African-owned",
+        "African value-capture"
+      ],
+      "rows": [
+        {
+          "label": "New World TV 🇹🇬 (CAF rights)",
+          "tag": "RETAINED",
+          "cells": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "label": "Mamelodi Sundowns 🇿🇦 (club)",
+          "tag": "RETAINED",
+          "cells": [
+            4,
+            4,
+            3
+          ]
+        },
+        {
+          "label": "CAF (governing body)",
+          "tag": "CONTESTED",
+          "cells": [
+            4,
+            4,
+            3
+          ]
+        },
+        {
+          "label": "Right to Dream / Mansour 🇪🇬",
+          "tag": "CONTESTED",
+          "cells": [
+            4,
+            3,
+            2
+          ]
+        },
+        {
+          "label": "Basketball Africa League (NBA)",
+          "tag": "CONTESTED",
+          "cells": [
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "label": "AFCON intl rights (IMG)",
+          "tag": "EXPORTED",
+          "cells": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "label": "Player pipeline (Gén. Foot → Metz)",
+          "tag": "EXPORTED",
+          "cells": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "label": "StarTimes 🇨🇳 (pay-TV)",
+          "tag": "HOLLOWED",
+          "cells": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "label": "MultiChoice/SuperSport → Canal+ 🇫🇷",
+          "tag": "HOLLOWED",
+          "cells": [
+            4,
+            1,
+            1
+          ]
+        }
+      ],
+      "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). Authorship is high across the board; ownership and capture split by layer — the clubs (top) hold, the broadcast and pipeline (bottom) drift offshore. Source: MonoKromatik classification; ownership per the endnotes."
+    },
+    "sections": [
+      {
+        "heading": "THE HEADLINE",
+        "paragraphs": [
+          "African sport is one of the continent's most valuable cultural assets, and this table asks who owns the businesses that capture its value. Scored across broadcast, competition rights, clubs and the player pipeline, the finding comes with a nuance the honest version has to carry: the rights are leaving, but the clubs are staying.",
+          "The single biggest fact is the broadcast pivot. MultiChoice/SuperSport — the dominant broadcaster of African sport, the company whose rands built the modern South African game — is now French-owned. Canal+ completed its takeover in 2026, reaching around 94% and then executing a compulsory squeeze-out, and delisted MultiChoice from the Johannesburg exchange. The most important distribution rail for African sport now answers to Paris.",
+          "But the picture is not uniform loss, and the table refuses to pretend it is. The top African clubs remain African-owned; an African broadcaster, Togo's New World TV, held continental AFCON rights; and African capital now owns clubs in Europe and the US. Authorship is overwhelmingly African, the rights and player-registration value is drifting offshore, and the club layer is holding. That mixed, layered reality is the finding."
+        ]
+      },
+      {
+        "heading": "WHAT THIS TABLE IS",
+        "paragraphs": [
+          "Each entity is scored on three axes — authorship (African origin of the talent, fans and competitions), ownership (who controls it today), and value capture (where the money lands) — and the universe is deliberately cross-layer: a broadcaster (MultiChoice), a governing body (CAF), a rights-holding African broadcaster (New World TV), an international rights intermediary (IMG), a continental league (the Basketball Africa League), a multi-club group (Right to Dream), a player-pipeline academy (Génération Foot), a foreign pay-TV operator (StarTimes) and a flagship club (Mamelodi Sundowns).",
+          "That spread is the point, because African sport's ownership answer differs sharply by layer. Read the broadcast and pipeline layers and the value is going offshore; read the club layer and it is staying African. A single headline — 'African sport is being bought' — would be false. The layered read is what makes this a data cut rather than a slogan.",
+          "Every ownership fact is named and graded, and two things are corrected against common error: the Canal+/MultiChoice deal is complete, not pending, and Canal+ is French, controlled through the Bolloré group after its 2024 separation from Vivendi — not 'Vivendi-owned'. Where the market assumes a wave of foreign club takeovers, the evidence shows the opposite, and the table says so."
+        ]
+      },
+      {
+        "heading": "THE LEAGUE TABLE",
+        "paragraphs": [
+          "The offshore-drifting layers sit at the bottom of the table. MultiChoice/SuperSport is Hollowed — an African-built broadcaster whose economic ownership is now French, with its South African licences ring-fenced in a locally controlled entity (LicenceCo) purely to satisfy the 20% foreign-voting cap on broadcast licences. StarTimes, the Chinese pay-TV operator with a large sub-Saharan footprint, is Hollowed for the same structural reason. The AFCON international media rights, brokered offshore by the US-based agency IMG for the 2023–2025 cycle, are Exported, and the player pipeline — academies like Génération Foot feeding European clubs such as FC Metz — is the clearest Exported case of all: African-authored talent whose transfer value is captured in Europe.",
+          "The middle band is genuinely Contested. CAF, the African governing body, owns the competitions but monetises them through foreign intermediaries and sponsors (TotalEnergies, Orange, Visa). The Basketball Africa League is played on the continent but operated and roughly half-owned by the NBA. Right to Dream is the fascinating reverse case: a Ghanaian academy, now majority-owned by Egypt's Mansour Group, that owns FC Nordsjælland in Denmark and San Diego FC in the US — African capital buying offshore assets.",
+          "And the top of the table is Retained. New World TV, a Togolese broadcaster, held the CAF free-to-air and pay-TV rights across 46 sub-Saharan countries for 2023–2025 — the first time an African company held exclusive AFCON broadcast rights. Mamelodi Sundowns, one of the continent's strongest clubs, is African-owned through Patrice Motsepe and Johann Rupert's Remgro. The retained cases are real, and they are not only survivals — some, like New World TV and Mansour's group, are African capital advancing."
+        ]
+      },
+      {
+        "heading": "THE BROADCAST PIVOT",
+        "paragraphs": [
+          "The Canal+ acquisition of MultiChoice is the single most consequential ownership event in African sport, and it is done. Canal+ built its stake past the mandatory-offer threshold, the deal went unconditional, it reached around 94%, and it completed a compulsory acquisition of the rest in 2026, delisting MultiChoice from the JSE at roughly R55bn (about $2.9–3bn), R125 a share. The dominant broadcaster of African sport — and the owner of SuperSport, the channel that shaped the modern game — is now controlled from France.",
+          "The structure is worth understanding because it is the Hollowed archetype made literal. South African law caps foreign voting control of broadcast licences at 20%, so the licences were ring-fenced into a locally controlled entity, LicenceCo, in which South African shareholders (including the Phuthuma Nathi empowerment consortium) hold the voting rights, while Canal+ takes the economic ownership of the group above. A South-African-controlled licence shell now sits over French economic ownership. The licence is local; the value is not.",
+          "The commercial logic is also a warning sign. Canal+ bought a business whose subscriber base was shrinking — MultiChoice's total fell from around 17.3m in early 2023 to about 14.4m by late 2025, with the Rest-of-Africa base dropping from 9.3m to 7.5m and Nigeria the largest single source of the loss. Canal+ bought scale, francophone reach and the sport IP of a declining incumbent. What that ownership means for the price and availability of African sport to African viewers is the open question the pivot leaves behind."
+        ]
+      },
+      {
+        "heading": "THE NUANCE — THE CLUBS ARE STAYING AFRICAN",
+        "paragraphs": [
+          "The lazy version of this story is a wave of foreign billionaires buying African clubs, and the evidence does not support it. The prominent owners of top African clubs are African: Patrice Motsepe and Johann Rupert behind Mamelodi Sundowns, Tanzanian billionaire Mohammed Dewji holding a large stake in Simba SC. The table looked for confirmed European, US or Gulf ownership of leading African clubs and did not find a pattern of it. The club layer is the part of African sport that has most clearly retained African ownership, and overstating a foreign takeover there would be simply wrong.",
+          "More striking still is the reverse flow. Right to Dream, founded as a Ghanaian academy, is now majority-owned by Egypt's Mansour Group, which used it to buy FC Nordsjælland in Denmark and to launch San Diego FC in Major League Soccer — African capital acquiring and building clubs in Europe and the United States. That is the opposite of extraction: ownership moving from the continent outward.",
+          "So the ownership story of African sport is not one-directional. The rights and the player-registration value drift offshore; the clubs hold African; and at the frontier, African capital is starting to own assets abroad. A serious read has to hold all three at once."
+        ]
+      },
+      {
+        "heading": "THE PLAYER PIPELINE — THE CLEAREST LEAK",
+        "paragraphs": [
+          "If the clubs are the retained layer, the player pipeline is the exported one. African academies author and develop world-class talent, but the enterprise value that talent generates — the transfer and resale fees — is overwhelmingly captured by the European clubs that hold the players' registrations when the big sales happen. Feeder structures like Génération Foot's long-standing partnership with FC Metz institutionalise it: the talent is trained in Dakar, the resale value is banked in France.",
+          "This is the same finding our Victor Osimhen value-capture read traces at the level of a single player — the biggest financial events of an African footballer's career pay European clubs — seen here as a structural feature of the whole continent's game. The development clubs in Africa that first nurtured these players rarely share meaningfully in the nine-figure fees their graduates later command; FIFA's training-compensation and solidarity mechanisms are widely reported as under-collected.",
+          "The pipeline is where African sport's authorship and its value capture diverge most completely. The talent is the continent's greatest sporting export, and the money it generates is, largely, not."
+        ]
+      },
+      {
+        "heading": "THE COMPETITION LAYER",
+        "paragraphs": [
+          "CAF sits at the centre of the competition layer, and it is genuinely Contested. It owns the crown-jewel competitions — AFCON above all — and AFCON 2025 in Morocco was a commercial record, with reported total revenue above $190m, sponsorship around $126m, and a reported 90%-plus surge in competition revenues. But that value is monetised largely through foreign intermediaries and sponsors, led by the French title sponsor TotalEnergies, and the history carries a cautionary tale in the collapsed 20-year Lagardère rights deal that cost CAF a reported ~$50m in arbitration.",
+          "The TotalEnergies renewal is a case study in why grading matters. Its value is genuinely contested in the reporting: figures range from around $300m to as much as $1.125bn across the 2025–2028 term, and the higher number would imply a roughly twelvefold jump on the 2016 rate. This table renders that as a contested band and refuses to state a single figure as fact — the honest exhibit shows the range, not a false precision.",
+          "The competition layer, then, is African-owned at the top (CAF) but foreign-intermediated and foreign-sponsored in its monetisation. The IP is the continent's; the machinery that turns it into money is substantially offshore."
+        ]
+      },
+      {
+        "heading": "SO WHAT — BY WHO'S READING",
+        "paragraphs": [
+          "For investors and rights holders: the table is a map of where African sport's value is captured and where it is not — the broadcast and pipeline layers are offshore-tilting, the club layer is African-held, and the reverse-flow players (Mansour, New World TV) are where African capital is advancing. For research houses: the cross-layer ownership read is the licensable cut, and the correction it makes — that clubs are not being bought while rights are — is exactly the kind of nuance a database of deals cannot supply.",
+          "For policymakers and federations: the leak is nameable and so are the levers — training-compensation collection, African-held broadcast rights (the New World TV model), and sell-on structures that let development clubs share in transfer value. The pie is growing ($12bn toward $20bn by 2035); the question is capture share, not whether value exists. For African capital: the reverse flow shows the frontier — owning the rails and even the offshore clubs, not just producing the talent.",
+          "For everyone: African sport is not being lost wholesale. It is being unbundled — authorship everywhere, ownership splitting by layer — and the layers where the value is leaking are the ones where the levers now matter most."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY",
+        "paragraphs": [
+          "The nine entities were selected to span the layers of African sport — broadcast, competition/governing body, international rights, continental league, multi-club group, academy pipeline, foreign operator and flagship club — and scored on authorship, ownership and value capture (0–4), with the verdict following from the profile. All classifications are MonoKromatik's analysis. The cross-layer spread is deliberate, because the ownership answer differs by layer.",
+          "Two corrections are made explicitly. The Canal+/MultiChoice takeover is complete (2026 compulsory squeeze-out and JSE delisting), not pending — it is stated as done. And Canal+ is French, controlled through the Bolloré group after separating from Vivendi in the December 2024 demerger; it is not described as 'Vivendi-owned'. Where the market assumes a foreign-club-ownership wave, the table states the evidenced opposite — top clubs remain African-owned.",
+          "Contested figures are rendered as ranges: the TotalEnergies renewal is shown as a band ($300m–$1.125bn across 2025–2028), not a single number, because the reporting genuinely conflicts. The AFCON revenue and market-size figures are attributed to their sources (CAF; Oliver Wyman) and, where the source is an interested party, graded reported. Undisclosed deal values (the post-acquisition PSL rights renewal; StarTimes' rights economics) are marked undisclosed rather than estimated."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — Canal+/MultiChoice: ~R55bn (~$2.9–3bn), R125/share; ~94% then compulsory squeeze-out and JSE delisting, 2026; Canal+ is Bolloré-controlled (post-2024 Vivendi demerger); LicenceCo structure for the 20% foreign-voting cap (Phuthuma Nathi consortium): Daily Maverick; TechCabal; MyBroadband; company statements. Verified.",
+          "2 — MultiChoice subscribers: ~17.3m (Mar 2023) → ~14.4m (Dec 2025); Rest-of-Africa 9.3m → 7.5m; Nigeria the largest single source of loss: MyBroadband; Nairametrics; company results. Reported.",
+          "3 — New World TV (Togo): held CAF FTA + pay-TV rights across 46 sub-Saharan countries, 2023–2025; first African company with exclusive AFCON rights: Sportcal; CAF; The Africa Report. Reported.",
+          "4 — CAF / AFCON 2025 (Morocco): reported total revenue >$190m, sponsorship ~$126m, ~90% revenue surge, 23 sponsors: CAF (interested party). Reported. Lagardère 20-year deal terminated 2019, ~$50m ICC payout: SportBusiness; Sportcal; InsideTheGames. Verified.",
+          "5 — TotalEnergies AFCON title renewal to 2028: value contested, reported between ~$300m and ~$1.125bn (2016 baseline ~$250m/8yr): Businessday; Sportcal; Nairametrics. Reported (contested — rendered as a range).",
+          "6 — Basketball Africa League: NBA + FIBA venture, NBA ~50%, franchise model: NBA.com; Semafor; Forbes. Reported.",
+          "7 — Right to Dream: Ghana academy, majority-owned by Egypt's Mansour Group (~$120m, 2021); owns FC Nordsjælland (Denmark) and San Diego FC (US): Sportico; Mansour Group; CityAM. Reported.",
+          "8 — Clubs: Mamelodi Sundowns (Motsepe / Rupert-Remgro), African-owned; Simba SC (Mohammed Dewji, Tanzania): shore.africa; contemporaneous reporting. Reported (cap-table splits not fully disclosed). No verified foreign-ownership wave of top African clubs was found.",
+          "9 — Player pipeline: Génération Foot (Dakar) → FC Metz feeder partnership since 2003; African transfer value captured by European selling clubs: CAF; CIES Football Observatory. Reported.",
+          "10 — African sports market ~$12bn → >$20bn by 2035: Oliver Wyman (via The Independent / bird story agency). Reported. All classifications are MonoKromatik's own analysis."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 2,
+        "title": "The layer read — where the value stays and where it leaks",
+        "cols": [
+          "African-authored",
+          "African-owned & captured"
+        ],
+        "rows": [
+          {
+            "label": "Clubs (Sundowns, Simba)",
+            "tag": "HOLDS",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Governing body / competition (CAF)",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Broadcast (MultiChoice → Canal+)",
+            "tag": "LEAKING",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "International rights (IMG)",
+            "tag": "LEAKING",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Player pipeline (academies → Europe)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). The nuance the headline misses: authorship is high on every layer, but ownership and capture hold at the club layer and leak at the broadcast, rights and pipeline layers. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "quadrant",
+        "after": 3,
+        "title": "Authored versus captured — the diagonal gap",
+        "xAxis": [
+          "Low African authorship",
+          "High African authorship"
+        ],
+        "yAxis": [
+          "Value captured offshore",
+          "Value captured in Africa"
+        ],
+        "points": [
+          {
+            "label": "New World TV",
+            "x": 88,
+            "y": 88,
+            "highlight": true
+          },
+          {
+            "label": "Mamelodi Sundowns",
+            "x": 86,
+            "y": 78,
+            "highlight": true
+          },
+          {
+            "label": "CAF",
+            "x": 84,
+            "y": 62
+          },
+          {
+            "label": "Right to Dream (reverse flow)",
+            "x": 80,
+            "y": 50
+          },
+          {
+            "label": "MultiChoice → Canal+",
+            "x": 82,
+            "y": 16
+          },
+          {
+            "label": "Player pipeline",
+            "x": 86,
+            "y": 12
+          }
+        ],
+        "note": "MonoKromatik read. Everything sits far right — African-authored. The vertical spread is the whole story: clubs and New World TV capture on-continent (top), broadcast and pipeline capture offshore (bottom). Source: MonoKromatik analysis."
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "Canal+ bought a shrinking base",
+        "unit": "MultiChoice subscribers (m, reported)",
+        "note": "MultiChoice's total subscriber base fell from ~17.3m (early 2023) to ~14.4m (late 2025), with the Rest-of-Africa base dropping from 9.3m to 7.5m and Nigeria the largest single source of loss. Canal+ acquired scale and sport IP from a declining incumbent. Source: MyBroadband; company results; reported.",
+        "data": [
+          {
+            "label": "Total, early 2023",
+            "value": 17.3,
+            "display": "~17.3m"
+          },
+          {
+            "label": "Total, late 2025",
+            "value": 14.4,
+            "display": "~14.4m"
+          },
+          {
+            "label": "Rest-of-Africa, 2023",
+            "value": 9.3,
+            "display": "9.3m"
+          },
+          {
+            "label": "Rest-of-Africa, 2025",
+            "value": 7.5,
+            "display": "7.5m"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 7,
+        "title": "AFCON 2025 — a commercial record, foreign-sponsored",
+        "unit": "US$m, AFCON 2025 (reported; CAF)",
+        "note": "AFCON 2025 in Morocco reported total revenue above $190m, of which sponsorship was around $126m and media rights ~$46.5m — a record, but led by the French title sponsor TotalEnergies. CAF is an interested party; figures graded reported.",
+        "data": [
+          {
+            "label": "Total revenue",
+            "value": 192.6,
+            "display": "~$192.6m"
+          },
+          {
+            "label": "Sponsorship",
+            "value": 126.2,
+            "display": "~$126.2m"
+          },
+          {
+            "label": "Media rights",
+            "value": 46.5,
+            "display": "~$46.5m"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 7,
+        "title": "The TotalEnergies renewal — a contested band, not a number",
+        "unit": "US$m, AFCON title sponsorship (reported)",
+        "note": "House rules in a chart: the 2025–2028 TotalEnergies renewal is reported anywhere from ~$300m to ~$1.125bn (against a ~$250m 2016 baseline). We render the range, not a false-precise point — the higher figure implies a ~12× jump and needs a primary source. Sources: Businessday; Nairametrics; Sportcal.",
+        "data": [
+          {
+            "label": "2016 deal (8yr, baseline)",
+            "value": 250,
+            "display": "~$250m"
+          },
+          {
+            "label": "2025 renewal — low estimate",
+            "value": 300,
+            "display": "~$300m"
+          },
+          {
+            "label": "2025 renewal — high estimate",
+            "value": 1125,
+            "display": "~$1.125bn"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The counter-currents — retained and reverse-flow",
+        "cols": [
+          "African-owned",
+          "Value / assets on the African side"
+        ],
+        "rows": [
+          {
+            "label": "New World TV 🇹🇬 (CAF rights)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Mamelodi Sundowns 🇿🇦",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Simba SC 🇹🇿 (Dewji)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Right to Dream / Mansour 🇪🇬",
+            "tag": "REVERSE FLOW",
+            "cells": [
+              3,
+              2
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high). Not everything leaks: an African broadcaster holds continental rights, top clubs stay African-owned, and African capital (Mansour) buys clubs abroad. The reverse-flow row is ownership moving outward from the continent. Per the endnotes."
+      },
+      {
+        "type": "donut",
+        "after": 8,
+        "title": "The pie is real and growing",
+        "value": 12,
+        "valueLabel": "$12→20bn",
+        "sublabel": "The African sports market is estimated at roughly $12bn today and projected to surpass $20bn by 2035. Ownership of the rights is drifting offshore, but the value being fought over is large and rising fast (Oliver Wyman; reported).",
+        "note": "The Bear Case in a number: capture drifting offshore is not the same as value destroyed — the asset is being priced up. The policy question is capture share. Source: Oliver Wyman.",
+        "unit": "African sports market (US$bn)"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'authored here, owned there' read is weakest — and the case that foreign money and the reverse flow are good for African sport.",
+      "points": [
+        "Foreign broadcast money professionalised the product. SuperSport's rands built the South African league into a globally competitive competition; Canal+'s scale and francophone reach may deepen investment in African sport, not withdraw it — and it extended the domestic rights it inherited rather than stripping them.",
+        "European academies and clubs create pathways that would not otherwise exist. The same system that captures transfer value also gives African players elite development and life-changing careers; for many, the alternative to the 'exported' pipeline is no professional pathway at all, and development fees do flow back to some academies.",
+        "African ownership is rising, not falling, at the layers that count most. New World TV holding continental rights, Motsepe and Dewji owning top clubs, and Mansour's group buying clubs in Europe and the US all cut against a simple extraction narrative — the club and even the offshore-asset layers are moving toward African hands.",
+        "Capture offshore is not the same as value destroyed. Record AFCON revenue, a richer title-sponsorship deal and rising transfer valuations mean the African-authored asset is being priced up, not hollowed out. The honest question is the share of a growing pie that Africa captures, not whether the value exists.",
+        "The broadcast base was shrinking anyway. Canal+ bought a MultiChoice that was losing subscribers and revenue on its own; foreign capital and scale may be what stabilises the distribution of African sport rather than what threatens it. Reading the deal purely as loss ignores the incumbent's decline."
+      ]
+    }
+  },
+  {
+    "slug": "culture-due-diligence-african-football-rights",
+    "title": "Culture Due Diligence — Who Owns the Game?",
+    "series": "CULTURE DUE DILIGENCE",
+    "status": "live",
+    "access": "open",
+    "summary": "African football is one of the most valuable cultural assets on earth: the world's richest talent pipeline, some of its most passionate fan bases, and a marquee competition in AFCON. This is an investor-grade due diligence on who owns and captures the money that culture generates — the deep companion to our Who Owns African Sport league table. We run the four-part DD: chain of title across the four value layers (broadcast, competition rights, clubs, player registrations), the value flows, the leak between African authorship and offshore capture, and a quality-of-capture test applied deal by deal. The verdict is HOLLOWED, trending EXPORTED: the continent authors the talent and the passion, but the broadcast layer just passed into French ownership (Canal+ completed its MultiChoice takeover), the international-media and sponsorship value is foreign-intermediated, and the player-registration value — the biggest pool of all — is captured in Europe. The retained counter-nodes are real and named (New World TV, African-owned clubs), and the contested figures (the TotalEnergies renewal) are rendered as ranges, not false precision.",
+    "statusNote": "A Culture Due Diligence sample — investor-grade, free to read",
+    "tags": [
+      "african football",
+      "culture due diligence",
+      "broadcast rights",
+      "ownership",
+      "value capture",
+      "canal plus",
+      "CAF",
+      "AOC framework",
+      "investors"
+    ],
+    "publishedAt": "2026-09-24T19:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "HOLLOWED → EXPORTED",
+        "label": "The DD verdict: African football is authored on the continent (talent, fans, AFCON) but its value is captured offshore across broadcast, international rights and player registrations — a Hollowed asset trending toward Exported"
+      },
+      {
+        "value": "~$3bn",
+        "label": "The value at which Canal+ (French, Bolloré group) completed its takeover of MultiChoice/SuperSport in 2026 — the dominant broadcaster of African sport now foreign-owned, its SA licences ring-fenced to satisfy the 20% foreign-voting cap (TechCabal; company statements)"
+      },
+      {
+        "value": "The registration",
+        "label": "The largest value pool in football is the transfer fee — and it is captured by the club that holds the player's registration when he is sold, overwhelmingly a European club, not the African academy that authored the talent (CIES Football Observatory)"
+      },
+      {
+        "value": "New World TV",
+        "label": "The clearest retained counter-node: a Togolese broadcaster held the CAF free-to-air and pay-TV rights across 46 sub-Saharan countries (2023–2025) — proof African capital can re-enter the rights stack (Sportcal; CAF)"
+      }
+    ],
+    "exhibit": {
+      "type": "matrix",
+      "after": 3,
+      "title": "Chain of title — the four layers of African football's value",
+      "cols": [
+        "African-authored",
+        "African-owned",
+        "Value captured in Africa"
+      ],
+      "rows": [
+        {
+          "label": "Clubs (top-tier, e.g. Sundowns)",
+          "tag": "RETAINED",
+          "cells": [
+            4,
+            4,
+            3
+          ]
+        },
+        {
+          "label": "Competition / CAF (AFCON IP)",
+          "tag": "CONTESTED",
+          "cells": [
+            4,
+            4,
+            2
+          ]
+        },
+        {
+          "label": "Broadcast (MultiChoice → Canal+)",
+          "tag": "HOLLOWED",
+          "cells": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "label": "International media rights (IMG)",
+          "tag": "EXPORTED",
+          "cells": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "label": "Player registrations (→ Europe)",
+          "tag": "EXPORTED",
+          "cells": [
+            4,
+            1,
+            1
+          ]
+        }
+      ],
+      "note": "MonoKromatik DD read (0 = none/foreign, 4 = fully African). Authorship is a wall of fours; ownership and capture hold only at the club layer and collapse down the stack. Source: MonoKromatik chain-of-title analysis; holders per the endnotes."
+    },
+    "sections": [
+      {
+        "heading": "READ THIS FIRST",
+        "paragraphs": [
+          "This is a due diligence, not a match report. The question is not who is winning on the pitch; it is who owns and captures the money African football's culture generates — and whether that ownership is developmental or extractive. African football is a genuinely world-class cultural asset: the richest talent pipeline in the game, fan bases among the most passionate anywhere, and in AFCON a competition with real global reach. The DD asks where the value that asset creates actually lands.",
+          "The verdict, argued through the four parts below, is HOLLOWED, trending EXPORTED. The continent authors the talent and the passion, but the layers that capture the money are increasingly offshore: the dominant broadcaster is now French-owned, the international-media and sponsorship value is foreign-intermediated, and the biggest pool of all — player-registration and transfer value — is captured in Europe. The club layer holds African; almost nothing else does.",
+          "This is the deep companion to our Who Owns African Sport league table, which scanned the whole field. Here we drill into the money layer: the chain of title, the value flows, the size of the leak, and a quality-of-capture test applied deal by deal. It is a worked sample of our Culture Due Diligence method."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & GRADING",
+        "paragraphs": [
+          "The DD runs the AOC framework — Authorship, Ownership, Capture — and resolves each layer into an archetype (Retained, Exported, Hollowed, Contested). Every figure is graded: verified (two or more independent named sources or a primary filing), reported (a single or contested named source), or undisclosed (terms not public, marked so, never estimated). Company and governing-body figures are flagged as interested-party sources where relevant.",
+          "Two disciplines matter especially here. First, the Canal+/MultiChoice deal is treated as complete — the 2026 compulsory squeeze-out and JSE delisting are done, and Canal+ is French, controlled through the Bolloré group after its 2024 separation from Vivendi. Second, contested figures are rendered as ranges: the TotalEnergies title-sponsorship renewal is reported anywhere from ~$300m to ~$1.125bn, and we show the band rather than pick a number.",
+          "The four parts follow the standard DD arc: chain of title (who holds what), value flows (where the money goes), the leak (the gap between authorship and capture), and quality of capture (developmental versus extractive, deal by deal)."
+        ]
+      },
+      {
+        "heading": "THE ASSET — WHAT THE CULTURE CREATES",
+        "paragraphs": [
+          "Start with the authorship, because it is overwhelming. African football authors an enormous share of global sporting value: a record number of African and African-heritage players stock Europe's top leagues, the continent's fan bases drive vast broadcast and sponsorship demand, and AFCON is a genuine global-audience event that CAF reports generated record commercial revenue in 2025. The raw material — the talent and the passion — is unambiguously, irreplaceably African.",
+          "That is exactly what makes the ownership question sharp. When the authorship of an asset is this concentrated on the continent and this hard to fake, the only question that decides who gets rich is who owns the layers that monetise it — the broadcast rails, the competition rights, the clubs, and the player registrations. The DD is a map of those four layers.",
+          "The uncomfortable through-line, established layer by layer below, is that the continent authors the asset almost completely and captures its money only partially — and least of all at the layer, player registrations, where the single biggest sums change hands."
+        ]
+      },
+      {
+        "heading": "DD PART 1 — CHAIN OF TITLE",
+        "paragraphs": [
+          "Layer one, broadcast: MultiChoice/SuperSport, the dominant pay-TV carrier of African sport, is now owned by France's Canal+ (Bolloré group), which completed its takeover in 2026 at roughly $3bn, ring-fencing the South African licences in a locally controlled entity (LicenceCo) to satisfy the 20% foreign-voting cap. Chinese operator StarTimes holds a large sub-Saharan footprint alongside it. The rails are largely foreign-owned.",
+          "Layer two, competition rights: CAF owns AFCON and the continental competitions — African-held at the top — but monetises them through foreign intermediaries and sponsors, with the US agency IMG having distributed the international media rights for the 2023–2025 cycle and the French TotalEnergies as title sponsor. Layer three, clubs: this is the retained layer — top clubs like Mamelodi Sundowns are African-owned, and there is no evidenced wave of foreign takeovers of leading African clubs.",
+          "Layer four, player registrations — the one that matters most financially: the economic rights to African talent originate in African academies but vest in the European clubs that hold the registrations by the time the big transfers happen. This is where the largest sums live, and it is the most completely exported layer of the four."
+        ]
+      },
+      {
+        "heading": "THE BROADCAST PIVOT",
+        "paragraphs": [
+          "The Canal+ acquisition of MultiChoice is the DD's single most material ownership event, and it is complete. Canal+ built past the mandatory-offer threshold, reached around 94%, executed a compulsory acquisition of the remainder, and delisted MultiChoice from the JSE — roughly R55bn, about $3bn. SuperSport, the channel that built the modern South African game, now answers to Paris.",
+          "The structure is the Hollowed archetype in law. Because South Africa caps foreign voting control of broadcast licences at 20%, the licences sit in a locally controlled entity where South African shareholders (including the Phuthuma Nathi empowerment consortium) hold the votes, while Canal+ owns the economics above. A local licence shell over foreign economic ownership — the definition of Hollowed.",
+          "And the commercial context is a declining asset: MultiChoice's subscriber base fell from around 17.3m in early 2023 to about 14.4m by late 2025. Canal+ bought scale and sport IP from a shrinking incumbent. What French ownership means for the price and availability of African football to African viewers is the open question the pivot leaves."
+        ]
+      },
+      {
+        "heading": "DD PART 2 — VALUE FLOWS",
+        "paragraphs": [
+          "Follow the three big money streams. Broadcast fees now flow, at the economic level, to a French owner; the subscription revenue African viewers pay for SuperSport ultimately serves an offshore cap table. Sponsorship — AFCON 2025 reported around $126m of it against total revenue above $190m — is led by foreign brands, principally the French title sponsor, so the marquee competition's commercial engine is substantially foreign-funded and, in margin terms, foreign-serving.",
+          "The third and largest stream is transfer value. When an African player is sold at the top of the market, the fee is captured by the European club that holds his registration, not by the African club or academy that developed him. FIFA's training-compensation and solidarity mechanisms are meant to route some value back, but are widely reported as under-collected. The biggest single flows in the whole game move from European buyer to European seller, with the African development chain largely outside the transaction.",
+          "Netted out, the value flows tell a consistent story: the money African football generates is real and growing, and it is captured, at each of the three largest streams, substantially offshore."
+        ]
+      },
+      {
+        "heading": "THE COMPETITION LAYER & A CAUTIONARY TALE",
+        "paragraphs": [
+          "The competition layer is Contested and carries a warning. CAF owns AFCON, and AFCON 2025 was a commercial record — but the monetisation runs through foreign intermediaries and sponsors, and the governance history is not clean. The collapsed 20-year Lagardère (later Sportfive) marketing-and-media rights deal, terminated in 2019, left CAF paying a reported ~$50m in arbitration and drew a competition-authority fine — a cautionary tale about how badly the rights layer can be structured when it is handed to an offshore agency on a long exclusive.",
+          "The TotalEnergies renewal is where the DD's grading discipline is most visible. Its value is genuinely contested in the reporting — from around $300m to as much as $1.125bn across 2025–2028 — and the higher figure would imply a roughly twelvefold jump on the 2016 rate. We render that as a band and refuse to bank a single number; a DD that stated a contested figure as fact would fail its own standard.",
+          "The competition layer, then, is African-owned at the top and foreign-monetised beneath it — valuable, growing, and historically vulnerable to being structured against CAF's own interest."
+        ]
+      },
+      {
+        "heading": "THE PLAYER VALUE CHAIN",
+        "paragraphs": [
+          "The player value chain is the DD's core finding, because it is where the biggest money and the biggest leak coincide. African academies author and develop the talent; European clubs capture the transfer value. Feeder structures institutionalise it — Génération Foot's long partnership with FC Metz is a template — and the pattern scales to the very top, as our Victor Osimhen value-capture read shows at the level of a single player whose career has generated over €150m of fees, none of it his and none of it captured by an African club.",
+          "There is one genuinely interesting counter-structure: the owned network. Right to Dream, a Ghanaian academy now majority-owned by Egypt's Mansour Group, owns FC Nordsjælland in Denmark and San Diego FC in the US — an African-capital-owned pipeline that captures value across the chain rather than selling talent into someone else's. It is the model that most directly addresses the leak, because it puts the African development asset and the value-capturing club under one owner.",
+          "But Right to Dream is the exception. For the overwhelming majority of the pipeline, the training-compensation gap is the leak: the value African football authors at its most valuable point is captured, almost entirely, by clubs abroad."
+        ]
+      },
+      {
+        "heading": "DD PART 3 — THE LEAK",
+        "paragraphs": [
+          "Quantifying the leak precisely is impossible without disclosed figures the parties do not publish, and the DD says so rather than inventing a number. But the direction and scale are clear from the layer read: authorship scores a wall of fours; ownership and capture score high only at the club layer and collapse at broadcast, international rights and player registrations. The gap between an almost fully African-authored asset and a substantially offshore-captured one is the leak.",
+          "The leak is widest exactly where the sums are largest. Broadcast and sponsorship are big streams captured largely offshore; player-registration value is the biggest stream of all and the most completely exported. If African football's authorship and its capture were aligned, a large multiple of the value that currently lands in Europe would land on the continent — that multiple is the size of the prize, and the size of the loss.",
+          "It is the same shape our Afrobeats-catalogue Culture DD found in music: African authorship, offshore capture, a growing pie that partly masks a falling ownership share. Football is that pattern at continental scale, with player registrations playing the role masters play in music."
+        ]
+      },
+      {
+        "heading": "DD PART 4 — QUALITY OF CAPTURE",
+        "paragraphs": [
+          "Not all offshore capture is equal, and the DD's final test is developmental versus extractive. Some foreign capital is genuinely developmental: European academies and clubs give African players elite development and life-changing careers that the domestic game cannot yet provide, and Canal+ inherited and extended domestic rights rather than stripping them. Some is more extractive: a long exclusive rights deal structured against CAF's interest, or a transfer system that captures the value of African talent while the development chain collects little.",
+          "Applied deal by deal, the picture is mixed but tilts extractive at the biggest-money layers. The Canal+ deal is scale capital into a declining asset — plausibly stabilising, quality-of-capture uncertain. The player-registration system is structurally extractive of African development value, however developmental it is for the individual player. The Right to Dream owned network is the most developmental structure in the DD, precisely because it aligns ownership with the value chain.",
+          "The quality-of-capture test is what separates a Culture DD from a lament: it asks not only where the value goes, but whether the arrangement builds the African side of the asset or merely mines it. On the largest layers, the answer today is closer to mining."
+        ]
+      },
+      {
+        "heading": "RETAINED COUNTER-NODES & COMPS",
+        "paragraphs": [
+          "The retained side is real and must be named, or the DD becomes propaganda. New World TV, a Togolese broadcaster, held the CAF free-to-air and pay-TV rights across 46 sub-Saharan countries for 2023–2025 — the first time an African company held exclusive AFCON rights, and proof that African capital can re-enter the rights stack. Top clubs remain African-owned. And Mansour's Right to Dream shows African capital owning clubs abroad. The retained and reverse-flow nodes are the template for closing the leak.",
+          "As a comp, the closest asset is our Afrobeats-catalogue Culture DD: same offshore-capture pattern, different cultural asset, with player registrations here mirroring recorded-music masters there. In both, a growing pie partly masks a falling ownership share, and in both the retained counter-examples are deliberate structures — an African-held rights window, an owned network, a domestic anchor — rather than accidents.",
+          "The comps matter for an investor because they show the pattern is systemic across African cultural assets, and so is the fix: own the layer that captures, not just the one that authors."
+        ]
+      },
+      {
+        "heading": "THE VERDICT",
+        "paragraphs": [
+          "African football is HOLLOWED, trending EXPORTED. The asset is almost entirely African-authored; the club layer retains African ownership; but the broadcast rails are now French-owned, the international rights and sponsorship are foreign-intermediated, and the player-registration value — the largest pool — is captured in Europe. Weighted by where the money actually is, the capture is offshore, and the recent trajectory (the completed Canal+ deal) is toward more of it, not less.",
+          "The verdict is not that the value is being destroyed — it is being priced up, with a market growing toward $20bn by 2035. The verdict is that the value is being captured off the continent at the layers that matter most, while Africa retains the one thing no one can take (the authorship) and, increasingly, only the club layer of the ownership.",
+          "For an investor or a federation, the DD points to the same conclusion the comps do: the returns and the leverage are in owning the capturing layers — rights windows, owned player networks, domestic broadcast — not in producing ever more of the talent the current structure captures elsewhere."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources and grading (named per house standard):",
+          "1 — Canal+/MultiChoice: ~R55bn (~$3bn); ~94% then compulsory squeeze-out and JSE delisting, 2026; Canal+ Bolloré-controlled (post-2024 Vivendi demerger); LicenceCo / 20% foreign-voting cap: TechCabal; Daily Maverick; MyBroadband; company statements. Verified.",
+          "2 — MultiChoice subscribers ~17.3m (2023) → ~14.4m (2025): MyBroadband; Nairametrics; company results. Reported.",
+          "3 — CAF / AFCON 2025: reported revenue >$190m, sponsorship ~$126m, ~90% surge: CAF (interested party). Reported. Lagardère 20-yr deal terminated 2019, ~$50m ICC payout + competition fine: SportBusiness; Sportcal; InsideTheGames. Verified.",
+          "4 — TotalEnergies title renewal (2025–2028): value contested, reported ~$300m to ~$1.125bn (2016 baseline ~$250m/8yr): Businessday; Nairametrics; Sportcal. Reported (rendered as a range).",
+          "5 — New World TV (Togo) held CAF sub-Saharan rights (46 countries, 2023–2025), first African exclusive AFCON rights; StarTimes/SABC sub-licensees: Sportcal; SportBusiness; CAF. Reported.",
+          "6 — Right to Dream: Ghana academy, majority Mansour Group (~$120m, 2021); owns FC Nordsjælland (Denmark), FC Masar (Egypt), San Diego FC (US): Sportico; Mansour Group. Reported.",
+          "7 — Player pipeline & training-compensation gap; leading exporter nations; record expatriate-player count: CIES Football Observatory; Génération Foot/FC Metz partnership. Reported.",
+          "8 — Clubs: Mamelodi Sundowns African-owned (Motsepe/Rupert); no verified foreign-ownership wave of top African clubs. Reported.",
+          "9 — African sports market ~$12bn → >$20bn by 2035: Oliver Wyman. Reported.",
+          "10 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the HOLLOWED/EXPORTED verdict are MonoKromatik's own."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "quadrant",
+        "after": 4,
+        "title": "Authored versus captured — the DD in one chart",
+        "xAxis": [
+          "Low African authorship",
+          "High African authorship"
+        ],
+        "yAxis": [
+          "Value captured offshore",
+          "Value captured in Africa"
+        ],
+        "points": [
+          {
+            "label": "Clubs (Sundowns)",
+            "x": 86,
+            "y": 78,
+            "highlight": true
+          },
+          {
+            "label": "New World TV (rights)",
+            "x": 88,
+            "y": 86,
+            "highlight": true
+          },
+          {
+            "label": "CAF / AFCON",
+            "x": 84,
+            "y": 52
+          },
+          {
+            "label": "Broadcast (Canal+)",
+            "x": 82,
+            "y": 16
+          },
+          {
+            "label": "Player registrations",
+            "x": 88,
+            "y": 10
+          }
+        ],
+        "note": "MonoKromatik DD read. Everything is African-authored (far right). The vertical collapse — clubs and the New World TV rights window capture on-continent, broadcast and player registrations offshore — is the leak. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "Value flows — generated by African football, captured where?",
+        "cols": [
+          "Generated by African football",
+          "Captured in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Broadcast / subscription fees",
+            "tag": "OFFSHORE",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Sponsorship (AFCON etc.)",
+            "tag": "FOREIGN-LED",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Transfer / registration fees",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none, 4 = high). All three of the largest money streams are generated by African football and captured substantially offshore — the transfer stream, the biggest, most completely. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "bar",
+        "after": 8,
+        "title": "The registration leak — African talent, European capture",
+        "unit": "€m transfer fee (reported)",
+        "note": "Landmark African transfers, each fee banked by the European selling club, not by the African academy that developed the player. The player-registration layer is where the biggest money and the biggest leak coincide. Fees reported; converted approximately from sterling where noted.",
+        "data": [
+          {
+            "label": "Pépé (Lille → Arsenal, 2019)",
+            "value": 80,
+            "display": "~€80m"
+          },
+          {
+            "label": "Osimhen (Napoli → Galatasaray, 2025)",
+            "value": 75,
+            "display": "€75m"
+          },
+          {
+            "label": "Marmoush (Frankfurt → Man City, 2025)",
+            "value": 75,
+            "display": "~€75m"
+          },
+          {
+            "label": "Kudus (West Ham → Spurs, 2025)",
+            "value": 64,
+            "display": "~£55m"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 9,
+        "title": "Quality of capture — developmental or extractive?",
+        "cols": [
+          "Developmental",
+          "Extractive"
+        ],
+        "rows": [
+          {
+            "label": "Right to Dream owned network",
+            "tag": "DEVELOPMENTAL",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Canal+ / MultiChoice (scale capital)",
+            "tag": "MIXED",
+            "cells": [
+              2,
+              2
+            ]
+          },
+          {
+            "label": "TotalEnergies sponsorship",
+            "tag": "MIXED",
+            "cells": [
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Long exclusive rights deals (Lagardère-type)",
+            "tag": "EXTRACTIVE",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Player-registration transfer system",
+            "tag": "EXTRACTIVE",
+            "cells": [
+              1,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none, 4 = high). The final test: does the arrangement build the African side of the asset or mine it? The owned network builds; the transfer system and long exclusive rights deals mine. On the biggest-money layers, capture tilts extractive. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "bar",
+        "after": 7,
+        "title": "The TotalEnergies renewal — a contested band",
+        "unit": "US$m, AFCON title sponsorship (reported)",
+        "note": "Due-diligence discipline in a chart: the 2025–2028 renewal is reported anywhere from ~$300m to ~$1.125bn against a ~$250m 2016 baseline. We show the band; the high figure implies a ~12× jump and needs a primary source. Businessday; Nairametrics; Sportcal.",
+        "data": [
+          {
+            "label": "2016 (8yr, baseline)",
+            "value": 250,
+            "display": "~$250m"
+          },
+          {
+            "label": "2025 renewal — low estimate",
+            "value": 300,
+            "display": "~$300m"
+          },
+          {
+            "label": "2025 renewal — high estimate",
+            "value": 1125,
+            "display": "~$1.125bn"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 10,
+        "title": "The retained counter-nodes — how the leak gets closed",
+        "cols": [
+          "African-owned",
+          "Captures the value layer"
+        ],
+        "rows": [
+          {
+            "label": "New World TV (rights window)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "African-owned top clubs",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Right to Dream owned network",
+            "tag": "REVERSE FLOW",
+            "cells": [
+              3,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none, 4 = high). Closing the leak means owning the capturing layer — a rights window, a club, an owned pipeline — not authoring more talent for someone else to capture. These are the templates. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "donut",
+        "after": 11,
+        "title": "The verdict, weighted by where the money is",
+        "value": 20,
+        "valueLabel": "HOLLOWED",
+        "sublabel": "African football is almost fully African-authored, but weighted by where the largest money actually lands — broadcast, sponsorship, player registrations — capture is offshore. Hollowed today, trending Exported as the Canal+ deal completes.",
+        "note": "The DD verdict in one mark: authorship retained, capture leaving. The retained club layer and the counter-nodes are what a repatriation strategy would build on. Source: MonoKromatik Culture Due Diligence.",
+        "unit": "DD verdict"
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the HOLLOWED verdict is weakest — and the case that the foreign capital is building African football, not mining it.",
+      "points": [
+        "Foreign broadcast money funds the game. Canal+'s scale and capital may stabilise a MultiChoice that was losing subscribers on its own, and deepen investment in African football production and rights — French ownership could mean more money into the game, not less, with the domestic rights extended rather than stripped.",
+        "European academies and clubs create pathways that would not otherwise exist. The transfer system that captures registration value also gives African players elite development and generational careers; for many the alternative is no professional pathway at all. Calling the whole pipeline 'extractive' ignores the life-changing value to the individual player.",
+        "The sponsors and intermediaries expanded the market. Post-Lagardère, CAF's move to record European deals globalised AFCON's audience and revenue, and a deep-pocketed title sponsor underwrites prize money and grassroots programmes. Offshore money grew the pie rather than merely taxing it.",
+        "The capital is mobile and replaceable; the authorship is not. Africa retains the irreplaceable asset — the talent and the fans — while ownership of distribution rails is a solvable, later-stage problem. The retained nodes (New World TV, African-owned clubs, Mansour's network) prove African capital can and does re-enter the stack.",
+        "Capture offshore is not value destroyed. A market growing toward $20bn, record AFCON revenue and rising transfer valuations mean the asset is being priced up. The honest question is Africa's share of a growing pie, not whether the value exists — and framing every foreign deal as extraction can deter the very capital the game needs."
+      ]
+    }
   }
 ]
