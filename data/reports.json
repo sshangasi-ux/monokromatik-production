@@ -6132,5 +6132,538 @@
         "The Harvard critique is a framing, not a finding of wrongdoing. Naming the Mavin deal as exemplifying a pattern is an argument about structure, not an allegation of bad conduct by any party. An acquirer can hold both that the structural leak is real and that this specific transaction may be a legitimate, even generative, piece of it."
       ]
     }
+  },
+  {
+    "slug": "who-owns-african-fintech-league-table",
+    "title": "Who Owns African Fintech — The Ownership League Table",
+    "series": "THE OWNERSHIP LEAGUE TABLE",
+    "status": "live",
+    "access": "open",
+    "summary": "A licensable Index data cut, published in full as a worked sample. African fintech is overwhelmingly African-authored — local founders, local market need, local rails — but foreign-owned and, increasingly, foreign-domiciled: the operating company sits in Lagos, Nairobi or Cape Town while the holding company that owns it sits in Delaware, Mauritius or London. This league table ranks sixteen of the continent's leading fintechs and scores each on three independent axes — authorship, ownership and domicile — classifying them Retained, Exported, Hollowed or Contested. The finding: only about two of sixteen are cleanly retained. Authorship stays on the continent; ownership and legal domicile leave it. This is the ownership layer nobody else compiles for Africa, and the sample of the dataset a research house or agency can license.",
+    "statusNote": "A licensable Index data cut — a worked sample, free to read",
+    "tags": [
+      "african fintech",
+      "ownership",
+      "league table",
+      "value capture",
+      "venture capital",
+      "flutterwave",
+      "paystack",
+      "domicile",
+      "AOC framework",
+      "cultural-signal index"
+    ],
+    "publishedAt": "2026-09-24T13:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "~2 of 16",
+        "label": "Leading African fintechs that are cleanly RETAINED — African-authored, African-owned AND African-domiciled (Tyme and Fawry). The rest are Exported, Hollowed or Contested"
+      },
+      {
+        "value": "~60%",
+        "label": "Fintech's share of all African tech equity funding in 2024 — about $1.4bn — the sector that most defines who owns African innovation (GFTN; Partech)"
+      },
+      {
+        "value": "~76%",
+        "label": "Share of African tech funding captured by the 'Big Four' — Nigeria, South Africa, Egypt, Kenya; Nigeria alone drew about $520m of equity in 2024 (Tech In Africa; GFTN)"
+      },
+      {
+        "value": ">$200m",
+        "label": "Stripe's 2020 acquisition of Nigeria's Paystack — the landmark exit, and a Nigerian-authored asset moved into full US ownership (TechCabal; Nairametrics)"
+      },
+      {
+        "value": "Delaware / Mauritius",
+        "label": "The default legal home of the fast-growing African fintech — the operating company is African, the holding company that owns it is not (TechCabal; Launch Base Africa)"
+      }
+    ],
+    "exhibit": {
+      "type": "donut",
+      "after": 1,
+      "title": "Only about 13% cleanly retained",
+      "value": 13,
+      "valueLabel": "~13%",
+      "sublabel": "Two of the sixteen leading African fintechs — Tyme and Fawry — are African-authored, African-owned and African-domiciled. The other fourteen are Exported, Hollowed or Contested.",
+      "note": "The headline of the whole data cut: African fintech is authored on the continent and owned off it. Authorship is nearly universal; retained ownership and domicile are the exception. MonoKromatik classification of sixteen leading fintechs."
+    },
+    "sections": [
+      {
+        "heading": "THE HEADLINE",
+        "paragraphs": [
+          "African fintech is one of the great authorship-without-ownership stories on the continent, and this table makes it countable. The sector is overwhelmingly African-authored — local founders solving a local market's problems on local rails — but it is foreign-owned, and increasingly foreign-domiciled. The operating company runs in Lagos, Nairobi or Cape Town; the holding company that legally owns it is registered in Delaware, Mauritius or London. Across the sixteen leading fintechs ranked here, authorship stays on the continent and ownership and legal domicile leave it.",
+          "The single number: only about two of sixteen — Tyme and Fawry — are cleanly retained, meaning African-authored, African-owned and African-domiciled all at once. The rest resolve to Exported (sold or controlled offshore), Hollowed (African-operated but legally domiciled abroad) or Contested (mixed or in transition). That is the finding a raw funding database cannot give you, because it tracks money in, not ownership and domicile out.",
+          "This piece is also a sample of a product. The three-axis classification — authorship, ownership, domicile — is the licensable Index layer a research house, agency or investor can take as a data cut. What follows is the table, the patterns inside it, the exceptions that prove the rule, the methodology, and the numbered sources."
+        ]
+      },
+      {
+        "heading": "WHAT THIS TABLE IS",
+        "paragraphs": [
+          "This is not another funding leaderboard. Databases already rank African fintechs by capital raised and valuation; several disagree with each other on the totals. What they do not compile is ownership and domicile — who actually controls the equity today, and where the company legally lives. That is the layer this Index adds, and it is the layer that decides who captures the value a fintech creates.",
+          "Each entity is scored on three independent axes. Authorship: the origin of the founders and the market the product was built for. Ownership: majority economic control of the equity today — founders versus domestic capital versus foreign venture and private equity, read from disclosed round leads and stake sizes, and graded 'reported' where the stake is press-sourced rather than filed. Domicile: where value legally sits — headquarters, holding-company jurisdiction, listing venue and ultimate parent. Retained means African on all three; Exported means African-authored but foreign-owned or acquired offshore; Hollowed means African-operated but foreign-domiciled; Contested means split or in transition.",
+          "The universe is the sixteen leading fintechs by a composite of valuation, capital raised and market weight. Every figure carries a named source, and uncertain valuations and stakes are marked reported. That reconciliation and judgement layer — not the raw numbers, which anyone can buy — is what makes the cut worth licensing."
+        ]
+      },
+      {
+        "heading": "THE LEAGUE TABLE",
+        "paragraphs": [
+          "Read down the table and the pattern is immediate. The Nigerian giants — Flutterwave (San Francisco-headquartered, Tiger Global and Avenir-heavy), Moniepoint (UK holding company, Google and DPI-backed) and Kuda (London holding company, Valar and Target Global-led) — are all Hollowed: unmistakably Nigerian-authored and founder-run, but legally seated abroad with foreign-majority cap tables. OPay is Exported outright — Chinese-authored and Chinese-owned, operating a Nigerian-facing brand. Paystack is the cleanest Exported case: Nigerian-authored, then acquired outright by Stripe in 2020, its value now captured in the United States.",
+          "The West African and East African challengers extend it. Wave (Senegal) and Tala (Kenya) are both foreign-authored and foreign-owned — US founders, US holding companies, African markets. Chipper Cash was authored by Ugandan and Ghanaian founders but is San Francisco-headquartered and was owned by a foreign roster including FTX, SVB Capital and Bezos Expeditions — Hollowed. Interswitch, MNT-Halan, M-Pesa and Yoco sit in the Contested band: genuinely African-anchored, but with heavy foreign or institutional ownership (Visa and Helios in Interswitch; Gulf capital in MNT-Halan; Vodafone's continuing control of Safaricom behind M-Pesa; Dragoneer and Tencent behind Yoco).",
+          "Two names break the pattern, and only two. TymeBank is South-African-authored, domestically majority-owned through Patrice Motsepe's African Rainbow Capital, and South-African-domiciled — Retained, despite Nubank and Tencent minorities. Fawry is Egyptian-authored, publicly listed on the Egyptian Exchange with broad domestic ownership, and Cairo-domiciled — Retained. Everything else authored on the continent is owned or seated, in whole or in part, off it."
+        ]
+      },
+      {
+        "heading": "THE DELAWARE / MAURITIUS FLIP",
+        "paragraphs": [
+          "The most important structural fact in African fintech is that offshore incorporation is now the default, not the exception. A Delaware, London or Mauritius holding company raises dollars and owns the African operating subsidiary — so the fast-growing 'African' fintech is frequently, by incorporation, not an African business at all. Some investors will not fund an African-domiciled company without a foreign holding company owning the local operation outright.",
+          "In this table alone the flip is everywhere: Flutterwave and Chipper Cash in San Francisco, Kuda and JUMO in London, Onafriq in Mauritius, Tala in California, and Paystack now inside Stripe. The legal home of the continent's flagship fintechs is rarely Lagos, Nairobi or Cape Town. That is what 'Hollowed' captures — the licence and the users are African, but the company that owns them, and the jurisdiction that taxes and governs it, are not.",
+          "This matters beyond symbolism. Domicile determines where tax is paid, where disputes are heard, where an exit's proceeds land, and whose law governs the cap table. A continent that authors its fintech but domiciles it abroad is building a sector whose ultimate value accrues, and is adjudicated, elsewhere."
+        ]
+      },
+      {
+        "heading": "THE FOREIGN INVESTOR CLUB",
+        "paragraphs": [
+          "Ownership concentration is the other half of the story, and it is a small club. The same foreign names recur across the cap tables: Visa appears behind Flutterwave, Interswitch, Moniepoint and JUMO; Tencent behind TymeBank and Yoco; Stripe behind Wave and Paystack; and SoftBank, Sequoia Capital China, Tiger Global, Ribbit Capital and Founders Fund lead round after round. A handful of global funds and strategics own a large share of the sector.",
+          "The macro numbers frame it. Fintech took roughly 60% of all African tech equity funding in 2024 — about $1.4bn — even as total African venture funding fell to $2.6bn from $3.6bn the year before. The lead cheques in nearly every mega-round come from the United States, China or the Gulf. Domestic and pan-African capital exists, but it rarely leads the rounds that set control.",
+          "The result is a consistent divergence: founders typically stay as operators — chief executive, chief technology officer — while equity majority and board control migrate to foreign investors across successive rounds. Authorship and operation stay African; ownership does not."
+        ]
+      },
+      {
+        "heading": "THE EXCEPTIONS — WHAT RETAINED LOOKS LIKE",
+        "paragraphs": [
+          "The two retained cases are instructive precisely because they are structurally different from the rest. Fawry did not stay private and foreign-funded — it listed on the Egyptian Exchange, so its ownership is broad, domestic and public, and its value is priced and captured in Cairo. TymeBank is anchored by a domestic majority owner, Patrice Motsepe's African Rainbow Capital at roughly 40%, which holds control even as Nubank and Tencent take minority positions. In both, an African institution — a public market, a domestic investor — sits at the centre of the cap table.",
+          "M-Pesa is the near-miss worth naming: Safaricom and Vodacom bought the M-Pesa brand and IP back from the UK's Vodafone in 2020, a genuine repatriation of a landmark African asset. But Vodafone Group still controls the parent, so the repatriation is partial — which is why it lands in Contested, not Retained. It is the exception that shows how rare, and how deliberate, true retention has to be.",
+          "The lesson of the exceptions is the strategy for the rest: retention is a design choice — a domestic anchor investor, a local listing, a repatriated right — not an accident. The default flips offshore; keeping ownership home takes intent."
+        ]
+      },
+      {
+        "heading": "WHAT THIS MEANS — BY WHO'S READING",
+        "paragraphs": [
+          "For research houses and agencies: this is the data layer you cannot buy off a funding database — ownership and domicile, reconciled and classified. It is licensable as a cut on its own, and it is the template for the same three-axis read across telecoms, energy, retail and consumer. The value is the judgement layer on top of the raw figures.",
+          "For investors: the table is a map of where control actually sits, and of the thin field of genuinely domestic-anchored assets. If the thesis is African ownership or local-capture, the Retained and Contested rows are the shortlist; if it is pure growth exposure, the table tells you how much of the upside is already spoken for offshore. For founders: the Delaware flip is a real financing constraint, but Fawry and Tyme prove a domestic-anchored path exists — and that where you domicile is a decision about where your value will ultimately live.",
+          "For policymakers: a continent that authors its fintech and domiciles it abroad is exporting the tax base, the jurisdiction and the exit value of its most dynamic sector. The levers — domestic capital pools, listing venues that can hold high-growth tech, and incorporation regimes founders do not have to flee — are the difference between authoring the sector and owning it."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY",
+        "paragraphs": [
+          "Universe and ranking. The leading African fintechs were selected on a composite of latest reported valuation or market capitalisation, cumulative capital raised, and market weight (users, volume, systemic role), ranked descending, with ties broken by valuation recency. The three-axis classification is applied independently: authorship (founder origin plus the market built for), ownership (majority economic control today), and domicile (headquarters, holding-company jurisdiction, listing venue, ultimate parent). Retained is African on all three; Exported, Hollowed and Contested follow the definitions used throughout.",
+          "Sourcing and grading follow the house standard. Every figure carries a named outlet or database — TechCrunch, Wikipedia, Partech, GFTN, company releases, the Egyptian Exchange for listed marks — not anonymous footnotes. Uncertain valuations and stakes are explicitly graded reported; undisclosed figures (for example Onafriq's valuation) are marked undisclosed rather than estimated. Two figures a licensed product would re-verify: Flutterwave's total funding, which databases put anywhere from $475m to $741m, and Onafriq's holding-company jurisdiction, widely reported as Mauritius but not confirmed here from filings.",
+          "The schema is additive and extensible: new rounds, secondaries, listings (OPay and MNT-Halan are both said to be eyeing IPOs) and domicile changes update a single row without re-basing the model, and the same three axes extend to any sector. That private-company valuations are point-in-time and press-reported is a strength for licensing, not a weakness — the Index adds the reconciliation and the ownership judgement that raw databases do not."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources, consolidated for verification (named in the prose per house standard); all valuations and stakes graded reported unless from a listed market:",
+          "1 — Flutterwave: founders Agboola and Aboyeji (2016); ~$475m raised (databases range to $741m); ~$3bn+ valuation after the Feb 2022 Series D; San Francisco HQ: Wikipedia; CNBC; PR Newswire; TechCrunch.",
+          "2 — Paystack: founders Akinlade and Olubi; acquired by Stripe for a reported >$200m, October 2020: TechCabal; Nairametrics; Wikipedia.",
+          "3 — OPay: founded by Zhou Yahui via Opera (2018); $400m SoftBank-led round (2021); Opera-controlled, seeking a US IPO: SCMP; TechCrunch; Semafor; PYMNTS.",
+          "4 — Moniepoint (UK holdco), Kuda (London holdco), JUMO (London-registered): Nigerian/SA-authored, foreign-VC-led: Nairametrics; TechCrunch; Financial IT; Crunchbase.",
+          "5 — TymeBank: SA-authored; African Rainbow Capital (Motsepe) ~40% domestic majority; $1.5bn valuation after a $250m Nubank-led round (Dec 2024): Billionaires.Africa; Yahoo Finance.",
+          "6 — Fawry: Egyptian-authored; listed on the Egyptian Exchange (IPO 2019); Egypt's first tech unicorn (2020): Menabytes; WAYA; TradingView (EGX:FWRY).",
+          "7 — Wave (US founders, Senegal; $1.7bn) and Tala (US founder, California-domiciled, Kenya market): TechCrunch; CB Insights; Wikipedia; Fortune.",
+          "8 — Chipper Cash: Ugandan/Ghanaian founders, San Francisco HQ; FTX/SVB/Bezos backers; valuation cut from $2bn: TechCrunch; Semafor; Forbes.",
+          "9 — Interswitch (Visa ~20% + Helios/TA), MNT-Halan (Gulf + Egyptian institutions), M-Pesa (Safaricom/Vodacom bought IP back from Vodafone 2020, Vodafone still controls parent): TechCrunch; Wamda; Quartz; TechCabal.",
+          "10 — The Delaware/Mauritius offshore-incorporation pattern: TechCabal ('Why your favourite African startups are incorporating abroad'; 'Africa's many Delawares'); Launch Base Africa.",
+          "11 — Continent-level funding: fintech ~60% of African tech equity (~$1.4bn) in 2024; total African VC $2.6bn (down from $3.6bn); Big Four ~76%; Nigeria ~$520m: GFTN; Partech; Ecofin; Tech In Africa.",
+          "12 — The rankings, the three-axis scoring and all Retained/Exported/Hollowed/Contested classifications are MonoKromatik's own analysis."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The league table — authorship, ownership, domicile",
+        "cols": [
+          "Authored in Africa",
+          "Owned in Africa",
+          "Domiciled in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Flutterwave 🇳🇬",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "OPay 🇳🇬",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Moniepoint 🇳🇬",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1,
+              2
+            ]
+          },
+          {
+            "label": "TymeBank 🇿🇦",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "Interswitch 🇳🇬",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "label": "Fawry 🇪🇬",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "Wave 🇸🇳",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Chipper Cash 🌍",
+            "tag": "HOLLOWED",
+            "cells": [
+              3,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "MNT-Halan 🇪🇬",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              2,
+              4
+            ]
+          },
+          {
+            "label": "M-Pesa 🇰🇪",
+            "tag": "CONTESTED",
+            "cells": [
+              2,
+              2,
+              3
+            ]
+          },
+          {
+            "label": "Kuda 🇳🇬",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1,
+              2
+            ]
+          },
+          {
+            "label": "Yoco 🇿🇦",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              2,
+              4
+            ]
+          },
+          {
+            "label": "Tala 🇰🇪",
+            "tag": "EXPORTED",
+            "cells": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Paystack 🇳🇬",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0 = none/foreign, 4 = fully African). Authorship is high almost everywhere; African ownership and domicile are the exception. Only TymeBank and Fawry score high on all three. Ownership stakes are reported, not filed; classifications are MonoKromatik's analysis."
+      },
+      {
+        "type": "bar",
+        "after": 5,
+        "title": "The valuations — the unicorn club",
+        "unit": "US$bn (reported)",
+        "note": "Latest reported valuations / market marks: OPay and Flutterwave around $3bn; Chipper Cash peaked near $2bn (later cut); Wave $1.7bn; TymeBank $1.5bn; MNT-Halan $1.4bn; Moniepoint, Interswitch and Fawry around $1bn. Private marks are point-in-time and press-reported. Sources per endnotes.",
+        "data": [
+          {
+            "label": "OPay",
+            "value": 3.1,
+            "display": "~$3.1bn"
+          },
+          {
+            "label": "Flutterwave",
+            "value": 3.0,
+            "display": "~$3.0bn"
+          },
+          {
+            "label": "Chipper (peak)",
+            "value": 2.0,
+            "display": "$2.0bn"
+          },
+          {
+            "label": "Wave",
+            "value": 1.7,
+            "display": "$1.7bn"
+          },
+          {
+            "label": "TymeBank",
+            "value": 1.5,
+            "display": "$1.5bn"
+          },
+          {
+            "label": "MNT-Halan",
+            "value": 1.4,
+            "display": "$1.4bn"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 4,
+        "title": "The offshore flip — operating in Africa, domiciled abroad",
+        "cols": [
+          "Operates in Africa",
+          "Domiciled in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Flutterwave → San Francisco",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Kuda → London",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Onafriq → Mauritius",
+            "tag": "HOLLOWED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Tala → California",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Paystack → Stripe (US)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0 = no, 4 = fully). Each operates squarely in Africa but is legally seated abroad — the 'Delaware/Mauritius flip'. The legal home of the flagship African fintech is rarely African. Per TechCabal and Launch Base Africa."
+      },
+      {
+        "type": "quadrant",
+        "after": 6,
+        "title": "Owned and domiciled — where the value legally lives",
+        "xAxis": [
+          "Foreign-owned",
+          "African-owned"
+        ],
+        "yAxis": [
+          "Domiciled offshore",
+          "Domiciled in Africa"
+        ],
+        "points": [
+          {
+            "label": "Fawry",
+            "x": 72,
+            "y": 94,
+            "highlight": true
+          },
+          {
+            "label": "TymeBank",
+            "x": 74,
+            "y": 90,
+            "highlight": true
+          },
+          {
+            "label": "MNT-Halan",
+            "x": 46,
+            "y": 84
+          },
+          {
+            "label": "Interswitch",
+            "x": 52,
+            "y": 78
+          },
+          {
+            "label": "Flutterwave",
+            "x": 24,
+            "y": 16
+          },
+          {
+            "label": "Kuda",
+            "x": 24,
+            "y": 30
+          },
+          {
+            "label": "Paystack",
+            "x": 10,
+            "y": 12
+          },
+          {
+            "label": "Tala",
+            "x": 10,
+            "y": 8
+          },
+          {
+            "label": "OPay",
+            "x": 12,
+            "y": 22
+          }
+        ],
+        "note": "MonoKromatik positioning read. Only Fawry and TymeBank sit in the top-right — African-owned and African-domiciled. The cluster in the bottom-left (foreign-owned, offshore-domiciled) is where most of the sector's value legally lives. The gap between authorship and this map is the whole point."
+      },
+      {
+        "type": "bar",
+        "after": 5,
+        "title": "The capital is concentrated — funding raised, selected",
+        "unit": "US$m raised (reported, cumulative)",
+        "note": "Cumulative capital raised, selected names: Flutterwave ~$475m, Tala ~$350m, Chipper Cash $305m+, Yoco $170m+, Kuda ~$90m — alongside large single rounds elsewhere (OPay's $400m, Wave's $200m, TymeBank's $250m). Figures reported; databases diverge. Sources per endnotes.",
+        "data": [
+          {
+            "label": "Flutterwave",
+            "value": 475,
+            "display": "~$475m"
+          },
+          {
+            "label": "Tala",
+            "value": 350,
+            "display": "~$350m"
+          },
+          {
+            "label": "Chipper Cash",
+            "value": 305,
+            "display": "$305m+"
+          },
+          {
+            "label": "Yoco",
+            "value": 170,
+            "display": "$170m+"
+          },
+          {
+            "label": "Kuda",
+            "value": 90,
+            "display": "~$90m"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 5,
+        "title": "The foreign investor club — backers appearing across the set",
+        "note": "The same foreign names recur across the cap tables. Visa sits behind Flutterwave, Interswitch, Moniepoint and JUMO; Tencent behind TymeBank and Yoco; Stripe behind Wave and Paystack; with SoftBank, Sequoia China, Tiger Global, Ribbit and Founders Fund leading rounds. A small club owns a large share of the sector. MonoKromatik count across the ranked set.",
+        "data": [
+          {
+            "label": "Visa",
+            "value": 4,
+            "display": "4 firms"
+          },
+          {
+            "label": "Tencent",
+            "value": 2,
+            "display": "2 firms"
+          },
+          {
+            "label": "Stripe",
+            "value": 2,
+            "display": "2 firms"
+          },
+          {
+            "label": "Tiger / Sequoia / SoftBank (each)",
+            "value": 1,
+            "display": "1 each"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 5,
+        "title": "Where the money clusters — 2024 equity by country",
+        "unit": "US$m equity, 2024",
+        "note": "The 'Big Four' — Nigeria, South Africa, Egypt, Kenya — take roughly 76% of African tech funding; Nigeria alone drew about $520m of equity in 2024 and Kenya about $221m, per Tech In Africa and GFTN. Fintech is the majority of it in the leading markets.",
+        "data": [
+          {
+            "label": "Nigeria",
+            "value": 520,
+            "display": "~$520m"
+          },
+          {
+            "label": "Kenya",
+            "value": 221,
+            "display": "~$221m"
+          }
+        ]
+      },
+      {
+        "type": "donut",
+        "after": 5,
+        "title": "Fintech is the sector that defines the question",
+        "value": 60,
+        "valueLabel": "~60%",
+        "sublabel": "Fintech took roughly 60% of all African tech equity funding in 2024 — about $1.4bn of a $2.6bn total — so who owns African fintech is, largely, who owns African innovation (GFTN; Partech).",
+        "note": "Because fintech dominates the continent's venture funding, its ownership pattern is the continent's ownership pattern. The league table is a read on far more than payments."
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'authored here, owned there' read is weakest — and the case that foreign ownership is the price of building a real sector.",
+      "points": [
+        "Foreign capital is the price of scale, and Africa's own capital is thin. Total African venture funding was $2.6bn in 2024, against single US funds many times larger. A sector that refuses US, Chinese and Gulf capital does not stay African — it stays small. Much of the 'exported' ownership is simply the cost of funding a continental fintech at all, and it grew the sector that now employs and serves millions.",
+        "The Delaware flip is investor-required plumbing, not extraction. A foreign holding company is often the only structure through which global funds will invest, and it protects founders and early employees as much as investors. Reading incorporation choice as a statement about allegiance mistakes a financing constraint for a cultural betrayal.",
+        "Ownership is not control, and founders still run these companies. Across the table the founders remain chief executives and chief technology officers, setting product and strategy. Equity majority migrating to investors is how venture scaling works everywhere, not a uniquely African hollowing; conflating cap-table share with lost agency overstates the case.",
+        "The 'retained' examples are not pure either. Fawry and Tyme both carry foreign minorities (and Tyme's own expansion is offshore, into the Philippines). Even the counter-examples show that at scale, some foreign ownership is near-universal — 'retained' is a matter of degree and control, not a binary the table can fully capture.",
+        "Domicile is a legal and tax decision, weakly correlated with where value is created or felt. A Mauritius or Delaware holding company can still employ, bank and serve a wholly African market, pay local taxes on local operations, and repatriate value through dividends and salaries. The map of legal domicile is not the map of economic benefit, and this table should be read as one lens, not a verdict."
+      ]
+    }
   }
 ]
