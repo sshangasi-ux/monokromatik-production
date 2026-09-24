@@ -32,14 +32,15 @@ Every service maps to the capabilities it needs. Each capability carries a **mat
 | Brand & culture domain (per vertical) | all | **3** | thin outside sport/music |
 | Reputational & integrity read | Culture DD, advisory | **2** | method to document, source network |
 | **Corporate finance & valuation** | Culture DD, Value-Capture Advisory | **2** | core method documented (2026-09-23 sweep); comps library + partner next → [`corporate-finance-and-valuation.md`](./corporate-finance-and-valuation.md) |
-| **Legal & transaction (DD, structuring)** | Culture DD | **1** | the priority gap → [`legal-and-transaction.md`](./legal-and-transaction.md) |
+| **Legal & transaction (DD, structuring)** | Culture DD | **2** | core method documented (2026-09-24 sweep); per-vertical checklists + partner next → [`legal-and-transaction.md`](./legal-and-transaction.md) |
 | Quant / economic modelling | leakage models, valuation | **2** | econ/stats depth |
 | Deal structuring & negotiation | Value-Capture Advisory, Culture DD | **1** | ex-PE/corp-dev capacity |
 
-**Legal & transaction (maturity 1)** is now the remaining honest blocker on the flagship
-(Culture DD) — the gap the [Intelligence Services model](../INTELLIGENCE-SERVICES-MODEL.md)
-flagged; corporate finance & valuation moved to **2** once its core method was documented
-(2026-09-23 sweep). Both keep the fastest learning cadence and the partner track (below).
+Both flagship-blocking capabilities — corporate finance & valuation and legal & transaction —
+are now at **maturity 2**, their core method documented by the 2026-09-23/24 sweeps (the gaps
+the [Intelligence Services model](../INTELLIGENCE-SERVICES-MODEL.md) flagged). The remaining
+step to **3** on both is the same: a *delivered* engagement, plus the corporate-finance /
+legal **partner signed**. They keep the fastest learning cadence and the partner track (below).
 
 ---
 

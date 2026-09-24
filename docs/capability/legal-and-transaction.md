@@ -1,6 +1,6 @@
 # Capability · Legal & transaction
 
-- **Maturity:** 1 (notional) → target 3 by first delivered Culture DD engagement.
+- **Maturity:** 2 (founder-level; core method documented 2026-09-24) → target 3 by first delivered Culture DD engagement.
 - **Powers:** Culture Due Diligence, Value-Capture Advisory (deal-structure guidance).
 - **Owner:** principal + (to sign) a legal / transaction partner (African corporate & IP law).
 - **Learning cadence:** weekly (`capability-learning-sweep`). Fastest-cadence gap.
@@ -53,3 +53,65 @@ value-capture read.
 
 ---
 <!-- learning-loop:append-below -->
+
+### 2026-09-24 — Sweep 02: legal DD method & the certification-ownership checklist
+
+**Focus:** the legal layer that decides whether authorship can actually be *owned* — turned
+into our reusable checklists. Researched against M&A legal-DD practice, music/rights chain of
+title, and African data/regulatory regimes.
+
+**1. The legal DD workstreams (the map).** A complete legal DD covers: corporate organisation,
+material contracts, litigation, employment, **IP**, regulatory & compliance, tax, and
+**privacy/data**. For a culture-driven asset the load concentrates in three: **IP/chain of
+title, commercial contracts, and data** — the three that most directly decide capture, and
+the three most often underdone when timelines compress.
+
+**2. IP & chain of title — the legal face of the AOC read (the certification-ownership check).**
+The review is about **chain of title**, not just the registered assets: does the target hold
+an undisputed line of ownership to the thing that certifies its value?
+- *The contractor/authorship gap:* value authored by contractors (code, beats, designs,
+  content) that **never signed an assignment** is not owned — permission ≠ ownership. This is
+  the HOLLOWED pattern in legal form, and the first thing to test.
+- *Music (worked example):* two separate estates — **masters** (the sound recording) and
+  **publishing** (the composition). Establish undisputed chain of title to **both**, by
+  reading the publishing / recording / producer / co-writer agreements and cross-referencing
+  Copyright Office + PRO registrations; confirm **sample clearances** (composition *and*
+  master) and flag **reversion, termination and option** rights.
+- *Assignment vs licence:* an **assignment** transfers ownership; a **licence** is only
+  permission (narrow or broad — one use / territory / term / platform). An asset that looks
+  owned but rests on a licence is under-owned — the legal capture-discount.
+
+**3. The value-leak clause map — where capture is won or lost.** The contract terms to hunt,
+because each is a place value walks out the door:
+- **Change-of-control** (customer/partner can terminate or renegotiate on a change of
+  ownership) — among the most impactful lower-mid-market findings.
+- **Assignment restrictions, auto-renewal, exclusivity, territory/term**, and
+  **revenue-share / sell-on** clauses — who keeps what, and who can leave with the audience.
+- Reversion & termination rights on the IP itself (esp. catalogues).
+
+**4. Data & regulatory (African, sector-specific).** Data is both an ownable asset (who owns
+the fan/subscriber relationship — the certification apparatus) and a live liability.
+- No uniform "African GDPR": **POPIA** (SA), **NDPA** (Nigeria), and Kenya/Egypt each differ
+  on definitions, registration triggers, thresholds and enforcement (e.g. POPIA has no data-
+  portability right). Cross-border deals must check **data-transfer controls**.
+- Enforcement is real and rising: the NDPC fined **MultiChoice Nigeria ₦766m (2025)** for
+  unlawful processing and illegal cross-border transfer — a direct read on the risk a foreign
+  acquirer inherits. Regulatory/sector licences (betting, fintech, broadcast) and local-
+  ownership/FDI rules sit alongside.
+
+**Our proprietary layer — the legal AOC.** One question organises all of it: *does the target
+legally own the thing that certifies its value, free of leak clauses and regulatory
+encumbrance?* The **certification-ownership checklist** (by vertical) and the **value-leak
+clause map** above are now seeded; each engagement deepens them.
+
+**Sources (this sweep):** Harvey, DataRooms.org, Bloomberg Law, Skadden (IP DD in M&A) on
+legal-DD workstreams and IP chain of title; Musicians Institute, Fasthoff Law, Soundcharts on
+masters vs publishing and catalogue chain of title; Secure Privacy, GDPR Local, DLA Piper and
+Mondaq/Adeola Oyinlade on POPIA/NDPA and Nigerian cross-border M&A (incl. the NDPC MultiChoice
+fine). Method references, verified this run; a live engagement uses the target's own papers
+and named local counsel.
+
+**Maturity:** legal & transaction **1 → 2** — the core method (certification-ownership
+checklist, value-leak clause map, African data/regulatory notes) is now documented and
+deliverable by the principal + engine, single-threaded. To reach 3: per-vertical checklists
+deepened, and the legal / corporate-finance partner signed.
