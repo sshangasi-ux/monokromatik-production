@@ -7134,5 +7134,531 @@
         "Owning is hard, and being good at rugby does not make you good at business. Building media companies, funds and licensing estates is a different skill, with its own failure rate; pushing every athlete up the ladder can trade a safe rented income for an unmanaged, loss-making venture. The ladder describes where value is kept — it does not guarantee that climbing it is the right risk for every athlete."
       ]
     }
+  },
+  {
+    "slug": "signal-fit-brands-buying-into-amapiano",
+    "title": "Signal Fit — Which Brands Actually Belong in Amapiano",
+    "series": "SIGNAL FIT",
+    "status": "live",
+    "access": "open",
+    "summary": "Amapiano is the biggest cultural signal South Africa has exported in a generation, and brands are pouring in. Signal Fit is the question that decides whether that money builds anything: does the brand wear the signal — a credible, hard-to-fake, sustained association that builds equity for both sides — or does it rent reach, borrow the audience for a quarter, fit nothing, and pay a culture tax on the way out? This piece sets out the 5-C Signal Fit rubric (Credibility, Consistency, Congruence, Contribution, Capture), names the four ways brands show up (the Curator, the Local, the Tourist, the Hijacker), reads who actually owns amapiano's signal through the AOC lens, and gives brand and sport marketers a category-by-category playbook. It is also a working sample of our Signal Fit service. The framework is ours and labelled as such; specific sponsorship terms are graded reported or deliberately left out, and no deals are invented.",
+    "statusNote": "A Signal Fit read — framework plus worked application, free to read",
+    "tags": [
+      "amapiano",
+      "signal fit",
+      "brand strategy",
+      "cultural marketing",
+      "south africa",
+      "sponsorship",
+      "AOC framework",
+      "signalling",
+      "brand marketers",
+      "cultural-signal index"
+    ],
+    "publishedAt": "2026-09-24T14:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "5 Cs",
+        "label": "The Signal Fit rubric: Credibility, Consistency, Congruence, Contribution, Capture — the five tests that separate wearing a signal from renting reach"
+      },
+      {
+        "value": "4 archetypes",
+        "label": "How brands show up in a culture: the Curator (builds it), the Local (lives in it), the Tourist (visits it), the Hijacker (grabs it). Only the first two build equity"
+      },
+      {
+        "value": "Piano to the world",
+        "label": "Amapiano's export arc — from South African townships to Nigeria, the UK and a global stage — makes it a hard-to-fake signal every youth brand now wants (Spotify; contemporaneous reporting)"
+      },
+      {
+        "value": "The culture tax",
+        "label": "The cost a misfit brand pays: credibility spent, backlash risked, and no equity kept once the campaign ends — reach bought, nothing owned"
+      }
+    ],
+    "exhibit": {
+      "type": "quadrant",
+      "after": 1,
+      "title": "The Signal Fit map — fit versus equity built",
+      "xAxis": [
+        "Rents reach",
+        "Wears the signal"
+      ],
+      "yAxis": [
+        "Extractive / culture tax",
+        "Shared equity"
+      ],
+      "points": [
+        {
+          "label": "The Curator (builds the scene)",
+          "x": 80,
+          "y": 86,
+          "highlight": true
+        },
+        {
+          "label": "The Local (product actually worn)",
+          "x": 82,
+          "y": 74,
+          "highlight": true
+        },
+        {
+          "label": "The Tourist (festival-stage buy)",
+          "x": 34,
+          "y": 30
+        },
+        {
+          "label": "The Hijacker (viral-sound grab)",
+          "x": 18,
+          "y": 12
+        }
+      ],
+      "note": "MonoKromatik framework. The top-right earns the association and shares the equity; the bottom-left borrows the audience and pays a culture tax. Signal Fit is the diagnostic that tells a brand which quadrant its amapiano play is really in."
+    },
+    "sections": [
+      {
+        "heading": "THE QUESTION SIGNAL FIT ANSWERS",
+        "paragraphs": [
+          "Amapiano is the most valuable cultural signal South Africa has exported in a generation, and every youth-facing brand can feel it. Spirits, sportswear, telcos, banks, fast food and streaming platforms are all courting the sound, its DJs and its dance. The money is real. The question almost none of them ask before they spend is the only one that matters: does the brand actually fit the signal, or is it renting reach?",
+          "That is what Signal Fit measures. Wearing the signal means a credible, hard-to-fake, sustained association that builds equity for both the brand and the culture — the brand becomes part of the scene, and the scene becomes richer for it. Renting reach means buying the audience for a campaign cycle, fitting nothing, contributing nothing durable, and often paying a culture tax — a credibility cost — on the way out. Same spend, opposite outcome.",
+          "This piece gives brand and sport marketers the rubric to tell the difference before the budget is committed: the five tests, the four archetypes, the AOC read on who owns amapiano's signal, and a category-by-category playbook. It is also a worked sample of our Signal Fit service — the diagnostic, run in the open, on the culture everyone is buying into right now."
+        ]
+      },
+      {
+        "heading": "WHAT AMAPIANO IS — AND WHY BRANDS WANT IN",
+        "paragraphs": [
+          "Amapiano is a South African genre — house and kwaito-descended, built on a jazzy piano and the unmistakable log drum — that emerged from Gauteng's townships in the mid-2010s and became, within a few years, a continental and then global phenomenon. Its export arc is the whole reason brands want in: 'piano to the world' took the sound from Pretoria and Soweto to Lagos, London and beyond, carried by moments like the Focalistic and Davido 'Ke Star' remix, the global breakout of DJs such as Uncle Waffles, and heavy platform curation from Spotify and others. When South Africa's Tyla won the inaugural Best African Music Performance Grammy in 2024 with a sound steeped in amapiano's DNA, the signal's global standing was sealed.",
+          "That arc makes amapiano a textbook hard-to-fake signal: it is unmistakably of a place and a people, it cannot be manufactured by a marketing department, and being credibly associated with it confers real cultural standing. That is exactly why it is valuable to brands — and exactly why fit matters, because the same hard-to-fake quality that makes the signal worth borrowing makes a bad fit obvious and punishable.",
+          "One clarification the market constantly gets wrong, and that our method insists on: within amapiano, 'Bacardi' names a Pretoria subgenre and dance culture — it is not the rum brand, and this piece makes no claim about any Bacardi-the-company involvement. Getting that right is the difference between reading the culture and mis-reading it, which is the whole job."
+        ]
+      },
+      {
+        "heading": "THE 5-C SIGNAL FIT RUBRIC",
+        "paragraphs": [
+          "Signal Fit scores a brand's play on five tests. Credibility: is the association earned and hard to fake, or bought and hollow — does the brand have any real right to be here? Consistency: is this a sustained commitment or a one-quarter visit — signals reward brands that show up across seasons, not campaigns. Congruence: does the product genuinely fit the scene — is it actually worn, drunk, played or used by the people who make the culture, or merely adjacent to them?",
+          "Contribution: does the brand add to the culture — infrastructure, income, platforms, opportunity — or only extract attention from it? And Capture: who keeps the equity the association builds — is it shared with the artists and the scene, or does the brand pull all of it out? A play that scores high on all five wears the signal. A play that scores low on Congruence, Contribution and Capture is renting reach, however big the media buy.",
+          "The five Cs are deliberately ordinal, not a spurious index — this is a judgement framework, and it is labelled as one. Its value is that it forces the questions a reach-obsessed brief never asks, and it makes the answers legible to a marketing director before the money is spent, not after the backlash."
+        ]
+      },
+      {
+        "heading": "THE FOUR WAYS BRANDS SHOW UP",
+        "paragraphs": [
+          "Score enough plays on the five Cs and four archetypes emerge. The Curator builds the scene: the platform or brand that invests in the sound's infrastructure — playlists, stages, production, export — and grows the whole culture's reach. Streaming platforms that genuinely curated and exported amapiano are the clearest Curators; the association is credible because they demonstrably helped build the thing. The Local lives in it: the brand whose product is actually worn or used inside the scene, day to day, so the association is congruent by default rather than manufactured.",
+          "The Tourist visits it: the brand that buys a festival stage or a season's sponsorship, gets its logo on the culture for a quarter, and leaves — reach without roots. It is not malicious, but it builds no equity and is forgotten the moment the activation ends. The Hijacker grabs it: the brand that snatches a viral sound or dance for a single ad, fits nothing, contributes nothing, and risks the culture tax outright — the play audiences read, correctly, as extraction.",
+          "Only the Curator and the Local wear the signal. The Tourist and the Hijacker rent reach — and the difference is not budget size, it is Congruence, Contribution and Capture. A small brand that genuinely lives in the scene wears the signal better than a giant that buys the mainstage and means none of it."
+        ]
+      },
+      {
+        "heading": "WEAR THE SIGNAL vs RENT REACH",
+        "paragraphs": [
+          "The two outcomes diverge completely once the campaign ends. Wearing the signal builds three things that persist: brand equity (a durable, credible cultural association), culture equity (a scene that is materially better resourced for the brand's involvement), and something that outlives the activation — a relationship that compounds into the next season. Renting reach delivers a spike of impressions and then nothing: no durable association, no goodwill in the scene, and frequently a small credibility debt.",
+          "This is the signalling logic again. A hard-to-fake signal transfers standing only to a party the audience believes has earned it. Borrow it without earning it and the audience discounts the borrow — the brand gets the reach it paid for but not the standing it wanted, and sometimes a penalty on top. The brands that win are the ones that treat amapiano as a relationship to invest in, not an audience to rent.",
+          "The practical tell is what remains after the money stops. If the brand's exit leaves the scene richer and the association intact, it wore the signal. If it leaves nothing but a spent media plan and a slightly more cynical audience, it rented reach — and paid the culture tax whether or not it noticed the invoice."
+        ]
+      },
+      {
+        "heading": "WHO ACTUALLY OWNS AMAPIANO'S SIGNAL",
+        "paragraphs": [
+          "Behind the Signal Fit question sits an ownership question, and it is the AOC read this publication runs on everything. Amapiano is authored, unmistakably, by South African artists, producers and the township communities that birthed the sound and its dances. But as the signal globalises, the value it throws off is increasingly captured elsewhere — by international platforms that distribute it, foreign labels that sign into it, and global brands that borrow it. Authorship is local; capture is drifting offshore. It is the same pattern our Culture Due Diligence work traces through the Afrobeats catalogue, playing out live in a genre still close to its source.",
+          "That matters for Signal Fit because Contribution and Capture — two of the five Cs — are precisely about whether a brand widens or narrows that gap. A Curator that resources the scene and shares the upside pushes capture back toward the authors. A Hijacker that extracts a viral moment and keeps everything widens the leak. The brand's fit is not only an aesthetic question; it is a question about which side of amapiano's ownership story the brand puts its weight on.",
+          "For brands that want to wear the signal for the long run, this is the strategic core: the credible, durable associations are the ones that help the culture own more of its own value. That is what makes the association hard to fake — and hard for a competitor to buy away."
+        ]
+      },
+      {
+        "heading": "THE PLAYBOOK — HOW TO WEAR IT",
+        "paragraphs": [
+          "The five Cs convert directly into moves. Earn credibility before you spend on reach: show up in the scene, work with its real authors, and build the right to play before you buy the mainstage. Commit with consistency: plan across seasons, not a single activation, so the association has time to become real. Fit the product to the culture (Congruence): if the brand is not genuinely worn, drunk or played in the scene, build a reason it should be rather than pasting a logo over one that is.",
+          "Contribute, don't only extract: put money and infrastructure into the scene — stages, production, income, export — so the culture is better off for your presence. And share the capture: structure the association so artists and the scene keep equity, not just a fee, which is also what makes the association durable and defensible. Category by category, the right-to-play differs — a sportswear or streetwear brand can be a Local almost by default; a spirits or telco brand has to earn it; a bank or a fast-food brand has the furthest to travel and the highest culture-tax risk if it grabs rather than builds.",
+          "The through-line is simple: reach can be bought in an afternoon; fit has to be earned over seasons. The brands that will still be credibly part of amapiano in five years are the ones building that fit now, while the Tourists and Hijackers are still buying stages."
+        ]
+      },
+      {
+        "heading": "SO WHAT — BY WHO'S READING",
+        "paragraphs": [
+          "For brand marketers: Signal Fit is the pre-spend diagnostic your reach-led brief is missing. Run the five Cs and the four archetypes on the amapiano play before it is signed, and you will know whether you are about to wear the signal or pay the culture tax — and exactly which of the five tests you are failing. For sport and entertainment marketers: the same rubric governs any culture buy, from a football fan-base to a music scene; fit and shared capture beat raw reach every time the signal is hard to fake.",
+          "For the artists, DJs and the scene: the framework is a negotiating tool. It names what a credible brand should be contributing and how capture should be shared, and it gives the scene language to tell a Curator from a Tourist before signing. For platforms: being a genuine Curator is a defensible position — the credibility earned by building the culture is exactly the asset a late-arriving Hijacker cannot buy.",
+          "For everyone: amapiano is early enough in its global arc that the ownership pattern is not yet fixed. The brands, platforms and structures that engage it now are helping decide whether its authors capture its value — which is both the ethical stake and, for a brand that wants a durable signal, the strategic one."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & WHAT IS VERIFIED",
+        "paragraphs": [
+          "The Signal Fit rubric, the four archetypes, the culture-tax concept and all ordinal placements are MonoKromatik's own framework, and are labelled as judgement, not measurement. The piece deliberately does not attribute specific sponsorship deals or figures to named brands, because much of what circulates in this space is unverified; where we reference brand behaviour it is by archetype, not by accusing or crediting a specific company with a deal we cannot confirm.",
+          "Verified cultural context is sourced and named: amapiano's South African origins and global export arc; the Focalistic and Davido 'Ke Star' crossover; the global breakout of DJs such as Uncle Waffles; Spotify's role in curating and exporting the sound; and Tyla's 2024 Grammy for Best African Music Performance. These are treated as reported from contemporaneous coverage. The 'Bacardi' clarification — a Pretoria amapiano subgenre, not the rum brand — is stated explicitly precisely because the market routinely confuses the two.",
+          "No specific commercial sponsorships are asserted, credited or invented in this piece, including several widely repeated brand-and-amapiano associations we could not verify. That restraint is deliberate: a Signal Fit read is only credible if it does not itself fabricate the fit it claims to measure."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key context and grading (named per house standard):",
+          "1 — Amapiano: South African genre (house/kwaito-descended, log-drum-driven) originating in Gauteng in the mid-2010s; global export 'piano to the world': contemporaneous music reporting; Spotify editorial. Reported.",
+          "2 — 'Ke Star' (Focalistic, remix with Davido, 2021): a landmark SA-to-Nigeria amapiano crossover: contemporaneous coverage. Reported.",
+          "3 — Uncle Waffles: viral global DJ breakout from 2021: contemporaneous coverage. Reported.",
+          "4 — Tyla, 'Water': won the inaugural Best African Music Performance at the 2024 Grammy Awards; sound rooted in amapiano/pop: Recording Academy; widely reported. Reported.",
+          "5 — 'Bacardi' in amapiano denotes a Pretoria subgenre and dance culture, not the rum brand. No claim is made about Bacardi (the company) in relation to amapiano.",
+          "6 — No specific brand sponsorships or deal figures are asserted in this piece; brand behaviour is discussed by archetype only. Several widely repeated brand-and-amapiano associations were unverifiable and are intentionally omitted.",
+          "7 — The 5-C Signal Fit rubric, the four archetypes (Curator/Local/Tourist/Hijacker), the culture-tax framing and all placements are MonoKromatik's own framework and analysis."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 4,
+        "title": "The four ways brands show up in amapiano",
+        "cols": [
+          "Signal Fit",
+          "Equity built",
+          "Culture-tax risk (inverted)"
+        ],
+        "rows": [
+          {
+            "label": "The Curator (builds the scene)",
+            "tag": "WEARS IT",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "The Local (product actually worn)",
+            "tag": "WEARS IT",
+            "cells": [
+              4,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "The Tourist (festival-stage buy)",
+            "tag": "RENTS REACH",
+            "cells": [
+              2,
+              1,
+              2
+            ]
+          },
+          {
+            "label": "The Hijacker (viral-sound grab)",
+            "tag": "RENTS REACH",
+            "cells": [
+              1,
+              0,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = low, 4 = high; culture-tax shown inverted so 4 = low risk). Only the Curator and the Local wear the signal; the Tourist and the Hijacker rent reach and carry culture-tax risk. Budget size is not what separates them — fit is."
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The 5-C rubric, scored across the archetypes",
+        "cols": [
+          "Credibility",
+          "Consistency",
+          "Congruence",
+          "Contribution",
+          "Capture (shared)"
+        ],
+        "rows": [
+          {
+            "label": "The Curator",
+            "tag": "WEARS IT",
+            "cells": [
+              4,
+              4,
+              3,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "The Local",
+            "tag": "WEARS IT",
+            "cells": [
+              3,
+              3,
+              4,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "The Tourist",
+            "tag": "RENTS REACH",
+            "cells": [
+              2,
+              1,
+              2,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "The Hijacker",
+            "tag": "RENTS REACH",
+            "cells": [
+              1,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = fails the test, 4 = passes strongly). The dividing line is Congruence, Contribution and Capture — the tests a reach-led media buy ignores. A brand can buy Credibility's appearance but not its substance."
+      },
+      {
+        "type": "quadrant",
+        "after": 5,
+        "title": "The culture-tax map — contribution versus credibility",
+        "xAxis": [
+          "Extracts from the scene",
+          "Contributes to it"
+        ],
+        "yAxis": [
+          "Association bought",
+          "Association earned"
+        ],
+        "points": [
+          {
+            "label": "The Curator",
+            "x": 86,
+            "y": 84,
+            "highlight": true
+          },
+          {
+            "label": "The Local",
+            "x": 74,
+            "y": 80,
+            "highlight": true
+          },
+          {
+            "label": "The Tourist",
+            "x": 36,
+            "y": 34
+          },
+          {
+            "label": "The Hijacker",
+            "x": 14,
+            "y": 16
+          }
+        ],
+        "note": "MonoKromatik framework. The bottom-left — extractive and bought — is where the culture tax is levied: the audience discounts the borrow and sometimes penalises it. The top-right earns the association by contributing to the scene it wants to belong to."
+      },
+      {
+        "type": "matrix",
+        "after": 5,
+        "title": "What each side keeps after the campaign ends",
+        "cols": [
+          "Brand equity",
+          "Culture equity",
+          "Outlives the campaign"
+        ],
+        "rows": [
+          {
+            "label": "Wear the signal",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Rent reach",
+            "tag": "RENTED",
+            "cells": [
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = none, 4 = high). Same media spend, opposite residue. Wearing the signal leaves durable brand equity, a better-resourced scene, and a relationship that compounds; renting reach leaves a spent plan and a slightly more cynical audience."
+      },
+      {
+        "type": "matrix",
+        "after": 7,
+        "title": "The amapiano opportunity, by brand category",
+        "cols": [
+          "Natural fit",
+          "Right to play (earned)",
+          "Culture-tax risk (inverted)"
+        ],
+        "rows": [
+          {
+            "label": "Sportswear / streetwear",
+            "tag": "LOCAL-READY",
+            "cells": [
+              4,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "Streaming / audio platforms",
+            "tag": "CURATOR-READY",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Spirits / beverages",
+            "tag": "MUST EARN IT",
+            "cells": [
+              3,
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Telco / data",
+            "tag": "MUST EARN IT",
+            "cells": [
+              3,
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Fast food (QSR)",
+            "tag": "HIGH RISK",
+            "cells": [
+              2,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Banking / finance",
+            "tag": "HIGH RISK",
+            "cells": [
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = low, 4 = high; culture-tax inverted so 4 = low risk). Streaming and streetwear can wear the signal almost by default; spirits and telco must earn it; banking and QSR have the furthest to travel and the highest culture-tax risk if they grab rather than build."
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "Who authors amapiano — and who captures it",
+        "cols": [
+          "Creates the signal",
+          "Captures the value"
+        ],
+        "rows": [
+          {
+            "label": "SA artists, producers, DJs",
+            "tag": "AUTHOR",
+            "cells": [
+              4,
+              2
+            ]
+          },
+          {
+            "label": "Township origin communities",
+            "tag": "AUTHOR",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Global streaming platforms",
+            "tag": "DISTRIBUTOR",
+            "cells": [
+              1,
+              3
+            ]
+          },
+          {
+            "label": "Foreign labels & publishers",
+            "tag": "OWNER",
+            "cells": [
+              0,
+              3
+            ]
+          },
+          {
+            "label": "Global brands (borrowing in)",
+            "tag": "BORROWER",
+            "cells": [
+              0,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik AOC read (0 = none, 4 = high). Authorship is local; capture is drifting offshore — the same pattern our Culture Due Diligence work traces in Afrobeats, live in a genre still close to its source. Contribution and Capture (two of the five Cs) are about which way a brand tilts this."
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The Signal Fit diagnostic — five questions before you spend",
+        "cols": [
+          "Rent reach (fails)",
+          "Wear the signal (passes)"
+        ],
+        "rows": [
+          {
+            "label": "Credibility — have we earned the right to be here?",
+            "tag": "TEST 1",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Consistency — are we here for seasons, not a quarter?",
+            "tag": "TEST 2",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Congruence — is our product actually in the scene?",
+            "tag": "TEST 3",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Contribution — do we add to the culture or extract?",
+            "tag": "TEST 4",
+            "cells": [
+              0,
+              4
+            ]
+          },
+          {
+            "label": "Capture — is the equity shared with the scene?",
+            "tag": "TEST 5",
+            "cells": [
+              0,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = fails, 4 = passes). Run before the budget is committed, this is the diagnostic a reach-led brief skips. Fail Contribution and Capture and you are renting reach, whatever the media plan says."
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'wear the signal, never rent reach' read is weakest — and the case for the Tourist.",
+      "points": [
+        "Sometimes reach is exactly what you need. A product launch or an awareness push may rationally want a big, fast audience and nothing deeper — renting reach is a legitimate media strategy, not a failure, when the brief genuinely is reach and the brand is honest that it is visiting, not moving in.",
+        "The culture tax can be overstated. Audiences are large, forgiving and short-memoried; plenty of 'Tourist' activations are enjoyed, shared and forgotten with no lasting penalty at all. Treating every non-Curator play as a credibility catastrophe overstates how closely most consumers police brand authenticity.",
+        "Demanding 'contribution' can become gatekeeping. Insisting brands earn a right to play before they spend risks starving a scene of money it actively wants — many artists and promoters would rather take a Tourist's cheque now than wait for a Curator that may never come. Purism about fit can cost the culture real income.",
+        "Signal Fit is a judgement framework, not a measurement. The five Cs and the four archetypes are ordinal and subjective by design; reasonable analysts will score the same play differently, and the rubric should be read as a structured argument, not a metric. Its discipline is asking the questions, not producing a precise number.",
+        "Amapiano's commercialisation is already global and largely welcomed. The scene has actively pursued brand money, global platforms and international crossover; framing brand involvement primarily as extraction can undersell how much the culture's own actors have sought, shaped and benefited from exactly this attention."
+      ]
+    }
   }
 ]
