@@ -6183,7 +6183,7 @@
       "value": 13,
       "valueLabel": "~13%",
       "sublabel": "Two of the sixteen leading African fintechs — Tyme and Fawry — are African-authored, African-owned and African-domiciled. The other fourteen are Exported, Hollowed or Contested.",
-      "note": "The headline of the whole data cut: African fintech is authored on the continent and owned off it. Authorship is nearly universal; retained ownership and domicile are the exception. MonoKromatik classification of sixteen leading fintechs."
+      "note": "The headline of the whole data cut: African fintech is authored on the continent and owned off it. Authorship is nearly universal; retained ownership and domicile are the exception. Source: MonoKromatik classification of sixteen leading fintechs; underlying figures per the endnotes."
     },
     "sections": [
       {
@@ -6746,7 +6746,7 @@
           "highlight": true
         }
       ],
-      "note": "MonoKromatik framework. The bottom-left is rented — you are paid once and the brand keeps the equity your signal built. The top-right is retained — you own the vehicle, and it compounds. Most athletes, and most of rugby, live in the bottom-left."
+      "note": "The bottom-left is rented — you are paid once and the brand keeps the equity your signal built. The top-right is retained — you own the vehicle, and it compounds. Most athletes, and most of rugby, live in the bottom-left. Source: MonoKromatik framework."
     },
     "sections": [
       {
@@ -7210,7 +7210,7 @@
           "y": 12
         }
       ],
-      "note": "MonoKromatik framework. The top-right earns the association and shares the equity; the bottom-left borrows the audience and pays a culture tax. Signal Fit is the diagnostic that tells a brand which quadrant its amapiano play is really in."
+      "note": "The top-right earns the association and shares the equity; the bottom-left borrows the audience and pays a culture tax. Signal Fit is the diagnostic that tells a brand which quadrant its amapiano play is really in. Source: MonoKromatik framework."
     },
     "sections": [
       {
@@ -7658,6 +7658,481 @@
         "Demanding 'contribution' can become gatekeeping. Insisting brands earn a right to play before they spend risks starving a scene of money it actively wants — many artists and promoters would rather take a Tourist's cheque now than wait for a Curator that may never come. Purism about fit can cost the culture real income.",
         "Signal Fit is a judgement framework, not a measurement. The five Cs and the four archetypes are ordinal and subjective by design; reasonable analysts will score the same play differently, and the rubric should be read as a structured argument, not a metric. Its discipline is asking the questions, not producing a precise number.",
         "Amapiano's commercialisation is already global and largely welcomed. The scene has actively pursued brand money, global platforms and international crossover; framing brand involvement primarily as extraction can undersell how much the culture's own actors have sought, shaped and benefited from exactly this attention."
+      ]
+    }
+  },
+  {
+    "slug": "the-monokromatik-method",
+    "title": "The MonoKromatik Method — How We Read Culture",
+    "series": "THE METHOD",
+    "status": "live",
+    "access": "open",
+    "summary": "Cultural and brand intelligence is a market full of confident opinion and short on method. This is ours, published in full so you can check it. Every piece we write runs on one question — Authorship → Ownership → Capture — resolved into four archetypes (Retained, Exported, Hollowed, Contested), read through a signalling lens (value accrues to hard-to-fake signals, and whoever certifies a signal captures its premium). And every piece is held to standards you can verify from the outside: named attribution rather than anonymous footnotes, figures graded reported-versus-disclosed rather than asserted, real sourced images or none at all, typed exhibits drawn to scale, and a Bear Case that argues against our own conclusion. Behind the writing sits a capability system that compounds our rigour week over week. This piece explains all of it — and argues, in its own Bear Case, where the method has limits.",
+    "statusNote": "The standards behind every MonoKromatik piece — free to read, built to be checked",
+    "tags": [
+      "methodology",
+      "AOC framework",
+      "signalling",
+      "editorial standards",
+      "research method",
+      "brand intelligence",
+      "verification",
+      "capability system"
+    ],
+    "publishedAt": "2026-09-24T14:30:00.000Z",
+    "keyStats": [
+      {
+        "value": "1 question",
+        "label": "Authorship → Ownership → Capture. Who made the value, who owns it, who keeps it. Every piece we publish is an answer to this and only this"
+      },
+      {
+        "value": "4 archetypes",
+        "label": "Retained, Exported, Hollowed, Contested — the four ways the answer to the AOC question can resolve for any brand, asset, catalogue or sector"
+      },
+      {
+        "value": "Named, not [n]",
+        "label": "Every figure carries a named source, not an anonymous footnote. Uncertain numbers are graded 'reported'; undisclosed ones are marked undisclosed, never estimated into existence"
+      },
+      {
+        "value": "Always a Bear Case",
+        "label": "Every serious piece ends by arguing against itself. A conclusion we cannot state the strongest counter-case to is a conclusion we have not finished testing — including this one"
+      }
+    ],
+    "exhibit": {
+      "type": "matrix",
+      "after": 2,
+      "title": "The four archetypes — the shape of every answer",
+      "cols": [
+        "Authored locally",
+        "Owned locally",
+        "Value captured locally"
+      ],
+      "rows": [
+        {
+          "label": "RETAINED — you made it and you keep it",
+          "tag": "GOAL STATE",
+          "cells": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "label": "CONTESTED — split or in transition",
+          "tag": "IN PLAY",
+          "cells": [
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "label": "HOLLOWED — local shell, value seated offshore",
+          "tag": "LEAKING",
+          "cells": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "label": "EXPORTED — authored here, owned & kept there",
+          "tag": "LOST",
+          "cells": [
+            4,
+            1,
+            1
+          ]
+        }
+      ],
+      "note": "Scored 0 = none, 4 = fully local. Authorship is high in all four — Africa authors constantly. The archetypes are defined by what happens to ownership and capture after authorship. The whole method is a way of placing any subject into one of these four rows, with evidence. Source: MonoKromatik framework."
+    },
+    "sections": [
+      {
+        "heading": "WHY WE PUBLISH A METHOD",
+        "paragraphs": [
+          "Most cultural and brand commentary asks you to trust the writer. It arrives as confident opinion — a hot take, a trend call, a vibe — and offers no way to check whether it is right. That is fine for entertainment and useless for a decision. When an investor, a research house or a brand team is going to act on an analysis, the analysis has to be inspectable: you have to be able to see where every claim comes from, how sure we are of it, and what the strongest argument against our conclusion is.",
+          "So we publish the method itself. This piece is the operating manual behind every report, study and index we produce: the single question we ask, the framework we resolve it into, the lens we read it through, and the standards we hold every piece to — standards designed so a stranger can audit us from the outside without taking a word on faith. If we cannot show our work, we have not done the work.",
+          "This is also, deliberately, the most self-demonstrating piece we publish. It makes claims about how we operate and then holds itself to exactly those claims — named sources, graded figures, typed exhibits, and a Bear Case against its own thesis. The method described here is the method used to write it."
+        ]
+      },
+      {
+        "heading": "THE ONE QUESTION — AUTHORSHIP, OWNERSHIP, CAPTURE",
+        "paragraphs": [
+          "Everything we do reduces to one question in three parts. Authorship: who actually made the value — whose creativity, labour, market or culture produced the thing? Ownership: who owns it now — who holds the equity, the rights, the control? Capture: who keeps the value it throws off — where do the profits, the appreciation, the premium actually land? Authorship, Ownership, Capture. AOC.",
+          "The reason this question is the whole method is that, across African and diaspora culture and business, the three answers are constantly different people. Africa authors an enormous amount — music, sport, style, fintech, story — and then, again and again, someone else ends up owning it and capturing its value. The gap between who authors and who captures is the single most important fact in the markets we cover, and AOC is the instrument for measuring that gap precisely, case by case.",
+          "Every piece we write is an answer to this question about a specific subject: a brand, an athlete, a catalogue, a company, a whole sector. We do not editorialise about culture in the abstract. We locate the authorship, trace the ownership, follow the capture, and show the gap — with evidence a reader can check."
+        ]
+      },
+      {
+        "heading": "THE FOUR ARCHETYPES",
+        "paragraphs": [
+          "The AOC answer always resolves into one of four archetypes, and naming which one is the core analytical act. Retained: authored, owned and captured locally — the value stays with its makers. This is the goal state and, in our markets, the rarest. Exported: authored locally, then sold or controlled offshore, so ownership and capture leave entirely — the clean loss. Paystack, acquired outright by Stripe, is the textbook case.",
+          "Hollowed: authored and operated locally, but structurally seated or owned abroad, so the local presence becomes a shell for value that accrues elsewhere — the operating company is African, the holding company and its upside are not. The offshore-domicile pattern across African fintech is the pattern this archetype was built to name. Contested: genuinely split or in transition — meaningful local ownership and capture alongside significant offshore stakes, the outcome still undecided. Interswitch and M-Pesa live here.",
+          "The four archetypes are a claim you can argue with, which is the point — placing a subject in a row is a falsifiable judgement backed by the ownership and capture evidence, not a mood. When we call something Hollowed rather than Contested, we have to show the cap table and the domicile that make the difference, and you can check them."
+        ]
+      },
+      {
+        "heading": "THE SIGNALLING LENS",
+        "paragraphs": [
+          "Over the top of AOC we read a second layer: signalling. Drawing on Michael Spence and Amotz Zahavi's economics and biology of signals, and on Rory Sutherland's work on how meaning gets made, the core idea is that value accrues disproportionately to signals that are costly and hard to fake — and, crucially, that whoever certifies a hard-to-fake signal captures its premium. A World Cup-winning captaincy, a genre that could only have come from one place, a brand association that cannot be bought overnight: these are hard-to-fake signals, and the question is always who owns the vehicle that certifies and carries them.",
+          "The signalling lens explains why the AOC gap persists. The party that authors a signal is often not the party positioned to certify it — the platform, the label, the acquirer, the rights holder does that — and certification is where the premium is captured. It reframes strategy for everyone we write for: the way to capture your own signal's value is to own its certification, not to rent it out for a fee.",
+          "Used together, the two lenses are complementary. AOC tells you where the value is going; signalling tells you why, and where the leverage to change it sits. One is a map; the other is the mechanism."
+        ]
+      },
+      {
+        "heading": "NAMED ATTRIBUTION, NEVER [n]",
+        "paragraphs": [
+          "Every figure we publish carries a named source in the text — an outlet, a filing, a database, a company release — not an anonymous bracketed footnote. This is a deliberate discipline, and it is also a tell you can use on anyone's analysis: work that hides its sources behind '[1]' and '[2]' is asking you to trust a citation you cannot weigh, and often the citation is thinner than the number it supports. Naming the source in line means you can judge the source's authority as you read the claim, not after chasing an endnote.",
+          "It also disciplines us. When a claim has to carry the name of who said it, weak sourcing becomes visible on the page — to us as we write and to you as you read. A number attributed to 'Forbes' or 'the Egyptian Exchange' or 'company disclosures' is a number we have had to stand behind by name; a number we could only attribute vaguely is a number we usually cut.",
+          "Where we do consolidate sources into an endnotes section for verification, they stay named and specific there too. The rule is constant: you should never have to take a figure from us on faith, and you should always know exactly whose figure it is."
+        ]
+      },
+      {
+        "heading": "GRADED, NOT GUESSED",
+        "paragraphs": [
+          "We grade the confidence of every figure rather than presenting them all as equally solid. A number from an audited filing or a listed market is disclosed — high confidence. A number from credible press is reported — usable, but explicitly flagged as press-sourced, especially for private-company valuations and deal terms that the market routinely gets wrong. A number that is genuinely not public is marked undisclosed — and we say so, rather than estimating it into existence. We would rather show a gap than fabricate a figure to fill it.",
+          "This is why our pieces are full of the words 'reported', 'disclosed' and 'undisclosed', and why we sometimes tell you which specific figures a licensed version would re-verify. Precision about uncertainty is not hedging; it is the difference between a number you can size a decision against and a number that will embarrass you later. Grading is how we make our own confidence legible.",
+          "The hardest version of this discipline is refusing to invent. When a claim would require a private figure we do not have, or a deal we cannot verify, we make the structural point and leave the number out — and we tell you we have done so. Several of our pieces explicitly omit widely repeated claims we could not confirm. That refusal is not a weakness of the analysis; it is the thing that makes the rest of it trustworthy."
+        ]
+      },
+      {
+        "heading": "THE MEDIA STANDARD — REAL, OR NONE",
+        "paragraphs": [
+          "We hold images to the same standard as figures. Every image in our work is a real, sourced photograph or it is absent — we never fabricate, never pass off stock as documentary, and never use AI-generated imagery to imply something happened that did not. If we do not have a real, appropriately sourced image for a subject, the piece runs without one. A missing image costs a reader nothing; a fabricated one costs us everything.",
+          "The reason is the same reason we grade figures: a piece that would invent a picture is a piece that would invent a fact. Visual honesty and factual honesty are one discipline. In a moment when synthetic imagery is everywhere and cheap, holding this line is both an ethical position and a credibility signal — a hard-to-fake one, in exactly the sense the method describes.",
+          "The standard is absolute precisely so it needs no case-by-case defence: real sourced photograph, or nothing. There is no third option and no exception for convenience."
+        ]
+      },
+      {
+        "heading": "SHOW, DON'T TELL — THE EXHIBIT SYSTEM",
+        "paragraphs": [
+          "We build arguments visually with a system of typed exhibits — league-table matrices, quadrants, bars, lines, donuts — each drawn to a single consistent scale, each carrying its own source and grading note. The exhibits are not decoration on top of prose; they are the argument in its most inspectable form. A matrix that scores sixteen fintechs on three axes, or a quadrant that places brand archetypes on fit and equity, lets you audit the judgement directly rather than through a paragraph's summary of it.",
+          "This is where the method becomes a product. The structured data behind the exhibits — the classifications, the scores, the reconciled figures — is the layer a research house or agency can license, because it is the layer nobody else compiles and the layer that took the judgement to build. The raw numbers are buyable anywhere; the coded, graded, classified read is not. Show-don't-tell is both an editorial standard and the shape of what we sell.",
+          "Every exhibit obeys the same rules as the prose: named sources, graded confidence, and no invented data points. An ordinal framework chart says, on its face, that it is a MonoKromatik judgement rather than a measurement. The reader always knows which is which."
+        ]
+      },
+      {
+        "heading": "THE BEAR CASE, ALWAYS",
+        "paragraphs": [
+          "Every serious piece we publish ends with a Bear Case: the strongest available argument against our own conclusion, made in good faith and at full strength. This is not a disclaimer or a token hedge — it is a structural requirement. A conclusion we cannot state the best counter-case to is a conclusion we have not finished testing, and we would rather show you the argument against us than pretend it does not exist.",
+          "The Bear Case does three things. It stress-tests our own thinking before we publish. It respects the reader enough to let them weigh both sides rather than be sold one. And it is, again, a hard-to-fake credibility signal: work that argues against itself is work that is more interested in being right than in winning. Advocacy dressed as analysis never includes a real Bear Case, because a real one would puncture the pitch.",
+          "This piece follows the rule. Below, its own Bear Case sets out where this method is weakest — because a method that claimed to have no limits would fail its own first test."
+        ]
+      },
+      {
+        "heading": "THE CAPABILITY SYSTEM — COMPOUNDING RIGOUR",
+        "paragraphs": [
+          "The method is not static. Behind it sits a capability system — a documented skill matrix, scored on a maturity scale, covering the disciplines our work depends on: AOC and signalling analysis, cultural-signal indexing, exhibit and data-visualisation craft, and the harder-won corporate-finance, valuation and legal-transaction skills that let us read cap tables, deal structures and domicile properly. Each capability has a defined maturity level, and a weekly learning loop researches how the market does each discipline and appends what it learns, so the standard ratchets up over time rather than drifting.",
+          "We are honest, in our own maturity scores, about where we are strong and where we are still building — the framework and exhibit disciplines are mature; the corporate-finance and legal capabilities are deliberately being deepened, because reading ownership and capture properly demands them. Publishing our own maturity map is itself an application of the method: authorship of a standard, owned and improved in the open.",
+          "The point of the system is compounding. A publication that gets measurably more rigorous every quarter, on a documented schedule, is building a moat that a faster, louder competitor cannot copy by spending more on distribution. The rigour is the asset."
+        ]
+      },
+      {
+        "heading": "WHAT THE METHOD BUYS YOU",
+        "paragraphs": [
+          "For investors and corporate development: the method is decision-grade because it is inspectable. You can see the ownership evidence behind an archetype call, weigh the source behind every figure, and read our own best argument against the thesis — which is exactly what a diligence process needs and what a hot take can never provide. For research houses and agencies: the coded, graded data layer behind our exhibits is licensable, and the method is the reason it is trustworthy enough to build on.",
+          "For brand and marketing teams: the frameworks — Signal Fit, the AOC read, the signalling lens — are tools you can run on your own decisions before you spend, and the standards are the reason you can act on the output. For everyone: the method is the difference between an opinion about culture and an analysis you can put in front of an investment committee.",
+          "The through-line is that the method is the product. The specific reports are applications of it; the durable value is the way of reading — rigorous, inspectable, self-critical — that produces them, and that gets sharper every week the capability system runs."
+        ]
+      },
+      {
+        "heading": "THE STANDING RULES",
+        "paragraphs": [
+          "Consolidated, the standards every MonoKromatik piece is held to:",
+          "1 — One question: Authorship → Ownership → Capture, resolved into one of four archetypes (Retained, Exported, Hollowed, Contested), read through the signalling lens.",
+          "2 — Named attribution: every figure carries a named source in the text, never an anonymous footnote.",
+          "3 — Graded confidence: figures marked disclosed, reported or undisclosed; nothing estimated into existence; uncertain figures flagged, private ones left blank rather than invented.",
+          "4 — Real images or none: every image a real sourced photograph, or absent; never fabricated, stock-as-documentary, or AI-generated to imply an event.",
+          "5 — Typed exhibits: arguments shown in exhibits drawn to a consistent scale, each with its own source and grading, ordinal frameworks labelled as judgement.",
+          "6 — Always a Bear Case: every serious piece ends with the strongest good-faith argument against its own conclusion.",
+          "7 — Compounding capability: a documented skill matrix and a weekly learning loop that raise the standard over time.",
+          "8 — Refuse to invent: when a claim would require a figure or deal we cannot verify, make the structural point and say what was left out."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "quadrant",
+        "after": 4,
+        "title": "The signalling lens — hard-to-fake, and who certifies it",
+        "xAxis": [
+          "Easy to fake",
+          "Hard to fake"
+        ],
+        "yAxis": [
+          "Certifier captures the premium",
+          "Author captures the premium"
+        ],
+        "points": [
+          {
+            "label": "Author owns the certification",
+            "x": 84,
+            "y": 86,
+            "highlight": true
+          },
+          {
+            "label": "Signal rented to a certifier",
+            "x": 80,
+            "y": 18
+          },
+          {
+            "label": "Weak signal, self-certified",
+            "x": 22,
+            "y": 62
+          },
+          {
+            "label": "Weak signal, rented out",
+            "x": 20,
+            "y": 20
+          }
+        ],
+        "note": "MonoKromatik framework. Value concentrates on the right (hard-to-fake signals). Whether the premium is captured by the author (top) or the certifier (bottom) depends on who owns the vehicle that certifies the signal. Strategy is about moving up the right-hand edge."
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "How we grade a figure",
+        "cols": [
+          "Confidence",
+          "Do we publish a number?"
+        ],
+        "rows": [
+          {
+            "label": "Disclosed (filing / listed market)",
+            "tag": "HIGH",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Verified (multiple credible sources)",
+            "tag": "HIGH",
+            "cells": [
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Reported (credible press)",
+            "tag": "FLAGGED",
+            "cells": [
+              2,
+              3
+            ]
+          },
+          {
+            "label": "Undisclosed (not public)",
+            "tag": "NEVER GUESS",
+            "cells": [
+              0,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik standard (0 = none, 4 = high). Reported figures are published but explicitly flagged; undisclosed figures are marked undisclosed, never estimated. We would rather show a gap than fabricate a number to fill it."
+      },
+      {
+        "type": "matrix",
+        "after": 8,
+        "title": "The standards — most of the market versus us",
+        "cols": [
+          "Typical commentary",
+          "MonoKromatik"
+        ],
+        "rows": [
+          {
+            "label": "Named attribution (not [n])",
+            "tag": "STANDARD 2",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Figures graded for confidence",
+            "tag": "STANDARD 3",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Real sourced images or none",
+            "tag": "STANDARD 4",
+            "cells": [
+              2,
+              4
+            ]
+          },
+          {
+            "label": "Typed exhibits, drawn to scale",
+            "tag": "STANDARD 5",
+            "cells": [
+              2,
+              4
+            ]
+          },
+          {
+            "label": "A Bear Case against our own view",
+            "tag": "STANDARD 6",
+            "cells": [
+              0,
+              4
+            ]
+          },
+          {
+            "label": "A compounding capability loop",
+            "tag": "STANDARD 7",
+            "cells": [
+              1,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik self-assessment (0 = absent, 4 = fully practised). The market read is our characterisation of typical cultural/brand commentary, not any specific outlet. The gap is the method."
+      },
+      {
+        "type": "bar",
+        "after": 10,
+        "title": "The capability maturity map — honest about where we are",
+        "unit": "maturity level (0–4)",
+        "note": "MonoKromatik's own maturity scores across the disciplines the method depends on. We publish the map, including the areas we are still building. The framework and exhibit disciplines are mature; corporate-finance and legal-transaction depth are being deliberately deepened via the weekly learning loop.",
+        "data": [
+          {
+            "label": "AOC analysis",
+            "value": 4,
+            "display": "4 — mature"
+          },
+          {
+            "label": "Exhibit / data-viz craft",
+            "value": 4,
+            "display": "4 — mature"
+          },
+          {
+            "label": "Signalling analysis",
+            "value": 3,
+            "display": "3 — strong"
+          },
+          {
+            "label": "Cultural-signal indexing",
+            "value": 3,
+            "display": "3 — strong"
+          },
+          {
+            "label": "Corporate finance & valuation",
+            "value": 2,
+            "display": "2 — building"
+          },
+          {
+            "label": "Legal & transaction reading",
+            "value": 2,
+            "display": "2 — building"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 11,
+        "title": "What the method buys each reader",
+        "cols": [
+          "The report",
+          "The method",
+          "The licensable data"
+        ],
+        "rows": [
+          {
+            "label": "Investors / corporate development",
+            "tag": "DECISION-GRADE",
+            "cells": [
+              4,
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Research houses / agencies",
+            "tag": "DATA LAYER",
+            "cells": [
+              3,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Brand & marketing teams",
+            "tag": "TOOLS",
+            "cells": [
+              4,
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Sport & talent agents",
+            "tag": "DIAGNOSTIC",
+            "cells": [
+              3,
+              3,
+              2
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = low, 4 = high). Different readers buy different layers — the finished report, the reusable method, or the coded data cut behind the exhibits. The method is the layer that makes the other two trustworthy."
+      },
+      {
+        "type": "quadrant",
+        "after": 1,
+        "title": "Where the method sits — rigour versus usefulness",
+        "xAxis": [
+          "Hot take",
+          "Sourced method"
+        ],
+        "yAxis": [
+          "Entertainment",
+          "Decision-grade"
+        ],
+        "points": [
+          {
+            "label": "Most cultural commentary",
+            "x": 18,
+            "y": 22
+          },
+          {
+            "label": "Trade press",
+            "x": 46,
+            "y": 52
+          },
+          {
+            "label": "Consultancy decks",
+            "x": 60,
+            "y": 64
+          },
+          {
+            "label": "MonoKromatik",
+            "x": 86,
+            "y": 86,
+            "highlight": true
+          },
+          {
+            "label": "Raw databases",
+            "x": 72,
+            "y": 40
+          }
+        ],
+        "note": "MonoKromatik positioning read. Rigour (inspectable sourcing and method) on one axis, usefulness for an actual decision on the other. The method is the attempt to sit top-right: as checkable as a database, as useful as a consultancy, and readable."
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the method itself is weakest — argued at full strength, because a method that claimed no limits would fail its own first test.",
+      "points": [
+        "The archetypes and framework scores are ordinal judgements, not measurements. Placing a company in 'Hollowed' rather than 'Contested', or scoring a Signal Fit at 3 rather than 2, is a defensible argument, but it is still a judgement call dressed in the tidiness of a matrix. The visual precision can imply a measurement rigour the underlying judgement does not have — and a reader should treat every score as a claim to argue with, not a reading off an instrument.",
+        "Named attribution is not the same as primary-source verification. Citing 'Forbes' or 'reported' by name is more honest than an anonymous footnote, but it inherits whatever errors the named source carries; we are frequently one careful outlet away from being wrong, and 'reported' figures — especially private valuations — can be systematically inflated across the very sources we name. Naming a source improves accountability, not necessarily accuracy.",
+        "AOC is a lens, and lenses select. Reading everything through authorship-ownership-capture makes the ownership gap vivid and can make other framings — genuine value created by foreign capital, the welfare of consumers served, the agency of the authors who chose to sell — recede. A method this committed to one question will sometimes force a subject into a shape that flatters the question more than it describes the subject.",
+        "The Bear Case can become a ritual. A standing requirement to argue against ourselves risks producing a formulaic counter-section that discharges the obligation without genuinely threatening the thesis — the strongest objection is the one we did not think of, and no template guarantees we found it. A Bear Case is only as good as our honesty in writing it, which is exactly the thing it cannot itself verify.",
+        "Rigour is not the same as being right, and it can launder confidence. A well-sourced, well-graded, self-critical piece can still reach the wrong conclusion, and its very polish can make that conclusion more persuasive than it deserves to be. The method is a discipline for being checkable and less wrong over time — not a guarantee of truth, and it should never be read as one."
       ]
     }
   }
