@@ -31,8 +31,8 @@ Every service maps to the capabilities it needs. Each capability carries a **mat
 | **Signal / Index analytics** | Scorecard, Signal Fit | **3** | scale the contributor bench |
 | Brand & culture domain (per vertical) | all | **3** | thin outside sport/music |
 | Reputational & integrity read | Culture DD, advisory | **2** | method to document, source network |
-| **Corporate finance & valuation** | Culture DD, Value-Capture Advisory | **2** | core method documented (2026-09-23 sweep); comps library + partner next → [`corporate-finance-and-valuation.md`](./corporate-finance-and-valuation.md) |
-| **Legal & transaction (DD, structuring)** | Culture DD | **2** | core method documented (2026-09-24 sweep); per-vertical checklists + partner next → [`legal-and-transaction.md`](./legal-and-transaction.md) |
+| **Corporate finance & valuation** | Culture DD, Value-Capture Advisory | **2** | core method + comps library v0 + country-risk layer documented (2026-09-23/24 sweeps); delivered engagement + partner next → [`corporate-finance-and-valuation.md`](./corporate-finance-and-valuation.md) |
+| **Legal & transaction (DD, structuring)** | Culture DD | **2** | core method + sport/music/spirits checklists documented (2026-09-24 sweeps); fintech/beauty checklists, delivered engagement + partner next → [`legal-and-transaction.md`](./legal-and-transaction.md) |
 | Quant / economic modelling | leakage models, valuation | **2** | econ/stats depth |
 | Deal structuring & negotiation | Value-Capture Advisory, Culture DD | **1** | ex-PE/corp-dev capacity |
 
