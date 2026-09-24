@@ -5686,5 +5686,451 @@
         "Domicile is a weak proxy for allegiance. Where a group seats its holding company is driven by tax, treaty and succession planning far more than by cultural intent. Reading Luxembourg and London as a statement about where Nando's 'believes its value belongs' may over-interpret what is, in practice, an accountant's decision."
       ]
     }
+  },
+  {
+    "slug": "culture-due-diligence-afrobeats-catalogue",
+    "title": "Culture Due Diligence: The Afrobeats Catalogue — A Worked Sample",
+    "series": "CULTURE DUE DILIGENCE",
+    "status": "live",
+    "access": "open",
+    "summary": "A worked Culture Due Diligence — the institutional deliverable an investor receives, published in full and free to read. It reads an African music catalogue the way a bank or Big-Four due diligence cannot: the value-capture, authorship and reputational analysis of the cultural asset itself. The reference case is the Afrobeats catalogue, and specifically Universal Music Group's 2024 majority acquisition of Nigeria's Mavin Records — a real, priced transaction sitting on top of a documented value-versus-capture gap. Afrobeats made roughly $100m globally in 2023, yet a Harvard study finds a 'tiny fraction' reached African creators. This sample sets out the four-part read (value-capture, authorship and ownership, reputational, retention), the Authorship → Ownership → Capture verdict, a quality-of-capture overlay, named comparables, a segmented so-what, methodology and endnotes.",
+    "statusNote": "A worked example of the Culture Due Diligence service — free to read",
+    "tags": [
+      "culture due diligence",
+      "afrobeats",
+      "mavin records",
+      "universal music group",
+      "music catalogue",
+      "value capture",
+      "private equity",
+      "nigeria",
+      "AOC framework",
+      "masters and publishing"
+    ],
+    "publishedAt": "2026-09-24T11:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "CONSUMER-CULTURE",
+        "label": "What 'culture' means here — due diligence on the asset's cultural value and ownership, NOT organisational or HR-culture M&A fit"
+      },
+      {
+        "value": "~$100m",
+        "label": "Afrobeats revenue in 2023 — of which only a 'tiny fraction' reached African creators; Africa is the world's lowest royalty-collecting region (Harvard CSASE / Arewa, 2025)"
+      },
+      {
+        "value": "$150–200m",
+        "label": "The reported value of Universal Music Group's February 2024 majority stake in Mavin Global — exact price and stake undisclosed (Billboard; The Exchange Africa)"
+      },
+      {
+        "value": "2.5m vs 750k",
+        "label": "Spotify streams a Nigerian vs a US independent artist needs to earn about $1,000 — the purchasing-power leak (Beats & Business; Ditto Music)"
+      },
+      {
+        "value": "$59m",
+        "label": "Spotify royalties to Nigeria and South Africa in 2024, a record — the pie is real and growing even as the rail stays offshore (Spotify Loud & Clear, via Yahoo Finance)"
+      },
+      {
+        "value": "EXPORTED + CONTESTED",
+        "label": "The AOC verdict — authored in Lagos, ownership majority-foreign at the deal moment, capture leaking and its legitimacy publicly disputed"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 4,
+      "title": "Not all streams are equal — streams needed to earn about $1,000 on Spotify",
+      "unit": "million streams",
+      "note": "Purchasing-power-parity pricing depresses African payouts: a Nigerian independent artist needs roughly 2.5 million monthly streams to earn about $1,000, where a US independent needs roughly 750,000, per Beats & Business and Ditto Music. The same play, monetised at a fraction — the first of the three leaks a Culture DD prices.",
+      "data": [
+        {
+          "label": "Nigeria (indie)",
+          "value": 2.5,
+          "display": "2.5m"
+        },
+        {
+          "label": "United States (indie)",
+          "value": 0.75,
+          "display": "750k"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "READ THIS FIRST — WHAT 'CULTURE' MEANS HERE",
+        "paragraphs": [
+          "One clarification governs this entire document, because the phrase is a trap. When a corporate-development team hears 'culture due diligence,' it hears organisational culture — will the teams gel, will leadership styles clash, will the acquired staff stay. That is a real and separate discipline. It is not this.",
+          "MonoKromatik Culture Due Diligence is due diligence on the cultural asset itself: the music, the authorship behind it, who owns the masters and the publishing, and how much of the value the label actually captures versus what leaks to distributors, platforms and foreign majors. It is the read a financial or legal due diligence is not built to produce, because it prices the thing that is easiest to miss and most likely to determine the return — where the cultural value was authored, and where it is captured. That distinction is the whole product, and we lead with it so no reader mistakes a value-capture read for an HR one.",
+          "The analytical spine is our Authorship → Ownership → Capture framework, read through the signalling lens and priced with standard corporate-finance tooling — relief-from-royalty, catalogue multiples — plus a quality-of-capture overlay a standard model omits. What follows is the exact shape of the deliverable an acquirer receives, worked on a real, priced transaction."
+        ]
+      },
+      {
+        "heading": "THE VERDICT",
+        "paragraphs": [
+          "The Afrobeats catalogue is a genuinely appreciating cultural asset whose quality of capture is materially weaker than its headline growth. The value is real, recurring and compounding — Rema's 'Calm Down' reached number three on the Billboard Hot 100 and became the first African-artist-led track past a billion Spotify streams, and Spotify's payouts to Nigeria and South Africa hit a record roughly $59m in 2024. But the value is captured only partially, and it is leaking: an independent Harvard study finds Afrobeats generated about $100m globally in 2023 while Africa retained a 'tiny fraction,' because distribution, royalty accounting, metadata and IP norms sit with foreign majors and platforms.",
+          "Read against the reference transaction — Universal Music Group's February 2024 acquisition of a majority stake in Nigeria's Mavin Records, at a reported $150m to $200m — the framework verdict is EXPORTED with a CONTESTED overlay. The value was authored in Lagos; ownership and long-run control moved majority-offshore at the deal moment; and the legitimacy of that offshore capture is itself in public dispute, with the same Harvard report naming the Mavin deal as exemplifying an 'extractive' pattern. Not hollowed — the founder and artists stay and keep creating; not retained — control and the compounding upside moved offshore.",
+          "For an acquirer, the finding is not 'do not buy.' It is: the cash is real, the authorship is world-class, and the entire return case rests on two things a standard model under-prices — locking the authors, and closing the leaks. Everything below is the evidence for that verdict, and the plan that follows from it."
+        ]
+      },
+      {
+        "heading": "WHY THE AFROBEATS CATALOGUE, AND WHY MAVIN",
+        "paragraphs": [
+          "Mavin is the cleanest available worked sample because a real, priced transaction sits directly on top of a documented value-versus-capture gap. It is a culturally authored asset — an Afrobeats catalogue authored in Lagos; it has a live majority-stake sale to a foreign major; and it has a parallel, independent, named academic finding that the genre earns roughly $100m globally while Africa captures almost none of it. That is the exact tension a Culture DD exists to price: real, recurring cultural value, with ownership and capture migrating offshore at the moment of the deal.",
+          "The asset. Mavin Records was founded in 2012 by Don Jazzy — Michael Collins Ajereh — who remains chief executive; its corporate parent is Mavin Global. The roster is a genuine hit factory: Rema, Ayra Starr, Crayon, Ladipoe, Magixx, Boy Spyce, Bayanni and Johnny Drille, among others. Its authorship proof-point is unambiguous — Rema's 'Calm Down' at number three on the Hot 100 and past a billion streams, and Ayra Starr as a global breakout — so this is not a one-hit catalogue but a pipeline asset with recurring, purchasing-power-suppressed but fast-growing royalties.",
+          "The transaction. After a 2023 sale process advised by Shot Tower Capital, with reported bidders including Universal and HYBE, UMG announced in February 2024 that it had acquired a majority stake in Mavin Global. The parties did not disclose the exact stake or price; press reporting placed the value at a floor above $125m and a range of $150m to $200m — a figure we grade throughout as reported, not disclosed. Don Jazzy and chief operating officer Tega Oghenejobo continue to lead; earlier investor Kupanda Capital stayed on as a minority holder while TPG Growth exited. So authorship stayed in Lagos and ownership moved majority-offshore, in a single step."
+        ]
+      },
+      {
+        "heading": "WHAT A CULTURE DUE DILIGENCE READS",
+        "paragraphs": [
+          "The deliverable runs in four parts, each answering a question a financial or legal due diligence is not designed to. Part one, value-capture: is the value real, recurring, and how much of it does the asset actually keep versus leak? Part two, the authorship and ownership map: who authored the value, who owns the masters versus the publishing, and where is the chain of title thin? Part three, the reputational and integrity read: what cultural, contractual and narrative risks sit outside the data room? Part four, the post-deal retention and value-creation plan: what has to be true after close for the asset to hold and compound?",
+          "Underneath sits the framework. Authorship → Ownership → Capture separates who created the cultural value, who owns the entity and rights that monetise it, and where the margin settles — resolving to RETAINED, EXPORTED, HOLLOWED or CONTESTED. On top of the standard valuation tooling sits our proprietary overlay, quality of capture: a relief-from-royalty or catalogue-multiple model prices the royalty stream, but it does not discount for where and how durably that stream is captured. The gap between 'the value is real' and 'the value is captured, on-continent, durably' is the diligence finding.",
+          "We work the four parts in order, then draw the verdict, the comparables, the segmented implications and the methodology — the same structure a commissioned engagement follows."
+        ]
+      },
+      {
+        "heading": "PART ONE — VALUE-CAPTURE: IS THE VALUE REAL, RECURRING, CAPTURED?",
+        "paragraphs": [
+          "Real and recurring: yes. The authorship is proven at global scale, Afrobeats streaming is compounding at double digits, and Spotify's 2024 payouts to Nigeria more than doubled year on year to roughly $38m for Nigerian artists specifically, within a record $59m across Nigeria and South Africa (per Spotify's own Loud & Clear data, via Yahoo Finance). This is a pipeline, not a single hit — exactly the profile that supports a catalogue multiple.",
+          "Captured by the label: only partially, and structurally leaking. The disqualifying flag a bank due diligence would never raise is the independent Harvard finding: the genre earns about $100m globally while Africa retains a 'tiny fraction,' because distribution, royalty accounting, metadata and IP norms sit with foreign majors and platforms. There are three named leak points. The purchasing-power leak: African streams monetise at a fraction of Western streams — 2.5 million streams for a Nigerian independent to earn what 750,000 earns a US independent. The distribution leak: the value that is collected is increasingly collected through the majors' rails, and post-deal through UMG's. And the measurement leak: up to two-thirds of the economy is informal, so unmeasured value — live, the 'Detty December' economy — never enters the royalty base at all.",
+          "The quality-of-capture verdict on part one: the cash is real and growing; the share of cultural value retained on-continent and by the label is low and, post-UMG, migrating offshore. An acquirer buying the royalty stream at a standard multiple is buying a real, appreciating asset — and inheriting three leaks the multiple did not price."
+        ]
+      },
+      {
+        "heading": "PART TWO — THE AUTHORSHIP & OWNERSHIP MAP",
+        "paragraphs": [
+          "Who authored the value: the artists and the founder-producer. Authorship is concentrated in people — Don Jazzy as the producing and A&R engine, and the flagship acts, Rema and Ayra Starr, whose contracts, masters and re-signing risk drive the valuation. In a catalogue asset, authorship that walks out on two legs is the central diligence question.",
+          "Masters versus publishing is the chain-of-title crux. Masters — the recordings — were historically label-owned under Afrobeats assignment norms and are now majority-controlled by UMG through Mavin Global. Publishing — the compositions — is the softer, more fragmented right, and in Afrobeats it is frequently under-registered and under-collected: part of the metadata leak, and a live diligence gap. Is the publishing owned, merely administered, or leaking? The answer materially changes what is being bought.",
+          "Then the classic culture-DD fault line: the contractor and assignment gap. Value authored by artists is captured via assignment of masters to the label, and the label is then sold to a foreign major — so authorship (Lagos) and ownership (UMG) diverge at exactly the deal moment. The emerging Afrobeats norm is for established artists to retain masters and grant a time-limited licence rather than assign outright; if any flagship artist's grant is a licence rather than a full assignment, the asset on the cap table is thinner than it looks. Framework classification for part two: authored in Nigeria, ownership now majority-foreign with founder and Kupanda minority retained — EXPORTED, with a CONTESTED overlay."
+        ]
+      },
+      {
+        "heading": "PART THREE — THE REPUTATIONAL & INTEGRITY READ",
+        "paragraphs": [
+          "This is where a Culture DD earns its fee, because none of it sits in a data room. The narrative risk is now concrete and named: Mavin is the specific exhibit in a Harvard critique of 'extractive' foreign acquisition of African culture. For an acquirer, that is live exposure — the same deal that secures the catalogue also positions the buyer inside a cultural-extraction storyline that a national newspaper will happily run.",
+          "The contract-integrity risk is structural to the genre. Afrobeats has a documented pattern of disputes over master ownership, royalty entitlement, management commission and exit terms, frequently ending in litigation and public 'exit feuds' — and many emerging artists sign, in the words of the legal commentary, without fully understanding publishing rights, master ownership or royalty structures. Artist-contract hygiene is therefore a live integrity question, not boilerplate: a public feud with a flagship act converts directly into brand and retention damage.",
+          "Two further flags. Data and rights integrity: the metadata and royalty-attribution weakness that drives the leak is also a rights risk — unclaimed and mis-attributed royalties, thin publishing registration. And founder key-person risk: Don Jazzy is the authorship and reputational anchor, and his continued presence is the single largest integrity variable in the asset. The reputational read does not kill the deal; it prices a set of risks the financial model treats as zero."
+        ]
+      },
+      {
+        "heading": "PART FOUR — THE POST-DEAL RETENTION & VALUE-CREATION PLAN",
+        "paragraphs": [
+          "The plan follows directly from the three preceding parts, and it is where the return is actually made. First, lock the authors: re-sign and extend the flagship artists — Rema, Ayra Starr — on terms that keep them creating and keep the reputational halo intact. In a catalogue whose value concentrates in a handful of people, the assets that matter can leave on two legs, so retention is not a soft item; it is the thesis.",
+          "Second, close the publishing and metadata leak: register, administer and audit publishing and neighbouring rights on-continent, and convert the measurement leak into captured cash. This is the highest-return, lowest-narrative-risk lever available — it grows the captured stream without touching the artist relationship. Third, localise capture visibly: structure so a demonstrable share of value is retained on-continent, through local A&R, local rights administration and transparent artist accounting. That directly answers the extraction critique and de-risks the reputation the deal exposes.",
+          "Fourth, a formal founder-continuity and succession plan for the producing and authorship engine. And fifth, a signalling move: publish transparent, artist-favourable accounting. In a low-trust contracting environment, credible transparency is a competitive moat for signing the next Rema — the retention plan and the growth plan are the same plan."
+        ]
+      },
+      {
+        "heading": "THE COMPARABLES",
+        "paragraphs": [
+          "The pattern is not unique to Mavin — it is the shape of the market, which is what makes the read a template rather than a one-off. Warner Music invested in South Africa's Africori in 2020, took a majority in 2022, and completed a full acquisition in February 2025; Africori services roughly 7,000 artists and 850 clients, and the financials were undisclosed. Sony Music France completed a paired acquisition of the label Lusafrica and the publisher Africa Nostra in July 2025, covering more than 4,000 titles of Lusophone and African music, again with financials undisclosed. And UMG took its Mavin majority in February 2024 at a reported $150m to $200m.",
+          "Three of the majors, three African-authored catalogues, three moves offshore within roughly eighteen months — and in every case the deal value is either undisclosed or reported rather than confirmed. That opacity is itself a diligence finding: a comparables set built on press numbers is weaker than a public-market comp set, and the model has to carry that uncertainty rather than launder it into false precision. The direction, however, is unambiguous: the ownership of African recorded music is consolidating into the global majors, at prices the market cannot fully see."
+        ]
+      },
+      {
+        "heading": "QUALITY OF CAPTURE — THE OVERLAY A STANDARD MODEL OMITS",
+        "paragraphs": [
+          "A standard valuation prices the royalty stream — relief-from-royalty on the brand and catalogue, a multiple on the trailing revenue — and stops. The Culture DD overlay discounts that number for where and how durably the stream is captured. On the positive side of the ledger sits pipeline authorship: recurring, not one-hit, with a proven global engine. Against it sit purchasing-power suppression, the publishing and metadata leakage, flagship re-signing risk, and a reputational-extraction discount that a naive comp set ignores entirely.",
+          "Netted out, the overlay says something a multiple cannot: this is a genuinely appreciating cultural asset whose quality of capture is materially weaker than its headline streaming growth. The gap between the two — between 'the value is real' and 'the value is captured, on-continent, durably' — is not a rounding error. It is the difference between the price a spreadsheet produces and the price an informed buyer should pay, and it is the number this discipline exists to put on the table."
+        ]
+      },
+      {
+        "heading": "WHAT THIS MEANS — BY WHO'S READING",
+        "paragraphs": [
+          "For the acquirer: buy the authorship, price the leaks. The catalogue is real and the artists are world-class, but the return depends on retention and on closing the publishing and metadata leaks — not on the multiple. Underwrite the re-signings and the on-continent rights build, or the model over-pays.",
+          "For the label and its founder: the sale is not the finish line, it is the moment the extraction narrative attaches. Getting ahead of it — visible local capture, transparent artist accounting — protects both the reputation and the next generation of signings. For the artist: the emerging norm of licensing masters for a term rather than assigning them outright is leverage; the value you author is scarce and appreciating, and it should be priced in retained rights and equity, not only in an advance.",
+          "For the policymaker and the ecosystem: the leak is a policy object, not just a commercial one. The measurement gap, the thin publishing registration and the purchasing-power discount are addressable through collection-society reform and rights infrastructure — the difference between a genre that earns $100m for others and one that compounds a rising share for its authors."
+        ]
+      },
+      {
+        "heading": "METHODOLOGY & GRADING",
+        "paragraphs": [
+          "This is a worked sample of the MonoKromatik Culture Due Diligence, built to the same institutional standard as a commissioned engagement: the four-part read, the Authorship → Ownership → Capture verdict with the four archetypes, a quality-of-capture overlay, a named comparables set, a segmented so-what, and full grading of every figure. The framework, the classifications and the quality-of-capture judgement are MonoKromatik's own; the underlying facts are sourced and named.",
+          "Grading discipline is explicit, because the market is opaque. Firm and disclosed: Mavin's founding and roster, the UMG majority stake and its February 2024 announcement, the retained leadership and the Kupanda minority, Rema's chart and streaming records, the Warner–Africori and Sony–Lusafrica transactions, and the authorship and headline of the Harvard CSASE report. Reported, not disclosed: the $125m floor and $150m to $200m Mavin valuation, and all comparable deal values, which are press-sourced rather than filed. One figure we explicitly refuse: a widely circulated claim that 'only about 2%' of Afrobeats value reaches Nigeria appears in secondary summaries but not in the report text, which speaks of a 'tiny fraction' and 'the world's lowest royalty-collecting region' — so we use the report's own language, not the unverified number.",
+          "Two items an acquirer would verify before committing capital: the exact UMG stake and price, which were never officially disclosed; and the publishing position across the flagship catalogue — owned, administered or leaking — which materially changes the asset being bought."
+        ]
+      },
+      {
+        "heading": "ENDNOTES",
+        "paragraphs": [
+          "Key sources, consolidated for verification (named in the prose per house standard):",
+          "1 — Mavin Records: founded 2012 by Don Jazzy (Michael Collins Ajereh); roster; corporate parent Mavin Global: Wikipedia; Music Business Worldwide; Variety.",
+          "2 — The UMG deal: majority stake in Mavin Global, announced 26–27 February 2024; reported $125m floor / $150m–$200m; leadership retained; Kupanda minority, TPG Growth exit; close expected Q3 2024: Music Business Worldwide; Variety; Billboard; Channels TV.",
+          "3 — Authorship proof: Rema's 'Calm Down' number three on the Billboard Hot 100 and first African-artist-led track past a billion Spotify streams: Music Business Worldwide.",
+          "4 — Value-versus-capture: Afrobeats ~$100m globally in 2023, Africa the world's lowest royalty-collecting region, a 'tiny fraction' retained; the report names Universal's Mavin stake as exemplifying the extractive pattern — Harvard CSASE Afrobeats Policy Report (Prof. Olufunmilayo Arewa), via Guardian Nigeria, Vanguard and The Exchange Africa.",
+          "5 — Per-stream disparity: roughly 2.5m streams for a Nigerian independent versus 750k for a US independent to earn about $1,000: Beats & Business; Ditto Music.",
+          "6 — Spotify payouts: record ~$59m to Nigeria and South Africa in 2024; ~$38m to Nigerian artists, more than double 2023: Spotify Loud & Clear, via Yahoo Finance.",
+          "7 — Contract norms and disputes: 360 deals; master-ownership, royalty and exit disputes; the shift to time-limited master licences: Mondaq / Lexology ('Sounds and Songs'); Romano Law.",
+          "8 — Comparables: Warner's full acquisition of Africori (2020 → 2022 → February 2025), ~7,000 artists; Sony's acquisition of Lusafrica and Africa Nostra (July 2025), 4,000+ titles — both financials undisclosed: Music Business Worldwide; Billboard.",
+          "9 — The '2% to Nigeria' figure is unverified secondary and is deliberately not used; the report's own language ('tiny fraction') is used instead.",
+          "10 — The four-part read, the AOC verdict, the quality-of-capture overlay and all classifications are MonoKromatik's own analysis, anchored to the sourced facts above."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "stack",
+        "after": 5,
+        "title": "Where the value lands — the three leaks",
+        "note": "MonoKromatik's layered read of the Afrobeats value chain (relative scale, not audited totals). The largest shares are captured offshore — platform and purchasing-power rents, and the majors' distribution share — while an informal, unmeasured layer never enters the royalty base at all. Only a thin slice is retained, net, on-continent — the Harvard CSASE 'tiny fraction'.",
+        "data": [
+          {
+            "label": "Platform / purchasing-power rents (offshore)",
+            "value": 38,
+            "display": "largest",
+            "tag": "hollowed"
+          },
+          {
+            "label": "Major / distribution share (offshore)",
+            "value": 30,
+            "display": "rising post-deal",
+            "tag": "exported"
+          },
+          {
+            "label": "Unmeasured / informal (uncaptured)",
+            "value": 22,
+            "display": "off the books",
+            "tag": "contested"
+          },
+          {
+            "label": "Retained on-continent (net)",
+            "value": 10,
+            "display": "a tiny fraction",
+            "tag": "retained"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 6,
+        "title": "The chain of title — masters, publishing and likeness",
+        "cols": [
+          "Authored in Africa",
+          "Owned pre-deal",
+          "Controlled post-UMG"
+        ],
+        "rows": [
+          {
+            "label": "Masters (recordings)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              3,
+              1
+            ]
+          },
+          {
+            "label": "Publishing (compositions)",
+            "tag": "LEAKING",
+            "cells": [
+              4,
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Artist likeness & brand",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              2,
+              2
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0 = none/foreign, 4 = fully African/owned). Masters were label-owned and are now majority-controlled by UMG; publishing is under-registered and leaking; artist likeness sits with the artists but is monetised through the label. Authorship is fully African across every row — ownership and control are not. Classifications are MonoKromatik's analysis."
+      },
+      {
+        "type": "quadrant",
+        "after": 6,
+        "title": "The AOC read — authored in Lagos, owned offshore",
+        "xAxis": [
+          "Owned / controlled offshore",
+          "Owned / controlled in Africa"
+        ],
+        "yAxis": [
+          "Lower authorship",
+          "World-class authorship"
+        ],
+        "points": [
+          {
+            "label": "Mavin (post-UMG)",
+            "x": 22,
+            "y": 92,
+            "highlight": true
+          },
+          {
+            "label": "Africori (post-Warner)",
+            "x": 18,
+            "y": 72
+          },
+          {
+            "label": "Lusafrica (post-Sony)",
+            "x": 20,
+            "y": 66
+          },
+          {
+            "label": "An independent, artist-owned catalogue",
+            "x": 82,
+            "y": 78
+          }
+        ],
+        "note": "MonoKromatik positioning read. Every acquired African catalogue sits high on authorship and low on African ownership/control — the export pattern made visual. Mavin is the furthest up (world-class authorship) and among the furthest left (control moved offshore at the deal). The retained counter-position — an independent, artist-owned catalogue — is the space the retention plan tries to move toward."
+      },
+      {
+        "type": "line",
+        "after": 5,
+        "title": "The pie is real and growing — Nigeria Spotify royalties",
+        "unit": "US$m to Nigerian artists",
+        "note": "Spotify's payouts to Nigerian artists roughly doubled to about $38m in 2024, within a record $59m across Nigeria and South Africa, per Spotify's Loud & Clear data via Yahoo Finance. The value is compounding — which is exactly why who owns the rail, and who captures the growth, is the question.",
+        "data": [
+          {
+            "label": "2023",
+            "value": 18,
+            "display": "~$18m"
+          },
+          {
+            "label": "2024",
+            "value": 38,
+            "display": "~$38m"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 9,
+        "title": "The comparables — three majors, three catalogues, offshore",
+        "cols": [
+          "African-authored",
+          "Now foreign-owned",
+          "Value disclosed"
+        ],
+        "rows": [
+          {
+            "label": "Mavin → Universal (Feb 2024)",
+            "tag": "$150–200m reported",
+            "cells": [
+              4,
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Africori → Warner (2020→2025)",
+            "tag": "undisclosed",
+            "cells": [
+              4,
+              4,
+              0
+            ]
+          },
+          {
+            "label": "Lusafrica → Sony (Jul 2025)",
+            "tag": "undisclosed",
+            "cells": [
+              4,
+              4,
+              0
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0 = no, 4 = fully). Every recent deal is African-authored and now foreign-owned; none has a fully disclosed value. The opacity is itself a diligence finding — a comps set built on reported, not filed, numbers. Values graded reported/undisclosed."
+      },
+      {
+        "type": "bar",
+        "after": 7,
+        "title": "Authorship concentration — where the value sits",
+        "note": "Indicative read (MonoKromatik synthesis, not audited): a large share of the catalogue's value concentrates in a few names — the flagship acts Rema and Ayra Starr, and the founder-producer Don Jazzy. In a people-authored asset, that concentration is the central retention and key-person risk the retention plan addresses.",
+        "data": [
+          {
+            "label": "Rema",
+            "value": 34,
+            "display": "flagship"
+          },
+          {
+            "label": "Ayra Starr",
+            "value": 26,
+            "display": "flagship"
+          },
+          {
+            "label": "Don Jazzy (founder-producer)",
+            "value": 20,
+            "display": "authorship engine"
+          },
+          {
+            "label": "Wider roster",
+            "value": 20,
+            "display": "pipeline"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 8,
+        "title": "The four-part DD verdict",
+        "cols": [
+          "Real / solid",
+          "Risk flagged",
+          "Action required"
+        ],
+        "rows": [
+          {
+            "label": "Value-capture",
+            "tag": "real, leaking",
+            "cells": [
+              4,
+              3,
+              4
+            ]
+          },
+          {
+            "label": "Authorship & ownership",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              4,
+              3
+            ]
+          },
+          {
+            "label": "Reputational & integrity",
+            "tag": "CONTESTED",
+            "cells": [
+              1,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "Retention plan",
+            "tag": "the return",
+            "cells": [
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik's read (0 = low, 4 = high). The value is real and the authorship strong; the risk is concentrated in ownership having moved offshore and in the reputational/contract layer; and the return depends almost entirely on the action items — lock the authors, close the leaks. A standard model scores the first column and ignores the third."
+      },
+      {
+        "type": "donut",
+        "after": 4,
+        "title": "Africa's share of its own genre",
+        "value": 12,
+        "valueLabel": "a fraction",
+        "sublabel": "Afrobeats made ~$100m globally in 2023; Africa is the world's lowest royalty-collecting region, retaining only a 'tiny fraction' (Harvard CSASE / Arewa, 2025). The share shown is illustrative of the finding, not a measured figure.",
+        "note": "The single number that frames the whole diligence: the genre is authored in Africa and monetised almost everywhere else. Closing that gap — not the catalogue multiple — is where the value-creation case is made."
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'extraction' read is weakest — and the case that the UMG deal is closer to value-creation than value-capture.",
+      "points": [
+        "Some of the offshore capture is the price of access, not extraction. The global majors bring distribution, marketing, catalogue infrastructure, playlist and sync relationships, and capital that African labels cannot yet supply at scale. A share of the value captured through UMG's rails is payment for services that genuinely grow the pie — and a purely nationalist read of ownership can destroy value by refusing the partner that makes a Nigerian act a global one.",
+          "The deal grew the pie for the authors. Spotify's payouts to Nigerian artists more than doubled in 2024, and the majors' investment is part of why Afrobeats scaled globally at all. 'Africa retains a tiny fraction' of a fast-growing $100m is a different, and less alarming, statement than 'Africa is being robbed' — the absolute value reaching African creators is rising, even as the share stays low.",
+        "Don Jazzy chose to sell, and he is not naive. The founder ran a competitive process advised by a specialist bank, retained leadership and creative control, and kept a minority alongside Kupanda. Framing a sophisticated, well-advised founder's chosen transaction as 'extraction' risks denying African principals the agency to sell their own assets on their own terms.",
+        "The valuation is reported, not known — so the extraction magnitude is unproven. Every figure in the comps set is press-sourced. If the true price and stake are more favourable to Mavin's side than the reported range implies, the 'value captured offshore' argument weakens accordingly. The honest position is that the direction is clear and the magnitude is not.",
+        "The Harvard critique is a framing, not a finding of wrongdoing. Naming the Mavin deal as exemplifying a pattern is an argument about structure, not an allegation of bad conduct by any party. An acquirer can hold both that the structural leak is real and that this specific transaction may be a legitimate, even generative, piece of it."
+      ]
+    }
   }
 ]
