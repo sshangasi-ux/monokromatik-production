@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-09-21T10:39:03.829Z",
+  "updatedAt": "2026-09-25T13:41:59.502Z",
   "breaks": [
+    {
+      "title": "Rising Afrobeats Star John Tony Unveils Soulful New Single “Lodun”",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/songs/lodun-by-john-tony/",
+      "pubDate": "Fri, 25 Sep 2026 11:40:10 +0000",
+      "importance": 4,
+      "why": "Signal: unveils · NotJustOk (music) · auto-curated",
+      "detectedAt": "2026-09-25T13:41:59.502Z"
+    },
     {
       "title": "KMA seeks funding to restart stalled Kumasi Central Market Phase II project",
       "source": "MyJoyOnline",
@@ -589,16 +599,6 @@
       "pubDate": "Mon, 10 Aug 2026 11:06:12 +0000",
       "importance": 5,
       "why": "Signal: win · Variety (entertainment) · auto-curated",
-      "detectedAt": "2026-08-10T11:56:43.003Z"
-    },
-    {
-      "title": "Breakdown of bribes former TOR MD paid to Ghanaian officials to secure energy deal for Turkish firm",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/breakdown-of-bribes-former-tor-md-paid-to-ghanaian-officials-to-secure-energy-deal-for-turkish-firm/",
-      "pubDate": "Mon, 10 Aug 2026 10:41:39 +0000",
-      "importance": 4,
-      "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-10T11:56:43.003Z"
     }
   ]
