@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-09-25T13:41:59.502Z",
+  "updatedAt": "2026-09-27T01:22:54.647Z",
   "breaks": [
+    {
+      "title": "Nollywood’s Black Market Sets Guinness World Record With 51,000+ Moviegoers in Lagos",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/09/nollywood-black-market-guinness-world-record-51000-lagos-screening/",
+      "pubDate": "Sun, 27 Sep 2026 00:15:09 +0000",
+      "importance": 4,
+      "why": "Signal: record · BellaNaija (culture) · auto-curated",
+      "detectedAt": "2026-09-27T01:22:54.647Z"
+    },
     {
       "title": "Rising Afrobeats Star John Tony Unveils Soulful New Single “Lodun”",
       "source": "NotJustOk",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-10T20:58:38.357Z"
-    },
-    {
-      "title": "Locarno Open Doors: Talemwa Pius’ ‘A Vineyard for a Lobster’ and Mohammed Sheikh’s ‘Accept My Plea for a Burial’ Win Top Prizes at Festival’s Africa Industry Focus",
-      "source": "Variety",
-      "category": "entertainment",
-      "link": "https://variety.com/2026/film/global/locarno-open-doors-winners-talemwa-pius-mohammed-sheikh-1236831175/",
-      "pubDate": "Mon, 10 Aug 2026 11:06:12 +0000",
-      "importance": 5,
-      "why": "Signal: win · Variety (entertainment) · auto-curated",
-      "detectedAt": "2026-08-10T11:56:43.003Z"
     }
   ]
 }
