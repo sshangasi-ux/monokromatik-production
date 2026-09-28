@@ -33,6 +33,11 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 
 Add more by importing `track` in a client component: `track('event_name', { ...params })`. Keep it a no-op-safe wrapper (it already swallows errors).
 
+### Server-side (GA4 Measurement Protocol — `lib/ga-measurement.ts`)
+| Event | Where | Params | Why |
+|---|---|---|---|
+| `purchase` | Paystack webhook (`charge.success`) | `transaction_id`, `value`, `currency`, `items[{item_id=slug}]` | The paid conversion + revenue — closes the loop from `report_buy_click`. Best-effort; needs `GA4_MP_API_SECRET`. |
+
 ## Mark conversions
 In GA4 → Admin → **Events** (or Key events), mark these as **key events (conversions)**:
 - `generate_lead` (**primary revenue conversion** — advisory / licensing enquiry captured)
@@ -59,12 +64,15 @@ In GA4 → Admin → **Events** (or Key events), mark these as **key events (con
 ## The conversion funnel (what to build in GA4 Explore → Funnel)
 1. **Free content → subscriber:** `flagship_gate_shown` → `flagship_gate_unlock`. The gate's capture rate.
 2. **Engagement → advisory:** `checker_result` → `checker_cta_click` → `generate_lead`. The lead-magnet → money path.
-3. **Report → purchase:** `report_buy_click` → (server-side `purchase`, once wired). Checkout intent → paid.
+3. **Report → purchase:** `report_buy_click` → `purchase` (server-side ✅). Checkout intent → paid conversion + revenue.
+
+## Server-side purchase — one env var to switch on
+The Paystack webhook fires a GA4 `purchase` (via Measurement Protocol) on every successful report charge. To activate it, set **`GA4_MP_API_SECRET`** in Vercel (GA4 Admin → Data Streams → Web → *Measurement Protocol API secrets* → Create). Optional `GA4_MEASUREMENT_ID` (defaults to the live stream id). Without the secret it safely no-ops. Attribution note: the purchase records revenue reliably but is not stitched to the buyer's web session (Paystack buy-links carry no GA client_id); full stitching needs the Initialize-Transaction API.
 
 ## Next instrumentation candidates
 - ~~CTA clicks~~ ✅ shipped (`cta_click` on every `CTA`).
 - ~~Conversion funnel~~ ✅ shipped (`flagship_gate_*`, `lead_submit` / `generate_lead`, `report_buy_click`, `checker_*`).
-- `purchase` — fire on the Paystack **webhook** success (server-side GA4 Measurement Protocol) to close the loop from `report_buy_click` to a paid conversion.
+- ~~Server-side `purchase`~~ ✅ shipped (Paystack webhook → GA4 Measurement Protocol; set `GA4_MP_API_SECRET`).
 
 ---
 
