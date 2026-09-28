@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
 import { matchReport, deliverReport } from '../../../../lib/report-delivery';
+import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -66,6 +67,22 @@ export async function POST(req: Request) {
         await deliverReport(email, admin, matched.slug);
       } catch (err) {
         console.error('[paystack] delivery error', err);
+      }
+      // Close the loop: fire a server-side GA4 `purchase` so paid conversions +
+      // revenue show up in GA4 (client-side only sees `report_buy_click`).
+      // Best-effort — never blocks delivery or the 200 Paystack needs.
+      try {
+        const amountMinor = typeof data.amount === 'number' ? data.amount : Number(data.amount) || null;
+        const r = await trackPurchase({
+          slug: matched.slug,
+          email,
+          amountMinor,
+          currency: data.currency ? String(data.currency) : 'ZAR',
+          reference: data.reference ? String(data.reference) : null,
+        });
+        console.log('[paystack] ga purchase', r);
+      } catch (err) {
+        console.error('[paystack] ga purchase error', err);
       }
       return NextResponse.json({ ok: true, delivered: matched.slug });
     }
