@@ -6,6 +6,8 @@ import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, getReportBySlug, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
 import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper } from '../../lib/commerce';
+import { isFlagshipGated } from '../../lib/gating';
+import FlagshipGate from './FlagshipGate';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -43,6 +45,56 @@ export default async function ReportFeature({ report }: { report: Report }) {
   const oneOffUrl = reportCheckoutUrl(r.slug);
   const premium = isLocked(r) && (membersLive || !!oneOffUrl);
   const locked = premium && !(memberCanUnlock && (await isMember()));
+  // Light email-gate for the free flagship reports (never on a paid/premium
+  // report). Soft + client-side: the full body is still server-rendered below,
+  // so SEO and no-JS readers are unaffected; FlagshipGate collapses the back
+  // half behind an email capture that subscribes the reader (list-building).
+  const emailGate = live && !premium && r.sections != null && r.sections.length > 3 && isFlagshipGated(r.slug);
+  // First N sections stay open as the preview/teaser (and the SEO-visible lede).
+  const openCount = locked ? 1 : emailGate ? 2 : (r.sections?.length ?? 0);
+
+  // Shared renderers so the same markup serves the open preview and the
+  // (server-rendered, SEO-visible) gated remainder inside FlagshipGate.
+  type Sec = NonNullable<Report['sections']>[number];
+  const renderSection = (section: Sec, i: number) => (
+    <section key={i}>
+      <h2 className="text-[10px] tracking-[0.3em] text-mono-amber font-display font-bold mb-5">
+        {section.heading.toUpperCase()}
+      </h2>
+      <div className="space-y-5 text-lg text-mono-charcoal font-body leading-relaxed">
+        {section.paragraphs.map((p, j) => (
+          <p key={j}>{p}</p>
+        ))}
+      </div>
+    </section>
+  );
+  const counterCaseBlock =
+    r.counterCase && r.counterCase.points.length > 0 ? (
+      <section className="border border-mono-black bg-mono-black text-mono-white p-8 md:p-10">
+        <div className="flex items-center gap-3 mb-5">
+          <Scale size={18} className="text-mono-amber-bright" />
+          <h2 className="text-[10px] tracking-[0.3em] text-mono-amber-bright font-display font-bold">
+            {(r.counterCase.heading || 'THE BEAR CASE').toUpperCase()}
+          </h2>
+        </div>
+        {r.counterCase.intro && (
+          <p className="text-lg text-mono-soft-white font-feature italic leading-snug mb-6">
+            {r.counterCase.intro}
+          </p>
+        )}
+        <ul className="space-y-4">
+          {r.counterCase.points.map((p, i) => (
+            <li key={i} className="flex gap-3 text-base text-mono-soft-white font-body leading-relaxed">
+              <span className="text-mono-amber-bright font-display font-bold shrink-0">—</span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 pt-5 border-t border-mono-white/15 text-[11px] tracking-[0.14em] text-mono-gray font-body">
+          We publish the counter-case because a read you cannot argue against is a read you cannot trust. Where the evidence moves, this section moves first.
+        </p>
+      </section>
+    ) : null;
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -105,44 +157,16 @@ export default async function ReportFeature({ report }: { report: Report }) {
           // Published report: render the body. If it's a locked tier, show only
           // the opening section as a teaser behind the gate.
           <article className="space-y-12">
-            {(locked ? r.sections.slice(0, 1) : r.sections).map((section, i) => (
-              <section key={i}>
-                <h2 className="text-[10px] tracking-[0.3em] text-mono-amber font-display font-bold mb-5">
-                  {section.heading.toUpperCase()}
-                </h2>
-                <div className="space-y-5 text-lg text-mono-charcoal font-body leading-relaxed">
-                  {section.paragraphs.map((p, j) => (
-                    <p key={j}>{p}</p>
-                  ))}
+            {r.sections.slice(0, openCount).map(renderSection)}
+            {emailGate && (
+              <FlagshipGate slug={r.slug}>
+                <div className="space-y-12">
+                  {r.sections.slice(openCount).map(renderSection)}
+                  {counterCaseBlock}
                 </div>
-              </section>
-            ))}
-            {!locked && r.counterCase && r.counterCase.points.length > 0 && (
-              <section className="border border-mono-black bg-mono-black text-mono-white p-8 md:p-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <Scale size={18} className="text-mono-amber-bright" />
-                  <h2 className="text-[10px] tracking-[0.3em] text-mono-amber-bright font-display font-bold">
-                    {(r.counterCase.heading || 'THE BEAR CASE').toUpperCase()}
-                  </h2>
-                </div>
-                {r.counterCase.intro && (
-                  <p className="text-lg text-mono-soft-white font-feature italic leading-snug mb-6">
-                    {r.counterCase.intro}
-                  </p>
-                )}
-                <ul className="space-y-4">
-                  {r.counterCase.points.map((p, i) => (
-                    <li key={i} className="flex gap-3 text-base text-mono-soft-white font-body leading-relaxed">
-                      <span className="text-mono-amber-bright font-display font-bold shrink-0">—</span>
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 pt-5 border-t border-mono-white/15 text-[11px] tracking-[0.14em] text-mono-gray font-body">
-                  We publish the counter-case because a read you cannot argue against is a read you cannot trust. Where the evidence moves, this section moves first.
-                </p>
-              </section>
+              </FlagshipGate>
             )}
+            {!locked && !emailGate && counterCaseBlock}
             {locked && r.counterCase && (
               // Ungated teaser of the counter-case: we show that the piece argues
               // against itself — the heading and framing — but hold the actual
