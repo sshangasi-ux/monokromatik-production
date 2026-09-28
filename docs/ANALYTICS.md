@@ -23,14 +23,24 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 | `case_study_view` | `CaseStudyFeature` via `TrackView` | `slug`, `brand` | Per-decode readership — the moat content |
 | `index_view` | Signal Index page via `TrackView` | — | Usage of the Cultural-Signal Index (the wedge) |
 | `cta_click` | `CTA` component (every CTA) | `href`, `variant`, `external` | Conversion funnel — which CTAs drive action |
+| `flagship_gate_shown` | `FlagshipGate` (wall appears) | `slug` | Top of the report→subscribe funnel — gated-report impressions |
+| `flagship_gate_unlock` | `FlagshipGate` (on unlock) | `slug` | Flagship read unlocked → subscriber (also fires `newsletter_signup`) |
+| `lead_submit` | `CommissionForm` (on submit) | `service`, `source` | Advisory/licensing enquiry attempted (measures form abandonment) |
+| `generate_lead` | `CommissionForm` (on success) | `service`, `source` | **The money conversion** — a captured advisory / licensing lead |
+| `report_buy_click` | `BuyButton` (report BUY) | `slug`, `price` | Paid-report checkout intent (Paystack) |
+| `checker_result` | `Checker` (verdict shown) | `verdict` | Free Value-Capture Checker completed |
+| `checker_cta_click` | `Checker` result CTAs | `service`, `verdict` | Checker → services / advisory intent |
 
 Add more by importing `track` in a client component: `track('event_name', { ...params })`. Keep it a no-op-safe wrapper (it already swallows errors).
 
 ## Mark conversions
 In GA4 → Admin → **Events** (or Key events), mark these as **key events (conversions)**:
-- `newsletter_signup` (primary)
+- `generate_lead` (**primary revenue conversion** — advisory / licensing enquiry captured)
+- `newsletter_signup` (list growth — also fired by `flagship_gate_unlock`)
+- `report_buy_click` (paid-report checkout intent)
+- `flagship_gate_unlock` (gated flagship → subscriber)
 - `video_start` / `video_complete` (engagement)
-- optionally `source_click`
+- optionally `source_click`, `checker_result`
 
 ## Reporting view (recommended GA4 reports)
 1. **Acquisition → Traffic acquisition** — where readers come from (organic vs social vs direct). Pair with Search Console for query-level organic data.
@@ -41,12 +51,20 @@ In GA4 → Admin → **Events** (or Key events), mark these as **key events (con
 
 ## Custom dimensions to register (Admin → Custom definitions)
 - `category` (event param) — segment readership by Roots/Arena/Waves/etc.
-- `source` (event param) — segment newsletter signups by placement.
+- `source` (event param) — segment newsletter signups + leads by placement.
+- `service` (event param) — which advisory service a lead / checker CTA is for.
+- `verdict` (event param) — the checker archetype (Retained/Exported/Hollowed/Contested).
+- `slug` (event param) — which report drove a gate unlock or buy click.
+
+## The conversion funnel (what to build in GA4 Explore → Funnel)
+1. **Free content → subscriber:** `flagship_gate_shown` → `flagship_gate_unlock`. The gate's capture rate.
+2. **Engagement → advisory:** `checker_result` → `checker_cta_click` → `generate_lead`. The lead-magnet → money path.
+3. **Report → purchase:** `report_buy_click` → (server-side `purchase`, once wired). Checkout intent → paid.
 
 ## Next instrumentation candidates
 - ~~CTA clicks~~ ✅ shipped (`cta_click` on every `CTA`).
-- "Read the full feature" / "See all" navigation intents.
-- Once monetization lands: `report_view`, `report_download`, `checkout_start`, `purchase` (GA4 ecommerce).
+- ~~Conversion funnel~~ ✅ shipped (`flagship_gate_*`, `lead_submit` / `generate_lead`, `report_buy_click`, `checker_*`).
+- `purchase` — fire on the Paystack **webhook** success (server-side GA4 Measurement Protocol) to close the loop from `report_buy_click` to a paid conversion.
 
 ---
 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { CONTACT_EMAIL, SERVICES } from '../../lib/commerce';
+import { track } from '../../lib/analytics';
 
 // Lead capture, wired. Submits to POST /api/lead, which records the enquiry to
 // Supabase (public.leads) and emails the team via Resend. No more mailto black
@@ -28,6 +29,7 @@ export default function CommissionForm({
     e.preventDefault();
     setStatus('submitting');
     setErrorMsg('');
+    track('lead_submit', { service: interest, source });
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
@@ -36,6 +38,7 @@ export default function CommissionForm({
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data?.ok) {
+        track('generate_lead', { service: interest, source });
         setStatus('success');
       } else {
         setStatus('error');

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw } from 'lucide-react';
+import { track } from '../../lib/analytics';
 
 // A free, rule-based read of where a brand or property sits on MonoKromatik's
 // Authorship → Ownership → Capture framework — the lead-magnet analogue of
@@ -139,7 +140,9 @@ export default function Checker() {
       const chosen = q.options[answers[q.id]];
       if (chosen) for (const [axis, val] of Object.entries(chosen.scores)) totals[axis as Axis] += val as number;
     });
-    setVerdict(classify(totals));
+    const v = classify(totals);
+    setVerdict(v);
+    track('checker_result', { verdict: v.archetype });
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -165,10 +168,10 @@ export default function Checker() {
               the named benchmarks and the roadmap — is what a <span className="font-semibold">Signal Scorecard</span> delivers.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Link href={verdict.service.href} className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-7 py-3.5 font-display font-bold hover:bg-mono-charcoal transition-colors">
+              <Link href={verdict.service.href} onClick={() => track('checker_cta_click', { service: verdict.service.label, verdict: verdict.archetype })} className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-7 py-3.5 font-display font-bold hover:bg-mono-charcoal transition-colors">
                 {verdict.service.label.toUpperCase()} <ArrowRight size={16} />
               </Link>
-              <Link href="/services" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">
+              <Link href="/services" onClick={() => track('checker_cta_click', { service: 'all-services', verdict: verdict.archetype })} className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors">
                 SEE ALL SERVICES
               </Link>
             </div>

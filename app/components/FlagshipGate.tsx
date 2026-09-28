@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowRight, Lock } from 'lucide-react';
+import { track } from '../../lib/analytics';
 
 // Soft email-gate for the free flagship reports. The children (the back half of
 // the report + the Bear Case) are ALWAYS server-rendered into the DOM, so
@@ -29,8 +30,14 @@ export default function FlagshipGate({ slug, children }: { slug: string; childre
       /* storage blocked — leave ungated rather than trap the reader */
       unlocked = true;
     }
-    if (!unlocked) setGated(true);
-  }, []);
+    if (!unlocked) {
+      setGated(true);
+      // Defer the impression so it doesn't race GA's init on a cold page load
+      // (the conversion events all fire on interaction, well after GA is ready).
+      const t = setTimeout(() => track('flagship_gate_shown', { slug }), 600);
+      return () => clearTimeout(t);
+    }
+  }, [slug]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,6 +55,8 @@ export default function FlagshipGate({ slug, children }: { slug: string; childre
         } catch {
           /* ignore */
         }
+        track('newsletter_signup', { source: `flagship:${slug}` });
+        track('flagship_gate_unlock', { slug });
         setGated(false);
       } else {
         const data = await res.json().catch(() => ({}));
