@@ -5501,7 +5501,7 @@
         "data": [
           {
             "label": "2019",
-            "value": 1.0,
+            "value": 1,
             "display": "£1.0bn"
           },
           {
@@ -6126,7 +6126,7 @@
       "intro": "Where the 'extraction' read is weakest — and the case that the UMG deal is closer to value-creation than value-capture.",
       "points": [
         "Some of the offshore capture is the price of access, not extraction. The global majors bring distribution, marketing, catalogue infrastructure, playlist and sync relationships, and capital that African labels cannot yet supply at scale. A share of the value captured through UMG's rails is payment for services that genuinely grow the pie — and a purely nationalist read of ownership can destroy value by refusing the partner that makes a Nigerian act a global one.",
-          "The deal grew the pie for the authors. Spotify's payouts to Nigerian artists more than doubled in 2024, and the majors' investment is part of why Afrobeats scaled globally at all. 'Africa retains a tiny fraction' of a fast-growing $100m is a different, and less alarming, statement than 'Africa is being robbed' — the absolute value reaching African creators is rising, even as the share stays low.",
+        "The deal grew the pie for the authors. Spotify's payouts to Nigerian artists more than doubled in 2024, and the majors' investment is part of why Afrobeats scaled globally at all. 'Africa retains a tiny fraction' of a fast-growing $100m is a different, and less alarming, statement than 'Africa is being robbed' — the absolute value reaching African creators is rising, even as the share stays low.",
         "Don Jazzy chose to sell, and he is not naive. The founder ran a competitive process advised by a specialist bank, retained leadership and creative control, and kept a minority alongside Kupanda. Framing a sophisticated, well-advised founder's chosen transaction as 'extraction' risks denying African principals the agency to sell their own assets on their own terms.",
         "The valuation is reported, not known — so the extraction magnitude is unproven. Every figure in the comps set is press-sourced. If the true price and stake are more favourable to Mavin's side than the reported range implies, the 'value captured offshore' argument weakens accordingly. The honest position is that the direction is clear and the magnitude is not.",
         "The Harvard critique is a framing, not a finding of wrongdoing. Naming the Mavin deal as exemplifying a pattern is an argument about structure, not an allegation of bad conduct by any party. An acquirer can hold both that the structural leak is real and that this specific transaction may be a legitimate, even generative, piece of it."
@@ -6423,12 +6423,12 @@
           },
           {
             "label": "Flutterwave",
-            "value": 3.0,
+            "value": 3,
             "display": "~$3.0bn"
           },
           {
             "label": "Chipper (peak)",
-            "value": 2.0,
+            "value": 2,
             "display": "$2.0bn"
           },
           {
@@ -8308,11 +8308,11 @@
         "points": [
           {
             "label": "~$1bn",
-            "value": 1.0
+            "value": 1
           },
           {
             "label": "~$3bn",
-            "value": 3.0
+            "value": 3
           },
           {
             "label": "~$3.25bn",
@@ -14531,6 +14531,145 @@
         "Owned-media revenue may be dwarfed by the fees he left. A reported ~$16m-a-season salary is a hard number; the podcast and Day Zero economics are undisclosed and plausibly smaller. The ownership rungs may not yet out-earn the fee rung he walked away from — owning more of less.",
         "The flagship owned-IP adaptation has stalled. Born a Crime the film has been in development since 2018–19 with no release — owned IP that has not converted to owned screen value, and the studio would capture much of the film's upside if it is ever made.",
         "Platform dependence persists inside 'owned media'. 'What Now?' still needs a distribution and ad-sales partner (Spotify, then SiriusXM), and its terms are undisclosed — Noah owns the IP but not the distribution or the disclosed economics, and the equity portfolio is small and private. The climb is real, but it is not yet independence."
+      ]
+    }
+  },
+  {
+    "slug": "the-megabrand-exit-ledger",
+    "title": "The Megabrand Exit Ledger",
+    "series": "THE OWNERSHIP LEDGER",
+    "status": "live",
+    "access": "premium",
+    "summary": "A standing ledger of African brands and assets sold to foreign owners in 2024–26 — what changed hands, at what price, and the capability, margin and IP that left with each one. The ownership series' running scoreboard of value exported.",
+    "statusNote": "Standing ledger — updated as deals close. Figures graded reported / disclosed / undisclosed.",
+    "tags": [
+      "ownership",
+      "value-capture",
+      "mergers-acquisitions",
+      "fmcg",
+      "media",
+      "music",
+      "fintech",
+      "africa",
+      "exit-ledger"
+    ],
+    "publishedAt": "2026-10-01T13:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "~$5.3bn",
+        "label": "Combined reported value of just the two largest 2024–26 exits — Canal+'s MultiChoice buyout (~$3bn) and Diageo's EABL stake to Japan's Asahi (~$2.3bn)"
+      },
+      {
+        "value": "10+",
+        "label": "African brands and assets sold to foreign owners across FMCG, media, music, fintech, manufacturing and healthtech in 2024–26"
+      },
+      {
+        "value": "5 origins",
+        "label": "Where the controlling capital came from — Japan, France, the United States, China and Belgium — while the African operator is kept on to run the asset locally"
+      },
+      {
+        "value": "~50%",
+        "label": "Share of South African startup exits that went to LOCAL buyers in 2024–25 — the clearest counter-trend to the pattern (per LaunchBase Africa)"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 1,
+      "title": "The value leaving — disclosed African exits by reported deal value (2024–26)",
+      "note": "Reported transaction values, 2024–26; undisclosed deals (PaySpace, Goldenlay, ShipAfrica) omitted from the chart. Deals per Reuters, Variety, Music Business Worldwide, TechCrunch, Electrolux and company filings (2024–26). Source: MonoKromatik Exit Ledger.",
+      "data": [
+        {
+          "label": "MultiChoice → Canal+ (France)",
+          "value": 3000,
+          "display": "~$3.0bn"
+        },
+        {
+          "label": "EABL (Diageo stake) → Asahi (Japan)",
+          "value": 2300,
+          "display": "~$2.3bn"
+        },
+        {
+          "label": "Mavin Global → UMG (Netherlands/US)",
+          "value": 150,
+          "display": "~$150m"
+        },
+        {
+          "label": "Kwikot → Haier (China)",
+          "value": 130,
+          "display": "~$130m"
+        },
+        {
+          "label": "PaySpace → Deel (US)",
+          "value": 100,
+          "display": "~$100m*"
+        },
+        {
+          "label": "DocFox → nCino (US)",
+          "value": 75,
+          "display": "$75m"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "THE HEADLINE",
+        "paragraphs": [
+          "Across 2024–26 a single pattern repeats whenever an African brand reaches real scale: the controlling stake, the margin and the underlying IP move offshore, while the African operator is retained to run the asset locally. The value was built on the continent; increasingly it is captured from headquarters in Tokyo, Paris, New York, Qingdao or Ghent.",
+          "This ledger keeps score. It is not an argument that selling is wrong — a clean exit can be the just reward for the people who took the risk. It is an argument that ownership at the moment of scale is the variable that decides who banks the next decade of a brand's earnings, and that the direction of travel deserves to be counted rather than felt.",
+          "The defining deals of the period are blunt about that direction. France's Canal+ took MultiChoice — Africa's largest pay-TV and streaming platform, its subscriber base and its Showmax IP — fully private for a reported ~$3bn (Variety; Technext, 2025). Japan's Asahi agreed to buy Diageo's 65% of East African Breweries, the maker of Tusker, in a deal reported at ~$2.3bn, cleared by Kenya's competition authority in 2026 (Reuters; CNBC Africa). Two transactions, ~$5.3bn of African consumer and media value, now steered from abroad."
+        ]
+      },
+      {
+        "heading": "THE LEDGER (2024–26)",
+        "paragraphs": [
+          "FMCG & manufacturing. Diageo's EABL stake → Asahi (Japan), ~$2.3bn, Kenya-cleared 2026 — East Africa's dominant brewer and its cash flows pass to a Japanese parent, with Guinness reverting to a licence (Reuters; CNBC Africa). Kwikot, the 120-year-old South African geyser brand, → Haier (China), ~R2.45bn (~$130m), closed December 2024 — a dominant local manufacturer now reports to Qingdao (Electrolux Group; Cbonds). Goldenlay, Zambia's largest egg producer, → Belgium's Vanden Avenne, majority stake, 2026 (undisclosed) as PE sellers Phatisa and AgDevCo exited (Africa Global Funds; Ecofin).",
+          "Media & music. MultiChoice → Canal+ (France), ~$3bn, completed 2025 (Variety; Technext). Mavin Global, the Lagos label behind Rema and Ayra Starr, → Universal Music Group (majority), reported up to ~$150m though terms were undisclosed, 2024 (Variety; Music Business Worldwide). Africori, the African distributor representing 7,000+ artists, → Warner Music Group (full control), undisclosed, 2025 (Music Business Worldwide).",
+          "Fintech, HR & healthtech. DocFox, the Johannesburg KYC/onboarding engine, → nCino (US), $75m, 2024 — rebranded 'nCino KYC Africa' and folded into a US banking-software stack (nCino filing; TechMoran). PaySpace, the SA multi-country payroll platform, → Deel (US), reported ~$100m, 2024 — its calculation engine now powers a US platform (TechCrunch; Disrupt Africa). ShipAfrica, a Nigerian logistics platform, → Pigee (US), 55% controlling stake, 2026, undisclosed (TechCabal). hearX, the SA hearing-health innovator, merged into a US-capital-controlled group (LXE Hearing) with a $100m injection from Patient Square Capital, 2025 (Techpoint; LaunchBase Africa).",
+          "The precedents that set the template. Two earlier deals sit outside the window but define it: Paystack → Stripe (US), ~$200m, 2020 — the benchmark African fintech exit; and InstaDeep (Tunis-founded) → BioNTech (Germany), ~£562m (~$680m), 2023 — the largest African-founded-startup exit. Both are labelled precedents here, not 2024–26 entries."
+        ]
+      },
+      {
+        "heading": "WHAT LEFT WITH IT",
+        "paragraphs": [
+          "A deal ledger that stops at the headline number misses the point. What matters for value capture is the capability that travels with the equity.",
+          "With EABL, it is the last directly-held African beer platform of a global drinks major, plus the pricing power of East Africa's dominant brewer. With MultiChoice, it is the continent's largest subscriber base, its sports-rights relationships and the Showmax streaming IP — the distribution layer that decides which African stories get made and monetised. With Mavin and Africori, authorship stayed emphatically African while the master-recording and distribution economics — the parts that compound — moved to a Dutch-American and a US major. With PaySpace and DocFox, it is 10–15 years of hard-won, multi-country African compliance and payroll engineering, now the back-end of someone else's global product.",
+          "In almost every case the founder or operator is retained. That is the modern shape of value export: not a factory shuttered and shipped, but a headquarters relationship in which the African team runs the asset and the offshore owner books the upside."
+        ]
+      },
+      {
+        "heading": "THE MECHANISM — why it happens at the moment of scale",
+        "paragraphs": [
+          "Three forces meet at the point an African brand becomes valuable. First, the sellers are often rational and sympathetic: founders who took real risk, and private-equity backers whose funds have a clock — Phatisa exiting Goldenlay after 14 years, TPG exiting Mavin. A cash exit is the return they were owed.",
+          "Second, the multinationals are going 'asset-light' in some categories and doubling down in others, and either way they buy reach they cannot build fast enough — Asahi buying a continent's beer distribution, Deel buying African payroll rails rather than writing them.",
+          "Third, and decisively, the deepest pools of patient capital still sit offshore. When the highest credible bid comes from Tokyo, Paris or New York, a seller optimising for price sells there. The leak is not a conspiracy; it is a capital-markets gravity problem. Which is exactly why the counter-ledger matters."
+        ]
+      },
+      {
+        "heading": "THE COUNTER-LEDGER — value coming home",
+        "paragraphs": [
+          "The pattern is real but not total, and the exceptions point at the fix. UAC of Nigeria bought CHI Limited (Chivita and Hollandia) back from Coca-Cola in 2025 — a Nigerian conglomerate reclaiming the country's dominant juice and dairy brands as Coca-Cola went asset-light (Nairametrics). That is value-capture in reverse.",
+          "Others scaled with foreign money without ceding control. When Brazil's Nubank put in ~$150m, it took only ~10% of Tyme, leaving African Rainbow Capital (Patrice Motsepe) the ~40% majority as Tyme reached unicorn status — capital in, control kept home (Tech in Africa). Lesaka Technologies consolidated ~$174m of local assets (Adumo, Recharger, Bank Zero) into a homegrown Southern-African fintech champion rather than selling to a foreign major (Lesaka).",
+          "The structural signal is the most encouraging: South African corporates deployed over R4.6bn buying local startups in 2024–25, and roughly half of SA startup exits went to domestic buyers — a local-acquisition rate unmatched elsewhere on the continent (LaunchBase Africa). And founder-controlled scalers — Moniepoint, Flutterwave — reached multi-billion valuations while staying founder-led. Keeping ownership home is possible; it is a choice made at the moment of scale, and it needs domestic capital deep enough to make the highest bid."
+        ]
+      },
+      {
+        "heading": "THE READ — who captures at exit",
+        "paragraphs": [
+          "Scored on the ownership series' own lens — Authorship → Ownership → Capture — the 2024–26 ledger is a HOLLOWED-trending field. Authorship is overwhelmingly African in every deal; ownership and capture are the axes moving offshore. The decisive variable is not whether African brands can be built — EABL, MultiChoice, Mavin and PaySpace prove they can — it is who owns them at the moment they become valuable.",
+          "The verdict the series will stand behind: an exit is not a failure, but a market that can only ever sell its winners to foreign owners is a market that has outsourced its compounding. The policy and capital question that follows is narrow and answerable — how to make the domestic bid competitive at the decisive moment — and the counter-ledger shows it is already being answered in pockets. The number to watch over the next 24 months is the ratio: for every EABL that leaves, how many CHIs come home?"
+        ]
+      }
+    ],
+    "exhibits": [],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the 'exit equals extraction' read is weakest, and where the ledger's framing is too strict.",
+      "points": [
+        "Exits recycle capital into the next generation. The cash from Paystack, Mavin and PaySpace did not vanish — it returned to founders and funds who are visibly re-deploying into new African companies. A liquid exit market is why the next Paystack gets funded at all; counting only the outflow misses the flywheel.",
+        "Foreign ownership is not automatically value loss. Asahi, UMG and Deel bring capital, distribution and governance an African asset might never reach alone — EABL under Asahi can out-invest EABL starved of it. 'Owned offshore' and 'worse for the continent' are not the same claim, and the ledger should not quietly equate them.",
+        "The operator-retained model can transfer skills, not just book profit. A retained founder inside a global major often gains access, capital and reach that compound local capability — the diaspora-of-skills case against a pure-leak reading.",
+        "Survivorship cuts both ways. The counter-ledger (UAC/CHI, Tyme, Lesaka, ~50% local SA exits) may be the leading edge of a genuine shift in where the deepest bid sits, not a handful of exceptions — in which case the 2024–26 ledger is a lagging snapshot of a problem already being solved.",
+        "'African' and 'foreign' are getting harder to score. Dual listings, diaspora-founded acquirers and blended DFI capital (IFC, Proparco) blur the binary the ledger depends on; a stake can be foreign-domiciled and developmentally aligned at once."
       ]
     }
   }
