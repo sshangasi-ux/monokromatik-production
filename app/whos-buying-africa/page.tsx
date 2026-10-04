@@ -136,6 +136,10 @@ export default function WhosBuyingAfricaPage() {
             A living tracker — new deals are added as they land. See a deal we&rsquo;ve missed?{' '}
             <a href="mailto:editor@monokromatik.com?subject=Who%27s%20Buying%20Africa%20%E2%80%94%20deal%20tip" className="text-mono-amber-strong font-bold hover:text-mono-amber-hover">Tell us →</a>
           </p>
+          <div className="mt-8 bg-mono-black text-mono-white p-6 md:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <p className="font-display font-bold">Want the next move before the market prices it — as a feed, with the value-capture read?</p>
+            <Link href="/ownership-alerts" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-5 py-3 font-display font-bold whitespace-nowrap shrink-0">OWNERSHIP ALERTS <ArrowRight size={15} /></Link>
+          </div>
         </div>
       </section>
 
