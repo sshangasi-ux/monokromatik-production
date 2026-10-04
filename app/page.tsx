@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Database, FileText, Mic, PenLine, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Database, Download, FileText, Layers, Mic, Sparkles } from 'lucide-react';
 import Navigation from './components/Navigation';
 import LivingCover from './components/LivingCover';
 import BreakingStrip from './components/BreakingStrip';
@@ -64,33 +64,6 @@ const intelligencePrompts = [
   'Show campaigns where African creators shaped the brand idea, not only the casting.',
   'Compare sport-culture collaborations across Lagos, Johannesburg and London.',
   'Which global brands are meaningfully investing in African relevance?',
-];
-
-const deskLayers = [
-  {
-    title: 'SOURCE DESK',
-    copy: 'The evidence system: primary sources, creative intelligence, African context and audience signals.',
-    href: '/intelligence/source-desk',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'CASE STUDIES',
-    copy: 'Structured reads of the context, strategic bet, creative move, evidence and African lesson.',
-    href: '/intelligence/case-studies',
-    icon: Database,
-  },
-  {
-    title: 'REPORTS',
-    copy: 'Designed intelligence briefings and special editions built to be revisited and eventually collected.',
-    href: '/reports',
-    icon: FileText,
-  },
-  {
-    title: 'CONTRIBUTE',
-    copy: 'A gateway for marketers, creators and thinkers bringing an argument, decision or signal worth pursuing.',
-    href: '/contribute',
-    icon: PenLine,
-  },
 ];
 
 export default function Home() {
@@ -178,6 +151,40 @@ export default function Home() {
                 <span className="mt-8 inline-flex items-center gap-2 text-mono-amber-strong font-display font-bold">OPEN THE DESK <ArrowRight size={18} /></span>
               </div>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* The shop, surfaced high — the paid library was invisible above the
+          fold (buried in nav grids). One commercial band: free to read, or own
+          the value-capture studies. One primary CTA + one secondary. */}
+      <section className="bg-mono-white pb-20 md:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center border-2 border-mono-black bg-mono-soft-white p-8 md:p-11 shadow-[6px_6px_0_0_var(--mono-amber)]">
+            <div className="max-w-2xl">
+              <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong mb-4">THE LIBRARY · BUY THE DEEP ONES</p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black leading-[1.02] text-balance">
+                Read the briefings free. Own the value-capture studies.
+              </h2>
+              <p className="mt-4 font-body text-lg text-mono-charcoal leading-relaxed">
+                Designed, source-verified reports on who owns African culture — and who keeps the money.
+                Free to read, or bought as watermarked PDFs from R220; the institutional flagship is R3,500,
+                and the Full Shelf bundles the lot.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-display font-bold text-mono-gray">
+                <span className="inline-flex items-center gap-2"><FileText size={15} className="text-mono-amber-strong" /> Free briefings</span>
+                <span className="inline-flex items-center gap-2"><Download size={15} className="text-mono-amber-strong" /> Studies from R220</span>
+                <span className="inline-flex items-center gap-2"><Layers size={15} className="text-mono-amber-strong" /> The Full Shelf bundle</span>
+              </div>
+            </div>
+            <div className="shrink-0 flex flex-col gap-3">
+              <Link href="/reports" className="inline-flex gap-2 items-center justify-center bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors whitespace-nowrap">
+                BROWSE THE LIBRARY <ArrowRight size={18} />
+              </Link>
+              <Link href="/bundles" className="inline-flex gap-1.5 items-center justify-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                SEE THE BUNDLES <ArrowRight size={13} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -288,28 +295,6 @@ export default function Home() {
                 <Link href="/intelligence/source-desk" className="border border-mono-gray/25 px-3 py-5 hover:border-mono-amber transition-colors">SOURCE DESK</Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-mono-soft-white py-20 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">FROM THE DESK</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-mono-black">Four ways into the intelligence network.</h2>
-            <p className="mt-6 text-lg font-body text-mono-charcoal">Evidence, structured cases, designed reports and external voices are now the practical layers through which Monokromatik grows.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-mono-gray/25 border border-mono-gray/25">
-            {deskLayers.map(({ title, copy, href, icon: Icon }) => (
-              <Link key={title} href={href} className="group bg-mono-white p-7 md:p-8 min-h-[280px] flex flex-col justify-between hover:bg-mono-black transition-colors">
-                <Icon className="text-mono-amber" size={24} />
-                <div>
-                  <h3 className="text-xl font-display font-bold text-mono-black group-hover:text-mono-white transition-colors">{title}</h3>
-                  <p className="mt-4 font-body text-mono-charcoal group-hover:text-mono-soft-white leading-relaxed transition-colors">{copy}</p>
-                  <span className="mt-6 inline-flex gap-2 items-center text-mono-amber font-display font-bold text-sm">ENTER <ArrowRight size={16} /></span>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
