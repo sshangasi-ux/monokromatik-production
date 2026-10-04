@@ -3,6 +3,7 @@ import { ArrowRight, Check, Download, FileText, Mail } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { StatStrip } from '../components/dataviz/Charts';
 import ReportsShelf from '../components/reports/ReportsShelf';
+import AdvisoryBridge from '../components/AdvisoryBridge';
 import BuyButton from '../components/BuyButton';
 import { getAllReports, getReportBySlug } from '../../lib/reports';
 import {
@@ -275,6 +276,9 @@ export default function ReportsPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Product → advisory bridge ──────────────────────────── */}
+      <AdvisoryBridge source="reports-advisory-bridge" />
 
       {/* ── Close ──────────────────────────────────────────────── */}
       <section className="bg-mono-black text-mono-white py-20 text-center">

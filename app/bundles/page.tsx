@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Check, Layers, Mail } from 'lucide-react';
+import { ArrowRight, Check, Layers } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import AdvisoryBridge from '../components/AdvisoryBridge';
 import BuyButton from '../components/BuyButton';
 import { getBundles, reportPrice } from '../../lib/commerce';
 import { getAllReports } from '../../lib/reports';
@@ -139,23 +140,9 @@ export default function BundlesPage() {
         </div>
       </section>
 
-      <section className="bg-mono-black text-mono-white py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Mail className="text-mono-amber mx-auto mb-6" size={28} />
-          <h2 className="text-4xl md:text-5xl font-display font-bold">Need the data, a team briefing or license rights?</h2>
-          <p className="mt-7 text-lg font-body text-mono-soft-white">
-            The enterprise edition pairs the reports with the dataset and model behind them, plus citation and license rights.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link href="/work-with-us?interest=license" className="inline-flex gap-2 items-center bg-mono-amber px-7 py-4 font-display font-bold text-mono-black">
-              ENQUIRE <ArrowRight size={18} />
-            </Link>
-            <Link href="/reports" className="inline-flex gap-2 items-center border border-mono-white px-7 py-4 font-display font-bold">
-              BROWSE REPORTS <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Product → advisory bridge: the data/briefing/license + value-capture
+          advisory path, as a short gated form beside a trust strip. */}
+      <AdvisoryBridge source="bundles-advisory-bridge" />
     </div>
   );
 }
