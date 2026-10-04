@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Download } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import ShareRow from '../components/ShareRow';
+import SponsorSlot from '../components/SponsorSlot';
 import { getOwnership100, getOwnership100Entries, getOwnership100Tally, type OwnershipStatus } from '../../lib/ownership100';
 
 const URL = 'https://www.monokromatik.com/ownership-100';
@@ -52,11 +53,31 @@ export default function Ownership100Page() {
     })),
   };
 
+  // Dataset schema — makes the ledger a citable dataset for search + AI engines,
+  // and points them at the machine-readable Index feed.
+  const datasetLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: doc.title,
+    description: doc.standfirst,
+    url: URL,
+    keywords: ['who owns Africa', 'African brand ownership', 'value capture', 'ownership ranking', 'African brands foreign owned'],
+    creator: { '@type': 'Organization', name: 'MonoKromatik', url: 'https://www.monokromatik.com' },
+    license: 'https://www.monokromatik.com/llms.txt',
+    isAccessibleForFree: true,
+    temporalCoverage: doc.edition,
+    distribution: [
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: 'https://www.monokromatik.com/api/index' },
+      { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: 'https://www.monokromatik.com/api/index?format=csv' },
+    ],
+  };
+
   const hrefFor = (slug?: string) => (slug ? `/article/${slug}` : undefined);
 
   return (
     <div className="min-h-screen bg-mono-paper">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }} />
       <Navigation />
 
       {/* Hero */}
@@ -82,6 +103,9 @@ export default function Ownership100Page() {
             <Link href="/who-owns" className="inline-flex items-center gap-2 border border-mono-white/40 text-mono-white px-6 py-3.5 font-display font-bold hover:bg-mono-white/10 transition-colors">
               CHECK A BRAND <ArrowRight size={16} />
             </Link>
+          </div>
+          <div className="mt-8">
+            <SponsorSlot placement="ownership-100" offer tone="dark" />
           </div>
         </div>
       </header>
@@ -158,6 +182,9 @@ export default function Ownership100Page() {
           </Link>
           <Link href="/sponsor" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">
             PRESENT THIS EDITION
+          </Link>
+          <Link href="/ownership-alerts" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">
+            OWNERSHIP ALERTS <ArrowRight size={16} />
           </Link>
         </div>
       </section>
