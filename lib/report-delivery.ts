@@ -154,3 +154,63 @@ export async function deliverReport(email: string, admin: Admin, slug: string): 
   console.log(`[delivery] ${slug} delivered to ${email}`);
   return record({ status: 'sent', detail: `to ${email}` });
 }
+
+// ── Bundle fulfilment — one purchase delivers every member report's PDF ──────
+// A bundle's Paystack product id/name tokens select the bundle; each member slug
+// maps to a ReportAsset above, so delivery reuses deliverReport per member.
+// Inert until the bundle products exist in Paystack (add their product id to
+// `match` when created — see lib/commerce.ts BUNDLES for the storefront side).
+interface BundleAsset {
+  slug: string;
+  /** Lowercase tokens; any hit in the stringified charge payload selects this
+   *  bundle. Add the Paystack product id once the product is created. */
+  match: string[];
+  /** Member report slugs — each must exist in REPORTS above. */
+  members: string[];
+}
+
+const BUNDLES_DELIVERY: BundleAsset[] = [
+  {
+    slug: 'ownership-studies-pack',
+    match: ['ownership-studies', 'studies-pack', '2763266'],
+    members: [
+      'who-captures-amapiano-value-capture-report',
+      'brand-study-the-springbok-world-champion-under-owned',
+    ],
+  },
+  {
+    slug: 'full-shelf',
+    match: ['full-shelf', '2763268'],
+    members: [
+      'who-captures-amapiano-value-capture-report',
+      'brand-study-the-springbok-world-champion-under-owned',
+      'whos-buying-african-sport-2026',
+    ],
+  },
+];
+
+/** Find the bundle a charge payload is buying, or null. Check BEFORE matchReport. */
+export function matchBundle(payloadBlob: string): { slug: string } | null {
+  const b = payloadBlob.toLowerCase();
+  return BUNDLES_DELIVERY.find((x) => x.match.some((t) => b.includes(t))) ?? null;
+}
+
+/** Deliver every member report of a bundle (each as its own stamped PDF email). */
+export async function deliverBundle(email: string, admin: Admin, bundleSlug: string): Promise<DeliveryResult> {
+  const bundle = BUNDLES_DELIVERY.find((x) => x.slug === bundleSlug);
+  const record = async (r: DeliveryResult): Promise<DeliveryResult> => {
+    try {
+      await admin.from('report_deliveries').insert({ email, report: bundleSlug, status: r.status, detail: r.detail });
+    } catch {
+      /* observability only */
+    }
+    return r;
+  };
+  if (!bundle) return record({ status: 'failed', detail: `unknown bundle ${bundleSlug}` });
+  const results: DeliveryResult[] = [];
+  for (const slug of bundle.members) results.push(await deliverReport(email, admin, slug));
+  const sent = results.filter((r) => r.status === 'sent').length;
+  const skipped = results.filter((r) => r.status === 'skipped').length;
+  const status: DeliveryResult['status'] = sent > 0 ? 'sent' : skipped === results.length ? 'skipped' : 'failed';
+  return record({ status, detail: `${sent}/${bundle.members.length} member reports delivered` });
+}

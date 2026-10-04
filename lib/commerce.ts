@@ -246,6 +246,69 @@ export function reportDeeper(slug?: string): { slug: string; price: string } | n
   return d ? { slug: d.slug, price: reportPrice(d.slug) } : null;
 }
 
+// ── Report BUNDLES — the paid shelf repackaged at a saving (zero new content) ─
+// A bundle is NOT a report: it has no data/reports.json entry and no
+// /reports/[slug] page. It is sold from /bundles and, on purchase, delivers
+// EVERY member report's PDF (see lib/report-delivery.ts → deliverBundle).
+// members[] are PAID_REPORTS slugs. Paystack: create one hosted product per
+// bundle, then set its checkout URL via the env var below (null = not yet live,
+// the storefront shows a "notify me" fallback instead of a dead BUY button).
+export interface ReportBundle {
+  /** Bundle key — distinct from any report slug. */
+  slug: string;
+  title: string;
+  blurb: string;
+  /** PAID_REPORTS slugs included in the bundle. */
+  members: string[];
+  /** Bundle display price. */
+  price: string;
+  /** The saving vs buying the members separately. */
+  saveNote?: string;
+  /** Paystack hosted checkout for the bundle (create the product, then set). */
+  url: string | null;
+  featured?: boolean;
+}
+
+export const BUNDLES: ReportBundle[] = [
+  {
+    slug: 'ownership-studies-pack',
+    title: 'The Ownership Studies',
+    blurb:
+      'Both value-capture studies in one download — Who Captures Amapiano? and The Springbok: World Champion, Under-Owned. The same ownership lens across music and sport.',
+    members: [
+      'who-captures-amapiano-value-capture-report',
+      'brand-study-the-springbok-world-champion-under-owned',
+    ],
+    price: 'R350',
+    saveNote: 'Save R90 vs R440 bought separately',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_STUDIES_BUNDLE_URL || 'https://paystack.com/buy/the-ownership-studies--value-capture-bundle-quszkf',
+  },
+  {
+    slug: 'full-shelf',
+    title: 'The Full Shelf',
+    blurb:
+      "Everything we sell, one price: both value-capture studies plus the flagship institutional report, Who's Buying African Sport? — for the price of the flagship alone. The complete value-capture library.",
+    members: [
+      'who-captures-amapiano-value-capture-report',
+      'brand-study-the-springbok-world-champion-under-owned',
+      'whos-buying-african-sport-2026',
+    ],
+    price: 'R3,500',
+    saveNote: 'Both studies free — save R440 vs R3,940 separately',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_FULL_SHELF_URL || 'https://paystack.com/buy/the-full-shelf--complete-value-capture-library-fehysl',
+    featured: true,
+  },
+];
+
+/** All sellable bundles. */
+export function getBundles(): ReportBundle[] {
+  return BUNDLES;
+}
+/** A bundle by its slug, or undefined. */
+export function getBundle(slug: string): ReportBundle | undefined {
+  return BUNDLES.find((b) => b.slug === slug);
+}
+
 /** Inbox for commission / partnership enquiries (public; overridable via env). */
 export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'editor@monokromatik.com';
 
