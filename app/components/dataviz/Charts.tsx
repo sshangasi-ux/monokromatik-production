@@ -3,8 +3,14 @@
 // (role/aria-label, value labels — never colour alone), responsive, no heavy
 // chart library. Pure components (no hooks) so they work in server components.
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { Exhibit } from '../../../lib/reports';
+import ExhibitReveal from './ExhibitReveal';
+
+/** Inline style carrying the bar's true width in --grow-w so CSS can animate
+ *  0 → target on reveal (see globals.css `.ex-anim [data-grow]`). */
+const growStyle = (pct: number): CSSProperties =>
+  ({ ['--grow-w']: `${pct}%`, width: 'var(--grow-w)' } as CSSProperties);
 
 const AMBER = 'var(--mono-amber)';
 const AMBER_STRONG = 'var(--mono-amber-strong)';
@@ -246,14 +252,15 @@ export function BarChart({
       </figcaption>
       <div className="space-y-3" aria-hidden="true">
         {data.map((d) => (
-          <div key={d.label} className="flex items-center gap-3">
+          <div key={d.label} data-bar-row className="flex items-center gap-3">
             <span className="w-24 shrink-0 text-[11px] font-display font-bold text-mono-charcoal tabular-nums">
               {d.label}
             </span>
-            <div className="flex-1 h-7 bg-mono-gray/15 overflow-hidden">
+            <div className="flex-1 h-7 bg-mono-gray/15 overflow-hidden" title={`${d.label}: ${d.display}`}>
               <span
+                data-grow
                 className="flex h-full items-center justify-end bg-mono-amber px-2 text-[11px] font-display font-bold text-mono-black tabular-nums"
-                style={{ width: `${Math.max(9, (d.value / max) * 100)}%` }}
+                style={growStyle(Math.max(9, (d.value / max) * 100))}
               >
                 {d.display}
               </span>
@@ -303,7 +310,9 @@ function LineChart({ ex }: { ex: Exhibit }) {
         <polygon points={area} fill={AMBER} opacity={0.12} />
         <polyline points={line} fill="none" stroke={AMBER} strokeWidth={3} strokeLinejoin="round" strokeLinecap="round" />
         {data.map((d, i) => (
-          <circle key={i} cx={x(i)} cy={y(d.value)} r={i === n - 1 ? 5.5 : 3} fill={i === n - 1 ? AMBER : CHARCOAL} />
+          <circle key={i} className="ex-line-pt" cx={x(i)} cy={y(d.value)} r={i === n - 1 ? 5.5 : 3} fill={i === n - 1 ? AMBER : CHARCOAL}>
+            <title>{`${d.label}: ${d.display ?? d.value}`}</title>
+          </circle>
         ))}
         {data.map((d, i) => (
           <text key={i} x={x(i)} y={H - 26} textAnchor="middle" fontFamily="var(--font-display)" fontWeight={700} fontSize={13} fill={CHARCOAL}>{d.label}</text>
@@ -325,7 +334,7 @@ function SplitBar({ ex }: { ex: Exhibit }) {
     <ExFrame title={ex.title} note={ex.note} ariaLabel={`${ex.title}: ${data.map((d) => `${d.label} ${d.display}`).join(', ')}`}>
       <div className="flex h-11 w-full overflow-hidden rounded-[1px]" aria-hidden="true">
         {data.map((d, i) => (
-          <div key={d.label} className="flex items-center justify-center text-[12px] font-display font-bold tabular-nums" style={{ width: `${(d.value / total) * 100}%`, background: fills[i % fills.length], color: i === 0 ? '#000' : '#fff' }}>
+          <div key={d.label} title={`${d.label}: ${d.display}`} className="flex items-center justify-center text-[12px] font-display font-bold tabular-nums" style={{ width: `${(d.value / total) * 100}%`, background: fills[i % fills.length], color: i === 0 ? '#000' : '#fff' }}>
             {d.display}
           </div>
         ))}
@@ -350,13 +359,13 @@ function ValueStack({ ex }: { ex: Exhibit }) {
     <ExFrame title={ex.title} note={ex.note} ariaLabel={`${ex.title}: ${data.map((d) => `${d.label} ${d.display}${d.tag ? ` (${d.tag})` : ''}`).join(', ')}`}>
       <div className="space-y-3.5" aria-hidden="true">
         {data.map((d) => (
-          <div key={d.label}>
+          <div key={d.label} data-bar-row>
             <div className="flex items-baseline justify-between gap-3 mb-1.5">
               <span className="text-[12px] font-display font-bold text-mono-charcoal">{d.label}</span>
               {d.tag && <span className="text-[9.5px] tracking-[0.14em] font-display font-bold text-mono-amber-strong uppercase">{d.tag}</span>}
             </div>
-            <div className="h-6 bg-mono-gray/15 overflow-hidden">
-              <span className="flex h-full items-center justify-end bg-mono-amber px-2 text-[11px] font-display font-bold text-mono-black tabular-nums" style={{ width: `${Math.max(12, (d.value / max) * 100)}%` }}>
+            <div className="h-6 bg-mono-gray/15 overflow-hidden" title={`${d.label}: ${d.display}${d.tag ? ` · ${d.tag}` : ''}`}>
+              <span data-grow className="flex h-full items-center justify-end bg-mono-amber px-2 text-[11px] font-display font-bold text-mono-black tabular-nums" style={growStyle(Math.max(12, (d.value / max) * 100))}>
                 {d.display}
               </span>
             </div>
@@ -376,7 +385,9 @@ function Donut({ ex }: { ex: Exhibit }) {
       <div className="flex items-center gap-7" aria-hidden="true">
         <svg viewBox="0 0 180 180" width={150} height={150} style={{ flex: 'none' }}>
           <circle cx={cx} cy={cy} r={r} fill="none" stroke={GRAYFILL} strokeWidth={20} />
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke={AMBER} strokeWidth={20} strokeDasharray={`${(v / 100) * c} ${c}`} strokeLinecap="butt" transform={`rotate(-90 ${cx} ${cy})`} />
+          <circle cx={cx} cy={cy} r={r} fill="none" stroke={AMBER} strokeWidth={20} strokeDasharray={`${(v / 100) * c} ${c}`} strokeLinecap="butt" transform={`rotate(-90 ${cx} ${cy})`}>
+            <title>{`${ex.valueLabel ?? `${v}%`}${ex.sublabel ? ` — ${ex.sublabel}` : ''}`}</title>
+          </circle>
           <text x={cx} y={cy + 2} textAnchor="middle" dominantBaseline="middle" fontFamily="var(--font-feature)" fontWeight={700} fontSize={40} fill={AMBER}>{ex.valueLabel ?? `${v}%`}</text>
         </svg>
         {ex.sublabel && <p className="font-feature text-lg text-mono-ink leading-snug max-w-[16rem]">{ex.sublabel}</p>}
@@ -389,12 +400,14 @@ function Donut({ ex }: { ex: Exhibit }) {
 function ScoreMatrix({ ex }: { ex: Exhibit }) {
   const cols = ex.cols ?? [];
   const rows = ex.rows ?? [];
-  const ball = (lvl: number, key: string) => {
+  const ball = (lvl: number, key: string, tip: string) => {
     const r = 8, c = 2 * Math.PI * r;
+    const n = Math.max(0, Math.min(4, lvl));
     return (
-      <svg key={key} viewBox="0 0 22 22" width={20} height={20} aria-hidden="true">
+      <svg key={key} className="ex-ball" viewBox="0 0 22 22" width={20} height={20} aria-hidden="true">
+        <title>{`${tip}: ${n}/4`}</title>
         <circle cx={11} cy={11} r={r} fill="none" stroke="rgba(102,102,102,0.45)" strokeWidth={2.5} />
-        <circle cx={11} cy={11} r={r} fill="none" stroke={AMBER} strokeWidth={5} strokeDasharray={`${(Math.max(0, Math.min(4, lvl)) / 4) * c} ${c}`} transform="rotate(-90 11 11)" />
+        <circle cx={11} cy={11} r={r} fill="none" stroke={AMBER} strokeWidth={5} strokeDasharray={`${(n / 4) * c} ${c}`} transform="rotate(-90 11 11)" />
       </svg>
     );
   };
@@ -418,7 +431,7 @@ function ScoreMatrix({ ex }: { ex: Exhibit }) {
                   {row.tag && <span className="block text-[9.5px] tracking-[0.12em] font-display font-bold text-mono-amber-strong uppercase mt-0.5">{row.tag}</span>}
                 </td>
                 {cols.map((c, i) => (
-                  <td key={c} className="py-2.5 text-center"><div className="flex justify-center">{ball(row.cells[i] ?? 0, c)}</div></td>
+                  <td key={c} className="py-2.5 text-center"><div className="flex justify-center">{ball(row.cells[i] ?? 0, c, `${row.label} · ${c}`)}</div></td>
                 ))}
               </tr>
             ))}
@@ -451,7 +464,9 @@ function Quadrant({ ex }: { ex: Exhibit }) {
         <text x={L + 2} y={T + 14} fontFamily="var(--font-display)" fontWeight={700} fontSize={11} fill={CHARCOAL}>{yT}</text>
         {pts.map((p, i) => (
           <g key={i}>
-            <circle cx={px(p.x)} cy={py(p.y)} r={p.highlight ? 8 : 5.5} fill={p.highlight ? AMBER : CHARCOAL} />
+            <circle className="ex-quad-pt" cx={px(p.x)} cy={py(p.y)} r={p.highlight ? 8 : 5.5} fill={p.highlight ? AMBER : CHARCOAL}>
+              <title>{`${p.label} — ${xR || 'x'} ${p.x}/100, ${yT || 'y'} ${p.y}/100`}</title>
+            </circle>
             <text x={px(p.x)} y={py(p.y) - 12} textAnchor="middle" fontFamily="var(--font-display)" fontWeight={700} fontSize={12.5} fill={p.highlight ? AMBER_STRONG : INK}>{p.label}</text>
           </g>
         ))}
@@ -460,17 +475,21 @@ function Quadrant({ ex }: { ex: Exhibit }) {
   );
 }
 
-/** Dispatcher — renders any exhibit by its `type` (defaults to the bar chart). */
+/** Dispatcher — renders any exhibit by its `type` (defaults to the bar chart),
+ *  wrapped in the scroll-reveal (bars grow / card rises as it enters view). */
 export function ReportExhibit({ exhibit }: { exhibit: Exhibit }) {
-  switch (exhibit.type) {
-    case 'line': return <LineChart ex={exhibit} />;
-    case 'split': return <SplitBar ex={exhibit} />;
-    case 'stack': return <ValueStack ex={exhibit} />;
-    case 'donut': return <Donut ex={exhibit} />;
-    case 'matrix': return <ScoreMatrix ex={exhibit} />;
-    case 'quadrant': return <Quadrant ex={exhibit} />;
-    case 'bar':
-    default:
-      return <BarChart title={exhibit.title} note={exhibit.note} data={exhibit.data ?? []} />;
-  }
+  const inner = (() => {
+    switch (exhibit.type) {
+      case 'line': return <LineChart ex={exhibit} />;
+      case 'split': return <SplitBar ex={exhibit} />;
+      case 'stack': return <ValueStack ex={exhibit} />;
+      case 'donut': return <Donut ex={exhibit} />;
+      case 'matrix': return <ScoreMatrix ex={exhibit} />;
+      case 'quadrant': return <Quadrant ex={exhibit} />;
+      case 'bar':
+      default:
+        return <BarChart title={exhibit.title} note={exhibit.note} data={exhibit.data ?? []} />;
+    }
+  })();
+  return <ExhibitReveal>{inner}</ExhibitReveal>;
 }

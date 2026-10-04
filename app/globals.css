@@ -232,6 +232,62 @@ body {
   }
 }
 
+/* ── Report exhibit motion + interactivity ───────────────────────────────
+   Classes are added by ExhibitReveal (JS only) and never present under
+   prefers-reduced-motion, so static/no-JS visitors see the finished exhibit.
+   The global reduced-motion reset above also neutralises any transition. */
+.ex-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: opacity, transform;
+}
+.ex-anim.ex-anim--in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Bars grow from zero to their real width (held in --grow-w) on reveal. */
+.ex-anim [data-grow] {
+  width: 0 !important;
+}
+.ex-anim.ex-anim--in [data-grow] {
+  width: var(--grow-w, 100%) !important;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+/* Hover affordances — a bar row nudges + brightens, SVG marks lift. Native
+   <title> tooltips carry the exact value on every mark (no JS). */
+[data-bar-row] {
+  transition: transform 0.15s ease;
+}
+[data-bar-row]:hover {
+  transform: translateX(2px);
+}
+[data-bar-row]:hover [data-grow] {
+  filter: brightness(1.07);
+}
+.ex-quad-pt,
+.ex-ball,
+.ex-line-pt {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ex-quad-pt {
+  cursor: default;
+}
+.ex-quad-pt:hover {
+  transform: scale(1.4);
+}
+.ex-ball:hover {
+  transform: scale(1.2);
+}
+.ex-line-pt:hover {
+  transform: scale(1.5);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
