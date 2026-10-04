@@ -6174,6 +6174,10 @@
       {
         "value": "Delaware / Mauritius",
         "label": "The default legal home of the fast-growing African fintech — the operating company is African, the holding company that owns it is not (TechCabal; Launch Base Africa)"
+      },
+      {
+        "value": "~$15.5bn of ~$18bn",
+        "label": "Combined reported value of the sixteen leading African fintechs that is foreign-owned, offshore-domiciled, or both — only ~$2.5bn (TymeBank + Fawry) is cleanly retained (MonoKromatik valuation reconciliation; figures reported)"
       }
     ],
     "exhibit": {
@@ -6232,6 +6236,15 @@
           "The two retained cases are instructive precisely because they are structurally different from the rest. Fawry did not stay private and foreign-funded — it listed on the Egyptian Exchange, so its ownership is broad, domestic and public, and its value is priced and captured in Cairo. TymeBank is anchored by a domestic majority owner, Patrice Motsepe's African Rainbow Capital at roughly 40%, which holds control even as Nubank and Tencent take minority positions. In both, an African institution — a public market, a domestic investor — sits at the centre of the cap table.",
           "M-Pesa is the near-miss worth naming: Safaricom and Vodacom bought the M-Pesa brand and IP back from the UK's Vodafone in 2020, a genuine repatriation of a landmark African asset. But Vodafone Group still controls the parent, so the repatriation is partial — which is why it lands in Contested, not Retained. It is the exception that shows how rare, and how deliberate, true retention has to be.",
           "The lesson of the exceptions is the strategy for the rest: retention is a design choice — a domestic anchor investor, a local listing, a repatriated right — not an accident. The default flips offshore; keeping ownership home takes intent."
+        ]
+      },
+      {
+        "heading": "THE VALUE AT STAKE — QUANTIFIED",
+        "paragraphs": [
+          "Classification tells you who owns what; it does not tell you how much is at stake. So we did the bottom-up sum. Across the sixteen leading fintechs, combined reported value is roughly $18 billion — the aggregate of the latest disclosed valuations and market marks: OPay and Flutterwave around $3bn each, Wave $1.7bn, TymeBank $1.5bn, MNT-Halan $1.4bn, Chipper Cash near $1.25bn after its down-round, and Moniepoint, Interswitch and Fawry around $1bn apiece, with the smaller names and Paystack's ~$200m Stripe price filling out the rest. M-Pesa is excluded as a wallet embedded in a listed telco rather than a standalone fintech mark; Onafriq's valuation is undisclosed and left out.",
+          "Of that ~$18bn, only about $2.5bn — TymeBank and Fawry — is cleanly retained: African-authored, African-owned and African-domiciled at once. That is roughly 14%, the same answer the classification gives, now denominated in dollars. The other ~$15.5bn is owned by foreign majorities, legally domiciled offshore, or both. And the single largest band is not the sold-outright exports; it is the Hollowed middle — Nigerian-authored, founder-run companies worth some $6–7bn in aggregate whose holding companies, and therefore whose ultimate ownership and jurisdiction, sit in San Francisco, London or Mauritius.",
+          "Read by band, the strategic picture sharpens (figures reported; see the methodology). Exported value — OPay, Wave, Paystack — is already gone; the ownership question there is settled. Contested value — Interswitch, MNT-Halan, Yoco — is the live contest, where domestic and foreign capital still share the cap table. The Hollowed band is the one policy and domestic capital could still move: these are African companies by every measure except the one that decides where the exit lands. This is the figure a funding database cannot produce, because it counts money in, not ownership out — and it is the figure a licensee is really buying.",
+          "Two caveats keep the number honest. Private marks are point-in-time and press-reported, so the ~$18bn is a reconciled estimate, not an audited figure — the band widths would move with a fresh round or a disclosed secondary. And value owned offshore is not value lost: these companies employ, bank and serve African markets and pay tax on local operations (the Bear Case makes that argument in full). But the direction is unambiguous, and it is the direction that compounds — the larger the sector grows, the more of its equity value is created on the continent and owned off it."
         ]
       },
       {
@@ -6502,7 +6515,7 @@
       },
       {
         "type": "quadrant",
-        "after": 6,
+        "after": 7,
         "title": "Owned and domiciled — where the value legally lives",
         "xAxis": [
           "Foreign-owned",
@@ -6652,6 +6665,35 @@
         "valueLabel": "~60%",
         "sublabel": "Fintech took roughly 60% of all African tech equity funding in 2024 — about $1.4bn of a $2.6bn total — so who owns African fintech is, largely, who owns African innovation (GFTN; Partech).",
         "note": "Because fintech dominates the continent's venture funding, its ownership pattern is the continent's ownership pattern. The league table is a read on far more than payments."
+      },
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "The value at stake — ~$18bn by ownership band",
+        "unit": "US$bn combined reported value",
+        "note": "The sixteen leading fintechs carry ~$18bn in combined reported value; only ~$2.5bn (TymeBank + Fawry) is cleanly RETAINED. The HOLLOWED middle — African-run, offshore-domiciled — is the largest band and the one still in play. A bottom-up sum of latest reported valuations (M-Pesa excluded as telco-embedded; Onafriq undisclosed); figures reported, per the endnotes. Source: MonoKromatik classification and valuation reconciliation.",
+        "data": [
+          {
+            "label": "Hollowed",
+            "value": 6.8,
+            "display": "~$6.8bn"
+          },
+          {
+            "label": "Exported",
+            "value": 5,
+            "display": "~$5.0bn"
+          },
+          {
+            "label": "Contested",
+            "value": 3.4,
+            "display": "~$3.4bn"
+          },
+          {
+            "label": "Retained",
+            "value": 2.5,
+            "display": "~$2.5bn"
+          }
+        ]
       }
     ],
     "counterCase": {
