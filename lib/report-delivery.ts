@@ -172,7 +172,7 @@ interface BundleAsset {
 const BUNDLES_DELIVERY: BundleAsset[] = [
   {
     slug: 'ownership-studies-pack',
-    match: ['ownership-studies', 'studies-pack'],
+    match: ['ownership-studies', 'studies-pack', '2763266'],
     members: [
       'who-captures-amapiano-value-capture-report',
       'brand-study-the-springbok-world-champion-under-owned',
@@ -180,7 +180,7 @@ const BUNDLES_DELIVERY: BundleAsset[] = [
   },
   {
     slug: 'full-shelf',
-    match: ['full-shelf'],
+    match: ['full-shelf', '2763268'],
     members: [
       'who-captures-amapiano-value-capture-report',
       'brand-study-the-springbok-world-champion-under-owned',

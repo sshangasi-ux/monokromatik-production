@@ -281,7 +281,7 @@ export const BUNDLES: ReportBundle[] = [
     ],
     price: 'R350',
     saveNote: 'Save R90 vs R440 bought separately',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_STUDIES_BUNDLE_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_STUDIES_BUNDLE_URL || 'https://paystack.com/buy/the-ownership-studies--value-capture-bundle-quszkf',
   },
   {
     slug: 'full-shelf',
@@ -295,7 +295,7 @@ export const BUNDLES: ReportBundle[] = [
     ],
     price: 'R3,500',
     saveNote: 'Both studies free — save R440 vs R3,940 separately',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_FULL_SHELF_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_FULL_SHELF_URL || 'https://paystack.com/buy/the-full-shelf--complete-value-capture-library-fehysl',
     featured: true,
   },
 ];
