@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
-import { matchReport, deliverReport } from '../../../../lib/report-delivery';
+import { matchReport, deliverReport, matchBundle, deliverBundle } from '../../../../lib/report-delivery';
 import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
@@ -51,8 +51,34 @@ export async function POST(req: Request) {
   // present we log the shape (to refine the match) and leave it to manual
   // fulfilment; we never guess and send the wrong report.
   if (type === 'charge.success' && !planCode) {
-    // Match the paid report by a positive token in the payload (product
-    // name/slug or Paystack product id) — never by amount (reports share R220).
+    // A BUNDLE is matched first (its product id/name tokens are distinct from any
+    // single report) and delivers every member report's PDF on one purchase.
+    const bundle = matchBundle(JSON.stringify(data));
+    if (bundle) {
+      try {
+        await deliverBundle(email, admin, bundle.slug);
+      } catch (err) {
+        console.error('[paystack] bundle delivery error', err);
+      }
+      try {
+        const amountMinor = typeof data.amount === 'number' ? data.amount : Number(data.amount) || null;
+        const r = await trackPurchase({
+          slug: bundle.slug,
+          email,
+          amountMinor,
+          currency: data.currency ? String(data.currency) : 'ZAR',
+          reference: data.reference ? String(data.reference) : null,
+          itemName: `bundle:${bundle.slug}`,
+        });
+        console.log('[paystack] ga purchase (bundle)', r);
+      } catch (err) {
+        console.error('[paystack] ga purchase (bundle) error', err);
+      }
+      return NextResponse.json({ ok: true, delivered: `bundle:${bundle.slug}` });
+    }
+
+    // Otherwise match a single paid report by a positive token in the payload
+    // (product name/slug or Paystack product id) — never by amount (share R220).
     const matched = matchReport(JSON.stringify(data));
     const meta = (data.metadata ?? {}) as Record<string, unknown>;
     console.log('[paystack] one-off charge.success', {

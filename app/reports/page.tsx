@@ -50,6 +50,13 @@ export default function ReportsPage() {
         </div>
       </section>
 
+      <section className="bg-mono-amber text-mono-black py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-display font-bold text-sm sm:text-base">Buy the value-capture reports together and save — the Ownership Studies and the Full Shelf.</p>
+          <Link href="/bundles" className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-5 py-2.5 font-display font-bold text-sm whitespace-nowrap">VIEW BUNDLES <ArrowRight size={15} /></Link>
+        </div>
+      </section>
+
       <section className="py-20 md:py-24 bg-mono-soft-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 mb-12">
