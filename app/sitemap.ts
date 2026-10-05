@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/spirits`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     { url: `${SITE}/breaking`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE}/pulse`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
+    { url: `${SITE}/the-drop`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE}/signal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/intelligence`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/whos-buying-africa`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
