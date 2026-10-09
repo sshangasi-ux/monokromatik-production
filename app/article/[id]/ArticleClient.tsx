@@ -121,6 +121,9 @@ export default function ArticleClient({
             <Clock size={16} /> {readingTime} min read
           </span>
           <span className="text-mono-gray">{formatDate(article.publishedAt)}</span>
+          <span className="text-mono-gray">
+            By <span className="font-semibold text-mono-black">{article.brandRead?.attribution ?? 'Sibu Shangase'}</span>
+          </span>
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-feature font-bold text-mono-black mb-6 leading-[1.05]">

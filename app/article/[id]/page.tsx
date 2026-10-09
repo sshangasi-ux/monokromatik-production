@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description: desc,
     keywords: article.tags,
-    authors: [{ name: 'MonoKromatik Network' }],
+    authors: [{ name: 'Sibu Shangase' }],
     openGraph: {
       title: article.title,
       description: desc,
@@ -77,9 +77,9 @@ export default async function ArticlePage({ params }: PageProps) {
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
     author: {
-      '@type': 'Organization',
-      name: 'MonoKromatik Network',
-      url: 'https://www.monokromatik.com',
+      '@type': 'Person',
+      name: 'Sibu Shangase',
+      url: 'https://www.monokromatik.com/about',
     },
     publisher: {
       '@type': 'Organization',
