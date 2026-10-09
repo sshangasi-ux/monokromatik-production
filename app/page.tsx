@@ -66,6 +66,42 @@ const intelligencePrompts = [
   'Which global brands are meaningfully investing in African relevance?',
 ];
 
+// Footer site-map, grouped so the full surface reads as structure, not a wall.
+const footerGroups = [
+  {
+    title: 'READ',
+    links: [
+      { href: '/culture', label: 'The Library' },
+      { href: '/signal', label: 'Signal' },
+      { href: '/breaking', label: 'The Wire' },
+      { href: '/conversations', label: 'Conversations' },
+      { href: '/weekly', label: 'The Weekly Signal' },
+    ],
+  },
+  {
+    title: 'INTELLIGENCE',
+    links: [
+      { href: '/reports', label: 'Reports' },
+      { href: '/ownership-100', label: 'The Ownership 100' },
+      { href: '/intelligence/signal-index', label: 'The Index' },
+      { href: '/intelligence/case-studies', label: 'Case Studies' },
+      { href: '/intelligence/source-desk', label: 'Source Desk' },
+      { href: '/watch', label: 'Watch' },
+    ],
+  },
+  {
+    title: 'THE DESK',
+    links: [
+      { href: '/about', label: 'About' },
+      { href: '/work-with-us', label: 'Work With Us' },
+      { href: '/services', label: 'Services' },
+      { href: '/partner', label: 'Partner' },
+      { href: '/membership', label: 'Membership' },
+      { href: '/editorial-standards', label: 'Editorial Standards' },
+    ],
+  },
+];
+
 export default function Home() {
   const articles = getAllArticles();
   const featured = articles[0];
@@ -92,8 +128,8 @@ export default function Home() {
       {/* Value prop — what MonoKromatik is, in one line, on first load. */}
       <section className="bg-mono-paper border-b border-mono-gray/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-5">
-          <p className="text-sm md:text-[15px] font-display font-bold text-mono-black tracking-tight shrink-0">African brand intelligence, built for decision-makers.</p>
-          <p className="text-sm font-body text-mono-charcoal">Authored analysis · a breaking-news Wire · the Cultural-Signal Index — who authors influence in Africa, scored.</p>
+          <p className="text-sm md:text-[15px] font-display font-bold text-mono-black tracking-tight shrink-0">Who owns African culture — and who keeps the money.</p>
+          <p className="text-sm font-body text-mono-charcoal">Named analysis by Sibu Shangase · a free library, value-capture reports, and The Ownership 100.</p>
         </div>
       </section>
 
@@ -402,32 +438,26 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-14 bg-mono-black border-t border-mono-white/15 text-mono-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
-          <div>
-            <h3 className="font-display font-bold text-xl">MONO<span className="text-mono-amber">KROMATIK</span></h3>
-            <p className="mt-4 text-mono-gray font-body text-sm">The Intelligence Behind African Influence.</p>
+      <footer className="py-16 bg-mono-black border-t border-mono-white/15 text-mono-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <h3 className="font-display font-bold text-xl">MONO<span className="text-mono-amber">KROMATIK</span></h3>
+              <p className="mt-4 text-mono-gray font-body text-sm leading-relaxed">Who owns African culture — and who keeps the money. Named analysis by Sibu Shangase.</p>
+            </div>
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-amber mb-4">{group.title}</p>
+                <ul className="space-y-2.5 font-body text-sm text-mono-gray">
+                  {group.links.map((l) => (
+                    <li key={l.href}><Link className="hover:text-mono-amber transition-colors" href={l.href}>{l.label}</Link></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <div className="font-body text-sm text-mono-gray grid grid-cols-2 gap-y-3">
-            <Link className="hover:text-mono-amber" href="/signal">Signal</Link>
-            <Link className="hover:text-mono-amber" href="/intelligence">Intelligence</Link>
-            <Link className="hover:text-mono-amber" href="/ask">Ask MonoKromatik</Link>
-            <Link className="hover:text-mono-amber" href="/intelligence/source-desk">Source Desk</Link>
-            <Link className="hover:text-mono-amber" href="/intelligence/case-studies">Case Studies</Link>
-            <Link className="hover:text-mono-amber" href="/reports">Reports</Link>
-            <Link className="hover:text-mono-amber" href="/issues">Issues</Link>
-            <Link className="hover:text-mono-amber" href="/weekly">The Weekly Signal</Link>
-            <Link className="hover:text-mono-amber" href="/intelligence/signal-index">The Index</Link>
-            <Link className="hover:text-mono-amber" href="/membership">Membership</Link>
-            <Link className="hover:text-mono-amber" href="/account">Account</Link>
-            <Link className="hover:text-mono-amber" href="/work-with-us">Work With Us</Link>
-            <Link className="hover:text-mono-amber" href="/partner">Partner</Link>
-            <Link className="hover:text-mono-amber" href="/events">The Upside</Link>
-            <Link className="hover:text-mono-amber" href="/contribute">Contribute</Link>
-            <Link className="hover:text-mono-amber" href="/editorial-standards">Standards</Link>
-          </div>
-          <div>
-            <p className="text-sm text-mono-gray font-body">AI-assisted discovery. Human-directed intelligence. Attributable sources. Distinct African judgment.</p>
+          <div className="mt-12 pt-6 border-t border-mono-white/10">
+            <p className="text-xs text-mono-gray font-body">Named African judgment. Attributable sources on every claim. AI finds the signal — never writes the verdict.</p>
           </div>
         </div>
       </footer>

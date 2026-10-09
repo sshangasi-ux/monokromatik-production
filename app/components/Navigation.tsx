@@ -6,19 +6,17 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import SearchBar from './SearchBar';
 
+// A focused primary surface — the few things a visitor actually comes to do,
+// led by the shop and the tentpole. The wider sections (Signal, Watch, Issues,
+// Conversations, Spirits, Ask, the Wire) stay one click away in the footer map
+// and the sitemap; they're no longer competing for the top bar.
 const primaryLinks = [
-  { href: '/breaking', label: 'THE WIRE', description: 'Breaking, the moment it breaks', priority: true },
-  { href: '/signal', label: 'SIGNAL', description: 'Ideas, work and brand consequence', priority: true },
-  { href: '/watch', label: 'WATCH', description: 'Explainers — who owns the upside', priority: true },
-  { href: '/intelligence', label: 'INTELLIGENCE', description: 'Case studies, reports and research', priority: true },
+  { href: '/reports', label: 'REPORTS', description: 'Designed value-capture reports — free & paid', priority: true },
+  { href: '/ownership-100', label: 'OWNERSHIP 100', description: 'Who owns African culture — ranked', priority: true },
+  { href: '/culture', label: 'READ', description: 'The free library — music, sport, fashion, money', priority: true },
   { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
-  { href: '/services', label: 'SERVICES', description: 'Advisory & licensing for partners', priority: true },
-  { href: '/issues', label: 'ISSUES', description: 'Curated digital magazine editions' },
-  { href: '/conversations', label: 'CONVERSATIONS', description: 'Leaders, creators and operators' },
-  { href: '/culture', label: 'CULTURE', description: 'Roots, Arena and Waves' },
-  { href: '/spirits', label: 'SPIRITS', description: 'The drinks-brand economy' },
-  { href: '/ask', label: 'ASK', description: 'Cited answers from the corpus' },
-  { href: '/about', label: 'ABOUT', description: 'Mission and methodology' },
+  { href: '/work-with-us', label: 'WORK WITH US', description: 'Culture Due Diligence & value-capture advisory', priority: true },
+  { href: '/about', label: 'ABOUT', description: 'Sibu Shangase & the desk' },
 ];
 
 export default function Navigation() {

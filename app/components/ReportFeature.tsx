@@ -119,6 +119,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
           <p className="max-w-3xl mt-8 text-2xl md:text-3xl text-mono-soft-white font-feature italic leading-snug">{r.summary}</p>
           <div className="mt-12 pt-6 border-t border-mono-white/20 flex flex-wrap gap-x-8 gap-y-3 text-[11px] tracking-[0.19em] font-display font-bold text-mono-gray">
             <span className="text-mono-amber">{ACCESS_LABEL[r.access].toUpperCase()}</span>
+            <span className="text-mono-soft-white">BY SIBU SHANGASE</span>
             {locked && oneOffUrl && <span className="text-mono-amber-bright">{reportPrice(r.slug)} · ONE-TIME</span>}
             {r.statusNote && <span>{r.statusNote.toUpperCase()}</span>}
             {r.publishedAt && <span>{fmtDate(r.publishedAt).toUpperCase()}</span>}
@@ -140,6 +141,15 @@ export default async function ReportFeature({ report }: { report: Report }) {
               </span>
             </div>
           )}
+          {locked && oneOffUrl && (
+            <p className="mt-5 max-w-2xl text-[12.5px] font-body text-mono-gray leading-relaxed">
+              Written and signed by <span className="text-mono-soft-white font-semibold">Sibu Shangase</span>
+              {' — Brands Director at Mast-Jägermeister. '}
+              Human analysis built on named, public sources, with a Bear Case on every call; AI finds the signal,
+              it never writes the verdict. Not what you expected?{' '}
+              <span className="text-mono-soft-white">Email within 7 days for a full refund.</span>
+            </p>
+          )}
         </div>
       </header>
 
@@ -153,6 +163,39 @@ export default async function ReportFeature({ report }: { report: Report }) {
             {r.exhibit && <ReportExhibit exhibit={r.exhibit} />}
             {r.exhibits?.map((ex, i) => <ReportExhibit key={i} exhibit={ex} />)}
           </div>
+        )}
+        {/* Inside this report — the deliverable manifest + contents, so a buyer
+            knows exactly what the paid PDF is before paying. Paid reports only. */}
+        {locked && oneOffUrl && r.sections && r.sections.length > 0 && (
+          <section className="not-prose mb-14 border border-mono-gray/30 bg-mono-soft-white p-7 md:p-9">
+            <p className="text-[10px] tracking-[0.26em] font-display font-bold text-mono-amber-strong mb-3">INSIDE THIS REPORT</p>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-mono-black leading-tight">What you&rsquo;re buying.</h3>
+            <p className="mt-3 max-w-2xl font-body text-mono-charcoal leading-relaxed">
+              The decision-grade PDF — the full analysis, designed and watermarked to you, built to keep and cite. Here is the scope.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 font-display text-sm font-bold text-mono-black">
+              <span className="tabular-nums">{r.sections.length} sections</span>
+              <span className="text-mono-gray">·</span>
+              <span className="tabular-nums">{(r.exhibit ? 1 : 0) + (r.exhibits?.length ?? 0)} designed exhibits</span>
+              <span className="text-mono-gray">·</span>
+              <span>Named sources throughout</span>
+              {r.counterCase && (
+                <>
+                  <span className="text-mono-gray">·</span>
+                  <span>A Bear Case</span>
+                </>
+              )}
+            </div>
+            <ol className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-2 font-body text-sm text-mono-charcoal list-decimal list-inside marker:text-mono-amber-strong marker:font-bold">
+              {r.sections.map((s, i) => (
+                <li key={i} className="pl-1">{s.heading}</li>
+              ))}
+            </ol>
+            <p className="mt-7 pt-5 border-t border-mono-gray/20 text-[12px] font-body text-mono-gray leading-relaxed">
+              Delivered as a watermarked PDF, licensed to you · written &amp; signed by Sibu Shangase · not what you expected?{' '}
+              <span className="text-mono-black font-semibold">Email within 7 days for a full refund.</span>
+            </p>
+          </section>
         )}
         {live && r.sections && r.sections.length > 0 ? (
           // Published report: render the body. If it's a locked tier, show only
