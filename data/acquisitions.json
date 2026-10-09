@@ -1,5 +1,80 @@
 [
   {
+    "id": "orange-telecel-ghana-2026",
+    "acquirer": "Orange",
+    "acquirerParent": "France",
+    "target": "Telecel Ghana (70%)",
+    "targetCountry": "Ghana",
+    "sector": "Telecoms",
+    "value": "~€500m (reported)",
+    "date": "2026-10",
+    "status": "reported",
+    "verdict": "exported",
+    "read": "Orange (France) is in talks to buy Telecel Group's 70% of Telecel Ghana — about 9m subscribers, part of its push to 40m African customers by 2028. The Ghanaian state keeps its 30%, but majority control of a Ghanaian operator would pass from a pan-African group to a European incumbent. In talks; needs government approval.",
+    "sources": [
+      {
+        "publisher": "Univers Freebox",
+        "url": "https://www.universfreebox.com/article/598051/orange-en-discussions-pour-racheter-un-nouvel-operateur-avec-lobjectif-de-gagner-40-millions-dabonnes-dici-2028",
+        "label": "Orange en discussions pour racheter Telecel Ghana"
+      },
+      {
+        "publisher": "Clubic",
+        "url": "https://www.clubic.com/actualite-633064-orange-veut-mettre-la-main-sur-un-nouvel-operateur-en-afrique.html",
+        "label": "Orange veut racheter un nouvel opérateur en Afrique"
+      }
+    ]
+  },
+  {
+    "id": "azura-enpower-trading-2026",
+    "acquirer": "Azura Power",
+    "acquirerParent": "Abu Dhabi (via 2PointZero, 90%)",
+    "target": "Enpower Trading (majority)",
+    "targetCountry": "South Africa",
+    "sector": "Energy",
+    "value": "Undisclosed",
+    "date": "2026-09",
+    "status": "completed",
+    "verdict": "mixed",
+    "read": "Azura Power's first South African move: a majority stake in Enpower Trading, a licensed private electricity trader in the Southern African Power Pool. Founder and management ownership is explicitly preserved — but with Azura itself now 90% Gulf-owned (2PointZero), ultimate control of an SA trading licence sits offshore. Completed 30 Sep 2026.",
+    "sources": [
+      {
+        "publisher": "Engineering News",
+        "url": "https://www.engineeringnews.co.za/article/azura-power-acquires-majority-stake-in-enpower-trading-2026-10-02",
+        "label": "Azura Power acquires majority stake in Enpower Trading"
+      },
+      {
+        "publisher": "Billionaires.Africa",
+        "url": "https://www.billionaires.africa/2026/10/06/uae-billionaire-sheikh-tahnoon-linked-azura-power-buys-south-african-energy-trader/",
+        "label": "Sheikh Tahnoon-linked Azura Power buys South African energy trader"
+      }
+    ]
+  },
+  {
+    "id": "2pointzero-azura-power-2026",
+    "acquirer": "2PointZero",
+    "acquirerParent": "Abu Dhabi (IHC / Sheikh Tahnoon)",
+    "target": "Azura Power Holdings (90%)",
+    "targetCountry": "Pan-African (Nigeria-rooted)",
+    "sector": "Energy",
+    "value": "Undisclosed",
+    "date": "2026-08",
+    "status": "reported",
+    "verdict": "exported",
+    "read": "Abu Dhabi's 2PointZero (a Sheikh Tahnoon / IHC vehicle) is taking a 90% stake in Azura Power Holdings, the pan-African independent power platform behind Nigeria's landmark Azura-Edo IPP. A continental energy platform authored and built in Africa passes almost wholly into Gulf ownership.",
+    "sources": [
+      {
+        "publisher": "The National",
+        "url": "https://www.thenationalnews.com/business/energy/2026/08/31/abu-dhabis-2pointzero-unit-acquires-90-stake-in-africas-azura-power/",
+        "label": "Abu Dhabi's 2PointZero acquires 90% stake in Africa's Azura Power"
+      },
+      {
+        "publisher": "Africa Energy",
+        "url": "https://www.africa-energy.com/news-centre/article/uae-firm-buys-majority-interest-pan-african-ipp-azura",
+        "label": "UAE firm buys majority interest in pan-African IPP Azura"
+      }
+    ]
+  },
+  {
     "id": "paystack-allawee-2026",
     "acquirer": "Paystack",
     "acquirerParent": "Stripe (US)",
