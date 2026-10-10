@@ -14963,5 +14963,228 @@
         "'African' and 'foreign' are getting harder to score. Dual listings, diaspora-founded acquirers and blended DFI capital (IFC, Proparco) blur the binary the ledger depends on; a stake can be foreign-domiciled and developmentally aligned at once."
       ]
     }
+  },
+  {
+    "slug": "the-repatriation-playbook-nollywood-2026",
+    "title": "The Repatriation Playbook: How Nollywood Took Its Industry Back",
+    "series": "INTELLIGENCE REPORT",
+    "status": "live",
+    "access": "premium",
+    "summary": "When Amazon Prime shut its Africa team and Netflix retreated to licensing, the consensus was that Nollywood had lost its patron and would stall. The opposite happened: Nigerian film rebuilt the distribution layer the streaming era never let it own — on YouTube, in cinemas, and through African-owned platforms — and pulled the catalogue, the recurring revenue and the audience data back home. This report reconstructs the mechanism as a replicable model: the four rails value came home on, a scorecard of who captures what on each, the cultural read on why authorship was never the problem, and the segmented playbook for founders, capital, policymakers and brands. It carries its own Bear Case — because the hardest question is whether this is ownership or a better tenancy.",
+    "tags": [
+      "Nollywood",
+      "value capture",
+      "streaming",
+      "YouTube",
+      "Nigeria",
+      "film",
+      "ownership",
+      "diaspora"
+    ],
+    "publishedAt": "2026-10-10T11:00:00.000Z",
+    "keyStats": [
+      {
+        "value": "$128m",
+        "label": "YouTube ad revenue in Nigeria, 2026 — forecast to $279m by 2031"
+      },
+      {
+        "value": "₦20bn",
+        "label": "Nigerian box office tracking for 2026, from ₦7.36bn in 2023"
+      },
+      {
+        "value": "49.4%",
+        "label": "Nigerian films' share of West Africa box office in 2025 — ahead of Hollywood"
+      },
+      {
+        "value": "4 rails",
+        "label": "The repatriation model: YouTube, cinema, owned platforms, licensing from strength"
+      },
+      {
+        "value": "2024",
+        "label": "The year Prime exited and the repatriation began"
+      }
+    ],
+    "exhibit": {
+      "title": "The repatriation scorecard — who captures value on each rail",
+      "type": "matrix",
+      "note": "MonoKromatik assessment, 0–4 (empty→full). An authorship-weighted read of where value lands on each distribution rail — a verdict, not a measured metric. Sources: 3Vision (YouTube economics), Techloy (creator ownership), Communiqué (owned platforms), BusinessDay (box office).",
+      "cols": [
+        "Catalogue owned at home",
+        "Revenue recurs",
+        "Audience data kept",
+        "Diaspora monetised"
+      ],
+      "rows": [
+        {
+          "label": "Foreign SVOD licence",
+          "tag": "rented",
+          "cells": [
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "label": "YouTube channel",
+          "tag": "owned, hosted",
+          "cells": [
+            3,
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "label": "African-owned platform",
+          "tag": "owned",
+          "cells": [
+            4,
+            3,
+            4,
+            4
+          ]
+        },
+        {
+          "label": "Cinema",
+          "tag": "home demand",
+          "cells": [
+            4,
+            2,
+            3,
+            1
+          ]
+        }
+      ]
+    },
+    "exhibits": [
+      {
+        "title": "The box office came back",
+        "type": "line",
+        "unit": "₦ bn gross",
+        "note": "Nigerian box-office gross. 2026 is a full-year projection from ₦8.8bn taken in H1. Source: BusinessDay.",
+        "data": [
+          {
+            "label": "2023",
+            "value": 7.36,
+            "display": "₦7.36bn"
+          },
+          {
+            "label": "2025",
+            "value": 15.64,
+            "display": "₦15.64bn"
+          },
+          {
+            "label": "2026e",
+            "value": 20,
+            "display": "₦20bn+"
+          }
+        ]
+      },
+      {
+        "title": "The new distribution economy is ad-funded and owned",
+        "type": "bar",
+        "note": "YouTube advertising revenue in Nigeria and the annualised take of Nollywood-focused channels. Sources: 3Vision (market ad revenue), Communiqué (channel earnings).",
+        "data": [
+          {
+            "label": "YouTube NG ad revenue, 2026",
+            "value": 128,
+            "display": "$128m"
+          },
+          {
+            "label": "Nollywood YT channels, annualised 2024",
+            "value": 150,
+            "display": "$120–180m",
+            "tag": "creator-owned"
+          },
+          {
+            "label": "YouTube NG ad revenue, 2031 forecast",
+            "value": 279,
+            "display": "$279m"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The finding: when the cheque left, the industry got richer",
+        "paragraphs": [
+          "In 2024 the two institutions that had defined a decade of Nollywood's ambition stepped back at once. Amazon Prime Video closed its African operations and halted funding for original content in the region. Netflix, without announcing a retreat, executed one — narrowing from commissioning Nigerian originals toward licensing films that had already proven themselves commercially, limiting its territories and its risk. The read across the industry was grief: the patron was leaving, and an ecosystem built on streaming budgets would contract with them.",
+          "Two years on, the evidence points the other way. YouTube now generates an estimated $128m a year in advertising revenue in Nigeria, forecast by 3Vision to reach $279m by 2031 — already more than Netflix's entire subscription business across Sub-Saharan Africa outside South Africa. The cinema box office nearly doubled on BusinessDay figures, from ₦7.36bn in 2023 to ₦15.64bn in 2025, and is tracking past ₦20bn in 2026. A wave of Nigerian-owned platforms launched into the space the incumbents vacated. The industry did not shrink. It restructured — and in restructuring, it changed who owns it.",
+          "This report argues that the 2024 retreat will be read in hindsight as the beginning of the most important value-capture event in modern African creative industry: the moment Nollywood stopped renting its own distribution and started owning it. That is the optimistic frame, and we hold it in tension throughout with its hardest rebuttal — that the industry has swapped one foreign landlord for another, and repatriated its revenue without repatriating its control. Both readings are defensible. The point of the model below is to let you decide which rail is which."
+        ]
+      },
+      {
+        "heading": "The framework: rented value vs repatriated value",
+        "paragraphs": [
+          "Every distribution deal can be read on one axis: when the work finds its audience, who keeps the upside? We call the two poles rented and repatriated. Under rented value, a maker sells a window — usually exclusive — for a flat fee. The platform takes the catalogue right, the long tail, the re-watch economics, the franchise option and, most valuable of all, the data on who watched and why. The maker is a supplier. That was the structure of the streaming era: Nigerian authorship was globally celebrated while Nigerian ownership was quietly leased offshore.",
+          "Under repatriated value, the maker owns the rail or the relationship. On a YouTube channel, the filmmaker is writer, director, distributor and revenue-owner at once; the catalogue stays, the ad revenue recurs, and the audience is theirs. On an African-owned subscription platform, the equity, the catalogue and the data sit with African operators. In a cinema, the film is owned outright and the opening weekend is a proof-of-demand signal the maker controls. The flat fee becomes a running royalty; the supplier becomes the owner.",
+          "This is not a moral framework — selling a window can be the rational, value-maximising move, and we say so in the Bear Case. It is an ownership framework. It measures four things: whether the catalogue is owned at home, whether the revenue recurs, whether the audience data is kept, and whether the diaspora — the industry's highest-value, least-served audience — is monetised by Africans or by someone else. The scorecard exhibit applies exactly those four tests to each rail.",
+          "The value is that the framework travels. Nollywood is the worked example, but music, sport, fashion and comedy face the identical choice between a foreign platform's flat cheque and the slower, harder work of owning the rail. What Nollywood has done is run the experiment first, at scale, in public."
+        ]
+      },
+      {
+        "heading": "The evidence, rail one: YouTube became the real box office",
+        "paragraphs": [
+          "The single largest monetisation layer for Nigerian film is now YouTube, and the scale is not marginal. Market advertising revenue of roughly $128m in 2026, forecast by 3Vision to $279m by 2031, sits above Netflix's SVOD revenue across the rest of Sub-Saharan Africa. Beneath the market number, the creator economics are the real signal: Nollywood-focused channels were, on Communiqué estimates, collectively earning an estimated $10–15m a month by 2024 — $120–180m annualised — and rising.",
+          "The structural difference from a licence is the entire argument. A YouTube channel is not a smaller streaming deal; it is the inverse of one. The maker keeps the catalogue on their own channel, earns a recurring share of ad revenue rather than a one-time fee, and owns the subscriber relationship. Discovery, distribution and monetisation collapse into an asset the creator controls. For a mid-tier producer shut out of the streaming commissioning pipeline, that is not a downgrade — it is the first time the long tail has ever accrued to them.",
+          "The honest asterisk, carried here and expanded in the Bear Case: YouTube is Google. The rail is owned by the creator; the platform beneath the rail is not. Google sets the revenue share, controls discovery, and can revise both unilaterally. On our scorecard YouTube earns full marks for recurring revenue and strong marks for catalogue and diaspora reach — but only partial marks for data, because the richest audience signal still resolves inside Google's walls."
+        ]
+      },
+      {
+        "heading": "The evidence, rails two and three: cinemas and the platforms Nigerians own",
+        "paragraphs": [
+          "The second rail is the one the obituaries ignored: the cinema. Nigerian box-office gross rose from ₦7.36bn in 2023 to ₦15.64bn in 2025, with ₦8.8bn already taken in the first half of 2026 and the full year tracking past ₦20bn. In 2025, Nigerian films reportedly captured 49.4% of West Africa's box office, narrowly ahead of Hollywood's 48.8% — a domestic industry out-earning the global import on its own turf. The hits stopped being modest: billion-naira theatrical releases and genre records became routine rather than exceptional.",
+          "Cinema matters beyond its receipts because a sold-out opening weekend is the cleanest leverage an independent industry can manufacture: owned, undeniable evidence that an audience will pay. It is the collateral that makes the other rails financeable, and it is the demand signal a licensing negotiation can no longer ignore.",
+          "The third rail is the most deliberate: African-owned platforms rebuilding the economics from scratch. Kava, launched in August 2025 by Inkblot Studios and the Filmhouse Group, runs a cinema-first, diaspora-priced model — roughly ₦1,500 a month at home and $5.99 abroad — targeting the Nigerians overseas who are the industry's most valuable and least-served audience. EnFiTV operates as a producer marketplace, paying creators at rates its backers claim run well above YouTube's per-view economics. Alongside them, veterans such as iROKOtv and IbakaTV established years ago that an African platform could own African catalogue.",
+          "None of these yet rivals Netflix on capital or scale, and we do not claim they do. Their significance is categorical, not competitive: where a Nigerian film finds its audience through them, the equity, the catalogue and the data sit at home. That is the point the scale debate misses."
+        ]
+      },
+      {
+        "heading": "The scorecard and the sector read",
+        "paragraphs": [
+          "The scorecard exhibit applies the framework's four tests — catalogue owned at home, revenue recurs, audience data kept, diaspora monetised — to each of the four rails. The foreign SVOD licence scores lowest on ownership by design: the catalogue is leased, the fee is one-time, the data is offshore. YouTube and the African-owned platforms score highest, with the platforms taking the data and diaspora dimensions the licence structurally cannot. Cinema sits apart — unmatched on home demand and catalogue, weak on recurrence — which is why it functions best as the proof-of-demand layer beneath the other rails rather than a standalone model.",
+          "The sector read is that no single rail is the answer; the model is the portfolio. The producers winning in 2026 are not choosing between YouTube and cinema and a platform — they are sequencing them: a theatrical release to manufacture demand and press, a YouTube window to capture the recurring long tail, and an owned-platform or diaspora play to monetise the global audience directly. The streaming era offered one exit — the licence. The repatriation era offers a stack, and the stack is what keeps the value home.",
+          "Crucially, the foreign platforms do not disappear in this read — they are repriced. Netflix returning to license a proven Nigerian hit is no longer a gatekeeper funding unmade work on its terms; it is a customer buying finished, owned product from a position of maker strength. The licence becomes one more rail in the portfolio, entered from ownership rather than dependence. That repricing, more than any single revenue number, is the repatriation."
+        ]
+      },
+      {
+        "heading": "The cultural read: authorship was never the problem",
+        "paragraphs": [
+          "MonoKromatik reads culture through authorship, ownership and capture, and Nollywood is the cleanest case the lens has ever had. Authorship was never Nollywood's weakness — it is the second-largest film industry on earth by volume, with a storytelling output and cultural reach the streaming era celebrated precisely because it was already extraordinary. What the industry lacked was the ownership layer between authorship and capture: the distribution it did not control, and so could not monetise on its own terms.",
+          "The repatriation is, in cultural terms, the closing of that gap. For the first time the people who author the stories are positioned to own the rails that carry them and capture the value they generate. That is why this matters beyond the balance sheet: a culture that owns its distribution sets its own agenda — which stories get made, in which languages, for which audiences — rather than optimising for a foreign commissioner's taste. The surge in Igbo-language and genre films tracks exactly this: owned rails widen the aperture of who gets to tell what.",
+          "The signalling read reinforces it. An industry that owns its distribution signals permanence to its own talent and capital — a reason to build a career, a studio, a fund at home rather than treat Nollywood as a feeder to someone else's platform. The streaming era signalled that the ceiling was a foreign licence. The repatriation signals that the ceiling is ownership. That shift in what the industry signals to its own ecosystem may, in time, matter more than any one year's revenue."
+        ]
+      },
+      {
+        "heading": "What this means for you",
+        "paragraphs": [
+          "For founders and makers: the lesson is the stack, not the single bet. Treat the foreign licence as one rail entered from strength, not the goal. Build the owned rail — a channel, a catalogue, a direct diaspora relationship — first, because it is the only one whose value compounds to you. Manufacture a proof-of-demand moment (a theatrical window, a viral release) and use it as collateral for everything downstream. The asset you are building is not a film; it is the audience relationship and the catalogue that outlive it.",
+          "For capital: the under-priced opportunity is the ownership layer, not the content. The African-owned platforms are under-capitalised against incumbents with bottomless balance sheets — which is precisely where patient capital earns its return, because it is buying the rail the whole industry is migrating onto. The diaspora subscription is the clearest unit economic in African media and the least contested. Back the toll road, not only the traffic on it.",
+          "For policymakers: the win is infrastructural. The repatriation is happening despite, not because of, policy — on rails owned by foreign platforms. The leverage is in payment rails, broadband cost, FX access for creators repatriating YouTube and diaspora earnings, and IP enforcement that makes an owned catalogue defensible. A state that lowers the cost of owning distribution captures tax, employment and soft power from an industry already doing the hard part itself.",
+          "For brands and agencies: Nollywood is now a direct, ownable distribution channel, not a licensing counterparty. The creator-owned channel and the diaspora platform are media buys with an audience relationship a foreign SVOD will never sell you. The brands that win will treat Nigerian film the way they treat a major creator economy — as a place to co-own audience — rather than as content to sponsor from arm's length."
+        ]
+      },
+      {
+        "heading": "Methodology & the evidence ledger",
+        "paragraphs": [
+          "This report synthesises public reporting and market data on Nigerian film distribution between 2023 and 2026, cross-checked across named sources and labelled throughout as reported or verified. Revenue figures for YouTube and the box office are drawn from market-research and trade reporting (3Vision, BusinessDay, Communiqué, Techloy) and are stated in the currency of the source; the 2026 box-office figure is a full-year projection from first-half actuals and is labelled as such.",
+          "The repatriation scorecard is an original MonoKromatik exhibit: an authorship-weighted, 0–4 assessment of where value lands on each distribution rail against four ownership tests. It is a structured editorial verdict, not a measured metric, and its note names the sources behind each dimension. Where a claim could not be verified to a named source — including the undisclosed economics of individual platform deals — it is softened or omitted rather than asserted.",
+          "The framework (rented vs repatriated value; authorship → ownership → capture) is MonoKromatik's house method, applied here to film and designed to travel to music, sport and fashion. The Bear Case is a first-class part of the analysis, not a disclaimer: the strongest arguments against our own read, stated plainly, because a read you cannot argue against is a read you cannot trust."
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "The strongest arguments against reading the repatriation as true ownership — and why a sober analyst might call it a better tenancy instead.",
+      "points": [
+        "YouTube is Google. The creator owns the channel, but not the rail beneath it: Google sets the revenue share, controls discovery, and can change both unilaterally tomorrow. The industry may have swapped a foreign streaming landlord for a foreign advertising one — relocating revenue, not ownership.",
+        "Naira box-office growth is flattered by inflation and a sharply weaker currency. Measured in hard dollars, the climb from 2023 to 2026 is materially gentler than the headline near-tripling suggests, and some of the 'growth' is simply repricing.",
+        "The African-owned platforms are under-capitalised against competitors with effectively bottomless balance sheets. Owning a catalogue is not the same as being able to defend or scale the platform that hosts it, and most of these ventures have not proven durable unit economics yet.",
+        "The model depends on the diaspora dollar — which is exactly the audience a re-committed Netflix or Prime could buy back at any time with a cheque the homegrown platforms cannot match. Repatriation that a single incumbent decision can reverse is not yet secure.",
+        "Selling a window to a global platform is often the value-maximising move for a founder and early backers, not a defeat. A framework that treats every licence as 'rented value' risks moralising a rational, liquidity-generating choice.",
+        "'Repatriation' may describe where the revenue lands, not who controls the terms. If makers still rent their rails, rules and discovery from foreign platforms, the industry has changed its address, not its independence."
+      ]
+    }
   }
 ]

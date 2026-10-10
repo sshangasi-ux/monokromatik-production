@@ -185,6 +185,24 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // yes on the same value-capture lens; buyers ladder up from there.
     entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
+  // The culture flagship (`report` tier). Ships live + premium; the SKU is
+  // env-gated with NO code default, so until NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL
+  // is set (create the Paystack product, paste its Payment Page link) the report
+  // reads free — and auto-gates to the R3,500 one-off BUY the moment the URL lands,
+  // same pattern as the other flagships (the price/link then can't drift).
+  'the-repatriation-playbook-nollywood-2026': {
+    price: 'R3,500',
+    tier: 'report',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || null,
+    launchNote: 'Launch price — rising to R7,500',
+    enterprise: {
+      priceFrom: 'from $1,500',
+      blurb: 'Need the underlying data, a team briefing, or citation & license rights? The enterprise edition pairs the full report with the dataset and the repatriation model behind it.',
+    },
+    // Step-DOWN entry rung — the R220 amapiano study is the smaller first yes on
+    // the same value-capture lens; buyers ladder up to this culture flagship.
+    entry: { slug: 'who-captures-amapiano-value-capture-report' },
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
