@@ -194,7 +194,7 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'the-repatriation-playbook-nollywood-2026': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || 'https://paystack.shop/pay/tjhdhzpc3j',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || 'https://paystack.shop/pay/tjdhdzpc3j',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',

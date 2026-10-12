@@ -62,14 +62,14 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'the-repatriation-playbook-nollywood-2026',
-    // Sold via a Paystack PAYMENT PAGE (id 2217697, slug tjhdhzpc3j), not a
+    // Sold via a Paystack PAYMENT PAGE (id 2217697, slug tjdhdzpc3j), not a
     // Storefront product — so the match tokens include the page slug/id and the
     // report name words. R3,500 is shared with the sport flagship, so we never
     // match on amount; tokens stay the only signal, and none here overlap the
     // other reports'. If a real purchase doesn't hit (payment-page payloads can
     // be sparse), the webhook logs the payload shape and manual fulfilment from
     // Paystack Orders is the fallback — refine these tokens from that log.
-    match: ['the-repatriation-playbook', 'repatriation', 'tjhdhzpc3j', '2217697'],
+    match: ['the-repatriation-playbook', 'repatriation', 'tjdhdzpc3j', '2217697'],
     object: process.env.REPATRIATION_REPORT_OBJECT || 'the-repatriation-playbook-nollywood-2026.pdf',
     filename: 'MonoKromatik-The-Repatriation-Playbook.pdf',
     title: 'The Repatriation Playbook — How Nollywood Took Its Industry Back',
