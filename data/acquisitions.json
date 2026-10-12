@@ -399,5 +399,96 @@
       }
     ],
     "relatedArticle": "who-owns-guinness-nigeria"
+  },
+  {
+    "id": "lekkeslaap-consortium-2026",
+    "acquirer": "SA investor consortium (Bellair Road & Janic Capital)",
+    "acquirerParent": "South Africa",
+    "target": "LekkeSlaap",
+    "targetCountry": "South Africa",
+    "sector": "Travel",
+    "value": "Undisclosed",
+    "date": "2026-10",
+    "status": "completed",
+    "verdict": "retained",
+    "read": "Co-founders Jonathan Womersley and Marcel van de Ghinste exit after 17 years, selling the 40,000-property travel platform to a South African consortium co-led by Bellair Road Investment Partners and Janic Capital, with the Ferreira and Moolman family offices and Investec. The executive team rolled equity and stays on. Rare on this ledger: control, catalogue and upside all stay South African-owned — a retained exit, not an export. The open question is whether the consortium holds, or flips to a foreign buyer later.",
+    "sources": [
+      {
+        "publisher": "LaunchBase Africa",
+        "url": "https://launchbaseafrica.com/2026/10/08/lekkeslaap-acquired/",
+        "label": "LekkeSlaap acquired by a consortium of local investors"
+      },
+      {
+        "publisher": "Bizcommunity",
+        "url": "https://www.bizcommunity.com/article/lekkeslaap-founders-exit-as-local-investors-take-over-414199a",
+        "label": "LekkeSlaap founders exit as local investors take over"
+      },
+      {
+        "publisher": "Billionaires.Africa",
+        "url": "https://www.billionaires.africa/2026/10/08/south-african-billionaires-gt-ferreira-and-laurie-dippenaar-buy-into-airbnb-rival/",
+        "label": "SA billionaires GT Ferreira and Laurie Dippenaar buy into Airbnb rival"
+      }
+    ],
+    "relatedArticle": "lekkeslaap-the-one-that-stayed-south-african-ownership"
+  },
+  {
+    "id": "replit-atta-2026",
+    "acquirer": "Replit",
+    "acquirerParent": "United States",
+    "target": "Atta",
+    "targetCountry": "Egypt",
+    "sector": "Technology",
+    "value": "Undisclosed",
+    "date": "2026-09",
+    "status": "completed",
+    "verdict": "exported",
+    "read": "US software company Replit (valued ~$9bn) acquired Cairo-founded AI-analytics startup Atta — founders Omar Shaik and Amine Ben Khalifa — folding its interactive-charting technology into Replit's chat interface. Both founders relocate into Replit. A clean capability export: the IP and the two builders now compound a US platform's valuation rather than an Egyptian one.",
+    "sources": [
+      {
+        "publisher": "The Condia",
+        "url": "https://thecondia.com/replit-acquires-atta-egypts-ai-startup/",
+        "label": "Replit acquires Egypt's AI analytics startup Atta"
+      },
+      {
+        "publisher": "Zawya",
+        "url": "https://www.zawya.com/en/special-coverage/technology-telecom/us-based-replit-acquires-egypts-ai-analytics-startup-atta-1369565",
+        "label": "US-based Replit acquires Egypt's AI analytics startup Atta"
+      },
+      {
+        "publisher": "WeeTracker",
+        "url": "https://weetracker.com/2026/10/05/egypt-founded-startup-atta-acquired-by-replit/",
+        "label": "Egypt-founded startup Atta acquired by Replit"
+      }
+    ]
+  },
+  {
+    "id": "luno-gtxn-2026",
+    "acquirer": "Luno",
+    "acquirerParent": "Digital Currency Group (US)",
+    "target": "GTXN",
+    "targetCountry": "Kenya",
+    "sector": "Fintech",
+    "value": "Undisclosed",
+    "date": "2026-09",
+    "status": "completed",
+    "verdict": "exported",
+    "read": "Luno — the London-headquartered exchange majority-owned by US group Digital Currency Group — acquired Nairobi fintech GTXN (CEO Dan Kleinbaum), a licensed Kenyan fund manager running cross-border collection and settlement rails. Luno gains owned African settlement infrastructure and a Capital Markets Authority licence; control of the Kenyan rails passes to a foreign-owned parent. Exported.",
+    "sources": [
+      {
+        "publisher": "The Condia",
+        "url": "https://thecondia.com/luno-acquires-gtxn-kenya/",
+        "label": "Luno acquires Kenyan fintech GTXN in founder Dan Kleinbaum's second exit"
+      },
+      {
+        "publisher": "Innovation Village",
+        "url": "https://innovation-village.com/luno-acquires-kenyan-fintech-gtxn-to-build-owned-cross-border-settlement-infrastructure/",
+        "label": "Luno acquires Kenyan fintech GTXN to build owned cross-border settlement infrastructure"
+      },
+      {
+        "publisher": "Disrupt Africa",
+        "url": "https://disrupt-africa.com/2026/10/12/kenyan-cross-border-payments-startup-gtxn-acquired-by-luno/",
+        "label": "Kenyan cross-border payments startup GTXN acquired by Luno"
+      }
+    ]
   }
 ]
