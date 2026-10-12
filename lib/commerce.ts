@@ -185,15 +185,16 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // yes on the same value-capture lens; buyers ladder up from there.
     entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
-  // The culture flagship (`report` tier). Ships live + premium; the SKU is
-  // env-gated with NO code default, so until NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL
-  // is set (create the Paystack product, paste its Payment Page link) the report
-  // reads free — and auto-gates to the R3,500 one-off BUY the moment the URL lands,
-  // same pattern as the other flagships (the price/link then can't drift).
+  // The culture flagship (`report` tier). LIVE — the R3,500 Paystack one-time
+  // Payment Page is created (MonoKromatik Network account) and Active. The URL is
+  // the code default (not a Vercel env var) so the price/link can't drift, same
+  // pattern as the other flagships; env can still override. PDF delivery of this
+  // report is manual from Paystack Orders for now (buyers pay on this page),
+  // moving to the webhook → Resend attachment path like the sport flagship.
   'the-repatriation-playbook-nollywood-2026': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || 'https://paystack.shop/pay/tjhdhzpc3j',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',
