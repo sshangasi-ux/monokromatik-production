@@ -5,10 +5,12 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, getReportBySlug, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper } from '../../lib/commerce';
+import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper, reportTier } from '../../lib/commerce';
 import { isFlagshipGated } from '../../lib/gating';
 import FlagshipGate from './FlagshipGate';
 import BuyButton from './BuyButton';
+import ReportView from './ReportView';
+import ReportProof from './ReportProof';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -100,6 +102,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
   return (
     <div className="min-h-screen bg-mono-paper">
       <ReadingProgress />
+      {live && <ReportView slug={r.slug} tier={reportTier(r.slug)} access={r.access} locked={locked} />}
       <Navigation />
       <header className="bg-mono-black text-mono-white py-16 md:py-24 border-b border-mono-white/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,6 +167,10 @@ export default async function ReportFeature({ report }: { report: Report }) {
             {r.exhibits?.map((ex, i) => <ReportExhibit key={i} exhibit={ex} />)}
           </div>
         )}
+        {/* Proof band — the "why believe this" layer at the purchase decision.
+            Verifiable credibility only (corpus, named sourcing, guarantee, AI
+            citations); the testimonial rail renders only if real quotes exist. */}
+        {live && <ReportProof slug={r.slug} locked={locked} />}
         {/* Inside this report — the deliverable manifest + contents, so a buyer
             knows exactly what the paid PDF is before paying. Paid reports only. */}
         {locked && oneOffUrl && r.sections && r.sections.length > 0 && (
