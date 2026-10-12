@@ -75,6 +75,7 @@ const footerGroups = [
       { href: '/culture', label: 'The Library' },
       { href: '/signal', label: 'Signal' },
       { href: '/breaking', label: 'The Wire' },
+      { href: '/the-drop', label: 'The Drop' },
       { href: '/conversations', label: 'Conversations' },
       { href: '/weekly', label: 'The Weekly Signal' },
     ],
