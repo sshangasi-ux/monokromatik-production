@@ -73,6 +73,30 @@ function ymd(d) { return d.toISOString().slice(0, 10); }
     if (camp?.rows) { console.log('\nCAMPAIGNS (UTM, real):'); camp.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
     const ctry = await rr(['country'], ['totalUsers'], 8);
     if (ctry?.rows) { console.log('\nTOP COUNTRIES (raw — includes bot geos):'); ctry.rows.forEach(r => console.log('  %s  %s', r.metricValues[0].value.padStart(5), r.dimensionValues[0].value)); }
+
+    // ---- CONVERSION FUNNEL (custom events) ----
+    // The funnel the business actually turns on, surfaced in our own diagnostics
+    // so the weekly scorecard can track it. Events fire from lib/analytics.ts
+    // (client) + lib/ga-measurement.ts (server `purchase`). See docs/ANALYTICS.md.
+    const FUNNEL = [
+      'report_view', 'report_buy_click', 'purchase',
+      'newsletter_signup', 'flagship_gate_unlock',
+      'lead_submit', 'generate_lead',
+    ];
+    const evFilter = { filter: { fieldName: 'eventName', inListFilter: { values: FUNNEL } } };
+    const ev = await rr(['eventName'], ['eventCount'], 25, 'eventCount', evFilter);
+    const counts = Object.fromEntries(FUNNEL.map(n => [n, 0]));
+    if (ev?.rows) ev.rows.forEach(r => { counts[r.dimensionValues[0].value] = Number(r.metricValues[0].value) || 0; });
+    const pct = (num, den) => den > 0 ? ((num / den) * 100).toFixed(1) + '%' : '—';
+    console.log('\n=== CONVERSION FUNNEL (custom events, real) ===');
+    console.log('  report_view ............ %s', String(counts.report_view).padStart(5));
+    console.log('  report_buy_click ....... %s   (view→buy %s)', String(counts.report_buy_click).padStart(5), pct(counts.report_buy_click, counts.report_view));
+    console.log('  purchase (paid) ........ %s   (click→paid %s)', String(counts.purchase).padStart(5), pct(counts.purchase, counts.report_buy_click));
+    console.log('  newsletter_signup ...... %s', String(counts.newsletter_signup).padStart(5));
+    console.log('  flagship_gate_unlock ... %s', String(counts.flagship_gate_unlock).padStart(5));
+    console.log('  lead_submit ............ %s', String(counts.lead_submit).padStart(5));
+    console.log('  generate_lead (money) .. %s   (submit→lead %s)', String(counts.generate_lead).padStart(5), pct(counts.generate_lead, counts.lead_submit));
+    if (!ev?.rows?.length) console.log('  (no funnel events in window — fire path or GA custom-event registration may need checking)');
   } else {
     console.log('\n(No GA4 property id — enable the "Google Analytics Admin API" too, or give me the numeric Property ID from GA4 → Admin → Property details.)');
   }

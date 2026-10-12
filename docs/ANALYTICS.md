@@ -27,11 +27,14 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 | `flagship_gate_unlock` | `FlagshipGate` (on unlock) | `slug` | Flagship read unlocked → subscriber (also fires `newsletter_signup`) |
 | `lead_submit` | `CommissionForm` (on submit) | `service`, `source` | Advisory/licensing enquiry attempted (measures form abandonment) |
 | `generate_lead` | `CommissionForm` (on success) | `service`, `source` | **The money conversion** — a captured advisory / licensing lead |
+| `report_view` | `ReportView` (report page mount) | `slug`, `tier`, `access`, `locked` | The funnel denominator — report impressions; `locked:true` = a paywall encounter |
 | `report_buy_click` | `BuyButton` (report BUY) | `slug`, `price` | Paid-report checkout intent (Paystack) |
 | `checker_result` | `Checker` (verdict shown) | `verdict` | Free Value-Capture Checker completed |
 | `checker_cta_click` | `Checker` result CTAs | `service`, `verdict` | Checker → services / advisory intent |
 
 Add more by importing `track` in a client component: `track('event_name', { ...params })`. Keep it a no-op-safe wrapper (it already swallows errors).
+
+**Diagnostics visibility:** the GA report script (`video/build/ga-report.mjs`) now prints a **CONVERSION FUNNEL** block — `report_view → report_buy_click → purchase`, plus `newsletter_signup`, `flagship_gate_unlock`, and `lead_submit → generate_lead` — with view→buy, click→paid and submit→lead rates. This is what the weekly-diagnostics-scorecard cron reads, so the funnel is now trackable in our own reporting, not only in the GA4 UI. If the block shows all zeros while traffic is healthy, check that the events are firing (and that they're registered as GA4 custom events / key events).
 
 ### Server-side (GA4 Measurement Protocol — `lib/ga-measurement.ts`)
 | Event | Where | Params | Why |
