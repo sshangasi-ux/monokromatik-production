@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { track } from '../../lib/analytics';
 
-type Variant = 'default' | 'footer' | 'sidebar';
+type Variant = 'default' | 'footer' | 'sidebar' | 'inline';
 
 interface Props {
   variant?: Variant;
@@ -46,6 +46,37 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
 
   const ctaIdle = 'JOIN THE WEEKLY SIGNAL';
   const ctaLoading = 'SUBSCRIBING…';
+
+  if (variant === 'inline') {
+    // Bare capture row — no card, no heading. The surrounding section supplies
+    // the copy (e.g. the homepage hero). Built to sit on a dark background.
+    return (
+      <div className="w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3" aria-label="Newsletter signup">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            required
+            autoComplete="email"
+            className="flex-1 px-5 py-4 bg-mono-white text-mono-black font-body rounded-none border-2 border-transparent focus:outline-none focus:border-mono-amber transition-colors"
+            disabled={status === 'loading'}
+            aria-label="Email address"
+          />
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="px-8 py-4 bg-mono-amber text-mono-black font-display font-bold hover:bg-mono-amber/90 transition-colors disabled:opacity-50 whitespace-nowrap"
+          >
+            {status === 'loading' ? ctaLoading : 'JOIN FREE'}
+          </button>
+        </form>
+        {status === 'success' && <p className="mt-3 text-mono-amber-bright font-body text-sm" role="status">✓ {message}</p>}
+        {status === 'error' && <p className="mt-3 text-red-400 font-body text-sm" role="alert">✗ {message}</p>}
+      </div>
+    );
+  }
 
   if (variant === 'footer') {
     return (
