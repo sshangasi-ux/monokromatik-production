@@ -164,14 +164,26 @@ export default function ArticleClient({
           <figure className="mb-12">
             <div className="aspect-video rounded-lg overflow-hidden bg-mono-charcoal">
               {article.videoType === 'file' ? (
-                <video
-                  src={article.videoUrl}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
+                article.videoFeature ? (
+                  // Narrated longform: a real player — controls, audible, no loop.
+                  <video
+                    src={article.videoUrl}
+                    className="w-full h-full object-contain bg-mono-black"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={article.imageUrl}
+                  />
+                ) : (
+                  <video
+                    src={article.videoUrl}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                )
               ) : (
                 <iframe
                   src={

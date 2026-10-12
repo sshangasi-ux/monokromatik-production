@@ -27,6 +27,10 @@ export interface Article {
   videoUrl?: string;
   /** 'embed' = YouTube/Vimeo iframe; 'file' = mp4 played inline. */
   videoType?: 'embed' | 'file';
+  /** For videoType 'file': render a full feature player (controls, no
+   *  autoplay/loop, hero image as poster) instead of the default short muted
+   *  autoplay-loop clip. Use for narrated longform video where the audio matters. */
+  videoFeature?: boolean;
   /** Credit for the embedded video, e.g. "Video via Nike". */
   videoCredit?: string;
   /** Link the video credit points to. */
