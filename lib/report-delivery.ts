@@ -60,6 +60,22 @@ const REPORTS: ReportAsset[] = [
     subject: "Your report — Who's Buying African Sport? (The Intelligence Report)",
     blurb: 'The institutional read on who owns African sport: the Authorship → Ownership → Capture framework, a bottom-up value-leakage model, a named deal ledger, scenarios to 2035 and a segmented playbook — sixteen sourced exhibits, chart-led.',
   },
+  {
+    slug: 'the-repatriation-playbook-nollywood-2026',
+    // Sold via a Paystack PAYMENT PAGE (id 2217697, slug tjhdhzpc3j), not a
+    // Storefront product — so the match tokens include the page slug/id and the
+    // report name words. R3,500 is shared with the sport flagship, so we never
+    // match on amount; tokens stay the only signal, and none here overlap the
+    // other reports'. If a real purchase doesn't hit (payment-page payloads can
+    // be sparse), the webhook logs the payload shape and manual fulfilment from
+    // Paystack Orders is the fallback — refine these tokens from that log.
+    match: ['the-repatriation-playbook', 'repatriation', 'tjhdhzpc3j', '2217697'],
+    object: process.env.REPATRIATION_REPORT_OBJECT || 'the-repatriation-playbook-nollywood-2026.pdf',
+    filename: 'MonoKromatik-The-Repatriation-Playbook.pdf',
+    title: 'The Repatriation Playbook — How Nollywood Took Its Industry Back',
+    subject: 'Your report — The Repatriation Playbook (How Nollywood Took Its Industry Back)',
+    blurb: 'The culture value-capture flagship: how Nollywood rebuilt ownership of its industry after the streamers pulled back — the rented-vs-repatriated framework, the four rails, an original repatriation scorecard, the cultural read, a segmented playbook and a full Bear Case.',
+  },
 ];
 
 /**
