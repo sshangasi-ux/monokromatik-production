@@ -9,6 +9,7 @@ import TrendingArticles from './components/TrendingArticles';
 import MediaImage from './components/MediaImage';
 import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
+import { getAllReports } from '../lib/reports';
 import { getPublicCaseStudies } from '../lib/case-studies';
 import { rankIndex } from '../lib/signal-index';
 import CTA from './components/CTA';
@@ -120,16 +121,62 @@ export default function Home() {
   const indexTop = ranked[0]?.score ?? 0;
   const indexCount = ranked.length;
 
+  // Corpus counts for the hero proof chips — verifiable, rounded to a floor so
+  // the number never overstates or looks stale between additions.
+  const reportFloor = Math.floor(getAllReports().length / 10) * 10;
+
+  // Slim feed for the (client) TrendingArticles — it only reads title/slug/
+  // category/publishedAt, so we must NOT ship it all 193 articles with their
+  // full `content`. That serialized payload was the bulk of the homepage's
+  // document weight; this cuts it to four small fields per row.
+  const trendingFeed = articles.map((a) => ({
+    title: a.title,
+    slug: a.slug,
+    category: a.category,
+    publishedAt: a.publishedAt,
+  }));
+
   return (
     <div className="min-h-screen bg-mono-white">
       <Navigation />
       <LivingCover slides={coverSlides} />
 
-      {/* Value prop — what MonoKromatik is, in one line, on first load. */}
-      <section className="bg-mono-paper border-b border-mono-gray/15">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-baseline gap-1.5 sm:gap-5">
-          <p className="text-sm md:text-[15px] font-display font-bold text-mono-black tracking-tight shrink-0">Who owns African culture — and who keeps the money.</p>
-          <p className="text-sm font-body text-mono-charcoal">Named analysis by Sibu Shangase · a free library, value-capture reports, and The Ownership 100.</p>
+      {/* START HERE — the one job. A cold visitor (most arrive from LinkedIn)
+          lands on a clear proposition, one primary action (join the free
+          newsletter — the owned-audience asset), and two secondary paths. Email
+          capture is now high on the page, not buried at the foot. */}
+      <section className="bg-mono-black text-mono-white border-b border-mono-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
+          <div>
+            <p className="text-[11px] tracking-[0.3em] font-display font-bold text-mono-amber mb-5">START HERE</p>
+            <h1 className="text-4xl md:text-6xl font-feature font-bold leading-[0.98] text-balance">
+              Who owns African culture — <span className="text-mono-amber">and who keeps the money.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-mono-soft-white font-body leading-relaxed">
+              Named, source-verified intelligence on African &amp; diaspora brands — by Sibu Shangase. The free
+              library, the value-capture reports, and The Ownership 100.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] tracking-[0.1em] font-display font-bold">
+              <Link href="/reports" className="inline-flex items-center gap-1.5 text-mono-amber hover:text-mono-amber-bright transition-colors">EXPLORE THE REPORTS <ArrowRight size={13} /></Link>
+              <span className="text-mono-white/20">/</span>
+              <Link href="/ownership-100" className="inline-flex items-center gap-1.5 text-mono-soft-white hover:text-mono-amber transition-colors">THE OWNERSHIP 100 <ArrowRight size={13} /></Link>
+            </div>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] tracking-[0.14em] font-display font-bold text-mono-gray-bright uppercase">
+              <span className="tabular-nums">{reportFloor}+ reports</span>
+              <span className="text-mono-white/20">·</span>
+              <span>100-brand ownership ledger</span>
+              <span className="text-mono-white/20">·</span>
+              <span>Cited by AI assistants</span>
+            </div>
+          </div>
+          <div className="lg:border-l lg:border-mono-white/10 lg:pl-16">
+            <p className="text-[11px] tracking-[0.26em] font-display font-bold text-mono-amber mb-2">THE WEEKLY SIGNAL · FREE</p>
+            <p className="text-lg font-feature italic text-mono-soft-white leading-snug mb-5">
+              Who&rsquo;s buying African culture, who&rsquo;s keeping the upside, and what it means — one sharp email a week.
+            </p>
+            <NewsletterSignup variant="inline" source="homepage-hero" />
+            <p className="mt-3 text-[11px] font-body text-mono-gray">Verified sourcing. No noise. Unsubscribe anytime.</p>
+          </div>
         </div>
       </section>
 
@@ -378,7 +425,7 @@ export default function Home() {
         <section className="bg-mono-soft-white py-20 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
             <div className="max-w-md w-full">
-              <TrendingArticles articles={articles} limit={5} />
+              <TrendingArticles articles={trendingFeed} limit={5} />
             </div>
             <div>
               <p className="text-xs tracking-[0.34em] font-display font-bold text-mono-amber-strong mb-4">ON THE PULSE</p>
