@@ -1,5 +1,6 @@
 import { PDFDocument, StandardFonts, rgb, degrees } from 'pdf-lib';
 import type { createAdminClient } from './supabase/admin';
+import { tryRenderReportPdf } from './render-report-pdf';
 
 // One-off paid-report fulfilment. On a Paystack product purchase the buyer is
 // emailed the report as a PDF ATTACHMENT (the file, never a shareable link): the
@@ -19,8 +20,12 @@ interface ReportAsset {
    *  report. Includes the product name/slug words and the Paystack product id —
    *  never a price (multiple reports share R220). */
   match: string[];
-  /** Object path in the private `reports` bucket. */
-  object: string;
+  /** Object path in the private `reports` bucket (bespoke/designed PDFs). */
+  object?: string;
+  /** When true, the PDF is RENDERED on-demand from the report's own content
+   *  (data/reports.json) via lib/render-report-pdf — no bucket file needed. Used
+   *  for data-driven reports; `object` is ignored. */
+  generate?: boolean;
   /** Attachment filename the buyer receives. */
   filename: string;
   title: string;
@@ -70,7 +75,9 @@ const REPORTS: ReportAsset[] = [
     // be sparse), the webhook logs the payload shape and manual fulfilment from
     // Paystack Orders is the fallback — refine these tokens from that log.
     match: ['the-repatriation-playbook', 'repatriation', 'tjdhdzpc3j', '2217697'],
-    object: process.env.REPATRIATION_REPORT_OBJECT || 'the-repatriation-playbook-nollywood-2026.pdf',
+    // Rendered on-demand from data/reports.json at purchase time — no bucket
+    // upload needed; the PDF stays in sync with the report content.
+    generate: true,
     filename: 'MonoKromatik-The-Repatriation-Playbook.pdf',
     title: 'The Repatriation Playbook — How Nollywood Took Its Industry Back',
     subject: 'Your report — The Repatriation Playbook (How Nollywood Took Its Industry Back)',
@@ -135,12 +142,24 @@ export async function deliverReport(email: string, admin: Admin, slug: string): 
     console.warn('[delivery] not configured (RESEND_API_KEY)');
     return record({ status: 'skipped', detail: 'RESEND_API_KEY not set' });
   }
-  const { data: file, error: dlErr } = await admin.storage.from(bucket).download(report.object);
-  if (dlErr || !file) {
-    console.error(`[delivery] PDF not in storage (${bucket}/${report.object}): ${dlErr?.message ?? 'missing'}`);
-    return record({ status: 'failed', detail: `pdf missing ${report.object}: ${dlErr?.message ?? 'not found'}` });
+  // Get the base PDF bytes: render on-demand from the report's own content, or
+  // download the bespoke/designed file from the private bucket.
+  let rawPdf: Buffer;
+  if (report.generate) {
+    const rendered = await tryRenderReportPdf(report.slug);
+    if (!rendered) return record({ status: 'failed', detail: `render failed ${report.slug}` });
+    rawPdf = rendered;
+  } else if (report.object) {
+    const { data: file, error: dlErr } = await admin.storage.from(bucket).download(report.object);
+    if (dlErr || !file) {
+      console.error(`[delivery] PDF not in storage (${bucket}/${report.object}): ${dlErr?.message ?? 'missing'}`);
+      return record({ status: 'failed', detail: `pdf missing ${report.object}: ${dlErr?.message ?? 'not found'}` });
+    }
+    rawPdf = Buffer.from(await file.arrayBuffer());
+  } else {
+    return record({ status: 'failed', detail: `no asset configured for ${slug}` });
   }
-  const stamped = await stampForBuyer(Buffer.from(await file.arrayBuffer()), email);
+  const stamped = await stampForBuyer(rawPdf, email);
   const base64 = stamped.toString('base64');
   const html =
     '<p>Thank you for your purchase.</p>' +
