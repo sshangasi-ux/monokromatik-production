@@ -25,6 +25,7 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 | `cta_click` | `CTA` component (every CTA) | `href`, `variant`, `external` | Conversion funnel — which CTAs drive action |
 | `flagship_gate_shown` | `FlagshipGate` (wall appears) | `slug` | Top of the report→subscribe funnel — gated-report impressions |
 | `flagship_gate_unlock` | `FlagshipGate` (on unlock) | `slug` | Flagship read unlocked → subscriber (also fires `newsletter_signup`) |
+| `advisory_cta_click` | `ArticleAdvisoryCTA` (in-article advisory band) | `source`, `interest` | Article → advisory intent; the top of the lead funnel from commercial pieces (source=`article:<slug>`) |
 | `lead_submit` | `CommissionForm` (on submit) | `service`, `source` | Advisory/licensing enquiry attempted (measures form abandonment) |
 | `generate_lead` | `CommissionForm` (on success) | `service`, `source` | **The money conversion** — a captured advisory / licensing lead |
 | `report_view` | `ReportView` (report page mount) | `slug`, `tier`, `access`, `locked` | The funnel denominator — report impressions; `locked:true` = a paywall encounter |

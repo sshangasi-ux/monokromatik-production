@@ -18229,6 +18229,13 @@
     "videoUrl": "https://www.youtube.com/watch?v=PyPINzp_EXA",
     "videoType": "embed",
     "videoCredit": "Video: MonoKromatik — narrated in the Braam voice. Figures sourced on-screen.",
-    "videoSourceUrl": "https://youtu.be/PyPINzp_EXA"
+    "videoSourceUrl": "https://youtu.be/PyPINzp_EXA",
+    "advisory": {
+      "interest": "signal-fit",
+      "eyebrow": "For corporates, sports-revenue & brand teams",
+      "heading": "Capturing African football's value is a commercial decision. We help you make it.",
+      "blurb": "The piece maps where the value sits — and leaks. We turn that into the sponsorship, rights and ownership read behind a specific move: which property actually fits, what it's worth, and how to keep more of the upside. Built for the teams acting on the opening above.",
+      "cta": "Work with the desk"
+    }
   }
 ]
