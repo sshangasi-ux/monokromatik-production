@@ -76,6 +76,22 @@ export interface Article {
    * articles have none; reserve it for pieces that name a real commercial opening.
    */
   advisory?: ArticleAdvisory;
+  /**
+   * Optional Q&A pairs for FAQPage structured data (SEO / rich results). When
+   * set, the article page emits these as the FAQ schema instead of the single
+   * auto-generated title→excerpt Q&A — so "Who Owns X?" pages can also answer the
+   * related People-Also-Ask questions and capture more SERP real estate.
+   * Every answer must come from facts already in the article (no new claims).
+   */
+  faq?: ArticleFaq[];
+}
+
+/** One FAQ pair for an article's FAQPage structured data (see Article.faq). */
+export interface ArticleFaq {
+  /** The question, phrased as a searcher would type it. */
+  q: string;
+  /** The answer — a sentence or two, drawn only from the article's own facts. */
+  a: string;
 }
 
 /** A commercial "work with us" CTA for an article (see Article.advisory). */
