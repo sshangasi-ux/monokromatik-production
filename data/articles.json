@@ -18226,9 +18226,9 @@
         }
       ]
     },
-    "videoUrl": "https://d2ol7oe51mr4n9.cloudfront.net/user_3I6KQZyIfaeJNxXhrtz9FvFIh13/f14f378c-9d27-419e-ba1a-deb73994d564.mp4",
-    "videoType": "file",
-    "videoFeature": true,
-    "videoCredit": "Video: MonoKromatik — narrated in the Braam voice. Figures sourced on-screen."
+    "videoUrl": "https://www.youtube.com/watch?v=PyPINzp_EXA",
+    "videoType": "embed",
+    "videoCredit": "Video: MonoKromatik — narrated in the Braam voice. Figures sourced on-screen.",
+    "videoSourceUrl": "https://youtu.be/PyPINzp_EXA"
   }
 ]
