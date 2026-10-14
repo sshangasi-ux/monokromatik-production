@@ -24,7 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `https://www.monokromatik.com/article/${article.slug}`;
   // Search <title> leads with the SEO-optimised entity when set; the editorial
   // title still shows on-page and on social (OG/Twitter below use article.title).
-  const title = `${article.seoTitle || article.title} | MonoKromatik Network`;
+  // Short brand suffix: the editorial/SEO title is what wins the click, and the
+  // longer " | MonoKromatik Network" pushed keyword-led titles past Google's
+  // ~60-char SERP cutoff. "| MonoKromatik" keeps the brand without the truncation.
+  const title = `${article.seoTitle || article.title} | MonoKromatik`;
   const desc = article.metaDescription || article.excerpt || article.content.slice(0, 155);
 
   return {
@@ -110,19 +113,27 @@ export default async function ArticlePage({ params }: PageProps) {
   // for us) AI assistants surface the answer for the exact query they rank for.
   const isQuestion = /^who owns/i.test(article.title) || article.title.trim().endsWith('?');
   const answer = (article.excerpt || article.metaDescription || '').trim();
-  const faqLd = isQuestion && answer
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
+  // Prefer the article's own curated Q&A (multiple People-Also-Ask questions, for
+  // more SERP real estate); fall back to a single auto Q&A for the "Who Owns X?"
+  // pages that don't define one.
+  const faqPairs =
+    article.faq && article.faq.length > 0
+      ? article.faq
+      : isQuestion && answer
+        ? [{ q: article.title, a: answer }]
+        : [];
+  const faqLd =
+    faqPairs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqPairs.map((f) => ({
             '@type': 'Question',
-            name: article.title,
-            acceptedAnswer: { '@type': 'Answer', text: answer },
-          },
-        ],
-      }
-    : null;
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }
+      : null;
 
   return (
     <>
