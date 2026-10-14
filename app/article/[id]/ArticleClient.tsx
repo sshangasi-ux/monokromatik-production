@@ -10,6 +10,7 @@ import SocialShare from '../../components/SocialShare';
 import RelatedArticles from '../../components/RelatedArticles';
 import NewsletterSignup from '../../components/NewsletterSignup';
 import BrandRead from '../../components/BrandRead';
+import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
 import {
   getAllArticles,
   getReadingTime,
@@ -225,6 +226,12 @@ export default function ArticleClient({
         <ArticleModules modules={modules} />
 
         <BrandRead data={article.brandRead} />
+
+        {/* The commercial ask — only on pieces that name a real buyer. Placed right
+            after the founder's take (the warmest point), ahead of the newsletter. */}
+        {article.advisory && (
+          <ArticleAdvisoryCTA advisory={article.advisory} slug={article.slug} />
+        )}
 
         {/* Earlier email capture — the reader has just finished the argument and the
             founder's take, the warmest point to convert, and well before the footer

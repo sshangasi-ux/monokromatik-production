@@ -10,6 +10,7 @@ import MediaImage from './components/MediaImage';
 import { Reveal, Stagger, StaggerItem } from './components/motion/Motion';
 import { getAllArticles, getReadingTime, type Article } from '../lib/articles';
 import { getAllReports } from '../lib/reports';
+import { reportPrice } from '../lib/commerce';
 import { getPublicCaseStudies } from '../lib/case-studies';
 import { rankIndex } from '../lib/signal-index';
 import CTA from './components/CTA';
@@ -261,13 +262,25 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2"><Layers size={15} className="text-mono-amber-strong" /> The Full Shelf bundle</span>
               </div>
             </div>
-            <div className="shrink-0 flex flex-col gap-3">
-              <Link href="/reports" className="inline-flex gap-2 items-center justify-center bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors whitespace-nowrap">
-                BROWSE THE LIBRARY <ArrowRight size={18} />
-              </Link>
-              <Link href="/bundles" className="inline-flex gap-1.5 items-center justify-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
-                SEE THE BUNDLES <ArrowRight size={13} />
-              </Link>
+            <div className="shrink-0 flex flex-col gap-3 items-stretch">
+              {/* Direct buy path to the flagship report — the homepage previously
+                  only linked the /reports index, so no CTA drove straight to the
+                  money page. Price is pulled from commerce.ts (single source). */}
+              <CTA
+                href="/reports/whos-buying-african-sport-2026"
+                variant="primary"
+                className="justify-center whitespace-nowrap"
+              >
+                GET THE FLAGSHIP REPORT · {reportPrice('whos-buying-african-sport-2026')}
+              </CTA>
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+                <Link href="/reports/who-captures-amapiano-value-capture-report" className="inline-flex gap-1.5 items-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                  Or start at {reportPrice('who-captures-amapiano-value-capture-report')} <ArrowRight size={13} />
+                </Link>
+                <Link href="/reports" className="inline-flex gap-1.5 items-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-gray hover:text-mono-black">
+                  Browse the library
+                </Link>
+              </div>
             </div>
           </div>
         </div>

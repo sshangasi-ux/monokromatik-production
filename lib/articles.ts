@@ -69,6 +69,28 @@ export interface Article {
    * from brand profile pages. Additive; absent means no entity rail.
    */
   entities?: ArticleEntity[];
+  /**
+   * Optional commercial call-to-action for high-intent pieces: an advisory /
+   * "work with us" band rendered after the Brand Read, routing the reader to the
+   * lead form at /work-with-us?interest=<id>. Absent means no advisory CTA — most
+   * articles have none; reserve it for pieces that name a real commercial opening.
+   */
+  advisory?: ArticleAdvisory;
+}
+
+/** A commercial "work with us" CTA for an article (see Article.advisory). */
+export interface ArticleAdvisory {
+  /** work-with-us enquiry id — must match a SERVICES id in lib/commerce.ts so the
+   *  lead form pre-selects the right interest. */
+  interest: string;
+  /** Small uppercase eyebrow naming the buyer, e.g. "For sponsors & brand teams". */
+  eyebrow: string;
+  /** The band headline — the commercial proposition in one line. */
+  heading: string;
+  /** One or two sentences: what we do for that buyer, tied to the piece. */
+  blurb: string;
+  /** CTA button label. Defaults to "Work with the desk" when omitted. */
+  cta?: string;
 }
 
 /** A cited source backing claims in the article. Mirrors CaseStudySource. */
