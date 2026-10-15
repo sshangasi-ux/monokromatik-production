@@ -15,7 +15,7 @@ const primaryLinks = [
   { href: '/ownership-100', label: 'OWNERSHIP 100', description: 'Who owns African culture — ranked', priority: true },
   { href: '/culture', label: 'READ', description: 'The free library — music, sport, fashion, money', priority: true },
   { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
-  { href: '/work-with-us', label: 'WORK WITH US', description: 'Culture Due Diligence & value-capture advisory', priority: true },
+  { href: '/intelligence', label: 'INTELLIGENCE', description: 'The value-capture practice — valuation engine & advisory desk', priority: true },
   { href: '/about', label: 'ABOUT', description: 'Sibu Shangase & the desk' },
 ];
 
