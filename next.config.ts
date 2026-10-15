@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
       // 301s so the URLs don't 404 and any inbound equity is preserved.
       { source: '/article/tusker-kenya-national-beer', destination: '/article/who-owns-tusker', permanent: true },
       { source: '/article/windhoek-lager-namibia-beer', destination: '/article/who-owns-amarula', permanent: true },
+      // The old /services index is folded into the MonoKromatik Intelligence hub.
+      // Exact match only — /services/culture-due-diligence (and its estimate page)
+      // stay live as the service's detail pages.
+      { source: '/services', destination: '/intelligence', permanent: true },
     ];
   },
 };
