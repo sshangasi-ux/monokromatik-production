@@ -75,7 +75,7 @@ export default function IntelligencePage() {
             and catalogues, a strategy desk for the decisions that follow, and the proprietary data behind both.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <CTA href="/work-with-us?interest=scorecard" variant="amber">Value an asset</CTA>
+            <CTA href="/intelligence/value" variant="amber">Value an asset</CTA>
             <CTA href="/work-with-us?interest=value-capture-advisory" variant="text" className="text-mono-amber hover:text-mono-amber-bright">Commission the desk</CTA>
           </div>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 pt-7 border-t border-mono-white/15 text-sm font-body text-mono-soft-white/80">
@@ -143,7 +143,7 @@ export default function IntelligencePage() {
               </div>
             ))}
           </div>
-          <div className="mt-9"><CTA href="/work-with-us?interest=scorecard" variant="amber">Request a valuation</CTA></div>
+          <div className="mt-9"><CTA href="/intelligence/value" variant="amber">Value an asset</CTA></div>
         </div>
       </section>
 
