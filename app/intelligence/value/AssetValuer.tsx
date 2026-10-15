@@ -160,10 +160,15 @@ function ReadCard({ r, onReset }: { r: AssetRead; onReset: () => void }) {
           <p className={`font-display font-bold text-4xl md:text-5xl ${v!.text}`}>{r.verdict}</p>
           <p className="mt-2 font-body text-mono-soft-white">{ARCHETYPE_NOTE[r.verdict]}</p>
         </div>
-      ) : (
+      ) : r.score != null ? (
         <div className="mt-6">
           <p className="text-xs tracking-[0.2em] font-display font-bold text-mono-gray-bright uppercase mb-2">On the Cultural-Signal Index</p>
-          <p className="font-body text-mono-soft-white">A scored read exists — open the full breakdown below.</p>
+          <p className="font-body text-mono-soft-white">An authorship-weighted score — see the composite below and the full breakdown.</p>
+        </div>
+      ) : (
+        <div className="mt-6">
+          <p className="text-xs tracking-[0.2em] font-display font-bold text-mono-gray-bright uppercase mb-2">In our coverage</p>
+          <p className="font-body text-mono-soft-white">We&rsquo;ve decoded this — open the full breakdown below.</p>
         </div>
       )}
 

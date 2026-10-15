@@ -43,8 +43,8 @@ function cleanTarget(t: string): string {
 export function buildAssetIndex(): AssetRead[] {
   const map = new Map<string, AssetRead>();
 
-  const upsert = (name: string): AssetRead => {
-    const key = brandSlug(name);
+  const upsert = (name: string, keyName?: string): AssetRead => {
+    const key = brandSlug(keyName ?? name);
     let r = map.get(key);
     if (!r) {
       r = { key, display: name, norm: normName(name), sources: [] };
@@ -91,18 +91,39 @@ export function buildAssetIndex(): AssetRead[] {
     addSource(r, 'Acquisitions ledger');
   }
 
-  // 4. "Who Owns X" briefs — the deep read + any brand not already covered.
-  for (const art of getAllArticles()) {
+  // 4. Article coverage — the deep read for every brand/person we've covered.
+  //    "Who Owns X" briefs are the canonical ownership read, so they run first and
+  //    win the deep-read link; then every other article's brand/person entities are
+  //    added, so an asset we've written about is searchable even without a stored
+  //    verdict or score (the read is then "here's our coverage").
+  const articles = getAllArticles();
+  const addArticleAsset = (
+    display: string,
+    keyName: string,
+    slug: string,
+    excerpt: string | undefined,
+    canonical: boolean,
+  ) => {
+    const name = display.trim();
+    if (!name) return;
+    const r = upsert(name, keyName);
+    if (canonical || !r.href) r.href = `/article/${slug}`;
+    if (!r.take && excerpt) r.take = excerpt;
+    addSource(r, canonical ? 'Who Owns X brief' : 'MonoKromatik coverage');
+  };
+  for (const art of articles) {
     if (!art.slug.startsWith('who-owns-')) continue;
-    const brandEntity = art.entities?.find((e) => e.kind === 'brand');
+    const be = art.entities?.find((e) => e.kind === 'brand');
     const name =
-      brandEntity?.name ||
-      art.title.replace(/^who owns\s+/i, '').replace(/\?$/, '').trim();
-    if (!name) continue;
-    const r = upsert(name);
-    if (!r.href) r.href = `/article/${art.slug}`;
-    if (!r.take && art.excerpt) r.take = art.excerpt;
-    addSource(r, 'Who Owns X brief');
+      be?.name || art.title.replace(/^who owns\s+/i, '').replace(/\?$/, '').trim();
+    addArticleAsset(name, be?.brand ?? name, art.slug, art.excerpt, true);
+  }
+  for (const art of articles) {
+    if (art.slug.startsWith('who-owns-')) continue;
+    for (const e of art.entities ?? []) {
+      if (e.kind !== 'brand' && e.kind !== 'person') continue;
+      addArticleAsset(e.name, e.brand ?? e.name, art.slug, art.excerpt, false);
+    }
   }
 
   // Only expose assets that carry a substantive read (verdict, score or a linked
