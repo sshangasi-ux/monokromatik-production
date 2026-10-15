@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
       // Exact match only — /services/culture-due-diligence (and its estimate page)
       // stay live as the service's detail pages.
       { source: '/services', destination: '/intelligence', permanent: true },
+      // The flagship African-sport report's slug gained a -2026 suffix; the bare
+      // slug 404'd and was still live in old LinkedIn posts / shares. 301 so that
+      // inbound equity lands on the current report.
+      { source: '/reports/whos-buying-african-sport', destination: '/reports/whos-buying-african-sport-2026', permanent: true },
     ];
   },
 };
