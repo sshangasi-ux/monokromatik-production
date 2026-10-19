@@ -97,7 +97,10 @@ export default function Ownership100Page() {
             <span className="text-mono-gray">{doc.complete ? `The complete ${doc.edition} · ${doc.target} brands` : `${doc.cohortSize} of ${doc.target} mapped · building out`}</span>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/ownership-100/edition" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+            <Link href="/ownership-100/findings" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+              READ THE FINDINGS <ArrowRight size={16} />
+            </Link>
+            <Link href="/ownership-100/edition" className="inline-flex items-center gap-2 border border-mono-white/40 text-mono-white px-6 py-3.5 font-display font-bold hover:bg-mono-white/10 transition-colors">
               <Download size={16} /> THE PRINT EDITION
             </Link>
             <Link href="/who-owns" className="inline-flex items-center gap-2 border border-mono-white/40 text-mono-white px-6 py-3.5 font-display font-bold hover:bg-mono-white/10 transition-colors">
