@@ -11,6 +11,7 @@ import FlagshipGate from './FlagshipGate';
 import BuyButton from './BuyButton';
 import ReportView from './ReportView';
 import ReportProof from './ReportProof';
+import NewsletterSignup from './NewsletterSignup';
 
 const ACCESS_LABEL: Record<Report['access'], string> = {
   open: 'Open Signal Briefing',
@@ -274,6 +275,17 @@ export default async function ReportFeature({ report }: { report: Report }) {
                       BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={18} />
                     </BuyButton>
                   )}
+                  {/* Co-primary step-DOWN: a R3,500 report is a big first ask for
+                      cold traffic, so the cheaper first yes sits right in the
+                      decision box, not as a footnote below. */}
+                  {entry && entryReport && (
+                    <Link
+                      href={`/reports/${entry.slug}`}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-mono-black text-mono-black px-8 py-3.5 font-display font-bold hover:bg-mono-black hover:text-mono-white transition-colors"
+                    >
+                      OR START AT {entry.price} — {entryReport.title.toUpperCase()} <ArrowRight size={16} />
+                    </Link>
+                  )}
                   <div className="flex flex-wrap gap-3 justify-center">
                     {membersLive && (
                       <Link href="/membership" className="inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-white transition-colors">BECOME A MEMBER <ArrowRight size={16} /></Link>
@@ -287,6 +299,22 @@ export default async function ReportFeature({ report }: { report: Report }) {
                     {launchNote ? ` · ${launchNote}` : ''}
                   </p>
                 )}
+              </div>
+              {/* Capture the cold reader. Someone who opened a R3,500 flagship has
+                  real intent; if they won't buy today they should leave as a
+                  subscriber, not a lost pageview. Fires newsletter_signup with a
+                  flagship-gate source so the capture rate off the paywall is
+                  measurable. Promises the weekly brief (deliverable) — not an
+                  auto-sent PDF — so the ask stays honest. */}
+              <div className="mt-4 border border-mono-amber/50 bg-mono-black text-mono-white p-7 md:p-8">
+                <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright">NOT READY TO BUY?</p>
+                <h3 className="mt-3 text-2xl font-display font-bold leading-tight">Get the free intelligence brief.</h3>
+                <p className="mt-3 max-w-xl font-body text-[15px] text-mono-soft-white leading-relaxed">
+                  The who-owns, who-keeps-the-money read on African &amp; diaspora brands — and you&rsquo;ll be first to each new value-capture report like this one. Verified sourcing, no noise, unsubscribe anytime.
+                </p>
+                <div className="mt-5">
+                  <NewsletterSignup variant="inline" source={`flagship-gate:${r.slug}`} />
+                </div>
               </div>
               {/* Enterprise upsell — for flagship (report-tier) editions, the real
                   value on the asset sits above a single-copy sale: the report plus
@@ -303,23 +331,6 @@ export default async function ReportFeature({ report }: { report: Report }) {
                     className="mt-5 inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors"
                   >
                     TALK TO THE DESK <ArrowRight size={16} />
-                  </Link>
-                </div>
-              )}
-              {/* Step-DOWN entry rung — the cheaper first yes for cold traffic,
-                  so a R3,500 report is not the only door in. Same value-capture
-                  lens, one topic; buyers ladder up from here. */}
-              {entry && entryReport && (
-                <div className="mt-4 border border-mono-gray/40 bg-mono-soft-white p-6 text-center">
-                  <p className="text-[10px] tracking-[0.24em] font-display font-bold text-mono-charcoal/60 mb-2">NEW TO MONOKROMATIK?</p>
-                  <p className="font-body text-[15px] text-mono-charcoal max-w-md mx-auto">
-                    Start with a {entry.price} Signal Study — the same value-capture lens, on one topic — then step up to the full report.
-                  </p>
-                  <Link
-                    href={`/reports/${entry.slug}`}
-                    className="mt-4 inline-flex items-center gap-2 border border-mono-black text-mono-black px-6 py-3 font-display font-bold text-sm hover:bg-mono-white transition-colors"
-                  >
-                    START WITH {entry.price} — {entryReport.title.toUpperCase()} <ArrowRight size={15} />
                   </Link>
                 </div>
               )}

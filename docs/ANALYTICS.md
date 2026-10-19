@@ -17,7 +17,7 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 ### Custom events (code — `lib/analytics.ts` → `track()`)
 | Event | Where | Params | Why |
 |---|---|---|---|
-| `newsletter_signup` | `NewsletterSignup` (on success) | `source` | Primary conversion — newsletter is the growth metric |
+| `newsletter_signup` | `NewsletterSignup` (on success) | `source` | Primary conversion — newsletter is the growth metric. `source=flagship-gate:<slug>` = captured off a paid report paywall (the "not ready to buy?" ask on `ReportFeature`) — the rate at which the flagship's cold traffic converts to a subscriber instead of leaving |
 | `article_view` | `ArticleClient` (on mount) | `slug`, `category` | Per-article + per-category readership beyond raw page_view |
 | `source_click` | `ArticleClient` credited-source link | `slug`, `source` | Outbound to original publisher — credibility/attribution signal |
 | `case_study_view` | `CaseStudyFeature` via `TrackView` | `slug`, `brand` | Per-decode readership — the moat content |
