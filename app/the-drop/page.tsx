@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import MediaImage from '../components/MediaImage';
 import ShareRow from '../components/ShareRow';
 import NewsletterSignup from '../components/NewsletterSignup';
+import CTA from '../components/CTA';
 import { getAllArticles, getReadingTime } from '../../lib/articles';
 import { getLiveReports } from '../../lib/reports';
 import { getAcquisitions, VERDICT_LABEL, type Verdict } from '../../lib/acquisitions';
@@ -195,6 +196,21 @@ export default function TheDropPage() {
             </Link>
           </section>
         )}
+
+        {/* ── The tool · primary conversion ────────────────────── */}
+        <section className="border-l-4 border-mono-amber bg-mono-black p-7 md:p-9 text-mono-white">
+          <p className="font-display text-[11px] font-bold tracking-[0.3em] text-mono-amber uppercase mb-3">
+            The Tool · Free
+          </p>
+          <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight">
+            Every drop is a value-capture read. Run it on your own brand.
+          </h2>
+          <p className="mt-3 mb-6 max-w-xl font-body text-mono-soft-white leading-relaxed">
+            Type any African or diaspora brand and get the read — who owns it, who keeps the
+            upside, and what the signal says. Free, instant, built on the same work behind The Drop.
+          </p>
+          <CTA href="/intelligence/value" variant="amber">VALUE AN ASSET</CTA>
+        </section>
 
         {/* ── Get it every week ────────────────────────────────── */}
         <section className="border-2 border-mono-black bg-mono-white p-7 md:p-9 shadow-[6px_6px_0_0_var(--mono-amber)]">
