@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Search, ArrowRight, ArrowUpRight, X } from 'lucide-react';
+import { Search, ArrowRight, ArrowUpRight, X, Lock } from 'lucide-react';
 import { track } from '../../../lib/analytics';
 import { ARCHETYPE_NOTE, normName, type AssetRead, type Archetype } from '../../../lib/asset-read';
 
@@ -202,13 +202,33 @@ function ReadCard({ r, onReset }: { r: AssetRead; onReset: () => void }) {
         <Link href={r.href} className="mt-5 inline-flex items-center gap-1.5 font-display text-[13px] font-bold tracking-[0.1em] text-mono-amber hover:text-mono-amber-bright">READ THE FULL BREAKDOWN <ArrowRight size={14} /></Link>
       )}
 
-      {/* upsell */}
+      {/* The depth-gate. The read above is the shape of the answer — free. The
+          decision-grade depth is the paid Scorecard; show exactly what it adds
+          as a visible locked panel, so the paid step is tangible, not a generic
+          ask. Every result ends here (it renders for any matched read). */}
       <div className="mt-8 pt-7 border-t border-mono-white/15">
-        <p className="font-body text-sm text-mono-soft-white/80 max-w-[60ch]">Want this fully decoded — the four-axis read, named-rival benchmarks and a roadmap to move the number, or the strategy behind a specific move?</p>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="/work-with-us?interest=scorecard" onClick={() => track('valuation_cta_click', { asset: r.display, interest: 'scorecard', matched: true })} className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber-bright transition-colors">Get the full Scorecard — from $900 <ArrowUpRight size={18} /></Link>
+        <div className="flex items-center gap-2">
+          <Lock size={13} className="text-mono-amber" aria-hidden="true" />
+          <p className="font-display text-[11px] font-bold tracking-[0.24em] uppercase text-mono-amber">The full Scorecard unlocks</p>
+        </div>
+        <ul className="mt-4 grid sm:grid-cols-2 gap-x-7 gap-y-2.5">
+          {[
+            'The four-axis decode — idea, authorship, execution, consequence',
+            'Named-rival benchmarks in the category',
+            'A roadmap to move the number',
+            'The full value-capture breakdown, sourced',
+          ].map((item) => (
+            <li key={item} className="flex gap-2.5 text-[15px] font-body text-mono-soft-white/90 leading-snug">
+              <span className="text-mono-gray-bright shrink-0" aria-hidden="true">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/work-with-us?interest=scorecard" onClick={() => track('valuation_cta_click', { asset: r.display, interest: 'scorecard', matched: true })} className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber-bright transition-colors">Unlock the Scorecard — from $900 <ArrowUpRight size={18} /></Link>
           <Link href="/work-with-us?interest=value-capture-advisory" onClick={() => track('valuation_cta_click', { asset: r.display, interest: 'value-capture-advisory', matched: true })} className="inline-flex items-center gap-2 border border-mono-white/25 text-mono-white px-6 py-3.5 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">Commission the desk <ArrowRight size={18} /></Link>
         </div>
+        <p className="mt-3 text-[12px] text-mono-gray font-body">The free read is the start; the Scorecard is the decision.</p>
       </div>
     </div>
   );
