@@ -207,6 +207,34 @@ async function sendKitBroadcast(args: {
   return { ok: true, broadcastId: data?.broadcast?.id };
 }
 
+/**
+ * Confirmation guard. Re-fetches a just-created broadcast and checks that
+ * `send_at` is populated — i.e. it is actually SCHEDULED to send, not a silent
+ * draft. The original bug was a "success" that only created a draft; this makes
+ * the weekly run fail loudly (red GitHub Actions run + email) instead of
+ * silently sending nothing. Returns confirmed=false on any uncertainty.
+ */
+async function verifyBroadcastScheduled(
+  apiKey: string,
+  id: number
+): Promise<{ confirmed: boolean; detail: string }> {
+  try {
+    const res = await fetch(`https://api.kit.com/v4/broadcasts/${id}`, {
+      headers: { Accept: 'application/json', 'X-Kit-Api-Key': apiKey },
+    });
+    if (!res.ok) return { confirmed: false, detail: `GET broadcast ${id} -> ${res.status}` };
+    const data = (await res.json().catch(() => null)) as
+      | { broadcast?: { send_at?: string | null } }
+      | null;
+    const sendAt = data?.broadcast?.send_at ?? null;
+    return sendAt != null
+      ? { confirmed: true, detail: `send_at=${sendAt}` }
+      : { confirmed: false, detail: 'send_at is null (still a draft)' };
+  } catch (e) {
+    return { confirmed: false, detail: `verify error: ${String(e).slice(0, 120)}` };
+  }
+}
+
 // ---------- Main ----------
 
 async function main() {
@@ -349,6 +377,21 @@ async function main() {
     `✅ Broadcast ${args.draft ? 'DRAFTED (not sent)' : 'scheduled to send now'}. Kit ID: ${result.broadcastId ?? '(unknown)'}`
   );
   console.log(`   Review/track at: https://app.kit.com/broadcasts`);
+
+  // Confirmation — the weekly automated check. A live run must leave a broadcast
+  // that is actually SCHEDULED, not a draft. If it isn't, exit non-zero so the
+  // GitHub Actions run goes red (and emails) rather than reporting a false
+  // success — the exact failure that hid 21 unsent drafts.
+  if (!args.draft && !testRecipient && result.broadcastId) {
+    const check = await verifyBroadcastScheduled(kitApiKey, result.broadcastId);
+    if (check.confirmed) {
+      console.log(`✅ CONFIRMED: broadcast ${result.broadcastId} is scheduled to send (${check.detail}).`);
+    } else {
+      console.error(`❌ SEND NOT CONFIRMED: broadcast ${result.broadcastId} — ${check.detail}.`);
+      console.error('   The digest was NOT sent to the list. Failing the run so this surfaces.');
+      process.exit(1);
+    }
+  }
   console.log('');
   console.log('━'.repeat(60));
   console.log('Done.');
