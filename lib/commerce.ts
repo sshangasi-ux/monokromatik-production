@@ -204,6 +204,21 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // the same value-capture lens; buyers ladder up to this culture flagship.
     entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
+  // THE CREATIVE LEDGER — value-capture reads on the creative-awards economy.
+  // Priced as R220 studies. These intentionally carry NO fallback Paystack link:
+  // until a Payment Page is created and its URL set here (or via the env var),
+  // reportCheckoutUrl() returns null and the report renders free (open) rather
+  // than showing a buy button that goes nowhere. Paste the live links to gate.
+  'loeries-2026-the-creative-value-ledger': {
+    price: 'R220',
+    tier: 'study',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL || null,
+  },
+  'cannes-lions-2026-the-africa-value-ledger': {
+    price: 'R220',
+    tier: 'study',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL || null,
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
