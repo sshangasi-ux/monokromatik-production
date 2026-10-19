@@ -163,7 +163,11 @@ export default function IntelligencePage() {
               <div key={s.id} className="bg-mono-white p-6 md:p-7 grid md:grid-cols-[1.3fr_1fr] gap-x-8 gap-y-2 items-start">
                 <div>
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 md:block">
-                    <h3 className="font-display font-bold text-2xl text-mono-black">{s.name}</h3>
+                    <h3 className="font-display font-bold text-2xl text-mono-black">
+                      {s.detailHref ? (
+                        <Link href={s.detailHref} className="hover:text-mono-amber-strong transition-colors">{s.name}</Link>
+                      ) : s.name}
+                    </h3>
                     <span className="font-display font-bold text-mono-amber-strong md:hidden">{s.priceFrom}</span>
                   </div>
                   <p className="mt-1 text-[12px] tracking-[0.1em] uppercase font-display font-semibold text-mono-gray">{s.buyer}</p>

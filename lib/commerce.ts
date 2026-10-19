@@ -425,6 +425,7 @@ export const ADVISORY_SERVICES: AdvisoryService[] = [
       'A prioritised roadmap to move each axis',
     ],
     priceFrom: 'from $900',
+    detailHref: '/services/scorecard',
   },
   {
     id: 'signal-fit',
@@ -438,6 +439,7 @@ export const ADVISORY_SERVICES: AdvisoryService[] = [
       'The activation angle that earns the association',
     ],
     priceFrom: 'from $1,500',
+    detailHref: '/services/signal-fit',
   },
   {
     id: 'value-capture-advisory',
@@ -451,6 +453,7 @@ export const ADVISORY_SERVICES: AdvisoryService[] = [
       'Deal-structure guidance to keep the upside home',
     ],
     priceFrom: 'from $5,000',
+    detailHref: '/services/value-capture-advisory',
   },
   {
     id: 'culture-dd',
@@ -469,6 +472,11 @@ export const ADVISORY_SERVICES: AdvisoryService[] = [
     detailHref: '/services/culture-due-diligence',
   },
 ];
+
+/** One advisory SKU by id, or undefined. Powers the per-service landing pages. */
+export function getAdvisoryService(id: string): AdvisoryService | undefined {
+  return ADVISORY_SERVICES.find((s) => s.id === id);
+}
 
 // ── B2B data products built on the Index (high-margin, off the dataset) ──────
 // Indicative bands only — actual scope is quoted. (Benchmark: Brand Finance sells
