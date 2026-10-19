@@ -144,6 +144,9 @@ ${restBlock}
             <a href="${SITE_URL}" style="color: #6b7280; text-decoration: none;"><strong style="color:#1a1a1a;">MonoKromatik</strong></a> &mdash; African &amp; diaspora brand intelligence.
           </p>
           <p style="margin: 0; font-family: 'Space Grotesk', Arial, sans-serif; font-size: 11px; line-height: 1.5; color: #9ca3af;">${STUDIO_ADDRESS}</p>
+          <p style="margin: 10px 0 0; font-family: 'Space Grotesk', Arial, sans-serif; font-size: 11px; line-height: 1.5; color: #9ca3af;">
+            <a href="{{ unsubscribe_url }}" style="color: #9ca3af; text-decoration: underline;">Unsubscribe</a> &middot; The Sunday read, from MonoKromatik.
+          </p>
         </td></tr>
       </table>
     </td></tr>

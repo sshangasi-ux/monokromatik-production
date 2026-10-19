@@ -71,6 +71,8 @@ interface Args {
   dryRun: boolean;
   sinceDays: number;
   sendNow: boolean;
+  /** Create the Kit broadcast as a draft (no send) — safe end-to-end validation. */
+  draft: boolean;
   /** Send via Resend to a single inbox (operator-only test). Bypasses Kit entirely. */
   testViaResend: boolean;
 }
@@ -91,6 +93,7 @@ function parseArgs(): Args {
   return {
     dryRun: args.includes('--dry-run'),
     sendNow: args.includes('--send-now'),
+    draft: args.includes('--draft'),
     testViaResend: args.includes('--test-via-resend'),
     sinceDays,
   };
@@ -126,17 +129,21 @@ interface KitBroadcastResult {
 }
 
 /**
- * Create and send a Kit broadcast in one call.
+ * Create and send a Kit broadcast via the v4 API.
  *
- * Kit v4's POST /v4/broadcasts creates a draft. To send immediately, we
- * include `send_at: null` AND `published_at` in the past. As of writing,
- * Kit also accepts an explicit `state: "ready"` to publish on creation.
- * If the account requires manual review, the broadcast lands in drafts —
- * Sibu can review at https://app.kit.com/broadcasts.
+ * The send trigger is `send_at` (Kit v4): omit it / set it null and the
+ * broadcast is created as a DRAFT — that omission is the bug that silently
+ * kept every weekly digest unsent (21 drafts, 0 sends). Set it to an ISO-8601
+ * timestamp and Kit SCHEDULES + sends it. We schedule ~1 minute out so the
+ * Sunday 06:00 UTC cron run delivers at ~08:00 SAST, matching the homepage
+ * promise ("Every Sunday, 8AM SAST"). `subscriber_filter` is omitted, which
+ * Kit defaults to ALL subscribers. The HTML must contain the
+ * `{{ unsubscribe_url }}` merge tag (added in lib/pulse-digest) or Kit refuses
+ * the send with a 422.
  *
  * Failure modes:
- *   - 401: bad API key (Vercel/GH Actions misconfig)
- *   - 422: validation error, usually missing content or bad date format
+ *   - 401: bad API key (GH Actions secret misconfig)
+ *   - 422: validation error (missing unsubscribe tag, bad date, empty content)
  *   - 429: rate limit (Kit allows 600 req/min; we send <1/week)
  */
 async function sendKitBroadcast(args: {
@@ -144,6 +151,9 @@ async function sendKitBroadcast(args: {
   subject: string;
   html: string;
   plaintext: string;
+  previewText?: string;
+  /** Create the broadcast as a draft (send_at: null) instead of sending. */
+  draft?: boolean;
   /** If set, send only to this single email — used for testing. */
   testRecipient?: string;
 }): Promise<KitBroadcastResult> {
@@ -158,7 +168,12 @@ async function sendKitBroadcast(args: {
     content: args.html,
     description: 'Sunday Pulse Digest',
     public: false, // don't show in the public archive
+    published_at: new Date().toISOString(),
+    // THE send switch: null = draft, an ISO-8601 timestamp = scheduled send.
+    // A ~1-minute lead keeps it an unambiguously valid future schedule.
+    send_at: args.draft ? null : new Date(Date.now() + 60_000).toISOString(),
   };
+  if (args.previewText) payload.preview_text = args.previewText;
 
   if (args.testRecipient) {
     // The "preview send" feature: target a single subscriber. Used for first-
@@ -201,7 +216,7 @@ async function main() {
   console.log('━'.repeat(60));
   console.log('📬 MonoKromatik Sunday Pulse Digest');
   console.log(`   Window: last ${args.sinceDays} day(s)`);
-  console.log(`   Mode:   ${args.dryRun ? 'DRY RUN (no send)' : 'LIVE SEND'}`);
+  console.log(`   Mode:   ${args.dryRun ? 'DRY RUN (no send)' : args.draft ? 'DRAFT (create, no send)' : 'LIVE SEND'}`);
   console.log('━'.repeat(60));
   console.log('');
 
@@ -318,6 +333,8 @@ async function main() {
     subject,
     html,
     plaintext,
+    previewText: (articles[0]?.excerpt || '').replace(/\s+/g, ' ').trim().slice(0, 140),
+    draft: args.draft,
     testRecipient,
   });
 
@@ -328,8 +345,10 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`✅ Broadcast created. Kit ID: ${result.broadcastId ?? '(unknown)'}`);
-  console.log(`   Review at: https://app.kit.com/broadcasts`);
+  console.log(
+    `✅ Broadcast ${args.draft ? 'DRAFTED (not sent)' : 'scheduled to send now'}. Kit ID: ${result.broadcastId ?? '(unknown)'}`
+  );
+  console.log(`   Review/track at: https://app.kit.com/broadcasts`);
   console.log('');
   console.log('━'.repeat(60));
   console.log('Done.');
