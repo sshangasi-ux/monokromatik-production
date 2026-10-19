@@ -24,6 +24,10 @@ on:
         description: 'Render but do not send (writes preview to artifacts)'
         type: boolean
         default: false
+      draft:
+        description: 'Create the Kit broadcast as a draft (real API call, no send) — safe validation'
+        type: boolean
+        default: false
       since_days:
         description: 'Lookback window (default 7 days)'
         required: false
@@ -67,6 +71,8 @@ jobs:
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             npm run pulse -- --dry-run --since=${{ github.event.inputs.since_days || '7' }}
+          elif [ "${{ github.event.inputs.draft }}" = "true" ]; then
+            npm run pulse -- --draft --since=${{ github.event.inputs.since_days || '7' }}
           else
             npm run pulse -- --since=${{ github.event.inputs.since_days || '7' }}
           fi
