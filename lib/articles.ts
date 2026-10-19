@@ -109,6 +109,23 @@ export interface ArticleAdvisory {
   cta?: string;
 }
 
+/**
+ * Default in-article commercial ask, shown on every article that doesn't define
+ * its own tailored `advisory`. Before this, 196 of 197 articles carried NO lead
+ * ask at all — the reason the lead funnel read zero despite real article traffic.
+ * Broad but on-topic: every "who owns X" piece is a live sample of the
+ * value-capture work, so inviting the reader to get that read on their own brand
+ * is relevant, not bolted-on. Routes to the entry advisory product (scorecard).
+ */
+export const DEFAULT_ARTICLE_ADVISORY: ArticleAdvisory = {
+  interest: 'scorecard',
+  eyebrow: 'For founders, investors & rights-holders',
+  heading: 'Want this read on the brand you care about?',
+  blurb:
+    "This is the analysis we run on demand — who authors a brand, who captures its value, and where the upside leaks. Get a value-capture read on the asset you're weighing.",
+  cta: 'Get a value-capture read',
+};
+
 /** A cited source backing claims in the article. Mirrors CaseStudySource. */
 export interface ArticleSource {
   /** Publisher / outlet, e.g. "Billboard". */

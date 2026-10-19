@@ -15,6 +15,7 @@ import {
   getAllArticles,
   getReadingTime,
   formatDate,
+  DEFAULT_ARTICLE_ADVISORY,
   type Article,
   type ArticleSource,
 } from '../../../lib/articles';
@@ -227,11 +228,12 @@ export default function ArticleClient({
 
         <BrandRead data={article.brandRead} />
 
-        {/* The commercial ask — only on pieces that name a real buyer. Placed right
-            after the founder's take (the warmest point), ahead of the newsletter. */}
-        {article.advisory && (
-          <ArticleAdvisoryCTA advisory={article.advisory} slug={article.slug} />
-        )}
+        {/* The commercial ask, placed right after the founder's take (the warmest
+            point), ahead of the newsletter. Every article carries it: a piece that
+            names a real buyer uses its own tailored `advisory`; everything else
+            falls back to the default value-capture ask, so article traffic always
+            has a lead path (it previously existed on 1 of 197 pages). */}
+        <ArticleAdvisoryCTA advisory={article.advisory ?? DEFAULT_ARTICLE_ADVISORY} slug={article.slug} />
 
         {/* Earlier email capture — the reader has just finished the argument and the
             founder's take, the warmest point to convert, and well before the footer
