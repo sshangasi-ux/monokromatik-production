@@ -185,6 +185,7 @@ function ReadCard({ r, onReset }: { r: AssetRead; onReset: () => void }) {
           <div className="bg-mono-black p-5">
             <p className="text-[11px] tracking-[0.16em] uppercase font-display font-bold text-mono-gray-bright">Signal score</p>
             <p className="mt-1.5 font-display font-bold text-mono-white text-2xl tabular-nums">{r.score}<span className="text-mono-gray-bright text-base">/100</span>{r.band ? <span className="ml-2 text-mono-amber text-lg">{r.band}</span> : null}</p>
+            <Link href="/intelligence/signal-index/methodology" className="mt-2 inline-flex items-center gap-1 text-[11px] font-display font-bold tracking-[0.08em] text-mono-gray-bright hover:text-mono-amber">How it&rsquo;s scored <ArrowUpRight size={12} /></Link>
           </div>
         )}
       </div>
