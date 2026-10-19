@@ -149,6 +149,7 @@ function ReadCard({ r, onReset }: { r: AssetRead; onReset: () => void }) {
         <div>
           <h3 className="font-display font-bold text-3xl md:text-4xl text-mono-white leading-tight">{r.display}</h3>
           {r.sector && <p className="mt-1 font-body text-sm text-mono-gray-bright">{r.sector}{typeof r.rank === 'number' ? ` · Ownership 100 · #${r.rank}` : ''}</p>}
+          <Link href={`/intelligence/value/${r.key}`} className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-display font-bold tracking-[0.08em] text-mono-gray-bright hover:text-mono-amber">Open &amp; share this profile <ArrowUpRight size={11} /></Link>
         </div>
         <button type="button" onClick={onReset} aria-label="New search" className="shrink-0 text-mono-gray-bright hover:text-mono-white"><X size={20} /></button>
       </div>

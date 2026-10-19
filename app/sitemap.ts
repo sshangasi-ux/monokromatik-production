@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllArticles } from '../lib/articles';
 import { getAllCaseStudies } from '../lib/case-studies';
 import { rankIndex, brandSlug } from '../lib/signal-index';
+import { buildAssetIndex } from '../lib/asset-index';
 import { getLiveReports } from '../lib/reports';
 import { getAllIssues, issueHref } from '../lib/issues';
 import { getAllConversations } from '../lib/conversations';
@@ -116,6 +117,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // Per-asset value-capture profiles — the entity-graph layer. One linkable,
+  // cross-joined page per brand/person in the index (the programmatic SEO +
+  // citability surface over the Ownership 100 / Signal Index / ledger join).
+  const assetRoutes: MetadataRoute.Sitemap = buildAssetIndex().map((r) => ({
+    url: `${SITE}/intelligence/value/${r.key}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
+  // The newer Intelligence surfaces: the valuation tool, the Ownership 100
+  // findings report, and the per-SKU advisory pages.
+  const intelRoutes: MetadataRoute.Sitemap = [
+    { url: `${SITE}/intelligence/value`, priority: 0.8 },
+    { url: `${SITE}/ownership-100/findings`, priority: 0.8 },
+    { url: `${SITE}/services/scorecard`, priority: 0.7 },
+    { url: `${SITE}/services/signal-fit`, priority: 0.7 },
+    { url: `${SITE}/services/value-capture-advisory`, priority: 0.7 },
+    { url: `${SITE}/services/culture-due-diligence`, priority: 0.7 },
+  ].map((x) => ({ ...x, lastModified: now, changeFrequency: 'monthly' as const }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
@@ -125,5 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...reportRoutes,
     ...issueRoutes,
     ...conversationRoutes,
+    ...assetRoutes,
+    ...intelRoutes,
   ];
 }
