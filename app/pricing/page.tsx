@@ -7,9 +7,9 @@ import BuyButton from '../components/BuyButton';
 import { INDEX_REPORT, reportCheckoutUrl, REPORT_CHECKOUT_SLUG, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
 
 export const metadata: Metadata = {
-  title: 'Pricing — The Cultural-Signal Index | MonoKromatik',
+  title: 'Pricing — Intelligence Reports | MonoKromatik',
   description:
-    'Own the full Cultural-Signal Index, or buy individual intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Secure one-time purchase via Paystack.',
+    'Buy The Value-Capture Scorecard (R220), or intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Secure one-time purchase via Paystack.',
 };
 
 // The three-tier ladder is LIVE (pricing signed off). Shown by default; it can
@@ -36,10 +36,10 @@ export default function PricingPage() {
       <section className="bg-mono-black text-mono-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs tracking-[0.35em] font-display font-bold text-mono-amber mb-7">INTELLIGENCE / PRICING</p>
-          <h1 className="max-w-4xl text-5xl md:text-7xl font-display font-bold leading-[0.95]">Own the <span className="text-mono-amber">Index.</span></h1>
+          <h1 className="max-w-4xl text-5xl md:text-7xl font-display font-bold leading-[0.95]">Who keeps the <span className="text-mono-amber">value?</span></h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-mono-soft-white font-body leading-relaxed">
-            The scores are free to read. The full Cultural-Signal Index — the complete ranking, every breakdown, the
-            methodology and the evidence — is the intelligence product.
+            The scores are free to read. The Value-Capture Scorecard — fourteen ownership-moving African deals, each
+            verdicted exported, retained or mixed, with the framework and the evidence — is the intelligence product.
           </p>
         </div>
       </section>
