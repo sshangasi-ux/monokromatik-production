@@ -34,6 +34,7 @@ GA4 property **`G-9F5R5FM8NS`** is wired in `app/layout.tsx` via `@next/third-pa
 | `report_buy_click` | `BuyButton` (report BUY) | `slug`, `price` | Paid-report checkout intent (Paystack) |
 | `checker_result` | `Checker` (verdict shown) | `verdict` | Free Value-Capture Checker completed |
 | `checker_cta_click` | `Checker` result CTAs | `service`, `verdict` | Checker → services / advisory intent |
+| `international_buyer_intent` | `InternationalCheckout` (buy surfaces) | `slug`, `surface`, `step`, `mode` | **Diaspora buy-intent** — a buyer outside SA who can't use the Paystack checkout (international cards pending). `step=open` = opened the capture; `step=submit` with `mode=notify\|invoice` = left an email (also lands in `public.leads`, source `intl-checkout`). The measure of the revenue the international-payments block is costing us, and the warm list to convert the day it flips on. |
 
 Add more by importing `track` in a client component: `track('event_name', { ...params })`. Keep it a no-op-safe wrapper (it already swallows errors).
 
