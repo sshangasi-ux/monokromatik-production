@@ -205,28 +205,21 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
   // THE CREATIVE LEDGER — value-capture reads on the creative-awards economy,
-  // priced as R220 studies and LIVE (gated). Interim checkout is the generic
-  // R220 report Payment Page (same fallback the Scorecard uses) so the reports
-  // are genuinely paid now; set the per-SKU env var to a dedicated Paystack
-  // product URL when one exists, and it takes precedence (price/link can't drift
-  // because the generic page is a stable R220 default, not a per-report link).
-  // Delivery is manual from Paystack Orders for now (same as the amapiano study),
-  // moving to the webhook → Resend attachment path.
+  // priced as R220 studies and LIVE with their own DEDICATED Paystack Payment
+  // Pages (created 2026-10-20 on the MonoKromatik Network account, Live + Active),
+  // so each order cleanly identifies which report was bought. Same Scorecard
+  // pattern: the URL is the code default (not a Vercel env var) so the price/link
+  // can't drift; the per-SKU env var can still override. Auto-delivered by the
+  // webhook → render-report-pdf → Resend pipeline (see lib/report-delivery.ts).
   'loeries-2026-the-creative-value-ledger': {
     price: 'R220',
     tier: 'study',
-    url:
-      process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL ||
-      process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL ||
-      'https://paystack.shop/pay/3lscb9xsn8',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL || 'https://paystack.shop/pay/i2lnp-l43l',
   },
   'cannes-lions-2026-the-africa-value-ledger': {
     price: 'R220',
     tier: 'study',
-    url:
-      process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL ||
-      process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL ||
-      'https://paystack.shop/pay/3lscb9xsn8',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL || 'https://paystack.shop/pay/e4fzfr7o-k',
   },
 };
 
