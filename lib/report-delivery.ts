@@ -83,6 +83,42 @@ const REPORTS: ReportAsset[] = [
     subject: 'Your report — The Repatriation Playbook (How Nollywood Took Its Industry Back)',
     blurb: 'The culture value-capture flagship: how Nollywood rebuilt ownership of its industry after the streamers pulled back — the rented-vs-repatriated framework, the four rails, an original repatriation scorecard, the cultural read, a segmented playbook and a full Bear Case.',
   },
+  {
+    slug: 'value-capture-scorecard-2026',
+    // The default CTA checkout (REPORT_CHECKOUT_SLUG), sold via the generic R220
+    // Payment Page (slug 3lscb9xsn8). Was buyable with NO delivery wired — this
+    // closes that gap. Tokens: the report slug words + the page code.
+    match: ['value-capture-scorecard', 'scorecard-2026', '3lscb9xsn8'],
+    generate: true,
+    filename: 'MonoKromatik-The-Value-Capture-Scorecard.pdf',
+    title: 'The Value-Capture Scorecard 2026',
+    subject: 'Your report — The Value-Capture Scorecard 2026',
+    blurb: 'The method on one page: how MonoKromatik scores who authors a cultural asset versus who captures its value — the axes, the scoring, and the worked reads behind the Signal Index.',
+  },
+  {
+    slug: 'loeries-2026-the-creative-value-ledger',
+    // THE CREATIVE LEDGER study, dedicated Payment Page slug i2lnp-l43l (created
+    // 2026-10-20). Rendered from data/reports.json. Tokens: report slug words +
+    // page code. None overlap the other reports'.
+    match: ['loeries', 'loeries-2026-the-creative-value-ledger', 'i2lnp-l43l'],
+    generate: true,
+    filename: 'MonoKromatik-The-Loeries-2026-Value-Ledger.pdf',
+    title: 'The Loeries 2026 Value Ledger',
+    subject: 'Your report — The Loeries 2026 Value Ledger',
+    blurb: 'Who makes the work, who keeps the value — a value-capture read on the 2026 Loeries: the four Grand Prix, the agencies and brands behind them, the value-capture stack, and the Bear Case.',
+  },
+  {
+    slug: 'cannes-lions-2026-the-africa-value-ledger',
+    // THE CREATIVE LEDGER study, dedicated Payment Page slug e4fzfr7o-k (created
+    // 2026-10-20). Rendered from data/reports.json. Tokens: report slug words +
+    // page code.
+    match: ['cannes', 'cannes-lions-2026-the-africa-value-ledger', 'e4fzfr7o-k'],
+    generate: true,
+    filename: 'MonoKromatik-Cannes-Lions-2026-The-Africa-Ledger.pdf',
+    title: 'Cannes Lions 2026: The Africa Ledger',
+    subject: 'Your report — Cannes Lions 2026: The Africa Ledger',
+    blurb: "Whose win, whose value — a value-capture read on Africa and the diaspora at Cannes Lions 2026: Kenya's Grand Prix, Nigeria's shared-credit Gold, South Africa's social-impact haul, and the Bear Case.",
+  },
 ];
 
 /**
