@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { TrendingUp, Clock } from 'lucide-react';
+import { TrendingUp, Clock, ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import NewsletterSignup from '../components/NewsletterSignup';
 import MediaImage from '../components/MediaImage';
 import { getAllArticles, getReadingTime, formatDate } from '../../lib/articles';
 import type { Metadata } from 'next';
@@ -92,6 +93,16 @@ export default function PulsePage() {
               })}
             </div>
           )}
+          {/* Close the daily stream on an intersection: the paid reports + capture. */}
+          <div className="mt-14 border-t border-mono-gray/20 pt-10 grid gap-8 md:grid-cols-[1.2fr_1fr]">
+            <Link href="/reports" className="group block border border-mono-black bg-mono-black text-mono-white p-7 hover:border-mono-amber transition-colors">
+              <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright mb-2">GO DEEPER · THE INTELLIGENCE</p>
+              <p className="font-display font-bold text-xl text-mono-white group-hover:text-mono-amber-bright transition-colors">The paid value-capture reports</p>
+              <p className="text-sm font-body text-mono-soft-white mt-2">Single questions taken to institutional depth — scored, sourced, with the playbook. From R220.</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-mono-amber-bright font-display font-bold text-sm">BROWSE THE REPORTS <ArrowRight size={15} /></span>
+            </Link>
+            <NewsletterSignup variant="footer" source="pulse" />
+          </div>
         </div>
       </section>
     </div>

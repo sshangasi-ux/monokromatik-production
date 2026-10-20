@@ -106,6 +106,9 @@ export default function Ownership100Page() {
             <Link href="/who-owns" className="inline-flex items-center gap-2 border border-mono-white/40 text-mono-white px-6 py-3.5 font-display font-bold hover:bg-mono-white/10 transition-colors">
               CHECK A BRAND <ArrowRight size={16} />
             </Link>
+            <Link href="/reports" className="inline-flex items-center gap-2 border border-mono-white/40 text-mono-white px-6 py-3.5 font-display font-bold hover:bg-mono-white/10 transition-colors">
+              THE REPORTS — FROM R220 <ArrowRight size={16} />
+            </Link>
           </div>
           <div className="mt-8">
             <SponsorSlot placement="ownership-100" offer tone="dark" />

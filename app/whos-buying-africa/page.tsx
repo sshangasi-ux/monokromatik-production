@@ -157,6 +157,25 @@ export default function WhosBuyingAfricaPage() {
         </div>
       </section>
 
+      {/* The matching paid flagship — the deep institutional read on this beat. */}
+      <section className="bg-mono-black text-mono-white py-14 md:py-16 border-t border-mono-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-bright mb-2">THE INTELLIGENCE REPORT</p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-white">Who&rsquo;s Buying African Sport? — the institutional read.</h2>
+            <p className="mt-3 text-sm font-body text-mono-soft-white">The named deal ledger, the value-leakage model and the scenarios to 2035 — the flagship behind this tracker. Or take the full shelf in one bundle.</p>
+          </div>
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <Link href="/reports/whos-buying-african-sport-2026" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-7 py-4 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+              SEE THE REPORT <ArrowRight size={18} />
+            </Link>
+            <Link href="/bundles" className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-7 py-4 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">
+              THE BUNDLES
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section className="bg-mono-black py-16">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">

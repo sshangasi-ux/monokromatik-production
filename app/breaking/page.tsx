@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Radar, ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import NewsletterSignup from '../components/NewsletterSignup';
 import { getBreaks, type PublishedBreak } from '../../lib/breaking-feed';
 
 export const metadata: Metadata = {
@@ -124,6 +125,12 @@ export default function BreakingPage() {
             <p className="text-sm font-body text-mono-charcoal mt-2">When a break becomes a brand read, it graduates to Signal.</p>
             <span className="mt-4 inline-flex items-center gap-2 text-mono-amber-strong font-display font-bold text-sm">READ SIGNAL <ArrowRight size={15} /></span>
           </Link>
+          <Link href="/reports" className="block border border-mono-black bg-mono-black text-mono-white p-6 hover:border-mono-amber transition-colors">
+            <p className="font-display font-bold text-mono-white">The paid intelligence reports</p>
+            <p className="text-sm font-body text-mono-soft-white mt-2">When a break matters, the value-capture read is in the reports — scored and sourced. From R220.</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-mono-amber-bright font-display font-bold text-sm">BROWSE THE REPORTS <ArrowRight size={15} /></span>
+          </Link>
+          <NewsletterSignup variant="footer" source="breaking" />
         </aside>
       </div>
     </div>

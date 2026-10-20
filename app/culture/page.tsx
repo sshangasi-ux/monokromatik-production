@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
+import NewsletterSignup from '../components/NewsletterSignup';
 import MediaImage from '../components/MediaImage';
 import { StatStrip } from '../components/dataviz/Charts';
 import { getAllArticles, getReadingTime, type Article } from '../../lib/articles';
@@ -93,7 +94,16 @@ export default function CulturePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber mb-5">THE LINK</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold">Culture creates the signal. Intelligence makes it useful.</h2>
-          <Link href="/intelligence" className="mt-10 inline-flex gap-2 items-center bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link href="/intelligence" className="inline-flex gap-2 items-center bg-mono-amber text-mono-black px-7 py-4 font-display font-bold">ENTER INTELLIGENCE <ArrowRight size={18} /></Link>
+            <Link href="/reports" className="inline-flex gap-2 items-center border border-mono-white/40 text-mono-white px-7 py-4 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">THE REPORTS — FROM R220 <ArrowRight size={18} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-mono-paper">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <NewsletterSignup variant="default" source="culture" />
         </div>
       </section>
     </div>
