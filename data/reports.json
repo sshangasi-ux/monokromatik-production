@@ -6,7 +6,7 @@
     "status": "live",
     "access": "premium",
     "statusNote": "Creative-awards value-capture read · v1 · read against the MonoKromatik ownership method",
-    "readingTime": "11 MIN READ",
+    "readingTime": "4 MIN READ",
     "publishedAt": "2026-10-19T08:00:00.000Z",
     "summary": "The 2026 Loeries produced a dominant independent, four Grand Prix and a multinational Brand of the Year. This report reads the week the way MonoKromatik reads every cultural economy — not by who won the metal, but by who captures the value the metal creates: the agency, the holding group, the brand owner, the production craft shops, and the South African creative economy itself. It maps where award value actually accrues, scores the gap between authorship and ownership, and sets out the Bear Case every awards season should be made to answer.",
     "tags": [
@@ -171,7 +171,7 @@
     "status": "live",
     "access": "premium",
     "statusNote": "Creative-awards value-capture read · v1 · Africa & diaspora focus",
-    "readingTime": "12 MIN READ",
+    "readingTime": "4 MIN READ",
     "publishedAt": "2026-10-19T08:00:00.000Z",
     "summary": "Kenya won its first Cannes Lions Grand Prix; Nigeria took a rare Gold; South Africa won on social impact. This report reads Africa's 2026 Cannes haul the MonoKromatik way — not by the headlines but by the credits, the categories and the networks the wins feed. It maps who actually captures the value of an African Cannes win across the local shop, the global holding company, the multinational brand owner, the festival itself and the diaspora market, and sets out the Bear Case for anyone tempted to read a Grand Prix as an industry.",
     "tags": [
@@ -444,7 +444,8 @@
           "display": "$48M"
         }
       ]
-    }
+    },
+    "readingTime": "9 MIN READ"
   },
   {
     "slug": "afrobeats-export-summer-economics",
@@ -550,7 +551,8 @@
           "display": "$30.5M"
         }
       ]
-    }
+    },
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "will-it-land-brand-south-africa-nascar",
@@ -672,7 +674,8 @@
           "display": "372,362 visitors"
         }
       ]
-    }
+    },
+    "readingTime": "7 MIN READ"
   },
   {
     "slug": "will-it-land-shein-temu-africa",
@@ -788,7 +791,8 @@
           "display": "60%"
         }
       ]
-    }
+    },
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "womens-football-africa-wafcon-briefing",
@@ -896,7 +900,8 @@
           "display": "1"
         }
       ]
-    }
+    },
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "transsion-african-phone-market-briefing",
@@ -1005,7 +1010,8 @@
           "display": "7.6M"
         }
       ]
-    }
+    },
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "guinness-african-stronghold-briefing",
@@ -1116,7 +1122,8 @@
           "display": "~11%"
         }
       ]
-    }
+    },
+    "readingTime": "7 MIN READ"
   },
   {
     "slug": "will-it-land-starlink-africa",
@@ -1228,7 +1235,8 @@
       "consequence": 78,
       "composite": 59,
       "verdict": "Lands hard as infrastructure, barely as African authorship — a service that reshapes the continent's connectivity while keeping ownership, price and equity offshore."
-    }
+    },
+    "readingTime": "7 MIN READ"
   },
   {
     "slug": "will-it-land-african-off-grid-solar",
@@ -1351,7 +1359,8 @@
       "consequence": 85,
       "composite": 71,
       "verdict": "A genuinely landed bet on African energy access and inclusion — but the value accrues to a UK-domiciled cap table, not to the continent that authors the demand."
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "will-it-land-african-healthtech",
@@ -1472,7 +1481,8 @@
       "consequence": 78,
       "composite": 71,
       "verdict": "A structurally sound idea forced into a hard-won discipline: it lands if Nigeria's core turns cash-positive, but the axis that decides it is whether African-built infrastructure can outlast the foreign money that built it."
-    }
+    },
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "african-luxury-market-brief",
@@ -1583,7 +1593,8 @@
           "Billionaires.Africa — Inside Patrick Mavros, the African luxury house forged in silver — https://www.billionaires.africa/2026/02/20/inside-patrick-mavros-the-african-luxury-house-forged-in-silver-and-story/"
         ]
       }
-    ]
+    ],
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "will-it-land-african-electric-mobility",
@@ -1704,7 +1715,8 @@
       "consequence": 81,
       "composite": 75,
       "verdict": "A high-conviction bet: the model is right and the authorship is real, but the score is capped by imported hardware and a capital-and-grid gauntlet between 100 buses and 1,000."
-    }
+    },
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "will-it-land-african-stablecoins",
@@ -1779,15 +1791,6 @@
         ]
       },
       {
-        "heading": "THE BEAR CASE",
-        "paragraphs": [
-          "The strongest bear argument is that this is dependency wearing the costume of sovereignty. Every USDT transfer that solves an African trader's FX problem also deepens the continent's reliance on a dollar it does not issue, cannot print, and does not earn seigniorage on. Tether and Circle collect the interest on the reserves; Africa collects the convenience. If the endgame is 90% of the continent's fastest-growing payment rail denominated in a foreign currency and issued by two foreign companies, then MonoKromatik's authorship axis is not merely capped — it is a warning. The IMF's concern that stablecoin dollarization weakens monetary-policy transmission is not abstract; it is the mechanism by which a central bank loses the ability to steer its own economy.",
-          "The regulatory bear case is that the current openness is fragile. Nigeria has oscillated between hostility and accommodation; regulatory ambiguity means a successful integration can 'become a liability overnight,' and B2B traders in commodity sectors have adopted stablecoins quietly precisely because public adoption carries political risk. A single adverse ruling, a capital-controls clampdown, or an IMF-driven push to restrict stablecoins — reportedly under discussion for Nigeria in 2026 — could strand liquidity and freeze corridors that businesses have come to depend on. Rails built on regulatory forbearance are rails that can be un-built.",
-          "There is also an execution-fragility bear case specific to the dollar peg. Stablecoin utility in Africa assumes the peg holds and the issuer stays solvent and compliant; a Tether or Circle shock — a de-peg, a reserve scare, a US regulatory action — would transmit instantly into African corridors that have no domestic backstop. And the last-mile problem persists: retail users in Kano or Accra still struggle to on-ramp, meaning the rail today primarily serves businesses and the diaspora-connected, not the unbanked majority the sovereignty narrative invokes.",
-          "Finally, the competitive bear case cuts against Yellow Card specifically. If stablecoins become table stakes, the orchestration layer could commoditise: Visa, Circle's own infrastructure, and a dozen well-funded fintechs are all reaching for the same position. Yellow Card's moat is its licences and corridor liquidity — durable, but not permanent — and PAPSS, with African Union backing and central-bank integration, could route the highest-value institutional flows around private stablecoin rails entirely."
-        ]
-      },
-      {
         "heading": "THE VERDICT",
         "paragraphs": [
           "It lands — as a rail. The cross-border stablecoin corridor is not a prediction; it is already the fastest-growing settlement layer on the continent, and Yellow Card is the best-positioned African firm to own the orchestration of it. On IDEA, EXECUTION and CONSEQUENCE, this is a top-decile move, and MonoKromatik's 75 composite reflects a bet we expect to keep compounding through 2026. Anyone treating stablecoins as a crypto sideshow rather than core payments infrastructure is misreading the market.",
@@ -1854,7 +1857,125 @@
           "display": "<1%"
         }
       ]
-    }
+    },
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "The strongest arguments that this is dependency wearing the costume of sovereignty — and why a sober analyst caps the authorship score.",
+      "points": [
+        "Digital dollarization. Every USDT transfer that solves a trader's FX problem deepens reliance on a dollar Africa does not issue, cannot print and earns no seigniorage on. Tether and Circle collect the interest on the reserves; Africa collects the convenience — and the IMF has flagged that mass stablecoin use weakens domestic monetary-policy transmission.",
+        "The regulatory openness is fragile. Nigeria has oscillated between hostility and accommodation; a single adverse ruling, a capital-controls clampdown or a reversal of the 2025 licensing openness can make a successful integration a liability overnight — which is why much B2B adoption is deliberately quiet.",
+        "Dollar-peg execution risk. Utility assumes the peg holds and the issuer stays solvent and compliant. A Tether or Circle de-peg, reserve scare or US regulatory action would transmit instantly into African corridors that have no domestic backstop.",
+        "Competitive commoditisation. If stablecoin orchestration becomes table stakes, Visa, Circle's own infrastructure and a dozen funded fintechs reach for the same position. Yellow Card's licence-and-liquidity moat is durable but not permanent — and PAPSS, with African Union backing, is building the African-authored alternative."
+      ]
+    },
+    "exhibits": [
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "The cost collapse — sending money into Africa",
+        "note": "Cost to move money into/within Sub-Saharan Africa: traditional rails vs optimised stablecoin corridors. Sources: World Bank (7.9% avg on $200 to SSA, the world's highest); Yellow Card / Launchpad / HoneyCoin corridor data.",
+        "unit": "% fee",
+        "data": [
+          {
+            "label": "World Bank avg ($200 to SSA)",
+            "value": 7.9,
+            "display": "7.9%",
+            "tag": "traditional"
+          },
+          {
+            "label": "Lagos–Nairobi, traditional",
+            "value": 7,
+            "display": "6–8%",
+            "tag": "traditional"
+          },
+          {
+            "label": "Stablecoin corridor",
+            "value": 2,
+            "display": "1.5–2.5%",
+            "tag": "stablecoin"
+          },
+          {
+            "label": "Optimised corridor",
+            "value": 0.9,
+            "display": "<1%",
+            "tag": "stablecoin"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "Where the volume is — on-chain value, year to Jun 2025 ($bn)",
+        "note": "Sub-Saharan Africa received >$205bn on-chain (+~52% YoY); Nigeria alone $92.1bn, nearly triple second-place South Africa. Stablecoins are ~43% of regional volume. Source: Chainalysis.",
+        "data": [
+          {
+            "label": "Sub-Saharan Africa",
+            "value": 205,
+            "display": "$205bn"
+          },
+          {
+            "label": "Nigeria",
+            "value": 92.1,
+            "display": "$92.1bn",
+            "tag": "stablecoin-led"
+          },
+          {
+            "label": "South Africa (2nd)",
+            "value": 33,
+            "display": "~$33bn"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 3,
+        "title": "The Index read — the four axes (composite 75/100)",
+        "note": "MonoKromatik's predictive, interpretive score, weighted IDEA .25 / AUTHORSHIP .35 / EXECUTION .15 / CONSEQUENCE .25. Authorship is the capped axis: Africa authors the distribution brilliantly and the money not at all. A verdict, not a measured metric.",
+        "data": [
+          {
+            "label": "Idea",
+            "value": 86,
+            "display": "86"
+          },
+          {
+            "label": "Authorship",
+            "value": 57,
+            "display": "57",
+            "tag": "the moat, capped"
+          },
+          {
+            "label": "Execution",
+            "value": 80,
+            "display": "80"
+          },
+          {
+            "label": "Consequence",
+            "value": 86,
+            "display": "86"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "after": 2,
+        "title": "The prize — Africa's cross-border payments market ($bn)",
+        "unit": "$ bn",
+        "note": "Projected growth of the African cross-border payments market. Stablecoins are the fastest-growing settlement layer inside it. Source: market projections cited in-report; 2035 is a projection.",
+        "data": [
+          {
+            "label": "2025",
+            "value": 329,
+            "display": "$329bn"
+          },
+          {
+            "label": "~2035",
+            "value": 1000,
+            "display": "$1tn"
+          }
+        ]
+      }
+    ],
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "nigerian-creative-economy-brief",
@@ -1960,7 +2081,8 @@
           "Businessday — Global race for talent heightens 'japa' wave — https://businessday.ng/business-economy/article/global-race-for-talent-heightens-japa-wave/"
         ]
       }
-    ]
+    ],
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "will-it-land-african-aviation",
@@ -2117,7 +2239,8 @@
           "display": "$928"
         }
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "will-it-land-spearhead-spirits",
@@ -2244,7 +2367,8 @@
         "value": "−5%",
         "label": "US spirits volume, 2025"
       }
-    ]
+    ],
+    "readingTime": "16 MIN READ"
   },
   {
     "slug": "will-it-land-magugu-house",
@@ -2369,7 +2493,8 @@
         "value": "60%",
         "label": "Direct-to-consumer target"
       }
-    ]
+    ],
+    "readingTime": "16 MIN READ"
   },
   {
     "slug": "will-it-land-ebonylife-on-plus",
@@ -2492,7 +2617,8 @@
         "value": "Top 10",
         "label": "Baby Farm, Netflix global"
       }
-    ]
+    ],
+    "readingTime": "15 MIN READ"
   },
   {
     "slug": "will-it-land-moniepoint-uk-nigeria",
@@ -2616,7 +2742,8 @@
         "value": "£2.76B",
         "label": "UK→Nigeria remittances"
       }
-    ]
+    ],
+    "readingTime": "14 MIN READ"
   },
   {
     "slug": "will-it-land-uncover-skincare",
@@ -2735,7 +2862,8 @@
         "value": "200k+",
         "label": "Community members"
       }
-    ]
+    ],
+    "readingTime": "15 MIN READ"
   },
   {
     "slug": "will-it-land-warner-africori-amapiano",
@@ -2860,7 +2988,8 @@
         "value": "+22.6%",
         "label": "Sub-Saharan music, 2024"
       }
-    ]
+    ],
+    "readingTime": "16 MIN READ"
   },
   {
     "slug": "will-it-land-totalenergies-afcon",
@@ -3002,7 +3131,8 @@
           "display": "23"
         }
       ]
-    }
+    },
+    "readingTime": "15 MIN READ"
   },
   {
     "slug": "african-spirits-report-2026-who-owns-the-pour",
@@ -3154,7 +3284,7 @@
     ],
     "statusNote": "Issue 001 development",
     "publishedAt": "2026-06-19",
-    "readingTime": "12 MIN READ",
+    "readingTime": "6 MIN READ",
     "sections": [
       {
         "heading": "Africa is not a future tense",
@@ -3337,7 +3467,8 @@
           "Atradius — One year on: Can South Africa's GNU unlock growth? — https://atradius.in/knowledge-and-research/reports/economic-research-south-africa-december-2025"
         ]
       }
-    ]
+    ],
+    "readingTime": "15 MIN READ"
   },
   {
     "slug": "culture-is-business",
@@ -3600,7 +3731,8 @@
         "Global revenue figures systematically undercount what is captured on the continent. Live performance, the informal economy, brand and endorsement value, and domestic consumption that never clears an international platform are largely invisible to IFPI-style accounting. The \"under 1%\" is a recorded-revenue share, not a measure of total economic benefit — which is real, large, and local even where the catalogue is owned abroad.",
         "\"Own the rail\" is capital-intensive, slow and risky — and fees can be the rational choice. Building catalogues, platforms and rights vehicles ties up scarce capital in assets that may not pay off, and asks creators to become infrastructure operators, which is a different and harder job than making culture. For many, a good licensing fee today beats an uncertain ownership stake tomorrow. Ownership is the higher-upside path, not always the right one."
       ]
-    }
+    },
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "vodacom-takes-control-of-safaricom",
@@ -3692,7 +3824,8 @@
         "value": "~KES1.44tn",
         "label": "Safaricom market capitalisation on the Nairobi Securities Exchange (~36.6% of total NSE value; ~$8.4bn), the largest listed company in East Africa — NSE market data, 2026"
       }
-    ]
+    ],
+    "readingTime": "6 MIN READ"
   },
   {
     "slug": "bridgement-r330m-banks-fund-the-disruptor",
@@ -3776,7 +3909,8 @@
         "value": "2016",
         "label": "Year Bridgement was founded; CEO Daniel Goldberg (company background, per Launch Base Africa and TechAfrica News)"
       }
-    ]
+    ],
+    "readingTime": "6 MIN READ"
   },
   {
     "slug": "who-owns-detty-december-homecoming-economy",
@@ -3912,7 +4046,8 @@
         "Rising foreign investment in hospitality and events infrastructure may raise the ceiling for everyone, funding the venues and platforms that local operators could not finance themselves. Not all outside capital is extraction; some is the capacity that lets the season scale.",
         "The figures for the season are largely estimates assembled from partial reporting. The report is honest about this, but it means the 'leak' it identifies is directional, not measured, and a fuller dataset could show retention materially higher."
       ]
-    }
+    },
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "value-capture-scorecard-2026",
@@ -4090,7 +4225,8 @@
         "The dataset is selection-biased toward the brands large enough to be investigated. The most retained value on the continent may sit in informal, unlisted and founder-held businesses that never appear in a deal database — which would mean the true retention rate is higher than a scorecard built from reported transactions can see.",
         "Capital scarcity is the binding constraint, not owner nationality. If domestic capital markets cannot fund a scale-up, 'stay African-owned' is advice a founder cannot act on. On this reading the leak is a symptom of shallow local capital, and the fix is market depth, not a preference for domestic buyers — a point our own recommendations concede."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "brand-study-the-springbok-world-champion-under-owned",
@@ -4510,7 +4646,8 @@
         "Much of the Springbok's brand value is inseparable from the jersey, the anthem and the public-good status of the national team; it may not be cleanly ownable or transferable without destroying the very thing that makes it valuable. The study's estimate of latent commercial value should be read as a ceiling, not a forecast.",
         "World Cup wins are a cyclical asset. A brand-value case built at the peak of a title cycle risks over-fitting to a moment; the bear case is that the commercial gap narrows on its own between tournaments, with or without a change in ownership strategy."
       ]
-    }
+    },
+    "readingTime": "17 MIN READ"
   },
   {
     "slug": "the-founders-ledger-sell-up-or-open-out",
@@ -4633,7 +4770,72 @@
         "Retained control without retained equity — Rodriguez's outcome — may be the genuinely optimal structure for most founders, not a compromise. Keeping the operating seat while transferring the capital risk to a better-capitalised owner is a rational allocation of who-bears-what, and the framing of it as 'exporting the compounding' understates what the founder kept.",
         "Two cases cannot carry a continental thesis. The Ledger's value is as a method, not a proof; the honest reading is that it demonstrates a lens, and the lens needs many more builders before 'open out' can be recommended as policy."
       ]
-    }
+    },
+    "exhibits": [
+      {
+        "type": "matrix",
+        "after": 5,
+        "title": "Sell up vs open out — who keeps which ownership layer",
+        "note": "MonoKromatik assessment, 0–4 (empty→full), from the founders' own on-the-record decisions. Both keep control; the equity layer is where the continent's ledger diverges. A verdict, not a measured metric.",
+        "cols": [
+          "Control kept",
+          "Authorship kept",
+          "Equity kept on continent",
+          "Global distribution gained"
+        ],
+        "rows": [
+          {
+            "label": "Rodriguez — sell up (Mielle → P&G)",
+            "tag": "export",
+            "cells": [
+              4,
+              4,
+              0,
+              4
+            ]
+          },
+          {
+            "label": "Dangote — open out (refinery IPO)",
+            "tag": "repatriate",
+            "cells": [
+              4,
+              4,
+              4,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "type": "quadrant",
+        "after": 5,
+        "title": "The founder's fork — control vs equity kept home",
+        "note": "MonoKromatik read of the two cases. Both founders keep control; they split on whether the equity — and so the compounding — stays on the continent.",
+        "xAxis": [
+          "Equity exported",
+          "Equity kept on continent"
+        ],
+        "yAxis": [
+          "Control ceded",
+          "Control retained"
+        ],
+        "points": [
+          {
+            "label": "Rodriguez (sell up)",
+            "x": 18,
+            "y": 82,
+            "tag": "export"
+          },
+          {
+            "label": "Dangote (open out)",
+            "x": 88,
+            "y": 86,
+            "tag": "repatriate"
+          }
+        ]
+      }
+    ],
+    "readingTime": "8 MIN READ"
   },
   {
     "slug": "who-captures-amapiano-value-capture-report",
@@ -4977,7 +5179,8 @@
           "The framework, the ledger and the strategic conclusions are MonoKromatik's; the facts are the sources'. This edition is a desk analysis, not a commissioned audit, and is cross-linked to the free feature [Who Captures Amapiano?] and the [Ownership 100] so every claim can be checked and traced. Where a figure is reported rather than officially disclosed, it is treated as such."
         ]
       }
-    ]
+    ],
+    "readingTime": "16 MIN READ"
   },
   {
     "slug": "whos-buying-african-sport-2026",
@@ -5842,7 +6045,8 @@
         "Ownership is not free. The Springbok's rejection of Ackerley kept control at home and forwent the capital — and it is not yet proven that SA Rugby can build the commercial machine without it. 'Retained but under-capitalised' can be a worse outcome than 'contested but funded.' The report's preference for domestic ownership carries a real cost the bull case tends to skip.",
         "The comparatives cut both ways. Saudi's PIF, the IPL and MLS are success stories selected in hindsight; for each, there are leagues and sovereign sports bets that destroyed value. The claim that African sport is 'underpriced' assumes the ownership gap can be closed profitably — but if the domestic capital, governance and rights-packaging capacity are not built first, buying the assets early is how you lose money early."
       ]
-    }
+    },
+    "readingTime": "36 MIN READ"
   },
   {
     "slug": "signal-scorecard-nandos",
@@ -6262,7 +6466,8 @@
         "Nando's compounds real value at home. The Central Kitchen, the jobs, two decades of contemporary-art patronage and one of the country's strongest creative-industry footprints all compound in South Africa. The 'capture exported' framing understates how much genuine value the brand still builds and keeps on the continent.",
         "Domicile is a weak proxy for allegiance. Where a group seats its holding company is driven by tax, treaty and succession planning far more than by cultural intent. Reading Luxembourg and London as a statement about where Nando's 'believes its value belongs' may over-interpret what is, in practice, an accountant's decision."
       ]
-    }
+    },
+    "readingTime": "14 MIN READ"
   },
   {
     "slug": "culture-due-diligence-afrobeats-catalogue",
@@ -6708,7 +6913,8 @@
         "The valuation is reported, not known — so the extraction magnitude is unproven. Every figure in the comps set is press-sourced. If the true price and stake are more favourable to Mavin's side than the reported range implies, the 'value captured offshore' argument weakens accordingly. The honest position is that the direction is clear and the magnitude is not.",
         "The Harvard critique is a framing, not a finding of wrongdoing. Naming the Mavin deal as exemplifying a pattern is an argument about structure, not an allegation of bad conduct by any party. An acquirer can hold both that the structural leak is real and that this specific transaction may be a legitimate, even generative, piece of it."
       ]
-    }
+    },
+    "readingTime": "15 MIN READ"
   },
   {
     "slug": "who-owns-african-fintech-league-table",
@@ -7283,7 +7489,8 @@
         "The 'retained' examples are not pure either. Fawry and Tyme both carry foreign minorities (and Tyme's own expansion is offshore, into the Philippines). Even the counter-examples show that at scale, some foreign ownership is near-universal — 'retained' is a matter of degree and control, not a binary the table can fully capture.",
         "Domicile is a legal and tax decision, weakly correlated with where value is created or felt. A Mauritius or Delaware holding company can still employ, bank and serve a wholly African market, pay local taxes on local operations, and repatriate value through dividends and salaries. The map of legal domicile is not the map of economic benefit, and this table should be read as one lens, not a verdict."
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "athlete-value-capture-siya-kolisi",
@@ -7752,7 +7959,8 @@
         "Absence of evidence is not evidence of a leak. His private commercial affairs may already include equity and image-rights structures that are simply not public — most well-advised athletes' are. The 'gap' this piece names is a gap in the public record, and the methodology says so; it should not be read as a confirmed failure to own.",
         "Owning is hard, and being good at rugby does not make you good at business. Building media companies, funds and licensing estates is a different skill, with its own failure rate; pushing every athlete up the ladder can trade a safe rented income for an unmanaged, loss-making venture. The ladder describes where value is kept — it does not guarantee that climbing it is the right risk for every athlete."
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "signal-fit-brands-buying-into-amapiano",
@@ -8278,7 +8486,8 @@
         "Signal Fit is a judgement framework, not a measurement. The five Cs and the four archetypes are ordinal and subjective by design; reasonable analysts will score the same play differently, and the rubric should be read as a structured argument, not a metric. Its discipline is asking the questions, not producing a precise number.",
         "Amapiano's commercialisation is already global and largely welcomed. The scene has actively pursued brand money, global platforms and international crossover; framing brand involvement primarily as extraction can undersell how much the culture's own actors have sought, shaped and benefited from exactly this attention."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "the-monokromatik-method",
@@ -8753,7 +8962,8 @@
         "The Bear Case can become a ritual. A standing requirement to argue against ourselves risks producing a formulaic counter-section that discharges the obligation without genuinely threatening the thesis — the strongest objection is the one we did not think of, and no template guarantees we found it. A Bear Case is only as good as our honesty in writing it, which is exactly the thing it cannot itself verify.",
         "Rigour is not the same as being right, and it can launder confidence. A well-sourced, well-graded, self-critical piece can still reach the wrong conclusion, and its very polish can make that conclusion more persuasive than it deserves to be. The method is a discipline for being checkable and less wrong over time — not a guarantee of truth, and it should never be read as one."
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "signal-scorecard-flutterwave",
@@ -9170,7 +9380,8 @@
         "Flat valuation is a sector-wide reset, not a Flutterwave failure. African and global venture valuations broadly de-rated between 2022 and 2026; a roughly flat mark through that window may reflect the market more than the company, and Flutterwave still attracted a strategic lead (Ripple) at scale when many peers could not raise at all.",
         "Consequence may yet be repatriated. Ownership and domicile are not permanent — a local listing, a secondary, or a strategic African anchor investor could move capture back toward the continent over time. Scoring Consequence low today reads a current structure as a fixed destiny, which the method itself warns against."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "who-owns-african-music-league-table",
@@ -9624,7 +9835,8 @@
         "Capital recycles locally. A nine-figure exit for a Lagos- or Johannesburg-built company puts real wealth in the hands of African founders and staff who reinvest it — Mr Eazi's own investment vehicle is one example. Offshore ownership of one company can fund the next wave of retained ones.",
         "Independents still thrive, so the model is a choice, not a casualty. Chocolate City and emPawa show African-owned models remain fully viable, and distribution partnerships let a label borrow global rails while keeping its equity. The ownership drift reflects decisions founders are free not to make — which makes it a strategy question, not a structural inevitability."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "signal-scorecard-tyla",
@@ -10006,7 +10218,8 @@
         "Authorship was defended, not sanded off. She held her 'coloured South African' identity under intense American pressure and named her own genre. That is the opposite of a hollowed export — the cultural signal reached the world intact and on her terms.",
         "Capture is broader than masters. Endorsements (Pandora, H&M, Nike), touring and her owned artist-brand may already out-earn recorded-music royalties for a streaming-era pop star — and those rungs she demonstrably controls. If the retained value lives in the brand rather than the masters, the ownership question is less decisive than the frame implies."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "who-owns-african-beauty-league-table",
@@ -10486,7 +10699,8 @@
         "The capture partly loops back. Richelieu Dennis's New Voices Fund and Essence Ventures recycled exit proceeds into Black-women-led businesses — so even a conglomerate buyout returned some capture to the community that created the demand, and can fund the next wave of founders.",
         "Consumer welfare improved. Better R&D, reliable supply, lower prices and wider availability from a conglomerate are real gains for the melanin-rich consumers these brands serve — a benefit the ownership frame, focused on who holds the equity, tends to understate."
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "athlete-value-capture-victor-osimhen",
@@ -10890,7 +11104,8 @@
         "The system is the stage that made the signal. The same transfer machine that captures the fee is what took a Lagos academy player to a Serie A title, a CAF crown and global recognition. The platform has real, compounding value to the athlete's brand that a purely extractive reading understates.",
         "The equity rung is early, not absent. Scoring owned equity as 'thin' reflects a player in his peak years, not a closed story. The wage capture he is banking now is precisely the capital for owned assets later — the runway on his highest rung is the longest, and the curve is not yet finished."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "signal-scorecard-six-dogs",
@@ -11276,7 +11491,8 @@
         "The 'African authorship' is contestable. The founders are white South Africans working in a European-derived category, and the African claim is terroir-based, not heritage-based. A critic could read the brand as settler-craft entrepreneurship rather than African cultural authorship — a reading the score acknowledges rather than dismisses.",
         "Retention is a snapshot, not a guarantee. Category headwinds and the post-Inverroche consolidation are a foreign-buyer feeding frenzy; a future acquisition would flip Six Dogs from RETAINED to EXPORTED overnight. The verdict describes today's ownership, not tomorrow's — and in this category, tomorrow has usually meant a European owner."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "who-owns-african-sport-league-table",
@@ -11743,7 +11959,8 @@
         "Capture offshore is not the same as value destroyed. Record AFCON revenue, a richer title-sponsorship deal and rising transfer valuations mean the African-authored asset is being priced up, not hollowed out. The honest question is the share of a growing pie that Africa captures, not whether the value exists.",
         "The broadcast base was shrinking anyway. Canal+ bought a MultiChoice that was losing subscribers and revenue on its own; foreign capital and scale may be what stabilises the distribution of African sport rather than what threatens it. Reading the deal purely as loss ignores the incumbent's decline."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "culture-due-diligence-african-football-rights",
@@ -12197,7 +12414,8 @@
         "The capital is mobile and replaceable; the authorship is not. Africa retains the irreplaceable asset — the talent and the fans — while ownership of distribution rails is a solvable, later-stage problem. The retained nodes (New World TV, African-owned clubs, Mansour's network) prove African capital can and does re-enter the stack.",
         "Capture offshore is not value destroyed. A market growing toward $20bn, record AFCON revenue and rising transfer valuations mean the asset is being priced up. The honest question is Africa's share of a growing pie, not whether the value exists — and framing every foreign deal as extraction can deter the very capital the game needs."
       ]
-    }
+    },
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "culture-due-diligence-nollywood-streaming",
@@ -12620,7 +12838,8 @@
         "Foreign platforms are not the same as lost value. Even under Netflix, Amazon or Canal+, the wages, the roughly one million jobs, and the on-screen authorship stay African. Distribution ownership is less economically decisive than the leak thesis implies, and foreign distribution reaches audiences African platforms could not.",
         "The real leak is domestic, not offshore. IROKO's failure shows the binding constraint is Nigeria's own market — currency, broadband, willingness to pay — not offshore capture. The value doesn't so much leave as never monetise at home, which means the fix is domestic infrastructure, not resisting foreign capital."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "signal-scorecard-mielle-organics",
@@ -12967,7 +13186,8 @@
         "Founder control was retained operationally. Rodriguez stayed CEO and Mielle runs as an independent subsidiary, so 'exported' overstates the loss of authorship and day-to-day control even as the cap table changed hands.",
         "The backlash may be a reputational attack, not a product failure. Rodriguez alleges the hair-loss virality was fuelled by paid competitor misinformation, and dermatologists found no evidence the ingredients are harmful. If so, the Consequence axis penalises Mielle for an attack it did not cause rather than for anything it did — which is exactly why the piece scores the episode as allegation, not fact."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "artist-value-capture-rema",
@@ -13395,7 +13615,8 @@
         "He owns the rungs that matter to a live-era artist. Touring income and his 'Ravage' brand — the rungs he clearly controls — may already be a larger and more clearly retained share of his total value than recorded-music royalties, for a streaming-era star whose masters economics are thin per stream regardless of who owns them.",
         "Capture is not the same as loss of the signal. The music, the fame and the cultural authorship stay Rema's whatever the cap table says; the compounding masters value flowing toward a major does not diminish that he authored the biggest Afrobeats export in history — and the ownership question, unlike the signal, is still being written."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "culture-due-diligence-african-mobile-money",
@@ -13802,7 +14023,8 @@
         "MTN complicates the 'foreign' frame entirely. The largest mobile-money operator by users is South-African-parented — intra-African ownership, not North–South extraction. The archetype is not uniformly Exported, and the biggest single rail by users is African-owned.",
         "The market self-corrects, and regulation can finish the job. Wave's flat ~1% fee compressed the very extraction the bear worries about — without needing to own the rail — and central-bank interoperability, fee caps and float rules can re-shape capture by rule. Ownership is one lever; competition and regulation are two more, and both are already working."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "who-owns-african-fashion-league-table",
@@ -14243,7 +14465,8 @@
         "Diaspora is African, and the line can be a values judgement. Counting Daily Paper as 'less African' because it is Amsterdam-domiciled penalises the diaspora that carries African aesthetics into global markets and reinvests culturally. Where authorship is genuinely African-heritage, domicile may be the wrong axis to weight so heavily.",
         "Even Vlisco's story is more shared than the irony suggests. The fabric's African identity was genuinely co-authored over a century by African wearers, traders and tailors, and Africans capture the large downstream trade-and-tailoring layer. Ownership of the mill is only one slice of where the value and the meaning of wax actually accrue."
       ]
-    }
+    },
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "signal-scorecard-jumia",
@@ -14676,7 +14899,8 @@
         "The 'not African' test can be a purist trap. By market, workforce, brand and increasingly leadership location, Jumia is African; incorporation jurisdiction is a financing artefact, not identity. The scorecard's own refusal to resolve the question concedes this is a genuine, two-sided debate.",
         "The Citron episode aged badly for the short-seller, not Jumia. Andrew Left reversed and bought shares, no fraud finding emerged, and the company is still standing and narrowing losses seven years on. Weighting Consequence down for an allegation that was never established risks penalising Jumia for having been attacked."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "value-capture-trevor-noah",
@@ -15151,7 +15375,8 @@
         "The flagship owned-IP adaptation has stalled. Born a Crime the film has been in development since 2018–19 with no release — owned IP that has not converted to owned screen value, and the studio would capture much of the film's upside if it is ever made.",
         "Platform dependence persists inside 'owned media'. 'What Now?' still needs a distribution and ad-sales partner (Spotify, then SiriusXM), and its terms are undisclosed — Noah owns the IP but not the distribution or the disclosed economics, and the equity portfolio is small and private. The climb is real, but it is not yet independence."
       ]
-    }
+    },
+    "readingTime": "10 MIN READ"
   },
   {
     "slug": "the-megabrand-exit-ledger",
@@ -15191,44 +15416,6 @@
         "label": "Share of South African startup exits that went to LOCAL buyers in 2024–25 — the clearest counter-trend to the pattern (per LaunchBase Africa)"
       }
     ],
-    "exhibit": {
-      "type": "bar",
-      "after": 1,
-      "title": "The value leaving — disclosed African exits by reported deal value (2024–26)",
-      "note": "Reported transaction values, 2024–26; undisclosed deals (PaySpace, Goldenlay, ShipAfrica) omitted from the chart. Deals per Reuters, Variety, Music Business Worldwide, TechCrunch, Electrolux and company filings (2024–26). Source: MonoKromatik Exit Ledger.",
-      "data": [
-        {
-          "label": "MultiChoice → Canal+ (France)",
-          "value": 3000,
-          "display": "~$3.0bn"
-        },
-        {
-          "label": "EABL (Diageo stake) → Asahi (Japan)",
-          "value": 2300,
-          "display": "~$2.3bn"
-        },
-        {
-          "label": "Mavin Global → UMG (Netherlands/US)",
-          "value": 150,
-          "display": "~$150m"
-        },
-        {
-          "label": "Kwikot → Haier (China)",
-          "value": 130,
-          "display": "~$130m"
-        },
-        {
-          "label": "PaySpace → Deel (US)",
-          "value": 100,
-          "display": "~$100m*"
-        },
-        {
-          "label": "DocFox → nCino (US)",
-          "value": 75,
-          "display": "$75m"
-        }
-      ]
-    },
     "sections": [
       {
         "heading": "THE HEADLINE",
@@ -15279,7 +15466,136 @@
         ]
       }
     ],
-    "exhibits": [],
+    "exhibits": [
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "The value leaving — disclosed African exits by reported deal value (2024–26)",
+        "note": "Reported transaction values, 2024–26; undisclosed deals (PaySpace, Goldenlay, ShipAfrica) omitted from the chart. Deals per Reuters, Variety, Music Business Worldwide, TechCrunch, Electrolux and company filings (2024–26). Source: MonoKromatik Exit Ledger.",
+        "data": [
+          {
+            "label": "MultiChoice → Canal+ (France)",
+            "value": 3000,
+            "display": "~$3.0bn"
+          },
+          {
+            "label": "EABL (Diageo stake) → Asahi (Japan)",
+            "value": 2300,
+            "display": "~$2.3bn"
+          },
+          {
+            "label": "Mavin Global → UMG (Netherlands/US)",
+            "value": 150,
+            "display": "~$150m"
+          },
+          {
+            "label": "Kwikot → Haier (China)",
+            "value": 130,
+            "display": "~$130m"
+          },
+          {
+            "label": "PaySpace → Deel (US)",
+            "value": 100,
+            "display": "~$100m*"
+          },
+          {
+            "label": "DocFox → nCino (US)",
+            "value": 75,
+            "display": "$75m"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 2,
+        "title": "The exit ledger — authorship stayed, ownership left",
+        "note": "MonoKromatik assessment, 0–4. Authorship is African in every deal; ownership and capture moved offshore. Deal values & buyers per Variety, Reuters, CNBC Africa, Music Business Worldwide, TechCrunch. A verdict, not a measured metric.",
+        "cols": [
+          "Authored in Africa",
+          "Ownership now home",
+          "Capture now home"
+        ],
+        "rows": [
+          {
+            "label": "EABL → Asahi (JP) ~$2.3bn",
+            "tag": "exported",
+            "cells": [
+              4,
+              0,
+              0
+            ]
+          },
+          {
+            "label": "MultiChoice → Canal+ (FR) ~$3bn",
+            "tag": "exported",
+            "cells": [
+              4,
+              0,
+              0
+            ]
+          },
+          {
+            "label": "Mavin → Universal (US) ~$150m",
+            "tag": "exported",
+            "cells": [
+              4,
+              1,
+              0
+            ]
+          },
+          {
+            "label": "PaySpace → Deel (US) ~$100m",
+            "tag": "exported",
+            "cells": [
+              4,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 3,
+        "title": "What left with the equity",
+        "note": "Relative scale — this ledger's value-capture read, not audited totals. The modern export is not a shuttered factory but a headquarters relationship: the African team runs the asset, the offshore owner books the upside.",
+        "data": [
+          {
+            "label": "Control & future margin",
+            "value": 100,
+            "display": "to HQ",
+            "tag": "exported"
+          },
+          {
+            "label": "Distribution & IP",
+            "value": 78,
+            "display": "Showmax, payroll engine, catalogue",
+            "tag": "exported"
+          },
+          {
+            "label": "Pricing power",
+            "value": 56,
+            "display": "dominant-brand rents",
+            "tag": "exported"
+          },
+          {
+            "label": "Brand authorship",
+            "value": 28,
+            "display": "stays African",
+            "tag": "stays"
+          }
+        ]
+      },
+      {
+        "type": "donut",
+        "after": 5,
+        "title": "The counter-ledger — value coming home",
+        "value": 50,
+        "valueLabel": "~50%",
+        "sublabel": "Roughly half of South African startup exits in 2024–25 went to domestic buyers — a local-acquisition rate unmatched elsewhere on the continent, alongside >R4.6bn of local corporate M&A and UAC buying CHI back from Coca-Cola.",
+        "note": "The export pattern is real but not total. Source: LaunchBase Africa (SA domestic-exit share and R4.6bn local M&A); Nairametrics (UAC/CHI). Figures reported."
+      }
+    ],
     "counterCase": {
       "heading": "THE BEAR CASE",
       "intro": "Where the 'exit equals extraction' read is weakest, and where the ledger's framing is too strict.",
@@ -15290,7 +15606,8 @@
         "Survivorship cuts both ways. The counter-ledger (UAC/CHI, Tyme, Lesaka, ~50% local SA exits) may be the leading edge of a genuine shift in where the deepest bid sits, not a handful of exceptions — in which case the 2024–26 ledger is a lagging snapshot of a problem already being solved.",
         "'African' and 'foreign' are getting harder to score. Dual listings, diaspora-founded acquirers and blended DFI capital (IFC, Proparco) blur the binary the ledger depends on; a stake can be foreign-domiciled and developmentally aligned at once."
       ]
-    }
+    },
+    "readingTime": "6 MIN READ"
   },
   {
     "slug": "the-repatriation-playbook-nollywood-2026",
