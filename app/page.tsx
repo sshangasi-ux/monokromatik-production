@@ -345,6 +345,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THE PRACTICE — the advisory, surfaced as the business it is, not a buried
+          link. The free checker above is its top of funnel; this is the offer.
+          The reports and the Index build the authority; the advisory captures the
+          value, the way every leading intelligence desk is actually monetised. */}
+      <section className="bg-mono-black text-mono-white py-20 md:py-24 border-y border-mono-amber/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs tracking-[0.32em] font-display font-bold text-mono-amber mb-5">THE PRACTICE · WORK WITH US</p>
+          <h2 className="max-w-3xl text-4xl md:text-5xl font-display font-bold leading-[0.98]">The reports prove it. <span className="text-mono-amber">The advisory is the product.</span></h2>
+          <p className="mt-6 max-w-2xl font-body text-lg text-mono-soft-white leading-relaxed">
+            MonoKromatik is the value-capture intelligence desk for African &amp; diaspora culture, sport and business. Bring us the brand, property or deal you care about — we score who authors it, who owns it and who keeps the value, and set the strategy to move the number.
+          </p>
+          <div className="mt-10 grid gap-px bg-mono-white/15 border border-mono-white/15 sm:grid-cols-3">
+            {[
+              { name: 'Signal Scorecard', price: 'from $900', href: '/services/scorecard', blurb: 'A four-axis value-capture read on one brand — named-rival benchmarks and a roadmap to move the number.' },
+              { name: 'Signal Fit', price: 'from $1,500', href: '/services/signal-fit', blurb: 'Does this partnership, sponsorship or move actually fit? The cultural-fit and value-capture read before you commit.' },
+              { name: 'Value-Capture Advisory', price: 'from $5,000', href: '/services/value-capture-advisory', blurb: 'The full engagement — who captures the value across your portfolio, and the strategy to keep more of it home.' },
+            ].map((t) => (
+              <Link key={t.name} href={t.href} className="group bg-mono-black p-7 flex flex-col justify-between gap-6 hover:bg-mono-charcoal transition-colors">
+                <div>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <p className="font-display font-bold text-lg text-mono-white group-hover:text-mono-amber-bright transition-colors">{t.name}</p>
+                    <p className="text-[11px] tracking-[0.12em] font-display font-bold text-mono-amber shrink-0">{t.price}</p>
+                  </div>
+                  <p className="mt-3 font-body text-[15px] text-mono-soft-white leading-relaxed">{t.blurb}</p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-bright">SEE THE BRIEF <ArrowRight size={13} /></span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/work-with-us" className="inline-flex gap-2 items-center bg-mono-amber text-mono-black px-8 py-4 font-display font-bold hover:bg-mono-amber/90 transition-colors">START A BRIEF <ArrowRight size={18} /></Link>
+            <Link href="/intelligence" className="inline-flex gap-2 items-center border border-mono-white/30 text-mono-white px-8 py-4 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">THE FULL PRACTICE</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-mono-black text-mono-white py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-7 mb-12">
