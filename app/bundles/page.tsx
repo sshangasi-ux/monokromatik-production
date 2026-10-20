@@ -4,6 +4,7 @@ import { ArrowRight, Check, Layers } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import AdvisoryBridge from '../components/AdvisoryBridge';
 import BuyButton from '../components/BuyButton';
+import InternationalCheckout from '../components/InternationalCheckout';
 import { getBundles, reportPrice } from '../../lib/commerce';
 import { getAllReports } from '../../lib/reports';
 
@@ -82,14 +83,17 @@ export default function BundlesPage() {
                   </div>
                   <div className="mt-6">
                     {bundle.url ? (
-                      <BuyButton
-                        href={bundle.url}
-                        slug={bundle.slug}
-                        price={bundle.price}
-                        className="inline-flex items-center justify-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors w-full sm:w-auto"
-                      >
-                        BUY THE BUNDLE — {bundle.price} <ArrowRight size={16} />
-                      </BuyButton>
+                      <>
+                        <BuyButton
+                          href={bundle.url}
+                          slug={bundle.slug}
+                          price={bundle.price}
+                          className="inline-flex items-center justify-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors w-full sm:w-auto"
+                        >
+                          BUY THE BUNDLE — {bundle.price} <ArrowRight size={16} />
+                        </BuyButton>
+                        <InternationalCheckout slug={bundle.slug} title={bundle.title} price={bundle.price} surface="bundle" />
+                      </>
                     ) : (
                       <div>
                         <span className="inline-flex items-center gap-2 border border-mono-gray/40 text-mono-charcoal px-7 py-4 font-display font-bold cursor-default">

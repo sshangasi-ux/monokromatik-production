@@ -4,6 +4,7 @@ import { Check, ArrowRight, ShieldCheck, Lock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import BuyButton from '../components/BuyButton';
+import InternationalCheckout from '../components/InternationalCheckout';
 import { INDEX_REPORT, reportCheckoutUrl, REPORT_CHECKOUT_SLUG, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
 
 export const metadata: Metadata = {
@@ -96,6 +97,9 @@ export default function PricingPage() {
                   <ShieldCheck size={15} className="text-mono-amber-strong shrink-0" />
                   Payment is processed securely by Paystack. We never see your card details.
                 </p>
+                {checkoutUrl && (
+                  <InternationalCheckout slug={REPORT_CHECKOUT_SLUG} title={offer.name} price={offer.priceLabel} surface="pricing" />
+                )}
               </div>
             </div>
           </div>
