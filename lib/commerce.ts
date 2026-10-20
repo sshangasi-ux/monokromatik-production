@@ -204,6 +204,30 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // the same value-capture lens; buyers ladder up to this culture flagship.
     entry: { slug: 'who-captures-amapiano-value-capture-report' },
   },
+  // THE CREATIVE LEDGER — value-capture reads on the creative-awards economy,
+  // priced as R220 studies and LIVE (gated). Interim checkout is the generic
+  // R220 report Payment Page (same fallback the Scorecard uses) so the reports
+  // are genuinely paid now; set the per-SKU env var to a dedicated Paystack
+  // product URL when one exists, and it takes precedence (price/link can't drift
+  // because the generic page is a stable R220 default, not a per-report link).
+  // Delivery is manual from Paystack Orders for now (same as the amapiano study),
+  // moving to the webhook → Resend attachment path.
+  'loeries-2026-the-creative-value-ledger': {
+    price: 'R220',
+    tier: 'study',
+    url:
+      process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL ||
+      process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL ||
+      'https://paystack.shop/pay/3lscb9xsn8',
+  },
+  'cannes-lions-2026-the-africa-value-ledger': {
+    price: 'R220',
+    tier: 'study',
+    url:
+      process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL ||
+      process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL ||
+      'https://paystack.shop/pay/3lscb9xsn8',
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */

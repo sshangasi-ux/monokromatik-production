@@ -1,5 +1,333 @@
 [
   {
+    "slug": "loeries-2026-the-creative-value-ledger",
+    "title": "The Loeries 2026 Value Ledger: Who Makes the Work, Who Keeps the Value",
+    "series": "THE CREATIVE LEDGER",
+    "status": "live",
+    "access": "premium",
+    "statusNote": "Creative-awards value-capture read · v1 · read against the MonoKromatik ownership method",
+    "readingTime": "11 MIN READ",
+    "publishedAt": "2026-10-19T08:00:00.000Z",
+    "summary": "The 2026 Loeries produced a dominant independent, four Grand Prix and a multinational Brand of the Year. This report reads the week the way MonoKromatik reads every cultural economy — not by who won the metal, but by who captures the value the metal creates: the agency, the holding group, the brand owner, the production craft shops, and the South African creative economy itself. It maps where award value actually accrues, scores the gap between authorship and ownership, and sets out the Bear Case every awards season should be made to answer.",
+    "tags": [
+      "Loeries",
+      "Loeries 2026",
+      "advertising",
+      "South Africa",
+      "Joe Public",
+      "Heineken",
+      "value capture",
+      "creative economy",
+      "agency ownership"
+    ],
+    "keyStats": [
+      {
+        "value": "2 of 4",
+        "label": "Grand Prix won by Joe Public — the only independent to carry the week"
+      },
+      {
+        "value": "30",
+        "label": "Loeries to Joe Public, the top agency haul; TBWA\\Hunt Lascaris next on 20"
+      },
+      {
+        "value": "~3",
+        "label": "Of four Grand Prix made for multinational-owned brands (Heineken, AB InBev, Unilever)"
+      },
+      {
+        "value": "1",
+        "label": "Independent agency in the winners' circle that is South African-owned at scale"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "THE TROPHY IS NOT THE ASSET",
+        "paragraphs": [
+          "A Loeries Grand Prix is a verdict on an idea. It is not a verdict on who owns the idea's value — and the two come apart almost immediately. The agency banks reputation and new-business leverage. The holding group banks the retainer and the share-of-wallet. The brand owner banks the effectiveness, the sales lift and the equity. The production and craft shops bank a credit and, if they are lucky, a rate card. The South African creative economy banks … whatever is left once those claims are settled.",
+          "This report reads the 2026 Loeries on that axis. The work was excellent — that is not in dispute and not the question. The question is the one MonoKromatik asks of every cultural economy it covers: authorship is clearly African; where does ownership of the value sit? On the night, the answer is a standing ovation. On the cap table, it is more complicated."
+        ]
+      },
+      {
+        "heading": "THE INDEPENDENT THAT CARRIED THE WEEK",
+        "paragraphs": [
+          "Joe Public won both Independent Agency of the Year and Agency of the Year, with roughly 30 Loeries including two of the four Grand Prix — 'Period Paper' for Independent Media (Print) and 'Spinning Thing' for Sunlight (Audio & Radio). It was the most of any agency, ahead of TBWA\\Hunt Lascaris on 20. For a South African-owned independent to beat the global networks on their own scoreboard is the single most valuable fact of the week, because it is the rarest.",
+          "It is rare for a structural reason. The scaled creative capital in the South African market — the holding-group shops, the networks, the multinational-owned production pipelines — mostly reports profit to balance sheets outside the country. Joe Public is the exception that lets you see the rule. The value it created in 2026 compounds, at least partly, where the work was made. That is precisely what cannot be assumed of most of the other metal handed out."
+        ]
+      },
+      {
+        "heading": "THE BRANDS BEHIND THE METAL",
+        "paragraphs": [
+          "Follow the Grand Prix to the brand owners and the ledger clarifies. 'Bar de Change' was made for Heineken Beverages. 'African Time' was made for South African Breweries, owned by AB InBev. 'Spinning Thing' was made for Sunlight, a Unilever brand. 'Period Paper' is the outlier — made with Independent Media, a South African publisher.",
+          "Heineken Beverages was named Brand of the Year. That is the tell. The brand equity, the effectiveness and the sales lift that award-winning work produces accrue first to the brand owner — and three of the four most-celebrated ideas of the South African year were built to make multinational-owned brands stronger. The craft is local. The compounding asset the craft feeds is, mostly, not.",
+          "This is not an argument against the work or the clients. Multinational brands fund the budgets that make ambitious craft possible, and the agencies and crews are paid. It is an argument for seeing clearly: the Loeries measure the quality of the authorship, and authorship is only the first claim on the value. The brand owner's claim is larger and more durable, and it mostly sits offshore."
+        ]
+      },
+      {
+        "heading": "THE LAYER THE TABLES FORGET — CRAFT AND PRODUCTION",
+        "paragraphs": [
+          "A Film Crafts (Direction) Grand Prix went to Darling Films for 'African Time.' Craft awards are a reminder that the production houses, directors, editors, composers and post studios are a distinct layer of the value chain — one the agency-centric trophy tables routinely fold into a single credit line.",
+          "In the value-capture read, the craft layer is where some of the most durable, exportable South African creative capital actually lives. A director with a Cannes-and-Loeries reel can sell globally; a production company with a signature look can license it. This is a layer worth building deliberately, because it is one of the few in the chain that a South African-owned business can scale and own outright — rather than rent to a network."
+        ]
+      },
+      {
+        "heading": "WHAT TO BUILD FROM A WINNING YEAR",
+        "paragraphs": [
+          "For an agency: a Grand Prix is working capital, not a conclusion. Its value decays unless it is converted into retained revenue, equity participation in client outcomes, or owned IP — the things that survive after next year's metal is handed out. Joe Public's achievement is only an asset if it compounds into ownership, not just acclaim.",
+          "For a brand owner: the Loeries are the cheapest due diligence in the market on which creative partners can actually make work that moves a business. Read the winners' tables as a shortlist, not a scoreboard.",
+          "For the South African creative economy: the policy and investment question is not 'can we make world-class work?' — 2026 settles that — but 'can we own the businesses that make it?' Every independent that scales, every craft shop that licenses its IP, every agency that takes equity rather than only fees, moves value from the night's applause onto a South African balance sheet. That, not the trophy count, is the number worth tracking year on year."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "bar",
+        "after": 1,
+        "title": "Grand Prix by agency — 2026 Loeries",
+        "note": "Four Grand Prix awarded. Joe Public took two (Print, Audio & Radio); LePub Johannesburg took Live Communication; Darling Films took Film Crafts (Direction). Per The Media Online / Bizcommunity / LBBonline coverage.",
+        "data": [
+          {
+            "label": "Joe Public",
+            "value": 2,
+            "display": "2 GP"
+          },
+          {
+            "label": "LePub Johannesburg",
+            "value": 1,
+            "display": "1 GP"
+          },
+          {
+            "label": "Darling Films (craft)",
+            "value": 1,
+            "display": "1 GP"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "Top agencies by total Loeries — 2026",
+        "note": "Joe Public's 30 was the largest haul of any agency, ahead of TBWA\\Hunt Lascaris on 20. Figures per the published results tables (Bizcommunity). Totals for the full week varied across outlets and are not independently reconciled here.",
+        "data": [
+          {
+            "label": "Joe Public",
+            "value": 30,
+            "display": "30"
+          },
+          {
+            "label": "TBWA\\Hunt Lascaris",
+            "value": 20,
+            "display": "20"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 3,
+        "title": "Where the value of a winning campaign is captured",
+        "note": "Relative scale — this report's value-capture read, not audited totals. Authorship (the agency idea) is the first and most-celebrated claim, but the brand owner's equity claim is larger and more durable, and in 2026 mostly sat with foreign-owned brands.",
+        "data": [
+          {
+            "label": "Brand owner equity & sales",
+            "value": 100,
+            "display": "largest / durable",
+            "tag": "mostly offshore"
+          },
+          {
+            "label": "Holding-group fees",
+            "value": 68,
+            "display": "retained revenue",
+            "tag": "networked"
+          },
+          {
+            "label": "Agency reputation & new biz",
+            "value": 55,
+            "display": "the trophy",
+            "tag": "decays"
+          },
+          {
+            "label": "Craft & production IP",
+            "value": 34,
+            "display": "under-built",
+            "tag": "ownable locally"
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE — WHAT THIS READ COULD GET WRONG",
+      "intro": "An honest value-capture read has to argue against itself. Here is the strongest case that the ownership framing overstates the problem.",
+      "points": [
+        "Awards are not effectiveness. A Grand Prix measures craft and ideas, not sales. Reading them as a proxy for where business value lands may over-weight the trophy and under-weight the quieter, un-awarded work that actually moves brands.",
+        "Fees are real value, retained locally. Agencies and crews are paid in rands, employ South Africans and build local skill. 'The margin is offshore' understates the wages, training and careers that stay in the market regardless of who owns the brand.",
+        "Multinational budgets fund ambition. The craft that wins would not exist at this level without the budgets large foreign-owned brands bring. A purely ownership-first lens risks arguing against the very money that makes world-class work possible.",
+        "Cause work can be scam-ad risk. Social-cause campaigns are the Loeries' most reliable metal — and the global industry's most criticised category for 'scam ads' made chiefly to win. Some celebrated work may have thinner real-world reach than its trophy implies; this cuts against reading the metal as either value OR impact.",
+        "One dominant independent may be fragile, not a trend. Joe Public carrying the week is thrilling, but a single standout is not structural change. If it were acquired or faltered, the 'independent revival' reading would evaporate overnight."
+      ]
+    }
+  },
+  {
+    "slug": "cannes-lions-2026-the-africa-value-ledger",
+    "title": "Cannes Lions 2026, the Africa Ledger: Whose Win, Whose Value",
+    "series": "THE CREATIVE LEDGER",
+    "status": "live",
+    "access": "premium",
+    "statusNote": "Creative-awards value-capture read · v1 · Africa & diaspora focus",
+    "readingTime": "12 MIN READ",
+    "publishedAt": "2026-10-19T08:00:00.000Z",
+    "summary": "Kenya won its first Cannes Lions Grand Prix; Nigeria took a rare Gold; South Africa won on social impact. This report reads Africa's 2026 Cannes haul the MonoKromatik way — not by the headlines but by the credits, the categories and the networks the wins feed. It maps who actually captures the value of an African Cannes win across the local shop, the global holding company, the multinational brand owner, the festival itself and the diaspora market, and sets out the Bear Case for anyone tempted to read a Grand Prix as an industry.",
+    "tags": [
+      "Cannes Lions",
+      "Cannes Lions 2026",
+      "advertising",
+      "Africa",
+      "Kenya",
+      "Nigeria",
+      "South Africa",
+      "diaspora",
+      "value capture",
+      "creative economy"
+    ],
+    "keyStats": [
+      {
+        "value": "1",
+        "label": "Grand Prix to the entire Middle East & Africa region — Kenya's first-ever"
+      },
+      {
+        "value": "27",
+        "label": "Lions across the whole MEA region; Ogilvy alone won 81 across 36 offices"
+      },
+      {
+        "value": "Shared",
+        "label": "Nigeria's headline Gold, credited across Lagos (Insight Redefini) and Leo Burnett Singapore"
+      },
+      {
+        "value": "SDG",
+        "label": "The category carrying most of Africa's recognition — social impact, not commerce"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "A LOUD YEAR FOR A SMALL NUMBER OF WINS",
+        "paragraphs": [
+          "Cannes Lions is where the global advertising industry prices its own work — and, through the Network, Agency and Brand of the Year scoreboards, where the holding companies settle their annual league table. For Africa, 2026 was a loud year built on a small number of wins. Kenya took its first-ever Grand Prix. Nigeria took a rare Gold. South Africa won, as it reliably does, on social impact. The whole Middle East and Africa region took 27 Lions across the festival; Ogilvy alone, named Network of the Year for the third time in five years, pulled 81 across 36 offices.",
+          "That proportion is the report in one line. The African work was real and, in Kenya's case, historic. But a win is an input to someone's scoreboard, and the scoreboard mostly belongs to networks headquartered elsewhere. This report follows the value, not the applause."
+        ]
+      },
+      {
+        "heading": "KENYA'S GRAND PRIX — THE CLEANEST WIN TO OWN",
+        "paragraphs": [
+          "'Paid Sick Leave for Cows,' by The Partnership Agency for the dairy brand Too Good, won the Sustainable Development Goals Grand Prix — the only Grand Prix awarded to the entire MEA region in 2026. It pays Kenyan farmers to withhold milk from treated cows, attacking a real public-health problem: roughly one in four milk samples testing positive for antibiotics.",
+          "On the value-capture axis this is the cleanest African win of the year to actually own. The idea is tied to a specific local market, a specific local brand and a locally-run agency. The Grand Prix's reputational value has the best chance of compounding inside Kenya's own creative economy rather than being diluted across a global network's year-end tally. If African creative businesses want a model for a win they keep, this is it — local brand, local agency, globally legible idea."
+        ]
+      },
+      {
+        "heading": "NIGERIA'S GOLD — WHOSE WIN IS IT?",
+        "paragraphs": [
+          "'The Real Nigerian Prince,' for Vaseline, took a Gold in Creator Collaboration — a rare feat in a category that awarded only a handful of Golds against more than a thousand entries. It flips the internet's tiredest diaspora slur into an anti-counterfeit tool, with a QR system that lets shoppers verify a genuine product. Insight Redefini reported 2.8 million organic views in ten days.",
+          "But read the credits. Different outlets attribute the work differently — some centre the Lagos-based Insight Redefini and its partners, others centre Leo Burnett Singapore, with MSL Singapore and a London shop in the mix. The definitive split lives in the official Cannes database; the ambiguity is the point. When a 'Nigerian' win is co-credited across Lagos, Singapore and London, the reputational and new-business value does not split evenly, and the largest share of it tends to flow to the best-resourced office in the strongest network. A shared win is a shared asset — and African offices rarely hold the controlling stake.",
+          "This is the diaspora dynamic in miniature. The idea is unmistakably Nigerian; the trope it reclaims is a diaspora artefact; the value it generates is claimed partly by a Singapore network. Authorship travels. Ownership consolidates."
+        ]
+      },
+      {
+        "heading": "SOUTH AFRICA — CRAFT IN THE CAUSES LANE",
+        "paragraphs": [
+          "South Africa did what it does best: won on social impact with craft. 'The Unburied Casket,' for Women For Change by Edelman's Africa office, took a Silver in Glass: The Lion for Change and a Bronze in PR, built to push the government to classify gender-based violence and femicide as a national disaster — which came through in November 2025. VML South Africa and Vaseline added a Social & Creator Silver for 'Mtana ka Gogo'; Accenture Song South Africa and Joe Public appeared in craft and data.",
+          "The pattern across the continent's 2026 haul is unmistakable: Africa's most open door at Cannes is the social-impact and SDG lane. That is a genuine strength — the work is serious and often changes policy. But a region recognised chiefly for addressing its own problems, rather than for commerce, entertainment or brand-building at the same level, is being valued on terms it did not fully set. Naming that is not cynicism; it is the difference between celebrating a win and understanding its terms."
+        ]
+      },
+      {
+        "heading": "THE FESTIVAL, THE NETWORKS AND THE DIASPORA MARKET",
+        "paragraphs": [
+          "Follow every other claim on the value. The festival itself captures entry fees, delegate passes and the data — African shops pay in hard currency to compete on a stage whose economics run through Europe. The networks capture the league-table standing: each African Lion feeds a global holding company's Network-of-the-Year math, and the prestige is booked at headquarters. The multinational brand owner — Unilever behind Vaseline, repeatedly — captures the equity and the effectiveness.",
+          "The diaspora sits in a specific place in this chain: it is the amplifier, not the audience. 'The Real Nigerian Prince' works because the diaspora scam-trope is globally legible; African campaigns scale on the global and diaspora conversation that carries them. That is leverage African creative businesses can learn to price — if they own the idea and the data, the diaspora audience turns a local campaign into a global asset. If they don't, the diaspora simply amplifies someone else's case study.",
+          "The strategic conclusion is narrow and firm: the value of an African Cannes win is captured in proportion to how much of the idea, the client relationship and the data the African business actually owns. Kenya's model — local brand, local agency — keeps the most. The shared-credit, network-led model keeps the least. The work is not the problem. The ownership of the work is the whole game."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "donut",
+        "after": 1,
+        "title": "One Grand Prix for a whole region",
+        "value": 1,
+        "valueLabel": "1 GP",
+        "sublabel": "Kenya's 'Paid Sick Leave for Cows' was the only Grand Prix awarded to the entire Middle East & Africa region at Cannes Lions 2026.",
+        "note": "The clearest scale check on the year: the whole MEA region took 27 Lions and a single Grand Prix, while Network of the Year Ogilvy alone won 81 Lions. Per LBBonline / Ogilvy. Figures reported."
+      },
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "Africa's headline 2026 Cannes wins — by market",
+        "note": "Illustrative count of the headline African wins tracked in this report, by market — not a full continental Lion tally (continent totals conflicted across outlets and are not reconciled here). Kenya: 1 Grand Prix. Nigeria: 1 Gold (shared credit). South Africa: multiple Silver/Bronze across social-impact and craft.",
+        "data": [
+          {
+            "label": "South Africa (Silver/Bronze)",
+            "value": 4,
+            "display": "4+ Lions"
+          },
+          {
+            "label": "Kenya (Grand Prix)",
+            "value": 1,
+            "display": "1 GP"
+          },
+          {
+            "label": "Nigeria (Gold, shared)",
+            "value": 1,
+            "display": "1 Gold"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 4,
+        "title": "Who captures the value of an African Cannes win",
+        "note": "Relative scale — this report's value-capture read, not audited totals. The local agency authors the win; the network, the brand owner and the festival capture larger, more durable shares. A locally-owned brand+agency win (Kenya) keeps the most; a shared-credit, network-led win (Nigeria) keeps the least.",
+        "data": [
+          {
+            "label": "Global network league-table standing",
+            "value": 100,
+            "display": "booked at HQ",
+            "tag": "offshore"
+          },
+          {
+            "label": "Multinational brand owner equity",
+            "value": 82,
+            "display": "durable",
+            "tag": "offshore"
+          },
+          {
+            "label": "Festival (fees, passes, data)",
+            "value": 48,
+            "display": "hard currency out",
+            "tag": "extractive"
+          },
+          {
+            "label": "Local agency reputation",
+            "value": 40,
+            "display": "the trophy",
+            "tag": "ownable locally"
+          },
+          {
+            "label": "Diaspora amplification",
+            "value": 30,
+            "display": "leverage, if owned",
+            "tag": "double-edged"
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE — WHERE THIS READ MIGHT BE WRONG",
+      "intro": "The value-capture framing has to answer its own strongest critics. Here is the case against it.",
+      "points": [
+        "A global network IS a value route, not only a leak. For a Lagos or Nairobi office, being inside Ogilvy or Publicis means access to global clients, training and scale it could never build alone. 'The value flows to HQ' ignores what flows back down.",
+        "Social-impact wins change real lives. Dismissing the SDG lane as a 'door' undersells work that reclassified femicide as a national disaster and took antibiotics out of milk. Impact is a form of value this report's balance-sheet lens doesn't fully capture.",
+        "A first Grand Prix compounds beyond one agency. Kenya's win puts the whole market on global creative directors' maps, lifting briefs, talent and investment across the ecosystem — value that never shows up as 'owned' by any single shop.",
+        "Shared credit can be a genuine partnership. Co-crediting Lagos and Singapore may reflect real collaboration and skills transfer, not extraction. Reading every shared win as value lost home is a cynical default that can insult the local teams who led the work.",
+        "The sample is tiny. Three headline wins is not an industry, and continent-wide Lion totals conflicted across outlets. Building a value-capture thesis on a handful of celebrated campaigns risks over-reading a small, noisy data set — a caution this report applies to itself."
+      ]
+    }
+  },
+  {
     "slug": "african-startup-funding-concentration-2026",
     "title": "More Money, Fewer Companies: Africa's Funding Market Is Consolidating",
     "series": "MARKET BRIEFING",
