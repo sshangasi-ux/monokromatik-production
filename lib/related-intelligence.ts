@@ -6,6 +6,8 @@
 
 import { getPublicCaseStudies, type CaseStudy } from './case-studies';
 import { brandSlug } from './signal-index';
+import { getLiveReports } from './reports';
+import { PAID_REPORTS, reportPrice } from './commerce';
 
 const STOP = new Set([
   'the', 'and', 'for', 'with', 'from', 'into', 'this', 'that', 'what', 'who', 'how', 'why', 'now',
@@ -53,4 +55,28 @@ export function getRelatedCaseStudies(article: ArticleLike, max = 3): CaseStudy[
  *  score, not just the decode). */
 export function indexBrandHref(cs: CaseStudy): string {
   return `/intelligence/signal-index/${brandSlug(cs.brand)}`;
+}
+
+export interface RelatedPaidReport {
+  slug: string;
+  title: string;
+  price: string;
+}
+
+/** The most topically-related PAID report for an article/case study (by shared
+ *  title/tag tokens), or null. Gives free content a cheap, relevant first "yes"
+ *  (the R220 entry rung) instead of only a $900 enquiry. Conservative: requires a
+ *  real overlap, paid SKUs only. */
+export function getRelatedPaidReport(item: ArticleLike): RelatedPaidReport | null {
+  const aTokens = tokens(item.title, ...(item.tags ?? []));
+  if (aTokens.size === 0) return null;
+  let best: { slug: string; title: string; score: number } | null = null;
+  for (const r of getLiveReports()) {
+    if (!(r.slug in PAID_REPORTS)) continue; // paid SKUs only
+    if (r.slug === item.slug) continue;
+    let score = 0;
+    for (const t of tokens(r.title, ...(r.tags ?? []))) if (aTokens.has(t)) score += 1;
+    if (score >= 2 && (!best || score > best.score)) best = { slug: r.slug, title: r.title, score };
+  }
+  return best ? { slug: best.slug, title: best.title, price: reportPrice(best.slug) } : null;
 }

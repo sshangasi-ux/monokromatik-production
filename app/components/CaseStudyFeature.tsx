@@ -11,6 +11,7 @@ import OutlookChip from './dataviz/OutlookChip';
 import { isLocked, type CaseStudy } from '../../lib/case-studies';
 import { isMember } from '../../lib/entitlements';
 import { membershipsLive } from '../../lib/commerce';
+import { getRelatedPaidReport } from '../../lib/related-intelligence';
 import { compositeScore } from '../../lib/signal-index';
 
 // The evidence-standard label shown in the header, keyed off the analysis
@@ -50,6 +51,9 @@ export default async function CaseStudyFeature({
   const premium = isLocked(c) && membershipsLive();
   const locked = premium && !(await isMember());
   const signalScore = compositeScore(c.decode);
+  // Open case studies are top-of-funnel — matched to a paid report for a R220
+  // cross-link beneath the Scorecard enquiry, so they don't dead-end free.
+  const relatedReport = locked ? null : getRelatedPaidReport({ slug: c.slug, title: c.title, tags: c.tags });
 
   return (
     <div className="min-h-screen bg-mono-paper">
@@ -257,6 +261,28 @@ export default async function CaseStudyFeature({
                   <p>{c.verificationNote}</p>
                 </FeatureSection>
               )}
+
+              {/* Open decodes close on a transaction intersection, not the
+                  evidence ledger: the paid Signal Scorecard enquiry + a matched
+                  R220 report cross-link. */}
+              <section className="border-t-2 border-mono-black pt-10 mt-2">
+                <div className="border border-mono-black bg-mono-black text-mono-white p-7 md:p-9">
+                  <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright mb-3">WANT THIS READ ON YOUR BRAND?</p>
+                  <p className="font-body text-[15px] text-mono-soft-white leading-relaxed">
+                    This decode is free. The Signal Scorecard applies the same four-axis method — idea, authorship, execution, consequence — to the brand you care about, with the value-capture read and the roadmap.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link href="/work-with-us?interest=scorecard" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+                      GET THE SCORECARD <ArrowRight size={16} />
+                    </Link>
+                    {relatedReport && (
+                      <Link href={`/reports/${relatedReport.slug}`} className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-6 py-3 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">
+                        READ THE REPORT — {relatedReport.price}
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </section>
             </>
           )}
         </article>
