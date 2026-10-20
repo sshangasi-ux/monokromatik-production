@@ -219,6 +219,51 @@ export default async function ReportFeature({ report }: { report: Report }) {
               </FlagshipGate>
             )}
             {!locked && !emailGate && counterCaseBlock}
+            {/* Open reports are the top of the funnel — so they close on a
+                transaction intersection, not a dead end: a cross-sell to the
+                paid intelligence (the step-up flagship when one is mapped, else
+                the report shelf / bundles) + newsletter capture. */}
+            {!locked && !emailGate && (() => {
+              const deeper = reportDeeper(r.slug);
+              const deeperReport = deeper ? getReportBySlug(deeper.slug) : undefined;
+              return (
+                <section className="border-t-2 border-mono-black pt-10 mt-4 space-y-8">
+                  <div className="border border-mono-black bg-mono-black text-mono-white p-7 md:p-9">
+                    <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright mb-3">GO DEEPER · THE PAID INTELLIGENCE</p>
+                    {deeper && deeperReport ? (
+                      <>
+                        <p className="font-body text-[15px] text-mono-soft-white leading-relaxed">
+                          This read is free. For the full institutional analysis, <span className="text-mono-white font-semibold">{deeperReport.title}</span> is the framework-led flagship — the same method, at depth.
+                        </p>
+                        <div className="mt-5 flex flex-wrap gap-3">
+                          <Link href={`/reports/${deeper.slug}`} className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+                            SEE THE REPORT — {deeper.price} <ArrowRight size={16} />
+                          </Link>
+                          <Link href="/reports" className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-6 py-3 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">
+                            ALL REPORTS
+                          </Link>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-body text-[15px] text-mono-soft-white leading-relaxed">
+                          This read is free. The paid intelligence reports take a single question to institutional depth — value-capture scored, sourced, with the playbook. From R220.
+                        </p>
+                        <div className="mt-5 flex flex-wrap gap-3">
+                          <Link href="/reports" className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3 font-display font-bold hover:bg-mono-amber/90 transition-colors">
+                            BROWSE THE REPORTS — FROM R220 <ArrowRight size={16} />
+                          </Link>
+                          <Link href="/bundles" className="inline-flex items-center gap-2 border border-mono-white/30 text-mono-white px-6 py-3 font-display font-bold hover:border-mono-amber hover:text-mono-amber transition-colors">
+                            THE BUNDLES
+                          </Link>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  <NewsletterSignup variant="inline" source={`open-report:${r.slug}`} />
+                </section>
+              );
+            })()}
             {locked && r.counterCase && (
               // Ungated teaser of the counter-case: we show that the piece argues
               // against itself — the heading and framing — but hold the actual
