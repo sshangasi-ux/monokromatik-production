@@ -20,21 +20,25 @@ export interface ReportOffer {
   includes: string[];
 }
 
+// The /pricing hero sells the exact report the one-off Paystack page delivers:
+// "The Value-Capture Scorecard" (slug value-capture-scorecard-2026, the
+// REPORT_CHECKOUT_SLUG default). Copy MUST describe that deliverable — not a
+// "Full Index" — or the buyer is promised something the PDF doesn't contain.
 export const INDEX_REPORT: ReportOffer = {
-  name: 'The Cultural-Signal Index — Full Report',
-  tagline: 'The complete ranked read of who authors African influence — with the evidence.',
-  cadence: 'One-time purchase · quarterly refresh',
+  name: 'The Value-Capture Scorecard',
+  tagline: 'Fourteen ownership-moving African deals, each scored — exported, retained or mixed — with the framework and the evidence.',
+  cadence: 'One-time purchase · inaugural edition',
   // Hard-set to match the live Paystack charge (R220). NOT read from
   // NEXT_PUBLIC_INDEX_REPORT_PRICE — a stale value there (R899) must never
   // override and show a price that differs from what checkout actually charges.
   // If the report price changes, change it here AND on the Paystack page.
   priceLabel: 'R220',
   includes: [
-    'The complete ranked Index — every brand, every score',
-    'Per-axis breakdowns: idea · authorship · execution · consequence',
-    'The authorship read — who shaped the work vs who localised it',
-    'Full methodology and the evidence behind every score',
-    'Quarterly refresh as the catalogue grows',
+    'Fourteen headline deals, each verdicted — exported, retained or mixed',
+    'The value-capture framework: who authors the work vs who keeps the value',
+    'A sector read on where the value leaks',
+    'The cultural ledger + the playbook for founders, acquirers and policymakers',
+    'Full methodology and the evidence ledger — delivered as a PDF',
   ],
 };
 
