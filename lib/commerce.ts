@@ -613,9 +613,13 @@ export const MEMBERSHIP: MembershipTier[] = [
  * (Phase 3 will replace this with auth-bound Paystack subscriptions + a webhook.)
  */
 export function membershipCheckoutUrl(tierId: string): string | null {
+  // Live Paystack subscription Payment Pages are the code default (same pattern
+  // as reports/bundles) so the subscribe CTA never silently dies if a Vercel env
+  // var is cleared. Verified live + Active in the Paystack dashboard 2026-10-20:
+  // Individual (R149) ue3o5tog3v, Team (R690) uoqmtpm6ye. Env still overrides.
   const map: Record<string, string | undefined> = {
-    individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL,
-    team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL,
+    individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL || 'https://paystack.shop/pay/ue3o5tog3v',
+    team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL || 'https://paystack.shop/pay/uoqmtpm6ye',
   };
   const url = map[tierId];
   return url && /^https?:\/\//.test(url) ? url : null;
