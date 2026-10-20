@@ -225,6 +225,24 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     tier: 'study',
     url: process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL || 'https://paystack.shop/pay/e4fzfr7o-k',
   },
+  // Three previously members-only reports promoted to one-off R220 studies —
+  // dedicated Paystack Payment Pages created 2026-10-20 (Live + Active), so cold
+  // traffic gets a cheap one-time buy, not just a membership wall.
+  'the-founders-ledger-sell-up-or-open-out': {
+    price: 'R220',
+    tier: 'study',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_FOUNDERS_LEDGER_URL || 'https://paystack.shop/pay/-ksh-ucm82',
+  },
+  'the-megabrand-exit-ledger': {
+    price: 'R220',
+    tier: 'study',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_MEGABRAND_EXIT_URL || 'https://paystack.shop/pay/3-0ugh254-',
+  },
+  'will-it-land-african-stablecoins': {
+    price: 'R220',
+    tier: 'study',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_STABLECOINS_URL || 'https://paystack.shop/pay/ba6zrj1n53',
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
