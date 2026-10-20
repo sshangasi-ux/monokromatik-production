@@ -119,6 +119,36 @@ const REPORTS: ReportAsset[] = [
     subject: 'Your report — Cannes Lions 2026: The Africa Ledger',
     blurb: "Whose win, whose value — a value-capture read on Africa and the diaspora at Cannes Lions 2026: Kenya's Grand Prix, Nigeria's shared-credit Gold, South Africa's social-impact haul, and the Bear Case.",
   },
+  {
+    // Three previously members-only reports now sold one-off; dedicated Paystack
+    // Payment Pages created 2026-10-20. Rendered from data/reports.json. Tokens:
+    // distinctive slug words + the page code; none overlap other reports'.
+    slug: 'the-founders-ledger-sell-up-or-open-out',
+    match: ['founders-ledger', 'the-founders-ledger-sell-up-or-open-out', '-ksh-ucm82'],
+    generate: true,
+    filename: 'MonoKromatik-The-Founders-Ledger.pdf',
+    title: "The Founders' Ledger: Sell Up, or Open Out?",
+    subject: "Your report — The Founders' Ledger (Sell Up, or Open Out?)",
+    blurb: 'The MonoKromatik Practitioner Read — two founders, two very different answers to the value-capture question, in their own words, with the framework and the Bear Case.',
+  },
+  {
+    slug: 'the-megabrand-exit-ledger',
+    match: ['megabrand-exit', 'the-megabrand-exit-ledger', '3-0ugh254-'],
+    generate: true,
+    filename: 'MonoKromatik-The-Megabrand-Exit-Ledger.pdf',
+    title: 'The Megabrand Exit Ledger',
+    subject: 'Your report — The Megabrand Exit Ledger',
+    blurb: 'A standing ledger of African brands and assets sold to foreign owners in 2024–26 — what changed hands, at what price, and the capability, margin and IP that left with them.',
+  },
+  {
+    slug: 'will-it-land-african-stablecoins',
+    match: ['stablecoins', 'will-it-land-african-stablecoins', 'ba6zrj1n53'],
+    generate: true,
+    filename: 'MonoKromatik-The-Dollar-in-a-Green-Jacket-Stablecoins.pdf',
+    title: "The Dollar in a Green Jacket — Stablecoins & Africa's Payment Rails",
+    subject: "Your report — The Dollar in a Green Jacket (African Stablecoins)",
+    blurb: "Will It Land? — stablecoins are Africa's fastest-moving cross-border rail, and the read on who authors and owns it: sovereignty win or new dependency, with the Bear Case.",
+  },
 ];
 
 /**
