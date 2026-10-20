@@ -38,11 +38,12 @@ export interface ExhibitDatum {
  *   donut    — a single headline proportion              → value + valueLabel + sublabel
  *   matrix   — a who-captures-value scorecard (0–4 balls)→ cols[] + rows[]
  *   quadrant — a 2×2 positioning map                     → xAxis + yAxis + points[]
+ *   flow     — a left-to-right framework / value chain   → steps[] (+ step.tag)
  */
 export interface Exhibit {
   title: string;
   note?: string;
-  type?: 'bar' | 'line' | 'split' | 'stack' | 'donut' | 'matrix' | 'quadrant';
+  type?: 'bar' | 'line' | 'split' | 'stack' | 'donut' | 'matrix' | 'quadrant' | 'flow';
   /** PDF-only placement hint: render this exhibit after the section at this
    *  1-based index (the interleaved consultancy layout). The on-site report
    *  ignores it and shows every exhibit in the visual block above the gate. */
@@ -61,6 +62,10 @@ export interface Exhibit {
   xAxis?: [string, string];
   yAxis?: [string, string];
   points?: { label: string; x: number; y: number; highlight?: boolean }[];
+  /** flow: ordered stages of a framework / value chain, read left→right.
+   *  `tag` is a one-word status (e.g. "Captured", "Leaks", "Exported") and
+   *  `highlight` marks the stage where the value actually lands. */
+  steps?: { label: string; caption?: string; tag?: string; highlight?: boolean }[];
 }
 
 export interface Report {

@@ -475,6 +475,49 @@ function Quadrant({ ex }: { ex: Exhibit }) {
   );
 }
 
+/** A left-to-right framework / value chain — ordered stages joined by arrows,
+ *  with the stage that actually captures the value flagged in amber. Wraps to a
+ *  vertical stack on narrow screens. */
+function FlowDiagram({ ex }: { ex: Exhibit }) {
+  const steps = ex.steps ?? [];
+  return (
+    <ExFrame
+      title={ex.title}
+      note={ex.note}
+      ariaLabel={`${ex.title}: ${steps.map((s) => `${s.label}${s.tag ? ` (${s.tag})` : ''}`).join(' → ')}`}
+    >
+      <ol className="not-prose flex flex-col sm:flex-row sm:items-stretch gap-2.5 sm:gap-0 list-none p-0 m-0" aria-hidden="true">
+        {steps.map((s, i) => (
+          <li key={i} className="flex flex-col sm:flex-row sm:items-stretch sm:flex-1 min-w-0">
+            <div
+              className={`flex-1 min-w-0 border p-3.5 flex flex-col gap-1 ${
+                s.highlight
+                  ? 'border-mono-amber bg-mono-amber/10'
+                  : 'border-mono-gray/30 bg-mono-white'
+              }`}
+            >
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="text-[9px] tracking-[0.16em] font-display font-bold text-mono-gray tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                {s.tag && (
+                  <span className={`text-[9px] tracking-[0.12em] font-display font-bold uppercase ${s.highlight ? 'text-mono-amber-strong' : 'text-mono-gray'}`}>{s.tag}</span>
+                )}
+              </div>
+              <span className={`text-[13px] font-display font-bold leading-tight ${s.highlight ? 'text-mono-amber-strong' : 'text-mono-ink'}`}>{s.label}</span>
+              {s.caption && <span className="text-[11px] font-body text-mono-charcoal leading-snug">{s.caption}</span>}
+            </div>
+            {i < steps.length - 1 && (
+              <div className="flex items-center justify-center text-mono-amber-strong font-display font-bold px-1.5 py-1 sm:py-0" aria-hidden="true">
+                <span className="hidden sm:inline text-lg leading-none">→</span>
+                <span className="sm:hidden text-lg leading-none">↓</span>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </ExFrame>
+  );
+}
+
 /** Dispatcher — renders any exhibit by its `type` (defaults to the bar chart),
  *  wrapped in the scroll-reveal (bars grow / card rises as it enters view). */
 export function ReportExhibit({ exhibit }: { exhibit: Exhibit }) {
@@ -486,6 +529,7 @@ export function ReportExhibit({ exhibit }: { exhibit: Exhibit }) {
       case 'donut': return <Donut ex={exhibit} />;
       case 'matrix': return <ScoreMatrix ex={exhibit} />;
       case 'quadrant': return <Quadrant ex={exhibit} />;
+      case 'flow': return <FlowDiagram ex={exhibit} />;
       case 'bar':
       default:
         return <BarChart title={exhibit.title} note={exhibit.note} data={exhibit.data ?? []} />;

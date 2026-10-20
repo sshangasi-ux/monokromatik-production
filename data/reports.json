@@ -5455,6 +5455,35 @@
     ],
     "exhibits": [
       {
+        "type": "flow",
+        "after": 1,
+        "title": "The AOC framework — how African sport’s value moves, and where it lands",
+        "note": "Every property on this page is read the same way: who authors it, who owns the vehicle, who captures the money — and what that leaves on the continent. The value is created at the first stage and, by default, captured at the fourth.",
+        "steps": [
+          {
+            "label": "Authorship",
+            "tag": "Africa",
+            "caption": "The talent, codes, fandom and stories originate on the continent."
+          },
+          {
+            "label": "Ownership",
+            "tag": "Offshore",
+            "caption": "The clubs, leagues, rights vehicles and platforms that hold the asset."
+          },
+          {
+            "label": "Capture",
+            "tag": "Offshore",
+            "highlight": true,
+            "caption": "Transfer fees, broadcast margin, sponsorship and betting GGR — where the money actually lands."
+          },
+          {
+            "label": "Outcome",
+            "tag": "Exported",
+            "caption": "Retained, Exported, Hollowed or Contested — the share that stays home."
+          }
+        ]
+      },
+      {
         "type": "matrix",
         "after": 3,
         "title": "The AOC map — who authors, owns and captures African sport",
