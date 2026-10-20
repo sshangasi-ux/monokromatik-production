@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Database } from 'lucide-react';
-import { getRelatedCaseStudies, indexBrandHref, type ArticleLike } from '../../lib/related-intelligence';
+import { getRelatedCaseStudies, getRelatedPaidReport, indexBrandHref, type ArticleLike } from '../../lib/related-intelligence';
 import { workSignal } from '../../lib/signal-index';
 import { getPublicCaseStudies } from '../../lib/case-studies';
 
@@ -10,6 +10,7 @@ import { getPublicCaseStudies } from '../../lib/case-studies';
 
 export default function RelatedIntelligence({ article }: { article: ArticleLike }) {
   const related = getRelatedCaseStudies(article, 3);
+  const relatedReport = getRelatedPaidReport(article);
   const csBySlug = new Map(getPublicCaseStudies().map((c) => [c.slug, c]));
 
   return (
@@ -19,6 +20,22 @@ export default function RelatedIntelligence({ article }: { article: ArticleLike 
           <Database className="text-mono-amber" size={20} aria-hidden="true" />
           <p className="text-xs tracking-[0.3em] font-display font-bold text-mono-amber-strong">READ THE INTELLIGENCE</p>
         </div>
+
+        {/* The cheap, relevant first "yes": a topically-matched PAID report (the
+            R220 entry rung), so an article doesn't only offer a $900 enquiry. */}
+        {relatedReport && (
+          <Link
+            href={`/reports/${relatedReport.slug}`}
+            className="group block border border-mono-black bg-mono-black text-mono-white p-6 md:p-7 mb-8 hover:border-mono-amber transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mono-amber-strong"
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <p className="text-[10px] tracking-[0.28em] font-display font-bold text-mono-amber-bright">GO DEEPER · THE REPORT</p>
+              <p className="text-[11px] tracking-[0.14em] font-display font-bold text-mono-soft-white">{relatedReport.price}</p>
+            </div>
+            <p className="mt-3 font-display font-bold text-lg text-mono-white group-hover:text-mono-amber-bright transition-colors">{relatedReport.title}</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-mono-amber-bright font-display font-bold text-sm">READ THE REPORT <ArrowRight size={15} aria-hidden="true" /></span>
+          </Link>
+        )}
 
         {related.length > 0 ? (
           <>

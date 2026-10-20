@@ -182,6 +182,11 @@ export default async function AssetProfile({ params }: PageProps) {
               Value another asset
             </CTA>
           </div>
+          {/* The cheap first rung beneath the $900 ask — a published R220 report. */}
+          <p className="mt-5 text-[13px] font-body text-mono-soft-white/80">
+            Not ready for the full Scorecard?{' '}
+            <Link href="/reports" className="text-mono-amber hover:text-mono-amber-bright font-semibold">Start with a report — from R220 &rarr;</Link>
+          </p>
         </section>
 
         {/* The graph — related assets */}
