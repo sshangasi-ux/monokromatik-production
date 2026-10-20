@@ -16,6 +16,7 @@ const primaryLinks = [
   { href: '/culture', label: 'READ', description: 'The free library — music, sport, fashion, money', priority: true },
   { href: '/intelligence/signal-index', label: 'THE INDEX', description: 'The Cultural-Signal Index — ranked', priority: true },
   { href: '/intelligence', label: 'INTELLIGENCE', description: 'The value-capture practice — valuation engine & advisory desk', priority: true },
+  { href: '/pricing', label: 'PRICING', description: 'Buy the intelligence — reports & membership', priority: true },
   { href: '/about', label: 'ABOUT', description: 'Sibu Shangase & the desk' },
 ];
 
