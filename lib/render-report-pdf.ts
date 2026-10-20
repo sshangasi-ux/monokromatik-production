@@ -130,6 +130,18 @@ export async function renderReportPdf(slug: string): Promise<Buffer> {
         row.cells.forEach((n, i) => dt(`${n}/4`, ML + labelW + i * colW, y - 11, 9, FB, AMBER));
         y -= row.tag ? 24 : 16; rule();
       }
+    } else if (ex.type === 'flow' && ex.steps) {
+      ex.steps.forEach((s, i) => {
+        need(s.caption ? 22 : 15);
+        const num = String(i + 1).padStart(2, '0');
+        dt(num, ML, y - 10, 8, FB, s.highlight ? AMBER : GREY);
+        dt(s.label, ML + 20, y - 10, 9.5, FB, s.highlight ? AMBER : INK);
+        if (s.tag) { const t = s.tag.toUpperCase(); dt(t, PAGE_W - MR - W(t, FB, 7.5), y - 10, 7.5, FB, s.highlight ? AMBER : GREY); }
+        y -= 13;
+        if (s.caption) { para(s.caption, { indent: 20, font: FI, size: 7.5, color: GREY, gap: 6 }); }
+        if (i < ex.steps!.length - 1) { dt('v', ML + 8, y - 6, 8, FB, AMBER); y -= 10; }
+        rule();
+      });
     } else if (ex.data) {
       for (const d of ex.data) {
         need(14);
