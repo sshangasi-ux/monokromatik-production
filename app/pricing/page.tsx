@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Check, ArrowRight, ShieldCheck, Lock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
-import { INDEX_REPORT, reportCheckoutUrl, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
+import BuyButton from '../components/BuyButton';
+import { INDEX_REPORT, reportCheckoutUrl, REPORT_CHECKOUT_SLUG, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
 
 export const metadata: Metadata = {
   title: 'Pricing — The Cultural-Signal Index | MonoKromatik',
@@ -74,12 +75,14 @@ export default function PricingPage() {
 
               <div className="mt-9">
                 {checkoutUrl ? (
-                  <a
+                  <BuyButton
                     href={checkoutUrl}
+                    slug={REPORT_CHECKOUT_SLUG}
+                    price={offer.priceLabel}
                     className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors"
                   >
                     GET THE REPORT{offer.priceLabel ? ` — ${offer.priceLabel}` : ''} <ArrowRight size={18} />
-                  </a>
+                  </BuyButton>
                 ) : (
                   <div className="border border-mono-gray/30 bg-mono-soft-white p-6">
                     <p className="flex items-center gap-2 font-display font-bold text-mono-black"><Lock size={16} className="text-mono-amber-strong" /> Checkout opening shortly.</p>

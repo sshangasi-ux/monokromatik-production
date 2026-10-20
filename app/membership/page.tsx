@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Check, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
+import SubscribeButton from '../components/SubscribeButton';
 import { MEMBERSHIP, membershipCheckoutUrl, membershipUnlocks } from '../../lib/commerce';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
 import { getEntitlement, entitlementActive } from '../../lib/entitlements';
@@ -131,9 +132,9 @@ export default async function MembershipPage() {
                       </Link>
                     ) : url ? (
                       userEmail ? (
-                        <a href={`${url}?email=${encodeURIComponent(userEmail)}`} className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
+                        <SubscribeButton href={`${url}?email=${encodeURIComponent(userEmail)}`} tier={tier.id} price={tier.priceMonthly} className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
                           SUBSCRIBE — {tier.priceMonthly}/mo
-                        </a>
+                        </SubscribeButton>
                       ) : (
                         <Link href="/account?next=/membership" className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
                           SIGN IN TO SUBSCRIBE
