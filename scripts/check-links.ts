@@ -55,20 +55,30 @@ function isVimeo(u: string) {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+/** YouTube's oembed endpoint only recognises `watch?v=` and `youtu.be/` URLs —
+ *  it returns a hard 404 for the `/embed/<id>` form, which is exactly how we
+ *  store `article.videoUrl`. That 404 is a *format rejection*, not a removed
+ *  video (confirmed 2026-10-21: all 15 "dead" embeds returned oembed 200 once
+ *  the URL was normalised). So always normalise an /embed/ URL to watch form
+ *  before asking oembed, or every embedded video reads as dead. */
+function oembedUrl(u: string): string {
+  if (!isYouTube(u)) return u;
+  const id = u.match(/(?:\/embed\/|[?&]v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/)?.[1];
+  return id ? `https://www.youtube.com/watch?v=${id}` : u;
+}
+
 /** A video embed is "live" iff its oembed endpoint resolves — the watch page
  *  returns 200 even for deleted/private videos, so we must use oembed.
  *
- *  BUT: YouTube throttles oembed under burst load by returning 404 (not 429),
- *  which is indistinguishable from a removed video on a single request — on
- *  2026-10-21 all 15 "dead" YouTube embeds this flagged were in fact live (200
- *  on a direct, unthrottled check). So one 404 is never trusted: we retry with
- *  backoff and only call a video dead when it is *consistently* 404/410 across
- *  attempts. Anything that stays ambiguous (transient error, intermittent 404)
- *  is reported as blocked/unverified, never as phantom repair work — matching
- *  the HTTP path's philosophy below. */
+ *  Defence in depth beyond the URL normalisation above: a single failure is
+ *  never trusted. We retry with backoff and only call a video dead when it is
+ *  *consistently* 404/410 across attempts (a real removal). Anything that stays
+ *  ambiguous — a transient error, an intermittent 404 from throttling — is
+ *  reported as blocked/unverified, never as phantom repair work, matching the
+ *  HTTP path's philosophy below. */
 async function checkVideo(u: string): Promise<{ verdict: Verdict; detail: string }> {
   const endpoint = isYouTube(u)
-    ? `https://www.youtube.com/oembed?url=${encodeURIComponent(u)}&format=json`
+    ? `https://www.youtube.com/oembed?url=${encodeURIComponent(oembedUrl(u))}&format=json`
     : `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(u)}`;
   const delays = [0, 900, 2600]; // up to 3 attempts, spaced to clear rate-limit bursts
   let last = 'oembed unreachable';
