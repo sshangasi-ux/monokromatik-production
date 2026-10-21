@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
-import { matchReport, deliverReport, matchBundle, deliverBundle } from '../../../../lib/report-delivery';
+import { matchReport, deliverReport, matchBundle, deliverBundle, alertUnmatchedPurchase } from '../../../../lib/report-delivery';
 import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
@@ -112,6 +112,18 @@ export async function POST(req: Request) {
       }
       return NextResponse.json({ ok: true, delivered: matched.slug });
     }
+
+    // Neither a bundle nor a report matched a real paid charge — the buyer paid
+    // and would otherwise get nothing, silently. Alert the team to fulfil it
+    // manually (and to refine the match tokens) instead of dropping it.
+    await alertUnmatchedPurchase({
+      email,
+      amount: data.amount,
+      currency: data.currency,
+      reference: data.reference,
+      metaKeys: typeof meta === 'object' ? Object.keys(meta) : [],
+    });
+    return NextResponse.json({ ok: true, delivered: null, note: 'unmatched — team alerted for manual fulfilment' });
   }
 
   // 'charge.success' fires for one-off purchases too — only treat it as a
