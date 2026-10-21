@@ -5411,14 +5411,24 @@
         "heading": "TWO ANSWERS, ONE QUESTION",
         "paragraphs": [
           "Set side by side, the two choices map the strategic space. Rodriguez optimised for scale and legacy through a global owner, keeping her seat but selling her equity — the sophisticated version of the export pattern, and a legitimate one. Dangote is optimising for retained and distributed ownership, keeping both the control and the equity on the continent, and betting that domestic capital markets can hold a strategic asset. One built a brand and sold up; the other built an industry and is opening out.",
-          "Neither founder is wrong, and that is the point the desk keeps insisting on. Value capture is not a morality play with heroes and sell-outs; it is a series of structural choices, each with a real trade-off. But the two choices do not weigh equally on the continent's ledger. A brand that sells up exports the compounding, however well the founder keeps her seat. An asset that opens out keeps it. If the continent's retention rate is going to move, it moves through more Dangote-style answers — and through building the domestic capital and the deal structures that let more founders open out rather than only sell up."
+          "Neither founder is wrong, and that is the point the desk keeps insisting on. Value capture is not a morality play with heroes and sell-outs; it is a series of structural choices, each with a real trade-off. But the two choices do not weigh equally on the continent's ledger. A brand that sells up exports the compounding, however well the founder keeps her seat. An asset that opens out keeps it. If the continent's retention rate is going to move, it moves through more Dangote-style answers — and through building the domestic capital and the deal structures that let more founders open out rather than only sell up.",
+          "That is why this edition does not stop at two names. The next section places Rodriguez and Dangote on the wider spectrum of choices African founders are actually making — from the clean sell-up to the full open-out — so the two cases read as the endpoints of a real distribution, not an isolated duel of opinions."
+        ]
+      },
+      {
+        "heading": "THE SPECTRUM BEHIND THE TWO CHOICES",
+        "paragraphs": [
+          "Sell up and open out are not the only two answers; they are the endpoints of a spectrum that other African builders already occupy, and placing the two cases on it is what turns a pilot into a method. Read across the desk's wider Exit Ledger, the same fork resolves half a dozen ways. At the export end sits the clean sell-up: Paystack to Stripe in 2020, the benchmark exit, control and equity gone together. A step in from it is the Rodriguez structure — and Don Jazzy's, who sold the majority of Mavin to Universal while keeping operating control of the label he built: the seat stays, the compounding leaves.",
+          "Move toward retention and the structures change shape. Tyme took Nubank's capital at roughly ten percent and left African Rainbow Capital the majority — foreign money in, control kept home. Flutterwave answered the fork by refusing to be the seller at all, using its own equity to buy Mono and become the consolidator rather than the consolidated. And at the far, retained end sit the two most emphatic answers: UAC buying Nigeria's CHI back from Coca-Cola — value repatriated after it had already left — and Dangote's open-out, distributing a strategic asset across millions of domestic shareholders rather than to any single buyer.",
+          "The spectrum is the argument. Rodriguez and Dangote are not an isolated pair of opinions; they are the two ends of a real distribution of choices African founders are making right now, and the continent's retention rate is simply the weighted average of where they land. It rises as builders move rightward — from sell-up, through minority-capital and consolidation, to repatriation and open-out — and every structure in between is a lever a founder and a domestic capital market can actually pull."
         ]
       },
       {
         "heading": "WHAT THE BUILDERS TEACH THE DESK",
         "paragraphs": [
           "Three lessons come straight from the founders' own reasoning. First, retained control is not retained ownership. Rodriguez's 'I kept my seat' is real and valuable — but a seat is not a cap table, and the value-capture question is decided by who owns the equity, not who runs the company. Founders who want to keep the compounding must negotiate for the equity layer, not just the operating one.",
-          "Second, ownership can be widened as well as kept. Dangote's IPO reframes the binary — sell to a foreigner or hold it yourself — into a third option: distribute the ownership domestically, at a price ordinary people can pay. That is a template with implications far beyond a refinery, for every African asset large enough to list. Third, the structure is the strategy. Both founders got what they optimised for because they designed the deal to deliver it — Rodriguez the scale and the seat, Dangote the retained, widened ownership. The lesson for the next builder is that the value-capture outcome is authored at the negotiating table, years before the term sheet, by whoever is most deliberate about which layers they intend to keep."
+          "Second, ownership can be widened as well as kept. Dangote's IPO reframes the binary — sell to a foreigner or hold it yourself — into a third option: distribute the ownership domestically, at a price ordinary people can pay. That is a template with implications far beyond a refinery, for every African asset large enough to list. Third, the structure is the strategy. Both founders got what they optimised for because they designed the deal to deliver it — Rodriguez the scale and the seat, Dangote the retained, widened ownership. The lesson for the next builder is that the value-capture outcome is authored at the negotiating table, years before the term sheet, by whoever is most deliberate about which layers they intend to keep.",
+          "A fourth lesson sits underneath the other three: the choice is a spectrum, not a binary, and most of its value lives in the middle. Between selling up and opening out are the minority-capital deal (Tyme), the founder-as-consolidator (Flutterwave) and the buy-back (UAC) — each a way to keep more of the compounding without forgoing global capital entirely. The builder's real question is not 'sell or hold' but 'how far right on the retention spectrum can I structure this deal to land,' and that answer is set by how deep the domestic capital available to them is."
         ]
       },
       {
@@ -5509,9 +5519,120 @@
             "tag": "repatriate"
           }
         ]
+      },
+      {
+        "type": "flow",
+        "after": 3,
+        "title": "The open-out template — Dangote's answer, step by step",
+        "note": "The inverse of the sell-up model: keep control, refuse the single buyer, and widen the ownership domestically. MonoKromatik's read of the refinery IPO as a repeatable template for any African asset large enough to list.",
+        "steps": [
+          {
+            "label": "Build the strategic asset",
+            "tag": "Nigeria",
+            "caption": "Dangote Industries builds the continent's largest refinery (92.75% held)."
+          },
+          {
+            "label": "Reject the single buyer",
+            "tag": "Control kept",
+            "caption": "Refuses NNPC's bid to buy more — ownership stays out of one concentrated hand."
+          },
+          {
+            "label": "List 'for the people'",
+            "tag": "₦5,250 min",
+            "highlight": true,
+            "caption": "A public IPO priced so drivers, cooks and traders can subscribe."
+          },
+          {
+            "label": "Owned by millions",
+            "tag": "Kept + widened",
+            "caption": "Control and the compounding stay in Nigeria, spread across domestic shareholders."
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "The retention spectrum — where real founders' choices land",
+        "note": "MonoKromatik's interpretive read of how much ownership/equity each choice keeps on the continent (0–100), across deals tracked in the Exit Ledger. The two cases in this report are the endpoints; others populate the middle. A verdict, not a measured metric.",
+        "data": [
+          {
+            "label": "Paystack → Stripe (pure sell-up)",
+            "value": 6,
+            "display": "sell-up",
+            "tag": "exported"
+          },
+          {
+            "label": "Mielle → P&G (Rodriguez)",
+            "value": 14,
+            "display": "seat kept",
+            "tag": "exported"
+          },
+          {
+            "label": "Mavin → Universal (control kept)",
+            "value": 18,
+            "display": "operating control",
+            "tag": "exported"
+          },
+          {
+            "label": "Tyme — Nubank minority (ARC majority)",
+            "value": 72,
+            "display": "capital in, control home",
+            "tag": "mixed"
+          },
+          {
+            "label": "Flutterwave ← Mono (consolidator)",
+            "value": 90,
+            "display": "buys, doesn't sell",
+            "tag": "retained"
+          },
+          {
+            "label": "Dangote refinery IPO (open out)",
+            "value": 92,
+            "display": "opened out",
+            "tag": "retained"
+          },
+          {
+            "label": "UAC ← CHI (repatriated)",
+            "value": 95,
+            "display": "bought back",
+            "tag": "retained"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 5,
+        "title": "The four layers — and the one that compounds",
+        "note": "The four things a founder can keep or trade at the fork. Equity is the layer that compounds — and the one most often sold. 'Selling up' keeps the seat and exports the compounding; 'opening out' keeps both. Relative scale, this report's value-capture read.",
+        "data": [
+          {
+            "label": "Equity / ownership",
+            "value": 100,
+            "display": "the compounding layer",
+            "tag": "most often exported"
+          },
+          {
+            "label": "Control / the seat",
+            "value": 70,
+            "display": "the operating role",
+            "tag": "usually retained"
+          },
+          {
+            "label": "Global distribution",
+            "value": 62,
+            "display": "the sell-up prize",
+            "tag": "gained from a buyer"
+          },
+          {
+            "label": "Brand authorship",
+            "value": 46,
+            "display": "the founder's own",
+            "tag": "stays"
+          }
+        ]
       }
     ],
-    "readingTime": "8 MIN READ"
+    "readingTime": "11 MIN READ"
   },
   {
     "slug": "who-captures-amapiano-value-capture-report",
