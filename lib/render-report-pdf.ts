@@ -11,12 +11,27 @@ import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from 'pdf
 import { getReportBySlug, type Report, type Exhibit } from './reports';
 
 // Helvetica/WinAnsi can't encode some glyphs — map them to safe equivalents.
+// The standard PDF fonts (Helvetica et al) are WinAnsi/CP1252-encoded and THROW
+// on any character outside that set — so one stray glyph (a ≈, a ₦, an emoji)
+// aborts the whole render. SAFE must therefore be exhaustive, not a list of the
+// symbols we happened to hit: after the nice-looking substitutions, a final
+// catch-all strips anything CP1252 can't encode, so no report can ever crash the
+// renderer. CP1252_EXTRAS are the punctuation glyphs that live above U+00FF yet
+// ARE encodable (curly quotes, en/em dash, ellipsis, euro, trademark, …) — kept.
+const CP1252_EXTRAS =
+  '€‚ƒ„…†‡ˆ‰Š‹ŒŽ' +
+  '‘’“”•–—˜™š›œžŸ';
+const NON_CP1252 = new RegExp(`[^\\x00-\\xFF${CP1252_EXTRAS}]`, 'g');
+
 function SAFE(s: unknown): string {
   return String(s)
-    .replace(/₦/g, 'NGN ') // ₦
+    .replace(/₦/g, 'NGN ') // naira
     .replace(/[←-⇿]/g, '->') // arrows
     .replace(/[■-◿]/g, '') // geometric shapes (balls handled as n/4)
-    .replace(/−/g, '-'); // minus
+    .replace(/−/g, '-') // minus
+    .replace(/≈/g, '~').replace(/≠/g, '!=').replace(/≤/g, '<=').replace(/≥/g, '>=') // math relations
+    .replace(/[∞√∑∆∂∫µ]/g, (m) => ({ '∞': 'inf', '√': 'sqrt', '∑': 'sum', '∆': 'delta', '∂': 'd', '∫': 'integral', 'µ': 'u' }[m] ?? ''))
+    .replace(NON_CP1252, ''); // final guard: drop anything the font still can't encode
 }
 
 const AMBER = rgb(0.85, 0.6, 0.12);

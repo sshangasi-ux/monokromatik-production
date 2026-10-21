@@ -188,6 +188,59 @@ export function matchReport(payloadBlob: string): { slug: string } | null {
   return REPORTS.find((r) => r.match.some((t) => b.includes(t))) ?? null;
 }
 
+/** A paid charge succeeded but matched NO report and NO bundle — the buyer paid
+ *  and would otherwise get nothing, silently (only a server log). Email the team
+ *  so they fulfil it manually from Paystack → Transactions and add a match token
+ *  so it auto-delivers next time. Best-effort; never throws, never blocks the 200
+ *  Paystack needs. This is the safety net that makes the whole match layer safe:
+ *  a mis-matched purchase becomes an alert, not a lost customer. */
+export async function alertUnmatchedPurchase(info: {
+  email: string | null;
+  amount?: unknown;
+  currency?: unknown;
+  reference?: unknown;
+  metaKeys?: string[];
+}): Promise<void> {
+  try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.warn('[delivery] UNMATCHED paid purchase and no RESEND_API_KEY to alert — manual check needed', info);
+      return;
+    }
+    const from = process.env.REPORT_DELIVERY_FROM || 'MonoKromatik <editor@send.monokromatik.com>';
+    const to = process.env.LEAD_NOTIFY_TO || process.env.REPORT_DELIVERY_REPLY_TO || 'editor@monokromatik.com';
+    const amt = info.amount != null ? `${Number(info.amount) / 100} ${String(info.currency || 'ZAR')}` : '?';
+    const text = [
+      'A Paystack payment SUCCEEDED but did not match any report or bundle.',
+      'The buyer has paid and will NOT receive anything automatically — fulfil this manually.',
+      '',
+      `Buyer:         ${info.email ?? '—'}`,
+      `Amount:        ${amt}`,
+      `Reference:     ${info.reference ?? '—'}`,
+      `Metadata keys: ${(info.metaKeys || []).join(', ') || '—'}`,
+      '',
+      'Action: open Paystack → Transactions, find this reference, identify the product,',
+      'and send the report to the buyer. Then add a match token in lib/report-delivery.ts',
+      'so this product auto-delivers next time.',
+    ].join('\n');
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from,
+        to,
+        reply_to: info.email ?? undefined,
+        subject: `⚠ Unmatched Paystack purchase — manual fulfilment needed (${info.reference ?? 'no ref'})`,
+        text,
+      }),
+    });
+    if (!res.ok) console.error('[delivery] unmatched-purchase alert failed:', res.status, (await res.text()).slice(0, 200));
+    else console.log('[delivery] unmatched-purchase alert sent to', to);
+  } catch (e) {
+    console.error('[delivery] unmatched-purchase alert threw:', (e as Error)?.message);
+  }
+}
+
 export async function deliverReport(email: string, admin: Admin, slug: string): Promise<DeliveryResult> {
   const report = REPORTS.find((r) => r.slug === slug);
   const record = async (r: DeliveryResult): Promise<DeliveryResult> => {
@@ -218,10 +271,17 @@ export async function deliverReport(email: string, admin: Admin, slug: string): 
   } else if (report.object) {
     const { data: file, error: dlErr } = await admin.storage.from(bucket).download(report.object);
     if (dlErr || !file) {
-      console.error(`[delivery] PDF not in storage (${bucket}/${report.object}): ${dlErr?.message ?? 'missing'}`);
-      return record({ status: 'failed', detail: `pdf missing ${report.object}: ${dlErr?.message ?? 'not found'}` });
+      // The bespoke/designed PDF is missing or the bucket is unreachable. The
+      // buyer has paid, so DON'T fail — fall back to rendering the report from
+      // its own content in data/reports.json. A plain rendered copy beats no
+      // delivery; if the designed file is present it's always preferred.
+      console.error(`[delivery] bucket PDF unavailable (${bucket}/${report.object}): ${dlErr?.message ?? 'missing'} — falling back to render`);
+      const rendered = await tryRenderReportPdf(report.slug);
+      if (!rendered) return record({ status: 'failed', detail: `pdf missing ${report.object} and render fallback failed` });
+      rawPdf = rendered;
+    } else {
+      rawPdf = Buffer.from(await file.arrayBuffer());
     }
-    rawPdf = Buffer.from(await file.arrayBuffer());
   } else {
     return record({ status: 'failed', detail: `no asset configured for ${slug}` });
   }
