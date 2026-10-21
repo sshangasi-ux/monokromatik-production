@@ -2330,9 +2330,72 @@
             "display": "$1tn"
           }
         ]
+      },
+      {
+        "type": "donut",
+        "after": 2,
+        "title": "The authorship hole — whose dollar moves on the rail",
+        "value": 88,
+        "valueLabel": "~88%",
+        "sublabel": "of African stablecoin volume is USDT & USDC — issued by Tether and Circle, both non-African. The float income on their reserves (US T-bill interest) accrues offshore. Africa authors the rail; America still authors the money.",
+        "note": "Estimated 85–90% of African stablecoin volume is USDT/USDC. The African-authored counter-rails — naira-pegged cNGN and Afreximbank's PAPSS — are real but still sub-scale against the pull of the synthetic dollar. The authorship axis this report scores at 57/100. A verdict, not a measured total."
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "Two rails, scored — the one with scale vs the one with sovereignty",
+        "note": "Two settlement stacks are being built in parallel: one authored abroad and distributed in Africa (the digital dollar), one authored in Africa and still scaling (cNGN, PAPSS). Scored 0–4 on authorship, ownership, value captured home, and scale today. The dollar rail has the scale and none of the African money-authorship; the African rails have the authorship and little scale — the moat with a hole in the bottom. MonoKromatik's value-capture read, not a measured metric.",
+        "cols": [
+          "Authored in Africa",
+          "Owned in Africa",
+          "Value captured home",
+          "Scale today"
+        ],
+        "rows": [
+          {
+            "label": "USDT / USDC — the digital dollar",
+            "tag": "FOREIGN MONEY",
+            "cells": [
+              0,
+              0,
+              1,
+              4
+            ]
+          },
+          {
+            "label": "Yellow Card — on/off-ramp & corridors",
+            "tag": "AFRICAN RAIL",
+            "cells": [
+              4,
+              4,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "PAPSS — pan-African settlement (19+ central banks)",
+            "tag": "AFRICAN RAIL",
+            "cells": [
+              4,
+              4,
+              4,
+              2
+            ]
+          },
+          {
+            "label": "cNGN — naira-pegged stablecoin",
+            "tag": "AFRICAN MONEY",
+            "cells": [
+              4,
+              4,
+              4,
+              1
+            ]
+          }
+        ]
       }
     ],
-    "readingTime": "11 MIN READ"
+    "readingTime": "12 MIN READ"
   },
   {
     "slug": "nigerian-creative-economy-brief",
