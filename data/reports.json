@@ -4446,27 +4446,6 @@
         "label": "Sectors scored: fintech, music, beauty, drinks, media, telecoms, banking"
       }
     ],
-    "exhibit": {
-      "title": "The value-capture verdict — 14 deals scored",
-      "note": "Source: MonoKromatik 'Who's Buying Africa' tracker (2026) — the ownership-moving deals verdicted to date, each traced to named reporting (TechCabal, Music Business Worldwide, Billboard, CNBC, Señal News, allAfrica, The Drinks Business, Diageo, Beverage Daily, Ecofin, BusinessDay, Premium Times). A living scorecard; the verdict is an editorial judgement about where ownership and the upside land, not a view on the deal's financial merits for either side.",
-      "data": [
-        {
-          "label": "Value exported",
-          "value": 10,
-          "display": "10 deals"
-        },
-        {
-          "label": "Mixed",
-          "value": 2,
-          "display": "2 deals"
-        },
-        {
-          "label": "Value retained",
-          "value": 2,
-          "display": "2 deals"
-        }
-      ]
-    },
     "sections": [
       {
         "heading": "THE HEADLINE, AND THE NUMBER THAT SHOULD WORRY YOU",
@@ -4542,33 +4521,310 @@
     "statusNote": "Inaugural edition · v1 · expands quarterly with the tracker",
     "exhibits": [
       {
-        "title": "Where the value leaks — exported deals by sector",
-        "note": "Source: MonoKromatik 'Who's Buying Africa' tracker. Count of ownership-moving deals scored 'exported' in each sector to date. Drinks, music and beauty concentrate the leaks; fintech is the only sector with a retained deal against its exports.",
+        "type": "flow",
+        "after": 1,
+        "title": "How the value moves — authorship stays, ownership leaves",
+        "note": "The report's core distinction in four stages. Africa authors the brand and keeps the operations; the pivot is ownership — in 10 of 14 scored deals, control and the compounding upside move off the continent. MonoKromatik's value-capture read.",
+        "steps": [
+          {
+            "label": "Cultural authorship",
+            "tag": "Africa",
+            "caption": "The music, beauty, drinks and rails are created and loved on the continent."
+          },
+          {
+            "label": "Operations & jobs",
+            "tag": "Stay local",
+            "caption": "The company keeps operating and employing locally after the deal."
+          },
+          {
+            "label": "Ownership & control",
+            "tag": "Offshore",
+            "highlight": true,
+            "caption": "Majority stake and the equity move off the continent — the leak point."
+          },
+          {
+            "label": "Compounding upside",
+            "tag": "Offshore",
+            "caption": "The value that compounds now accrues to a foreign owner, year after year."
+          }
+        ]
+      },
+      {
+        "type": "donut",
+        "after": 0,
+        "title": "The number that should worry you",
+        "value": 71,
+        "valueLabel": "71%",
+        "sublabel": "of the ownership-moving deals scored (10 of 14) exported the value off the continent. Only 2 of 14 kept it home — the retention rate this desk tracks.",
+        "note": "Source: MonoKromatik 'Who's Buying Africa' tracker, 2026 — ownership-moving deals verdicted to date. The verdict is an editorial judgement about where ownership and the upside land, not a view on the deal's financial merits."
+      },
+      {
+        "type": "matrix",
+        "after": 2,
+        "title": "The ledger — the scored deals on where the value lands",
+        "note": "Each deal scored 0-4 on three questions: authored in Africa; African-owned after the deal; does the upside compound home. Authorship is full across the board; ownership and upside collapse for the exported column. Tags: EXPORTED / MIXED / RETAINED. Every deal traces to named reporting (TechCabal, Music Business Worldwide, Billboard, CNBC, The Drinks Business, Diageo, BusinessDay, Premium Times).",
+        "cols": [
+          "Authored in Africa",
+          "African-owned after",
+          "Upside stays home"
+        ],
+        "rows": [
+          {
+            "label": "Universal ← Mavin (Rema, Ayra Starr)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Warner ← Africori",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Unilever ← Sundial (SheaMoisture)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "P&G ← Mielle Organics",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Canal+ ← MultiChoice (94%)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Heineken ← Distell (Amarula)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Asahi ← EABL (Tusker)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Tolaram ← Guinness Nigeria",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Paystack ← Allawee + Ladder (Stripe sub)",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "Vodacom → Safaricom (Kenya keeps ~20%)",
+            "tag": "MIXED",
+            "cells": [
+              4,
+              2,
+              2
+            ]
+          },
+          {
+            "label": "Nedbank → NCBA (African acquirer)",
+            "tag": "MIXED",
+            "cells": [
+              4,
+              3,
+              2
+            ]
+          },
+          {
+            "label": "Flutterwave ← Mono (all-stock)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "UAC ← CHI (Chivita, Hollandia)",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 2,
+        "unit": "reported deal value (US$bn-equiv)",
+        "title": "The asymmetry — exported deals are the big ones",
+        "note": "The exported column holds the largest tickets; the retained deals are the smallest and the all-stock ones. Keeping ownership home today too often means trading scale for control. Figures are reported, not officially disclosed where noted; Distell converted from ~€2.2bn.",
+        "data": [
+          {
+            "label": "Canal+ ← MultiChoice",
+            "value": 3.0,
+            "display": "~$3.0bn",
+            "tag": "exported"
+          },
+          {
+            "label": "Asahi ← EABL",
+            "value": 2.3,
+            "display": "~$2.3bn",
+            "tag": "exported"
+          },
+          {
+            "label": "Heineken ← Distell",
+            "value": 2.4,
+            "display": "~€2.2bn",
+            "tag": "exported"
+          },
+          {
+            "label": "Unilever ← Sundial",
+            "value": 1.6,
+            "display": "~$1.6bn",
+            "tag": "exported"
+          },
+          {
+            "label": "Universal ← Mavin",
+            "value": 0.2,
+            "display": "~$150-200m",
+            "tag": "exported"
+          },
+          {
+            "label": "Flutterwave ← Mono",
+            "value": 0.08,
+            "display": "all-stock",
+            "tag": "retained"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 3,
+        "title": "Where the leaks cluster — exported deals by sector",
+        "note": "Count of ownership-moving deals scored 'exported' per sector. The leaks concentrate where the brand is strongest: music, beauty and drinks run a 0% retention rate; fintech is the only sector that kept one of its own (Flutterwave-Mono). Source: MonoKromatik 'Who's Buying Africa' tracker.",
         "data": [
           {
             "label": "Drinks",
             "value": 3,
-            "display": "3"
+            "display": "3",
+            "tag": "0 retained"
           },
           {
             "label": "Fintech",
             "value": 2,
-            "display": "2"
+            "display": "2",
+            "tag": "1 retained"
           },
           {
             "label": "Music",
             "value": 2,
-            "display": "2"
+            "display": "2",
+            "tag": "0 retained"
           },
           {
             "label": "Beauty",
             "value": 2,
-            "display": "2"
+            "display": "2",
+            "tag": "0 retained"
           },
           {
             "label": "Media",
             "value": 1,
-            "display": "1"
+            "display": "1",
+            "tag": "0 retained"
+          }
+        ]
+      },
+      {
+        "type": "quadrant",
+        "after": 4,
+        "title": "Authored versus owned — the diagonal gap",
+        "note": "Horizontal: strength of African cultural or strategic authorship. Vertical: how much ownership stayed on the continent. The exported deals cluster bottom-right — maximum authorship, minimum retained ownership. The retained deals (Flutterwave, UAC) are the rare top corner. MonoKromatik's positioning read.",
+        "xAxis": [
+          "Lower authorship",
+          "Higher cultural / strategic authorship"
+        ],
+        "yAxis": [
+          "Owned offshore",
+          "Owned / retained in Africa"
+        ],
+        "points": [
+          {
+            "label": "Flutterwave ← Mono",
+            "x": 72,
+            "y": 90,
+            "highlight": true
+          },
+          {
+            "label": "UAC ← CHI",
+            "x": 52,
+            "y": 80
+          },
+          {
+            "label": "Nedbank ← NCBA",
+            "x": 46,
+            "y": 54
+          },
+          {
+            "label": "Vodacom ← Safaricom",
+            "x": 64,
+            "y": 44
+          },
+          {
+            "label": "Universal ← Mavin",
+            "x": 95,
+            "y": 10
+          },
+          {
+            "label": "Unilever ← SheaMoisture",
+            "x": 82,
+            "y": 24
+          },
+          {
+            "label": "Canal+ ← MultiChoice",
+            "x": 68,
+            "y": 9
+          },
+          {
+            "label": "Heineken ← Amarula",
+            "x": 56,
+            "y": 24
           }
         ]
       }
@@ -4583,7 +4839,7 @@
         "Capital scarcity is the binding constraint, not owner nationality. If domestic capital markets cannot fund a scale-up, 'stay African-owned' is advice a founder cannot act on. On this reading the leak is a symptom of shallow local capital, and the fix is market depth, not a preference for domestic buyers — a point our own recommendations concede."
       ]
     },
-    "readingTime": "11 MIN READ"
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "brand-study-the-springbok-world-champion-under-owned",
