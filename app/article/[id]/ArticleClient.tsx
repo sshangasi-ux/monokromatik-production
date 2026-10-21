@@ -193,6 +193,7 @@ export default function ArticleClient({
                       ? article.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')
                       : article.videoUrl.replace('watch?v=', 'embed/')
                   }
+                  title={article.videoCredit || `${article.title} — video`}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
