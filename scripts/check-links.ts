@@ -53,20 +53,40 @@ function isVimeo(u: string) {
   return /vimeo\.com/i.test(u);
 }
 
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 /** A video embed is "live" iff its oembed endpoint resolves — the watch page
- *  returns 200 even for deleted/private videos, so we must use oembed. */
+ *  returns 200 even for deleted/private videos, so we must use oembed.
+ *
+ *  BUT: YouTube throttles oembed under burst load by returning 404 (not 429),
+ *  which is indistinguishable from a removed video on a single request — on
+ *  2026-10-21 all 15 "dead" YouTube embeds this flagged were in fact live (200
+ *  on a direct, unthrottled check). So one 404 is never trusted: we retry with
+ *  backoff and only call a video dead when it is *consistently* 404/410 across
+ *  attempts. Anything that stays ambiguous (transient error, intermittent 404)
+ *  is reported as blocked/unverified, never as phantom repair work — matching
+ *  the HTTP path's philosophy below. */
 async function checkVideo(u: string): Promise<{ verdict: Verdict; detail: string }> {
   const endpoint = isYouTube(u)
     ? `https://www.youtube.com/oembed?url=${encodeURIComponent(u)}&format=json`
     : `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(u)}`;
-  try {
-    const res = await fetch(endpoint, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
-    if (res.ok) return { verdict: 'ok', detail: `oembed ${res.status}` };
-    if (res.status === 401 || res.status === 403 || res.status === 429) return { verdict: 'blocked', detail: `oembed ${res.status}` };
-    return { verdict: 'dead', detail: `oembed ${res.status} (video removed/private)` };
-  } catch (e) {
-    return { verdict: 'dead', detail: e instanceof Error ? e.message : 'oembed unreachable' };
+  const delays = [0, 900, 2600]; // up to 3 attempts, spaced to clear rate-limit bursts
+  let last = 'oembed unreachable';
+  for (const delay of delays) {
+    if (delay) await sleep(delay);
+    try {
+      const res = await fetch(endpoint, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(20_000) });
+      if (res.ok) return { verdict: 'ok', detail: `oembed ${res.status}` };
+      if (res.status === 401 || res.status === 403 || res.status === 429) return { verdict: 'blocked', detail: `oembed ${res.status}` };
+      last = `oembed ${res.status}`; // 404/410 may be a real removal OR a throttle — retry before deciding
+    } catch (e) {
+      last = e instanceof Error ? e.message : 'oembed unreachable'; // transient/network — retry, then treat as unverified
+    }
   }
+  // Still failing after retries: a persistent 404/410 is a genuine removal; a
+  // persistent transient/timeout is a slow or throttled host, so blocked.
+  if (/\b(404|410)\b/.test(last)) return { verdict: 'dead', detail: `${last} (video removed/private)` };
+  return { verdict: 'blocked', detail: `unverified — ${last}` };
 }
 
 async function checkUrl(u: string): Promise<{ verdict: Verdict; detail: string }> {
@@ -102,7 +122,10 @@ async function checkUrl(u: string): Promise<{ verdict: Verdict; detail: string }
         // phantom repair work.
         const transient =
           name === 'TimeoutError' ||
-          /timed out|timeout|aborted|ECONNRESET|ECONNREFUSED|ETIMEDOUT|EPIPE|socket hang up|other side closed|terminated/i.test(reason);
+          // "Headers Overflow"/UND_ERR_HEADERS_OVERFLOW is undici refusing an
+          // oversized header block (Yahoo Finance et al) — a client parse limit,
+          // not a dead page; it loads fine in a browser.
+          /timed out|timeout|aborted|ECONNRESET|ECONNREFUSED|ETIMEDOUT|EPIPE|socket hang up|other side closed|terminated|headers overflow|HEADERS_OVERFLOW/i.test(reason);
         if (transient) return { verdict: 'blocked', detail: `unverified — ${reason}` };
         return { verdict: 'dead', detail: reason };
       }
