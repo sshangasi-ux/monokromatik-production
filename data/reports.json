@@ -4760,7 +4760,7 @@
         "data": [
           {
             "label": "Canal+ ← MultiChoice",
-            "value": 3.0,
+            "value": 3,
             "display": "~$3.0bn",
             "tag": "exported"
           },
@@ -12958,6 +12958,17 @@
         ]
       },
       {
+        "heading": "THE VALUE-AT-STAKE MODEL",
+        "paragraphs": [
+          "The leak section above refused to invent a number, and that discipline stands. But a due diligence that stops at 'the gap is large' is not decision-grade, so here is the part of the leak that can be modelled from published rules and reported fees alone: the transfer layer, where the mechanism designed to route value back to the African development chain is specified in black-and-white. The model takes only inputs that are public and sourced, shows its arithmetic, and states what it does not know.",
+          "The rule. Under FIFA's Regulations on the Status and Transfer of Players (Article 21 and Annex 5), when a professional is transferred during a contract, 5% of the transfer fee is set aside as a solidarity contribution for the clubs that trained the player between the ages of 12 and 23, apportioned by the seasons he spent with each. Five per cent is the ceiling: it is the most that the mechanism can ever route to every training club combined, African or otherwise, on any given fee. The other 95% is not touched by it.",
+          "The inputs. Our bar exhibit above lists four landmark African transfers at reported fees: Pépé to Arsenal at roughly €80m, Osimhen to Galatasaray at €75m, Marmoush to Manchester City at roughly €75m, and Kudus to Tottenham at roughly €64m (about £55m). Together that is roughly €294m. Applying the 5% ceiling yields a maximum of roughly €14.7m available to all training clubs on all four deals combined; the remaining roughly €279m sits outside the mechanism entirely. That is not a claim about where each euro went, since the selling club, the player, agents and the buying club all take their shares of a transfer. It is a statement about the structure: at most one euro in twenty is even addressed to the people who developed the player.",
+          "The haircut. A ceiling overstates the real flow, because the mechanism has historically been under-collected. A study by the European Club Association, as reported, found that for the 2011/12 and 2012/13 seasons only about $57.9m of roughly $258m in solidarity contributions was actually paid, equal to about 1.15% of transfer spending rather than the 5% the rules specify. FIFA's Clearing House, operating since late 2022, was built to close exactly this gap, and the realised rate may be higher today; we have not found a published post-Clearing-House rate by confederation, so we show the historical rate as a stress case, not a forecast. Applied illustratively to the same €294m it would yield roughly €3.4m, about 1.1% of the fees.",
+          "And a second cut that no one publishes: the ceiling pays every training club, wherever it sits. A player who left his home academy at 16 for a European one has his 12-to-23 window split, so the share reaching the African academy is some fraction of the 5%, and for players who moved abroad as teenagers it can be small. We do not attempt to estimate that fraction without per-player registration histories, which are held by FIFA and the clubs and not published. The honest reading is therefore a funnel: roughly €294m of reported fees, at most roughly €14.7m addressable to training clubs, perhaps a few million in practice, and an unpublished and smaller fraction of that arriving in Africa.",
+          "Why this matters for the verdict. The transfer layer is the one the DD scores most exported, and the model shows why that is a feature of the contract architecture and not merely of European wealth. African academies are paid, if at all, from a capped and historically under-collected solidarity pool, while the selling club banks the fee. The size of the prize is therefore the difference between that pool and the value of the registration itself, and the lever is ownership: Right to Dream's owned network, where the academy and the selling club sit under one owner, converts the capped 5% into a claim on the whole fee. It is the single structural change in this report that moves a euro from the 95% side of the ledger to the 5% side and beyond."
+        ]
+      },
+      {
         "heading": "DD PART 4 — QUALITY OF CAPTURE",
         "paragraphs": [
           "Not all offshore capture is equal, and the DD's final test is developmental versus extractive. Some foreign capital is genuinely developmental: European academies and clubs give African players elite development and life-changing careers that the domestic game cannot yet provide, and Canal+ inherited and extended domestic rights rather than stripping them. Some is more extractive: a long exclusive rights deal structured against CAF's interest, or a transfer system that captures the value of African talent while the development chain collects little.",
@@ -12982,6 +12993,16 @@
         ]
       },
       {
+        "heading": "SO WHAT — BY AUDIENCE",
+        "paragraphs": [
+          "Investors and rights-holders. The retained nodes are the investable thesis. The broadcast layer has been priced and sold at roughly $3bn to an offshore owner; the remaining asymmetric positions are the ones that own a capturing layer: regional rights windows (the New World TV precedent), African-owned clubs with development pipelines, and owned academy-to-club networks. In any rights transaction, diligence the term and exclusivity first: the Lagardère case is the template for how a long exclusive can be structured against the owner of the competition.",
+          "Federations and CAF. Two items are in your gift. First, enforce and audit solidarity and training-compensation collection for African-trained players through FIFA's Clearing House, since the mechanism's ceiling is only valuable if it is collected. Second, avoid agreements that repeat the long-exclusive structure, and publish contested commercial terms (the title-sponsorship renewal is reported across a band of roughly $300m to $1.125bn) so that the market can price the competition honestly.",
+          "Academies and clubs. Register and evidence the 12-to-23 training history of every player you develop, because the claim is only as strong as the paperwork; and treat a sell-on clause, a share of future transfer value or an owned feeder relationship as a bargaining objective in every outbound deal, not a footnote.",
+          "Brands and broadcasters. The audience is African and the sponsorship is still led by foreign brands; the white space is African-owned sponsors and platforms buying into the property. Canal+ now owns the dominant carrier of the game, and what it does with price and availability for African viewers will decide how much of the audience stays in the paid funnel.",
+          "Policymakers. The South African 20% foreign-voting cap produced a locally controlled licence shell above a foreign economic owner, which satisfies the letter of the rule while moving the economics offshore. If local economic participation in the rights layer is the policy goal, the cap alone does not deliver it."
+        ]
+      },
+      {
         "heading": "ENDNOTES",
         "paragraphs": [
           "Key sources and grading (named per house standard):",
@@ -12994,7 +13015,11 @@
           "7 — Player pipeline & training-compensation gap; leading exporter nations; record expatriate-player count: CIES Football Observatory; Génération Foot/FC Metz partnership. Reported.",
           "8 — Clubs: Mamelodi Sundowns African-owned (Motsepe/Rupert); no verified foreign-ownership wave of top African clubs. Reported.",
           "9 — African sports market ~$12bn → >$20bn by 2035: Oliver Wyman. Reported.",
-          "10 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the HOLLOWED/EXPORTED verdict are MonoKromatik's own."
+          "10 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the HOLLOWED/EXPORTED verdict are MonoKromatik's own.",
+          "11 — Solidarity mechanism: 5% of the transfer fee to clubs that trained the player between ages 12 and 23, FIFA Regulations on the Status and Transfer of Players, Article 21 and Annex 5; payments via FIFA Clearing House (operating since November 2022): FIFA; Lawinsport; Muckle LLP. Reported.",
+          "12 — Historical solidarity collection: ~$57.9m paid of ~$258m due (~1.15% of transfer spending), 2011/12–2012/13: European Club Association study as reported. Reported (secondary; stress case only).",
+          "13 — Global context: men's international transfer spending $8.59bn in 2024: FIFA Global Transfer Report 2024. Reported.",
+          "14 — The transfer-layer funnel, the 5/95 structural split and the so-what lever map are MonoKromatik's own illustrative model on the public inputs above; no unpublished figure is estimated."
         ]
       }
     ],
@@ -13109,7 +13134,7 @@
       },
       {
         "type": "matrix",
-        "after": 9,
+        "after": 10,
         "title": "Quality of capture — developmental or extractive?",
         "cols": [
           "Developmental",
@@ -13185,7 +13210,7 @@
       },
       {
         "type": "matrix",
-        "after": 10,
+        "after": 11,
         "title": "The retained counter-nodes — how the leak gets closed",
         "cols": [
           "African-owned",
@@ -13221,13 +13246,140 @@
       },
       {
         "type": "donut",
-        "after": 11,
+        "after": 12,
         "title": "The verdict, weighted by where the money is",
         "value": 20,
         "valueLabel": "HOLLOWED",
         "sublabel": "African football is almost fully African-authored, but weighted by where the largest money actually lands — broadcast, sponsorship, player registrations — capture is offshore. Hollowed today, trending Exported as the Canal+ deal completes.",
         "note": "The DD verdict in one mark: authorship retained, capture leaving. The retained club layer and the counter-nodes are what a repatriation strategy would build on. Source: MonoKromatik Culture Due Diligence.",
         "unit": "DD verdict"
+      },
+      {
+        "type": "bar",
+        "after": 9,
+        "title": "The transfer-layer funnel — from fee to the training club",
+        "unit": "€m, four landmark transfers combined (illustrative model)",
+        "note": "Reported fees for Pépé (~€80m), Osimhen (€75m), Marmoush (~€75m) and Kudus (~€64m) sum to ~€294m. The 5% solidarity ceiling under FIFA RSTP Article 21/Annex 5 caps what can reach all training clubs at ~€14.7m; the ECA-reported historical collection rate of ~1.15% implies ~€3.4m. Illustrative arithmetic on public inputs, not an audited flow. Source: FIFA RSTP Annex 5; European Club Association study as reported; reported transfer fees; MonoKromatik model.",
+        "data": [
+          {
+            "label": "Reported fees, four transfers",
+            "value": 294,
+            "display": "~€294m"
+          },
+          {
+            "label": "5% solidarity ceiling (all training clubs)",
+            "value": 14.7,
+            "display": "≤ ~€14.7m"
+          },
+          {
+            "label": "At ECA-reported historical collection rate",
+            "value": 3.4,
+            "display": "~€3.4m"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 9,
+        "title": "Who the mechanism can even address — the 5 / 95 split",
+        "note": "Structural, not a flow: at most 5% of any fee is addressed to training clubs (African or otherwise) by the solidarity mechanism; 95% sits with the transaction parties. The share reaching African academies is a further unpublished fraction of the 5%. Source: FIFA RSTP Article 21/Annex 5; MonoKromatik model.",
+        "data": [
+          {
+            "label": "Outside the solidarity mechanism",
+            "value": 95,
+            "display": "95%",
+            "tag": "transaction parties"
+          },
+          {
+            "label": "Solidarity ceiling, all training clubs",
+            "value": 5,
+            "display": "≤5%",
+            "tag": "African share unpublished"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 4,
+        "title": "The shrinking incumbent — MultiChoice subscribers",
+        "unit": "million subscribers (reported)",
+        "note": "MultiChoice subscribers fell from ~17.3m (2023) to ~14.4m (2025), a ~17% decline, before Canal+ completed its takeover. Source: MyBroadband; Nairametrics; MultiChoice company results.",
+        "data": [
+          {
+            "label": "Early 2023",
+            "value": 17.3,
+            "display": "~17.3m"
+          },
+          {
+            "label": "Late 2025",
+            "value": 14.4,
+            "display": "~14.4m"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 6,
+        "title": "AFCON 2025 revenue — how much is sponsorship?",
+        "note": "CAF reported AFCON 2025 revenue above $190m with sponsorship around $126m, roughly two-thirds, led by a French title sponsor. Balance is the difference to the reported total. CAF is an interested-party source. Source: CAF (reported); Businessday; Sportcal.",
+        "data": [
+          {
+            "label": "Sponsorship",
+            "value": 126,
+            "display": "~$126m",
+            "tag": "foreign-led"
+          },
+          {
+            "label": "Other revenue (balance of >$190m)",
+            "value": 64,
+            "display": "~$64m+",
+            "tag": "balance"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 13,
+        "title": "The so-what — who can move which lever",
+        "cols": [
+          "Capital",
+          "Control of the lever"
+        ],
+        "rows": [
+          {
+            "label": "Investors (own a capturing layer)",
+            "tag": "ACT",
+            "cells": [
+              4,
+              3
+            ]
+          },
+          {
+            "label": "CAF / federations (collect, publish terms)",
+            "tag": "ACT",
+            "cells": [
+              2,
+              4
+            ]
+          },
+          {
+            "label": "Academies & clubs (evidence, sell-on rights)",
+            "tag": "ACT",
+            "cells": [
+              1,
+              3
+            ]
+          },
+          {
+            "label": "Policymakers (licence economics)",
+            "tag": "ACT",
+            "cells": [
+              1,
+              3
+            ]
+          }
+        ],
+        "note": "MonoKromatik DD read (0 = none, 4 = high): editorial judgement of relative capital and control for each audience, not measured data. Source: MonoKromatik analysis."
       }
     ],
     "counterCase": {
