@@ -144,7 +144,7 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'value-capture-scorecard-2026': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/3lscb9xsn8',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPORT_URL || 'https://paystack.shop/pay/vljdne22gg',
   },
   'who-captures-amapiano-value-capture-report': {
     price: 'R220',
@@ -198,7 +198,7 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'the-repatriation-playbook-nollywood-2026': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || 'https://paystack.shop/pay/tjdhdzpc3j',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_REPATRIATION_URL || 'https://paystack.shop/pay/074g1pqwfw',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',
@@ -218,12 +218,12 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'loeries-2026-the-creative-value-ledger': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL || 'https://paystack.shop/pay/i2lnp-l43l',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_LOERIES_URL || 'https://paystack.shop/pay/ua2m5y0f4b',
   },
   'cannes-lions-2026-the-africa-value-ledger': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL || 'https://paystack.shop/pay/e4fzfr7o-k',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_CANNES_URL || 'https://paystack.shop/pay/t252w6-8lu',
   },
   // Three previously members-only reports promoted to one-off R220 studies —
   // dedicated Paystack Payment Pages created 2026-10-20 (Live + Active), so cold
@@ -231,17 +231,17 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'the-founders-ledger-sell-up-or-open-out': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_FOUNDERS_LEDGER_URL || 'https://paystack.shop/pay/-ksh-ucm82',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_FOUNDERS_LEDGER_URL || 'https://paystack.shop/pay/fliw6r4uvv',
   },
   'the-megabrand-exit-ledger': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_MEGABRAND_EXIT_URL || 'https://paystack.shop/pay/3-0ugh254-',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_MEGABRAND_EXIT_URL || 'https://paystack.shop/pay/l52cxlhw8t',
   },
   'will-it-land-african-stablecoins': {
     price: 'R220',
     tier: 'study',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_STABLECOINS_URL || 'https://paystack.shop/pay/ba6zrj1n53',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_STABLECOINS_URL || 'https://paystack.shop/pay/o418hjog3t',
   },
 };
 
@@ -633,11 +633,12 @@ export const MEMBERSHIP: MembershipTier[] = [
 export function membershipCheckoutUrl(tierId: string): string | null {
   // Live Paystack subscription Payment Pages are the code default (same pattern
   // as reports/bundles) so the subscribe CTA never silently dies if a Vercel env
-  // var is cleared. Verified live + Active in the Paystack dashboard 2026-10-20:
-  // Individual (R149) ue3o5tog3v, Team (R690) uoqmtpm6ye. Env still overrides.
+  // var is cleared. ROTATED 2026-10-23 (fresh pages, old ones deactivated) after
+  // Paystack flagged card-testing bots on the prior public links — Individual
+  // (R149) ejy-8sqly6, Team (R690) 6r813vuyx4. Env still overrides.
   const map: Record<string, string | undefined> = {
-    individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL || 'https://paystack.shop/pay/ue3o5tog3v',
-    team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL || 'https://paystack.shop/pay/uoqmtpm6ye',
+    individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL || 'https://paystack.shop/pay/ejy-8sqly6',
+    team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL || 'https://paystack.shop/pay/6r813vuyx4',
   };
   const url = map[tierId];
   return url && /^https?:\/\//.test(url) ? url : null;
