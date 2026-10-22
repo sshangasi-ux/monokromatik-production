@@ -67,14 +67,14 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'the-repatriation-playbook-nollywood-2026',
-    // Sold via a Paystack PAYMENT PAGE (id 2217697, slug tjdhdzpc3j), not a
-    // Storefront product — so the match tokens include the page slug/id and the
+    // Sold via a Paystack PAYMENT PAGE (id 2231668, slug 074g1pqwfw — rotated
+    // 2026-10-23), not a Storefront product — so the match tokens include the page slug/id and the
     // report name words. R3,500 is shared with the sport flagship, so we never
     // match on amount; tokens stay the only signal, and none here overlap the
     // other reports'. If a real purchase doesn't hit (payment-page payloads can
     // be sparse), the webhook logs the payload shape and manual fulfilment from
     // Paystack Orders is the fallback — refine these tokens from that log.
-    match: ['the-repatriation-playbook', 'repatriation', 'tjdhdzpc3j', '2217697'],
+    match: ['the-repatriation-playbook', 'repatriation', '074g1pqwfw', '2231668'],
     // Rendered on-demand from data/reports.json at purchase time — no bucket
     // upload needed; the PDF stays in sync with the report content.
     generate: true,
@@ -86,9 +86,9 @@ const REPORTS: ReportAsset[] = [
   {
     slug: 'value-capture-scorecard-2026',
     // The default CTA checkout (REPORT_CHECKOUT_SLUG), sold via the generic R220
-    // Payment Page (slug 3lscb9xsn8). Was buyable with NO delivery wired — this
+    // Payment Page (slug vljdne22gg, rotated 2026-10-23). Was buyable with NO delivery wired — this
     // closes that gap. Tokens: the report slug words + the page code.
-    match: ['value-capture-scorecard', 'scorecard-2026', '3lscb9xsn8'],
+    match: ['value-capture-scorecard', 'scorecard-2026', 'vljdne22gg', '2231669'],
     generate: true,
     filename: 'MonoKromatik-The-Value-Capture-Scorecard.pdf',
     title: 'The Value-Capture Scorecard 2026',
@@ -97,10 +97,10 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'loeries-2026-the-creative-value-ledger',
-    // THE CREATIVE LEDGER study, dedicated Payment Page slug i2lnp-l43l (created
-    // 2026-10-20). Rendered from data/reports.json. Tokens: report slug words +
+    // THE CREATIVE LEDGER study, dedicated Payment Page slug ua2m5y0f4b (rotated
+    // 2026-10-23). Rendered from data/reports.json. Tokens: report slug words +
     // page code. None overlap the other reports'.
-    match: ['loeries', 'loeries-2026-the-creative-value-ledger', 'i2lnp-l43l'],
+    match: ['loeries', 'loeries-2026-the-creative-value-ledger', 'ua2m5y0f4b', '2231667'],
     generate: true,
     filename: 'MonoKromatik-The-Loeries-2026-Value-Ledger.pdf',
     title: 'The Loeries 2026 Value Ledger',
@@ -109,10 +109,10 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'cannes-lions-2026-the-africa-value-ledger',
-    // THE CREATIVE LEDGER study, dedicated Payment Page slug e4fzfr7o-k (created
-    // 2026-10-20). Rendered from data/reports.json. Tokens: report slug words +
+    // THE CREATIVE LEDGER study, dedicated Payment Page slug t252w6-8lu (rotated
+    // 2026-10-23). Rendered from data/reports.json. Tokens: report slug words +
     // page code.
-    match: ['cannes', 'cannes-lions-2026-the-africa-value-ledger', 'e4fzfr7o-k'],
+    match: ['cannes', 'cannes-lions-2026-the-africa-value-ledger', 't252w6-8lu', '2231666'],
     generate: true,
     filename: 'MonoKromatik-Cannes-Lions-2026-The-Africa-Ledger.pdf',
     title: 'Cannes Lions 2026: The Africa Ledger',
@@ -124,7 +124,7 @@ const REPORTS: ReportAsset[] = [
     // Payment Pages created 2026-10-20. Rendered from data/reports.json. Tokens:
     // distinctive slug words + the page code; none overlap other reports'.
     slug: 'the-founders-ledger-sell-up-or-open-out',
-    match: ['founders-ledger', 'the-founders-ledger-sell-up-or-open-out', '-ksh-ucm82'],
+    match: ['founders-ledger', 'the-founders-ledger-sell-up-or-open-out', 'fliw6r4uvv', '2231665'],
     generate: true,
     filename: 'MonoKromatik-The-Founders-Ledger.pdf',
     title: "The Founders' Ledger: Sell Up, or Open Out?",
@@ -133,7 +133,7 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'the-megabrand-exit-ledger',
-    match: ['megabrand-exit', 'the-megabrand-exit-ledger', '3-0ugh254-'],
+    match: ['megabrand-exit', 'the-megabrand-exit-ledger', 'l52cxlhw8t', '2231662'],
     generate: true,
     filename: 'MonoKromatik-The-Megabrand-Exit-Ledger.pdf',
     title: 'The Megabrand Exit Ledger',
@@ -142,7 +142,7 @@ const REPORTS: ReportAsset[] = [
   },
   {
     slug: 'will-it-land-african-stablecoins',
-    match: ['stablecoins', 'will-it-land-african-stablecoins', 'ba6zrj1n53'],
+    match: ['stablecoins', 'will-it-land-african-stablecoins', 'o418hjog3t', '2231659'],
     generate: true,
     filename: 'MonoKromatik-The-Dollar-in-a-Green-Jacket-Stablecoins.pdf',
     title: "The Dollar in a Green Jacket — Stablecoins & Africa's Payment Rails",
