@@ -11,6 +11,8 @@ import RelatedArticles from '../../components/RelatedArticles';
 import NewsletterSignup from '../../components/NewsletterSignup';
 import BrandRead from '../../components/BrandRead';
 import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
+import RelatedReportCTA from '../../components/RelatedReportCTA';
+import { entryReportForArticle } from '../../../lib/article-report';
 import {
   getAllArticles,
   getReadingTime,
@@ -66,6 +68,9 @@ export default function ArticleClient({
 
   const allArticles = useMemo(() => getAllArticles(), []);
   const readingTime = getReadingTime(article.content);
+  // The most on-topic R220 entry study for this piece (or null) — the funnel's
+  // affordable middle rung, rendered in place of the generic advisory default.
+  const entryReport = useMemo(() => entryReportForArticle(article), [article]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -230,11 +235,16 @@ export default function ArticleClient({
         <BrandRead data={article.brandRead} />
 
         {/* The commercial ask, placed right after the founder's take (the warmest
-            point), ahead of the newsletter. Every article carries it: a piece that
-            names a real buyer uses its own tailored `advisory`; everything else
-            falls back to the default value-capture ask, so article traffic always
-            has a lead path (it previously existed on 1 of 197 pages). */}
-        <ArticleAdvisoryCTA advisory={article.advisory ?? DEFAULT_ARTICLE_ADVISORY} slug={article.slug} />
+            point), ahead of the newsletter. When the piece maps to a specific R220
+            value-capture study, offer that one-off study — the affordable "first
+            yes" on exactly this subject (the funnel's missing entry rung) — in
+            place of the generic default advisory. A named-buyer piece with its own
+            tailored `advisory` keeps that too; everything unmatched falls back to
+            the default value-capture ask, so article traffic always has a path. */}
+        {entryReport && <RelatedReportCTA report={entryReport} articleSlug={article.slug} />}
+        {(article.advisory || !entryReport) && (
+          <ArticleAdvisoryCTA advisory={article.advisory ?? DEFAULT_ARTICLE_ADVISORY} slug={article.slug} />
+        )}
 
         {/* Earlier email capture — the reader has just finished the argument and the
             founder's take, the warmest point to convert, and well before the footer
