@@ -21,16 +21,25 @@ export const metadata = {
     'Designed, source-verified intelligence on who owns and who captures the value in African culture — music, sport, fashion, money, media. Free briefings and paid value-capture reports from R220.',
 };
 
-// The three curated entry points — the shop leads with these.
+// The curated trio the shop leads with — TWO affordable R220 entry studies
+// first (the "first yes" for cold traffic across music and sport), then the
+// institutional flagship as the explicit step-up. GA showed cold traffic won't
+// drop R3,500 on first contact, so the entry studies lead and the flagship is
+// framed as "go deeper", not the front door.
 const STARTERS = [
   {
     slug: 'who-captures-amapiano-value-capture-report',
-    kicker: 'START HERE · THE ENTRY STUDY',
+    kicker: 'START HERE · THE R220 ENTRY STUDY',
     why: 'The best first read — the value-capture lens on one culture, for the price of lunch.',
   },
   {
+    slug: 'brand-study-the-springbok-world-champion-under-owned',
+    kicker: 'ALSO R220 · ENTRY STUDY',
+    why: 'The same lens on sport: the best team in world rugby, read as one of its most under-owned brands.',
+  },
+  {
     slug: 'whos-buying-african-sport-2026',
-    kicker: 'THE INSTITUTIONAL FLAGSHIP',
+    kicker: 'STEP UP · THE INSTITUTIONAL FLAGSHIP',
     why: 'The full framework-led read: a bottom-up leakage model, a named deal ledger and the 2035 scenarios.',
   },
 ] as const;
@@ -101,8 +110,8 @@ export default function ReportsPage() {
               </h2>
             </div>
             <p className="max-w-sm text-sm text-mono-gray font-body">
-              Not sure where to begin? Start with the study, step up to the flagship, or take the
-              whole shelf at the price of the flagship alone.
+              Not sure where to begin? Start with a R220 study — music or sport — step up to the
+              flagship, or take the whole shelf at the price of the flagship alone.
             </p>
           </div>
 

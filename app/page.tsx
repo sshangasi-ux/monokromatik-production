@@ -263,19 +263,20 @@ export default function Home() {
               </div>
             </div>
             <div className="shrink-0 flex flex-col gap-3 items-stretch">
-              {/* Direct buy path to the flagship report — the homepage previously
-                  only linked the /reports index, so no CTA drove straight to the
-                  money page. Price is pulled from commerce.ts (single source). */}
+              {/* Lead with the affordable R220 entry study — the "first yes" for
+                  cold traffic. GA showed cold visitors won't drop R3,500 on first
+                  contact, so the flagship is the step-up here, not the front door.
+                  Prices pulled from commerce.ts (single source). */}
               <CTA
-                href="/reports/whos-buying-african-sport-2026"
+                href="/reports/who-captures-amapiano-value-capture-report"
                 variant="primary"
                 className="justify-center whitespace-nowrap"
               >
-                GET THE FLAGSHIP REPORT · {reportPrice('whos-buying-african-sport-2026')}
+                START WITH THE ENTRY STUDY · {reportPrice('who-captures-amapiano-value-capture-report')}
               </CTA>
               <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
-                <Link href="/reports/who-captures-amapiano-value-capture-report" className="inline-flex gap-1.5 items-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
-                  Or start at {reportPrice('who-captures-amapiano-value-capture-report')} <ArrowRight size={13} />
+                <Link href="/reports/whos-buying-african-sport-2026" className="inline-flex gap-1.5 items-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-amber-strong hover:text-mono-amber-hover">
+                  Or go deep — the flagship, {reportPrice('whos-buying-african-sport-2026')} <ArrowRight size={13} />
                 </Link>
                 <Link href="/reports" className="inline-flex gap-1.5 items-center text-[12px] tracking-[0.08em] font-display font-bold text-mono-gray hover:text-mono-black">
                   Browse the library
