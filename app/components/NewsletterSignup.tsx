@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { track } from '../../lib/analytics';
+import ReferralShare from './ReferralShare';
 
 type Variant = 'default' | 'footer' | 'sidebar' | 'inline';
 
@@ -72,7 +73,12 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
             {status === 'loading' ? ctaLoading : 'JOIN FREE'}
           </button>
         </form>
-        {status === 'success' && <p className="mt-3 text-mono-amber-bright font-body text-sm" role="status">✓ {message}</p>}
+        {status === 'success' && (
+          <>
+            <p className="mt-3 text-mono-amber-bright font-body text-sm" role="status">✓ {message}</p>
+            <ReferralShare tone="dark" source={`${sourceTag}-success`} />
+          </>
+        )}
         {status === 'error' && <p className="mt-3 text-red-400 font-body text-sm" role="alert">✗ {message}</p>}
       </div>
     );
@@ -109,6 +115,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
           {status === 'success' && <p className="text-green-400 font-body text-sm" role="status">✓ {message}</p>}
           {status === 'error' && <p className="text-red-400 font-body text-sm" role="alert">✗ {message}</p>}
         </form>
+        {status === 'success' && <ReferralShare tone="dark" source={`${sourceTag}-success`} />}
       </div>
     );
   }
@@ -142,6 +149,7 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
           {status === 'success' && <p className="text-green-600 font-body text-xs" role="status">✓ {message}</p>}
           {status === 'error' && <p className="text-red-600 font-body text-xs" role="alert">✗ {message}</p>}
         </form>
+        {status === 'success' && <ReferralShare tone="light" source={`${sourceTag}-success`} />}
       </div>
     );
   }
@@ -180,6 +188,11 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
         {status === 'success' && <p className="text-green-600 font-body text-center" role="status">✓ {message}</p>}
         {status === 'error' && <p className="text-red-600 font-body text-center" role="alert">✗ {message}</p>}
       </form>
+      {status === 'success' && (
+        <div className="mt-6 max-w-md mx-auto">
+          <ReferralShare tone="light" source={`${sourceTag}-success`} />
+        </div>
+      )}
       <div className="mt-6 text-center">
         <p className="text-mono-gray font-body text-sm">
           <span className="text-mono-amber-strong">●</span> AI-assisted discovery. Human-directed intelligence. Verified sourcing.
