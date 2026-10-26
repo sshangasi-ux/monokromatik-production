@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Lock } from 'lucide-react';
 import { track } from '../../lib/analytics';
+import ReferralShare from './ReferralShare';
 
 // Soft email-gate for the free flagship reports. The children (the back half of
 // the report + the Bear Case) are ALWAYS server-rendered into the DOM, so
@@ -14,7 +15,7 @@ import { track } from '../../lib/analytics';
 // hurting the SEO these titles exist to win.
 const UNLOCK_KEY = 'mk_flagship_unlocked_v1';
 
-export default function FlagshipGate({ slug, children }: { slug: string; children: React.ReactNode }) {
+export default function FlagshipGate({ slug, title, children }: { slug: string; title?: string; children: React.ReactNode }) {
   // Start unlocked so the server-rendered HTML shows the full content (SEO / no-JS);
   // flip to gated on mount only for a first-time visitor who hasn't unlocked before.
   const [gated, setGated] = useState(false);
@@ -24,12 +25,20 @@ export default function FlagshipGate({ slug, children }: { slug: string; childre
 
   useEffect(() => {
     let unlocked = false;
+    let viaGift = false;
     try {
-      unlocked = localStorage.getItem(UNLOCK_KEY) === '1';
+      // A gift link (?gift=1) opens the full report instantly for the recipient —
+      // the content-referral loop: an unlocked reader passes a frictionless read
+      // to a friend, who lands in the funnel (newsletter CTAs, the paid step-up)
+      // without an email wall. Persist it so they keep access on later visits.
+      viaGift = new URLSearchParams(window.location.search).get('gift') === '1';
+      unlocked = viaGift || localStorage.getItem(UNLOCK_KEY) === '1';
+      if (viaGift) localStorage.setItem(UNLOCK_KEY, '1');
     } catch {
       /* storage blocked — leave ungated rather than trap the reader */
       unlocked = true;
     }
+    if (viaGift) track('flagship_gift_open', { slug });
     if (!unlocked) {
       setGated(true);
       // Defer the impression so it doesn't race GA's init on a cold page load
@@ -69,7 +78,32 @@ export default function FlagshipGate({ slug, children }: { slug: string; childre
     }
   };
 
-  if (!gated) return <>{children}</>;
+  if (!gated) {
+    const giftUrl = `https://www.monokromatik.com/reports/${slug}?gift=1`;
+    return (
+      <>
+        {children}
+        {/* Gift loop: let an unlocked reader pass the full report to a friend,
+            who opens it instantly via ?gift=1 (no email wall) and lands in the
+            funnel. Turns every free flagship into a referral surface. */}
+        <div className="mt-10">
+          <ReferralShare
+            tone="light"
+            source={`gift:${slug}`}
+            event="report_gift_share"
+            url={giftUrl}
+            shareText={`${title ?? 'This MonoKromatik report'} — the full read, free:`}
+            shareTitle={title ?? 'MonoKromatik report'}
+            heading={
+              <>
+                <span className="font-semibold">Pass this report on.</span>{' '}The link opens the full read instantly — no sign-up.
+              </>
+            }
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className="relative">
