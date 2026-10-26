@@ -24,6 +24,13 @@ export interface Article {
   imageCredit?: string;
   /** Link the image credit points to. */
   imageSourceUrl?: string;
+  /**
+   * Optional premium narration: a Braam brand-voice MP3 of the full piece (see
+   * braam-brand-voice — the cloned Higgsfield voice element). When set, the
+   * on-page "Listen" control plays this MP3 instead of the free in-browser
+   * Web Speech fallback. Reserved for flagship pieces; absent = free TTS.
+   */
+  audioUrl?: string;
   videoUrl?: string;
   /** 'embed' = YouTube/Vimeo iframe; 'file' = mp4 played inline. */
   videoType?: 'embed' | 'file';

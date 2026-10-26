@@ -5,18 +5,121 @@ import { Volume2, Pause, Play, Square } from 'lucide-react';
 import { track } from '../../lib/analytics';
 
 /**
- * "Listen to this article" — in-browser narration via the Web Speech API.
+ * "Listen to this article" — two tiers behind one control:
  *
- * The defining 2026 publisher play (narrated articles lift story-completion
- * sharply), shipped here at zero marginal cost: no audio files, no backend, no
- * per-play metering. It reads the headline, standfirst and body aloud in the
- * reader's own browser voice. A premium brand-voice (Braam) MP3 layer can later
- * replace this per piece by passing `audioUrl` — the surface stays identical.
+ *  1. PREMIUM (audioUrl set): plays a Braam brand-voice MP3 of the full piece
+ *     (the cloned Higgsfield voice element — see braam-brand-voice). A real
+ *     narrated player with a scrub bar, labelled with the brand voice. Reserved
+ *     for flagship pieces.
+ *  2. FREE fallback (no audioUrl): in-browser narration via the Web Speech API —
+ *     the defining 2026 publisher play, shipped at zero marginal cost across all
+ *     199 articles. Progressive enhancement: renders nothing when speechSynthesis
+ *     is unavailable, so unsupported browsers see the article unchanged.
  *
- * Progressive enhancement: when speechSynthesis is unavailable the control
- * renders nothing, so unsupported browsers and no-JS see the article unchanged.
+ * ListenButton just picks the tier; each is its own component so hooks stay
+ * unconditional.
  */
 
+export default function ListenButton(props: {
+  slug: string;
+  title: string;
+  standfirst?: string;
+  content: string;
+  /** When present, play this Braam-voice MP3 instead of the free Web Speech. */
+  audioUrl?: string;
+}) {
+  if (props.audioUrl) {
+    return <BraamPlayer slug={props.slug} audioUrl={props.audioUrl} />;
+  }
+  return (
+    <WebSpeechButton slug={props.slug} title={props.title} standfirst={props.standfirst} content={props.content} />
+  );
+}
+
+function fmt(sec: number): string {
+  if (!Number.isFinite(sec) || sec < 0) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+// ── Premium tier: Braam MP3 player ──────────────────────────────────────────
+function BraamPlayer({ slug, audioUrl }: { slug: string; audioUrl: string }) {
+  const ref = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [cur, setCur] = useState(0);
+  const [dur, setDur] = useState(0);
+
+  const toggle = () => {
+    const el = ref.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play().catch(() => { /* autoplay/network guard */ });
+      track('article_listen', { slug, action: 'play', mode: 'braam' });
+    } else {
+      el.pause();
+      track('article_listen', { slug, action: 'pause', mode: 'braam' });
+    }
+  };
+
+  const seek = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el || !dur) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    el.currentTime = ((e.clientX - rect.left) / rect.width) * dur;
+  };
+
+  const pct = dur ? (cur / dur) * 100 : 0;
+
+  return (
+    <div className="mb-8 border-2 border-mono-charcoal bg-mono-soft-white p-3">
+      <audio
+        ref={ref}
+        src={audioUrl}
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => { setPlaying(false); track('article_listen', { slug, action: 'ended', mode: 'braam' }); }}
+        onTimeUpdate={(e) => setCur(e.currentTarget.currentTime)}
+        onLoadedMetadata={(e) => setDur(e.currentTarget.duration)}
+      />
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={toggle}
+          aria-label={playing ? 'Pause narration' : 'Play narration'}
+          className="inline-flex shrink-0 items-center justify-center bg-mono-black p-2.5 text-mono-amber transition-colors hover:bg-mono-charcoal"
+        >
+          {playing ? <Pause size={16} /> : <Play size={16} />}
+        </button>
+        <div className="min-w-0 flex-1">
+          <div className="mb-1.5 flex items-center justify-between gap-2">
+            <span className="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-mono-black">
+              Listen · narrated by Braam
+            </span>
+            <span className="shrink-0 font-body text-[11px] tabular-nums text-mono-gray">
+              {fmt(cur)} / {fmt(dur)}
+            </span>
+          </div>
+          <div
+            onClick={seek}
+            role="slider"
+            aria-label="Seek"
+            aria-valuemin={0}
+            aria-valuemax={Math.round(dur)}
+            aria-valuenow={Math.round(cur)}
+            tabIndex={0}
+            className="h-1.5 cursor-pointer bg-mono-charcoal/20"
+          >
+            <div className="h-full bg-mono-amber" style={{ width: `${pct}%` }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Free tier: Web Speech narration ─────────────────────────────────────────
 // Strip Markdown to clean, speakable prose. Drops code fences, images, [n]
 // citation marks and table pipes; keeps link text and sentence punctuation.
 function toSpeech(markdown: string): string {
@@ -52,7 +155,7 @@ function chunk(text: string, max = 220): string[] {
 
 type State = 'idle' | 'playing' | 'paused';
 
-export default function ListenButton({
+function WebSpeechButton({
   slug,
   title,
   standfirst,
@@ -65,7 +168,6 @@ export default function ListenButton({
 }) {
   const [supported, setSupported] = useState(false);
   const [state, setState] = useState<State>('idle');
-  const chunksRef = useRef<string[]>([]);
 
   useEffect(() => {
     setSupported(typeof window !== 'undefined' && 'speechSynthesis' in window);
@@ -83,19 +185,16 @@ export default function ListenButton({
     synth.cancel();
     const text = [title, standfirst, toSpeech(content)].filter(Boolean).join('. ');
     const parts = chunk(text);
-    chunksRef.current = parts;
     parts.forEach((part, i) => {
       const u = new SpeechSynthesisUtterance(part);
       u.lang = 'en-ZA';
       u.rate = 1;
       u.pitch = 1;
-      if (i === parts.length - 1) {
-        u.onend = () => setState('idle');
-      }
+      if (i === parts.length - 1) u.onend = () => setState('idle');
       synth.speak(u);
     });
     setState('playing');
-    track('article_listen', { slug, action: 'play' });
+    track('article_listen', { slug, action: 'play', mode: 'tts' });
   };
 
   const toggle = () => {
@@ -104,18 +203,18 @@ export default function ListenButton({
     if (state === 'playing') {
       synth.pause();
       setState('paused');
-      track('article_listen', { slug, action: 'pause' });
+      track('article_listen', { slug, action: 'pause', mode: 'tts' });
     } else {
       synth.resume();
       setState('playing');
-      track('article_listen', { slug, action: 'resume' });
+      track('article_listen', { slug, action: 'resume', mode: 'tts' });
     }
   };
 
   const stop = () => {
     window.speechSynthesis.cancel();
     setState('idle');
-    track('article_listen', { slug, action: 'stop' });
+    track('article_listen', { slug, action: 'stop', mode: 'tts' });
   };
 
   const playing = state === 'playing';
@@ -129,17 +228,11 @@ export default function ListenButton({
         className="inline-flex items-center gap-2 border-2 border-mono-charcoal px-4 py-2 font-display font-bold text-[13px] uppercase tracking-[0.1em] text-mono-black transition-colors hover:border-mono-amber hover:text-mono-amber-strong"
       >
         {state === 'idle' ? (
-          <>
-            <Volume2 size={16} /> Listen
-          </>
+          <><Volume2 size={16} /> Listen</>
         ) : playing ? (
-          <>
-            <Pause size={16} /> Pause
-          </>
+          <><Pause size={16} /> Pause</>
         ) : (
-          <>
-            <Play size={16} /> Resume
-          </>
+          <><Play size={16} /> Resume</>
         )}
       </button>
       {state !== 'idle' && (
