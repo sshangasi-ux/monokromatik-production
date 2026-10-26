@@ -12,6 +12,8 @@ import NewsletterSignup from '../../components/NewsletterSignup';
 import BrandRead from '../../components/BrandRead';
 import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
 import RelatedReportCTA from '../../components/RelatedReportCTA';
+import ListenButton from '../../components/ListenButton';
+import CiteThis from '../../components/CiteThis';
 import { entryReportForArticle } from '../../../lib/article-report';
 import {
   getAllArticles,
@@ -89,10 +91,9 @@ export default function ArticleClient({
     track('article_view', { slug: article.slug, category: article.category });
   }, [article.slug, article.category]);
 
+  const canonicalUrl = `https://www.monokromatik.com/article/${article.slug}`;
   const shareUrl =
-    typeof window !== 'undefined'
-      ? window.location.href
-      : `https://www.monokromatik.com/article/${article.slug}`;
+    typeof window !== 'undefined' ? window.location.href : canonicalUrl;
 
   return (
     <div className="min-h-screen bg-mono-white">
@@ -140,6 +141,13 @@ export default function ArticleClient({
         <p className="text-xl md:text-2xl text-mono-charcoal font-feature italic mb-8 leading-snug">
           {article.excerpt}
         </p>
+
+        <ListenButton
+          slug={article.slug}
+          title={article.title}
+          standfirst={article.excerpt}
+          content={article.content}
+        />
 
         {article.imageUrl && (
           <figure className="mb-12">
@@ -256,6 +264,16 @@ export default function ArticleClient({
         {/* Layer 1 — the numbered References block (inline [n] marks link here).
             Always non-empty: the legacy source is synthesised as [1]. */}
         <References sources={references} />
+
+        {/* Make the sourcing moat citable: credibility + every propagated
+            citation is a reference back to us (frictionless on-site backlink). */}
+        <CiteThis
+          title={article.title}
+          author={article.brandRead?.attribution ?? 'Sibu Shangase'}
+          publishedAt={article.publishedAt}
+          url={canonicalUrl}
+          kind="analysis"
+        />
 
         {/* Layer 3 — the entity flywheel: Index scores + related coverage. */}
         <EntityRail entities={entities} />
