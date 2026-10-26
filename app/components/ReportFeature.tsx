@@ -212,7 +212,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
           <article className="space-y-12">
             {r.sections.slice(0, openCount).map(renderSection)}
             {emailGate && (
-              <FlagshipGate slug={r.slug}>
+              <FlagshipGate slug={r.slug} title={r.title}>
                 <div className="space-y-12">
                   {r.sections.slice(openCount).map(renderSection)}
                   {counterCaseBlock}
