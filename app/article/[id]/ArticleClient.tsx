@@ -147,6 +147,7 @@ export default function ArticleClient({
           title={article.title}
           standfirst={article.excerpt}
           content={article.content}
+          audioUrl={article.audioUrl}
         />
 
         {article.imageUrl && (
