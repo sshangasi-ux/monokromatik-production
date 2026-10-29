@@ -19,6 +19,13 @@ export interface Article {
    *  'feature' = a deeply-reported, longer flagship analysis. Lets the two tiers
    *  be generated, counted and presented differently. */
   format?: 'brief' | 'feature';
+  /**
+   * T0 "free read" marker: when true, renders a one-line affiliate/partner-link
+   * disclosure band above the body (AffiliateDisclosure). Set it on reads whose
+   * outbound links to brands, rights-holders or products are — or may become —
+   * monetised. See docs/editorial/content-slate-6wk.md (the content ladder).
+   */
+  affiliate?: boolean;
   imageUrl?: string;
   /** Credit for the hero image, e.g. "Via BellaNaija" / "Photo: Pexels". */
   imageCredit?: string;

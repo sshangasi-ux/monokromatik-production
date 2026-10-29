@@ -14,6 +14,7 @@ import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
 import RelatedReportCTA from '../../components/RelatedReportCTA';
 import ListenButton from '../../components/ListenButton';
 import CiteThis from '../../components/CiteThis';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure';
 import { entryReportForArticle } from '../../../lib/article-report';
 import {
   getAllArticles,
@@ -227,6 +228,8 @@ export default function ArticleClient({
             )}
           </figure>
         )}
+
+        {article.affiliate && <AffiliateDisclosure />}
 
         <div className="prose prose-lg max-w-none font-body text-mono-charcoal mb-12 article-content">
           <ReactMarkdown
