@@ -4760,7 +4760,7 @@
         "data": [
           {
             "label": "Canal+ ← MultiChoice",
-            "value": 3.0,
+            "value": 3,
             "display": "~$3.0bn",
             "tag": "exported"
           },
@@ -13359,6 +13359,17 @@
         ]
       },
       {
+        "heading": "THE VALUE AT STAKE — QUANTIFIED",
+        "paragraphs": [
+          "Classification says who owns what; it does not say how much is in play. Nollywood is harder to size than most industries, because the headline revenue figures are single-sourced (we treat them as reported, not banked), so we build the model bottom-up from the three flows that can be traced to named sources: the domestic box office, the deal values on the platform layer, and the cost of the IROKO experiment.",
+          "Start with the flow that stays home. FilmOne's 2024 box-office scorecard puts Nigerian cinema takings at roughly N11.58 billion across 204 releases, with December the strongest month at about N2.8 billion. BusinessDay, citing that scorecard, splits the take 52% Hollywood and 46% Nollywood; a mid-year Nairametrics read put Nollywood nearer 50%, and we flag the conflict rather than average it. On the 46% reading, Nollywood titles earned about N5.3 billion at the 2024 box office — and that is gross ticket revenue, before the exhibitor and distributor splits.",
+          "It is also concentrated. The three leading Nollywood titles — Queen Lateefah (about N365 million), Ajosepo (about N257 million) and Beasts of Two Worlds (about N253 million) — sum to roughly N875 million, around 16% of the Nollywood share. Only 15 of the 204 releases cleared N200 million. This is a hit-driven, retained flow: real money, landing with African cinemas and distributors, and held by whoever owns the titles — which is why the licensing-and-catalogue route matters more than any single commission.",
+          "Now the other end of the chain. The platform layer is where the large, settled numbers sit: the Canal+ takeover of MultiChoice, at roughly $3 billion, moved DStv, SuperSport and Showmax into French hands. Set against that, the pioneering African attempt was small and unrewarded: IROKO reportedly spent about $100 million on streaming and saw ROK Studios sold to Vivendi/Canal+ for a reported ~$25 million — about a quarter of the spend recovered, on a reported basis.",
+          "Read together, the model has three tiers of scale. A single domestic box-office year is worth low single-digit billions of naira; the one African attempt to own the pipes cost around $100 million and returned about a quarter of it; and the foreign owner of the pipes paid roughly $3 billion. The retained flow is real but small relative to the value that accrues to whoever owns distribution. That asymmetry is the quantified form of the thesis: Nollywood creates the content and keeps the box office, while the pipe-owner captures the compounding subscription and library value.",
+          "Two caveats keep the model honest. Box-office figures are gross, naira-denominated and point-in-time, and the inflation and devaluation of the naira mean year-on-year dollar comparisons mislead; we therefore keep the box-office flow in naira and do not convert it. And we do not model the commission-versus-license split in dollars: per-title deal terms are undisclosed, and inventing a ratio would be false precision. What we can say is directional — the IP that stays African is the IP that licenses and re-licenses, and the IP that is commissioned does not."
+        ]
+      },
+      {
         "heading": "THE STREAMER ARC — STATED CAREFULLY",
         "paragraphs": [
           "The streamer story is widely misreported, and the diligence states it at its verified stage. Netflix pushed hard into African Originals from 2020 — Queen Sono, its first African Original, was renewed and then cancelled; Blood & Water followed — and has since narrowed its strategy, tilting toward licensing, while publicly denying that it is exiting Nigeria. Amazon Prime Video halted new African and Middle Eastern Originals in January 2024 as part of a rebalancing — but it did not exit Africa. The accurate reading is scale-back and re-strategy, not withdrawal, and we do not write 'Netflix left Africa' because it is false.",
@@ -13391,6 +13402,16 @@
         ]
       },
       {
+        "heading": "WHAT THIS MEANS — BY WHO'S READING",
+        "paragraphs": [
+          "For producers and studios: the decision that matters is the contract, not the budget. License rather than be commissioned wherever the terms allow; the reported example of Amazon holding the IP on its 2022 Nemsia Films slate shows what a commission transfers. Keep the catalogue, and treat the windowing (cinema, then streaming licence, then re-licence) as the asset's real return profile.",
+          "For capital: back catalogue owners and domestic distribution, not volume. The retained box-office flow is concentrated in a few titles a year, so the investable edge is rights ownership and slate selection. The IROKO record is a warning against assuming that owning a streaming pipe in a market with weak payments and broadband will pay on its own.",
+          "For platforms and distributors: the pullback has made the structure visible. Producers have noticed that a licence preserves their upside, and the platforms that keep Nigerian audiences will do so on licensing terms or not at all. The foreign-owned distribution layer will be judged on whether it sells African IP back to African audiences at a price they can pay.",
+          "For policymakers: the lever is the domestic economics, not a restriction on foreign capital. Broadband, payments, pricing and anti-piracy enforcement decide whether African-owned IP can monetise at home; local-content rules that push platforms toward commissioning would, perversely, increase the very IP transfer this diligence flags.",
+          "For brands and sponsors: Nollywood reaches audiences at a scale few African media properties can match, but placement value accrues to the title owner. Where possible, partner with the African-owned studio holding the catalogue rather than the platform holding a single window."
+        ]
+      },
+      {
         "heading": "METHODOLOGY & ENDNOTES",
         "paragraphs": [
           "The DD applies the AOC framework and grades every figure: verified (named, on-record), reported (single credible source), undisclosed (not public, marked so, never estimated). The commission-versus-license distinction is treated as the load-bearing mechanism and stated as standard industry practice. Per-title IP splits in studio–platform deals (for example EbonyLife's mix of first-look and commissioned titles) are genuinely undisclosed and are not asserted.",
@@ -13410,11 +13431,59 @@
           "6 — ROK Studios majority-acquired by Vivendi/Canal+ (~$25m, 2019); IROKO ~$100m streaming spend; Njoku's assessment: WeeTracker; Pulse Nigeria. Reported; exact stake undisclosed.",
           "7 — Streamer arc: Netflix Queen Sono renewal then cancellation (2020); narrowing and denial of exiting Nigeria (2024); Amazon halts new African/MENA Originals (Jan 2024, did not exit): Deadline; Variety; Rest of World; TechCabal. Verified.",
           "8 — Canal+/MultiChoice ~$3bn, completed 2025–2026 (figure consistent across our sport/screen work; a lower figure appears elsewhere and is noted): Deadline; company statements. Verified (completion); value reported.",
-          "9 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the CONTESTED verdict are MonoKromatik's own."
+          "9 — The chain-of-title, value-flow, leak and quality-of-capture analyses and the CONTESTED verdict are MonoKromatik's own.",
+          "10 — 2024 box office ~N11.58bn, 204 releases, 15 titles above N200m, December ~N2.8bn; Hollywood 52% / Nollywood 46%: FilmOne 2024 Nigeria box office scorecard, via Culture Custodian and BusinessDay; Nairametrics (mid-year ~50% Nollywood reading noted as a conflict). Reported.",
+          "11 — Leading Nollywood titles 2024 (Queen Lateefah ~N365m, Ajosepo ~N257m, Beasts of Two Worlds ~N253m): FilmOne scorecard, via Nairametrics. Reported; gross, naira.",
+          "12 — Amazon Prime Video–Nemsia Films 2022 slate (Amazon reported to hold the IP and fund production): TechCabal. Reported.",
+          "13 — Producer view that most streamer 'Originals' were independently produced then licensed: Niyi Akinmolayan, via ModernGhana; Amazon Africa staff cuts and Netflix denial of exit (Dec 2024): Pulse Nigeria; Broadcast Media Africa. Reported/contested.",
+          "14 — The value-at-stake model (box-office share arithmetic, top-title concentration, IROKO recovery ratio) is derived by MonoKromatik from the sourced figures above; the Nollywood ~N5.3bn is 46% of ~N11.58bn, and no commission-versus-license dollar split is estimated."
         ]
       }
     ],
     "exhibits": [
+      {
+        "type": "quadrant",
+        "after": 3,
+        "title": "Authored versus captured — where the archetypes fall",
+        "xAxis": [
+          "Low African authorship",
+          "High African authorship"
+        ],
+        "yAxis": [
+          "Value captured offshore",
+          "Value captured in Africa"
+        ],
+        "points": [
+          {
+            "label": "Inkblot / Anthill (own IP, license)",
+            "x": 88,
+            "y": 82,
+            "highlight": true
+          },
+          {
+            "label": "EbonyLife / FilmOne",
+            "x": 86,
+            "y": 72,
+            "highlight": true
+          },
+          {
+            "label": "Licensed titles",
+            "x": 84,
+            "y": 68
+          },
+          {
+            "label": "Commissioned Originals",
+            "x": 82,
+            "y": 22
+          },
+          {
+            "label": "ROK / Showmax (→ Canal+)",
+            "x": 60,
+            "y": 14
+          }
+        ],
+        "note": "MonoKromatik read. African-owned studios that license their IP sit top-right (retained); commissioned Originals and the foreign-owned platforms sit lower (exported). The vertical position is set by the deal structure, not the authorship. Source: MonoKromatik analysis."
+      },
       {
         "type": "matrix",
         "after": 4,
@@ -13520,51 +13589,108 @@
         "note": "MonoKromatik read (0 = none/foreign, 4 = fully African). The studio layer holds African-owned catalogues; the platform layer is foreign. This split is why the verdict is Contested, not Exported. Per the endnotes."
       },
       {
-        "type": "quadrant",
-        "after": 3,
-        "title": "Authored versus captured — where the archetypes fall",
-        "xAxis": [
-          "Low African authorship",
-          "High African authorship"
-        ],
-        "yAxis": [
-          "Value captured offshore",
-          "Value captured in Africa"
-        ],
-        "points": [
+        "type": "flow",
+        "after": 5,
+        "title": "Same cash today, opposite ownership tomorrow — the windowing logic",
+        "steps": [
           {
-            "label": "Inkblot / Anthill (own IP, license)",
-            "x": 88,
-            "y": 82,
+            "label": "Production",
+            "caption": "Budget lands with the African creator either way",
+            "tag": "Same"
+          },
+          {
+            "label": "Theatrical window",
+            "caption": "Licensed title: African distributors and cinemas earn",
+            "tag": "Retained"
+          },
+          {
+            "label": "Streaming licence",
+            "caption": "Licensed: creator rents a time-boxed window",
+            "tag": "Retained"
+          },
+          {
+            "label": "Re-licence",
+            "caption": "Licensed: creator sells again. Commissioned: platform holds the IP",
+            "tag": "Diverges",
             "highlight": true
           },
           {
-            "label": "EbonyLife / FilmOne",
-            "x": 86,
-            "y": 72,
-            "highlight": true
-          },
-          {
-            "label": "Licensed titles",
-            "x": 84,
-            "y": 68
-          },
-          {
-            "label": "Commissioned Originals",
-            "x": 82,
-            "y": 22
-          },
-          {
-            "label": "ROK / Showmax (→ Canal+)",
-            "x": 60,
-            "y": 14
+            "label": "Library value",
+            "caption": "Commissioned Original: every future exploitation is the platform's",
+            "tag": "Exported"
           }
         ],
-        "note": "MonoKromatik read. African-owned studios that license their IP sit top-right (retained); commissioned Originals and the foreign-owned platforms sit lower (exported). The vertical position is set by the deal structure, not the authorship. Source: MonoKromatik analysis."
+        "note": "MonoKromatik framework read of the licence-versus-commission lifecycle; no deal values are asserted because per-title terms are undisclosed. Source: MonoKromatik analysis of standard industry practice; Amazon–Nemsia Films slate reporting (TechCabal, 2022)."
+      },
+      {
+        "type": "split",
+        "after": 7,
+        "title": "Nigeria's 2024 box office — who took the tickets",
+        "data": [
+          {
+            "label": "Hollywood",
+            "value": 52,
+            "display": "52%"
+          },
+          {
+            "label": "Nollywood",
+            "value": 46,
+            "display": "46%"
+          },
+          {
+            "label": "Other / residual",
+            "value": 2,
+            "display": "2%"
+          }
+        ],
+        "note": "Share of a ~N11.58bn 2024 box office across 204 releases; the residual is arithmetic. A mid-year Nairametrics read put Nollywood nearer 50% — the conflict is flagged, not averaged. Source: FilmOne 2024 Nigeria box office scorecard, per BusinessDay."
+      },
+      {
+        "type": "bar",
+        "after": 7,
+        "title": "The retained flow is concentrated — leading Nollywood titles, 2024",
+        "unit": "N million gross",
+        "data": [
+          {
+            "label": "Queen Lateefah",
+            "value": 365,
+            "display": "~N365m"
+          },
+          {
+            "label": "Ajosepo",
+            "value": 257,
+            "display": "~N257m"
+          },
+          {
+            "label": "Beasts of Two Worlds",
+            "value": 253,
+            "display": "~N253m"
+          }
+        ],
+        "note": "The top three sum to ~N875m, about 16% of the ~N5.3bn Nollywood share at the 46% reading (derived); only 15 of 204 releases cleared N200m. Gross, naira, point-in-time. Source: FilmOne 2024 Nigeria box office scorecard, per Culture Custodian and Nairametrics."
+      },
+      {
+        "type": "bar",
+        "after": 9,
+        "title": "The cost of owning the pipes — IROKO's reported streaming spend versus its exit",
+        "unit": "US$ million",
+        "data": [
+          {
+            "label": "IROKO streaming spend (reported)",
+            "value": 100,
+            "display": "~$100m"
+          },
+          {
+            "label": "ROK Studios sale to Vivendi/Canal+ (reported)",
+            "value": 25,
+            "display": "~$25m"
+          }
+        ],
+        "note": "About a quarter of the reported spend recovered on the reported sale price; exact stake and terms undisclosed. For scale, Canal+'s MultiChoice takeover was ~$3bn. Source: WeeTracker and Pulse Nigeria reporting on IROKO/ROK; Deadline on Canal+/MultiChoice."
       },
       {
         "type": "matrix",
-        "after": 9,
+        "after": 10,
         "title": "Quality of capture — developmental or extractive?",
         "cols": [
           "Developmental",
@@ -13608,7 +13734,7 @@
       },
       {
         "type": "matrix",
-        "after": 10,
+        "after": 11,
         "title": "The retained counter-nodes",
         "cols": [
           "African-owned",
@@ -13645,7 +13771,7 @@
       },
       {
         "type": "donut",
-        "after": 10,
+        "after": 11,
         "title": "The verdict — contested, and self-correcting",
         "value": 55,
         "valueLabel": "CONTESTED",
@@ -13662,7 +13788,8 @@
         "Licensing keeps the IP — and it's winning. African producers are already shifting to licensing deals that retain their catalogues, so the capture is transitional, not structural. The market is self-correcting toward retention, which is the opposite of a one-way leak.",
         "The pullback proves the capture was shallow. If Netflix and Amazon are scaling back African Originals, they cannot simultaneously be locking up African IP at limitless scale. The commissioned-Original land grab was brief and bounded, not a permanent enclosure.",
         "Foreign platforms are not the same as lost value. Even under Netflix, Amazon or Canal+, the wages, the roughly one million jobs, and the on-screen authorship stay African. Distribution ownership is less economically decisive than the leak thesis implies, and foreign distribution reaches audiences African platforms could not.",
-        "The real leak is domestic, not offshore. IROKO's failure shows the binding constraint is Nigeria's own market — currency, broadband, willingness to pay — not offshore capture. The value doesn't so much leave as never monetise at home, which means the fix is domestic infrastructure, not resisting foreign capital."
+        "The real leak is domestic, not offshore. IROKO's failure shows the binding constraint is Nigeria's own market — currency, broadband, willingness to pay — not offshore capture. The value doesn't so much leave as never monetise at home, which means the fix is domestic infrastructure, not resisting foreign capital.",
+        "The commission problem may be overstated. Director Niyi Akinmolayan has argued that many Netflix and Amazon 'Originals' were produced independently and then licensed, with very few commissioned outright. If he is right, the IP-transfer vector is narrower than this diligence's framing implies, and the sources conflict on how common true commissions were. We state the mechanism as structural and the prevalence as unresolved."
       ]
     },
     "readingTime": "11 MIN READ"
