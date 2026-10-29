@@ -4760,7 +4760,7 @@
         "data": [
           {
             "label": "Canal+ ← MultiChoice",
-            "value": 3.0,
+            "value": 3,
             "display": "~$3.0bn",
             "tag": "exported"
           },
@@ -17210,5 +17210,646 @@
     },
     "readingTime": "26 MIN READ",
     "statusNote": "Culture value-capture flagship · v2 (rebuilt to institutional depth) · scored against the MonoKromatik ownership method"
+  },
+  {
+    "slug": "the-african-beer-value-map",
+    "title": "The African Beer Value Map — Who Wins the Drinker, and Who Keeps the Margin",
+    "series": "THE VALUE MAP",
+    "status": "live",
+    "access": "premium",
+    "summary": "Heineken's new CEO used his first results day to admit the company isn't winning with consumers often enough. On Africa — beer's last real growth frontier — that marketing gap sits on top of a deeper, structural one: the contest for the African drinker is a contest between foreign-parented giants, so the volume is African and the enterprise value mostly is not. This report maps who owns the demand, where a rand spent on beer actually lands, whether premiumisation changes the ownership question, and the realistic ways the continent can capture more than the consumption.",
+    "statusNote": "The value-capture read on African beer · pegged to Heineken Q3 2026 (28 Oct 2026)",
+    "tags": [
+      "beer",
+      "Heineken",
+      "AB InBev",
+      "African beer",
+      "FMCG",
+      "value capture",
+      "premium",
+      "drinks",
+      "market read"
+    ],
+    "publishedAt": "2026-10-29T12:00:00.000Z",
+    "readingTime": "12 MIN READ",
+    "keyStats": [
+      {
+        "value": "~93%",
+        "label": "Share of African beer demand held by four foreign-parented multinationals — Castel, Heineken, AB InBev, Diageo (Food Business Africa)"
+      },
+      {
+        "value": "+11.5%",
+        "label": "Heineken premium volume growth, Q3 2026 — the bet on trading African drinkers up (Heineken Q3 2026 trading update)"
+      },
+      {
+        "value": "+4.8%",
+        "label": "Heineken total volume growth, Q3 2026, with positive contributions from all regions (Heineken)"
+      },
+      {
+        "value": "~10–15%",
+        "label": "Africa's share of AB InBev and Heineken global volumes — big enough to chase, small enough to optimise for margin elsewhere (Beverage Daily)"
+      },
+      {
+        "value": "~87%",
+        "label": "AB InBev's estimated share of the South African beer market — the brands most South Africans drink are foreign-owned (Flanders Investment & Trade, 2022)"
+      },
+      {
+        "value": "−mid-teens %",
+        "label": "Fall in Nigerian beer volumes in 2025 as a weak economy squeezed drinkers — the frontier is volatile, not a straight line (Beverage Daily)"
+      }
+    ],
+    "exhibit": {
+      "type": "donut",
+      "after": 1,
+      "title": "Who owns the demand — African beer is a four-company market",
+      "value": 93,
+      "valueLabel": "~93%",
+      "sublabel": "Of African beer demand sits with four foreign-parented multinationals — Castel (France), Heineken (Netherlands), AB InBev (Belgium/Brazil) and Diageo (UK). By one industry estimate (Food Business Africa). The remaining ~7% is craft, state and independent brewers. The drinkers are African; the owners are not.",
+      "note": "The single most important fact about African beer: before you ask who is winning, the owners are already decided, and almost none of them are African. Four-multinational share estimate per Food Business Africa."
+    },
+    "sections": [
+      {
+        "heading": "The admission",
+        "paragraphs": [
+          "On 28 October 2026, Heineken published its third-quarter numbers and its new chief executive, Rafa Oliveira, did something results-day CEOs rarely do: he named the problem. \"We have strong foundations, but we are not translating them into consistent growth and winning with consumers and customers as often as we should,\" he wrote, adding that there was \"more to do to sharpen execution, increase pace, and build a stronger performance culture\" (Heineken Q3 2026 trading update).",
+          "The numbers underneath were not weak — total volume up 4.8%, premium volume up 11.5%, net revenue up 4.6%, and full-year operating-profit guidance of 2–6% reiterated. This is a confident, growing company telling itself to do better. But the sentence travels, because it names the exact gap every global drinks major is staring at on the one continent where beer still has real room to grow.",
+          "This report takes Oliveira at his word and asks the question his results deck did not. Winning the African beer consumer is a marketing problem a company with Heineken’s firepower can solve. Keeping what you win is an ownership problem — and on current structure, the continent that drinks the beer captures very little of the enterprise value that drinking creates."
+        ]
+      },
+      {
+        "heading": "The last frontier",
+        "paragraphs": [
+          "Oliveira’s worry is not abstract. With beer volumes flat or shrinking across much of the developed world, the majors are openly banking on Africa, Asia and Latin America for their next leg of growth (Beverage Daily). The logic is demographic and hard to argue with: a young, urbanising continent is where the next hundred million drinkers are.",
+          "But the frontier is still a sliver of the majors’ business — Africa accounts for only around 10–15% of AB InBev’s and Heineken’s global volumes (Beverage Daily). That number is the whole strategic tension in one figure: large enough that every major must chase it, small enough that the continent is managed as one growth input among many, optimised from headquarters for a global margin — not as a market whose own ownership is anyone’s objective."
+        ]
+      },
+      {
+        "heading": "Who owns the demand",
+        "paragraphs": [
+          "Here is the part the growth story skips. The contest for African beer is, overwhelmingly, a contest between foreign-parented giants. By one industry estimate, four multinationals — Castel, Heineken, AB InBev and Diageo — account for roughly 93% of African beer demand (Food Business Africa).",
+          "It holds at national level too. In South Africa, the brands most people actually drink — Castle, Carling and the rest — sit inside AB InBev, the Belgian-Brazilian major that absorbed South African Breweries; by one estimate AB InBev holds around 87% of the market, with Heineken a distant second near 12% (Flanders Investment & Trade). In Nigeria, three listed brewers — Nigerian Breweries (Heineken), International Breweries (AB InBev) and Guinness Nigeria (historically Diageo) — account for roughly 90% of the formal market (Brauwelt).",
+          "So when a CEO says his company must win with the African consumer, he is describing a marketing contest whose scoreboard is already a foreign-ownership table. Whoever wins the drinker, the brand and the enterprise value are largely booked on a balance sheet somewhere else."
+        ]
+      },
+      {
+        "heading": "Two different problems",
+        "paragraphs": [
+          "The distinction worth holding is between two problems that look like one. Winning the consumer is a brand problem — distribution, price, desirability, the things a great marketer can move. Keeping the value is an ownership problem — who holds the equity that the winning compounds into.",
+          "The majors are superb at the first and, by structure, the owners of the second. That is not villainy; it is the inherited shape of the industry, built over a century of consolidation. But it means that \"a better-run Heineken in Africa\" and \"an Africa that captures more of its beer economy\" are not the same outcome, and can move in opposite directions — a sharper major can take share from a local brewer and send more margin offshore in the same quarter."
+        ]
+      },
+      {
+        "heading": "Where the rand lands",
+        "paragraphs": [
+          "Follow a single rand spent on beer and the ownership question becomes concrete. A meaningful slice stays on the continent by necessity: excise and VAT to the fiscus, the retailer’s and distributor’s margin, the brewery’s wages, local inputs and logistics. Beer is physically heavy and perishable, so it is brewed close to where it is drunk, and that anchors real local activity.",
+          "But the most durable, compounding claims — the brand and its intellectual property, the enterprise value of the operating company, and the dividend stream — sit with the foreign parent. The local economy keeps the consumption and much of the cost base; the owner keeps the equity. Over a decade, it is the equity line that compounds, and it compounds offshore."
+        ]
+      },
+      {
+        "heading": "The premium bet",
+        "paragraphs": [
+          "Heineken’s Q3 tells you where the majors are pushing: premium volume grew 11.5% against 2.4% for mainstream, and the Heineken brand itself grew 9.7% (Heineken). Premiumisation — trading drinkers up to higher-margin international brands — is the central growth play on the continent.",
+          "It is a good business strategy and it does not change the ownership answer; if anything it sharpens it. The premium and global brands African drinkers are being traded up into are the most foreign-owned part of the shelf. The more the market premiumises, the larger the share of its value that attaches to brands headquartered abroad. Premiumisation grows the pie and tilts more of it offshore at the same time."
+        ]
+      },
+      {
+        "heading": "Is there an African-owned path?",
+        "paragraphs": [
+          "The honest answer is: not by out-competing the majors for the mass-market brand. The capital, scale and brand equity required to win the shelf against AB InBev or Heineken are not realistically assembled on the continent today. The African wins are elsewhere in the chain.",
+          "Three are real. First, listed equity: Nigerian Breweries and Guinness Nigeria trade publicly, so African investors and pension funds can own a slice of the brewers operating on their soil — Nigerian Breweries swung back to profit in 2025 after two loss-making years (Brauwelt), and ownership of that recovery can be domestic even when control is not. Second, the value chain the majors do not want to own — distribution, route-to-market, retail, packaging, local inputs — where African companies can build durable, un-exportable positions. Third, craft and independent brewing, small in volume but fully owned, where the brand and the margin both stay home. None of these is \"beating Heineken.\" Each is a way to capture value the majors leave on the table."
+        ]
+      },
+      {
+        "heading": "The volatility tax",
+        "paragraphs": [
+          "The frontier is not a straight line up, and that matters for who can afford to own it. Nigerian beer volumes fell by the mid-teens in 2025 as a weak economy and currency squeezed consumers (Beverage Daily). Africa’s beer growth is real but shock-prone — currency, inflation and household income move the volume more than taste does.",
+          "Volatility is itself a concentration force. A diversified global major can absorb a bad Nigerian year inside a portfolio of fifty markets; a single-market local brewer cannot. So the same volatility that makes the frontier exciting also makes it harder for a purely local owner to survive the downturns — which is part of why the ownership table looks the way it does, and why capturing value through the chain and through equity, rather than through head-to-head brand competition, is the more durable African play."
+        ]
+      },
+      {
+        "heading": "The value-capture read",
+        "paragraphs": [
+          "Our read is that Oliveira named a real gap and framed it one size too small. The majors will spend the next decade getting better at winning the African beer consumer, and they probably will. The question that is not on anyone’s results slide is whether there is any version of that decade where Africa keeps more than the consumption.",
+          "For a brand owner or operator, the lesson is to stop fighting the ownership table and start owning the parts of the chain that are winnable and un-exportable. For an investor, it is that the cleanest African exposure to the beer boom is often the listed brewer, the distributor and the input supplier — not a bet on dislodging a major. And for a policymaker, it is that excise and jobs are the consumption dividend, but equity, listing and local supply are where the compounding lives. The volume is already African. Whether the value becomes more so is a choice about where the continent competes — and the smart money competes in the chain, not on the shelf."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "The premium bet — Heineken Q3 2026 volume growth by segment",
+        "note": "Premium is growing nearly 5× faster than mainstream, and the Heineken brand itself is up ~10%. The growth is in the most foreign-owned part of the shelf. Source: Heineken Q3 2026 trading update (28 Oct 2026).",
+        "data": [
+          {
+            "label": "Premium",
+            "value": 11.5,
+            "display": "+11.5%"
+          },
+          {
+            "label": "Global brands",
+            "value": 9.9,
+            "display": "+9.9%"
+          },
+          {
+            "label": "Heineken®",
+            "value": 9.7,
+            "display": "+9.7%"
+          },
+          {
+            "label": "Total volume",
+            "value": 4.8,
+            "display": "+4.8%"
+          },
+          {
+            "label": "Mainstream",
+            "value": 2.4,
+            "display": "+2.4%"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 3,
+        "title": "South Africa — a one-company market",
+        "note": "The brands most South Africans drink sit inside AB InBev, the Belgian-Brazilian major that absorbed South African Breweries. Heineken is a distant second; craft and imports share the rest. Estimates, 2022 (Flanders Investment & Trade).",
+        "data": [
+          {
+            "label": "AB InBev (SAB)",
+            "value": 87,
+            "display": "~87%",
+            "tag": "foreign-owned"
+          },
+          {
+            "label": "Heineken",
+            "value": 12,
+            "display": "~12%",
+            "tag": "foreign-owned"
+          },
+          {
+            "label": "Craft / imports / other",
+            "value": 1,
+            "display": "~1%"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The African beer board — who owns what you drink",
+        "note": "Each brand scored 0–4 on three questions: does the brand live in Africa; is its parent African; does the margin compound for an African-owned owner. Authorship-of-consumption is near-full across the board; the score collapses toward ownership. MonoKromatik’s value-capture read, not an audited metric.",
+        "cols": [
+          "Brand lives in Africa",
+          "Parent is African",
+          "Margin compounds in Africa"
+        ],
+        "rows": [
+          {
+            "label": "Castle / Carling — AB InBev",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Star / Gulder — Nigerian Breweries (Heineken)",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              1,
+              2
+            ]
+          },
+          {
+            "label": "Tusker — EABL (Diageo)",
+            "tag": "CONTESTED",
+            "cells": [
+              4,
+              1,
+              2
+            ]
+          },
+          {
+            "label": "Castel brands — Castel",
+            "tag": "EXPORTED",
+            "cells": [
+              4,
+              0,
+              1
+            ]
+          },
+          {
+            "label": "Independent / craft — locally owned",
+            "tag": "RETAINED",
+            "cells": [
+              4,
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "Africa is a sliver of the majors' world",
+        "note": "Africa accounts for only ~10–15% of AB InBev and Heineken global volumes — large enough that every major must chase it, small enough to be optimised from headquarters for a global margin. Mid-point shown (Beverage Daily).",
+        "data": [
+          {
+            "label": "Rest of world",
+            "value": 88,
+            "display": "~88%"
+          },
+          {
+            "label": "Africa",
+            "value": 12,
+            "display": "~10–15%",
+            "tag": "the frontier"
+          }
+        ]
+      },
+      {
+        "type": "stack",
+        "after": 5,
+        "title": "Where a rand spent on beer lands",
+        "note": "Relative scale — this report’s value-capture read, not audited totals. The consumption, the excise and much of the cost base stay in Africa; the brand, the enterprise value and the dividend — the compounding claims — sit with the foreign parent.",
+        "data": [
+          {
+            "label": "Brand, IP & enterprise value",
+            "value": 100,
+            "display": "largest / durable",
+            "tag": "offshore"
+          },
+          {
+            "label": "Parent dividends",
+            "value": 55,
+            "display": "to shareholders",
+            "tag": "mostly offshore"
+          },
+          {
+            "label": "Excise & VAT",
+            "value": 48,
+            "display": "to the fiscus",
+            "tag": "local"
+          },
+          {
+            "label": "Brewery wages, inputs & logistics",
+            "value": 42,
+            "display": "operations",
+            "tag": "local"
+          },
+          {
+            "label": "Retail & distribution margin",
+            "value": 30,
+            "display": "trade",
+            "tag": "mostly local"
+          }
+        ]
+      },
+      {
+        "type": "flow",
+        "after": 8,
+        "title": "The value chain of an African beer — and where the claim ends",
+        "note": "Read left to right. The first three stages are substantially African — the drinker, the trade, the plant. The last two — the brand and the parent’s enterprise value — are where the durable value lands, and they are mostly foreign-owned.",
+        "steps": [
+          {
+            "label": "The drinker",
+            "tag": "African",
+            "caption": "The demand is on the continent — young, urbanising, growing."
+          },
+          {
+            "label": "Trade & distribution",
+            "tag": "Mostly local",
+            "caption": "Retailers, distributors and route-to-market — a winnable, un-exportable layer."
+          },
+          {
+            "label": "Brewery operations",
+            "tag": "Local",
+            "caption": "Plants, wages, local inputs and logistics — real activity, close to the drinker."
+          },
+          {
+            "label": "Brand & IP",
+            "tag": "Foreign-owned",
+            "caption": "The compounding asset — owned by the parent, not the market.",
+            "highlight": true
+          },
+          {
+            "label": "Parent enterprise value",
+            "tag": "Offshore",
+            "caption": "Equity and dividends — where a decade of winning actually accrues.",
+            "highlight": true
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the \"volume is African, value is not\" thesis is weakest — and the case that foreign ownership of African beer is closer to right than we allow.",
+      "points": [
+        "Ownership nationality may be the wrong frame. A Nigerian who buys Nigerian Breweries shares, a brewery worker in Lagos, and the fiscus collecting excise all capture real, recurring value regardless of where control sits — \"foreign-owned\" is not the same as \"value extracted\".",
+        "The capital and quality that built the modern African beer industry were largely foreign. Without AB InBev, Heineken, Castel and Diageo, much of the continent would have a smaller, lower-quality, less efficient beer sector — the counterfactual to foreign ownership is not local ownership, it is less industry.",
+        "Listing is the answer the thesis under-weights. Where brewers are publicly traded (Nigeria, Kenya, elsewhere), African pension funds and retail investors can and do own the upside — the cap table is more open than the \"foreign-owned\" label implies.",
+        "Beer is the most local-by-necessity FMCG category there is. Heavy, perishable and brewed near consumption, it anchors more local jobs, tax and supply per rand than almost any imported good — the value leakage is smaller here than in music, film or tech.",
+        "Chasing local ownership of mass-market brands could destroy value, not capture it. A sub-scale local champion that cannot survive a currency shock is worse for the economy than a well-run foreign-owned brewer that keeps the plant open through the downturn."
+      ]
+    }
+  },
+  {
+    "slug": "who-bankrolls-african-sport-the-dependency-map",
+    "title": "Who Bankrolls African Sport — The Dependency Map",
+    "series": "THE VALUE MAP",
+    "status": "live",
+    "access": "premium",
+    "summary": "In a few short years, gambling money has become the primary bankroll of South African sport — from the Betway Premiership down. The cheques are real and they more than doubled what the leagues were earning. But a sports economy with a single, fast-growing, high-risk paymaster is a sports economy that has quietly handed away pricing power and tied its fortunes to a regulator’s mood. This report maps how big the betting bankroll is, which properties depend on it, where the leverage and the risk sit, and what a property that diversified its funders (South African rugby) can teach the ones that didn’t.",
+    "statusNote": "The value-capture read on who funds African sport · the dependency and leverage map",
+    "tags": [
+      "sports betting",
+      "sponsorship",
+      "PSL",
+      "Betway",
+      "sports business",
+      "value capture",
+      "South African sport",
+      "rights",
+      "market read"
+    ],
+    "publishedAt": "2026-10-29T12:30:00.000Z",
+    "readingTime": "11 MIN READ",
+    "keyStats": [
+      {
+        "value": "R900m",
+        "label": "Betway's three-year title deal for the Premiership — more than double the deal it replaced (Business Day; The Citizen)"
+      },
+      {
+        "value": "R2.6bn",
+        "label": "SA betting brands’ advertising spend in 12 months — more than telecoms (Moneyweb)"
+      },
+      {
+        "value": "R1.14tn",
+        "label": "SA online gambling turnover, up ~550% in four years (News24)"
+      },
+      {
+        "value": "R775m",
+        "label": "Hollywoodbets' advertising spend alone — the single biggest sport-adjacent advertiser (Moneyweb)"
+      },
+      {
+        "value": "~R137m → ~R300m/yr",
+        "label": "The league’s sponsorship step-change from DStv to Betway (Business Day; The Citizen)"
+      },
+      {
+        "value": "R739m",
+        "label": "SA Rugby gross sponsorship in 2025 (+51%), now exceeding broadcast income — a property that scaled without a single betting paymaster (SA Rugby / Daily Maverick, 2026)"
+      }
+    ],
+    "exhibit": {
+      "type": "bar",
+      "after": 1,
+      "title": "The step-change — what the top league is worth now",
+      "note": "When Betway took the Premiership title from DStv in 2024, its cheque more than doubled the roughly R137m a year DStv had been paying — about R900m over three years. For clubs, grants and prize money, the money is real. The question is what came attached to it. Sources: Business Day; The Citizen.",
+      "data": [
+        {
+          "label": "DStv (prior title sponsor)",
+          "value": 137,
+          "display": "~R137m/yr",
+          "tag": "broadcaster"
+        },
+        {
+          "label": "Betway (2024– )",
+          "value": 300,
+          "display": "~R300m/yr",
+          "tag": "bookmaker"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "The name on the league",
+        "paragraphs": [
+          "In July 2024, South Africa’s top football division stopped being the DStv Premiership and became the Betway Premiership — a title sponsorship worth about R900 million over three years, picked up when the broadcaster walked away from its deal a year early (Business Day). The betting company’s cheque more than doubled the roughly R137 million a year DStv had been paying (The Citizen).",
+          "That one swap is the whole story of who pays for South African sport right now, in a single line. The money that keeps the lights on is, increasingly, gambling money. This report is about what that means — not as a morality tale, but as a value-capture question. When a single category becomes a property’s primary paymaster, it does not just fund the property. It sets the property’s price, and it imports the category’s risks."
+        ]
+      },
+      {
+        "heading": "The scale of the bankroll",
+        "paragraphs": [
+          "This is not a one-league curiosity. In the twelve months to March 2025, South African betting brands spent about R2.6 billion on advertising — more than the country’s traditional heavyweight sectors, telecommunications included (Moneyweb). Hollywoodbets alone spent R775 million, Betway R342 million, and World Sports Betting around R140 million (Moneyweb). Sportsbooks now outspend every other industry in the market (iGaming Today).",
+          "Behind the spend is a machine that has simply outgrown everything around it. South Africa’s online gambling turnover has reached roughly R1.14 trillion, having grown about 550% in four years (News24). When one sector scales at that rate while others tighten through a hard economy, it does not merely sponsor sport — it becomes the only buyer in the room still able to write the biggest cheque."
+        ]
+      },
+      {
+        "heading": "Why sport said yes",
+        "paragraphs": [
+          "It is easy to moralise about this and miss why it happened. Sport in South Africa is expensive to run, and its traditional funders — banks, telcos, brewers, insurers — have been cautious with discretionary marketing through a hard economy. Betting arrived in exactly that gap, with money, urgency, and a product whose entire business model is built on live sport.",
+          "The fit is genuine. A league needs a title sponsor; a bookmaker needs the fixture list, because every match is an inventory of betting markets. On paper it is the cleanest marriage in the market, and the value transfer is real — the Betway deal more than doubled what the league was earning, which is not nothing for clubs, grants and prize money. If you are running a federation through a downturn, turning that down on principle is a luxury you may not be able to afford."
+        ]
+      },
+      {
+        "heading": "The dependency problem",
+        "paragraphs": [
+          "Here is the other column. A property funded primarily by one category is a property that has handed away leverage. Pricing power in sponsorship comes from competition between buyers — when banks, telcos, brewers and insurers all want the asset, the rights-holder sets the terms. When one category is the only one still writing cheques at scale, that category sets them.",
+          "Dependence is a discount, even when the cheque is large. A league with a single dominant funder is negotiating from weakness at the next renewal, because the counterfactual — walking away — has no other bidder behind it. The R900 million looks like strength; structurally, a concentrated funder base is the opposite. The number went up and the leverage went down at the same time."
+        ]
+      },
+      {
+        "heading": "The risk column",
+        "paragraphs": [
+          "A sports economy funded by gambling also inherits gambling’s risks — regulatory, reputational and social. The same surge filling the sponsorship coffers is unfolding against real economic pressure on households, and what that betting boom is doing to the people inside it is a live public debate, not a settled one (Daily Maverick).",
+          "That exposes the property in a way a diversified funder base does not. A league whose single largest sponsor is a bookmaker is a league whose commercial model now moves with how society, the advertising regulator and the state ultimately decide to treat the gambling industry. Advertising restrictions, affordability rules, or a public backlash do not just dent one sponsor — they threaten the primary bankroll. The property has taken on a risk it does not control and cannot easily hedge."
+        ]
+      },
+      {
+        "heading": "The counter-example — rugby",
+        "paragraphs": [
+          "South African rugby shows the other path. SA Rugby’s gross sponsorship reached R739 million in 2025, up 51%, now exceeding its broadcast income for the first time in the professional era (SA Rugby / Daily Maverick, 2026). The Springbok national-team jersey is funded by a bank and a retailer — FNB and Pick n Pay — not a bookmaker.",
+          "The point is not that rugby is virtuous and football is not. It is that rugby built a diversified, blue-chip funder base, and diversification is leverage. A property with banks, retailers and insurers competing for it keeps its pricing power and its optionality; it is not hostage to one category’s regulatory weather. The Springbok sponsorship also roughly doubled in value — but it did so across multiple competing funders, which is a structurally stronger position than doubling on the back of one."
+        ]
+      },
+      {
+        "heading": "Follow the money",
+        "paragraphs": [
+          "Trace the chain and the dependency becomes concrete. A R1.14-trillion turnover produces gross gaming revenue; a slice of that becomes the largest marketing budget in the country; a slice of that becomes the title sponsorship, the shirt deals, the activation. At every step the property is downstream of the gambling industry’s economics — its growth, its regulation, its public standing.",
+          "When the bankroll is healthy, the property thrives. But downstream is a fragile place to sit. The rights-holder captures a sponsorship cheque today and carries a concentrated, exogenous risk tomorrow — and because it has no competing bidder, it captures less of the value it creates than a property with a crowded auction behind it. The money flows into the stadium; the leverage flows the other way."
+        ]
+      },
+      {
+        "heading": "The value-capture read",
+        "paragraphs": [
+          "Our read is that South African sport has let a single, fast-growing, high-risk category become its primary paymaster before deciding whether it wanted one — and that the cost of that is not moral, it is commercial. Concentration is a discount and an un-hedged risk, dressed up as a record cheque.",
+          "For a rights-holder, the move is to treat funder diversification as a strategic objective, not an afterthought — to use the betting money while actively rebuilding a competing base of banks, brands and insurers, exactly as rugby has. For a sponsor, the opening is the mirror image: in a market where betting has scared off or priced out other categories, a non-betting brand can often acquire premium sport inventory at a relative discount and own a lane with less clutter. And for the league itself, the question to answer before the next renewal is simple and uncomfortable: if the bookmaker walked, who else is bidding? If the honest answer is \"no one\", the property is not as rich as its headline sponsorship suggests — it is as poor as its second-best offer."
+        ]
+      }
+    ],
+    "exhibits": [
+      {
+        "type": "bar",
+        "after": 2,
+        "title": "The betting ad-spend league",
+        "note": "Three bookmakers account for over R1.3bn of advertising in a single year — more than half the total betting industry spend, itself larger than telecommunications. 12 months to March 2025 (Moneyweb).",
+        "data": [
+          {
+            "label": "Hollywoodbets",
+            "value": 775,
+            "display": "R775m"
+          },
+          {
+            "label": "Betway",
+            "value": 342,
+            "display": "R342m"
+          },
+          {
+            "label": "World Sports Betting",
+            "value": 140,
+            "display": "R140m"
+          }
+        ]
+      },
+      {
+        "type": "line",
+        "after": 2,
+        "title": "The machine that outgrew everything — SA online gambling turnover",
+        "unit": "turnover (R, indicative)",
+        "note": "Online gambling turnover reached ~R1.14 trillion, up ~550% over four years (News24). Intermediate years are indicative, derived from the stated growth; the endpoints are the reported figures.",
+        "data": [
+          {
+            "label": "4 yrs ago",
+            "value": 175,
+            "display": "~R175bn"
+          },
+          {
+            "label": "3 yrs ago",
+            "value": 330,
+            "display": "~R330bn"
+          },
+          {
+            "label": "2 yrs ago",
+            "value": 560,
+            "display": "~R560bn"
+          },
+          {
+            "label": "1 yr ago",
+            "value": 850,
+            "display": "~R850bn"
+          },
+          {
+            "label": "Now",
+            "value": 1140,
+            "display": "R1.14tn"
+          }
+        ]
+      },
+      {
+        "type": "matrix",
+        "after": 3,
+        "title": "The dependency board — which properties are hostage to one category",
+        "note": "Each property scored 0–4: is betting its primary funder; how concentrated is its funding in one category; how diversified (and therefore how much leverage) is its funder base. MonoKromatik’s value-capture read, not an audited metric.",
+        "cols": [
+          "Betting is primary funder",
+          "Funding concentrated in one category",
+          "Diversified funder base / leverage"
+        ],
+        "rows": [
+          {
+            "label": "Betway Premiership (PSL)",
+            "tag": "DEPENDENT",
+            "cells": [
+              4,
+              4,
+              1
+            ]
+          },
+          {
+            "label": "SA horse racing",
+            "tag": "DEPENDENT",
+            "cells": [
+              4,
+              4,
+              1
+            ]
+          },
+          {
+            "label": "Springboks / SA Rugby",
+            "tag": "DIVERSIFIED",
+            "cells": [
+              0,
+              1,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "type": "quadrant",
+        "after": 4,
+        "title": "Cheque size versus exposure — the funder map",
+        "note": "Horizontal: how big a cheque the funder category can write for sport today. Vertical: how much exogenous risk (regulatory, reputational, volatility) that funding carries. Betting writes the biggest cheque and carries the most exposure. MonoKromatik’s read.",
+        "xAxis": [
+          "Smaller cheque",
+          "Biggest cheque"
+        ],
+        "yAxis": [
+          "Low exposure / stable",
+          "High exposure / fragile"
+        ],
+        "points": [
+          {
+            "label": "Betting",
+            "x": 92,
+            "y": 85,
+            "highlight": true
+          },
+          {
+            "label": "Banks",
+            "x": 78,
+            "y": 22
+          },
+          {
+            "label": "Brewers / FMCG",
+            "x": 58,
+            "y": 38
+          },
+          {
+            "label": "Telecoms",
+            "x": 62,
+            "y": 28
+          },
+          {
+            "label": "Insurers",
+            "x": 55,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 5,
+        "title": "The diversified path — SA Rugby sponsorship, without a single paymaster",
+        "note": "SA Rugby grew gross sponsorship 51% to R739m in 2025, now exceeding broadcast income — built on a competing base of banks and retailers, not one dominant category. The counter-example to dependency (SA Rugby / Daily Maverick, 2026).",
+        "data": [
+          {
+            "label": "2024",
+            "value": 488,
+            "display": "R488m"
+          },
+          {
+            "label": "2025",
+            "value": 739,
+            "display": "R739m · +51%"
+          }
+        ]
+      }
+    ],
+    "counterCase": {
+      "heading": "THE BEAR CASE",
+      "intro": "Where the \"dangerous dependency\" thesis is weakest — and the case that betting money is a legitimate, durable bankroll South African sport should simply take.",
+      "points": [
+        "The money is real and it is bigger than the alternatives. Betting more than doubled the league’s sponsorship when no other category would. A larger, certain cheque today can fund development, grants and prize money that a diversified-but-smaller base never would have.",
+        "Betting and sport are a structurally durable fit, not a fad. Bookmakers need the fixture list as inventory; the incentive to keep funding sport is permanent in a way a bank’s discretionary marketing is not. The \"high-risk\" funder may actually be the most committed one.",
+        "Regulatory risk can be overstated. Betting is a licensed, taxed, growing industry that governments rely on for revenue; a wholesale advertising ban that collapses the bankroll is politically and fiscally unlikely in the near term.",
+        "Concentration is a stage, not a destiny. Football can take the betting money now and rebuild a diversified base later from a position of strength — using the cash to raise the league’s value and attract the very sponsors that left.",
+        "The \"discount\" is theoretical until it is tested. A property only discovers it has no second bidder at renewal; until then, a dominant funder paying a record price is capturing value today that a more \"balanced\" but poorer property is not."
+      ]
+    }
   }
 ]

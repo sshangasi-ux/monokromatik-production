@@ -243,6 +243,32 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     tier: 'study',
     url: process.env.NEXT_PUBLIC_PAYSTACK_STABLECOINS_URL || 'https://paystack.shop/pay/o418hjog3t',
   },
+  // Two flagship value-map reports (Oct 2026). url:null → membership-gated until a
+  // Paystack product is created and its link set here (or via the env var), same
+  // pattern the other flagships launched on. Each pairs with a live free read.
+  'the-african-beer-value-map': {
+    price: 'R3,500',
+    tier: 'report',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_BEER_VALUE_MAP_URL || null,
+    launchNote: 'Launch price — rising to R7,500',
+    enterprise: {
+      priceFrom: 'from $1,500',
+      blurb: 'Need the underlying data, a category briefing, or citation & license rights? The enterprise edition pairs the full report with the dataset and model behind it.',
+    },
+  },
+  'who-bankrolls-african-sport-the-dependency-map': {
+    price: 'R3,500',
+    tier: 'report',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_BANKROLLS_SPORT_URL || null,
+    launchNote: 'Launch price — rising to R7,500',
+    enterprise: {
+      priceFrom: 'from $1,500',
+      blurb: 'Need the underlying data, a rights-holder briefing, or citation & license rights? The enterprise edition pairs the full report with the dataset and model behind it.',
+    },
+    // Step-DOWN entry rung: the R220 Springbok brand study is the cheaper first
+    // yes on the same African-sport value-capture lens.
+    entry: { slug: 'brand-study-the-springbok-world-champion-under-owned' },
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
