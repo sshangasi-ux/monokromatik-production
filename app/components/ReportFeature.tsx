@@ -159,6 +159,40 @@ export default async function ReportFeature({ report }: { report: Report }) {
       </header>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        {/* Explainer video — the Braam-narrated trailer. Ungated, at the top, so
+            it sells the report even when the analysis is locked. */}
+        {r.videoUrl && (
+          <figure className="mb-14">
+            <div className="aspect-video rounded-lg overflow-hidden bg-mono-charcoal">
+              {r.videoType === 'embed' ? (
+                <iframe
+                  src={
+                    r.videoUrl.includes('vimeo.com')
+                      ? r.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')
+                      : r.videoUrl.replace('watch?v=', 'embed/')
+                  }
+                  title={`${r.title} — explainer`}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <video
+                  src={r.videoUrl}
+                  className="w-full h-full object-contain bg-mono-black"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              )}
+            </div>
+            {r.videoCredit && (
+              <figcaption className="mt-2 text-xs tracking-[0.08em] font-body text-mono-gray">
+                {r.videoCredit}
+              </figcaption>
+            )}
+          </figure>
+        )}
         {/* Exhibits — the weighty visual read. Shown above the body so they
             remain visible (and enticing) even when the analysis is gated. */}
         {(r.keyStats?.length || r.index || r.exhibit) && (
