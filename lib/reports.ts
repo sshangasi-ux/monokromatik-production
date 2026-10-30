@@ -81,6 +81,17 @@ export interface Report {
   statusNote?: string;
   /** Set once status === 'live'. */
   publishedAt?: string;
+  /**
+   * Optional report explainer video — the Braam-narrated value-map explainer,
+   * shown as an ungated "trailer" at the top of the report body (enticing even
+   * when the analysis is gated). `videoType` 'embed' = YouTube/Vimeo iframe,
+   * 'file' = a self-hosted mp4 (e.g. /video/<slug>.mp4) played inline. The URL
+   * can be swapped from a self-hosted file to a YouTube embed with no code change.
+   */
+  videoUrl?: string;
+  videoType?: 'embed' | 'file';
+  /** Credit line under the video, e.g. "Narrated by Braam · MonoKromatik". */
+  videoCredit?: string;
   /** Long-form body — present only once a report is written (status 'live'). */
   sections?: { heading: string; paragraphs: string[] }[];
   /**
