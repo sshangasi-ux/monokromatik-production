@@ -157,6 +157,22 @@ export async function renderReportPdf(slug: string): Promise<Buffer> {
         if (i < ex.steps!.length - 1) { dt('v', ML + 8, y - 6, 8, FB, AMBER); y -= 10; }
         rule();
       });
+    } else if (ex.type === 'donut' && ex.value != null) {
+      need(26);
+      dt(ex.valueLabel || `${ex.value}%`, ML, y - 20, 24, FB, AMBER);
+      y -= 28;
+      if (ex.sublabel) para(ex.sublabel, { font: F, size: 8.5, color: INK, gap: 8 });
+    } else if (ex.type === 'quadrant' && ex.points) {
+      if (ex.xAxis) { dt(`Horizontal: ${ex.xAxis[0]} -> ${ex.xAxis[1]}`, ML, y - 10, 7.5, FI, GREY); y -= 11; }
+      if (ex.yAxis) { dt(`Vertical: ${ex.yAxis[0]} -> ${ex.yAxis[1]}`, ML, y - 10, 7.5, FI, GREY); y -= 11; }
+      rule();
+      for (const p of ex.points) {
+        need(14);
+        dt(p.label + (p.highlight ? '  *' : ''), ML, y - 10, 9, F, p.highlight ? AMBER : INK);
+        const coord = `x ${p.x} / y ${p.y}`;
+        dt(coord, PAGE_W - MR - W(coord, FB, 8), y - 10, 8, FB, GREY);
+        y -= 14; rule();
+      }
     } else if (ex.data) {
       for (const d of ex.data) {
         need(14);

@@ -66,6 +66,31 @@ const REPORTS: ReportAsset[] = [
     blurb: 'The institutional read on who owns African sport: the Authorship → Ownership → Capture framework, a bottom-up value-leakage model, a named deal ledger, scenarios to 2035 and a segmented playbook — sixteen sourced exhibits, chart-led.',
   },
   {
+    slug: 'the-african-beer-value-map',
+    // Oct 2026 flagship value-map. Rendered on-demand from data/reports.json.
+    // TODO: append the Paystack page slug + product id to `match` once the product
+    // is created (as with the other reports) — the slug-word tokens below already
+    // match the product name; none overlap the other reports'.
+    match: ['the-african-beer-value-map', 'african-beer-value-map', 'beer-value-map'],
+    generate: true,
+    filename: 'MonoKromatik-The-African-Beer-Value-Map.pdf',
+    title: 'The African Beer Value Map — Who Wins the Drinker, and Who Keeps the Margin',
+    subject: 'Your report — The African Beer Value Map',
+    blurb: "The value-capture read on African beer: who owns the demand (four majors ≈93%), the premium bet, where a rand spent on beer actually lands, whether premiumisation changes the ownership question, and the realistic ways the continent captures more than the consumption — seven sourced exhibits, with a Bear Case.",
+  },
+  {
+    slug: 'who-bankrolls-african-sport-the-dependency-map',
+    // Oct 2026 flagship value-map. Rendered on-demand from data/reports.json.
+    // TODO: append the Paystack page slug + product id to `match` once created.
+    // Tokens avoid 'african-sport' (used by the flagship above) to prevent a clash.
+    match: ['who-bankrolls-african-sport', 'bankrolls-african-sport', 'dependency-map', 'bankrolls-sport'],
+    generate: true,
+    filename: 'MonoKromatik-Who-Bankrolls-African-Sport.pdf',
+    title: 'Who Bankrolls African Sport — The Dependency Map',
+    subject: 'Your report — Who Bankrolls African Sport (The Dependency Map)',
+    blurb: "The value-capture read on who funds African sport: how big the betting bankroll is, which properties depend on it, where the leverage and the risk sit, and what a property that diversified its funders (SA rugby) teaches the ones that didn't — six sourced exhibits, with a Bear Case.",
+  },
+  {
     slug: 'the-repatriation-playbook-nollywood-2026',
     // Sold via a Paystack PAYMENT PAGE (id 2231668, slug 074g1pqwfw — rotated
     // 2026-10-23), not a Storefront product — so the match tokens include the page slug/id and the
