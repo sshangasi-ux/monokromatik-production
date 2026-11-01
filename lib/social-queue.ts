@@ -7,6 +7,7 @@
 import { getAllArticles } from './articles';
 import { getBreaks } from './breaking-feed';
 import { articleCaption, breakCaption, linkedinArticleCaption, linkedinBreakCaption } from './social-caption';
+import { withUtm } from './utm';
 
 const SITE = 'https://www.monokromatik.com';
 
@@ -31,7 +32,9 @@ function mkArticle(a: ReturnType<typeof getAllArticles>[number], network: Social
     title: a.title,
     cardUrl: `${SITE}/api/social-card?slug=${encodeURIComponent(a.slug)}&format=jpg`,
     caption: network === 'linkedin' ? linkedinArticleCaption(a) : articleCaption(a),
-    link: `${SITE}/article/${a.slug}`,
+    // UTM-tagged at post time so the network attributes cleanly in GA (the OG
+    // card renders regardless of query params). campaign = slug.
+    link: withUtm(`${SITE}/article/${a.slug}`, { source: network, campaign: a.slug }),
   };
 }
 
@@ -65,7 +68,7 @@ export function nextCandidate(
           title: b.title,
           cardUrl: `${SITE}/api/social-card?break=${i}&format=jpg`,
           caption: network === 'linkedin' ? linkedinBreakCaption(b) : breakCaption(b),
-          link: `${SITE}/breaking`,
+          link: withUtm(`${SITE}/breaking`, { source: network, campaign: 'wire' }),
         };
     }
     return null;
