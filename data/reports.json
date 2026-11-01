@@ -17565,7 +17565,7 @@
     "series": "THE VALUE MAP",
     "status": "live",
     "access": "premium",
-    "summary": "In a few short years, gambling money has become the primary bankroll of South African sport — from the Betway Premiership down. The cheques are real and they more than doubled what the leagues were earning. But a sports economy with a single, fast-growing, high-risk paymaster is a sports economy that has quietly handed away pricing power and tied its fortunes to a regulator’s mood. This report maps how big the betting bankroll is, which properties depend on it, where the leverage and the risk sit, and what a property that diversified its funders (South African rugby) can teach the ones that didn’t.",
+    "summary": "In a few short years, gambling money has become the primary bankroll of South African sport — from the Betway Premiership down. The cheques are real and, by the leagues’ own reported figures, well above the deals they replaced. But a sports economy with a single, fast-growing, high-risk paymaster is a sports economy that has quietly handed away pricing power and tied its fortunes to a regulator’s mood. This report maps how big the betting bankroll is, which properties depend on it, where the leverage and the risk sit, and what a property that diversified its funders (South African rugby) can teach the ones that didn’t.",
     "statusNote": "The value-capture read on who funds African sport · the dependency and leverage map",
     "tags": [
       "sports betting",
@@ -17583,7 +17583,7 @@
     "keyStats": [
       {
         "value": "R900m",
-        "label": "Betway's three-year title deal for the Premiership — more than double the deal it replaced (Business Day; The Citizen)"
+        "label": "The PSL's publicly reported value for Betway's three-year Premiership title deal (Business Day) — a figure Betway disputes; the exact value is not public"
       },
       {
         "value": "R2.6bn",
@@ -17598,8 +17598,8 @@
         "label": "Hollywoodbets' advertising spend alone — the single biggest sport-adjacent advertiser (Moneyweb)"
       },
       {
-        "value": "~R137m → ~R300m/yr",
-        "label": "The league’s sponsorship step-change from DStv to Betway (Business Day; The Citizen)"
+        "value": "~R137m/yr",
+        "label": "What DStv paid for the Premiership title before Betway — the betting deal that replaced it was reported at about R900m over three years, a figure Betway disputes (Business Day; The Citizen)"
       },
       {
         "value": "R739m",
@@ -17610,7 +17610,7 @@
       "type": "bar",
       "after": 1,
       "title": "The step-change — what the top league is worth now",
-      "note": "When Betway took the Premiership title from DStv in 2024, its cheque more than doubled the roughly R137m a year DStv had been paying — about R900m over three years. For clubs, grants and prize money, the money is real. The question is what came attached to it. Sources: Business Day; The Citizen.",
+      "note": "The PSL publicly valued the Betway title deal at about R900m over three years (Business Day) — a figure Betway disputes, and the exact value is not public. Either way, betting money replaced the broadcaster at the top of the league, and that shift is what this report reads. Sources: Business Day; The Citizen.",
       "data": [
         {
           "label": "DStv (prior title sponsor)",
@@ -17630,7 +17630,7 @@
       {
         "heading": "The name on the league",
         "paragraphs": [
-          "In July 2024, South Africa’s top football division stopped being the DStv Premiership and became the Betway Premiership — a title sponsorship worth about R900 million over three years, picked up when the broadcaster walked away from its deal a year early (Business Day). The betting company’s cheque more than doubled the roughly R137 million a year DStv had been paying (The Citizen).",
+          "In July 2024, South Africa’s top football division stopped being the DStv Premiership and became the Betway Premiership — in a title deal the PSL publicly valued at about R900 million over three years (Business Day), picked up when the broadcaster walked away from its deal a year early. On the league’s own figure, that more than doubled the roughly R137 million a year DStv had been paying (The Citizen). (The R900m is the PSL’s publicly reported figure, which Betway disputes; the exact contract value is not public.)",
           "That one swap is the whole story of who pays for South African sport right now, in a single line. The money that keeps the lights on is, increasingly, gambling money. This report is about what that means — not as a morality tale, but as a value-capture question. When a single category becomes a property’s primary paymaster, it does not just fund the property. It sets the property’s price, and it imports the category’s risks."
         ]
       },
@@ -17645,14 +17645,14 @@
         "heading": "Why sport said yes",
         "paragraphs": [
           "It is easy to moralise about this and miss why it happened. Sport in South Africa is expensive to run, and its traditional funders — banks, telcos, brewers, insurers — have been cautious with discretionary marketing through a hard economy. Betting arrived in exactly that gap, with money, urgency, and a product whose entire business model is built on live sport.",
-          "The fit is genuine. A league needs a title sponsor; a bookmaker needs the fixture list, because every match is an inventory of betting markets. On paper it is the cleanest marriage in the market, and the value transfer is real — the Betway deal more than doubled what the league was earning, which is not nothing for clubs, grants and prize money. If you are running a federation through a downturn, turning that down on principle is a luxury you may not be able to afford."
+          "The fit is genuine. A league needs a title sponsor; a bookmaker needs the fixture list, because every match is an inventory of betting markets. On paper it is the cleanest marriage in the market, and the value transfer is real — the Betway deal, on the PSL’s reported figure, raised what the league was earning, which is not nothing for clubs, grants and prize money. If you are running a federation through a downturn, turning that down on principle is a luxury you may not be able to afford."
         ]
       },
       {
         "heading": "The dependency problem",
         "paragraphs": [
           "Here is the other column. A property funded primarily by one category is a property that has handed away leverage. Pricing power in sponsorship comes from competition between buyers — when banks, telcos, brewers and insurers all want the asset, the rights-holder sets the terms. When one category is the only one still writing cheques at scale, that category sets them.",
-          "Dependence is a discount, even when the cheque is large. A league with a single dominant funder is negotiating from weakness at the next renewal, because the counterfactual — walking away — has no other bidder behind it. The R900 million looks like strength; structurally, a concentrated funder base is the opposite. The number went up and the leverage went down at the same time."
+          "Dependence is a discount, even when the cheque is large. A league with a single dominant funder is negotiating from weakness at the next renewal, because the counterfactual — walking away — has no other bidder behind it. The headline cheque looks like strength; structurally, a concentrated funder base is the opposite. The number went up and the leverage went down at the same time."
         ]
       },
       {
@@ -17847,7 +17847,7 @@
       "heading": "THE BEAR CASE",
       "intro": "Where the \"dangerous dependency\" thesis is weakest — and the case that betting money is a legitimate, durable bankroll South African sport should simply take.",
       "points": [
-        "The money is real and it is bigger than the alternatives. Betting more than doubled the league’s sponsorship when no other category would. A larger, certain cheque today can fund development, grants and prize money that a diversified-but-smaller base never would have.",
+        "The money is real and it is bigger than the alternatives. Betting delivered a title fee the league could not get elsewhere, when no other category would write the cheque. A larger, certain cheque today can fund development, grants and prize money that a diversified-but-smaller base never would have.",
         "Betting and sport are a structurally durable fit, not a fad. Bookmakers need the fixture list as inventory; the incentive to keep funding sport is permanent in a way a bank’s discretionary marketing is not. The \"high-risk\" funder may actually be the most committed one.",
         "Regulatory risk can be overstated. Betting is a licensed, taxed, growing industry that governments rely on for revenue; a wholesale advertising ban that collapses the bankroll is politically and fiscally unlikely in the near term.",
         "Concentration is a stage, not a destiny. Football can take the betting money now and rebuild a diversified base later from a position of strength — using the cash to raise the league’s value and attract the very sponsors that left.",
