@@ -56,7 +56,7 @@ function ymd(d) { return d.toISOString().slice(0, 10); }
     // (Singapore has repeatedly ranked #1 above South Africa — clearly not real
     // readers). Excluded from the "real" view so we steer by human traffic. Adjust
     // this list if a genuine audience emerges in one of these markets.
-    const EXCLUDE_GEOS = ['Singapore'];
+    const EXCLUDE_GEOS = ['Singapore', 'China', 'Hong Kong'];
     const notGeo = { notExpression: { filter: { fieldName: 'country', inListFilter: { values: EXCLUDE_GEOS } } } };
     console.log(`\n=== GA4 property ${pid} — last 28 days ===`);
     const ov = await rr([], ['totalUsers', 'sessions', 'screenPageViews'], 1);
