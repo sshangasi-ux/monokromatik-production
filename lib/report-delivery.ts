@@ -71,7 +71,7 @@ const REPORTS: ReportAsset[] = [
     // TODO: append the Paystack page slug + product id to `match` once the product
     // is created (as with the other reports) — the slug-word tokens below already
     // match the product name; none overlap the other reports'.
-    match: ['the-african-beer-value-map', 'african-beer-value-map', 'beer-value-map'],
+    match: ['the-african-beer-value-map', 'african-beer-value-map', 'beer-value-map', 'jvkvsqb3er', '2243603'],
     generate: true,
     filename: 'MonoKromatik-The-African-Beer-Value-Map.pdf',
     title: 'The African Beer Value Map — Who Wins the Drinker, and Who Keeps the Margin',
@@ -83,7 +83,7 @@ const REPORTS: ReportAsset[] = [
     // Oct 2026 flagship value-map. Rendered on-demand from data/reports.json.
     // TODO: append the Paystack page slug + product id to `match` once created.
     // Tokens avoid 'african-sport' (used by the flagship above) to prevent a clash.
-    match: ['who-bankrolls-african-sport', 'bankrolls-african-sport', 'dependency-map', 'bankrolls-sport'],
+    match: ['who-bankrolls-african-sport', 'bankrolls-african-sport', 'dependency-map', 'bankrolls-sport', '-zrntm1oes'],
     generate: true,
     filename: 'MonoKromatik-Who-Bankrolls-African-Sport.pdf',
     title: 'Who Bankrolls African Sport — The Dependency Map',
