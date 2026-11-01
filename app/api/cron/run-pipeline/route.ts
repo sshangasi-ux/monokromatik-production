@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { timingSafeEqual } from 'node:crypto';
 import { fetchMonoKromatikStories } from '@/lib/fetch-stories';
 import { preFilterStories, curateStories } from '@/lib/curate-stories';
 import { generateArticles } from '@/lib/generate-article';
@@ -20,8 +21,17 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   // Vercel injects this header on cron requests
-  const auth = request.headers.get('authorization');
-  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
+  // Fail CLOSED (Strix vuln-0002): if CRON_SECRET is missing, refuse everything —
+  // otherwise `Bearer ${undefined}` === "Bearer undefined" and anyone sending that
+  // header could run the paid AI pipeline. Constant-time compare.
+  const secret = process.env.CRON_SECRET;
+  if (!secret || !secret.trim() || secret === 'undefined') {
+    console.error('[cron] CRON_SECRET missing — refusing to run');
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  const auth = Buffer.from(request.headers.get('authorization') ?? '', 'utf8');
+  const want = Buffer.from(`Bearer ${secret}`, 'utf8');
+  if (auth.length !== want.length || !timingSafeEqual(auth, want)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

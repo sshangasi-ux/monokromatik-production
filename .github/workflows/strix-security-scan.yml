@@ -1,17 +1,18 @@
 name: Security scan (Strix)
 
-# Weekly AI pentest of the MonoKromatik source code (white-box only).
+# Monthly AI pentest of the MonoKromatik source code (white-box only).
 # - Scans the repo code, never the live site, so no real Paystack
 #   transactions or production traffic are triggered.
 # - Reuses the existing ANTHROPIC_API_KEY secret; no new secrets needed.
-# - Runs weekly + on demand (Actions tab > "Security scan (Strix)" > Run workflow).
-#   Not on every PR, to keep model spend predictable on the zero-budget model.
+# - Runs monthly + on demand (Actions tab > "Security scan (Strix)" > Run workflow).
+#   Not on every PR or weekly: one quick scan cost ~$15 (Nov 2026), so monthly
+#   keeps spend predictable on the zero-budget model.
 # - The job fails (and GitHub emails you) when Strix finds a vulnerability.
 #   The full report is attached to the run as the "strix-report" artifact.
 
 on:
   schedule:
-    - cron: "17 1 * * 1"   # Mondays 03:17 SAST (01:17 UTC)
+    - cron: "17 1 1 * *"   # 1st of every month, 03:17 SAST (01:17 UTC). A quick scan costs ~$15 in Anthropic credits.
   workflow_dispatch:
     inputs:
       scan_mode:
