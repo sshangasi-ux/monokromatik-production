@@ -13,7 +13,10 @@ export async function GET(request: Request) {
   const code = searchParams.get('code');
   const tokenHash = searchParams.get('token_hash');
   const type = searchParams.get('type') as EmailOtpType | null;
-  const next = searchParams.get('next') ?? '/account';
+  // Only allow same-site paths (Strix vuln-0003): must start with a single "/",
+  // never "//" or "/\" (protocol-relative → another site), else fall back.
+  const rawNext = searchParams.get('next') ?? '/account';
+  const next = /^\/(?![/\\])/.test(rawNext) ? rawNext : '/account';
 
   if (isSupabaseConfigured()) {
     const supabase = await createClient();

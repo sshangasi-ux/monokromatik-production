@@ -207,7 +207,52 @@ async function stampForBuyer(pdf: Buffer, email: string): Promise<Buffer> {
   }
 }
 
-/** Find the paid report a charge payload is buying, or null. */
+/** Metadata keys that hold buyer-typed text (exact keys only, so merchant keys
+ *  like `product_name` are kept). */
+const BUYER_KEY = /^(customer|customer_?name|first_?name|last_?name|full_?name|name|email|e_?mail|email_?address|phone|phone_?number|mobile|company|company_?name|message|note|notes|comment|address)$/i;
+
+/**
+ * Build the string the matchers search, from a Paystack `charge.success` `data`
+ * object, with every BUYER-CONTROLLED field removed first.
+ *
+ * Security (Strix vuln-0004): matching used to run over JSON.stringify(data), which
+ * includes the buyer's email and name. A buyer could pay for the cheapest report
+ * with an email like "amapiano@…" and be sent a different, pricier report. Only
+ * merchant-controlled signals (payment page / product ids, referrer URL, product
+ * metadata) may decide what gets delivered. If none is present the charge falls
+ * through to manual fulfilment — it never guesses.
+ */
+export function productSignal(data: Record<string, unknown>): string {
+  const clean: Record<string, unknown> = { ...data };
+  delete clean.customer; // email, first/last name, phone, customer metadata
+  delete clean.email;
+  delete clean.authorization; // card-holder / account name
+  delete clean.ip_address;
+  delete clean.log;
+  const meta = clean.metadata;
+  if (meta && typeof meta === 'object' && !Array.isArray(meta)) {
+    const m: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(meta as Record<string, unknown>)) {
+      // custom_fields on a Paystack payment page are always the buyer's own
+      // answers (name, company, etc.) — never a product signal. Drop them all.
+      if (k === 'custom_fields') continue;
+      if (!BUYER_KEY.test(k)) {
+        m[k] = v;
+      }
+    }
+    clean.metadata = m;
+  } else if (typeof meta === 'string') {
+    // Paystack sometimes sends metadata as a JSON string — parse and clean it too.
+    try {
+      clean.metadata = JSON.parse(productSignal({ metadata: JSON.parse(meta) })).metadata;
+    } catch {
+      delete clean.metadata;
+    }
+  }
+  return JSON.stringify(clean);
+}
+
+/** Find the paid report a charge payload is buying, or null. Pass productSignal(data). */
 export function matchReport(payloadBlob: string): { slug: string } | null {
   const b = payloadBlob.toLowerCase();
   return REPORTS.find((r) => r.match.some((t) => b.includes(t))) ?? null;

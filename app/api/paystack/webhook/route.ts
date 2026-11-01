@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'node:crypto';
 import { createAdminClient } from '../../../../lib/supabase/admin';
-import { matchReport, deliverReport, matchBundle, deliverBundle, alertUnmatchedPurchase } from '../../../../lib/report-delivery';
+import { matchReport, deliverReport, matchBundle, deliverBundle, alertUnmatchedPurchase, productSignal } from '../../../../lib/report-delivery';
 import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
@@ -26,7 +26,12 @@ export async function POST(req: Request) {
   const raw = await req.text();
   const signature = req.headers.get('x-paystack-signature') ?? '';
   const expected = crypto.createHmac('sha512', secret).update(raw).digest('hex');
-  if (signature !== expected) return NextResponse.json({ error: 'invalid signature' }, { status: 401 });
+  // Constant-time compare (Strix vuln-0005) — lengths must match first.
+  const sigBuf = Buffer.from(signature, 'utf8');
+  const expBuf = Buffer.from(expected, 'utf8');
+  if (sigBuf.length !== expBuf.length || !crypto.timingSafeEqual(sigBuf, expBuf)) {
+    return NextResponse.json({ error: 'invalid signature' }, { status: 401 });
+  }
 
   let event: { event?: string; data?: Record<string, unknown> };
   try {
@@ -53,7 +58,10 @@ export async function POST(req: Request) {
   if (type === 'charge.success' && !planCode) {
     // A BUNDLE is matched first (its product id/name tokens are distinct from any
     // single report) and delivers every member report's PDF on one purchase.
-    const bundle = matchBundle(JSON.stringify(data));
+    // Match ONLY on merchant-controlled fields — never the buyer's email/name
+    // (Strix vuln-0004: a crafted email could unlock a pricier report).
+    const signal = productSignal(data);
+    const bundle = matchBundle(signal);
     if (bundle) {
       try {
         await deliverBundle(email, admin, bundle.slug);
@@ -79,7 +87,7 @@ export async function POST(req: Request) {
 
     // Otherwise match a single paid report by a positive token in the payload
     // (product name/slug or Paystack product id) — never by amount (share R220).
-    const matched = matchReport(JSON.stringify(data));
+    const matched = matchReport(signal);
     const meta = (data.metadata ?? {}) as Record<string, unknown>;
     console.log('[paystack] one-off charge.success', {
       amount: data.amount,

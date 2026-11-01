@@ -20,12 +20,64 @@ ABSOLUTE RULES:
 - If the sources don't answer the question, say plainly that MonoKromatik hasn't covered it yet, and point to the nearest relevant source if there is one. Do not guess or generalise from training data.
 - Cite the sources you used by their exact title. Keep it tight and analytical, in MonoKromatik's Brand-Read voice: strategic, evidence-led, African-authored. No hype.`;
 
+// ── Abuse guard (Strix vuln-0001) ────────────────────────────────────────────
+// This endpoint is public and every call spends Anthropic credits, so cap it.
+// Zero-cost, in-memory limiter: per visitor (IP) and a ceiling per warm server
+// instance. Serverless instances don't share memory, so this is friction, not a
+// hard global cap — the hard cap is the monthly spend limit in the Anthropic
+// console. Together they stop a script draining the account.
+const MAX_QUESTION_CHARS = 500;
+const PER_IP_LIMIT = 8; // questions per visitor per window
+const INSTANCE_LIMIT = 120; // questions per server instance per window
+const WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const hits = new Map<string, number[]>();
+let instanceHits: number[] = [];
+
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const cutoff = now - WINDOW_MS;
+  instanceHits = instanceHits.filter((t) => t > cutoff);
+  const mine = (hits.get(ip) ?? []).filter((t) => t > cutoff);
+  if (mine.length >= PER_IP_LIMIT || instanceHits.length >= INSTANCE_LIMIT) {
+    hits.set(ip, mine);
+    return true;
+  }
+  mine.push(now);
+  instanceHits.push(now);
+  hits.set(ip, mine);
+  if (hits.size > 5000) {
+    // Keep memory bounded: drop visitors with no recent questions.
+    for (const [k, v] of hits) if (!v.some((t) => t > cutoff)) hits.delete(k);
+  }
+  return false;
+}
+
+function clientIp(req: Request): string {
+  return (
+    req.headers.get('x-real-ip') ||
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    'unknown'
+  );
+}
+
 export async function POST(req: Request) {
   try {
     const body = (await req.json().catch(() => ({}))) as { question?: unknown };
     const question = typeof body.question === 'string' ? body.question.trim() : '';
     if (!question) {
       return Response.json({ error: 'Ask a question.' }, { status: 400 });
+    }
+    if (question.length > MAX_QUESTION_CHARS) {
+      return Response.json(
+        { error: `Please keep your question under ${MAX_QUESTION_CHARS} characters.` },
+        { status: 400 }
+      );
+    }
+    if (rateLimited(clientIp(req))) {
+      return Response.json(
+        { error: "You've asked a lot of questions in a short time — please try again in a few minutes." },
+        { status: 429, headers: { 'Retry-After': String(WINDOW_MS / 1000) } }
+      );
     }
     if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY.startsWith('your_')) {
       return Response.json({ error: 'Ask MonoKromatik is not configured (no API key).' }, { status: 503 });
@@ -62,9 +114,8 @@ export async function POST(req: Request) {
       sources: top.map((d) => ({ title: d.title, url: d.url, type: d.type })),
     });
   } catch (err) {
-    return Response.json(
-      { error: err instanceof Error ? err.message : 'Ask MonoKromatik failed.' },
-      { status: 500 }
-    );
+    // Log the detail server-side; never echo internal/provider errors to the public.
+    console.error('[ask] failed', err);
+    return Response.json({ error: 'Ask MonoKromatik is unavailable right now. Please try again shortly.' }, { status: 500 });
   }
 }
