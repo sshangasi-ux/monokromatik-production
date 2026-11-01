@@ -1,0 +1,61 @@
+name: Security scan (Strix)
+
+# Weekly AI pentest of the MonoKromatik source code (white-box only).
+# - Scans the repo code, never the live site, so no real Paystack
+#   transactions or production traffic are triggered.
+# - Reuses the existing ANTHROPIC_API_KEY secret; no new secrets needed.
+# - Runs weekly + on demand (Actions tab > "Security scan (Strix)" > Run workflow).
+#   Not on every PR, to keep model spend predictable on the zero-budget model.
+# - The job fails (and GitHub emails you) when Strix finds a vulnerability.
+#   The full report is attached to the run as the "strix-report" artifact.
+
+on:
+  schedule:
+    - cron: "17 1 * * 1"   # Mondays 03:17 SAST (01:17 UTC)
+  workflow_dispatch:
+    inputs:
+      scan_mode:
+        description: "quick (cheaper) or standard (deeper)"
+        required: false
+        default: "quick"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: strix-scan
+  cancel-in-progress: false
+
+jobs:
+  strix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Strix
+        run: pipx install strix-agent
+
+      - name: Run Strix (white-box source scan)
+        env:
+          STRIX_LLM: anthropic/claude-sonnet-4-6
+          LLM_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: strix -n -t ./ --scan-mode "${{ github.event.inputs.scan_mode || 'quick' }}"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: strix-report
+          path: |
+            strix_runs/
+            agent_runs/
+          if-no-files-found: ignore
