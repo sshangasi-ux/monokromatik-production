@@ -119,6 +119,17 @@ export default function RootLayout({
         <main id="main-content" className="flex-1 flex flex-col">{children}</main>
         <SiteFooter />
         <RegistrationGate />
+        {/* Bot guard — set GA's native `ga-disable-<id>` flag before gtag loads so
+            headless/automation traffic sends NO hits (pageviews or events). Cuts the
+            datacenter-bot pollution (Singapore/China) that was ~43% of raw GA.
+            Conservative signals only (webdriver, known bot UAs, no languages, zero
+            window) to avoid suppressing real readers. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var w=window,n=navigator,u=n.userAgent||'';var bot=n.webdriver===true||/bot|crawl|spider|headless|HeadlessChrome|puppeteer|playwright|phantom|slurp|lighthouse|dataprovider|python-requests|Go-http-client|axios|curl|wget/i.test(u)||!n.languages||n.languages.length===0||(w.outerWidth===0&&w.outerHeight===0);if(bot){w['ga-disable-G-9F5R5FM8NS']=true;}}catch(e){}})();",
+          }}
+        />
         <GoogleAnalytics gaId="G-9F5R5FM8NS" />
         {/* Vercel Web Analytics — first-party, cookie-free, route-level.
             Complements GA4; powers the Vercel dashboard Analytics tab.
