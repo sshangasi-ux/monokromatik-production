@@ -249,7 +249,7 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'the-african-beer-value-map': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_BEER_VALUE_MAP_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_BEER_VALUE_MAP_URL || 'https://paystack.shop/pay/jvkvsqb3er',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',
@@ -259,7 +259,7 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   'who-bankrolls-african-sport-the-dependency-map': {
     price: 'R3,500',
     tier: 'report',
-    url: process.env.NEXT_PUBLIC_PAYSTACK_BANKROLLS_SPORT_URL || null,
+    url: process.env.NEXT_PUBLIC_PAYSTACK_BANKROLLS_SPORT_URL || 'https://paystack.shop/pay/-zrntm1oes',
     launchNote: 'Launch price — rising to R7,500',
     enterprise: {
       priceFrom: 'from $1,500',
