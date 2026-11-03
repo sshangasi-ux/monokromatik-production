@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-09-27T01:22:54.647Z",
+  "updatedAt": "2026-11-03T10:45:38.368Z",
   "breaks": [
+    {
+      "title": "Legendary Musician Youssou N’Dour Lights Up the Stage at Goalkeepers Dakar 2026 | Watch Highlights",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/11/youssou-ndour-performance-at-goalkeepers-dakar-2026/",
+      "pubDate": "Tue, 03 Nov 2026 08:18:44 +0000",
+      "importance": 4,
+      "why": "Youssou N'Dour live performance at Goalkeepers Dakar 2026; iconic Senegalese musician",
+      "detectedAt": "2026-11-03T10:45:38.368Z"
+    },
     {
       "title": "Nollywood’s Black Market Sets Guinness World Record With 51,000+ Moviegoers in Lagos",
       "source": "BellaNaija",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: won · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-08-11T22:59:14.708Z"
-    },
-    {
-      "title": "AKSA Energy deal: Ghana must conduct own investigations despite US conviction – Osae-Kwapong",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/aksa-energy-deal-ghana-must-conduct-own-investigations-despite-us-conviction-osae-kwapong/",
-      "pubDate": "Mon, 10 Aug 2026 18:58:36 +0000",
-      "importance": 4,
-      "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-10T20:58:38.357Z"
     }
   ]
 }
