@@ -310,10 +310,10 @@ const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
     process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_SPORT_URL || 'https://www.paypal.com/ncp/payment/WPSEQ28XKARZN',
   'the-repatriation-playbook-nollywood-2026':
     process.env.NEXT_PUBLIC_PAYPAL_REPATRIATION_URL || 'https://www.paypal.com/ncp/payment/AGNCZN8724YVL',
-  // PENDING — links to be created (PayPal session timed out mid-batch). Until set,
-  // checkoutRails() falls back to FNB + Paystack for these two — no dead button.
-  'the-african-beer-value-map': process.env.NEXT_PUBLIC_PAYPAL_BEER_VALUE_MAP_URL || undefined,
-  'who-bankrolls-african-sport-the-dependency-map': process.env.NEXT_PUBLIC_PAYPAL_BANKROLLS_SPORT_URL || undefined,
+  'the-african-beer-value-map':
+    process.env.NEXT_PUBLIC_PAYPAL_BEER_VALUE_MAP_URL || 'https://www.paypal.com/ncp/payment/S5U2DSZFTNZPL',
+  'who-bankrolls-african-sport-the-dependency-map':
+    process.env.NEXT_PUBLIC_PAYPAL_BANKROLLS_SPORT_URL || 'https://www.paypal.com/ncp/payment/GX6KKS23ZQ94N',
 };
 
 /** The per-SKU PayPal payment-link URL, or null when none is set yet. */
