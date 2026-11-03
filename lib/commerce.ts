@@ -286,11 +286,34 @@ export function reportCheckoutUrl(slug?: string): string | null {
 // sold, same as the Paystack pages): the created payment-link URL is the code
 // default; a per-SKU NEXT_PUBLIC_PAYPAL_<SKU>_URL env var still overrides.
 const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
+  // R220 studies → $12 USD payment links (THE MONOKROMATIC NETWORK PayPal
+  // Business account). Each link's code is the report's 1:1 identity — the webhook
+  // matches on it (paypalSlugFromBlob). Code default, per-SKU env var can override.
   'value-capture-scorecard-2026':
     process.env.NEXT_PUBLIC_PAYPAL_SCORECARD_URL || 'https://www.paypal.com/ncp/payment/LPS44HBVMST5C',
-  // Remaining SKUs: add each report's PayPal payment-link URL here (or via its
-  // env var) as the links are created. Until a SKU has one, checkoutRails() falls
-  // back to FNB + Paystack for it — no dead button.
+  'who-captures-amapiano-value-capture-report':
+    process.env.NEXT_PUBLIC_PAYPAL_AMAPIANO_URL || 'https://www.paypal.com/ncp/payment/W2MQQAPJBBVML',
+  'brand-study-the-springbok-world-champion-under-owned':
+    process.env.NEXT_PUBLIC_PAYPAL_SPRINGBOK_URL || 'https://www.paypal.com/ncp/payment/JBGXQJE75A2TC',
+  'loeries-2026-the-creative-value-ledger':
+    process.env.NEXT_PUBLIC_PAYPAL_LOERIES_URL || 'https://www.paypal.com/ncp/payment/K9ZUZFDWWU678',
+  'cannes-lions-2026-the-africa-value-ledger':
+    process.env.NEXT_PUBLIC_PAYPAL_CANNES_URL || 'https://www.paypal.com/ncp/payment/CWEPP2BBP3CRL',
+  'the-founders-ledger-sell-up-or-open-out':
+    process.env.NEXT_PUBLIC_PAYPAL_FOUNDERS_LEDGER_URL || 'https://www.paypal.com/ncp/payment/6YL5Q3E9ER3TY',
+  'the-megabrand-exit-ledger':
+    process.env.NEXT_PUBLIC_PAYPAL_MEGABRAND_EXIT_URL || 'https://www.paypal.com/ncp/payment/V6T2XCRY6XR2L',
+  'will-it-land-african-stablecoins':
+    process.env.NEXT_PUBLIC_PAYPAL_STABLECOINS_URL || 'https://www.paypal.com/ncp/payment/QKHWK7L4BZ6ZJ',
+  // R3,500 flagships → $195 USD payment links.
+  'whos-buying-african-sport-2026':
+    process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_SPORT_URL || 'https://www.paypal.com/ncp/payment/WPSEQ28XKARZN',
+  'the-repatriation-playbook-nollywood-2026':
+    process.env.NEXT_PUBLIC_PAYPAL_REPATRIATION_URL || 'https://www.paypal.com/ncp/payment/AGNCZN8724YVL',
+  'the-african-beer-value-map':
+    process.env.NEXT_PUBLIC_PAYPAL_BEER_VALUE_MAP_URL || 'https://www.paypal.com/ncp/payment/S5U2DSZFTNZPL',
+  'who-bankrolls-african-sport-the-dependency-map':
+    process.env.NEXT_PUBLIC_PAYPAL_BANKROLLS_SPORT_URL || 'https://www.paypal.com/ncp/payment/GX6KKS23ZQ94N',
 };
 
 /** The per-SKU PayPal payment-link URL, or null when none is set yet. */
