@@ -281,7 +281,7 @@ export async function alertUnmatchedPurchase(info: {
     const to = process.env.LEAD_NOTIFY_TO || process.env.REPORT_DELIVERY_REPLY_TO || 'editor@monokromatik.com';
     const amt = info.amount != null ? `${Number(info.amount) / 100} ${String(info.currency || 'ZAR')}` : '?';
     const text = [
-      'A Paystack payment SUCCEEDED but did not match any report or bundle.',
+      'A payment SUCCEEDED but did not match any report or bundle.',
       'The buyer has paid and will NOT receive anything automatically — fulfil this manually.',
       '',
       `Buyer:         ${info.email ?? '—'}`,
