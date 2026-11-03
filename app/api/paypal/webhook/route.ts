@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createAdminClient } from '../../../../lib/supabase/admin';
 import { matchReport, deliverReport, matchBundle, deliverBundle, alertUnmatchedPurchase } from '../../../../lib/report-delivery';
+import { paypalSlugFromBlob } from '../../../../lib/commerce';
 import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
@@ -28,6 +29,24 @@ async function accessToken(id: string, secret: string): Promise<string | null> {
   if (!res.ok) return null;
   const j = (await res.json()) as { access_token?: string };
   return j.access_token ?? null;
+}
+
+// Fetch the full order behind a capture. An NCP payment-link CAPTURE payload is
+// sparse — it often omits the item name/description that identifies the report —
+// but the ORDER carries purchase_units[].items[].name, description, custom_id and
+// invoice_id. Folding the order into the match blob is what makes PayPal auto-
+// delivery reliable. Best-effort: on any failure we fall back to the capture blob
+// alone (and ultimately to the manual-fulfilment alert), never throwing.
+async function fetchOrder(token: string, orderId: string): Promise<unknown | null> {
+  try {
+    const res = await fetch(`${API_BASE}/v2/checkout/orders/${encodeURIComponent(orderId)}`, {
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
 
 // Verify the event with PayPal rather than trusting the POST — the only guard that
@@ -104,13 +123,23 @@ export async function POST(req: Request) {
   if (type !== 'PAYMENT.CAPTURE.COMPLETED') return NextResponse.json({ ok: true, ignored: type });
 
   const resource = (event.resource ?? {}) as Record<string, unknown>;
-  const email = findEmail(resource);
 
-  // Match ONLY on merchant-controlled fields (item name / custom_id / invoice_id /
-  // description) — never the buyer's email or amount (reports share a price). We
-  // also hyphen-normalise the blob so a PayPal item name like "The Value-Capture
-  // Scorecard 2026" hits the registry's hyphenated slug tokens.
-  const rawBlob = JSON.stringify(resource).toLowerCase();
+  // Pull the full order behind the capture to widen the match signal (the capture
+  // alone is sparse). order_id lives under supplementary_data.related_ids.
+  const relatedIds = ((resource.supplementary_data as Record<string, unknown> | undefined)?.related_ids ??
+    {}) as Record<string, unknown>;
+  const orderId = relatedIds.order_id ? String(relatedIds.order_id) : null;
+  const order = orderId ? await fetchOrder(token, orderId) : null;
+
+  // Buyer email can sit on the capture OR only on the order (payer.email_address).
+  const email = findEmail(resource) ?? findEmail(order);
+
+  // Match ONLY on merchant-controlled fields (payment-link code / item name /
+  // custom_id / invoice_id / description) — never the buyer's email or the amount
+  // (reports share a price). Fold in the order, and hyphen-normalise the blob so a
+  // PayPal item name like "The Value-Capture Scorecard 2026" hits the registry's
+  // hyphenated slug tokens.
+  const rawBlob = (JSON.stringify(resource) + ' ' + JSON.stringify(order ?? {})).toLowerCase();
   const normBlob = rawBlob.replace(/[^a-z0-9]+/g, '-');
   const signal = `${rawBlob} ${normBlob}`;
 
@@ -118,6 +147,30 @@ export async function POST(req: Request) {
   const currency = amount.currency_code ? String(amount.currency_code) : 'USD';
   const value = amount.value ? Number(amount.value) : null;
   const reference = resource.id ? String(resource.id) : null;
+
+  // Deterministic first pass: each report has its own dedicated PayPal link, so if
+  // the link CODE appears anywhere in the capture or order, that pins the report
+  // 1:1 — safer than any token heuristic. (Bundles have no PayPal link yet.)
+  const linkSlug = paypalSlugFromBlob(signal);
+  if (linkSlug) {
+    if (email) {
+      try {
+        await deliverReport(email, admin, linkSlug);
+      } catch (err) {
+        console.error('[paypal] delivery error (link-code)', err);
+      }
+    }
+    try {
+      await trackPurchase({ slug: linkSlug, email: email ?? '', amountMinor: value != null ? Math.round(value * 100) : null, currency, reference });
+    } catch (err) {
+      console.error('[paypal] ga purchase error (link-code)', err);
+    }
+    if (!email) {
+      await alertUnmatchedPurchase({ email: null, amount: value != null ? Math.round(value * 100) : null, currency, reference, metaKeys: ['paypal', 'link-code', linkSlug, 'no-email'] });
+    }
+    console.log('[paypal] capture.completed via link-code', { slug: linkSlug, reference, hasEmail: !!email });
+    return NextResponse.json({ ok: true, delivered: email ? linkSlug : null });
+  }
 
   const bundle = matchBundle(signal);
   if (bundle) {
@@ -156,7 +209,16 @@ export async function POST(req: Request) {
   }
 
   // Paid but we can't safely auto-fulfil (no match, or no email to send to). Never
-  // guess — alert the team to fulfil manually and to refine the match tokens.
+  // guess — alert the team to fulfil manually and to refine the match tokens. Log
+  // the order shape so the first real sale, if it ever lands here, tells us which
+  // field carried the report identity (same refine-from-first-sale loop the
+  // Paystack payment-page tokens use).
+  console.log('[paypal] UNMATCHED capture — payload shape', {
+    reference,
+    resourceKeys: Object.keys(resource),
+    orderKeys: order && typeof order === 'object' ? Object.keys(order as Record<string, unknown>) : null,
+    purchaseUnits: (order as { purchase_units?: unknown })?.purchase_units ?? null,
+  });
   await alertUnmatchedPurchase({
     email,
     amount: value != null ? Math.round(value * 100) : null,

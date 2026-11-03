@@ -300,6 +300,26 @@ export function reportPaypalUrl(slug?: string): string | null {
   return url && /^https?:\/\//.test(url) ? url : null;
 }
 
+/**
+ * Identify the report from a PayPal capture/order payload by its payment-link
+ * CODE — the last path segment of the NCP link (e.g. `LPS44HBVMST5C`). Each report
+ * has its own dedicated link, so the code is a 1:1, fully merchant-controlled
+ * signal — the safest possible match (never the buyer's email or the amount, which
+ * studies share). The webhook folds the full order into the blob first, so if the
+ * link code appears anywhere in the capture or order, this pins the report
+ * deterministically. Returns the report slug, or null. Used server-side only.
+ */
+export function paypalSlugFromBlob(blob: string): string | null {
+  const b = blob.toLowerCase();
+  for (const [slug, url] of Object.entries(PAYPAL_REPORT_URLS)) {
+    if (!url) continue;
+    const code = url.split('?')[0].split('/').filter(Boolean).pop()?.toLowerCase();
+    // Guard against a too-short/empty code matching spuriously.
+    if (code && code.length >= 6 && b.includes(code)) return slug;
+  }
+  return null;
+}
+
 /** The Onyx Co (Pty) Ltd FNB account — the no-fee SA bank-transfer rail. Shown as
  *  instructions (not a link): buyers EFT directly and reference their name, then
  *  the report is sent on confirmation. */
