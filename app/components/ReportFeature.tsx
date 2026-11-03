@@ -5,9 +5,10 @@ import ReadingProgress from './ReadingProgress';
 import { StatStrip, IndexScorecard, ReportExhibit } from './dataviz/Charts';
 import { isLocked, getReportBySlug, type Report } from '../../lib/reports';
 import { isMember } from '../../lib/entitlements';
-import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper, reportTier } from '../../lib/commerce';
+import { membershipsLive, membershipUnlocks, reportCheckoutUrl, reportPaypalUrl, reportPrice, reportLaunchNote, reportEnterprise, reportEntry, reportDeeper, reportTier } from '../../lib/commerce';
 import { isFlagshipGated } from '../../lib/gating';
 import FlagshipGate from './FlagshipGate';
+import CheckoutRails from './CheckoutRails';
 import BuyButton from './BuyButton';
 import InternationalCheckout from './InternationalCheckout';
 import ReportView from './ReportView';
@@ -132,18 +133,16 @@ export default async function ReportFeature({ report }: { report: Report }) {
           {/* Early value + price anchor — so a mobile reader sees the offer near
               the top instead of scrolling the full standfirst first. */}
           {locked && oneOffUrl && (
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <BuyButton
-                href={oneOffUrl}
+            <div className="mt-8">
+              <CheckoutRails
+                compact
+                align="start"
                 slug={r.slug}
+                title={r.title}
                 price={reportPrice(r.slug)}
-                className="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors"
-              >
-                BUY THIS REPORT — {reportPrice(r.slug)} <ArrowRight size={16} />
-              </BuyButton>
-              <span className="text-[11px] tracking-[0.06em] font-body text-mono-gray">
-                One-time · secure Paystack checkout · delivered as a PDF
-              </span>
+                theme="dark"
+                primaryClassName="inline-flex items-center gap-2 bg-mono-amber text-mono-black px-6 py-3.5 font-display font-bold hover:bg-mono-amber/90 transition-colors"
+              />
             </div>
           )}
           {locked && oneOffUrl && (
@@ -351,9 +350,13 @@ export default async function ReportFeature({ report }: { report: Report }) {
                 <p className="font-body text-mono-charcoal max-w-md mx-auto">{blurb}</p>
                 <div className="mt-6 flex flex-col items-center gap-3">
                   {oneOff && (
-                    <BuyButton href={oneOff} slug={r.slug} price={price} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-mono-amber text-mono-black px-8 py-4 font-display font-bold text-base hover:bg-mono-amber/90 transition-colors">
-                      BUY THIS REPORT{price ? ` — ${price}` : ''} <ArrowRight size={18} />
-                    </BuyButton>
+                    <CheckoutRails
+                      slug={r.slug}
+                      title={r.title}
+                      price={price}
+                      theme="light"
+                      primaryClassName="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-mono-amber text-mono-black px-8 py-4 font-display font-bold text-base hover:bg-mono-amber/90 transition-colors"
+                    />
                   )}
                   {/* Co-primary step-DOWN: a R3,500 report is a big first ask for
                       cold traffic, so the cheaper first yes sits right in the
@@ -375,7 +378,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
                 </div>
                 {oneOff && (
                   <p className="mt-4 text-[11px] tracking-[0.04em] text-mono-gray font-body">
-                    One-time purchase · secure checkout via Paystack
+                    One-time purchase · delivered as a PDF to your email
                     {launchNote ? ` · ${launchNote}` : ''}
                   </p>
                 )}
@@ -498,7 +501,7 @@ export default async function ReportFeature({ report }: { report: Report }) {
             </div>
           </div>
           <BuyButton
-            href={oneOffUrl}
+            href={reportPaypalUrl(r.slug) ?? oneOffUrl}
             slug={r.slug}
             price={reportPrice(r.slug)}
             className="shrink-0 inline-flex items-center gap-1.5 bg-mono-amber text-mono-black px-5 py-2.5 font-display font-bold text-sm"

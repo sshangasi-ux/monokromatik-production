@@ -278,6 +278,66 @@ export function reportCheckoutUrl(slug?: string): string | null {
   return url && /^https?:\/\//.test(url) ? url : null;
 }
 
+// ── Multi-rail checkout: PayPal primary → FNB bank transfer → Paystack backup ──
+// International cards are the R0-revenue blocker (Paystack international is off),
+// so PayPal — which takes cards worldwide with no PayPal account needed — is the
+// PRIMARY rail, FNB EFT the no-fee SA alternative, and the Paystack page the
+// last-resort backup. PayPal links are per-SKU (so delivery can tell which report
+// sold, same as the Paystack pages): the created payment-link URL is the code
+// default; a per-SKU NEXT_PUBLIC_PAYPAL_<SKU>_URL env var still overrides.
+const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
+  'value-capture-scorecard-2026':
+    process.env.NEXT_PUBLIC_PAYPAL_SCORECARD_URL || 'https://www.paypal.com/ncp/payment/LPS44HBVMST5C',
+  // Remaining SKUs: add each report's PayPal payment-link URL here (or via its
+  // env var) as the links are created. Until a SKU has one, checkoutRails() falls
+  // back to FNB + Paystack for it — no dead button.
+};
+
+/** The per-SKU PayPal payment-link URL, or null when none is set yet. */
+export function reportPaypalUrl(slug?: string): string | null {
+  const key = slug || REPORT_CHECKOUT_SLUG;
+  const url = PAYPAL_REPORT_URLS[key];
+  return url && /^https?:\/\//.test(url) ? url : null;
+}
+
+/** The Onyx Co (Pty) Ltd FNB account — the no-fee SA bank-transfer rail. Shown as
+ *  instructions (not a link): buyers EFT directly and reference their name, then
+ *  the report is sent on confirmation. */
+export const FNB_ACCOUNT = {
+  holder: 'The Onyx Co (Pty) Ltd',
+  bank: 'First National Bank (FNB)',
+  account: '63025529794',
+  branch: '210835',
+  swift: 'FIRNZAJJ',
+} as const;
+
+export type CheckoutProvider = 'paypal' | 'fnb' | 'paystack';
+export interface CheckoutRail {
+  provider: CheckoutProvider;
+  /** Hosted checkout URL (paypal/paystack); null for FNB (rendered as details). */
+  url: string | null;
+  label: string;
+  note: string;
+}
+
+/**
+ * The ordered payment rails for a report's BUY CTA: PayPal primary, FNB bank
+ * transfer secondary, Paystack last backup. PayPal/Paystack rails appear only when
+ * a URL exists for this SKU; FNB is always available (manual EFT). The first rail
+ * is the primary button; the rest render as alternatives.
+ */
+export function checkoutRails(slug?: string): CheckoutRail[] {
+  const rails: CheckoutRail[] = [];
+  const paypal = reportPaypalUrl(slug);
+  if (paypal)
+    rails.push({ provider: 'paypal', url: paypal, label: 'Pay by card / PayPal', note: 'Cards worldwide — no PayPal account needed' });
+  rails.push({ provider: 'fnb', url: null, label: 'Pay by SA bank transfer', note: 'FNB EFT — no card fees' });
+  const paystack = reportCheckoutUrl(slug);
+  if (paystack)
+    rails.push({ provider: 'paystack', url: paystack, label: 'Pay by SA card (Paystack)', note: 'Local cards & instant EFT' });
+  return rails;
+}
+
 /** Display price for a report's BUY CTA (falls back to the default SKU price). */
 export function reportPrice(slug?: string): string {
   const key = slug || REPORT_CHECKOUT_SLUG;
