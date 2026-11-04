@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-04T06:07:27.856Z",
+  "updatedAt": "2026-11-04T21:16:34.972Z",
   "breaks": [
+    {
+      "title": "FIFA U-17 WWC: Flamingos Defeat Brazil 3-1 To Reach First-Ever Final",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/fifa-u-17-wwc-flamingos-defeat-brazil-3-1-to-reach-first-ever-final/",
+      "pubDate": "Wed, 04 Nov 2026 20:01:43 +0000",
+      "importance": 5,
+      "why": "Nigeria Flamingos reach first-ever U-17 WWC final with major victory over Brazil",
+      "detectedAt": "2026-11-04T21:16:34.972Z"
+    },
+    {
+      "title": "2026 U-17 WWC: Bashiru Wins Player Of The Match In Flamingos’ Dominant Win Over Brazil",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/2026-u-17-wwc-bashiru-wins-player-of-the-match-in-flamingos-outstanding-victory-over-brazil/",
+      "pubDate": "Wed, 04 Nov 2026 20:51:34 +0000",
+      "importance": 4,
+      "why": "Nigeria's Flamingos (U-17 WWC) player award in major tournament",
+      "detectedAt": "2026-11-04T21:16:34.972Z"
+    },
     {
       "title": "“The Legacy Continues”: 2Baba Announces New Album ‘Oldest Young Man’",
       "source": "BellaNaija",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: investment · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-13T15:11:59.007Z"
-    },
-    {
-      "title": "Egypt's Hassan joins Celtic on initial four-year deal",
-      "source": "BBC Sport Africa",
-      "category": "sports",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c980kg4xnxeo?at_medium=RSS&at_campaign=rss",
-      "pubDate": "Wed, 12 Aug 2026 19:57:57 GMT",
-      "importance": 4,
-      "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
-      "detectedAt": "2026-08-12T20:59:34.176Z"
-    },
-    {
-      "title": "Abeiku Santana launches Tourism Destination Africa podcast to promote African tourism",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/abeiku-santana-launches-tourism-destination-africa-podcast-to-promote-african-tourism/",
-      "pubDate": "Wed, 12 Aug 2026 18:52:26 +0000",
-      "importance": 4,
-      "why": "Signal: launches · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-12T20:59:34.176Z"
     }
   ]
 }
