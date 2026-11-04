@@ -17,7 +17,15 @@
 
 import type { Article } from './articles';
 import { getReportBySlug } from './reports';
-import { reportCheckoutUrl, reportPrice } from './commerce';
+import { reportCheckoutUrl, reportPrice, reportTier, reportEntry, type ReportTierId } from './commerce';
+
+/** The cheaper step-DOWN study offered alongside a flagship (the low-friction "first yes"). */
+export interface ArticleEntryStep {
+  slug: string;
+  title: string;
+  price: string;
+  landingUrl: string;
+}
 
 export interface ArticleEntryReport {
   /** The matched report's slug (also the report_buy_click `slug`). */
@@ -25,6 +33,8 @@ export interface ArticleEntryReport {
   title: string;
   /** Display price, e.g. "R220". */
   price: string;
+  /** Pricing rung — 'study' (R220 entry) or 'report' (R3,500 flagship). Drives the CTA framing. */
+  tier: ReportTierId;
   /** The live Paystack one-off checkout URL (direct ZAR charge). */
   url: string;
   /**
@@ -36,6 +46,12 @@ export interface ArticleEntryReport {
    * cards. Routing through the report page gives those readers the PayPal rail.
    */
   landingUrl: string;
+  /**
+   * For a flagship (`report`-tier) match, the cheaper R220 study to offer as the
+   * low-commitment first yes (the ladder's step-DOWN rung). null for study-tier
+   * matches (they ARE the entry rung) or a flagship with no step-down defined.
+   */
+  entry?: ArticleEntryStep | null;
 }
 
 // Exact article → report overrides, consulted BEFORE the keyword map. Use this for
@@ -45,10 +61,17 @@ export interface ArticleEntryReport {
 // buyable report slug (must be a one-off SKU in commerce PAID_REPORTS and live).
 //   who owns Fenty / LVMH exits Fenty → the megabrand ownership-&-exit read
 //   who owns MTN                      → the value-capture framework (MTN's own tag)
+//   Heineken / who wins African beer  → the African Beer Value Map (flagship)
+//   who bankrolls SA sport            → the Who Bankrolls African Sport dependency map (flagship)
+// The last two are our real on-site traffic winners (LinkedIn-driven) whose exact
+// product is the R3,500 flagship; the CTA renders them tier-aware and surfaces the
+// flagship's R220 step-down (see buildEntry) so cold readers still get a cheap first yes.
 const ARTICLE_REPORT_OVERRIDES: Record<string, string> = {
   'who-owns-fenty-beauty': 'the-megabrand-exit-ledger',
   'lvmh-wants-out-of-fenty-rihanna-owns-the-half-that-matters': 'the-megabrand-exit-ledger',
   'who-owns-mtn': 'value-capture-scorecard-2026',
+  'heineken-admits-not-winning-who-wins-african-beer': 'the-african-beer-value-map',
+  'who-bankrolls-south-african-sport': 'who-bankrolls-african-sport-the-dependency-map',
 };
 
 // Resolve a buyable report slug into the in-article entry card, or null when it is
@@ -57,12 +80,33 @@ function buildEntry(reportSlug: string): ArticleEntryReport | null {
   const url = reportCheckoutUrl(reportSlug);
   const r = getReportBySlug(reportSlug);
   if (!url || !r || r.status !== 'live') return null;
+
+  const tier = reportTier(reportSlug);
+
+  // For a flagship match, surface its R220 step-down study as the cheaper first
+  // yes (only when that study is itself live and buyable).
+  let entry: ArticleEntryStep | null = null;
+  if (tier === 'report') {
+    const step = reportEntry(reportSlug);
+    const er = step ? getReportBySlug(step.slug) : null;
+    if (step && er && er.status === 'live' && reportCheckoutUrl(step.slug)) {
+      entry = {
+        slug: step.slug,
+        title: er.title,
+        price: step.price,
+        landingUrl: `/reports/${step.slug}`,
+      };
+    }
+  }
+
   return {
     slug: reportSlug,
     title: r.title,
     price: reportPrice(reportSlug),
+    tier,
     url,
     landingUrl: `/reports/${reportSlug}`,
+    entry,
   };
 }
 
