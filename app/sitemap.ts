@@ -72,7 +72,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
     url: `${SITE}/article/${a.slug}`,
-    lastModified: new Date(a.publishedAt),
+    // Honour updatedAt so a refreshed piece signals freshness (re-crawl); falls
+    // back to publishedAt for pieces never updated.
+    lastModified: new Date(a.updatedAt ?? a.publishedAt),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));

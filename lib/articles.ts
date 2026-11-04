@@ -53,6 +53,13 @@ export interface Article {
   sourceName: string;
   publishedAt: string;
   /**
+   * When the article's substance was last materially updated (ISO date). Drives
+   * schema.org `dateModified` and the sitemap `lastmod`, so a refreshed piece
+   * signals freshness and gets re-crawled. Omit for pieces never updated since
+   * publication — both fall back to `publishedAt`.
+   */
+  updatedAt?: string;
+  /**
    * The Brand Read: the dual-read strategic layer (see
    * docs/MONOKROMATIK_EDITORIAL_VOICE.md — "The dual read").
    *
