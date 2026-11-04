@@ -25,8 +25,45 @@ export interface ArticleEntryReport {
   title: string;
   /** Display price, e.g. "R220". */
   price: string;
-  /** The live Paystack one-off checkout URL. */
+  /** The live Paystack one-off checkout URL (direct ZAR charge). */
   url: string;
+  /**
+   * The on-site report page (`/reports/<slug>`), which renders the full checkout
+   * rail — PayPal (primary, takes cards worldwide) → FNB EFT → Paystack — plus the
+   * proof and Bear Case. The in-article CTA points HERE rather than straight to
+   * Paystack: our biggest-traffic pages (the "who owns…" explainers) are
+   * diaspora-heavy, and a direct Paystack ZAR charge declines most international
+   * cards. Routing through the report page gives those readers the PayPal rail.
+   */
+  landingUrl: string;
+}
+
+// Exact article → report overrides, consulted BEFORE the keyword map. Use this for
+// pages where the right study isn't inferable from keywords but the topical match
+// is obvious — notably the "who owns…" explainers, which are the site's biggest
+// search demand yet carried no buyable ask. Keyed by article slug; value is a
+// buyable report slug (must be a one-off SKU in commerce PAID_REPORTS and live).
+//   who owns Fenty / LVMH exits Fenty → the megabrand ownership-&-exit read
+//   who owns MTN                      → the value-capture framework (MTN's own tag)
+const ARTICLE_REPORT_OVERRIDES: Record<string, string> = {
+  'who-owns-fenty-beauty': 'the-megabrand-exit-ledger',
+  'lvmh-wants-out-of-fenty-rihanna-owns-the-half-that-matters': 'the-megabrand-exit-ledger',
+  'who-owns-mtn': 'value-capture-scorecard-2026',
+};
+
+// Resolve a buyable report slug into the in-article entry card, or null when it is
+// not a live, one-off-purchasable SKU. Shared by the override and keyword paths.
+function buildEntry(reportSlug: string): ArticleEntryReport | null {
+  const url = reportCheckoutUrl(reportSlug);
+  const r = getReportBySlug(reportSlug);
+  if (!url || !r || r.status !== 'live') return null;
+  return {
+    slug: reportSlug,
+    title: r.title,
+    price: reportPrice(reportSlug),
+    url,
+    landingUrl: `/reports/${reportSlug}`,
+  };
 }
 
 // Each study lists the keyword triggers matched (as substrings) against the
@@ -71,17 +108,19 @@ const TOPIC_MAP: { report: string; triggers: string[] }[] = [
  * and NEXT_PUBLIC checkout URLs).
  */
 export function entryReportForArticle(article: Pick<Article, 'title' | 'category' | 'tags' | 'slug'>): ArticleEntryReport | null {
-  const hay = [article.title, article.category, ...(article.tags || [])].join(' · ').toLowerCase();
+  // 1) Exact per-article override wins — the precise, hand-picked match.
+  const override = ARTICLE_REPORT_OVERRIDES[article.slug];
+  if (override) {
+    const entry = buildEntry(override);
+    if (entry) return entry;
+  }
 
+  // 2) Keyword map — the most specific topical match, first match wins.
+  const hay = [article.title, article.category, ...(article.tags || [])].join(' · ').toLowerCase();
   for (const { report, triggers } of TOPIC_MAP) {
-    // Don't pitch the study on its own subject if the article IS effectively the
-    // report (same slug stem) — still fine to show, but skip exact-slug echoes.
     if (!triggers.some((t) => hay.includes(t))) continue;
-    const url = reportCheckoutUrl(report);
-    const r = getReportBySlug(report);
-    if (url && r && r.status === 'live') {
-      return { slug: report, title: r.title, price: reportPrice(report), url };
-    }
+    const entry = buildEntry(report);
+    if (entry) return entry;
   }
   return null;
 }

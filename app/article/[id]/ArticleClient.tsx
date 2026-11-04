@@ -262,7 +262,16 @@ export default function ArticleClient({
             founder's take, the warmest point to convert, and well before the footer
             form most readers never scroll to. */}
         <div className="my-12">
-          <NewsletterSignup variant="sidebar" source="article-mid" />
+          <NewsletterSignup
+            variant="sidebar"
+            source="article-mid"
+            heading={entryReport ? 'One ownership map a week' : undefined}
+            blurb={
+              entryReport
+                ? 'We break down who owns — and who keeps the money behind — the brands and culture you follow. Free, every Sunday.'
+                : undefined
+            }
+          />
         </div>
 
         {/* Layer 1 — the numbered References block (inline [n] marks link here).

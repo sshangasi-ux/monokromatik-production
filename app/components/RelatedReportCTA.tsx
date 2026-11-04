@@ -7,11 +7,13 @@ import type { ArticleEntryReport } from '../../lib/article-report';
 // The in-article STUDY ask — the affordable middle rung between the free
 // newsletter and the high-ticket advisory lead. A reader who just finished a free
 // piece is shown the R220 value-capture study that goes deeper on exactly that
-// subject, as a one-click Paystack buy. Fires report_buy_click tagged with the
+// subject. The button goes to the report's own page (`/reports/<slug>`), where the
+// full rail — PayPal (worldwide cards) → FNB EFT → Paystack — plus the proof and
+// Bear Case live; it does NOT drop the reader into a direct Paystack ZAR charge,
+// which declines most diaspora cards. Fires report_buy_click tagged with the
 // article source, so GA attributes the article → study path (the entry conversion
 // the funnel was missing). Rendered only when the article maps to a specific study
 // (see lib/article-report.ts), so it is always on-topic — never a generic pitch.
-// Mirrors BuyButton's anchor + event, with the extra `source` attribution.
 export default function RelatedReportCTA({
   report,
   articleSlug,
@@ -34,9 +36,7 @@ export default function RelatedReportCTA({
       </p>
       <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
         <a
-          href={report.url}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={report.landingUrl}
           onClick={() =>
             track('report_buy_click', { slug: report.slug, price: report.price, source: `article:${articleSlug}` })
           }
@@ -45,7 +45,7 @@ export default function RelatedReportCTA({
           Keep the study — {report.price} <ArrowRight size={18} aria-hidden="true" />
         </a>
         <span className="font-body text-sm text-mono-charcoal/70">
-          One-time · secure Paystack checkout · instant PDF
+          One-time · PayPal, card or EFT · instant PDF
         </span>
       </div>
     </aside>
