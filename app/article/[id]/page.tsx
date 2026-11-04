@@ -78,7 +78,7 @@ export default async function ArticlePage({ params }: PageProps) {
     description: article.excerpt,
     image: article.imageUrl ? [article.imageUrl] : undefined,
     datePublished: article.publishedAt,
-    dateModified: article.publishedAt,
+    dateModified: article.updatedAt ?? article.publishedAt,
     author: {
       '@type': 'Person',
       name: 'Sibu Shangase',
