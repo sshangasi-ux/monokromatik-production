@@ -9,9 +9,13 @@ type Variant = 'default' | 'footer' | 'sidebar' | 'inline';
 interface Props {
   variant?: Variant;
   source?: string;
+  /** Optional topical override for the sidebar variant's heading. */
+  heading?: string;
+  /** Optional topical override for the sidebar variant's blurb. */
+  blurb?: string;
 }
 
-export default function NewsletterSignup({ variant = 'default', source }: Props) {
+export default function NewsletterSignup({ variant = 'default', source, heading, blurb }: Props) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -123,9 +127,9 @@ export default function NewsletterSignup({ variant = 'default', source }: Props)
   if (variant === 'sidebar') {
     return (
       <div className="bg-mono-soft-white p-6 border-l-4 border-mono-amber">
-        <h4 className="text-xl font-display font-bold text-mono-black mb-3">Get The Weekly Signal</h4>
+        <h4 className="text-xl font-display font-bold text-mono-black mb-3">{heading ?? 'Get The Weekly Signal'}</h4>
         <p className="text-mono-charcoal font-body text-sm mb-4">
-          The campaigns, culture and commercial intelligence shaping Africa and its diaspora.
+          {blurb ?? 'The campaigns, culture and commercial intelligence shaping Africa and its diaspora.'}
         </p>
         <form onSubmit={handleSubmit} className="space-y-3" aria-label="Newsletter signup">
           <input
