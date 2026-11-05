@@ -1,0 +1,118 @@
+name: MonoKromatik Syndicate (free-API channels)
+
+# Fans the next unposted item (latest article first, else a Wire break) out to
+# the FREE-API social channels — Bluesky, Mastodon, Telegram, Discord — using the
+# public branded card + generated caption, UTM-tagged per channel. Every channel
+# is skipped unless its secret(s) are set, so you light up one at a time.
+#
+# TWO MODES (same as the Instagram / LinkedIn workflows):
+#   • REVIEW-GATED (default): scheduled runs only PREVIEW; you approve by
+#     dispatching with publish=true.
+#   • FULLY-AUTO: set repo variable SYNDICATE_AUTOPOST=on.
+#
+# Secrets (all optional — a channel with none set is a silent no-op):
+#   BLUESKY_IDENTIFIER, BLUESKY_APP_PASSWORD   (+ var BLUESKY_SERVICE, default https://bsky.social)
+#   MASTODON_BASE_URL, MASTODON_ACCESS_TOKEN
+#   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+#   DISCORD_WEBHOOK_URL
+# Deduped via an Actions-cache ledger (one slot per channel, independent of IG/LinkedIn).
+
+on:
+  schedule:
+    # Mon/Wed/Fri at 08:17 UTC (10:17 SAST). Lighter-touch than a personal feed:
+    # these are owned channels (a Bluesky account, a Mastodon profile, a Telegram
+    # broadcast channel, a Discord), so a steady weekday rhythm is welcome rather
+    # than flooding. Adjust once the channels are live and you see what each wants.
+    - cron: '17 8 * * 1,3,5'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the next item now (your approval). Leave false to preview only.'
+        type: boolean
+        default: false
+      slug:
+        description: 'Optional: target a specific article slug instead of the next queued item'
+        required: false
+        type: string
+      verify:
+        description: 'Report which channels have their secrets set (no post).'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: syndicate
+  cancel-in-progress: false
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Restore syndicate ledger
+        uses: actions/cache@v4
+        with:
+          path: output/syndicate-ledger.json
+          key: syndicate-ledger-${{ github.run_id }}
+          restore-keys: |
+            syndicate-ledger-
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Decide mode
+        id: mode
+        run: |
+          PUBLISH=false
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.publish }}" = "true" ]; then
+            PUBLISH=true
+          fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ vars.SYNDICATE_AUTOPOST }}" = "on" ]; then
+            PUBLISH=true
+          fi
+          echo "publish=$PUBLISH" >> "$GITHUB_OUTPUT"
+          echo "Mode: $([ "$PUBLISH" = "true" ] && echo PUBLISH || echo 'REVIEW (preview only)')" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify configured channels (no post)
+        if: ${{ github.event.inputs.verify == 'true' }}
+        env:
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: npm run syndicate -- --verify
+
+      - name: Run syndicator
+        if: ${{ github.event.inputs.verify != 'true' }}
+        env:
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          BLUESKY_SERVICE: ${{ vars.BLUESKY_SERVICE }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          NODE_ENV: production
+        run: |
+          FLAGS=""
+          [ "${{ steps.mode.outputs.publish }}" != "true" ] && FLAGS="$FLAGS --dry"
+          SLUG="${{ github.event.inputs.slug }}"
+          [ -n "$SLUG" ] && FLAGS="$FLAGS --slug=$SLUG"
+          npm run syndicate -- $FLAGS
