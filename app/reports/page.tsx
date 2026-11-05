@@ -11,6 +11,7 @@ import {
   reportPrice,
   reportLaunchNote,
   reportCheckoutUrl,
+  reportPaypalUrl,
   getBundle,
 } from '../../lib/commerce';
 import { toReportCard, sectorFacets, tierCounts } from '../../lib/report-merch';
@@ -121,7 +122,11 @@ export default function ReportsPage() {
               if (!r) return null;
               const price = reportPrice(slug);
               const launch = reportLaunchNote(slug);
-              const checkout = reportCheckoutUrl(slug);
+              // Lead with PayPal (cards worldwide, no account) so the shelf's
+              // skip-straight-to-buy link doesn't drop diaspora readers onto a
+              // ZAR-only Paystack charge; fall back to Paystack only if a SKU has
+              // no PayPal link. The primary path (OPEN REPORT) carries the full rail.
+              const checkout = reportPaypalUrl(slug) ?? reportCheckoutUrl(slug);
               return (
                 <div
                   key={slug}
@@ -309,7 +314,7 @@ export default function ReportsPage() {
           </div>
           <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 justify-center text-sm font-body text-mono-soft-white/80">
             <li className="inline-flex items-center gap-2"><Check size={15} className="text-mono-amber" /> Source-verified</li>
-            <li className="inline-flex items-center gap-2"><Check size={15} className="text-mono-amber" /> Secure Paystack checkout</li>
+            <li className="inline-flex items-center gap-2"><Check size={15} className="text-mono-amber" /> Pay by card worldwide (PayPal), SA EFT or local card</li>
             <li className="inline-flex items-center gap-2"><Check size={15} className="text-mono-amber" /> Delivered as a watermarked PDF</li>
           </ul>
         </div>
