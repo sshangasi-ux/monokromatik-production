@@ -323,6 +323,24 @@ export function reportPaypalUrl(slug?: string): string | null {
   return url && /^https?:\/\//.test(url) ? url : null;
 }
 
+// Per-BUNDLE PayPal payment links (THE MONOKROMATIC NETWORK Business account).
+// Same 1:1 identity as the report links: each link's code is added to the bundle's
+// `match` list in lib/report-delivery.ts so the webhook delivers every member PDF.
+// Keyed by BUNDLES[].slug — NOT a report slug. Code default, per-SKU env override.
+const PAYPAL_BUNDLE_URLS: Record<string, string | undefined> = {
+  'ownership-studies-pack':
+    process.env.NEXT_PUBLIC_PAYPAL_STUDIES_BUNDLE_URL || 'https://www.paypal.com/ncp/payment/WK5TB7JBVRXNL',
+  'full-shelf':
+    process.env.NEXT_PUBLIC_PAYPAL_FULL_SHELF_PAYPAL_URL || 'https://www.paypal.com/ncp/payment/87432783E3TW2',
+};
+
+/** The per-bundle PayPal payment-link URL, or null when none is set yet. */
+export function bundlePaypalUrl(slug?: string): string | null {
+  if (!slug) return null;
+  const url = PAYPAL_BUNDLE_URLS[slug];
+  return url && /^https?:\/\//.test(url) ? url : null;
+}
+
 /**
  * Identify the report from a PayPal capture/order payload by its payment-link
  * CODE — the last path segment of the NCP link (e.g. `LPS44HBVMST5C`). Each report
@@ -371,11 +389,13 @@ export interface CheckoutRail {
  */
 export function checkoutRails(slug?: string): CheckoutRail[] {
   const rails: CheckoutRail[] = [];
-  const paypal = reportPaypalUrl(slug);
+  // Reports map in PAYPAL_REPORT_URLS; bundles in PAYPAL_BUNDLE_URLS. A slug hits
+  // one map or the other, so fall back to the bundle lookups for a bundle slug.
+  const paypal = reportPaypalUrl(slug) ?? bundlePaypalUrl(slug);
   if (paypal)
     rails.push({ provider: 'paypal', url: paypal, label: 'Pay by card / PayPal', note: 'Cards worldwide — no PayPal account needed' });
   rails.push({ provider: 'fnb', url: null, label: 'Pay by SA bank transfer', note: 'FNB EFT — no card fees' });
-  const paystack = reportCheckoutUrl(slug);
+  const paystack = reportCheckoutUrl(slug) ?? (slug ? getBundle(slug)?.url ?? null : null);
   if (paystack)
     rails.push({ provider: 'paystack', url: paystack, label: 'Pay by SA card (Paystack)', note: 'Local cards & instant EFT' });
   return rails;

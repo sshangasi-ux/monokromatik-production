@@ -19,6 +19,7 @@ export default function CheckoutRails({
   primaryClassName,
   compact = false,
   align = 'center',
+  label = 'BUY THIS REPORT',
 }: {
   slug: string;
   title?: string;
@@ -27,6 +28,8 @@ export default function CheckoutRails({
   primaryClassName?: string;
   compact?: boolean;
   align?: 'center' | 'start';
+  /** Verb phrase on the primary button (price is appended). Default "BUY THIS REPORT". */
+  label?: string;
 }) {
   const rails = checkoutRails(slug);
   const [openFnb, setOpenFnb] = useState(false);
@@ -41,7 +44,7 @@ export default function CheckoutRails({
 
   const fire = (provider: string) => track('report_buy_click', { slug, price: price ?? undefined, provider });
 
-  const buyLabel = `BUY THIS REPORT${price ? ` — ${price}` : ''}`;
+  const buyLabel = `${label}${price ? ` — ${price}` : ''}`;
   const btnClass =
     primaryClassName ||
     'inline-flex items-center justify-center gap-2 bg-mono-amber text-mono-black px-8 py-4 font-display font-bold text-base hover:bg-mono-amber/90 transition-colors';
