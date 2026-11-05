@@ -1,16 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Check, ArrowRight, ShieldCheck, Lock } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
-import NewsletterSignup from '../components/NewsletterSignup';
-import BuyButton from '../components/BuyButton';
-import InternationalCheckout from '../components/InternationalCheckout';
-import { INDEX_REPORT, reportCheckoutUrl, REPORT_CHECKOUT_SLUG, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
+import CheckoutRails from '../components/CheckoutRails';
+import { INDEX_REPORT, REPORT_CHECKOUT_SLUG, PRICING_TIERS, reportLaunchNote } from '../../lib/commerce';
 
 export const metadata: Metadata = {
   title: 'Pricing — Intelligence Reports | MonoKromatik',
   description:
-    'Buy The Value-Capture Scorecard (R220), or intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Secure one-time purchase via Paystack.',
+    'Buy The Value-Capture Scorecard (R220), or intelligence reports across three tiers: single studies (R220), the deep institutional report (R3,500), and enterprise licences. Pay by card from anywhere via PayPal, SA bank transfer, or local card.',
 };
 
 // The three-tier ladder is LIVE (pricing signed off). Shown by default; it can
@@ -27,7 +25,6 @@ const TIER_CTA: Record<string, { href: string; label: string }> = {
 };
 
 export default function PricingPage() {
-  const checkoutUrl = reportCheckoutUrl();
   const offer = INDEX_REPORT;
 
   return (
@@ -75,31 +72,16 @@ export default function PricingPage() {
               </ul>
 
               <div className="mt-9">
-                {checkoutUrl ? (
-                  <BuyButton
-                    href={checkoutUrl}
-                    slug={REPORT_CHECKOUT_SLUG}
-                    price={offer.priceLabel}
-                    className="inline-flex items-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors"
-                  >
-                    GET THE REPORT{offer.priceLabel ? ` — ${offer.priceLabel}` : ''} <ArrowRight size={18} />
-                  </BuyButton>
-                ) : (
-                  <div className="border border-mono-gray/30 bg-mono-soft-white p-6">
-                    <p className="flex items-center gap-2 font-display font-bold text-mono-black"><Lock size={16} className="text-mono-amber-strong" /> Checkout opening shortly.</p>
-                    <p className="mt-2 font-body text-mono-charcoal text-sm">Secure payment via Paystack is being switched on. Leave your email and we’ll send it the moment the report is live.</p>
-                    <div className="mt-5">
-                      <NewsletterSignup variant="footer" />
-                    </div>
-                  </div>
-                )}
+                <CheckoutRails
+                  slug={REPORT_CHECKOUT_SLUG}
+                  price={offer.priceLabel}
+                  align="start"
+                  primaryClassName="inline-flex items-center justify-center gap-2 bg-mono-black text-mono-white px-8 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors"
+                />
                 <p className="mt-5 flex items-center gap-2 text-[12px] font-body text-mono-gray">
                   <ShieldCheck size={15} className="text-mono-amber-strong shrink-0" />
-                  Payment is processed securely by Paystack. We never see your card details.
+                  Pay by card from anywhere via PayPal — no account needed — or by SA bank transfer or local card. We never see your card details.
                 </p>
-                {checkoutUrl && (
-                  <InternationalCheckout slug={REPORT_CHECKOUT_SLUG} title={offer.name} price={offer.priceLabel} surface="pricing" />
-                )}
               </div>
             </div>
           </div>

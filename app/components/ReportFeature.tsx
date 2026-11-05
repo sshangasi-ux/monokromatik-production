@@ -10,7 +10,6 @@ import { isFlagshipGated } from '../../lib/gating';
 import FlagshipGate from './FlagshipGate';
 import CheckoutRails from './CheckoutRails';
 import BuyButton from './BuyButton';
-import InternationalCheckout from './InternationalCheckout';
 import ReportView from './ReportView';
 import ReportProof from './ReportProof';
 import NewsletterSignup from './NewsletterSignup';
@@ -382,9 +381,6 @@ export default async function ReportFeature({ report }: { report: Report }) {
                     {launchNote ? ` · ${launchNote}` : ''}
                   </p>
                 )}
-                {/* Diaspora buyers hit a decline on international cards (activation
-                    pending with Paystack). Capture them instead of losing them. */}
-                {oneOff && <InternationalCheckout slug={r.slug} title={r.title} price={price} surface="report-gate" />}
               </div>
               {/* Capture the cold reader. Someone who opened a R3,500 flagship has
                   real intent; if they won't buy today they should leave as a
