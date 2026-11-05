@@ -39,7 +39,6 @@ const SOCIALS = [
 const COMPANY = [
   { label: 'Services', href: '/services' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Membership', href: '/membership' },
   { label: 'Ownership Intelligence', href: '/intelligence/ownership' },
   { label: 'License the Index', href: '/intelligence/license' },
   { label: 'Sponsor', href: '/sponsor' },
