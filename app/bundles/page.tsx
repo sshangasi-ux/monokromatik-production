@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Check, Layers } from 'lucide-react';
+import { Check, Layers } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import AdvisoryBridge from '../components/AdvisoryBridge';
-import BuyButton from '../components/BuyButton';
-import InternationalCheckout from '../components/InternationalCheckout';
-import { getBundles, reportPrice } from '../../lib/commerce';
+import CheckoutRails from '../components/CheckoutRails';
+import { getBundles, reportPrice, bundlePaypalUrl } from '../../lib/commerce';
 import { getAllReports } from '../../lib/reports';
 
 export const metadata: Metadata = {
@@ -82,18 +81,14 @@ export default function BundlesPage() {
                     {bundle.saveNote && <span className="text-sm font-display font-bold text-mono-amber-strong">{bundle.saveNote}</span>}
                   </div>
                   <div className="mt-6">
-                    {bundle.url ? (
-                      <>
-                        <BuyButton
-                          href={bundle.url}
-                          slug={bundle.slug}
-                          price={bundle.price}
-                          className="inline-flex items-center justify-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors w-full sm:w-auto"
-                        >
-                          BUY THE BUNDLE — {bundle.price} <ArrowRight size={16} />
-                        </BuyButton>
-                        <InternationalCheckout slug={bundle.slug} title={bundle.title} price={bundle.price} surface="bundle" />
-                      </>
+                    {bundlePaypalUrl(bundle.slug) || bundle.url ? (
+                      <CheckoutRails
+                        slug={bundle.slug}
+                        price={bundle.price}
+                        align="start"
+                        label="BUY THE BUNDLE"
+                        primaryClassName="inline-flex items-center justify-center gap-2 bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors"
+                      />
                     ) : (
                       <div>
                         <span className="inline-flex items-center gap-2 border border-mono-gray/40 text-mono-charcoal px-7 py-4 font-display font-bold cursor-default">
@@ -115,7 +110,7 @@ export default function BundlesPage() {
           </div>
 
           <p className="mt-10 max-w-2xl text-sm text-mono-gray font-body">
-            Each bundle is delivered as individual PDFs, each watermarked and licensed to the purchaser. Prices in ZAR.
+            Each bundle is delivered as individual PDFs, each watermarked and licensed to the purchaser. Bundle prices shown in ZAR; PayPal (cards worldwide) is billed in USD, SA bank transfer and local card in ZAR.
           </p>
         </div>
       </section>
