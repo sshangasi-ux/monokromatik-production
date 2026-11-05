@@ -1,5 +1,183 @@
 [
   {
+    "title": "The Geographic Penalty: Why a Boom Year Still Pays African Artists Less Per Play",
+    "seoTitle": "Why Spotify Pays African Artists Less: The Geographic Penalty",
+    "metaDescription": "African music streaming is booming — yet a play in Lagos can pay far less than one in Stockholm. Inside the 'geographic penalty' and the payout formula behind it.",
+    "slug": "the-geographic-penalty-why-african-streams-pay-less",
+    "excerpt": "South African artists earned a record R504m on Spotify in 2025, and Nigerian streams grew ~170% — while Nigerian earnings rose just 3.45%. The boom is real. So why does a play still pay so little, and can anything close the gap?",
+    "content": "## The record year that paid less per play\n\nIn May 2026, Spotify's Loud & Clear report handed South Africa's music industry a number it had been waiting a decade for: [local artists earned more than R504 million in 2025, up 28% year on year, with more than half going to independent artists and labels](https://sundaytribune.co.za/entertainment/music/2026-05-14-spotify-reports-r504-million-in-royalties-for-south-african-artists-in-2025/) [1]. That growth outpaced the roughly [18% expansion IFPI recorded for South Africa's wider streaming market](https://www.itweb.co.za/article/sa-music-streams-generate-over-r500m-on-spotify/PmxVEMKE2dVvQY85) [9]. Two months earlier, the same report's Nigerian cut told a stranger story. Nigerian artists generated [30.3 billion streams and earned roughly ₦2 per stream](https://techcabal.com/2026/03/16/spotify-payouts-show-nigerian-artists-earned-about-%E2%82%A62-per-stream-in-2025/) [2] — and total payouts [rose just 3.45% even as local streams climbed about 170%](https://www.morebranches.com/afrobeats-spotify-earnings-3-45-percent/) [6].\n\nGrowth, in other words, is no longer the question. The streams are here. The paradox is that more of them, in these markets, does not reliably translate into more money per play — and in Nigeria's case, barely more money at all. This piece is about that gap, and it tries not to resolve it too quickly.\n\n## What the \"geographic penalty\" actually is\n\nAnalysts have a name for it now. African music's streaming revenue is growing at [about 22% a year — roughly five times the global average of 4.8% — and yet artists face what's been called a \"geographic penalty\"](https://www.ecofinagency.com/news-culture/0102-52472-african-artists-face-a-geographic-penalty-in-streaming-payouts-despite-22-revenue-growth) [4]: a stream in many African markets pays a fraction of what the same stream pays in Europe or the United States, and the markets lean heavily on cheaper subscriptions and free, ad-supported listening. Billboard put the mechanism plainly: [the value of a streaming royalty depends heavily on where the listener is](https://www.billboard.com/pro/streaming-royalties-value-artists-geographic-location/) [8], so a play in the US or UK can be worth far more than one elsewhere. The sharpest framing came from Lagos, where one analysis calculated that [Spotify pays Nigerian artists roughly 33 times less per stream than it pays artists in Sweden](https://businessday.ng/technology/article/why-spotify-pays-nigerian-artists-33-times-less-than-in-sweden/) [5]. Same song, same platform, same play — a different price, set by geography.\n\n## Why growing at home can pay you less\n\nHere is the counterintuitive part, and it is worth slowing down for. On the major platforms, payouts are not a fixed price per stream; they are a share of a revenue pool, and [that pool is territorial — tied to the subscription and ad revenue each country actually generates](https://techcabal.com/2026/03/23/local-streams-are-reducing-spotify-payouts-for-nigerian-artists/) [3]. Nigeria's Spotify Premium plan runs at about ₦1,300 a month, roughly $0.82 at mid-2025 exchange rates [3]. When a market fills with listeners paying little — or listening free on ad-supported tiers — the pool grows slowly even as play counts explode.\n\nThat is the mechanism behind the strangest figure in the whole report: Nigerian local streams could rise about 170% while artist earnings rose about 3.45% [6]. The denominator — streams — raced ahead of the numerator — revenue. More listening at home, paradoxically, can dilute the per-stream payout rather than lift it, because every new low-value play divides the same shallow pool into thinner slices. It is the rare case where doing better by every vanity metric can leave you flat on the only one that pays rent.\n\n## The two readings of one number\n\nNothing captures the ambiguity better than a single figure from the South African report: [nearly 74% of the royalties local artists earned came from listeners outside South Africa](https://sundaytribune.co.za/entertainment/music/2026-05-14-spotify-reports-r504-million-in-royalties-for-south-african-artists-in-2025/) [1]. Read one way, that is a triumph — Amapiano and Afro-pop are genuine exports, and the world is paying for them at richer foreign rates. Read another way, it is a dependency: South African artists increasingly rely on foreign listeners to make a living, because the home audience, under the territorial model, cannot yet pay them enough [3]. Both readings sit on the same data point. Export strength and home-market weakness are, here, two descriptions of the identical fact — and which one matters more depends on a question the number itself can't answer: are you building an export industry, or a home one that merely happens to export?\n\n## The lens — not the verdict\n\nThis is where we apply the MonoKromatik lens, and it is a lens, not a conclusion. Usually the value-capture question in music is about ownership downstream — who holds the masters, the publishing, the catalogue; we ran that argument in full in [Who Captures Amapiano?](/article/who-captures-amapiano) The geographic penalty is different, and in some ways more unsettling, because the leak is *upstream* of ownership — it sits in the payout formula itself. An African artist can own 100% of their masters and still be paid a fraction per stream of what a Swedish peer earns, because the money was priced by where the listener lives, not by who made or owns the work [4][5]. Authorship, and even ownership, don't fix a price set one layer up. That is the part worth sitting with: you can win every fight the industry tells you to fight — keep your masters, build your own label — and still lose on a rule nobody put to a vote.\n\n## What could fix it — and what each fix costs\n\nArgue the fixes in good faith, because there are three live ones and none is clean. The first is price: raise local subscription costs to grow the pool. But Spotify itself has pushed back — in a 2026 interview it said it wants [more Nigerians paying, not higher prices, and is leaning on telco partnerships, local pricing and new payment methods to widen the paying base](https://techcabal.com/2026/05/25/spotify-on-nigerias-streaming-economy/) [7]. The logic is defensible: in a price-sensitive market, a higher fee can shrink the paying base faster than it deepens the pool.\n\nThe second fix is plumbing — the unglamorous machinery of collecting societies, metadata and rights registration that decides whether the money earned ever reaches the right artist. That it often doesn't is not hypothetical: one South African survey found [63% of musicians rated their streaming earnings \"poor\" or \"very poor\"](https://theconversation.com/music-streaming-in-south-africa-new-survey-reveals-musicians-get-a-raw-deal-194087) [11], a verdict that owes as much to broken distribution at home as to the rate card abroad. The third fix is to move value off the platform entirely — toward live, touring and direct-to-fan income the pro-rata formula can't touch. Each trade costs something: price risks the paying base, plumbing is slow and structural, and off-platform quietly shifts the burden back onto the artist. There is no costless version, which is precisely why the debate stays open.\n\n## An open close\n\nSo the honest reading of 2026 is that Africa's streaming economy is winning the argument it used to lose — the volume, the global demand, the record independent share [1] — while still losing a quieter one about how a single play gets priced [5][6]. Burna Boy and others have argued for years that [Nigerian artists earn far less from local streams than from US or UK ones](https://nairametrics.com/2025/04/09/nigerian-artists-earn-90-less-from-local-streams-than-u-s-u-k-market-burnaboy/) [10]; the 2026 numbers are the first time the platforms' own data makes the gap this legible. Whether the next Loud & Clear shows that gap narrowing — or just a bigger pool still paying the same thin rate per play — is genuinely unwritten, and we're not going to call it while the formula is still the formula.\n\nThe full ledger of who captures what across the continent's music economy — platform, label, publisher and live — sits in the paid report [*Who Owns African Music — The Ownership League Table*](/reports/who-owns-african-music-league-table). For the genre-level version of this fight, read [Who Captures Amapiano?](/reports/who-captures-amapiano-value-capture-report) and the Mavin–Universal story in [Ayra Starr and who really owns the hits](/article/ayra-starr-starrgirl-universal-owns-mavin-afrobeats). The thing to watch isn't the streaming total. It's the price of one play, in Lagos versus Stockholm — and whether that distance ever starts to close.",
+    "category": "music",
+    "tags": [
+      "spotify",
+      "streaming",
+      "royalties",
+      "afrobeats",
+      "amapiano",
+      "value capture",
+      "africa",
+      "nigeria",
+      "south africa",
+      "music economy"
+    ],
+    "format": "feature",
+    "linkedinHook": "Nigerian artists' Spotify streams grew ~170% last year. Their earnings grew 3.45%. That gap isn't a glitch — it's the formula.",
+    "sourceLink": "https://www.ecofinagency.com/news-culture/0102-52472-african-artists-face-a-geographic-penalty-in-streaming-payouts-despite-22-revenue-growth",
+    "sourceName": "Ecofin Agency",
+    "publishedAt": "2026-11-05T11:00:00.000Z",
+    "sources": [
+      {
+        "publisher": "Sunday Tribune",
+        "label": "Spotify reports R504 million in royalties for South African artists in 2025",
+        "url": "https://sundaytribune.co.za/entertainment/music/2026-05-14-spotify-reports-r504-million-in-royalties-for-south-african-artists-in-2025/",
+        "use": "Spotify Loud & Clear 2026 (2025 data): SA artists earned >R504m, up 28% YoY; more than half from independent artists/labels; nearly 74% of royalties came from listeners outside South Africa."
+      },
+      {
+        "publisher": "TechCabal",
+        "label": "Spotify payouts show Nigerian artists earned about ₦2 per stream in 2025",
+        "url": "https://techcabal.com/2026/03/16/spotify-payouts-show-nigerian-artists-earned-about-%E2%82%A62-per-stream-in-2025/",
+        "use": "Nigerian artists generated 30.3 billion streams in 2025 and earned roughly ₦2 per stream on Spotify."
+      },
+      {
+        "publisher": "TechCabal",
+        "label": "How more local streams shape Spotify payouts for Nigerian artists",
+        "url": "https://techcabal.com/2026/03/23/local-streams-are-reducing-spotify-payouts-for-nigerian-artists/",
+        "use": "Spotify payouts are a share of a territorial revenue pool tied to each country's subscription/ad revenue; Nigeria Premium ~₦1,300/month (~$0.82 mid-2025); low local prices cap the pool so rising local streams can dilute per-stream pay."
+      },
+      {
+        "publisher": "Ecofin Agency",
+        "label": "African artists face a 'geographic penalty' in streaming payouts despite 22% revenue growth",
+        "url": "https://www.ecofinagency.com/news-culture/0102-52472-african-artists-face-a-geographic-penalty-in-streaming-payouts-despite-22-revenue-growth",
+        "use": "African music streaming revenue growing ~22%/yr, about five times the 4.8% global average; artists face a 'geographic penalty' — lower per-stream pay — amid cheaper subscriptions and ad-supported listening."
+      },
+      {
+        "publisher": "Businessday NG",
+        "label": "Why Spotify pays Nigerian artists 33 times less than in Sweden",
+        "url": "https://businessday.ng/technology/article/why-spotify-pays-nigerian-artists-33-times-less-than-in-sweden/",
+        "use": "Analysis finding Spotify pays Nigerian artists roughly 33 times less per stream than artists in Sweden."
+      },
+      {
+        "publisher": "MoreBranches",
+        "label": "Afrobeats Is Booming but Nigerian Artists' Spotify Earnings Grew Just 3.45% in 2025",
+        "url": "https://www.morebranches.com/afrobeats-spotify-earnings-3-45-percent/",
+        "use": "Nigerian artists' Spotify earnings rose ~3.45% in 2025 while local streams rose ~170%."
+      },
+      {
+        "publisher": "TechCabal",
+        "label": "Spotify wants more Nigerians paying for music",
+        "url": "https://techcabal.com/2026/05/25/spotify-on-nigerias-streaming-economy/",
+        "use": "Spotify (2026 interview) says it wants more Nigerians paying rather than higher prices; investing in local pricing, telco partnerships and new payment methods to widen the paying base."
+      },
+      {
+        "publisher": "Billboard",
+        "label": "Streaming Royalties' Value for Artists Depends on Geographic Location",
+        "url": "https://www.billboard.com/pro/streaming-royalties-value-artists-geographic-location/",
+        "use": "The value of a streaming royalty depends heavily on where the listener is; a US/UK stream can be worth far more than one elsewhere."
+      },
+      {
+        "publisher": "ITWeb",
+        "label": "SA music streams generate over R500m on Spotify",
+        "url": "https://www.itweb.co.za/article/sa-music-streams-generate-over-r500m-on-spotify/PmxVEMKE2dVvQY85",
+        "use": "Spotify's SA artist payout growth outpaced the ~18% growth IFPI recorded for South Africa's wider recorded-streaming market."
+      },
+      {
+        "publisher": "Nairametrics",
+        "label": "Nigerian artists earn 90% less from local streams than U.S., U.K. market — Burna Boy",
+        "url": "https://nairametrics.com/2025/04/09/nigerian-artists-earn-90-less-from-local-streams-than-u-s-u-k-market-burnaboy/",
+        "use": "Burna Boy and other Nigerian artists have argued they earn far less from local streams than from US/UK streams."
+      },
+      {
+        "publisher": "The Conversation",
+        "label": "Music streaming in South Africa: new survey reveals musicians get a raw deal",
+        "url": "https://theconversation.com/music-streaming-in-south-africa-new-survey-reveals-musicians-get-a-raw-deal-194087",
+        "use": "A South African survey found 63% of musicians rated their streaming earnings 'poor' or 'very poor'."
+      }
+    ],
+    "modules": [
+      {
+        "type": "numbers",
+        "title": "The penalty, in numbers",
+        "items": [
+          {
+            "value": "R504m",
+            "label": "SA artists' Spotify royalties in 2025, up 28% YoY",
+            "source": 1
+          },
+          {
+            "value": "~₦2",
+            "label": "Earned per stream by Nigerian artists in 2025",
+            "source": 2
+          },
+          {
+            "value": "170% vs 3.45%",
+            "label": "Nigeria: local streams grew vs artist earnings grew",
+            "source": 6
+          },
+          {
+            "value": "33×",
+            "label": "How much less Spotify pays per stream in Nigeria than in Sweden",
+            "source": 5
+          },
+          {
+            "value": "74%",
+            "label": "Share of SA artists' royalties coming from foreign listeners",
+            "source": 1
+          },
+          {
+            "value": "~22%",
+            "label": "African music streaming growth — ~5× the 4.8% global average",
+            "source": 4
+          },
+          {
+            "value": "63%",
+            "label": "SA musicians rating their streaming earnings poor/very poor",
+            "source": 11
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "kind": "brand",
+        "name": "Spotify"
+      },
+      {
+        "kind": "brand",
+        "name": "Universal Music"
+      },
+      {
+        "kind": "brand",
+        "name": "Mavin Records"
+      },
+      {
+        "kind": "person",
+        "name": "Burna Boy"
+      },
+      {
+        "kind": "person",
+        "name": "Tyla"
+      }
+    ],
+    "brandRead": {
+      "attribution": "Sibu Shangase",
+      "attributionRole": "Founder & Lead Analyst, MonoKromatik",
+      "confidence": "interpretive",
+      "take": "The usual advice to African artists is downstream: own your masters, own your publishing, build your own label. All true, all necessary — and all beside the point of the geographic penalty, which prices a play before ownership ever enters the conversation. The leak here is in the formula, not the contract. That makes it both harder to see and harder to fix: you can win every ownership fight and still be paid a Lagos rate on a Stockholm-quality song. Whether price, policy or the live economy closes that gap is genuinely unsettled, so we're holding the question open rather than pretending the data has answered it.",
+      "pullQuote": "What good is owning your masters if the price of a play is set by where your listener lives?"
+    },
+    "faq": [
+      {
+        "q": "What is the streaming 'geographic penalty'?",
+        "a": "It's the gap between how much a streaming platform pays per play in different countries. Because payouts are a share of each market's subscription and ad revenue, a stream in a low-priced market like Nigeria can be worth a small fraction of the same stream in a high-priced market like Sweden — by one analysis, around 33 times less — regardless of who made or owns the song."
+      },
+      {
+        "q": "Why do African artists earn less per stream even as streams grow?",
+        "a": "On the major platforms payouts come from a territorial revenue pool tied to local subscription and ad income. Where subscriptions are cheap and much listening is free and ad-supported, that pool grows slowly, so rising play counts divide a shallow pool into thinner slices. In Nigeria in 2025, local streams rose about 170% while artist earnings rose about 3.45%."
+      }
+    ],
+    "imageUrl": "/exhibits/geographic-penalty-streaming.png",
+    "imageCredit": "Exhibit: MonoKromatik · Figures: Spotify Loud & Clear 2026, TechCabal, MoreBranches, Businessday NG"
+  },
+  {
     "title": "Africa's Stablecoin Moment: Yellow Card Goes Global as the Giants Circle",
     "seoTitle": "Yellow Card Buys GoMoney: Africa's Stablecoin Moment, Explained",
     "metaDescription": "An African-built stablecoin firm just bought a Brazilian one — while Circle and Mastercard circle African rails. Who ends up owning the settlement layer?",
