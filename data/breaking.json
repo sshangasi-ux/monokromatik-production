@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-06T06:32:52.696Z",
+  "updatedAt": "2026-11-06T14:58:36.004Z",
   "breaks": [
+    {
+      "title": "Inside the Story of Martell’s Afrobeats Limited Edition XO with Davido and Prince Gyasi",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/11/martells-afrobeats-limited-edition-xo/",
+      "pubDate": "Fri, 06 Nov 2026 12:42:11 +0000",
+      "importance": 5,
+      "why": "Martell spirits brand launches Davido Afrobeats limited edition—drinks/spirits brand + major African artist",
+      "detectedAt": "2026-11-06T14:58:36.004Z"
+    },
+    {
+      "title": "Usimamane Taps American R&B Star Jacquees For New Single “My Baby” Ahead Of ‘Tai Lung’",
+      "source": "SA Hip Hop Mag",
+      "category": "music",
+      "link": "https://sahiphopmag.co.za/2026/11/usimamane-taps-american-rb-star-jacquees-for-new-single-my-baby-ahead-of-tai-lung/",
+      "pubDate": "Fri, 06 Nov 2026 12:57:24 +0000",
+      "importance": 4,
+      "why": "South African artist Usimamane collaborates with US R&B star Jacquees—music/Afrobeats collab announcement",
+      "detectedAt": "2026-11-06T14:58:36.004Z"
+    },
     {
       "title": "Maglera Doe Boy’s ‘Mzansi’ Short Film Pulls 100K YouTube Views In First 24 Hours",
       "source": "SA Hip Hop Mag",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: record · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-16T05:39:47.235Z"
-    },
-    {
-      "title": "AKSA power deal: Dafeamekpor says Ghana must confront its accountability deficit",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/aksa-power-deal-dafeamekpor-says-ghana-must-confront-its-accountability-deficit/",
-      "pubDate": "Sat, 15 Aug 2026 20:48:00 +0000",
-      "importance": 4,
-      "why": "Signal: deal · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-15T23:32:10.083Z"
-    },
-    {
-      "title": "Beyond State Funding: NSA Inaugurates Deen-led team to power Ghana’s sports reset",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/beyond-state-funding-nsa-inaugurates-deen-led-team-to-power-ghanas-sports-reset/",
-      "pubDate": "Sat, 15 Aug 2026 11:04:48 +0000",
-      "importance": 4,
-      "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-15T12:56:27.684Z"
     }
   ]
 }
