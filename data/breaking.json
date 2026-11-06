@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-06T00:09:48.479Z",
+  "updatedAt": "2026-11-06T06:32:52.696Z",
   "breaks": [
+    {
+      "title": "Maglera Doe Boy’s ‘Mzansi’ Short Film Pulls 100K YouTube Views In First 24 Hours",
+      "source": "SA Hip Hop Mag",
+      "category": "music",
+      "link": "https://sahiphopmag.co.za/2026/11/maglera-doe-boys-mzansi-short-film-pulls-100k-youtube-views-in-first-24-hours/",
+      "pubDate": "Fri, 06 Nov 2026 05:39:17 +0000",
+      "importance": 4,
+      "why": "South African hip-hop artist Maglera Doe Boy's short film breaks 100K views milestone",
+      "detectedAt": "2026-11-06T06:32:52.696Z"
+    },
     {
       "title": "Kanye West’s First Yeezy Show in Four Years Marks a Major Comeback After His Adidas Fallout",
       "source": "Atlanta Black Star",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-15T12:56:27.684Z"
-    },
-    {
-      "title": "Meet Evelyn Okafor, the First African Woman to Reach the World Freestyle Football Championship Finals",
-      "source": "BellaNaija",
-      "category": "culture",
-      "link": "https://www.bellanaija.com/2026/08/evelyn-okafor-nigerian-freestyle-football-champion-africa/",
-      "pubDate": "Sat, 15 Aug 2026 10:34:20 +0000",
-      "importance": 4,
-      "why": "Signal: first · BellaNaija (culture) · auto-curated",
-      "detectedAt": "2026-08-15T10:35:58.852Z"
     }
   ]
 }
