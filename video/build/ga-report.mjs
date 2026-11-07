@@ -99,6 +99,43 @@ function ymd(d) { return d.toISOString().slice(0, 10); }
     console.log('  lead_submit ............ %s', String(counts.lead_submit).padStart(5));
     console.log('  generate_lead (money) .. %s   (submit→lead %s)', String(counts.generate_lead).padStart(5), pct(counts.generate_lead, counts.lead_submit));
     if (!ev?.rows?.length) console.log('  (no funnel events in window — fire path or GA custom-event registration may need checking)');
+
+    // ---- report_buy_click BY SOURCE (inline teaser vs end-of-article vs on-page) ----
+    // Splits the mid-article InlineReportTeaser (source=article-inline:<slug>, PR #791)
+    // from the end-of-article RelatedReportCTA (article:<slug>) and the report-page
+    // BuyButton/CheckoutRails (no source → (not set)). Needs the `source` event param
+    // registered as a GA4 custom dimension (Admin → Custom definitions); until then the
+    // Data API 400s on customEvent:source and we print how to turn it on. GA4 does not
+    // backfill a custom dimension, so only clicks AFTER registration are ever counted.
+    const bySourceBody = JSON.stringify({
+      dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+      dimensions: [{ name: 'customEvent:source' }], metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'report_buy_click' } } },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 25,
+    });
+    const bsr = await req('POST', P, HJ, bySourceBody);
+    console.log('\n=== report_buy_click BY SOURCE (inline vs end-of-article) ===');
+    if (bsr.status === 200) {
+      const rows = (JSON.parse(bsr.body).rows) || [];
+      if (!rows.length) console.log('  (no report_buy_click events in window)');
+      let inline = 0;
+      for (const r of rows) {
+        const s = r.dimensionValues[0].value || '(not set)';
+        const n = Number(r.metricValues[0].value) || 0;
+        if (s.startsWith('article-inline:')) inline += n;
+        const tag = s.startsWith('article-inline:') ? '  <- INLINE teaser'
+          : s.startsWith('article:') ? '  (end-of-article CTA)' : '';
+        console.log('  %s  %s%s', String(n).padStart(5), s, tag);
+      }
+      console.log('  -> inline-teaser buy-clicks (28d): %s', String(inline).padStart(3));
+    } else if (bsr.status === 400 && /customEvent:source/.test(bsr.body)) {
+      console.log('  (!) `source` is not yet a registered GA4 custom dimension, so inline');
+      console.log('      vs end-of-article cannot be split. Register it: GA4 -> Admin ->');
+      console.log('      Custom definitions -> Create custom dimension -> event-scoped, param `source`.');
+      console.log('      (GA4 does not backfill — only clicks AFTER registration are counted.)');
+    } else {
+      console.log('  ! by-source query failed', bsr.status, String(bsr.body).slice(0, 140));
+    }
   } else {
     console.log('\n(No GA4 property id — enable the "Google Analytics Admin API" too, or give me the numeric Property ID from GA4 → Admin → Property details.)');
   }
