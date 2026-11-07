@@ -1,6 +1,46 @@
 {
-  "updatedAt": "2026-11-07T18:43:47.748Z",
+  "updatedAt": "2026-11-07T22:41:52.927Z",
   "breaks": [
+    {
+      "title": "FIFA U-17 WWC: Nigeria’s Flamingos Beat Japan 2-1 To Claim First-Ever Title",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/fifa-u-17-wwc-flamingos-beat-japan-2-1-to-claim-first-ever-title/",
+      "pubDate": "Sat, 07 Nov 2026 20:27:59 +0000",
+      "importance": 5,
+      "why": "Nigeria's Flamingos U-17 women's team wins first-ever FIFA World Cup title, beating Japan 2-1",
+      "detectedAt": "2026-11-07T22:41:52.927Z"
+    },
+    {
+      "title": "‘You Made History – Ajibade Hails Flamingos After World Title Triumph",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/you-made-history-ajibade-hails-flamingos-after-world-title-triumph/",
+      "pubDate": "Sat, 07 Nov 2026 22:04:39 +0000",
+      "importance": 4,
+      "why": "Nigeria's Flamingos U-17 women's football team wins first-ever World Cup title",
+      "detectedAt": "2026-11-07T22:41:52.927Z"
+    },
+    {
+      "title": "FIFA U-17 WWC: Umejiaku Awarded Player Of The Match In Flamingos’ Victory Over Japan",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/fifa-u-17-wwc-umejiaku-awarded-player-of-the-match-in-flamingos-victory-over-japan/",
+      "pubDate": "Sat, 07 Nov 2026 21:33:24 +0000",
+      "importance": 4,
+      "why": "Nigeria's Flamingos player Umejiaku wins Player of the Match in FIFA U-17 World Cup victory",
+      "detectedAt": "2026-11-07T22:41:52.927Z"
+    },
+    {
+      "title": "FIFA U-17 WWC: ‘It’s A Dream Come True’ –Flamingos Coach Celebrates Nigeria’s Triumph Over Japan",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/fifa-u-17-wwc-its-a-dream-come-true-flamingos-coach-celebrates-nigerias-triumph-over-japan/",
+      "pubDate": "Sat, 07 Nov 2026 21:24:48 +0000",
+      "importance": 4,
+      "why": "Nigeria's Flamingos win FIFA U-17 World Cup title; coach celebrates historic triumph",
+      "detectedAt": "2026-11-07T22:41:52.927Z"
+    },
     {
       "title": "Alternativa Film Festival Heads to Africa in 2027, Opens Submissions With $120,000 Prize Fund",
       "source": "What Kept Me Up",
@@ -560,46 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-08-19T07:50:48.650Z"
-    },
-    {
-      "title": "Done Deal: Nigerian Striker Joins Swiss Club Neuchâtel Xamax",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/done-deal-nigerian-striker-joins-swiss-club-neuchatel-xamax/",
-      "pubDate": "Tue, 18 Aug 2026 18:00:08 +0000",
-      "importance": 4,
-      "why": "Signal: deal · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-08-18T20:37:20.073Z"
-    },
-    {
-      "title": "Nonprofit Production Banner Waterwell Doubles Funding for Unseen Iran Grants to Artists Representing the Diaspora in Film, TV, Theater and More",
-      "source": "Variety",
-      "category": "entertainment",
-      "link": "https://variety.com/2026/biz/news/arian-moayed-unseen-iran-grants-waterwell-nimruz-1236836821/",
-      "pubDate": "Tue, 18 Aug 2026 14:05:00 +0000",
-      "importance": 5,
-      "why": "Signal: funding · Variety (entertainment) · auto-curated",
-      "detectedAt": "2026-08-18T14:49:31.091Z"
-    },
-    {
-      "title": "Done Deal: Nigerian Defender Completes Loan Move To Villarreal",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/done-deal-nigerian-defender-completes-loan-move-to-villarreal/",
-      "pubDate": "Tue, 18 Aug 2026 05:20:37 +0000",
-      "importance": 4,
-      "why": "Signal: deal · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-08-18T07:50:10.616Z"
-    },
-    {
-      "title": "Tunde Kelani’s ‘Opalaba’ Adds to Nollywood’s Expanding AI Footprint",
-      "source": "What Kept Me Up",
-      "category": "entertainment",
-      "link": "https://whatkeptmeup.com/nigerian-film-news/tunde-kelanis-opalaba-adds-to-nollywoods-expanding-ai-footprint/?utm_source=rss&utm_medium=rss&utm_campaign=tunde-kelanis-opalaba-adds-to-nollywoods-expanding-ai-footprint",
-      "pubDate": "Mon, 17 Aug 2026 15:13:39 +0000",
-      "importance": 4,
-      "why": "Signal: expanding · What Kept Me Up (entertainment) · auto-curated",
-      "detectedAt": "2026-08-17T17:41:21.993Z"
     }
   ]
 }
