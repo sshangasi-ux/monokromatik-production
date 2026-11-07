@@ -12,10 +12,11 @@ import NewsletterSignup from '../../components/NewsletterSignup';
 import BrandRead from '../../components/BrandRead';
 import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
 import RelatedReportCTA from '../../components/RelatedReportCTA';
+import InlineReportTeaser from '../../components/InlineReportTeaser';
 import ListenButton from '../../components/ListenButton';
 import CiteThis from '../../components/CiteThis';
 import AffiliateDisclosure from '../../components/AffiliateDisclosure';
-import { entryReportForArticle } from '../../../lib/article-report';
+import { entryReportForArticle, splitContentForInlineCTA } from '../../../lib/article-report';
 import {
   getAllArticles,
   getReadingTime,
@@ -74,6 +75,13 @@ export default function ArticleClient({
   // The most on-topic R220 entry study for this piece (or null) — the funnel's
   // affordable middle rung, rendered in place of the generic advisory default.
   const entryReport = useMemo(() => entryReportForArticle(article), [article]);
+  // When the piece maps to a report, split the body so a compact teaser can sit
+  // high in the article (not only at the foot, which ~17s dwell means almost no
+  // one reaches). No safe split (short piece) → render whole, teaser skipped.
+  const [contentHead, contentTail] = useMemo(
+    () => (entryReport ? splitContentForInlineCTA(article.content) : [article.content, '']),
+    [article.content, entryReport],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -236,8 +244,19 @@ export default function ArticleClient({
             remarkPlugins={[remarkGfm, remarkCitations]}
             components={mdComponents}
           >
-            {article.content}
+            {contentTail ? contentHead : article.content}
           </ReactMarkdown>
+          {entryReport && contentTail && (
+            <>
+              <InlineReportTeaser report={entryReport} articleSlug={article.slug} />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkCitations]}
+                components={mdComponents}
+              >
+                {contentTail}
+              </ReactMarkdown>
+            </>
+          )}
         </div>
 
         {/* Layer 2 — structured evidence modules (By the Numbers, Timeline,

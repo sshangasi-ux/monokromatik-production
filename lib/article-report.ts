@@ -147,6 +147,39 @@ const TOPIC_MAP: { report: string; triggers: string[] }[] = [
 ];
 
 /**
+ * Split an article body at an early paragraph boundary so a compact report
+ * teaser can sit HIGH in the piece (where readers at ~17s dwell actually are),
+ * not only after the full body + modules at the foot — which the funnel showed
+ * almost no one reaches. Returns [head, tail]; tail is '' when the article is too
+ * short or no safe split exists, in which case the caller renders the body whole
+ * and the teaser is skipped (the end-of-article card still shows). A "safe" split
+ * is a blank-line (paragraph) boundary that is NOT inside a fenced code block, so
+ * each half stays valid Markdown. Pure.
+ */
+export function splitContentForInlineCTA(content: string, minChars = 550): [string, string] {
+  if (!content || content.length < minChars * 2) return [content, ''];
+  const limit = Math.floor(content.length * 0.55);
+  const lines = content.split('\n');
+  let fenced = false;
+  let chars = 0;
+  let splitAt = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (/^\s*(```|~~~)/.test(line)) fenced = !fenced;
+    chars += line.length + 1;
+    if (!fenced && line.trim() === '' && chars >= minChars && chars <= limit) {
+      splitAt = i + 1;
+      break;
+    }
+  }
+  if (splitAt < 0) return [content, ''];
+  const head = lines.slice(0, splitAt).join('\n').trimEnd();
+  const tail = lines.slice(splitAt).join('\n').trimStart();
+  if (!head || !tail) return [content, ''];
+  return [head, tail];
+}
+
+/**
  * The most on-topic R220 entry study for an article, or null when nothing
  * specific matches. Pure; safe to call client-side (reads bundled report data
  * and NEXT_PUBLIC checkout URLs).
