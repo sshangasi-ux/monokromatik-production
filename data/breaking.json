@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-06T14:58:36.004Z",
+  "updatedAt": "2026-11-07T18:43:47.748Z",
   "breaks": [
+    {
+      "title": "Alternativa Film Festival Heads to Africa in 2027, Opens Submissions With $120,000 Prize Fund",
+      "source": "What Kept Me Up",
+      "category": "entertainment",
+      "link": "https://whatkeptmeup.com/nigerian-film-news/alternativa-film-festival-africa-2027-submissions/?utm_source=rss&utm_medium=rss&utm_campaign=alternativa-film-festival-africa-2027-submissions",
+      "pubDate": "Sat, 07 Nov 2026 17:33:43 +0000",
+      "importance": 4,
+      "why": "Alternativa Film Festival expanding to Africa in 2027 with $120k prize fund — major film industry move for the continent",
+      "detectedAt": "2026-11-07T18:43:47.748Z"
+    },
+    {
+      "title": "Japan Vs Nigeria Live Blogging – 2026 FIFA U-17 Women’s World Cup Final",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/japan-vs-nigeria-live-blogging-2026-fifa-u-17-womens-world-cup-final/",
+      "pubDate": "Sat, 07 Nov 2026 17:30:56 +0000",
+      "importance": 4,
+      "why": "Nigeria in U-17 Women's World Cup final vs Japan — major African sports achievement",
+      "detectedAt": "2026-11-07T18:43:47.748Z"
+    },
     {
       "title": "Inside the Story of Martell’s Afrobeats Limited Edition XO with Davido and Prince Gyasi",
       "source": "BellaNaija",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: expanding · What Kept Me Up (entertainment) · auto-curated",
       "detectedAt": "2026-08-17T17:41:21.993Z"
-    },
-    {
-      "title": "WAFCON 2026: Cameroon’s Ngock Wins Best Player Award, Chawinga Claims Golden Boot",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/wafcon-2026-cameroons-ngock-wins-best-player-award-chawinga-claims-golden-boot/",
-      "pubDate": "Mon, 17 Aug 2026 04:35:24 +0000",
-      "importance": 4,
-      "why": "Signal: wins · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-08-17T04:55:05.803Z"
-    },
-    {
-      "title": "Semenyo eyes bigger targets after breaking Yeboah’s Ghanaian Premier League record",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/semenyo-eyes-bigger-targets-after-breaking-yeboahs-ghanaian-premier-league-record/",
-      "pubDate": "Sun, 16 Aug 2026 04:02:31 +0000",
-      "importance": 4,
-      "why": "Signal: record · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-16T05:39:47.235Z"
     }
   ]
 }
