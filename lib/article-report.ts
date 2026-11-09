@@ -70,6 +70,10 @@ const ARTICLE_REPORT_OVERRIDES: Record<string, string> = {
   'who-owns-fenty-beauty': 'the-megabrand-exit-ledger',
   'lvmh-wants-out-of-fenty-rihanna-owns-the-half-that-matters': 'the-megabrand-exit-ledger',
   'who-owns-mtn': 'value-capture-scorecard-2026',
+  'who-owns-takealot': 'value-capture-scorecard-2026',
+  'who-owns-capitec': 'value-capture-scorecard-2026',
+  'who-owns-discovery': 'value-capture-scorecard-2026',
+  'who-owns-pick-n-pay': 'value-capture-scorecard-2026',
   'heineken-admits-not-winning-who-wins-african-beer': 'the-african-beer-value-map',
   'who-bankrolls-south-african-sport': 'who-bankrolls-african-sport-the-dependency-map',
 };
