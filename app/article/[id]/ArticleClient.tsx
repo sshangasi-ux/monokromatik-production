@@ -13,6 +13,8 @@ import BrandRead from '../../components/BrandRead';
 import ArticleAdvisoryCTA from '../../components/ArticleAdvisoryCTA';
 import RelatedReportCTA from '../../components/RelatedReportCTA';
 import InlineReportTeaser from '../../components/InlineReportTeaser';
+import InlineLeadMagnet from '../../components/InlineLeadMagnet';
+import ExitIntentLeadMagnet from '../../components/ExitIntentLeadMagnet';
 import ListenButton from '../../components/ListenButton';
 import CiteThis from '../../components/CiteThis';
 import AffiliateDisclosure from '../../components/AffiliateDisclosure';
@@ -81,6 +83,18 @@ export default function ArticleClient({
   const [contentHead, contentTail] = useMemo(
     () => (entryReport ? splitContentForInlineCTA(article.content) : [article.content, '']),
     [article.content, entryReport],
+  );
+  // Whether the compact report teaser renders (needs a mapped report AND a safe
+  // high split). Drives both the teaser and where the lead-magnet capture sits.
+  const hasTeaser = Boolean(entryReport && contentTail);
+  // The inline lead-magnet capture (The African Ownership Map) sits LOWER than the
+  // report teaser — a second, later split of the remaining body (the tail when a
+  // teaser is present, else the whole piece) so the two in-article asks never
+  // stack. An empty tail → the capture is appended after the body, still well
+  // above the footer form most readers never reach.
+  const [magnetHead, magnetTail] = useMemo(
+    () => splitContentForInlineCTA(hasTeaser ? contentTail : article.content, 820),
+    [hasTeaser, contentTail, article.content],
   );
 
   useEffect(() => {
@@ -244,18 +258,32 @@ export default function ArticleClient({
             remarkPlugins={[remarkGfm, remarkCitations]}
             components={mdComponents}
           >
-            {contentTail ? contentHead : article.content}
+            {hasTeaser ? contentHead : magnetHead}
           </ReactMarkdown>
-          {entryReport && contentTail && (
+
+          {hasTeaser && entryReport && (
             <>
               <InlineReportTeaser report={entryReport} articleSlug={article.slug} />
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, remarkCitations]}
                 components={mdComponents}
               >
-                {contentTail}
+                {magnetHead}
               </ReactMarkdown>
             </>
+          )}
+
+          {/* In-article email capture — the lead magnet (African Ownership Map),
+              placed mid/late in the body where ~17s-dwell readers actually are. */}
+          <InlineLeadMagnet slug={article.slug} />
+
+          {magnetTail && (
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkCitations]}
+              components={mdComponents}
+            >
+              {magnetTail}
+            </ReactMarkdown>
           )}
         </div>
 
@@ -384,6 +412,9 @@ export default function ArticleClient({
           <NewsletterSignup variant="footer" />
         </div>
       </article>
+
+      {/* Shown-once-per-visitor exit-intent capture — article pages only. */}
+      <ExitIntentLeadMagnet slug={article.slug} />
 
       <style jsx global>{`
         .article-content h2 {
