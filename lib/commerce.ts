@@ -269,6 +269,26 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // yes on the same African-sport value-capture lens.
     entry: { slug: 'brand-study-the-springbok-world-champion-under-owned' },
   },
+  // Sport × nation-brand flagship (`report` tier). Pairs with the free deep dive
+  // (article: rwanda-f1-african-grand-prix-who-captures-the-value). url:null →
+  // the BUY CTA falls back to FNB EFT (manual) + membership until the hosted
+  // checkout links exist: create a Paystack product AND a PayPal NCP payment link,
+  // then set the URL here (+ PAYPAL_REPORT_URLS below) and add its match tokens to
+  // lib/report-delivery.ts so the webhook auto-delivers the PDF. Same pattern the
+  // other flagships launched on (beer/dependency map shipped url:null first).
+  'the-african-grand-prix-value-map': {
+    price: 'R3,500',
+    tier: 'report',
+    url: process.env.NEXT_PUBLIC_PAYSTACK_AFRICAN_GP_URL || null,
+    launchNote: 'Launch price — rising to R7,500',
+    enterprise: {
+      priceFrom: 'from $1,500',
+      blurb: 'Need the underlying data, a host-government or investor briefing, or citation & license rights? The enterprise edition pairs the full report with the value-map model behind it.',
+    },
+    // Step-DOWN entry rung: the R220 Springbok brand study is the cheaper first
+    // yes on the same African-sport value-capture lens.
+    entry: { slug: 'brand-study-the-springbok-world-champion-under-owned' },
+  },
 };
 
 /** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
