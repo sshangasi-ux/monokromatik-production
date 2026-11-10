@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-09T18:43:13.333Z",
+  "updatedAt": "2026-11-10T02:01:43.530Z",
   "breaks": [
+    {
+      "title": "Tina Knowles’ WACO Theater Center Sets Grand Reopening Celebration for South L.A.’s Historic Vision Theatre",
+      "source": "Variety",
+      "category": "entertainment",
+      "link": "https://variety.com/2026/scene/news/tina-knowles-waco-theater-center-vision-theatre-south-la-reopening-1236943581/",
+      "pubDate": "Tue, 10 Nov 2026 00:41:39 +0000",
+      "importance": 4,
+      "why": "Tina Knowles (African-diaspora creator) reopens historic WACO Theater in South L.A.",
+      "detectedAt": "2026-11-10T02:01:43.530Z"
+    },
     {
       "title": "Nkanyeziyethu Malunga: The Zimbabwean Designer Preserving African Heritage Through Fashion",
       "source": "BellaNaija",
@@ -589,16 +599,6 @@
       "pubDate": "Wed, 19 Aug 2026 16:26:06 GMT",
       "importance": 4,
       "why": "Signal: deal · BBC Sport Africa (sports) · auto-curated",
-      "detectedAt": "2026-08-19T16:44:19.871Z"
-    },
-    {
-      "title": "Tourism Society of Ghana to launch Youth in Tourism Festival 2026",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/tourism-society-of-ghana-to-launch-youth-in-tourism-festival-2026/",
-      "pubDate": "Wed, 19 Aug 2026 15:40:58 +0000",
-      "importance": 4,
-      "why": "Signal: launch · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-19T16:44:19.871Z"
     }
   ]
