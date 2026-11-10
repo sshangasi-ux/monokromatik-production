@@ -291,8 +291,22 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
   },
 };
 
-/** The one-off Paystack URL for a report, or null when it isn't sold one-off. */
+/**
+ * Paystack is being PHASED OUT. It never cleared the international-payments
+ * blocker (diaspora cards all declined — the root cause of R0 external revenue),
+ * so PayPal (cards worldwide, no account needed) is now the primary rail and FNB
+ * EFT the SA-local backup. This is the single chokepoint every Paystack path runs
+ * through (report CTAs, CheckoutRails, daily-brief), so flipping it off here
+ * removes the Paystack one-off rail everywhere at once. It is a reversible kill
+ * switch, not a code deletion: set NEXT_PUBLIC_ENABLE_PAYSTACK='true' to restore
+ * it, and any configured links still resolve. Membership billing is unaffected.
+ */
+export const PAYSTACK_ENABLED = process.env.NEXT_PUBLIC_ENABLE_PAYSTACK === 'true';
+
+/** The one-off Paystack URL for a report, or null when it isn't sold one-off —
+ *  and always null while Paystack is phased out (PAYSTACK_ENABLED off). */
 export function reportCheckoutUrl(slug?: string): string | null {
+  if (!PAYSTACK_ENABLED) return null;
   const key = slug || REPORT_CHECKOUT_SLUG;
   const url = PAID_REPORTS[key]?.url;
   return url && /^https?:\/\//.test(url) ? url : null;
@@ -334,6 +348,15 @@ const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
     process.env.NEXT_PUBLIC_PAYPAL_BEER_VALUE_MAP_URL || 'https://www.paypal.com/ncp/payment/S5U2DSZFTNZPL',
   'who-bankrolls-african-sport-the-dependency-map':
     process.env.NEXT_PUBLIC_PAYPAL_BANKROLLS_SPORT_URL || 'https://www.paypal.com/ncp/payment/GX6KKS23ZQ94N',
+  // Sport × nation-brand flagship (R3,500 → $195 USD). PENDING: create one PayPal
+  // NCP payment link for this report on the MONOKROMATIC NETWORK PayPal Business
+  // account, then paste its URL as the code default here (replacing the env-only
+  // ref) and add the link's CODE to its match tokens in lib/report-delivery.ts so
+  // paypalSlugFromBlob() routes the webhook to the right PDF. Until then this stays
+  // env-only (no default), so reportPaypalUrl() returns null and the report sells
+  // via FNB EFT.
+  'the-african-grand-prix-value-map':
+    process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_GP_URL || undefined,
 };
 
 /** The per-SKU PayPal payment-link URL, or null when none is set yet. */
@@ -403,9 +426,10 @@ export interface CheckoutRail {
 
 /**
  * The ordered payment rails for a report's BUY CTA: PayPal primary, FNB bank
- * transfer secondary, Paystack last backup. PayPal/Paystack rails appear only when
- * a URL exists for this SKU; FNB is always available (manual EFT). The first rail
- * is the primary button; the rest render as alternatives.
+ * transfer secondary. (Paystack is phased out — see PAYSTACK_ENABLED; it appears
+ * last, only when the kill switch is flipped back on and a URL exists.) PayPal
+ * appears only when a URL exists for this SKU; FNB is always available (manual
+ * EFT). The first rail is the primary button; the rest render as alternatives.
  */
 export function checkoutRails(slug?: string): CheckoutRail[] {
   const rails: CheckoutRail[] = [];
@@ -415,9 +439,13 @@ export function checkoutRails(slug?: string): CheckoutRail[] {
   if (paypal)
     rails.push({ provider: 'paypal', url: paypal, label: 'Pay by card / PayPal', note: 'Cards worldwide — no PayPal account needed' });
   rails.push({ provider: 'fnb', url: null, label: 'Pay by SA bank transfer', note: 'FNB EFT — no card fees' });
-  const paystack = reportCheckoutUrl(slug) ?? (slug ? getBundle(slug)?.url ?? null : null);
-  if (paystack)
-    rails.push({ provider: 'paystack', url: paystack, label: 'Pay by SA card (Paystack)', note: 'Local cards & instant EFT' });
+  if (PAYSTACK_ENABLED) {
+    // reportCheckoutUrl is already null while phased out; the bundle fallback is a
+    // Paystack URL too, so the whole branch is gated behind the kill switch.
+    const paystack = reportCheckoutUrl(slug) ?? (slug ? getBundle(slug)?.url ?? null : null);
+    if (paystack)
+      rails.push({ provider: 'paystack', url: paystack, label: 'Pay by SA card (Paystack)', note: 'Local cards & instant EFT' });
+  }
   return rails;
 }
 

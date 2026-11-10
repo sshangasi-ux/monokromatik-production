@@ -13,7 +13,7 @@
 
 import type { Report } from './reports';
 import { isLocked } from './reports';
-import { reportCheckoutUrl, reportPrice, reportLaunchNote } from './commerce';
+import { reportCheckoutUrl, reportPaypalUrl, reportPrice, reportLaunchNote } from './commerce';
 
 export type SectorId =
   | 'music'
@@ -147,7 +147,10 @@ export interface ReportCard {
 }
 
 export function toReportCard(r: Report): ReportCard {
-  const checkout = reportCheckoutUrl(r.slug);
+  // PayPal-first now that Paystack is phased out (reportCheckoutUrl is null while
+  // the kill switch is off): a report on sale via PayPal still cards as 'paid'
+  // with its price, not a priceless 'premium'.
+  const checkout = reportPaypalUrl(r.slug) ?? reportCheckoutUrl(r.slug);
   const tier: PriceTier = checkout ? 'paid' : isLocked(r) ? 'premium' : 'free';
   const sector = reportSector(r);
   return {

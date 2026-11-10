@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllReports, getReportBySlug } from '../../../lib/reports';
-import { reportCheckoutUrl, reportPrice } from '../../../lib/commerce';
+import { reportCheckoutUrl, reportPaypalUrl, reportPrice } from '../../../lib/commerce';
 import ReportFeature from '../../components/ReportFeature';
 
 interface PageProps {
@@ -57,7 +57,9 @@ export default async function ReportPage({ params }: PageProps) {
   const url = `https://www.monokromatik.com/reports/${report.slug}`;
   // For a report sold one-off, expose the price as a schema.org offer so the
   // paid report can surface a price in rich results (ZAR; "R3,500" → 3500).
-  const checkout = reportCheckoutUrl(report.slug);
+  // PayPal-first now that Paystack is phased out (reportCheckoutUrl is null while
+  // the kill switch is off), so the offer URL points at the live buy rail.
+  const checkout = reportPaypalUrl(report.slug) ?? reportCheckoutUrl(report.slug);
   const priceNum = checkout ? reportPrice(report.slug).replace(/[^0-9.]/g, '') : '';
   const offers = checkout && priceNum
     ? { offers: { '@type': 'Offer', price: priceNum, priceCurrency: 'ZAR', availability: 'https://schema.org/InStock', url: checkout } }
