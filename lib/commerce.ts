@@ -348,15 +348,12 @@ const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
     process.env.NEXT_PUBLIC_PAYPAL_BEER_VALUE_MAP_URL || 'https://www.paypal.com/ncp/payment/S5U2DSZFTNZPL',
   'who-bankrolls-african-sport-the-dependency-map':
     process.env.NEXT_PUBLIC_PAYPAL_BANKROLLS_SPORT_URL || 'https://www.paypal.com/ncp/payment/GX6KKS23ZQ94N',
-  // Sport × nation-brand flagship (R3,500 → $195 USD). PENDING: create one PayPal
-  // NCP payment link for this report on the MONOKROMATIC NETWORK PayPal Business
-  // account, then paste its URL as the code default here (replacing the env-only
-  // ref) and add the link's CODE to its match tokens in lib/report-delivery.ts so
-  // paypalSlugFromBlob() routes the webhook to the right PDF. Until then this stays
-  // env-only (no default), so reportPaypalUrl() returns null and the report sells
-  // via FNB EFT.
+  // Sport × nation-brand flagship (R3,500 → $195 USD). Dedicated PayPal NCP link
+  // on THE MONOKROMATIC NETWORK (PTY) LTD account (created 2026-11-10); its CODE
+  // L6RGFZYAHFTHS is also in the report's match tokens in lib/report-delivery.ts,
+  // so paypalSlugFromBlob() routes the webhook to the right PDF.
   'the-african-grand-prix-value-map':
-    process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_GP_URL || undefined,
+    process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_GP_URL || 'https://www.paypal.com/ncp/payment/L6RGFZYAHFTHS',
 };
 
 /** The per-SKU PayPal payment-link URL, or null when none is set yet. */
