@@ -6,7 +6,7 @@ const SITE = 'https://www.monokromatik.com';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | MonoKromatik',
-  description: 'How MonoKromatik collects, uses and protects your personal information, including payments handled by Paystack.',
+  description: 'How MonoKromatik collects, uses and protects your personal information, including payments handled by our payment providers (PayPal and Paystack).',
   alternates: { canonical: `${SITE}/privacy` },
 };
 
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       </LegalSection>
 
       <LegalSection n="3" title="Payments">
-        <p>Payments are processed by <strong>Paystack</strong>, a PCI-DSS-compliant payment provider. When you pay, your card and payment information is collected and processed by Paystack under its own privacy terms. MonoKromatik does not store your card details.</p>
+        <p>Payments are processed by our third-party payment providers &mdash; primarily <strong>PayPal</strong> for one-off purchases, and <strong>Paystack</strong> for recurring Intelligence Memberships &mdash; each a PCI-DSS-compliant provider. When you pay, your card and payment information is collected and processed by the relevant provider under its own privacy terms. MonoKromatik does not store your card details.</p>
       </LegalSection>
 
       <LegalSection n="4" title="Analytics and cookies">
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
       </LegalSection>
 
       <LegalSection n="5" title="Who we share it with">
-        <p>We do <strong>not</strong> sell your personal information. We share it only with the service providers who help us run MonoKromatik &mdash; our payment processor (Paystack), email/newsletter and analytics providers, and hosting infrastructure &mdash; and only as needed to deliver the service, or where required by law.</p>
+        <p>We do <strong>not</strong> sell your personal information. We share it only with the service providers who help us run MonoKromatik &mdash; our payment providers (PayPal and Paystack), email/newsletter and analytics providers, and hosting infrastructure &mdash; and only as needed to deliver the service, or where required by law.</p>
       </LegalSection>
 
       <LegalSection n="6" title="Retention">
