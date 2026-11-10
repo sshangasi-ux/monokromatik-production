@@ -26,8 +26,8 @@ export default function RefundsPage() {
       </p>
 
       <LegalSection n="1" title="Cancelling a membership">
-        <p>You can cancel your Intelligence Membership at any time &mdash; from your <Link href="/account" className="text-mono-amber-strong hover:underline">account settings</Link> or by emailing <a href={`mailto:${CONTACT_EMAIL}`} className="text-mono-amber-strong hover:underline">{CONTACT_EMAIL}</a>.</p>
-        <p>Cancellation stops any future renewal. Your access continues until the end of the billing period you have already paid for, after which it ends and you are not charged again. Cancelling part-way through a period does not, by itself, trigger a refund for that period (see below).</p>
+        <p>The Intelligence Membership is now sold as a <strong>one-off annual term</strong> &mdash; a single payment that gives you twelve months of access, with <strong>no automatic renewal</strong>. There is nothing to cancel to stop a future charge: your access simply runs to the end of the twelve months, and you choose whether to renew for another year.</p>
+        <p>If you joined on an earlier recurring plan, you can still stop future renewals at any time from your <Link href="/account" className="text-mono-amber-strong hover:underline">account settings</Link> or by emailing <a href={`mailto:${CONTACT_EMAIL}`} className="text-mono-amber-strong hover:underline">{CONTACT_EMAIL}</a>; access continues to the end of the period already paid for. Ending a term part-way through does not, by itself, trigger a refund for that period (see below).</p>
       </LegalSection>
 
       <LegalSection n="2" title="Membership refunds">
@@ -54,7 +54,7 @@ export default function RefundsPage() {
       </LegalSection>
 
       <LegalSection n="6" title="How refunds are made">
-        <p>Approved refunds are processed back to your original payment method through the payment provider you used &mdash; PayPal for one-off purchases, or Paystack for Intelligence Memberships. Depending on your bank or card issuer, it can take a few business days for the refund to reflect. We do not store your card details; payments and refunds are handled securely by our payment providers.</p>
+        <p>Approved refunds are processed back to your original payment method through the payment provider you used &mdash; PayPal for one-off purchases and the annual membership, or Paystack where that rail was used. Depending on your bank or card issuer, it can take a few business days for the refund to reflect. We do not store your card details; payments and refunds are handled securely by our payment providers.</p>
       </LegalSection>
 
       <LegalSection n="7" title="Contact">
