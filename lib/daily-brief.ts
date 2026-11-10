@@ -7,7 +7,7 @@
 // emailed to the operator via Resend (with a repo-committed copy as backup).
 
 import { gatherState, type SiteState } from './monthly-review';
-import { reportCheckoutUrl, membershipCheckoutUrl, DATA_PRODUCTS, MEMBERSHIP } from './commerce';
+import { reportCheckoutUrl, reportPaypalUrl, membershipCheckoutUrl, DATA_PRODUCTS, MEMBERSHIP } from './commerce';
 import { getAllCaseStudies } from './case-studies';
 import { queuedSubjects, queueCounts, type QueueSubject } from './case-study-queue';
 
@@ -34,7 +34,10 @@ export async function gatherOps(): Promise<OpsSnapshot> {
   return {
     ...state,
     monetisation: {
-      reportCheckoutLive: Boolean(reportCheckoutUrl()),
+      // PayPal-first now that Paystack is phased out (reportCheckoutUrl is null
+      // while the kill switch is off): the default report SKU counts as live when
+      // its PayPal link is wired, so the ops brief tracks the real rail.
+      reportCheckoutLive: Boolean(reportPaypalUrl() ?? reportCheckoutUrl()),
       membershipIndividualLive: Boolean(membershipCheckoutUrl('individual')),
       membershipTeamLive: Boolean(membershipCheckoutUrl('team')),
       membershipPrices: MEMBERSHIP.map((t) => `${t.name} ${t.priceMonthly}${t.priceAnnual ? `/${t.priceAnnual}` : ''}`),
@@ -64,7 +67,7 @@ export function deriveActions(o: OpsSnapshot): { grow: string[]; refine: string[
 
   // MONETISE — the highest-leverage, most-neglected goal.
   if (!o.monetisation.membershipIndividualLive) monetise.push('**Membership checkout is dormant** — set `NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL` so the R149/R1,490 tier can actually be bought. No live checkout = zero revenue from the biggest funnel.');
-  if (!o.monetisation.reportCheckoutLive) monetise.push('**Index Full Report checkout is dormant** — wire `NEXT_PUBLIC_PAYSTACK_REPORT_URL` to sell the one-time report to the traffic already landing on the Index.');
+  if (!o.monetisation.reportCheckoutLive) monetise.push('**Index Full Report checkout is dormant** — wire the default report SKU’s PayPal link (`NEXT_PUBLIC_PAYPAL_*_URL`) to sell the one-time report to the traffic already landing on the Index. (Paystack is phased out.)');
   monetise.push('**Switch on badge licensing** — the `/api/badge/[brand]` embed is built but unsold; offer ranked brands a paid "Ranked by MonoKromatik" badge ($10–25K/logo, ~95% margin — the rating-agency double-monetisation).');
   if (o.index.brands >= 25) monetise.push(`**Pitch data licences** — ${o.index.brands} ranked brands is enough to sell a category league table (from $1,250) or a Scorecard (from $900). Land 2–3 paying pilots to publish as proof.`);
 

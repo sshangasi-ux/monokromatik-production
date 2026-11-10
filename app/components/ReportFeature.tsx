@@ -47,7 +47,13 @@ export default async function ReportFeature({ report }: { report: Report }) {
   // they stay gated to the one-off BUY even for members.
   const memberCanUnlock = membershipUnlocks(r.slug);
   const membersLive = membershipsLive() && memberCanUnlock;
-  const oneOffUrl = reportCheckoutUrl(r.slug);
+  // The one-off buy signal is PayPal-first now that Paystack is phased out
+  // (reportCheckoutUrl is null while PAYSTACK_ENABLED is off). This both gates the
+  // report (premium) and decides whether the CheckoutRails buy box renders, so it
+  // must see the PayPal link — otherwise a PayPal-only report would silently
+  // un-gate and show no buy UI. Null when neither rail is configured, so a report
+  // with nothing to sell yet still renders open rather than gating dead content.
+  const oneOffUrl = reportPaypalUrl(r.slug) ?? reportCheckoutUrl(r.slug);
   const premium = isLocked(r) && (membersLive || !!oneOffUrl);
   const locked = premium && !(memberCanUnlock && (await isMember()));
   // Light email-gate for the free flagship reports (never on a paid/premium
@@ -320,7 +326,8 @@ export default async function ReportFeature({ report }: { report: Report }) {
             {locked && (() => {
               // Two ways past the gate: the recurring membership (best value, all
               // reports) or a one-off purchase of just this report (pay-per-report).
-              // The one-off CTA appears only once the Paystack link is configured.
+              // The one-off CTA appears once the PayPal link is configured (Paystack
+              // is phased out); CheckoutRails then renders PayPal primary + FNB EFT.
               const oneOff = oneOffUrl;
               const price = reportPrice(r.slug);
               const launchNote = reportLaunchNote(r.slug);

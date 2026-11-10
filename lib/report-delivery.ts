@@ -91,6 +91,20 @@ const REPORTS: ReportAsset[] = [
     blurb: "The value-capture read on who funds African sport: how big the betting bankroll is, which properties depend on it, where the leverage and the risk sit, and what a property that diversified its funders (SA rugby) teaches the ones that didn't — six sourced exhibits, with a Bear Case.",
   },
   {
+    slug: 'the-african-grand-prix-value-map',
+    // Nov 2026 sport × nation-brand flagship. Rendered on-demand from
+    // data/reports.json. Sold via a dedicated PayPal link (NCP code L6RGFZYAHFTHS),
+    // so the webhook's deterministic first pass (paypalSlugFromBlob over
+    // PAYPAL_REPORT_URLS) pins this report 1:1; the code is also in `match` as a
+    // fallback, alongside distinctive slug words that don't overlap other reports'.
+    match: ['the-african-grand-prix-value-map', 'african-grand-prix', 'grand-prix-value-map', 'grand-prix', 'l6rgfzyahfths'],
+    generate: true,
+    filename: 'MonoKromatik-The-African-Grand-Prix-Value-Map.pdf',
+    title: "The African Grand Prix Value Map: Who Captures Rwanda's F1 Bet",
+    subject: 'Your report — The African Grand Prix Value Map',
+    blurb: "The value-capture read on Rwanda's Formula 1 deal: what a host actually rents, what leaves the country versus what stays, how the comparators (Melbourne, Singapore, the ghost of Kyalami) really pay off, the soft-power ledger that amplifies the best story and the contested one alike, and an ownership scorecard — six sourced exhibits, with a Bear Case.",
+  },
+  {
     slug: 'the-repatriation-playbook-nollywood-2026',
     // Sold via a Paystack PAYMENT PAGE (id 2231668, slug 074g1pqwfw — rotated
     // 2026-10-23), not a Storefront product — so the match tokens include the page slug/id and the

@@ -17,7 +17,7 @@
 
 import type { Article } from './articles';
 import { getReportBySlug } from './reports';
-import { reportCheckoutUrl, reportPrice, reportTier, reportEntry, type ReportTierId } from './commerce';
+import { reportCheckoutUrl, reportPaypalUrl, reportPrice, reportTier, reportEntry, type ReportTierId } from './commerce';
 
 /** The cheaper step-DOWN study offered alongside a flagship (the low-friction "first yes"). */
 export interface ArticleEntryStep {
@@ -81,7 +81,10 @@ const ARTICLE_REPORT_OVERRIDES: Record<string, string> = {
 // Resolve a buyable report slug into the in-article entry card, or null when it is
 // not a live, one-off-purchasable SKU. Shared by the override and keyword paths.
 function buildEntry(reportSlug: string): ArticleEntryReport | null {
-  const url = reportCheckoutUrl(reportSlug);
+  // PayPal-first now that Paystack is phased out (reportCheckoutUrl is null while
+  // the kill switch is off), so the inline CTA tracks the live PayPal rail and
+  // doesn't vanish when Paystack goes dark. Null → report isn't on sale yet.
+  const url = reportPaypalUrl(reportSlug) ?? reportCheckoutUrl(reportSlug);
   const r = getReportBySlug(reportSlug);
   if (!url || !r || r.status !== 'live') return null;
 
@@ -93,7 +96,7 @@ function buildEntry(reportSlug: string): ArticleEntryReport | null {
   if (tier === 'report') {
     const step = reportEntry(reportSlug);
     const er = step ? getReportBySlug(step.slug) : null;
-    if (step && er && er.status === 'live' && reportCheckoutUrl(step.slug)) {
+    if (step && er && er.status === 'live' && (reportPaypalUrl(step.slug) ?? reportCheckoutUrl(step.slug))) {
       entry = {
         slug: step.slug,
         title: er.title,
