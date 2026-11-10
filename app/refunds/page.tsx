@@ -54,7 +54,7 @@ export default function RefundsPage() {
       </LegalSection>
 
       <LegalSection n="6" title="How refunds are made">
-        <p>Approved refunds are processed back to your original payment method through our payment processor, Paystack. Depending on your bank or card issuer, it can take a few business days for the refund to reflect. We do not store your card details; payments and refunds are handled securely by Paystack.</p>
+        <p>Approved refunds are processed back to your original payment method through the payment provider you used &mdash; PayPal for one-off purchases, or Paystack for Intelligence Memberships. Depending on your bank or card issuer, it can take a few business days for the refund to reflect. We do not store your card details; payments and refunds are handled securely by our payment providers.</p>
       </LegalSection>
 
       <LegalSection n="7" title="Contact">
