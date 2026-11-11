@@ -89,31 +89,82 @@ secondary targets; pull exact slugs from `/sitemap.xml` before submitting them.
 11. `https://www.monokromatik.com/archive`
 12. `https://www.monokromatik.com/reports`
 
-**Day 2 — highest-volume cluster articles** *(exact "who owns [big brand]" head terms — the queries with real search demand):*
-13. `https://www.monokromatik.com/article/who-owns-mtn`
-14. `https://www.monokromatik.com/article/who-owns-dangote`
-15. `https://www.monokromatik.com/article/who-owns-capitec`
-16. `https://www.monokromatik.com/article/who-owns-takealot`
-17. `https://www.monokromatik.com/article/who-owns-shoprite`
-18. `https://www.monokromatik.com/article/who-owns-multichoice-dstv`
-19. `https://www.monokromatik.com/article/who-owns-nandos`
-20. `https://www.monokromatik.com/article/who-captures-amapiano`
-21. `https://www.monokromatik.com/article/who-owns-black-beauty`
-22. `https://www.monokromatik.com/article/who-owns-africas-banks`
-23. `https://www.monokromatik.com/article/who-owns-africas-telecoms`
-24. `https://www.monokromatik.com/article/who-owns-safaricom`
+**Day 2+ — the full `who-owns-X` brand set (45 pages)** *(the whole cluster; ~3 days of GSC's ~15/day quota — work top-down. If quota-limited, submit the highest-demand heads first: MTN, Dangote, Capitec, Takealot, Shoprite, MultiChoice/DStv, Nando's, Amapiano, Black Beauty, Banks, Telecoms, Safaricom.)*
 
-**Day 3 — sections + flagship reports + commercial funnel:**
-25. `https://www.monokromatik.com/culture`
-26. `https://www.monokromatik.com/spirits`
-27. `https://www.monokromatik.com/roots`
-28. `https://www.monokromatik.com/arena`
-29. `https://www.monokromatik.com/waves`
-30. `https://www.monokromatik.com/reports/african-spirits-report-2026-who-owns-the-pour`
-31. `https://www.monokromatik.com/reports/african-startup-funding-concentration-2026`
-32. `https://www.monokromatik.com/reports/cannes-lions-2026-the-africa-value-ledger`
-33. `https://www.monokromatik.com/pricing`
-34. `https://www.monokromatik.com/membership`
+*Telecoms:*
+- `https://www.monokromatik.com/article/who-owns-mtn`
+- `https://www.monokromatik.com/article/who-owns-airtel-africa`
+- `https://www.monokromatik.com/article/who-owns-vodacom`
+- `https://www.monokromatik.com/article/who-owns-safaricom`
+- `https://www.monokromatik.com/article/who-owns-maroc-telecom`
+- `https://www.monokromatik.com/article/who-owns-glo`
+- `https://www.monokromatik.com/article/who-owns-africas-telecoms`
+
+*Banks, fintech & insurance:*
+- `https://www.monokromatik.com/article/who-owns-capitec`
+- `https://www.monokromatik.com/article/who-owns-access-bank`
+- `https://www.monokromatik.com/article/who-owns-discovery`
+- `https://www.monokromatik.com/article/who-owns-africas-banks`
+- `https://www.monokromatik.com/article/who-owns-flutterwave`
+- `https://www.monokromatik.com/article/who-owns-paystack`
+- `https://www.monokromatik.com/article/who-owns-opay`
+
+*Retail & e-commerce:*
+- `https://www.monokromatik.com/article/who-owns-takealot`
+- `https://www.monokromatik.com/article/who-owns-shoprite`
+- `https://www.monokromatik.com/article/who-owns-pick-n-pay`
+- `https://www.monokromatik.com/article/who-owns-jumia`
+
+*Consumer goods & food:*
+- `https://www.monokromatik.com/article/who-owns-dangote`
+- `https://www.monokromatik.com/article/who-owns-nestle-nigeria`
+- `https://www.monokromatik.com/article/who-owns-indomie`
+- `https://www.monokromatik.com/article/who-owns-chivita`
+- `https://www.monokromatik.com/article/who-owns-nandos`
+- `https://www.monokromatik.com/article/who-owns-tecno`
+
+*Spirits, drinks & wine:*
+- `https://www.monokromatik.com/article/who-owns-amarula`
+- `https://www.monokromatik.com/article/who-owns-guinness-nigeria`
+- `https://www.monokromatik.com/article/who-owns-nigerian-breweries`
+- `https://www.monokromatik.com/article/who-owns-sab`
+- `https://www.monokromatik.com/article/who-owns-tusker`
+- `https://www.monokromatik.com/article/who-owns-african-premium-spirits-going-global`
+- `https://www.monokromatik.com/article/who-owns-the-luxury-pour-of-detty-december`
+- `https://www.monokromatik.com/article/who-owns-the-cape-south-african-wine-s-black-founders-and-the-tariff-that-rewrot`
+
+*Beauty & fashion:*
+- `https://www.monokromatik.com/article/who-owns-black-beauty`
+- `https://www.monokromatik.com/article/who-owns-fenty-beauty`
+- `https://www.monokromatik.com/article/who-owns-the-aesthetic-daily-paper-the-diaspora-streetwear-wave-and-the-gap-betw`
+- `https://www.monokromatik.com/article/who-owns-the-value-in-african-sneaker-culture`
+
+*Sport:*
+- `https://www.monokromatik.com/article/who-captures-african-football-value-125m-question`
+- `https://www.monokromatik.com/article/whos-buying-african-sport`
+- `https://www.monokromatik.com/article/who-owns-the-springbok`
+- `https://www.monokromatik.com/article/who-owns-the-betting-economy-of-african-football`
+
+*Music & screen:*
+- `https://www.monokromatik.com/article/who-captures-amapiano`
+- `https://www.monokromatik.com/article/who-owns-mavin-records`
+- `https://www.monokromatik.com/article/who-owns-multichoice-dstv`
+
+*Industrial & resources:*
+- `https://www.monokromatik.com/article/who-owns-anglo-american`
+- `https://www.monokromatik.com/article/who-owns-ocp`
+
+**Final tranche — sections + flagship reports + commercial funnel:**
+- `https://www.monokromatik.com/culture`
+- `https://www.monokromatik.com/spirits`
+- `https://www.monokromatik.com/roots`
+- `https://www.monokromatik.com/arena`
+- `https://www.monokromatik.com/waves`
+- `https://www.monokromatik.com/reports/african-spirits-report-2026-who-owns-the-pour`
+- `https://www.monokromatik.com/reports/african-startup-funding-concentration-2026`
+- `https://www.monokromatik.com/reports/cannes-lions-2026-the-africa-value-ledger`
+- `https://www.monokromatik.com/pricing`
+- `https://www.monokromatik.com/membership`
 
 ## What to expect
 
