@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-11T14:10:26.895Z",
+  "updatedAt": "2026-11-11T21:22:15.631Z",
   "breaks": [
+    {
+      "title": "Seven New Tracks From Rema? E-Mortal Boy (EMB) Is Coming Next Week",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/11/rema-announces-new-ep-e-mortal-boy/",
+      "pubDate": "Wed, 11 Nov 2026 20:37:45 +0000",
+      "importance": 4,
+      "why": "Rema (Nigerian Afrobeats star) announces new EP 'E-Mortal Boy' next week",
+      "detectedAt": "2026-11-11T21:22:15.631Z"
+    },
+    {
+      "title": "Rema ups the ante with new EP ‘E-Mortal Boy (EMB)’ featuring Wizkid",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/rema-new-ep-e-mortal-boy-emb-featuring-wizkid/",
+      "pubDate": "Wed, 11 Nov 2026 19:17:27 +0000",
+      "importance": 4,
+      "why": "Rema (Nigerian Afrobeats) releases new EP 'E-Mortal Boy' featuring Wizkid",
+      "detectedAt": "2026-11-11T21:22:15.631Z"
+    },
     {
       "title": "AFCON 2027Q: Full House In Uyo As Super Eagles Intensify Preparations For Tanzania Clash",
       "source": "Complete Sports",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-08-25T17:42:29.933Z"
-    },
-    {
-      "title": "Blue Pappi Unveils Star-Studded Lineup For Joburg Leg Of “Ehlane Tour”",
-      "source": "SA Hip Hop Mag",
-      "category": "music",
-      "link": "https://sahiphopmag.co.za/2026/08/blue-pappi-unveils-star-studded-lineup-for-joburg-leg-of-ehlane-tour/",
-      "pubDate": "Mon, 24 Aug 2026 10:47:01 +0000",
-      "importance": 4,
-      "why": "Signal: unveils · SA Hip Hop Mag (music) · auto-curated",
-      "detectedAt": "2026-08-24T10:50:31.374Z"
-    },
-    {
-      "title": "Burna Boy extends record with fifth No. 1 on Afrobeats Power Ranking",
-      "source": "NotJustOk",
-      "category": "music",
-      "link": "https://notjustok.com/news/burna-boy-extends-record-with-fifth-no-1-on-afrobeats-power-ranking/",
-      "pubDate": "Mon, 24 Aug 2026 10:06:35 +0000",
-      "importance": 4,
-      "why": "Signal: record · NotJustOk (music) · auto-curated",
-      "detectedAt": "2026-08-24T10:50:31.374Z"
     }
   ]
 }
