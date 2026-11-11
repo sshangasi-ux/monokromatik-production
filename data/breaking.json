@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-10T17:45:26.166Z",
+  "updatedAt": "2026-11-11T06:03:59.466Z",
   "breaks": [
+    {
+      "title": "Dangote Cement shelves London listing, blames market conditions for blow to LSE",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/dangote-cement-shelves-london-listing-blames-market-conditions-for-blow-to-lse/",
+      "pubDate": "Wed, 11 Nov 2026 04:21:00 +0000",
+      "importance": 4,
+      "why": "Dangote Cement (major African brand) shelves London IPO — significant business/brand news",
+      "detectedAt": "2026-11-11T06:03:59.466Z"
+    },
     {
       "title": "Super Falcons Line Up Friendly Against Algeria",
       "source": "Complete Sports",
@@ -590,16 +600,6 @@
       "importance": 5,
       "why": "Signal: deal, $ · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-08-21T16:49:02.729Z"
-    },
-    {
-      "title": "Bafana Bafana Legend Raises Concern Over Condition Of Football Pitches In Ghana",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/bafana-bafana-legend-raises-concern-over-condition-of-football-pitches-in-ghana/",
-      "pubDate": "Fri, 21 Aug 2026 14:33:38 +0000",
-      "importance": 4,
-      "why": "Signal: raises · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-08-21T14:50:30.669Z"
     }
   ]
 }
