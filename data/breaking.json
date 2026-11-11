@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-11-11T06:03:59.466Z",
+  "updatedAt": "2026-11-11T14:10:26.895Z",
   "breaks": [
+    {
+      "title": "AFCON 2027Q: Full House In Uyo As Super Eagles Intensify Preparations For Tanzania Clash",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/afcon-2027q-full-house-in-uyo-as-super-eagles-intensify-preparations-for-tanzania-clash/",
+      "pubDate": "Wed, 11 Nov 2026 12:55:58 +0000",
+      "importance": 4,
+      "why": "Nigeria Super Eagles AFCON 2027 qualifier preparations—African national team sport",
+      "detectedAt": "2026-11-11T14:10:26.895Z"
+    },
+    {
+      "title": "Eva Anya’s AFRIFF 2026: FilmOne to Distribute ‘Lady’ in 2027, ‘Achalugo’ in Production, ‘Aljana’ Nears Release",
+      "source": "What Kept Me Up",
+      "category": "entertainment",
+      "link": "https://whatkeptmeup.com/nigerian-film-news/eva-anya-afriff-2026-lady-achalugo-aljana/?utm_source=rss&utm_medium=rss&utm_campaign=eva-anya-afriff-2026-lady-achalugo-aljana",
+      "pubDate": "Wed, 11 Nov 2026 12:30:48 +0000",
+      "importance": 4,
+      "why": "Eva Anya at AFRIFF 2026; FilmOne African film distribution deals ('Lady', 'Achalugo', 'Aljana')—African film economy",
+      "detectedAt": "2026-11-11T14:10:26.895Z"
+    },
+    {
+      "title": "Ayra Starr joins 2027 Coachella lineups",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/ayra-starr-joins-2027-coachella-performers/",
+      "pubDate": "Wed, 11 Nov 2026 12:17:26 +0000",
+      "importance": 4,
+      "why": "Ayra Starr (Nigerian Afrobeats artist) joins Coachella 2027 lineup—major international music booking",
+      "detectedAt": "2026-11-11T14:10:26.895Z"
+    },
     {
       "title": "Dangote Cement shelves London listing, blames market conditions for blow to LSE",
       "source": "MyJoyOnline",
@@ -570,36 +600,6 @@
       "importance": 4,
       "why": "Signal: record · NotJustOk (music) · auto-curated",
       "detectedAt": "2026-08-24T10:50:31.374Z"
-    },
-    {
-      "title": "Invest in the craft, not hype: Ghanaian creator Adnan Saani on why social media alone will not pay",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/invest-in-the-craft-not-hype-ghanaian-creator-adnan-saani-on-why-social-media-alone-will-not-pay/",
-      "pubDate": "Mon, 24 Aug 2026 05:15:50 +0000",
-      "importance": 4,
-      "why": "Signal: invest · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-24T05:50:41.450Z"
-    },
-    {
-      "title": "NSMQ 2026: Kumasi Academy secures one-eighth spot after commanding win over Bueman SHS, Hohoe EP SHS",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/nsmq-2026-kumasi-academy-secures-one-eighth-spot-after-commanding-win-over-bueman-shs-hohoe-ep-shs/",
-      "pubDate": "Sat, 22 Aug 2026 18:43:32 +0000",
-      "importance": 4,
-      "why": "Signal: win · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-22T18:46:41.033Z"
-    },
-    {
-      "title": "Ghana secures €163m debt restructuring deal with Belgium – Ato Forson",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/ghana-secures-e163m-debt-restructuring-deal-with-belgium-ato-forson/",
-      "pubDate": "Fri, 21 Aug 2026 15:00:44 +0000",
-      "importance": 5,
-      "why": "Signal: deal, $ · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-21T16:49:02.729Z"
     }
   ]
 }
