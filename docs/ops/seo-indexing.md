@@ -67,35 +67,53 @@ Zero inbound links is why Google deprioritises the crawl. Even 5–10 quality li
 
 ---
 
-## Cornerstone URLs to "Request indexing" *(all verified `200`, priority order)*
+## Cornerstone URLs to "Request indexing" *(priority order; refreshed 2026-11 for the ownership wedge)*
 
-**Day 1 — hubs & the Index (the differentiator):**
+GSC's manual "Request indexing" is capped at ~10–20 URLs/day, so this is split into
+daily tranches. Cornerstones are the hubs + highest-demand heads — the long-tail
+`who-owns-*` articles index via the sitemap + hub internal links once the hubs earn
+authority. Per-brand Index pages (`/intelligence/signal-index/<brand>`) are strong
+secondary targets; pull exact slugs from `/sitemap.xml` before submitting them.
+
+**Day 1 — the ownership-wedge hubs + homepage + the Index** *(newest, highest-intent heads; they pass authority to the whole `who-owns-*` cluster):*
 1. `https://www.monokromatik.com/`
-2. `https://www.monokromatik.com/intelligence/signal-index`
-3. `https://www.monokromatik.com/intelligence/signal-index/edition-01`
-4. `https://www.monokromatik.com/intelligence/signal-index/methodology`
-5. `https://www.monokromatik.com/intelligence/signal-index/edition-01/exhibits`
-6. `https://www.monokromatik.com/intelligence/signal-index/movers`
-7. `https://www.monokromatik.com/intelligence/signal-index/capitec-bank`
-8. `https://www.monokromatik.com/intelligence/signal-index/checkers-sixty60-shoprite-holdings`
-9. `https://www.monokromatik.com/intelligence/signal-index/ethiopian-airlines`
-10. `https://www.monokromatik.com/intelligence/signal-index/nando-s`
-11. `https://www.monokromatik.com/intelligence/signal-index/thebe-magugu`
-12. `https://www.monokromatik.com/breaking`
+2. `https://www.monokromatik.com/who-owns-africa`
+3. `https://www.monokromatik.com/whos-buying-africa`
+4. `https://www.monokromatik.com/who-owns`
+5. `https://www.monokromatik.com/ownership-100`
+6. `https://www.monokromatik.com/intelligence/ownership`
+7. `https://www.monokromatik.com/coil-economy`
+8. `https://www.monokromatik.com/intelligence/signal-index`
+9. `https://www.monokromatik.com/breaking`
+10. `https://www.monokromatik.com/the-drop`
+11. `https://www.monokromatik.com/archive`
+12. `https://www.monokromatik.com/reports`
 
-**Day 2 — best content & sections:**
-13. `https://www.monokromatik.com/reports`
-14. `https://www.monokromatik.com/reports/african-startup-funding-concentration-2026`
-15. `https://www.monokromatik.com/article/jay-z-yankee-stadium-diaspora-catalog`
-16. `https://www.monokromatik.com/article/world-cup-2026-arrival-fashion-african-authorship`
-17. `https://www.monokromatik.com/article/amarula-african-gin-marula-spirit-europe-expansion`
-18. `https://www.monokromatik.com/article/ghana-piracy-crackdown-screen-economy`
-19. `https://www.monokromatik.com/article/african-football-kits-jersey-renaissance`
-20. `https://www.monokromatik.com/culture`
-21. `https://www.monokromatik.com/spirits`
-22. `https://www.monokromatik.com/roots`
-23. `https://www.monokromatik.com/arena`
-24. `https://www.monokromatik.com/waves`
+**Day 2 — highest-volume cluster articles** *(exact "who owns [big brand]" head terms — the queries with real search demand):*
+13. `https://www.monokromatik.com/article/who-owns-mtn`
+14. `https://www.monokromatik.com/article/who-owns-dangote`
+15. `https://www.monokromatik.com/article/who-owns-capitec`
+16. `https://www.monokromatik.com/article/who-owns-takealot`
+17. `https://www.monokromatik.com/article/who-owns-shoprite`
+18. `https://www.monokromatik.com/article/who-owns-multichoice-dstv`
+19. `https://www.monokromatik.com/article/who-owns-nandos`
+20. `https://www.monokromatik.com/article/who-captures-amapiano`
+21. `https://www.monokromatik.com/article/who-owns-black-beauty`
+22. `https://www.monokromatik.com/article/who-owns-africas-banks`
+23. `https://www.monokromatik.com/article/who-owns-africas-telecoms`
+24. `https://www.monokromatik.com/article/who-owns-safaricom`
+
+**Day 3 — sections + flagship reports + commercial funnel:**
+25. `https://www.monokromatik.com/culture`
+26. `https://www.monokromatik.com/spirits`
+27. `https://www.monokromatik.com/roots`
+28. `https://www.monokromatik.com/arena`
+29. `https://www.monokromatik.com/waves`
+30. `https://www.monokromatik.com/reports/african-spirits-report-2026-who-owns-the-pour`
+31. `https://www.monokromatik.com/reports/african-startup-funding-concentration-2026`
+32. `https://www.monokromatik.com/reports/cannes-lions-2026-the-africa-value-ledger`
+33. `https://www.monokromatik.com/pricing`
+34. `https://www.monokromatik.com/membership`
 
 ## What to expect
 
