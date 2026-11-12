@@ -289,6 +289,29 @@ export const PAID_REPORTS: Record<string, PaidReportSku> = {
     // yes on the same African-sport value-capture lens.
     entry: { slug: 'brand-study-the-springbok-world-champion-under-owned' },
   },
+  // ── The Signal Studies — the "Will It Land?" + brief library, moved from
+  //    members-only to individually buyable (2026-11-10, user: "fully move the 17
+  //    study-tier reports exclusively to paypal"). Each is an R220 study with its
+  //    OWN dedicated PayPal $12 NCP link in PAYPAL_REPORT_URLS below (the Paystack
+  //    one-off `url` is null — Paystack is phased out, PayPal is the only one-off
+  //    rail). All remain membership-unlockable (tier 'study' → membershipUnlocks).
+  'will-it-land-brand-south-africa-nascar': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-shein-temu-africa': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-starlink-africa': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-african-off-grid-solar': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-african-healthtech': { price: 'R220', tier: 'study', url: null },
+  'african-luxury-market-brief': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-african-electric-mobility': { price: 'R220', tier: 'study', url: null },
+  'nigerian-creative-economy-brief': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-african-aviation': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-spearhead-spirits': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-magugu-house': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-ebonylife-on-plus': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-moniepoint-uk-nigeria': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-uncover-skincare': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-warner-africori-amapiano': { price: 'R220', tier: 'study', url: null },
+  'will-it-land-totalenergies-afcon': { price: 'R220', tier: 'study', url: null },
+  'south-african-brand-culture-brief': { price: 'R220', tier: 'study', url: null },
 };
 
 /**
@@ -354,6 +377,45 @@ const PAYPAL_REPORT_URLS: Record<string, string | undefined> = {
   // so paypalSlugFromBlob() routes the webhook to the right PDF.
   'the-african-grand-prix-value-map':
     process.env.NEXT_PUBLIC_PAYPAL_AFRICAN_GP_URL || 'https://www.paypal.com/ncp/payment/L6RGFZYAHFTHS',
+  // The 17 Signal Studies → $12 USD payment links (THE MONOKROMATIC NETWORK (PTY)
+  // LTD account, created 2026-11-10). Each link's CODE is the report's 1:1 identity
+  // — the webhook matches on it (paypalSlugFromBlob) and the same code is in the
+  // report's match tokens in lib/report-delivery.ts. Code default; per-SKU env var
+  // can override.
+  'will-it-land-brand-south-africa-nascar':
+    process.env.NEXT_PUBLIC_PAYPAL_NASCAR_URL || 'https://www.paypal.com/ncp/payment/3S24HG7KRH4AG',
+  'will-it-land-shein-temu-africa':
+    process.env.NEXT_PUBLIC_PAYPAL_SHEIN_TEMU_URL || 'https://www.paypal.com/ncp/payment/2M3KGL27QRM7S',
+  'will-it-land-starlink-africa':
+    process.env.NEXT_PUBLIC_PAYPAL_STARLINK_URL || 'https://www.paypal.com/ncp/payment/V4L28MHJFMDYS',
+  'will-it-land-african-off-grid-solar':
+    process.env.NEXT_PUBLIC_PAYPAL_OFF_GRID_SOLAR_URL || 'https://www.paypal.com/ncp/payment/TY3AYHWYFTJ9A',
+  'will-it-land-african-healthtech':
+    process.env.NEXT_PUBLIC_PAYPAL_HEALTHTECH_URL || 'https://www.paypal.com/ncp/payment/DSKNJTQAK2MYC',
+  'african-luxury-market-brief':
+    process.env.NEXT_PUBLIC_PAYPAL_LUXURY_BRIEF_URL || 'https://www.paypal.com/ncp/payment/UTTESB6QCTBHW',
+  'will-it-land-african-electric-mobility':
+    process.env.NEXT_PUBLIC_PAYPAL_ELECTRIC_MOBILITY_URL || 'https://www.paypal.com/ncp/payment/G6Y2A3LQA9N8N',
+  'nigerian-creative-economy-brief':
+    process.env.NEXT_PUBLIC_PAYPAL_NIGERIAN_CREATIVE_URL || 'https://www.paypal.com/ncp/payment/3XREQ56T3LZ6G',
+  'will-it-land-african-aviation':
+    process.env.NEXT_PUBLIC_PAYPAL_AVIATION_URL || 'https://www.paypal.com/ncp/payment/5APDFDUDX5WAN',
+  'will-it-land-spearhead-spirits':
+    process.env.NEXT_PUBLIC_PAYPAL_SPEARHEAD_SPIRITS_URL || 'https://www.paypal.com/ncp/payment/MK7NE64LBBUPC',
+  'will-it-land-magugu-house':
+    process.env.NEXT_PUBLIC_PAYPAL_MAGUGU_URL || 'https://www.paypal.com/ncp/payment/KQFCARTZ5WBT8',
+  'will-it-land-ebonylife-on-plus':
+    process.env.NEXT_PUBLIC_PAYPAL_EBONYLIFE_URL || 'https://www.paypal.com/ncp/payment/VTVBN5G8N9LU4',
+  'will-it-land-moniepoint-uk-nigeria':
+    process.env.NEXT_PUBLIC_PAYPAL_MONIEPOINT_URL || 'https://www.paypal.com/ncp/payment/45MQ2TYZCYNPA',
+  'will-it-land-uncover-skincare':
+    process.env.NEXT_PUBLIC_PAYPAL_UNCOVER_URL || 'https://www.paypal.com/ncp/payment/2NQ84DBG4LRTL',
+  'will-it-land-warner-africori-amapiano':
+    process.env.NEXT_PUBLIC_PAYPAL_AMAPIANO_PIPE_URL || 'https://www.paypal.com/ncp/payment/C83AFRGVPGPVQ',
+  'will-it-land-totalenergies-afcon':
+    process.env.NEXT_PUBLIC_PAYPAL_TOTALENERGIES_URL || 'https://www.paypal.com/ncp/payment/2PHYRHAX2S4CC',
+  'south-african-brand-culture-brief':
+    process.env.NEXT_PUBLIC_PAYPAL_SA_BRAND_CULTURE_URL || 'https://www.paypal.com/ncp/payment/FPJ7JG88CX6RN',
 };
 
 /** The per-SKU PayPal payment-link URL, or null when none is set yet. */
@@ -825,11 +887,12 @@ export const MEMBERSHIP: MembershipTier[] = [
  * (Phase 3 will replace this with auth-bound Paystack subscriptions + a webhook.)
  */
 export function membershipCheckoutUrl(tierId: string): string | null {
-  // Live Paystack subscription Payment Pages are the code default (same pattern
-  // as reports/bundles) so the subscribe CTA never silently dies if a Vercel env
-  // var is cleared. ROTATED 2026-10-23 (fresh pages, old ones deactivated) after
-  // Paystack flagged card-testing bots on the prior public links — Individual
-  // (R149) ejy-8sqly6, Team (R690) 6r813vuyx4. Env still overrides.
+  // Paystack is being phased out (see PAYSTACK_ENABLED) — membership is moving to a
+  // one-off ANNUAL PayPal link (membershipPaypalUrl below), so this recurring rail
+  // is gated behind the same reversible kill switch and returns null by default.
+  // Flip NEXT_PUBLIC_ENABLE_PAYSTACK='true' to restore the Paystack subscription
+  // pages (Individual (R149) ejy-8sqly6, Team (R690) 6r813vuyx4; env overrides).
+  if (!PAYSTACK_ENABLED) return null;
   const map: Record<string, string | undefined> = {
     individual: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_INDIVIDUAL_URL || 'https://paystack.shop/pay/ejy-8sqly6',
     team: process.env.NEXT_PUBLIC_PAYSTACK_MEMBERSHIP_TEAM_URL || 'https://paystack.shop/pay/6r813vuyx4',
@@ -838,11 +901,46 @@ export function membershipCheckoutUrl(tierId: string): string | null {
   return url && /^https?:\/\//.test(url) ? url : null;
 }
 
+// The ANNUAL one-off PayPal membership link (THE MONOKROMATIC NETWORK (PTY) LTD
+// account, created 2026-11-10). This is now the PRIMARY way to join — a single
+// R1,490/$83 payment that the webhook turns into a 12-month entitlement (no
+// auto-renew; the member re-ups a year later). Individual only for now; Team has
+// no annual PayPal link yet (set the env var when one is created). The link CODE
+// is the membership's identity — membershipPaypalSlug() matches the webhook on it.
+const PAYPAL_MEMBERSHIP_URLS: Record<string, string | undefined> = {
+  individual: process.env.NEXT_PUBLIC_PAYPAL_MEMBERSHIP_INDIVIDUAL_URL || 'https://www.paypal.com/ncp/payment/FJKTP3YS9M88N',
+  team: process.env.NEXT_PUBLIC_PAYPAL_MEMBERSHIP_TEAM_URL,
+};
+
+/** The annual one-off PayPal membership link for a tier, or null if none set. */
+export function membershipPaypalUrl(tierId: string): string | null {
+  const url = PAYPAL_MEMBERSHIP_URLS[tierId];
+  return url && /^https?:\/\//.test(url) ? url : null;
+}
+
 /**
- * True once memberships are actually purchasable (a Paystack plan URL is set).
- * Content gates only enforce when this is true — so marking content
- * `access:'premium'` is safe before billing goes live (it stays fully visible).
+ * Identify a membership tier from a PayPal capture/order blob by its annual
+ * payment-link CODE (the NCP link's last path segment). Lets the PayPal webhook
+ * grant a 12-month entitlement instead of delivering a report PDF. Returns the
+ * tier id ('individual' | 'team') or null. Server-side only; same 1:1,
+ * merchant-controlled match as paypalSlugFromBlob for reports.
+ */
+export function membershipPaypalSlug(blob: string): string | null {
+  const b = blob.toLowerCase();
+  for (const [tier, url] of Object.entries(PAYPAL_MEMBERSHIP_URLS)) {
+    if (!url) continue;
+    const code = url.split('?')[0].split('/').filter(Boolean).pop()?.toLowerCase();
+    if (code && code.length >= 6 && b.includes(code)) return tier;
+  }
+  return null;
+}
+
+/**
+ * True once memberships are actually purchasable — now via the annual PayPal link
+ * OR (when the Paystack kill switch is on) a Paystack subscription page. Content
+ * gates only enforce when this is true, so marking content `access:'premium'` is
+ * safe before billing goes live (it stays fully visible).
  */
 export function membershipsLive(): boolean {
-  return MEMBERSHIP.some((t) => membershipCheckoutUrl(t.id) !== null);
+  return MEMBERSHIP.some((t) => membershipCheckoutUrl(t.id) !== null || membershipPaypalUrl(t.id) !== null);
 }

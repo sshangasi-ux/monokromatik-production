@@ -143,6 +143,26 @@ const TOPIC_MAP: { report: string; triggers: string[] }[] = [
     report: 'will-it-land-african-stablecoins',
     triggers: ['stablecoin', 'yellow card', 'usdc', 'usdt', 'payment rail', 'cross-border payment', 'crypto', 'fintech rail', 'remittance'],
   },
+  // ── The 17 Signal Studies, now one-off buyable (PayPal). Tight, title/tag-level
+  //    triggers so each lights a precise buy-intent CTA on its own topic without
+  //    hijacking adjacent pieces. Placed BEFORE the broad M&A catch-all so a
+  //    specific topical study wins over the generic exit ledger.
+  { report: 'will-it-land-starlink-africa', triggers: ['starlink', 'satellite internet', 'low-earth orbit'] },
+  { report: 'will-it-land-shein-temu-africa', triggers: ['shein', 'temu'] },
+  { report: 'will-it-land-african-aviation', triggers: ['air peace', 'african aviation', 'lagos–london', 'lagos-london'] },
+  { report: 'will-it-land-african-healthtech', triggers: ['reliance health', 'healthtech', 'health insurance'] },
+  { report: 'will-it-land-african-off-grid-solar', triggers: ['m-kopa', 'off-grid solar', 'pay-as-you-go solar', 'pay-go solar'] },
+  { report: 'will-it-land-african-electric-mobility', triggers: ['basigo', 'electric bus', 'e-bus'] },
+  { report: 'will-it-land-moniepoint-uk-nigeria', triggers: ['moniepoint'] },
+  { report: 'will-it-land-magugu-house', triggers: ['thebe magugu', 'magugu'] },
+  { report: 'will-it-land-ebonylife-on-plus', triggers: ['ebonylife', 'mo abudu'] },
+  { report: 'will-it-land-uncover-skincare', triggers: ['uncover', 'k-beauty'] },
+  { report: 'will-it-land-spearhead-spirits', triggers: ['spearhead'] },
+  { report: 'will-it-land-totalenergies-afcon', triggers: ['totalenergies', 'afcon'] },
+  { report: 'will-it-land-brand-south-africa-nascar', triggers: ['nascar'] },
+  { report: 'nigerian-creative-economy-brief', triggers: ['nollywood', 'nigerian creative economy'] },
+  { report: 'african-luxury-market-brief', triggers: ['african luxury', 'luxury market', 'luxury pour'] },
+  { report: 'south-african-brand-culture-brief', triggers: ['south african brand culture'] },
   {
     report: 'the-megabrand-exit-ledger',
     triggers: ['acquisition', 'acquired', 'sold to', 'buyout', 'takeover', 'bought by', 'exit to', 'foreign owner', 'm&a'],

@@ -28,7 +28,7 @@ export default function TermsPage() {
       <LegalSection n="1" title="What we provide">
         <p>MonoKromatik is a digital publisher and research service. Everything we offer is delivered digitally &mdash; there are no physical goods. Our paid products and services are:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Intelligence Membership</strong> &mdash; a recurring (monthly or annual) subscription giving access to premium content, including case studies, the full Cultural-Signal Index and reports.</li>
+          <li><strong>Intelligence Membership</strong> &mdash; an annual membership (a one-off payment for twelve months&rsquo; access, no automatic renewal) giving access to premium content, including case studies, the full Cultural-Signal Index and reports.</li>
           <li><strong>Reports</strong> &mdash; one-time digital purchases such as the Cultural-Signal Index Full Report, delivered as online access and/or a downloadable file.</li>
           <li><strong>Data licences</strong> &mdash; licensed access to the Cultural-Signal Index league tables and per-brand data (single table, category or full-Index licences, including enterprise and API access).</li>
           <li><strong>Commissioned research</strong> &mdash; bespoke intelligence such as a Brand Signal Scorecard, a commissioned case study, or a market read, delivered to order.</li>
@@ -42,8 +42,8 @@ export default function TermsPage() {
       </LegalSection>
 
       <LegalSection n="3" title="Subscriptions and billing">
-        <p>Intelligence Membership is billed in advance on a recurring basis (monthly or annually) through our payment processor, Paystack. Unless you cancel, your subscription renews automatically at the end of each billing period at the then-current price, and you authorise us (via Paystack) to charge your payment method for each renewal.</p>
-        <p>You can cancel at any time; cancellation takes effect at the end of your current billing period. See our <Link href="/refunds" className="text-mono-amber-strong hover:underline">Refunds &amp; Cancellations Policy</Link> for details.</p>
+        <p>Intelligence Membership is sold as a one-off annual term: you pay once, in advance, for twelve months&rsquo; access, and it does <strong>not</strong> renew automatically. Payment is processed through PayPal (which also accepts cards worldwide without a PayPal account). Near the end of the twelve months we may remind you, and you decide whether to renew for another year at the then-current price; we do not store your card or charge you again on our own.</p>
+        <p>Members who joined on an earlier recurring (monthly or annual) plan may still have that plan auto-renew through Paystack until they cancel; you can cancel at any time and cancellation takes effect at the end of your current billing period. See our <Link href="/refunds" className="text-mono-amber-strong hover:underline">Refunds &amp; Cancellations Policy</Link> for details.</p>
       </LegalSection>
 
       <LegalSection n="4" title="One-time purchases, licences and commissioned work">

@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       </LegalSection>
 
       <LegalSection n="3" title="Payments">
-        <p>Payments are processed by our third-party payment providers &mdash; primarily <strong>PayPal</strong> for one-off purchases, and <strong>Paystack</strong> for recurring Intelligence Memberships &mdash; each a PCI-DSS-compliant provider. When you pay, your card and payment information is collected and processed by the relevant provider under its own privacy terms. MonoKromatik does not store your card details.</p>
+        <p>Payments are processed by our third-party payment providers &mdash; primarily <strong>PayPal</strong> (which also takes cards worldwide without a PayPal account) for both one-off purchases and the annual Intelligence Membership, with <strong>Paystack</strong> retained as a secondary South African rail &mdash; each a PCI-DSS-compliant provider. When you pay, your card and payment information is collected and processed by the relevant provider under its own privacy terms. MonoKromatik does not store your card details.</p>
       </LegalSection>
 
       <LegalSection n="4" title="Analytics and cookies">
