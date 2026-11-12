@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-11T21:22:15.631Z",
+  "updatedAt": "2026-11-12T10:58:00.458Z",
   "breaks": [
+    {
+      "title": "Winky D takes African message global with new album Tête-à-Tête (Hello Africa)",
+      "source": "Music In Africa",
+      "category": "music",
+      "link": "https://musicinafrica.net/magazine/winky-d-opens-a-pan-african-conversation-through-new-album-tete-a-tete-hello-africa/",
+      "pubDate": "Thu, 12 Nov 2026 08:11:00 +0000",
+      "importance": 4,
+      "why": "Zimbabwean artist Winky D launches new album with African message; Afrobeats/music beat, diaspora artist",
+      "detectedAt": "2026-11-12T10:58:00.458Z"
+    },
     {
       "title": "Seven New Tracks From Rema? E-Mortal Boy (EMB) Is Coming Next Week",
       "source": "BellaNaija",
@@ -589,16 +599,6 @@
       "pubDate": "Tue, 25 Aug 2026 17:39:54 +0000",
       "importance": 4,
       "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-08-25T17:42:29.933Z"
-    },
-    {
-      "title": "Done Deal: Nigerian Striker Completes Bristol City Move",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/done-deal-nigerian-striker-completes-bristol-city-move/",
-      "pubDate": "Tue, 25 Aug 2026 17:01:59 +0000",
-      "importance": 4,
-      "why": "Signal: deal · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-08-25T17:42:29.933Z"
     }
   ]
