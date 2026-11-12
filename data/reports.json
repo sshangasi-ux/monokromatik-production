@@ -9908,6 +9908,16 @@
         ]
       },
       {
+        "heading": "THE VALUE-CAPTURE MODEL — QUANTIFIED",
+        "paragraphs": [
+          "A scorecard argues where value lands; a model should say how much is in play. The inputs here are deliberately limited to what named sources support: the reported valuations ($1bn in March 2021, ~$3bn in February 2022, ~$3.25bn in June 2026), the disclosed round sizes ($10m, $35m, $170m, $250m) and the Crunchbase total raised of roughly $509.5m. Flutterwave does not publish its cap table, so the one input we do not have — the exact percentage of equity held offshore — is treated as a sensitivity, not asserted. Everything below is arithmetic on reported figures.",
+          "Start with value created versus capital consumed. Against ~$509.5m raised, a ~$3.25bn mark implies roughly $2.74bn of paper value above the capital put in, or about 6.4 times the money raised. That $2.74bn is the pool the Consequence axis is really about: it is the value an African-authored company has generated on paper, and its distribution depends entirely on who owns the shares. The company's structure — a San Francisco holding company with a foreign-VC-majority cap table, per company filings and reporting — is why that pool is set to be certified and monetised offshore.",
+          "The trajectory matters as much as the level. The valuation tripled in roughly eleven months between the Series C (March 2021) and Series D (February 2022), then added only about $250m, or 8.3%, across the four years and four months to the Ripple-led Series E in June 2026 — an implied annual rate of under 2%. The Series D round itself raised $250m, so the nominal valuation gain from D to E is about the same size as that single round. Put differently, four further years of operations, expansion and additional capital left the headline mark close to where it stood in 2022. The window in which value was created fast was short, and the investors who were on the cap table during it are the ones who hold the step-up.",
+          "Now the leakage sensitivity. Each ten percentage points of the equity held by offshore owners corresponds to about $325m of the $3.25bn mark. If offshore holders collectively own 60% of the company, about $1.95bn of the valuation sits with them; at 70%, about $2.28bn; at 80%, about $2.60bn; at 90%, about $2.93bn. We do not claim any of these is the true figure — the reported investor list (Tiger Global, Avenir, B Capital, Whale Rock, Lux Capital and, from 2026, Ripple, among others) supports 'foreign-VC-majority' but not a precise stake. The point of the sensitivity is scale: across any plausible majority, the amount of value that an African champion's valuation hands to offshore owners runs to billions, not millions, and the founders' and African holders' share is the residual.",
+          "What the model does not capture is equally important. It is a paper-value model: it values nothing realised, and the Series E round size was not disclosed, so the latest mark cannot be cross-checked against new money. It also says nothing about value retained locally through payroll, tax, merchant access and the infrastructure the capital paid for — which is real, and which the Bear Case below argues is the proper counterweight. The model sizes the equity-capture question; it does not settle whether the trade was a good one."
+        ]
+      },
+      {
         "heading": "THE SIGNAL READ",
         "paragraphs": [
           "Through the signalling lens, 'Flutterwave' is a hard-to-fake signal: African fintech infrastructure operating at genuine continental scale, something that cannot be faked and took real capital and years to build. The strategic question the scorecard exists to answer is who captures that signal's premium. The answer, structurally, is the foreign owners and the US domicile — the parties positioned to certify and monetise the signal at exit.",
@@ -9924,11 +9934,21 @@
         ]
       },
       {
+        "heading": "WHAT THIS MEANS — BY WHO'S READING",
+        "paragraphs": [
+          "For founders: Flutterwave is the template and the cautionary tale in one. The offshore holding company bought access to the capital that scaled a 35-country footprint, and it also fixed where the equity upside would land. Decide the domicile and the cap-table architecture as a deliberate choice about who certifies and monetises your signal, not as a legal default inherited from your first term sheet.",
+          "For capital: the valuation record — roughly $3bn in 2022, roughly $3.25bn in 2026 — is a reminder that scale of volume is not the same as scale of value. Ripple's lead in June 2026 shows strategic appetite for the rails; it does not show that profitability, the stated gate for any IPO, has been reached. African and local institutional capital that wants a seat at this table should be asking what a secondary, a local listing or an anchor-investor structure would look like before the next round prices.",
+          "For policymakers: the model sizes what a domicile choice is worth — billions in paper value at the margin — which is the argument for listing venues, tax treatment and licensing clarity that make an African holding structure financeable. The Kenya episode, withdrawn and cleared in 2023, also shows regulators acting on licensing and money-laundering questions; clarity on those rules is part of keeping domicile onshore as an option.",
+          "For brands and partners: treat Flutterwave as the reference African payments rail it is, and price governance risk accurately — the 2022 allegations are denied and unproven, the Kenya matter is cleared, and the founder-equity dispute remains open. The signal is real; the capture sits elsewhere."
+        ]
+      },
+      {
         "heading": "METHODOLOGY",
         "paragraphs": [
           "The Signal Scorecard grades a brand out of 100 across four axes of 25: Idea (is the underlying idea strong and category-defining), Authorship (is it genuinely, credibly authored where it claims), Execution (is it built and run well at scale), and Consequence (where does the value land, and what does the record show). The AOC verdict — Retained, Exported, Hollowed, Contested — follows from the axis profile. All scores are MonoKromatik's judgement and are argued, not measured.",
           "Every figure is graded. Verified facts (2016 founding; the founders; the Aboyeli-to-Agboola CEO transition in 2018; the Series C unicorn round of March 2021; the ~$3bn Series D of February 2022; the ~$3.25bn Ripple-led Series E of June 2026; the dual San Francisco and Lagos bases; the Kenya freeze of 2022 and full clearance of 2023; the IPO-gated-on-profitability posture) are stated plainly. Company-sourced scale metrics ($40bn-plus processed, 35-plus countries, 1m-plus businesses) are graded reported. The Series E round size was not disclosed and is not invented; the widely cited $741m total-raised figure could not be confirmed to a named source and is not used.",
-          "The governance material is the highest-sensitivity content and is held to the strictest standard: allegations only, attributed to the named reporting outlets and named individuals, presented with the company's denials, and with the Kenya matter reported as cleared. Anything that could not meet that standard was left out."
+          "The governance material is the highest-sensitivity content and is held to the strictest standard: allegations only, attributed to the named reporting outlets and named individuals, presented with the company's denials, and with the Kenya matter reported as cleared. Anything that could not meet that standard was left out.",
+          "The value-capture model uses only reported valuations, disclosed round sizes and the Crunchbase total raised. Ownership shares are shown as a labelled sensitivity because the cap table is not public; no stake is asserted."
         ]
       },
       {
@@ -9944,7 +9964,9 @@
           "7 — 2022 misconduct allegations: Rest of World ('Inside the toxic culture scandal'); Bloomberg; Quartz Africa; named claimant Clara Wanjiku Odero. Reported as allegations; Flutterwave's denial ('recycled and previously addressed… several… false') included.",
           "8 — Founder-equity ('Greg') dispute: TechCabal (Aboyeji on record, April 2022); disputed by Agboola. Reported as a disputed allegation.",
           "9 — Kenya asset freeze (July 2022) and CBK remittance-licence warning; case withdrawn and Flutterwave cleared (November 2023): Al Jazeera; TechCabal; Business Daily Africa; Technext; Techpoint; Kenyan High Court / ARA records. Verified (raised and cleared).",
-          "10 — Scores, axis weightings and the HOLLOWED/CONTESTED verdict are MonoKromatik's own analysis."
+          "10 — Scores, axis weightings and the HOLLOWED/CONTESTED verdict are MonoKromatik's own analysis.",
+          "11 — Value-capture model: arithmetic on the reported valuations and round sizes in notes 2, 3 and 4 (Crunchbase total raised ~$509.5m; ~$3.25bn Series E mark). The offshore-ownership percentages are a sensitivity, not a reported figure: Flutterwave does not disclose its cap table. MonoKromatik analysis.",
+          "12 — Investor roster (Tiger Global, Avenir, B Capital, Whale Rock, Lux Capital, Ripple) and San Francisco holding-company domicile: TechCabal; Fintech Futures; company filings and press releases. Reported."
         ]
       }
     ],
@@ -10005,8 +10027,80 @@
         ]
       },
       {
-        "type": "quadrant",
+        "type": "bar",
         "after": 6,
+        "title": "The value at stake — ~$3.25bn mark vs ~$510m raised",
+        "unit": "US$m (reported)",
+        "note": "Against ~$509.5m total raised (Crunchbase), the ~$3.25bn June 2026 mark (TechCabal; Fintech Futures) implies ~$2.74bn of paper value above capital invested — about 6.4x the money raised. Paper value only; the Series E round size was not disclosed. Source: Crunchbase; TechCabal; MonoKromatik arithmetic.",
+        "data": [
+          {
+            "label": "Capital raised",
+            "value": 509.5,
+            "display": "~$510m"
+          },
+          {
+            "label": "Paper value above capital",
+            "value": 2740.5,
+            "display": "~$2.74bn"
+          },
+          {
+            "label": "Valuation (Series E)",
+            "value": 3250,
+            "display": "~$3.25bn"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "The signature exhibit — who holds the $3.25bn, by offshore-ownership share",
+        "unit": "US$bn of the ~$3.25bn mark",
+        "note": "Sensitivity, not a claim: Flutterwave does not publish its cap table. Each 10 points of offshore equity equals ~$325m of the ~$3.25bn valuation (TechCabal; Fintech Futures). The reported investor roster supports a foreign-VC majority, not an exact stake. Source: MonoKromatik arithmetic on reported valuation.",
+        "data": [
+          {
+            "label": "Offshore 60%",
+            "value": 1.95,
+            "display": "~$1.95bn"
+          },
+          {
+            "label": "Offshore 70%",
+            "value": 2.275,
+            "display": "~$2.28bn"
+          },
+          {
+            "label": "Offshore 80%",
+            "value": 2.6,
+            "display": "~$2.60bn"
+          },
+          {
+            "label": "Offshore 90%",
+            "value": 2.925,
+            "display": "~$2.93bn"
+          }
+        ]
+      },
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "Valuation gain between rounds",
+        "unit": "US$bn valuation added (reported)",
+        "note": "The mark rose ~$2bn from Series C (Mar 2021, ~$1bn) to Series D (Feb 2022, ~$3bn), then ~$0.25bn (8.3%) across four years to the June 2026 Series E (~$3.25bn). Source: TechCrunch; PYMNTS; TechCabal; Fintech Futures, per endnotes.",
+        "data": [
+          {
+            "label": "Series C → D (~11 months)",
+            "value": 2,
+            "display": "+$2.0bn"
+          },
+          {
+            "label": "Series D → E (~4.3 years)",
+            "value": 0.25,
+            "display": "+$0.25bn"
+          }
+        ]
+      },
+      {
+        "type": "quadrant",
+        "after": 7,
         "title": "The Hollowed map — authored here, owned and seated there",
         "xAxis": [
           "Foreign-authored",
@@ -10047,8 +10141,61 @@
         "note": "MonoKromatik read. Flutterwave sits in the bottom-right — strongly African-authored, but owned and domiciled offshore. That quadrant is the definition of HOLLOWED. Interswitch and M-Pesa, higher up, are the sector's rarer retained-leaning cases. Source: MonoKromatik analysis."
       },
       {
+        "type": "donut",
+        "after": 7,
+        "title": "The Consequence axis — where the points are lost",
+        "value": 14,
+        "valueLabel": "14 / 25",
+        "sublabel": "The lowest of the four axes. Not because of unresolved scandal — the Kenya matter was cleared in 2023 — but because of structure: a San Francisco domicile and a foreign-majority cap table mean the value an African champion creates is set to be captured offshore.",
+        "note": "Consequence asks where the value lands. For Flutterwave the answer is offshore, and it is the single biggest reason the verdict is HOLLOWED rather than RETAINED. Source: MonoKromatik Signal Scorecard."
+      },
+      {
         "type": "matrix",
         "after": 7,
+        "title": "The signalling read — authored here, captured there",
+        "cols": [
+          "African",
+          "Offshore"
+        ],
+        "rows": [
+          {
+            "label": "The signal (African fintech infrastructure)",
+            "tag": "AUTHORED",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "The operations (footprint, jobs)",
+            "tag": "LOCAL",
+            "cells": [
+              4,
+              1
+            ]
+          },
+          {
+            "label": "The ownership (cap table)",
+            "tag": "OFFSHORE",
+            "cells": [
+              1,
+              4
+            ]
+          },
+          {
+            "label": "The capture (equity upside / exit)",
+            "tag": "OFFSHORE",
+            "cells": [
+              1,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik framework (0 = none, 4 = high). The signal and the operations are African; the ownership and the eventual capture are offshore. The gap between the top two rows and the bottom two is the Hollowed thesis. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "matrix",
+        "after": 8,
         "title": "Peer context — the three axes",
         "cols": [
           "Authored in Africa",
@@ -10105,61 +10252,8 @@
         "note": "MonoKromatik read (0 = none/foreign, 4 = fully African), consistent with the Who Owns African Fintech league table. Flutterwave scores high on authorship, low on ownership and domicile — the sector's dominant pattern, in its most visible company. Ownership stakes reported."
       },
       {
-        "type": "donut",
-        "after": 6,
-        "title": "The Consequence axis — where the points are lost",
-        "value": 14,
-        "valueLabel": "14 / 25",
-        "sublabel": "The lowest of the four axes. Not because of unresolved scandal — the Kenya matter was cleared in 2023 — but because of structure: a San Francisco domicile and a foreign-majority cap table mean the value an African champion creates is set to be captured offshore.",
-        "note": "Consequence asks where the value lands. For Flutterwave the answer is offshore, and it is the single biggest reason the verdict is HOLLOWED rather than RETAINED. Source: MonoKromatik Signal Scorecard."
-      },
-      {
-        "type": "matrix",
-        "after": 6,
-        "title": "The signalling read — authored here, captured there",
-        "cols": [
-          "African",
-          "Offshore"
-        ],
-        "rows": [
-          {
-            "label": "The signal (African fintech infrastructure)",
-            "tag": "AUTHORED",
-            "cells": [
-              4,
-              1
-            ]
-          },
-          {
-            "label": "The operations (footprint, jobs)",
-            "tag": "LOCAL",
-            "cells": [
-              4,
-              1
-            ]
-          },
-          {
-            "label": "The ownership (cap table)",
-            "tag": "OFFSHORE",
-            "cells": [
-              1,
-              4
-            ]
-          },
-          {
-            "label": "The capture (equity upside / exit)",
-            "tag": "OFFSHORE",
-            "cells": [
-              1,
-              4
-            ]
-          }
-        ],
-        "note": "MonoKromatik framework (0 = none, 4 = high). The signal and the operations are African; the ownership and the eventual capture are offshore. The gap between the top two rows and the bottom two is the Hollowed thesis. Source: MonoKromatik analysis."
-      },
-      {
         "type": "bar",
-        "after": 7,
+        "after": 8,
         "title": "African fintech champions, by domicile",
         "note": "Where the continent's flagship fintechs legally live (0 = fully offshore, 4 = fully African-domiciled). Flutterwave sits with the offshore-domiciled majority; the African-domiciled champions (Fawry, Tyme) are the exceptions. Consistent with the league table. MonoKromatik read.",
         "data": [
