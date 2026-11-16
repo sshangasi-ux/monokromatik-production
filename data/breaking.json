@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-15T17:02:00.913Z",
+  "updatedAt": "2026-11-16T09:32:25.105Z",
   "breaks": [
+    {
+      "title": "Sanwo-Olu Gifts Flamingos ₦10m Each For World Cup Triumph",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/sanwo-olu-gifts-flamingos-%e2%82%a610m-each-for-world-cup-triumph/",
+      "pubDate": "Mon, 16 Nov 2026 07:47:30 +0000",
+      "importance": 4,
+      "why": "Nigerian Flamingos win World Cup; Lagos governor celebration of African sports achievement",
+      "detectedAt": "2026-11-16T09:32:25.105Z"
+    },
     {
       "title": "The Macallan Unveils A Night on Earth: The First Light in Nigeria",
       "source": "BellaNaija",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: deal · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-09-03T09:42:37.129Z"
-    },
-    {
-      "title": "Chelle Appoints Two Nigerian Assistants Coaches For Olympic Eagles",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/chelle-appoints-two-nigerian-assistants-coaches-for-olympic-eagles/",
-      "pubDate": "Tue, 01 Sep 2026 09:54:12 +0000",
-      "importance": 4,
-      "why": "Signal: appoints · Complete Sports (sports) · auto-curated",
-      "detectedAt": "2026-09-01T10:02:22.777Z"
     }
   ]
 }
