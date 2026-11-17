@@ -6,6 +6,7 @@ import { buildAssetIndex } from '../lib/asset-index';
 import { getLiveReports } from '../lib/reports';
 import { getAllIssues, issueHref } from '../lib/issues';
 import { getAllConversations } from '../lib/conversations';
+import { getLiveEditions } from '../lib/editions';
 
 const SITE = 'https://www.monokromatik.com';
 
@@ -25,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/breaking`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE}/pulse`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE}/the-drop`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${SITE}/editions`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/signal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/intelligence`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/whos-buying-africa`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -140,8 +142,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/services/culture-due-diligence`, priority: 0.7 },
   ].map((x) => ({ ...x, lastModified: now, changeFrequency: 'monthly' as const }));
 
+  // Editions — the collectible digital magazine (live issues only).
+  const editionRoutes: MetadataRoute.Sitemap = getLiveEditions().map((e) => ({
+    url: `${SITE}/editions/${e.slug}`,
+    lastModified: new Date(e.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes,
+    ...editionRoutes,
     ...categoryRoutes,
     ...articleRoutes,
     ...caseStudyRoutes,
