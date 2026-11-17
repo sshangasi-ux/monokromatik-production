@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-17T13:14:49.283Z",
+  "updatedAt": "2026-11-17T22:16:23.963Z",
   "breaks": [
+    {
+      "title": "Rema Reveals 7-Track E-Mortal Boy (EMB) EP Tracklist With Wizkid, BNYX & More",
+      "source": "BellaNaija",
+      "category": "culture",
+      "link": "https://www.bellanaija.com/2026/11/rema-e-mortal-boy-emb-ep-tracklist-wizkid/",
+      "pubDate": "Tue, 17 Nov 2026 20:35:54 +0000",
+      "importance": 4,
+      "why": "Rema (Nigerian Afrobeats star) drops new EP tracklist with Wizkid; major music announcement",
+      "detectedAt": "2026-11-17T22:16:23.963Z"
+    },
     {
       "title": "2026 AMAA Winners: Wale Ojo, Linda Ejiofor, “One Woman, One Bra” & “The Herd” Take Home Top Honours",
       "source": "BellaNaija",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: investment · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-09-10T00:10:25.022Z"
-    },
-    {
-      "title": "African American Film Critics Association Donates $25,000 to Black Film Hall of Fame – Film News in Brief",
-      "source": "Variety",
-      "category": "entertainment",
-      "link": "https://variety.com/2026/film/news/film-news-in-brief-sept-8-2026-1236854730/",
-      "pubDate": "Tue, 08 Sep 2026 22:24:02 +0000",
-      "importance": 4,
-      "why": "Signal: $ · Variety (entertainment) · auto-curated",
-      "detectedAt": "2026-09-09T00:10:06.201Z"
     }
   ]
 }
