@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-16T20:22:55.632Z",
+  "updatedAt": "2026-11-17T03:46:38.723Z",
   "breaks": [
+    {
+      "title": "CAA and Hybe Launch Strategic Partnership",
+      "source": "Variety",
+      "category": "entertainment",
+      "link": "https://variety.com/2026/biz/news/caa-hybe-strategic-partnership-1236949852/",
+      "pubDate": "Tue, 17 Nov 2026 01:24:12 +0000",
+      "importance": 4,
+      "why": "HYBE (Korean music giant) and CAA partnership likely impacts Afrobeats/African music market access and diaspora artist representation globally",
+      "detectedAt": "2026-11-17T03:46:38.723Z"
+    },
     {
       "title": "Tems Is Officially a 12-Time Grammy Nominee!",
       "source": "BellaNaija",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: funding · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-09-08T18:36:09.925Z"
-    },
-    {
-      "title": "Nigeria’s SEC approves about $1.6bn Dangote Refinery IPO",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/nigerias-sec-approves-about-1-6bn-dangote-refinery-ipo/",
-      "pubDate": "Mon, 07 Sep 2026 03:15:00 +0000",
-      "importance": 5,
-      "why": "Signal: ipo, $ · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-09-07T04:30:50.745Z"
     }
   ]
 }
