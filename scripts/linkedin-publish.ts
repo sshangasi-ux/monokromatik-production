@@ -53,6 +53,7 @@ async function main() {
 
   if (dry) {
     log('Dry run — preview only, no publish, ledger unchanged.');
+    console.log("::warning title=LinkedIn run is preview-only::Nothing was published. Dispatch with publish=true or set LINKEDIN_AUTOPOST=on.");
     summary(`\n_Review mode: dispatch with publish=true (or set LINKEDIN_AUTOPOST=on) to post._`);
     return;
   }
@@ -61,6 +62,7 @@ async function main() {
   const authorUrn = process.env.LINKEDIN_AUTHOR_URN;
   if (!token || !authorUrn) {
     log('LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN not set — would have posted; skipping.');
+    console.log("::warning title=LinkedIn not configured::LINKEDIN_ACCESS_TOKEN or LINKEDIN_AUTHOR_URN is missing, so nothing was published.");
     summary('> **Not configured** — add `LINKEDIN_ACCESS_TOKEN` + `LINKEDIN_AUTHOR_URN` secrets to publish.');
     return;
   }
