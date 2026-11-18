@@ -53,6 +53,7 @@ async function main() {
 
   if (dry) {
     log('Dry run — preview only, no publish, ledger unchanged.');
+    console.log("::warning title=LinkedIn run is preview-only::Nothing was published. Dispatch with publish=true or set LINKEDIN_AUTOPOST=on.");
     summary(`\n_Review mode: dispatch with publish=true (or set LINKEDIN_AUTOPOST=on) to post._`);
     return;
   }
