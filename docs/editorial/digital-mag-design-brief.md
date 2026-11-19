@@ -109,7 +109,9 @@ Accessibility and performance: WCAG AA contrast on every treatment; all stylised
 
 ## 10. Decisions needed
 
-1. Theme and cover for Issue 02.
+1. **Decided 19 Nov 2026: Issue 02 is about sport.** The cover is a sourced, credited photograph; its licence must be confirmed before the cover is set. Remaining decisions below still apply.
+
+2. Print partner and run size.
 2. Print partner and print run size for print-on-demand.
 3. Final pricing for the print edition and limited prints (the tests above are proposals).
 4. Whether to run a sponsor slot in issues (disclosed, no editorial say).
