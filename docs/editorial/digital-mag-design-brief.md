@@ -68,11 +68,13 @@ Built on products we already sell (PayPal is the sole rail), with prices in line
 |---|---|---|---|
 | 0 | Issue web edition + newsletter | Free | Reach, sign-up |
 | 1 | Collector digital edition (PDF + extra exhibits) | $12 (about R220) | First sale, low-risk |
-| 2 | Print edition (print-on-demand) | to be priced (test $19–$25) | Object sale, no inventory |
-| 3 | Limited prints of the cover and exhibits | to be priced (test from $40) | Collector upsell, numbered |
+| 2 | Print edition (print-on-demand), **opens only when a trigger is met** | to be priced after printer quotes (test $19–$25) | Object sale, no inventory |
+| 3 | Limited prints of the cover and exhibits, **opens after tier 2** | to be priced after printer quotes (test from $40) | Collector upsell, numbered |
 | 4 | Bundles: issue + report shelf | The Full Shelf $195; annual membership $83 | Bigger basket |
 
 Rules:
+- **Digital first (default, decided 19 Nov 2026).** Every issue launches as a free web edition and a $12 collector PDF. Print is an upgrade, not the launch.
+- **Print triggers.** A print run opens only when either (a) about 50 collector sales land in one quarter, or (b) about 100 readers join a print waitlist. These numbers are a starting guess and get reviewed after Issue 02.
 - Issue 01 stays free. Paid tiers start with issue 02.
 - Numbered runs only where the number is real. Sold-out states are reported, not staged.
 - Print is print-on-demand until a run sells out. No inventory risk.
@@ -111,7 +113,7 @@ Accessibility and performance: WCAG AA contrast on every treatment; all stylised
 
 1. **Decided 19 Nov 2026: Issue 02 is about sport.** The cover is a sourced, credited photograph; its licence must be confirmed before the cover is set. Remaining decisions below still apply.
 
-2. Print partner and print run size for print-on-demand.
+Print partner and print run size for print-on-demand (decision 2). Print stays closed until a trigger in section 6 is met, so this is a quote request, not an order.
 3. Final pricing for the print edition and limited prints (the tests above are proposals).
 4. Whether to run a sponsor slot in issues (disclosed, no editorial say).
 5. Whether to ship the "nominate a subject" form, or defer it.
