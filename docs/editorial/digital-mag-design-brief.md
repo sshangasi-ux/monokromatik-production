@@ -1,6 +1,6 @@
 # The MonoKromatik Issue — digital magazine design brief
 
-**Status:** draft for review · **Owner:** editorial + product · **Reference:** outlandermag.com (Issue 02, "Icons"), read 19 Nov 2026
+**Status:** signed off 19 Nov 2026 (the five decisions in section 10 remain open) · **Owner:** editorial + product · **Reference:** outlandermag.com (Issue 02, "Icons"), read 19 Nov 2026
 **Builds on:** `/editions` route (Edition 01, "The Ownership Issue") · `docs/EDITION-01-PLAN.md` · `docs/editorial/deep-dive-standard.md`
 
 ---
