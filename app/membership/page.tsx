@@ -4,7 +4,7 @@ import { Check, ShieldCheck } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import NewsletterSignup from '../components/NewsletterSignup';
 import SubscribeButton from '../components/SubscribeButton';
-import { MEMBERSHIP, membershipCheckoutUrl, membershipUnlocks } from '../../lib/commerce';
+import { MEMBERSHIP, membershipCheckoutUrl, membershipPaypalUrl, membershipUnlocks } from '../../lib/commerce';
 import { createClient, isSupabaseConfigured } from '../../lib/supabase/server';
 import { getEntitlement, entitlementActive } from '../../lib/entitlements';
 import { getAllCaseStudies, isLocked as isCaseStudyLocked } from '../../lib/case-studies';
@@ -13,7 +13,7 @@ import { getLiveReports, isLocked as isReportLocked } from '../../lib/reports';
 export const metadata: Metadata = {
   title: 'Membership — The Intelligence | MonoKromatik',
   description:
-    'Join the Intelligence membership: the full Cultural-Signal Index, every premium case study and report, and the searchable archive — one membership, billed via Paystack.',
+    'Join the Intelligence membership: the full Cultural-Signal Index, every premium case study and report, and the searchable archive — one annual membership, paid securely by card or PayPal.',
 };
 
 export const dynamic = 'force-dynamic';
@@ -101,6 +101,10 @@ export default async function MembershipPage() {
           <div className="grid md:grid-cols-2 gap-6 items-start">
             {MEMBERSHIP.map((tier) => {
               const url = membershipCheckoutUrl(tier.id);
+              // Annual one-off PayPal link — now the primary way to join (Paystack
+              // recurring is phased out). A single year's payment; the webhook
+              // grants a 12-month entitlement, no auto-renew.
+              const annualUrl = membershipPaypalUrl(tier.id);
               return (
                 <div
                   key={tier.id}
@@ -140,10 +144,27 @@ export default async function MembershipPage() {
                           SIGN IN TO SUBSCRIBE
                         </Link>
                       )
+                    ) : annualUrl ? (
+                      <>
+                        <a href={annualUrl} target="_blank" rel="noopener noreferrer" className="block text-center bg-mono-black text-mono-white px-7 py-4 font-display font-bold hover:bg-mono-charcoal transition-colors">
+                          JOIN FOR A YEAR{tier.priceAnnual ? ` — ${tier.priceAnnual}` : ''}
+                        </a>
+                        <p className="mt-3 text-[11px] font-body text-mono-gray text-center">
+                          Pay by card / PayPal — cards worldwide, no PayPal account needed. One year, no auto-renew. Use the same email to sign in and your access unlocks automatically.
+                        </p>
+                      </>
                     ) : (
                       <div className="border border-mono-gray/30 bg-mono-soft-white p-5 text-center">
-                        <p className="font-display font-bold text-mono-black text-sm">Memberships open soon.</p>
-                        <p className="mt-1 text-[12px] font-body text-mono-charcoal">Get notified the moment they launch.</p>
+                        <p className="font-display font-bold text-mono-black text-sm">
+                          {tier.id === 'team' ? 'Team membership — talk to us.' : 'Memberships open soon.'}
+                        </p>
+                        <p className="mt-1 text-[12px] font-body text-mono-charcoal">
+                          {tier.id === 'team' ? (
+                            <>Email <a href="mailto:editor@monokromatik.com" className="text-mono-amber-strong hover:underline">editor@monokromatik.com</a> to set up seats.</>
+                          ) : (
+                            'Get notified the moment they launch.'
+                          )}
+                        </p>
                       </div>
                     )}
                   </div>
@@ -154,7 +175,7 @@ export default async function MembershipPage() {
 
           <p className="mt-10 flex items-center justify-center gap-2 text-[12px] font-body text-mono-gray">
             <ShieldCheck size={15} className="text-mono-amber-strong shrink-0" />
-            Billing via Paystack — secure, cancel anytime. We never see your card details.
+            Payment via PayPal — secure, cards worldwide, no account needed. One year, no auto-renew. We never see your card details.
           </p>
 
           {/* Not-ready fallback — capture the warm visitor's email even when they
