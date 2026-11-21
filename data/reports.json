@@ -14590,6 +14590,15 @@
         ]
       },
       {
+        "heading": "THE VALUE AT STAKE — QUANTIFIED",
+        "paragraphs": [
+          "Classification tells you who owns the rails; it does not tell you how much is at stake. So we did the sum, using only figures Safaricom and the GSMA publish. M-Pesa moved about KES 40 trillion (~$309bn) in a year and booked roughly KES 161bn of revenue. Divide one by the other and the implied take is about 0.40% of value moved — a thin margin on an enormous base, which is exactly why ownership matters: a sliver of a very large flow is a very large number. At the exchange rate implied by Safaricom's own KES-to-dollar pairing (~KES 129 to the dollar), KES 161bn is roughly $1.2bn a year.",
+          "Now ask who holds the claim on that pool. On the reported Safaricom cap table — Vodacom ~35%, Kenyan Treasury ~35%, Vodafone directly ~5%, free float ~25% — the Vodafone-controlled chain (Vodacom plus Vodafone's direct stake) holds about 40% of the equity. Applied pro rata to the ~$1.2bn revenue pool, that is roughly $0.5bn a year attributable to the offshore-controlled chain, ~$0.4bn to the Kenyan state, and ~$0.3bn to public shareholders whose domicile is not broken out. This is an illustration of direction and order of magnitude, not a dividend forecast: revenue is not profit, payout is a board decision, and the line items below the top are not public.",
+          "Three honest limits keep the number defensible. First, 'Vodafone-controlled' describes control, not full economic ownership — Vodacom has its own minority shareholders, so ~40% is an upper bound on the offshore economic claim, not a point estimate. Second, the free-float slice may itself be partly Kenyan and partly foreign; we do not assign it. Third, the pending Vodacom stake increase would move the 35% upward, so the offshore-controlled share is more likely to rise than fall from here. All inputs are graded reported (see the endnotes); the derived take rate and the split are MonoKromatik arithmetic.",
+          "The read: of the money users pay to move money, roughly two-fifths of the claim runs up a chain whose apex is a UK parent, about a third accrues to the Kenyan state, and about a quarter to a public float. That is why the verdict is Contested rather than Hollowed — a third of the claim sits with the Kenyan Treasury — and why the pending deal matters: it is the one live event that could shift the largest slice further from home."
+        ]
+      },
+      {
         "heading": "THE REGULATOR'S HAND",
         "paragraphs": [
           "Ownership is not the only lever on capture, and the regulator's is the underrated one. Central banks have pushed interoperability (so money moves between rails, reducing any single operator's lock-in), mandated 100% float backing (which made mobile money safe enough to become infrastructure), and are legislating payment-system reform. These do not change who owns the rail, but they change how much the owner can extract and how captive the user is.",
@@ -14603,6 +14612,15 @@
           "Across our four Culture DDs the pattern rhymes: Afrobeats (authored locally, masters owned offshore), African football (talent and fans local, broadcast and registration value offshore), Nollywood (prolific local authorship, platform and commissioned-IP capture offshore), and now mobile money (financial culture authored and used locally, rails owned by foreign-parented telcos). The through-line is the franchise thesis in one line: Africa authors the culture; the title to the infrastructure sits partly offshore.",
           "Mobile money's verdict is CONTESTED, and it is the most hopeful-with-caveats of the four. The developmental achievement is the largest of any — a billion accounts, real financial inclusion — and the repatriation of M-Pesa's IP and the African parentage of MTN are genuine counter-currents. But the biggest rails' ultimate ownership is offshore, the pending Vodacom deal pushes control further up rather than home, and the float and dividend flows tilt the capture offshore.",
           "For an investor or a policymaker, the read points to three levers: ownership (the M-Pesa-buyback path, hard but proven), competition (the Wave path, which compresses extraction without changing title), and regulation (interoperability, fee caps, float rules — the fastest lever on capture). The rails are cultural infrastructure; the question is not whether they exist but on whose terms the value they carry is captured."
+        ]
+      },
+      {
+        "heading": "WHAT THIS MEANS — BY WHO'S READING",
+        "paragraphs": [
+          "For investors and acquirers: the rails are infrastructure, priced as such, and the cap table is the diligence. Underwrite the chain of title, not the logo — ask who controls the parent, how the pending Vodacom move shifts the Safaricom split, and where float economics are routed. The cheapest signal that value is leaking is a rail with huge authored-and-used volume and a thin African slice of its equity; the cheapest signal that it is not is a repatriation like the 2020 IP buyback, even a partial one.",
+          "For founders and challengers: Wave is the template for attacking the extractive edge without owning the incumbent's rail. A flat ~1% fee against reported incumbent charges of 6–10% — on a $100 transfer, about $1 against $6 to $10 — shows where the pricing power sits and how fast it can be competed away. The opening is the user-facing fee, not the float, which regulation locks to the trust account.",
+          "For policymakers and regulators: you may not be able to buy back every telco parent, but you set the terms on which foreign-controlled rails operate. Interoperability reduces lock-in, fee rules bound extraction, and float rules decide whether the interest on customers' money stays inert or is put to work. Of the three levers, regulation is the fastest.",
+          "For brands and operators in the ecosystem: mobile money is the payments layer your customers already use as a reflex. The strategic question is dependency — whose rail, on whose terms, and what happens to your margin when the fee schedule changes. Understanding the chain of title is how you read the counterparty."
         ]
       },
       {
@@ -14625,7 +14643,8 @@
           "6 — Orange Money (Orange S.A., French; French state ~23%; Sonatel structure): company disclosures. Reported; Orange Money-specific scale undisclosed.",
           "7 — Wave (Senegal; US founders Drew Durbin & Lincoln Quirk; ~1% flat fee vs incumbents' 6–10%): TechCabal; Dealroom. Verified/reported.",
           "8 — Float: 100% e-money backing in CBK-supervised trust accounts; no consumer interest; foregone interest to a Safaricom-controlled trust: AFI; NBER (Mbiti & Weil); Central Bank of Kenya. Reported.",
-          "9 — No percent-of-GDP figure is published (no named source surfaced); transaction value presented instead. The chain-of-title, value-flow, leak and quality-of-capture analyses and the CONTESTED verdict are MonoKromatik's own."
+          "9 — No percent-of-GDP figure is published (no named source surfaced); transaction value presented instead. The chain-of-title, value-flow, leak and quality-of-capture analyses and the CONTESTED verdict are MonoKromatik's own.",
+          "10 — Value-at-stake model: implied take rate (~0.40%) = M-Pesa revenue (~KES 161bn) ÷ transaction value (~KES 40tn); dollar figures at the KES/USD rate implied by Safaricom's ~KES 40tn ≈ $309bn pairing (~KES 129/$); split pro rata to the reported Safaricom cap table (note 4). Derived by MonoKromatik from reported inputs; revenue not profit; ~40% offshore-controlled share is an upper bound on the economic claim. Illustrative, not a dividend forecast."
         ]
       }
     ],
@@ -14777,7 +14796,7 @@
       },
       {
         "type": "bar",
-        "after": 6,
+        "after": 7,
         "title": "The challenger cut the fee on the poor",
         "unit": "transfer fee, % (reported)",
         "note": "Wave entered Senegal charging a flat ~1% on transfers against incumbents' reported 6–10% — evidence the market can self-correct on the extractive edge (fees on low-income users) through competition, without changing who owns the rail. Source: TechCabal.",
@@ -14796,7 +14815,7 @@
       },
       {
         "type": "matrix",
-        "after": 7,
+        "after": 8,
         "title": "The Culture DD franchise — one pattern, four assets",
         "cols": [
           "Authored in Africa",
@@ -14837,6 +14856,81 @@
           }
         ],
         "note": "MonoKromatik read (0 = none, 4 = high) across the four Culture DDs. The through-line: Africa authors the culture; the title to the infrastructure sits partly offshore. Mobile money and Nollywood are the more hopeful (Contested) cases; music and football the harder ones. Source: MonoKromatik analysis."
+      },
+      {
+        "type": "bar",
+        "after": 6,
+        "title": "The value at stake — who holds the claim on M-Pesa's ~$1.2bn revenue pool",
+        "unit": "US$bn per year, pro rata to reported Safaricom cap table",
+        "note": "M-Pesa booked ~KES 161bn (~$1.2bn at the rate implied by Safaricom's ~KES 40tn / ~$309bn pairing). Split pro rata to the reported Safaricom cap table: Vodafone-controlled chain ~40%, Kenyan Treasury ~35%, free float ~25%. Illustrative of direction and order of magnitude — revenue, not profit or dividends; ~40% is an upper bound on the offshore economic claim. Source: Safaricom annual reporting (reported); People Daily and The Kenya Times for the cap table (reported); split is MonoKromatik arithmetic.",
+        "data": [
+          {
+            "label": "Vodafone-controlled chain (Vodacom + Vodafone)",
+            "value": 0.5,
+            "display": "~$0.5bn"
+          },
+          {
+            "label": "Kenyan Treasury",
+            "value": 0.43,
+            "display": "~$0.4bn"
+          },
+          {
+            "label": "Free float (domicile not broken out)",
+            "value": 0.31,
+            "display": "~$0.3bn"
+          }
+        ]
+      },
+      {
+        "type": "donut",
+        "after": 6,
+        "title": "The offshore-controlled slice of the Safaricom cap table",
+        "value": 40,
+        "valueLabel": "~40%",
+        "sublabel": "Vodacom (~35%) plus Vodafone directly (~5%) — a chain whose apex is the UK's Vodafone Group. The Kenyan Treasury holds ~35% and a public float ~25%. A pending Vodacom stake increase would push the 40% up, not down.",
+        "note": "Control, not full economic ownership — Vodacom has its own minority holders, so ~40% is an upper bound on the offshore claim. Source: People Daily and The Kenya Times (reported; verify against Safaricom's shareholding disclosure).",
+        "unit": "share of Safaricom equity under Vodafone-controlled chain"
+      },
+      {
+        "type": "matrix",
+        "after": 9,
+        "title": "Three levers on capture — what each can and cannot move",
+        "cols": [
+          "Changes who owns the rail",
+          "Changes how much the owner extracts",
+          "Speed of effect"
+        ],
+        "rows": [
+          {
+            "label": "Ownership (the M-Pesa buyback path)",
+            "tag": "HARD, PROVEN",
+            "cells": [
+              4,
+              2,
+              1
+            ]
+          },
+          {
+            "label": "Competition (the Wave path)",
+            "tag": "PROVEN ON PRICE",
+            "cells": [
+              0,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "Regulation (interoperability, fee and float rules)",
+            "tag": "FASTEST",
+            "cells": [
+              0,
+              4,
+              4
+            ]
+          }
+        ],
+        "note": "MonoKromatik read (0 = none, 4 = high), informed by the 2020 M-Pesa IP buyback (TechCabal; Forbes), Wave's ~1% fee (TechCabal) and central-bank float and interoperability rules (Central Bank of Kenya; AFI). Source: MonoKromatik analysis.",
+        "unit": ""
       }
     ],
     "counterCase": {
@@ -14850,7 +14944,7 @@
         "The market self-corrects, and regulation can finish the job. Wave's flat ~1% fee compressed the very extraction the bear worries about — without needing to own the rail — and central-bank interoperability, fee caps and float rules can re-shape capture by rule. Ownership is one lever; competition and regulation are two more, and both are already working."
       ]
     },
-    "readingTime": "11 MIN READ"
+    "readingTime": "13 MIN READ"
   },
   {
     "slug": "who-owns-african-fashion-league-table",
