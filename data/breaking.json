@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-20T11:26:48.172Z",
+  "updatedAt": "2026-11-21T09:41:39.661Z",
   "breaks": [
+    {
+      "title": "Osimhen Reportedly Open To Joining Man United",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/osimhen-reportedly-open-to-joining-man-united/",
+      "pubDate": "Sat, 21 Nov 2026 09:39:00 +0000",
+      "importance": 4,
+      "why": "Victor Osimhen (Nigerian star) transfer rumour — major African athlete at centre of elite European football move",
+      "detectedAt": "2026-11-21T09:41:39.661Z"
+    },
     {
       "title": "Burna Boy features on GTA VI: The Album with 'Bigger'",
       "source": "NotJustOk",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Signal: launches · MyJoyOnline (entertainment) · auto-curated",
       "detectedAt": "2026-09-17T21:19:03.932Z"
-    },
-    {
-      "title": "Nigeria’s Falconets Advance to U-20 Women’s World Cup Quarter-Finals After 3–0 Win Over England",
-      "source": "BellaNaija",
-      "category": "culture",
-      "link": "https://www.bellanaija.com/2026/09/falconets-advance-fifa-u20-womens-world-cup-quarter-finals-3-0-england/",
-      "pubDate": "Thu, 17 Sep 2026 17:30:52 +0000",
-      "importance": 4,
-      "why": "Signal: win · BellaNaija (culture) · auto-curated",
-      "detectedAt": "2026-09-17T18:10:29.974Z"
     }
   ]
 }
