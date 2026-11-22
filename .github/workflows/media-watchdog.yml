@@ -88,8 +88,8 @@ jobs:
           fi
 
           BRANCH="media-watchdog/${{ github.run_id }}"
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
           git checkout -b "$BRANCH"
           git add data/articles.json data/case-studies.json public/article-media
           git commit -m "chore(media): watchdog auto-corrected unhealthy media (manual apply)"

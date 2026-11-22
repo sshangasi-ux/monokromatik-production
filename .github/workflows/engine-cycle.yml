@@ -95,8 +95,8 @@ jobs:
           fi
 
           BRANCH="engine/cycle-${{ github.run_id }}"
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
           git checkout -b "$BRANCH"
           git add data
           git commit -m "feat(engine): weekly content cycle — gated auto-patches" -m "AI-sourced + drafted across all five sections, then deterministically gated (>=2 sources, dedup-vs-archive, schema). Low-stakes Culture articles auto-patched into data/articles.json; claim-bearing items staged for human authoring (verdicts in the PR body). Merging this PR is the publish step."
