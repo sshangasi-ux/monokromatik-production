@@ -75,8 +75,8 @@ jobs:
           fi
 
           BRANCH="coverage/discover-${{ github.run_id }}"
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
           git checkout -b "$BRANCH"
           git add output/gap-candidates.md output/gap-candidates.json
           git commit -m "feat(planner): weekly coverage gap commission brief" -m "Targeted discovery for the thinnest Region x Category cells and editorial franchises. Real, web-sourced, cited leads to commission — nothing published. See output/gap-candidates.md."

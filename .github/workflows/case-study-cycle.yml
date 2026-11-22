@@ -74,8 +74,8 @@ jobs:
             exit 0
           fi
           BRANCH="casestudy/cycle-${{ github.run_id }}"
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
           git checkout -b "$BRANCH"
           git add data/case-studies.json
           git commit -m "feat(index): draft case studies for review — $(date -u +%Y-%m-%d)"

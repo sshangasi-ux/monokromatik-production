@@ -59,8 +59,8 @@ jobs:
             echo "No brief file this run." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
           # main is a protected branch (requires PRs), so a direct push is rejected.
           # Land the brief on a dedicated, non-protected branch that accumulates the
           # daily reports — searchable in the repo, no PR/CI noise. The brief is also

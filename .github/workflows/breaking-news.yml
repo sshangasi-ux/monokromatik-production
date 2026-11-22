@@ -89,8 +89,8 @@ jobs:
           fi
           BRANCH="breaking/wire"
           REPO="$GITHUB_REPOSITORY"
-          git config user.name "MonoKromatik Agent"
-          git config user.email "agents@monokromatik.com"
+          git config user.name "${{ vars.AGENT_GIT_NAME || 'MonoKromatik Agent' }}"
+          git config user.email "${{ vars.AGENT_GIT_EMAIL || 'agents@monokromatik.com' }}"
 
           # This run's feed (main's feed + the new hit) — stash it; switching branch
           # would discard the uncommitted change.
