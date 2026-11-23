@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-23T00:14:52.058Z",
+  "updatedAt": "2026-11-23T08:57:53.920Z",
   "breaks": [
+    {
+      "title": "Sporting Lagos Becomes First Individual Club Partner For Locker Room Bonus",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/sporting-lagos-becomes-first-individual-club-partner-for-locker-room-bonus/",
+      "pubDate": "Mon, 23 Nov 2026 08:55:08 +0000",
+      "importance": 4,
+      "why": "Sporting Lagos signs major partnership deal with Locker Room Bonus — significant African sports business move",
+      "detectedAt": "2026-11-23T08:57:53.920Z"
+    },
+    {
+      "title": "Ghana Defeat Morocco 1-0 To Win 2026 Amputee Football World Cup In Mexico",
+      "source": "Complete Sports",
+      "category": "sports",
+      "link": "https://www.completesports.com/ghana-defeat-morocco-1-0-to-win-2026-amputee-football-world-cup-in-mexico/",
+      "pubDate": "Mon, 23 Nov 2026 07:18:49 +0000",
+      "importance": 4,
+      "why": "Ghana defeats Morocco to win 2026 Amputee Football World Cup — major African sports victory",
+      "detectedAt": "2026-11-23T08:57:53.920Z"
+    },
     {
       "title": "Francis Amissah joins Martell’s Swift Academy in Accra",
       "source": "MyJoyOnline",
@@ -580,26 +600,6 @@
       "importance": 4,
       "why": "Signal: win · Complete Sports (sports) · auto-curated",
       "detectedAt": "2026-09-18T21:38:23.563Z"
-    },
-    {
-      "title": "CIMG, World Vision Ghana sign MoU to drive social impact through strategic marketing",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/cimg-world-vision-ghana-sign-mou-to-drive-social-impact-through-strategic-marketing/",
-      "pubDate": "Fri, 18 Sep 2026 12:47:00 +0000",
-      "importance": 4,
-      "why": "Signal: sign · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-09-18T14:28:17.391Z"
-    },
-    {
-      "title": "U.S. Trade and Development Agency, C-Squared Africa sign deal to expand affordable digital connectivity in Ghana",
-      "source": "MyJoyOnline",
-      "category": "entertainment",
-      "link": "https://www.myjoyonline.com/u-s-trade-and-development-agency-c-squared-africa-sign-deal-to-expand-affordable-digital-connectivity-in-ghana/",
-      "pubDate": "Thu, 17 Sep 2026 22:36:00 +0000",
-      "importance": 4,
-      "why": "Signal: sign · MyJoyOnline (entertainment) · auto-curated",
-      "detectedAt": "2026-09-18T00:12:53.665Z"
     }
   ]
 }
