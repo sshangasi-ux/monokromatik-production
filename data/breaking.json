@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-25T22:28:18.415Z",
+  "updatedAt": "2026-11-26T15:05:30.950Z",
   "breaks": [
+    {
+      "title": "Ayra Starr reveals how she found out about her Grammy nominations",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/news/ayra-starr-reveals-how-she-found-out-about-her-grammy-nominations/",
+      "pubDate": "Thu, 26 Nov 2026 15:04:45 +0000",
+      "importance": 4,
+      "why": "Nigerian Afrobeats star Ayra Starr's Grammy nomination reveal—major music industry moment for African artist",
+      "detectedAt": "2026-11-26T15:05:30.950Z"
+    },
+    {
+      "title": "Finalists for the 2026 CAF Awards confirmed",
+      "source": "NotJustOk",
+      "category": "music",
+      "link": "https://notjustok.com/sports/finalists-for-the-2026-caf-awards-confirmed/",
+      "pubDate": "Thu, 26 Nov 2026 14:23:09 +0000",
+      "importance": 4,
+      "why": "2026 CAF Awards finalists announced—major African sports and culture awards",
+      "detectedAt": "2026-11-26T15:05:30.950Z"
+    },
     {
       "title": "“I Don Finally Make My Mama Proud”: Asisat Oshoala Graduates With a Master’s Degree",
       "source": "BellaNaija",
@@ -580,26 +600,6 @@
       "importance": 5,
       "why": "Nigeria Flamingos reach first-ever U-17 WWC final with major victory over Brazil",
       "detectedAt": "2026-11-04T21:16:34.972Z"
-    },
-    {
-      "title": "2026 U-17 WWC: Bashiru Wins Player Of The Match In Flamingos’ Dominant Win Over Brazil",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/2026-u-17-wwc-bashiru-wins-player-of-the-match-in-flamingos-outstanding-victory-over-brazil/",
-      "pubDate": "Wed, 04 Nov 2026 20:51:34 +0000",
-      "importance": 4,
-      "why": "Nigeria's Flamingos (U-17 WWC) player award in major tournament",
-      "detectedAt": "2026-11-04T21:16:34.972Z"
-    },
-    {
-      "title": "“The Legacy Continues”: 2Baba Announces New Album ‘Oldest Young Man’",
-      "source": "BellaNaija",
-      "category": "culture",
-      "link": "https://www.bellanaija.com/2026/11/2baba-new-album-oldest-young-man-27-november/",
-      "pubDate": "Wed, 04 Nov 2026 05:39:33 +0000",
-      "importance": 4,
-      "why": "2Baba (Afrobeats icon) announces new album 'Oldest Young Man'",
-      "detectedAt": "2026-11-04T06:07:27.856Z"
     }
   ]
 }
