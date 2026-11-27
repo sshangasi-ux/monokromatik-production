@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-26T15:05:30.950Z",
+  "updatedAt": "2026-11-27T08:16:29.607Z",
   "breaks": [
+    {
+      "title": "Nadia Nakai Reflects On Her Fashion Evolution As She Preps To Launch NAK’D AUTHORITY",
+      "source": "SA Hip Hop Mag",
+      "category": "music",
+      "link": "https://sahiphopmag.co.za/2026/11/nadia-nakai-reflects-on-her-fashion-evolution-as-she-preps-to-launch-nakd-authority/",
+      "pubDate": "Fri, 27 Nov 2026 07:37:52 +0000",
+      "importance": 4,
+      "why": "South African hip-hop artist Nadia Nakai launching fashion brand NAK'D AUTHORITY",
+      "detectedAt": "2026-11-27T08:16:29.607Z"
+    },
     {
       "title": "Ayra Starr reveals how she found out about her Grammy nominations",
       "source": "NotJustOk",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Nigerian footballer's death; significant sports tragedy involving Lobi Stars",
       "detectedAt": "2026-11-05T10:45:59.982Z"
-    },
-    {
-      "title": "FIFA U-17 WWC: Flamingos Defeat Brazil 3-1 To Reach First-Ever Final",
-      "source": "Complete Sports",
-      "category": "sports",
-      "link": "https://www.completesports.com/fifa-u-17-wwc-flamingos-defeat-brazil-3-1-to-reach-first-ever-final/",
-      "pubDate": "Wed, 04 Nov 2026 20:01:43 +0000",
-      "importance": 5,
-      "why": "Nigeria Flamingos reach first-ever U-17 WWC final with major victory over Brazil",
-      "detectedAt": "2026-11-04T21:16:34.972Z"
     }
   ]
 }
