@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-11-27T18:54:41.263Z",
+  "updatedAt": "2026-11-28T10:17:37.844Z",
   "breaks": [
+    {
+      "title": "Sentuo Group boss hands Black Challenge $10,000 each after 2026 Amputee World Cup win",
+      "source": "MyJoyOnline",
+      "category": "entertainment",
+      "link": "https://www.myjoyonline.com/sentuo-group-boss-hands-black-challenge-10000-each-after-2026-amputee-world-cup-win/",
+      "pubDate": "Sat, 28 Nov 2026 08:39:59 +0000",
+      "importance": 4,
+      "why": "Ghana's Sentuo Group CEO rewards Black Challenge team after 2026 Amputee World Cup win—African brand/sports milestone",
+      "detectedAt": "2026-11-28T10:17:37.844Z"
+    },
     {
       "title": "Stream Detty December From Anywhere: LivDot Brings BNXN, Ruger, Oxlade and Fola Concerts to Global Audiences",
       "source": "BellaNaija",
@@ -590,16 +600,6 @@
       "importance": 4,
       "why": "Kanye West (African-diaspora creator) major comeback after Adidas fallout—fashion/business news",
       "detectedAt": "2026-11-06T00:09:48.479Z"
-    },
-    {
-      "title": "iDICE Named Official Deal Room Partner for Afreximbank’s CANEX WKND 2026",
-      "source": "BellaNaija",
-      "category": "culture",
-      "link": "https://www.bellanaija.com/2026/11/idice-boi-at-canex/",
-      "pubDate": "Thu, 05 Nov 2026 16:53:48 +0000",
-      "importance": 4,
-      "why": "iDICE (African deal platform) named official partner for Afreximbank's CANEX WKND 2026—major business/brand development deal.",
-      "detectedAt": "2026-11-05T18:42:09.395Z"
     }
   ]
 }
