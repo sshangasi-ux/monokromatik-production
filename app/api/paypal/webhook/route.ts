@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createAdminClient } from '../../../../lib/supabase/admin';
 import { matchReport, deliverReport, matchBundle, deliverBundle, alertUnmatchedPurchase } from '../../../../lib/report-delivery';
-import { paypalSlugFromBlob } from '../../../../lib/commerce';
+import { paypalSlugFromBlob, membershipPaypalSlug } from '../../../../lib/commerce';
 import { trackPurchase } from '../../../../lib/ga-measurement';
 
 export const runtime = 'nodejs';
@@ -147,6 +147,37 @@ export async function POST(req: Request) {
   const currency = amount.currency_code ? String(amount.currency_code) : 'USD';
   const value = amount.value ? Number(amount.value) : null;
   const reference = resource.id ? String(resource.id) : null;
+
+  // Membership first: the annual one-off PayPal link grants a 12-month entitlement
+  // (not a report PDF). Its link CODE pins the tier 1:1, same merchant-controlled
+  // match as the report links. Paystack memberships auto-renew; this PayPal one is
+  // a one-off year, so we set current_period_end to +12 months — the member re-ups
+  // then. No email → we can't bind an entitlement, so alert for manual grant.
+  const memberTier = membershipPaypalSlug(signal);
+  if (memberTier) {
+    if (email) {
+      const periodEnd = new Date();
+      periodEnd.setFullYear(periodEnd.getFullYear() + 1);
+      const row: Record<string, unknown> = {
+        email,
+        status: 'active',
+        tier: memberTier,
+        current_period_end: periodEnd.toISOString(),
+        updated_at: new Date().toISOString(),
+      };
+      const { error } = await admin.from('entitlements').upsert(row, { onConflict: 'email' });
+      if (error) console.error('[paypal] membership entitlement upsert error', error.message);
+      try {
+        await trackPurchase({ slug: `membership:${memberTier}`, email, amountMinor: value != null ? Math.round(value * 100) : null, currency, reference, itemName: `membership-annual:${memberTier}` });
+      } catch (err) {
+        console.error('[paypal] ga purchase error (membership)', err);
+      }
+    } else {
+      await alertUnmatchedPurchase({ email: null, amount: value != null ? Math.round(value * 100) : null, currency, reference, metaKeys: ['paypal', 'membership-annual', memberTier, 'no-email'] });
+    }
+    console.log('[paypal] capture.completed via membership-annual', { tier: memberTier, reference, hasEmail: !!email });
+    return NextResponse.json({ ok: true, membership: email ? memberTier : null });
+  }
 
   // Deterministic first pass: each report has its own dedicated PayPal link, so if
   // the link CODE appears anywhere in the capture or order, that pins the report
